@@ -21,6 +21,11 @@
 		<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 		<div id="contents">
 			<!-- 서브 내용 -->
+			<article class="main_visual__slider-wrap">
+				<article class="main_visual__slider custom slick-initialized slick-slider slick-dotted">
+
+				</article>
+			</article>
 			<article>
 				<div class="main_visual__quick">
 					<nav class="main_visual__quick-nav inner">

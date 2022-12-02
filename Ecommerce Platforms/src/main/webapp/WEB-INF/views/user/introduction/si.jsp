@@ -6,54 +6,55 @@
 <head>
 <title>내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<meta property="og:url" content="https://www.jhta.co.kr">
-
-<!-- include  -->
-<jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-<!-- include end  -->
-<!-- 사용자 정의 끝 -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/> -->
+<link rel="stylesheet"  href="${pageContext.request.contextPath}/resources/css/swiper_main.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
-<style>
-.content {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    width: 1170px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;   
-}
-.main_title{
-	font-size: x-large;
-}
-</style>
-<body class="page-92 dep1-about-the-academy--fc page-url-history--fc">
-<!-- haeder -->
-<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-<!-- haeder -->
-
-	<section id="wrapper">
-		<main id="contents">
-			<div class="content">
-				<div class="heading">
-			        <h1 class="main_title">
-			            Consulting
-			        </h1>
-			        <p class="center">
-			            (주)내담C&amp;(Catchphrase와 기업철학 및 회사의 비전을 제시)
-			        </p>
-		        </div>
-		        <div class="margin-bottom-30"></div>
-		        <p>
-		        	<img src="${pageContext.request.contextPath}/resources/imgs/neadam/ceo_Message.png" class="img-responsive center">
-		        </p>
-	        </div>		
-		</main>
-	</section>
+<body>
+	<!-- Slider main container -->
+	<div class="swiper">
+	  <!-- Additional required wrapper -->
+	  <div class="swiper-wrapper">
+	    <!-- Slides -->
+	    <div class="swiper-slide">
+			<a href="#">
+				<div class="text-wrap">
+					<h2>귀여운 첫번째 강아지</h2>
+					<p>강아지는 귀엽다</p>
+				</div>
+				<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/dark_1.png">
+			</a>
+		</div>
+	    <div class="swiper-slide">
+			<a href="#">
+				<div class="text-wrap">
+					<h2>귀여운 두번째 강아지</h2>
+					<p>다시봐도 귀엽다</p>
+				</div>
+				<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/dark_2.png">
+			</a>
+		</div>
+	    <div class="swiper-slide">
+			<a href="#">
+				<div class="text-wrap">
+					<h2>귀여운 세번째 강아지</h2>
+					<p>키우고 싶다</p>
+				</div>
+				<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/dark_3.png">
+			</a>
+		</div>
+	    ...
+	  </div>
+	  <!-- If we need pagination -->
+	  <div class="swiper-pagination"></div>
 	
-<!-- footer -->		
-<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
-<!-- footer -->
+	  <!-- If we need navigation buttons -->
+	  <div class="swiper-button-prev"></div>
+	  <div class="swiper-button-next"></div>
+	
+	</div>
+	<link rel="stylesheet"  href="${pageContext.request.contextPath}/resources/css/swiper_style.css">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/custom.js"></script>
+	
 </body>
 </html>

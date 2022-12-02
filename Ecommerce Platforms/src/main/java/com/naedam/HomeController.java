@@ -11,6 +11,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -118,21 +119,13 @@ public class HomeController {
 		return "admin/dashBoard";
 	}
 	
+	@Cacheable
 	@RequestMapping(value = "/user/dashBoard", method = RequestMethod.GET)
 	public String goDashBoard2(Locale locale, Model model) throws Exception {
-		log.debug("HomeController ---- forward ----> dashBoard");
-		List<Board> boardList = boardService.getBoardTitle();		
-		List<OrderDetail> orderList = orderService.selectOrderDetailList();
-		List<ProductDetail> productList = productService.selectAllProductList();
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> resultMap = menuService.getMenuCategoryList(map);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("list2", resultMap.get("list2"));
-		model.addAttribute("boardList", boardList);
-		model.addAttribute("orderList",orderList);
-		model.addAttribute("productList",productList);
-		System.out.println("===================dash끝===============");
-		
 		return "admin/userDashBoard";
 	}	
 

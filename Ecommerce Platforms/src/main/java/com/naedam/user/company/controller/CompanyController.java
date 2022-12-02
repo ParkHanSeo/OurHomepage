@@ -21,6 +21,12 @@ public class CompanyController {
 	@Autowired
 	private HistoryService historyService;
 	
+	/**
+	 * 회사소개 => 사업개요 조회
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="businessList")
 	public ModelAndView businessList(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -28,13 +34,25 @@ public class CompanyController {
 		return mv;
 	}
 	
+	/**
+	 * 회사소개 => CEO 메세지 조회
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="ceoList")
 	public ModelAndView ceoList(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/company/ceoMessage");
 		return mv;
 	}
-		
+	
+	/**
+	 * 회사소개 => 사업부 소개 조회
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="divisionList")
 	public ModelAndView divisionList(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -42,7 +60,13 @@ public class CompanyController {
 		return mv;
 	}
 	
-	//연혁 목록
+	/**
+	 * 회사소개 => 연혁 조회
+	 * @param model
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="historyList")
 	public ModelAndView historyList(Model model, HttpServletRequest request) throws Exception {
 		System.out.println("historyList 시작");
@@ -54,6 +78,12 @@ public class CompanyController {
 		return mv;
 	}
 	
+	/**
+	 * 회사소개 => CI 조회
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="ciList")
 	public ModelAndView ciList(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -61,6 +91,12 @@ public class CompanyController {
 		return mv;
 	}
 	
+	/**
+	 * 회사소개 => 오시는 길 조회
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping(value="directionsList")
 	public ModelAndView directionsList(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
