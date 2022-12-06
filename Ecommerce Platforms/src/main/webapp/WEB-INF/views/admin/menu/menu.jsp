@@ -24,7 +24,6 @@
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 <script src="https://mir9.co.kr/resource/js/ckeditor4.7.2/ckeditor.js"></script>
-
 <div class="content-wrapper" style="min-height: 868px;">
 	<section class="content-header">
 	    <h1>
@@ -84,7 +83,13 @@
       								<button type="button" id="locale_zh" onclick="setLocale('zh')" class="btn btn-default">
       									<i class="fa fa-globe" aria-hidden="true"></i> 中国</button>      
       								<button type="button" id="locale_vn" onclick="setLocale('vn')" class="btn btn-default">
-      									<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>                
+      									<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>
+									<select class="form-select" name="outer_mapping" aria-label="Default select example">
+									  <option value="0">게시판 맵핑</option>
+									  <c:forEach var="board" items="${board}">
+										  <option value="${board.boardNo}">${board.boardTitle}</option>
+									  </c:forEach>
+									</select>      									                
       							</div>
                 			</div>
             			</div>
@@ -92,7 +97,7 @@
 				            <tbody>
 					            <tr>
 					                <td class="menu">메뉴명</td>
-					                <td align="left"><input type="text" name="title" class="form-control input-sm"></td>
+					                <td align="left" style="width:100px;"><input type="text" name="title" class="form-control input-sm"></td>
 					                <td class="menu">url &nbsp;&nbsp;<input type="checkbox" name="is_outer_link" onclick="checkOuterLink()" value="y"> <small>외부링크</small></td>
 					                <td align="left">
 					                	<select id="displayOuterLink" name="target" class="form-control input-sm" style="width: 25%; padding: 0px; margin-right: 5px; float: left; display: none;">
@@ -107,16 +112,7 @@
 					      					<option value="y">보임</option>      
 					      					<option value="n">숨김</option>                
 					      				</select>
-					                </td>
-					                <td class="menu">헤더선택</td>
-					                <td>
-						                <select name="menu_head_code" class="form-control input-sm">
-						                	<option value="0">선택하세요</option>
-							                <c:forEach var="head" items="${list2}">
-							      				<option value="${head.headNo}">${head.title}</option>        
-							      			</c:forEach>             
-						      			</select>
-					                </td>
+					                </td>			                
 					                <td class="menu">메타 태그</td>
 					                <td align="left"><input type="checkbox" name="is_meta" onclick="checkMeta()" value="y"> 사용</td>
 					            </tr>
@@ -173,7 +169,13 @@
 				      				<button type="button" id="locale_zh" onclick="setLocale('zh')" class="btn btn-default">
 				      					<i class="fa fa-globe" aria-hidden="true"></i> 中国</button>      
 				      				<button type="button" id="locale_vn" onclick="setLocale('vn')" class="btn btn-default">
-				      					<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>                
+				      					<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>
+									<select class="form-select" name="outerMapping" aria-label="Default select example">
+									  <option selected>게시판 맵핑</option>
+									  <c:forEach var="board" items="${board}">
+										  <option value="${board.boardNo}">${board.boardTitle}</option>
+									  </c:forEach>
+									</select> 				      					                
 				      			</div>
 				            </div>
 			            </div>
@@ -196,15 +198,6 @@
 						      				<option value="y">보임</option>      
 						      				<option value="n">숨김</option>                
 						      			</select>
-					                </td>
-					                <td class="menu">헤더선택</td>
-					                <td>
-						                <select name="menu_head_code" id="getMenu_head_code" class="form-control input-sm">
-						                	<option value="0">선택하세요</option>
-							                <c:forEach var="head" items="${list2}">
-							      				<option value="${head.headNo}">${head.title}</option>        
-							      			</c:forEach>                
-						    			</select>
 					                </td>
 					                <td class="menu">메타 태그</td>
 					                <td align="left"><input type="checkbox" name="is_meta" id="getIs_meta" onclick="checkMeta()" value="y"> 사용</td>
@@ -588,9 +581,6 @@
            }*/
            parent.$('[name=title]').val(json_data.title);
            parent.$('[id=getCode]').val(json_data.code);
-           
-           if (json_data.menu_head_code == 0) json_data.menu_head_code = '';
-           parent.$('[name=menu_head_code]').val(json_data.menu_head_code);
            parent.$('[name=url]').val(json_data.url);
            
            if (json_data.code == 1) parent.$('[name=url]').prop('readonly', true); // 메인 페이지는 url 변경 불가
@@ -647,6 +637,7 @@
                success:function(data, textStatus, jqXHR){
                    var json_data = data;
                    printData(json_data);
+                   console.log(json_data);
                },
                error:function(jqXHR, textStatus, errorThrown){
                    console.log(textStatus);

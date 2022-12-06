@@ -69,6 +69,7 @@ public class MenuController {
 		Map<String, Object> resultMap = menuService.getMenuList(map);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("list2", resultMap.get("list2"));
+		model.addAttribute("board", resultMap.get("board"));
 		return "admin/menu/menu";
 	}
 	

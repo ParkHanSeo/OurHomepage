@@ -14,7 +14,7 @@
 		<result property="target"				column="TARGET"				jdbcType="VARCHAR"></result>
 		<result property="url"					column="URL"				jdbcType="VARCHAR"></result>
 		<result property="status"				column="STATUS"				jdbcType="VARCHAR"></result>
-		<result property="menu_head_code"		column="MENU_HEAD_CODE"		jdbcType="NUMERIC"></result>
+		<result property="outer_mapping"		column="OUTER_MAPPING"		jdbcType="VARCHAR"></result>
 		<result property="menuDate"				column="MENU_DATE"			jdbcType="VARCHAR"></result>
 		<result property="is_meta"				column="IS_META"			jdbcType="VARCHAR"></result>
 		<result property="meta_title"			column="META_TITLE"			jdbcType="VARCHAR"></result>
@@ -64,7 +64,7 @@
 				  TARGET,
 				  URL,
 				  STATUS,
-				  MENU_HEAD_CODE,
+				  OUTER_MAPPING,
 				  MENU_DATE,
 				  IS_META,
 				  META_TITLE,
@@ -81,7 +81,7 @@
 			   #{target : VARCHAR},
 			   #{url : VARCHAR},
 			   #{status : VARCHAR},
-			   #{menu_head_code : NUMERIC},
+			   #{outer_mapping : NUMERIC},
 			   sysdate(),
 			   #{is_meta : VARCHAR},
 			   #{meta_title : VARCHAR},
@@ -126,7 +126,7 @@
 				  TARGET,
 				  URL,
 				  STATUS,
-				  MENU_HEAD_CODE,
+				  OUTER_MAPPING,
 				  MENU_DATE,
 				  IS_META,
 				  META_TITLE,
@@ -142,7 +142,7 @@
 			   #{target : VARCHAR},
 			   #{url : VARCHAR},
 			   #{status : VARCHAR},
-			   #{menu_head_code : NUMERIC},
+			   #{outer_mapping : NUMERIC},
 			   NOW(),
 			   #{is_meta : VARCHAR},
 			   #{meta_title : VARCHAR},
@@ -222,7 +222,7 @@
 		target,
 		url,
 		status,
-		menu_head_code,
+		outer_mapping,
 		DATE_FORMAT(menu_date, '%Y-%m-%d %H:%i') menu_date,
 		is_meta,
 		meta_title,
@@ -247,7 +247,7 @@
 		target,
 		url,
 		status,
-		menu_head_code,
+		outer_mapping,
 		DATE_FORMAT(menu_date, '%Y-%m-%d %H:%i') menu_date,
 		is_meta,
 		meta_title,
@@ -320,7 +320,7 @@
 			TARGET = #{target : VARCHAR},
 			URL =#{url : VARCHAR},
 			STATUS = #{status : VARCHAR},
-			MENU_HEAD_CODE = #{menu_head_code : NUMERIC},
+			OUTER_MAPPING = #{OUTER_MAPPING : NUMERIC},
 			IS_META = #{is_meta : VARCHAR},
 			META_TITLE = #{meta_title : VARCHAR},
 			META_DESCRIPTION = #{meta_description : VARCHAR}

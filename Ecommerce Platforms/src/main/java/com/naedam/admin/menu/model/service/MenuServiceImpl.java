@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.naedam.admin.board.model.dao.BoardDao;
 import com.naedam.admin.menu.model.dao.MenuDao;
 import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
@@ -18,6 +19,9 @@ public class MenuServiceImpl implements MenuService {
 	
 	@Autowired
 	private MenuDao menuDao;
+	@Autowired
+	private BoardDao boardDao;
+	
 	//메뉴관리 프로세서
 	public String menuProcess(Map<String, Object> map) throws Exception{
 		if("menu".equals(map.get("part"))) {
@@ -83,6 +87,7 @@ public class MenuServiceImpl implements MenuService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("list", menuDao.getMenuList(map));
 		resultMap.put("list2", menuDao.getHeadList(map));
+		resultMap.put("board", boardDao.getBoardTitle());
 		return resultMap;
 	}
 	
