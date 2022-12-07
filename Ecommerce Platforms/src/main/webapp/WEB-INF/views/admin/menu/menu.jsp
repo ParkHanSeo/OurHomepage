@@ -84,12 +84,12 @@
       									<i class="fa fa-globe" aria-hidden="true"></i> 中国</button>      
       								<button type="button" id="locale_vn" onclick="setLocale('vn')" class="btn btn-default">
       									<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>
-									<select class="form-select" name="outer_mapping" aria-label="Default select example">
+<%-- 									<select class="form-select" name="outer_mapping" aria-label="Default select example">
 									  <option value="0">게시판 맵핑</option>
 									  <c:forEach var="board" items="${board}">
 										  <option value="${board.boardNo}">${board.boardTitle}</option>
 									  </c:forEach>
-									</select>      									                
+									</select>  --%>     									                
       							</div>
                 			</div>
             			</div>

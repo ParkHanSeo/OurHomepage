@@ -320,7 +320,7 @@
 			TARGET = #{target : VARCHAR},
 			URL =#{url : VARCHAR},
 			STATUS = #{status : VARCHAR},
-			OUTER_MAPPING = #{OUTER_MAPPING : NUMERIC},
+			OUTER_MAPPING = #{outer_mapping : NUMERIC},
 			IS_META = #{is_meta : VARCHAR},
 			META_TITLE = #{meta_title : VARCHAR},
 			META_DESCRIPTION = #{meta_description : VARCHAR}

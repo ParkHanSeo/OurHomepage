@@ -7,7 +7,7 @@ var swiper = new Swiper(".slider", {
   },
 });
 
-var swiper = new Swiper(".mid", {
+var swiper2 = new Swiper(".mid", {
   slidesPerView: 2,
   spaceBetween: 90,
   slidesPerGroup: 1,
@@ -38,3 +38,4 @@ $(".mid").each(function (elem, target) {
     }
   );
 });
+
