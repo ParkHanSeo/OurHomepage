@@ -42,6 +42,41 @@
 			}
 		}
 	})
+	
+	$.ajax({
+		url : "/user/comm/json/menuHeaderList" ,
+		method : "GET" ,
+		dataType : "JSON" , 
+		headers : {
+			"Accept" : "application/json",
+			"Content-Type" : "application/json"
+		},
+		success : function(data, status){
+			var menu = data.list;
+			var menu2 = data.list2;
+			var display = '';
+			for(var i = 0; i < menu.length; i++){
+				if(menu[i].status != 'n'){
+					display = "<li>"
+							+ "<a href='"+menu[i].url+"'>"+menu[i].title+"</a>"
+							+ "<section class='sub sub-menu"+(i+1)+"'>"
+							+ "<div class='sub-wrap'>"
+							+ "<ul class='sub-2depth'>"							
+							for(var j = 0; j < data.list2.length; j++){
+								if(data.list[i].code == data.list2[j].originNo && menu2[j].status != 'n'){
+									display	+= "<li><a href='"+menu2[j].url+"'>"+menu2[j].title+"</a></li>"
+											
+								}
+							}
+					display	+= '</ul>'
+						    + '</div>'
+						    + '</section>'
+						    + '</li>';
+					$('#menuHeader').append(display)
+				}
+			}
+		}
+	})	
 </script>
 <script type="text/javascript">
 	function btnScrollTop() {
@@ -76,6 +111,7 @@
 					</ul>
 				</div>
 			</div>
+			
 			<div class="header-bottom">
 				<div class="header-bottom__inner">
 					<h1 class="logo">

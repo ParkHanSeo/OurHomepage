@@ -122,10 +122,10 @@ public class HomeController {
 	@Cacheable
 	@RequestMapping(value = "/user/dashBoard", method = RequestMethod.GET)
 	public String goDashBoard2(Locale locale, Model model) throws Exception {
-		Map<String, Object> map = new HashMap<String, Object>();
-		Map<String, Object> resultMap = menuService.getMenuCategoryList(map);
-		model.addAttribute("list", resultMap.get("list"));
-		model.addAttribute("list2", resultMap.get("list2"));
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		Map<String, Object> resultMap = menuService.getMenuCategoryList(map);
+//		model.addAttribute("list", resultMap.get("list"));
+//		model.addAttribute("list2", resultMap.get("list2"));
 		return "admin/userDashBoard";
 	}	
 

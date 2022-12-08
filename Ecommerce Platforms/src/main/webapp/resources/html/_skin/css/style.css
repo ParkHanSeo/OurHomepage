@@ -8969,7 +8969,7 @@ html[lang="zh"] #header .w-lang dd.lang.zh a:after {
     position: relative;
     display: block;
     font-size: 1em;
-    font-weight: 400;
+    font-weight: bolder;
     line-height: 104px;
     color: #444;
     font-size: 1.125rem;
@@ -18664,5 +18664,5 @@ figure.img_full_wrap figcaption * {
 .mid_solution {
   padding: 12px 58px 12px 58px;
   font-size: xxx-large;
-  font-weight: 700;  
+  font-weight: 700;
 }

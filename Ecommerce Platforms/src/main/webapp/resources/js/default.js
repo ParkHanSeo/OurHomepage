@@ -8,7 +8,7 @@ var swiper = new Swiper(".slider", {
 });
 
 var swiper2 = new Swiper(".mid", {
-  slidesPerView: 2,
+  slidesPerView: 3,
   spaceBetween: 90,
   slidesPerGroup: 1,
   loop: true,
@@ -38,4 +38,3 @@ $(".mid").each(function (elem, target) {
     }
   );
 });
-
