@@ -24,8 +24,3 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/swiper.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/swiper.min.css">
-
-<!-- swiper  -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/normalize.css">
-<script src="${pageContext.request.contextPath}/resources/js/swiper.js"></script>

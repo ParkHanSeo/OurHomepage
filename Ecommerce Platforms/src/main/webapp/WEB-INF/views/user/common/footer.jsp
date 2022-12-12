@@ -1,180 +1,443 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-		<div class="footer-top">
-			<div class="footer-top-inner">
-				<ul>
-					<li><a href="/user/company/businessList"><span>내담C&C 소개</span></a></li>
-					<li><a href="/user/company/directionsList"><span>찾아오시는 길</span></a></li>
-					<li><a href="/"><span>이용약관</span></a></li>
-					<li><a href="/"><span>개인정보 처리방침</span></a></li>
-					<li><a href="/"><span>이메일주소 무단수집 거부</span></a></li>
-				</ul>
-				<div class="social_link_wrap--fc">
-					<!-- twitter -->
-					<a class="social_link--fc twitter--fc" href="https://twitter.com/jhtastyle" target="_blank_" data-tooltip-text="트위터"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<path d="M18.2628836,9.38066935 C18.2628836,9.24955108 18.2602129,9.11902738 18.2543316,8.9890933 C18.8458329,8.5614861 19.3599406,8.02786649 19.7654396,7.42041079 C19.2226437,7.66167872 18.638525,7.82409632 18.0257677,7.89733288 C18.6512093,7.52229092 19.1313767,6.92902075 19.3579092,6.22177583 C18.7726013,6.56876384 18.1244173,6.82095706 17.4342664,6.95711434 C16.8814619,6.3682886 16.0944451,6 15.2229988,6 C13.5500678,6 12.1934498,7.35666758 12.1934498,9.02895448 C12.1934498,9.26667479 12.2200272,9.49790434 12.2720028,9.71969999 C9.75423272,9.59301129 7.5216596,8.38755855 6.02749695,6.55458823 C5.7673315,7.00227218 5.61731571,7.52230579 5.61731571,8.0771913 C5.61731571,9.12819867 6.15213437,10.0560303 6.96541153,10.5988261 C6.46839781,10.5834703 6.00150914,10.4470365 5.59343368,10.2199442 C5.59298775,10.2326542 5.59298775,10.2450456 5.59298775,10.2586296 C5.59298775,11.7257392 6.63720707,12.9506593 8.02335558,13.2282259 C7.76879894,13.2976225 7.50097341,13.3348329 7.22454638,13.3348329 C7.02964526,13.3348329 6.83975837,13.31565 6.65519292,13.2802015 C7.04086287,14.4838656 8.15921558,15.3597711 9.48511399,15.3842477 C8.44827729,16.1969303 7.14214843,16.6809625 5.72260473,16.6809625 C5.47838375,16.6809625 5.23712078,16.6670713 5,16.6390282 C6.3407132,17.4983848 7.93268316,17.9998083 9.64371641,17.9998083 C15.2156955,18 18.2628836,13.3837331 18.2628836,9.38066935 Z"></path>
-						</svg>
-					</a>
-					<!-- // twitter -->
-					<!-- facebook -->
-					<a class="social_link--fc facebook--fc" href="https://www.facebook.com/joongang.hta " target="_blank_" data-tooltip-text="페이스북"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<path d="M13.044937,18 L13.044937,12.5262186 L14.8822185,12.5262186 L15.1573254,10.3929889 L13.044937,10.3929889 L13.044937,9.03105647 C13.044937,8.41343724 13.21644,7.9925501 14.102091,7.9925501 L15.2316963,7.99205649 L15.2316963,6.0840787 C15.0363354,6.05808177 14.3657899,6 13.5856624,6 C11.9570146,6 10.8419982,6.99413606 10.8419982,8.81979021 L10.8419982,10.3929889 L9,10.3929889 L9,12.5262186 L10.8419982,12.5262186 L10.8419982,18 L13.044937,18 Z"></path>
-						</svg>
-					</a>
-					<!-- // facebook -->
-					<!-- linkedin -->
-					<a class="social_link--fc linkedin--fc d-none" href="/" target="_blank_" data-tooltip-text="링크드인"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<g fill-rule="evenodd" transform="matrix(1 0 0 -1 6 18)">
-								<path d="M4 4.92052097e-15L6.59281893 4.92052097e-15 6.59281893 4.35629776C6.59281893 4.58944002 6.60966981 4.82235145 6.67813515 4.98901354 6.8655723 5.45483639 7.29219955 5.93727928 8.00847721 5.93727928 8.94670168 5.93727928 9.32201455 5.22192496 9.32201455 4.17324646L9.32201455 3.28034732e-15 11.9146257 3.28034732e-15 11.9146257 4.47286889C11.9146257 6.86892499 10.6354596 7.98385283 8.9295738 7.98385283 7.53081257 7.98385283 6.91674818 7.20201834 6.57557564 6.66948448L6.59288819 6.66948448 6.59288819 7.80080153 4.00006925 7.80080153C4.03409417 7.06882716 4.00006925 0 4.00006925 0L4 4.92052097e-15zM2.74611574 0L2.74611574 7.80080153.153273724 7.80080153.153273724 1.64017366e-15 2.74611574 1.64017366e-15 2.74611574 0zM1.44968319 8.86586924C2.35385966 8.86586924 2.91663276 9.46488327 2.91663276 10.2134777 2.89978188 10.978923 2.35385966 11.5613169 1.46683415 11.5613169.579900977 11.5613169 0 10.978923 0 10.2134777 0 9.46488327.562657683 8.86586924 1.43278615 8.86586924L1.44963702 8.86586924 1.44968319 8.86586924z"></path>
-							</g>
-						</svg>
-					</a>
-					<!-- // linkedin -->
-					<!-- instagram -->
-					<a class="social_link--fc instagram--fc d-none" href="/" target="_blank_" data-tooltip-text="인스타그램"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<g fill-rule="evenodd">
-								<path d="M11.9978056,5.00441667 C10.0973056,5.00441667 9.859,5.01247222 9.11261111,5.04652778 C8.36777778,5.0805 7.85908333,5.19880556 7.41397222,5.37180556 C6.95380556,5.55061111 6.56355556,5.78988889 6.1745,6.17891667 C5.78547222,6.56797222 5.54619444,6.95822222 5.36738889,7.41838889 C5.19438889,7.8635 5.07608333,8.37219444 5.04211111,9.11702778 C5.00805556,9.86341667 5,10.1017222 5,12.0022222 C5,13.9026944 5.00805556,14.141 5.04211111,14.8873889 C5.07608333,15.6322222 5.19438889,16.1409167 5.36738889,16.5860278 C5.54619444,17.0461944 5.78547222,17.4364444 6.1745,17.8255 C6.56355556,18.2145278 6.95380556,18.4538056 7.41397222,18.6326389 C7.85908333,18.8056111 8.36777778,18.9239167 9.11261111,18.9578889 C9.859,18.9919444 10.0973056,19 11.9978056,19 C13.8982778,19 14.1365833,18.9919444 14.8829722,18.9578889 C15.6278056,18.9239167 16.1365,18.8056111 16.5816111,18.6326389 C17.0417778,18.4538056 17.4320278,18.2145278 17.8210833,17.8255 C18.2101111,17.4364444 18.4493889,17.0461944 18.6282222,16.5860278 C18.8011944,16.1409167 18.9195,15.6322222 18.9534722,14.8873889 C18.9875278,14.141 18.9955833,13.9026944 18.9955833,12.0022222 C18.9955833,10.1017222 18.9875278,9.86341667 18.9534722,9.11702778 C18.9195,8.37219444 18.8011944,7.8635 18.6282222,7.41838889 C18.4493889,6.95822222 18.2101111,6.56797222 17.8210833,6.17891667 C17.4320278,5.78988889 17.0417778,5.55061111 16.5816111,5.37180556 C16.1365,5.19880556 15.6278056,5.0805 14.8829722,5.04652778 C14.1365833,5.01247222 13.8982778,5.00441667 11.9978056,5.00441667 Z M11.9978056,6.26527778 C13.8662778,6.26527778 14.0876111,6.27241667 14.8255,6.30608333 C15.5077778,6.33719444 15.8783056,6.45119444 16.1248889,6.54702778 C16.4515278,6.67397222 16.6846389,6.82561111 16.9295,7.0705 C17.1743889,7.31536111 17.3260278,7.54847222 17.4529722,7.87511111 C17.5488056,8.12169444 17.6628056,8.49222222 17.6939167,9.1745 C17.7275833,9.91238889 17.7347222,10.1337222 17.7347222,12.0022222 C17.7347222,13.8706944 17.7275833,14.0920278 17.6939167,14.8299167 C17.6628056,15.5121944 17.5488056,15.8827222 17.4529722,16.1293056 C17.3260278,16.4559444 17.1743889,16.6890556 16.9295,16.9339167 C16.6846389,17.1788056 16.4515278,17.3304444 16.1248889,17.4573889 C15.8783056,17.5532222 15.5077778,17.6672222 14.8255,17.6983333 C14.0877222,17.732 13.8664167,17.7391389 11.9978056,17.7391389 C10.1291667,17.7391389 9.90788889,17.732 9.17008333,17.6983333 C8.48780556,17.6672222 8.11727778,17.5532222 7.87069444,17.4573889 C7.54405556,17.3304444 7.31094444,17.1788056 7.06608333,16.9339167 C6.82122222,16.6890556 6.66955556,16.4559444 6.54261111,16.1293056 C6.44677778,15.8827222 6.33277778,15.5121944 6.30166667,14.8299167 C6.268,14.0920278 6.26086111,13.8706944 6.26086111,12.0022222 C6.26086111,10.1337222 6.268,9.91238889 6.30166667,9.1745 C6.33277778,8.49222222 6.44677778,8.12169444 6.54261111,7.87511111 C6.66955556,7.54847222 6.82119444,7.31536111 7.06608333,7.0705 C7.31094444,6.82561111 7.54405556,6.67397222 7.87069444,6.54702778 C8.11727778,6.45119444 8.48780556,6.33719444 9.17008333,6.30608333 C9.90797222,6.27241667 10.1293056,6.26527778 11.9978056,6.26527778 L11.9978056,6.26527778 Z"></path>
-								<path d="M11.9978056 14.3348056C10.7095278 14.3348056 9.66519444 13.2904722 9.66519444 12.0022222 9.66519444 10.7139444 10.7095278 9.66961111 11.9978056 9.66961111 13.2860556 9.66961111 14.3303889 10.7139444 14.3303889 12.0022222 14.3303889 13.2904722 13.2860556 14.3348056 11.9978056 14.3348056zM11.9978056 8.40875C10.0131667 8.40875 8.40433333 10.0175833 8.40433333 12.0022222 8.40433333 13.9868333 10.0131667 15.5956667 11.9978056 15.5956667 13.9824167 15.5956667 15.59125 13.9868333 15.59125 12.0022222 15.59125 10.0175833 13.9824167 8.40875 11.9978056 8.40875L11.9978056 8.40875zM16.5729722 8.26677778C16.5729722 8.73055556 16.197 9.1065 15.7332222 9.1065 15.2694722 9.1065 14.8935 8.73055556 14.8935 8.26677778 14.8935 7.803 15.2694722 7.42702778 15.7332222 7.42702778 16.197 7.42702778 16.5729722 7.803 16.5729722 8.26677778"></path>
-							</g>
-						</svg>	
-					</a>
-					<!-- // instagram -->
-					<!-- youtube -->
-					<a class="social_link--fc youtube--fc d-none" href="/" target="_blank_" data-tooltip-text="유튜브"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<path fill-rule="evenodd" d="M19.0641161,6.75321082 L19.0641155,6.75321858 C19.3852618,7.04476593 19.6213314,7.4364397 19.7250548,7.88679102 C19.9993592,9.08046973 19.9993592,10.3745312 19.9993341,11.5963376 L20,11.5963376 L20,11.6272095 L19.9993341,11.6272095 C19.9993843,12.2421552 19.9990953,12.8755732 19.9647303,13.4999615 C19.9298995,14.1331199 19.8603284,14.7626624 19.7216743,15.3661922 C19.6172724,15.8166637 19.3811398,16.208413 19.0602074,16.4999561 C18.7374112,16.7931705 18.3288258,16.9854639 17.8818798,17.0349445 C16.9084773,17.1438192 15.9268152,17.1986273 14.9419276,17.2260942 C13.9633549,17.2533852 12.980646,17.2533852 11.9996031,17.2528197 C11.0189985,17.2533852 10.0362715,17.2533852 9.05756582,17.2260942 C8.07253567,17.1986272 7.09058743,17.1438198 6.1170711,17.0349445 C5.67003892,16.9854637 5.26136625,16.7931077 4.93871151,16.499805 C4.61794187,16.2082396 4.38213602,15.8165286 4.27841269,15.36619 C4.13914369,14.7626805 4.06958445,14.1331423 4.03488015,13.4999594 C4.00001256,12.8634286 4,12.2361531 4,11.6272074 C4,11.0174532 4.00089202,10.3893596 4.03660153,9.75321075 C4.07217274,9.11974381 4.14258645,8.49018217 4.28178088,7.88677793 C4.38488814,7.43662874 4.62058133,7.04503157 4.94137544,6.75345018 C5.26422273,6.45998368 5.67329859,6.26751467 6.12045843,6.21803412 C7.0938503,6.10914655 8.0757996,6.05433835 9.06082549,6.02685893 C10.0395471,5.99956792 11.0222698,5.99956792 12.0027351,6.00013334 C12.9833397,5.99956792 13.9661263,5.99956792 14.9447192,6.02685893 C15.9296323,6.05433867 16.9112912,6.10914708 17.8841288,6.21803412 C18.3317206,6.26748935 18.740972,6.45987092 19.0641161,6.75321082 Z M15.0358254,11.326043 C14.1242792,10.849996 13.2188606,10.3775309 12.3145218,9.90564133 C11.5627891,9.51337714 10.8117372,9.12146508 10.0585046,8.72819664 L9.80983266,8.59836389 L9.80983266,8.87846126 L9.80983266,14.0566115 L9.80983266,14.3360047 L10.0578386,14.2075411 C10.8897733,13.7766025 11.7181548,13.3472596 12.5465043,12.9177987 L15.0351595,11.6272372 L15.324843,11.4769864 L15.0358254,11.3260441 L15.0358254,11.326043 Z"></path>
-						</svg>
-					</a>
-					<!-- // youtube -->
-					<!-- blog -->
-					<a class="social_link--fc blog--fc d-none" href="/" target="_blank_" data-tooltip-text="블로그"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<g>
-								<circle fill="" cx="7.819" cy="10.708" r="0.511"></circle>
-								<circle fill="" cx="12.866" cy="10.695" r="0.55"></circle>
-								<circle fill="" cx="16.245" cy="10.694" r="0.538"></circle>
-							</g>
-						</svg>
-					</a>
-					<!-- // blog -->
-					<!-- blog -->
-					<a class="social_link--fc blog2--fc" href="https://blog.naver.com/jhtastyle" target="_blank_" data-tooltip-text="블로그"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<path class="cls-1" d="M10,6.44h1.92a3.61,3.61,0,0,1,3.59,3.43h0V10h0a.56.56,0,0,0,.55.6H17c.35,0,.56.15.61.42v1.47h0V14A3.6,3.6,0,0,1,14,17.56H9.48l-.09,0H9.3l-.09,0-.08,0h0l-.09,0L9,17.4l-.09,0h0l-.08,0-.08,0h0l-.08,0h0l-.08,0-.08,0-.08,0a.2.2,0,0,0-.08,0l-.07-.05-.08,0L8.09,17h0l-.07,0L8,16.9H8l-.07-.06h0l-.07-.05-.07-.05-.06-.06h0l-.07-.06h0l-.06-.05h0l-.06-.06-.06-.07-.06-.06-.06-.06h0l0-.07h0l-.06-.07,0-.06-.05-.07a.35.35,0,0,1,0-.08l0-.07H7l0-.07H7l0-.08,0-.07a.3.3,0,0,1,0-.08.2.2,0,0,1,0-.08l0-.07,0-.08h0l0-.09,0-.08,0-.08a.31.31,0,0,1,0-.08l0-.09a.31.31,0,0,1,0-.08,9077409062508.7,9077409062508.7,0,0,0,0-.18s0-.06,0-.08a.28.28,0,0,1,0-.09s0-.06,0-.09a.28.28,0,0,0,0-.09.28.28,0,0,0,0-.09v-.09a.38.38,0,0,0,0-.1V10A3.6,3.6,0,0,1,10,6.44Zm0,2.91h2a.64.64,0,0,1,.64.63h0a.64.64,0,0,1-.64.63H10A.63.63,0,0,1,9.38,10h0A.63.63,0,0,1,10,9.35Zm0,4h4a.64.64,0,0,1,.64.63h0a.64.64,0,0,1-.64.63H10A.63.63,0,0,1,9.38,14h0a.63.63,0,0,1,.63-.63Z"></path></g></g>
-						</svg>
-					</a>
-					<!-- // blog -->
-					<!-- kakao -->
-					<a class="social_link--fc kakao--fc d-none" href="/" target="_blank_" data-tooltip-text="카카오톡"> 
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<g>
-								<polygon points="10.077,11.555 10.899,11.555 10.899,11.555 10.489,10.385 	"></polygon>
-							</g>
-						</svg>
-					</a>
-					<!-- // kakao -->
-				</div>
-			</div>
-		</div>
-		<footer id="footer">
-			<div class="footer-bottom-wrap">
-				<div class="footer-bottom">
-					<div class="footer-left">
-						<a href="/" class="footer-logo">
-						<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_footer.png" alt="sp systems Logo"></a>
-					</div>
-					<div class="footer-right">
-						<div class="footer-contact">
-							<address>
-								<span class="tit">내담C&C | 2017 © (주)내담C&C all right reserved.</span> 
-								<span>주소: 경기도 성남시 분당구 판교역로 231, 에스동 711호 (삼평동, 에이치스퀘어)</span> 
-								<span>TEL : 031-712-8315</span>
-								<span>FAX : 031-789-3545</span>
-								<br class="mb_none"> 
-								<span>사업자등록번호 : 129-86-24627</span> 
-							</address>
-						</div>
-						<p class="footer-copy">COPYRIGHT(C) NaeDam., LTD. ALL RIGHTS RESERVED.</p>
-					</div>
-				</div>
-			</div>
+		<!-- 공통 footer -->
+      <div>
+        <footer id="footer">
+          <button type="button" class="btn-scroll-top">
+            <span class="blind">Top</span>
+          </button>
+          <div class="inner">
+            <div class="footer-menu">
+              <ul>
+                <li class="point">
+                  <a href="/util/privacy_statement">개인정보처리방침</a>
+                </li>
+                <li>
+                  <a href="https://ethics.cj.net/whistles/regist?target=tab01!gvnfAnonymous&amp;locale=ko&amp;cpc=E10BU" target="_blank" title="새창으로 보기">
+                  	온라인제보
+                  <span class="outlink"></span>
+                  </a>
+                </li>
+                <li><a href="/util/legal_notice">법적고지</a></li>
+                <li><a href="/util/email_reject">이메일 무단수집거부</a></li>
+              </ul>
+              <ul>
+                <li>
+                  <a href="/util/billing_agreement">통신과금서비스 이용약관</a>
+                </li>
+                <li><a href="/util/eft_agreement">전자금융거래 이용약관</a></li>
+                <li>
+                  <a href="/util/sugarpay_agreement"
+                    >슈가페이 서비스 이용약관</a
+                  >
+                </li>
+                <li><a href="/util/pg_faq">결제대행서비스 FAQ</a></li>
+                <li><a href="/util/sitemap">사이트맵</a></li>
+              </ul>
+            </div>
 
-		</footer>
+            <div class="footer-policy">
+              <a
+                href="https://www.youtube.com/channel/UCz-j1tzeMCqvOX0YNkOXIAw"
+                class="common-btn is-white2 btn-youtube"
+                target="_blank"
+                title="새 창으로 보기"
+              >
+                <span>유튜브</span><i class="icon"></i>
+              </a>
 
+              <div class="select_policy">
+                <h2>
+                  <a href="#cjWebSite">CJ그룹 계열사 바로가기</a>
+                </h2>
+                <div id="cjWebSite" class="companyGroup">
+                  <ul>
+                    <li>
+                      <p class="title">CJ그룹</p>
+                      <ul>
+                        <li class="pc_show">
+                          <a
+                            href="http://www.cj.net"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ주식회사</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="http://m.cj.net/index.asp"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ주식회사</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p class="title">식품 &amp; 식품서비스</p>
+                      <ul>
+                        <li class="pc_show">
+                          <a
+                            href="https://www.cj.co.kr/kr/index"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ제일제당</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="https://m.cj.co.kr/kr/index"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ제일제당</a
+                          >
+                        </li>
 
+                        <li class="pc_show">
+                          <a
+                            href="https://www.cjfoodville.co.kr/main.asp"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ푸드빌</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="http://m.cjfoodville.co.kr/"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ푸드빌</a
+                          >
+                        </li>
 
+                        <li class="pc_show">
+                          <a
+                            href="http://www.cjfreshway.com/index.jsp"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ프레시웨이</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="http://m.cjfreshway.com/index.jsp"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ프레시웨이</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p class="title">생명공학</p>
+                      <ul>
+                        <li class="pc_show">
+                          <a
+                            href="https://www.cj.co.kr/kr/about/business/bio"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ제일제당 (바이오)</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="https://m.cj.co.kr/kr/about/business/bio"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ제일제당 (바이오)</a
+                          >
+                        </li>
 
-		<!-- 퀵메뉴 -->
+                        <li class="pc_show">
+                          <a
+                            href="https://www.cj.co.kr/kr/about/business/bio"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ Feed&amp;Care</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="https://m.cj.co.kr/kr/about/business/bio"
+                            target="_blank"
+                            title="새창으로 보기"
+                            >CJ Feed&amp;Care</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p class="title">물류 &amp; 신유통</p>
+                      <ul>
+                        <li>
+                          <a
+                            href="https://www.cjlogistics.com/ko/main"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ대한통운</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="http://www.cjenc.co.kr/kr/Default.asp"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ대한통운 (건설)</a
+                          >
+                        </li>
 
-		<!-- quick-menu wrap -->
-		<div id="quickMenuWrap">
-			<ul class="quick-menu">
-				<li class="quick-menu__item head">
-					<p class="item-inner">
-						<span>
-							<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_footer.png">
-						</span>
-					</p>
-				</li>
-				<!-- 모바일용 카톡상담 -->
-				<li class="quick-menu__item kakao for-mb mb-use">
-					<a class="item-inner" href="http://pf.kakao.com/_lsLMb/chat">
-						<p class="quick-menu__item-caption">
-							<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/img_quick_m_kakao.png">
-						</p>
-					</a>
-				</li>
-				<!-- 모바일용 카톡상담 -->
-				<li class="quick-menu__item mb-use">
-					<a class="item-inner" href="/service-center/request-for-consultation"> 
-						<span class="quick-menu__item-ico"> 
-							<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/img_quick_m_qna.png">
-						</span>
-						<p class="quick-menu__item-caption">상담신청</p>
-					</a>
-				</li>
-				<li class="quick-menu__item">
-					<a class="item-inner" href="/service-center/contact-us"> 
-						<span class="quick-menu__item-ico"> 
-							<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/img_quick_m_mouse.png">
-						</span>
-						<p class="quick-menu__item-caption">문의하기</p>
-					</a>
-				</li>
-				<li class="quick-menu__item">
-					<a class="item-inner" href="/about-the-academy/way-to-come"> 
-						<span class="quick-menu__item-ico"> 
-							<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/img_quick_m_pin.png">
-						</span>
-						<p class="quick-menu__item-caption">오시는길</p>
-					</a>
-				</li>
-				<li class="quick-menu__item tel mb-use">
-					<a class="item-inner" href="tel:070.8240.3211">
-						<span class="quick-menu__item-ico"> 
-							<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/img_quick_m_tel.png">
-						</span>
-						<p class="quick-menu__item-caption">
-							문의전화 <span class="quick-tel-num">031.712.8315</span>
-						</p>
-					</a>
-					<p class="item-inner quick-tel-desc">
-						<span class="tit">평일</span> <span>09:00~18:00</span>
-					</p>
-				</li>
+                        <li class="pc_show">
+                          <a
+                            href="https://www.oliveyoung.co.kr/store/company/brandStory.do"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ올리브영</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="https://m.oliveyoung.co.kr/"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ올리브영</a
+                          >
+                        </li>
 
-				<li class="quick-menu__item sns">
-					<div class="item-inner">
-						<a href="http://pf.kakao.com/_lsLMb/chat" target="_blank" title="tweeter">
-						<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/img_quick_m_kakao.png">카톡문의</a>
-					</div>
-				</li>
-			</ul>
-			<!-- //quick-menu -->
-			<p class="quick-top-btn">
-				<span>TOP</span>
-			</p>
-		</div>	
+                        <li class="pc_show">
+                          <a
+                            href="https://www.cjolivenetworks.co.kr/"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ올리브네트웍스</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="https://m.cjolivenetworks.co.kr/"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ올리브네트웍스</a
+                          >
+                        </li>
+
+                        <li class="pc_show">
+                          <a
+                            href="https://company.cjonstyle.com/index.asp"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ ENM 커머스부문</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="https://company.cjonstyle.com/mobile/index.asp"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ ENM 커머스부문</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <p class="title">엔터테인먼트 &amp; 미디어</p>
+                      <ul>
+                        <li>
+                          <a
+                            href="https://www.cjenm.com/ko/"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ ENM 엔터테인먼트부문</a
+                          >
+                        </li>
+
+                        <li class="pc_show">
+                          <a
+                            href="http://corp.cgv.co.kr/"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ CGV</a
+                          >
+                        </li>
+                        <li class="mo_show">
+                          <a
+                            href="http://m.cgv.co.kr/"
+                            target="_blank"
+                            title="새 창으로 보기"
+                            >CJ CGV</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="select_policy">
+                <h2>
+                  <a href="#familySite">Family Site</a>
+                </h2>
+                <div id="familySite" class="companyGroup">
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.cjone.com"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >CJ ONE</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.youtube.com/user/CJONEcard"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >원스터와 아이들</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://www.elissone.com"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >ELiSSOne</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.cjmplace.com"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >mplace</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://www.cmpcollab.com/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >CollaB</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://maxonomy.net/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >Maxonomy</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://www.all-dt4u.com/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >GridGain</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.workscan.net/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >WORKSCAN</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.youtube.com/channel/UCVOdl1J_3KqTMhU5D90ulEQ"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >AI연구소 유튜브</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://devinn.dev/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >Dev.Inn 기술블로그</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://aicenter.cj.net/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >CJ AI Center</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://cafe.naver.com/cjunit"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >SW창의캠프 네이버카페</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.instagram.com/cjsw.unit/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >SW창의캠프 인스타그램</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.hubpot.co.kr/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >허브팟</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="http://www.diware.co.kr/"
+                        target="_blank"
+                        title="새 창으로 보기"
+                        >디아이웨어</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <address>
+              <span class="line">내담씨앤씨(주)</span>
+              <span class="line">사업자번호 : 129-86-24627</span
+              ><br class="show_1024" />
+              <span>대표 : 한창엽</span><br class="hide_1024" />
+              <span>주소 : 경기도 성남시 분당구 판교역로 231, 에스동 711호 (삼평동, 에이치스퀘어)</span><br />
+              <span class="line">대표전화 : 031-712-8315</span>
+              <span>팩스번호 : 031-789-3545</span>
+            </address>
+            <p class="copyright">© CJ OLIVENETWORKS. All Rights Reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div
+      style="
+        left: -1000px;
+        overflow: scroll;
+        position: absolute;
+        top: -1000px;
+        border: none;
+        box-sizing: content-box;
+        height: 200px;
+        margin: 0px;
+        padding: 0px;
+        width: 200px;
+      "
+    >
+      <div
+        style="
+          border: none;
+          box-sizing: content-box;
+          height: 200px;
+          margin: 0px;
+          padding: 0px;
+          width: 200px;
+        "
+      ></div>
+    </div>

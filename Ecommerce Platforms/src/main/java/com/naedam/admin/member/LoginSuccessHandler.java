@@ -73,8 +73,8 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
 		log.debug("ip = {}", ip);
 		paramHistory.put("accessHistoryIp", ip);
 		
-		int resultAccessHistoryByLogin = securityService.insertAccessHistoryByLogin(paramHistory);
-		log.debug("resultAccessHistoryByLogin = {}", resultAccessHistoryByLogin);
+		//int resultAccessHistoryByLogin = securityService.insertAccessHistoryByLogin(paramHistory);
+		//log.debug("resultAccessHistoryByLogin = {}", resultAccessHistoryByLogin);
 		
 		//int resultloginAccessHistory = securityService.insertLoginAccessHistory(paramHistory);
 		
