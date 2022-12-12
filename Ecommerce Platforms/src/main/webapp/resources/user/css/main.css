@@ -645,6 +645,29 @@ h4 {
   width: 600%;
   height: 600%;
 }
+.core-wrap .core-list .solution {
+  position: absolute;
+  top: -600px;
+  right: -472px;
+  width: 200%;
+  height: 600%;
+}
+
+.core-wrap .core-list .cunsulting {
+  position: absolute;
+  top: -150%;
+  right: -355px;
+  width: 166%;
+  height: 397%;
+}
+
+.core-wrap .core-list .si {
+  position: absolute;
+  top: -150%;
+  left: -14%;
+  width: 166%;
+  height: 397%;
+}
 
 .core-wrap .core-list .ai {
   width: 550px;
@@ -738,103 +761,114 @@ h4 {
 .core-wrap svg path {
   transition-timing-function: ease-in-out;
 }
-.core-wrap .ai #aiPath1 {
+.core-wrap .ai #naedamPath1 {
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2300;
+}
+.core-wrap .ai #naedamPath2 {
   stroke-dasharray: 1240;
   stroke-dashoffset: 1240;
 }
-.core-wrap .ai #aiPath2 {
-  stroke-dasharray: 530;
-  stroke-dashoffset: 530;
+.core-wrap .ai #naedamPath3 {
+  stroke-dasharray: 3240;
+  stroke-dashoffset: 2840;
+}
+.core-wrap .ai #naedamPath4 {
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2240;
+}
+.core-wrap .ai #naedamPath5 {
+  stroke-dasharray: 1640;
+  stroke-dashoffset: 1440;
+}
+.core-wrap .ai #naedamPath6 {
+  stroke-dasharray: 3440;
+  stroke-dashoffset: 3240;
 }
 .core-wrap .big-data #bigPath1 {
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1400;
 }
 .core-wrap .big-data #bigPath2 {
-  stroke-dasharray: 398;
-  stroke-dashoffset: 398;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1000;
 }
 .core-wrap .big-data #bigPath3 {
-  stroke-dasharray: 1004;
-  stroke-dashoffset: 1004;
+  stroke-dasharray: 2150;
+  stroke-dashoffset: 1800;
 }
 .core-wrap .big-data #bigPath4 {
-  stroke-dasharray: 774;
-  stroke-dashoffset: 774;
+  stroke-dasharray: 2200;
+  stroke-dashoffset: 1800;
 }
 .core-wrap .big-data #bigPath5 {
-  stroke-dasharray: 804;
-  stroke-dashoffset: 804;
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1200;
 }
 .core-wrap .big-data #bigPath6 {
-  stroke-dasharray: 756;
-  stroke-dashoffset: 756;
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1200;
 }
 .core-wrap .big-data #bigPath7 {
-  stroke-dasharray: 804;
-  stroke-dashoffset: 804;
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1200;
+}
+.core-wrap .big-data #bigPath8 {
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1400;
+}
+.core-wrap .big-data #bigPath9 {
+  stroke-dasharray: 2150;
+  stroke-dashoffset: 1800;
+}
+.core-wrap .big-data #bigPath10 {
+  stroke-dasharray: 2150;
+  stroke-dashoffset: 1800;
 }
 .core-wrap .blockchain #blockPath1 {
-  stroke-dasharray: 774;
-  stroke-dashoffset: 774;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 3400;
 }
 .core-wrap .blockchain #blockPath2 {
-  stroke-dasharray: 516;
-  stroke-dashoffset: 516;
-}
-.core-wrap .blockchain #blockPath3 {
-  stroke-dasharray: 554;
-  stroke-dashoffset: 554;
-}
-.core-wrap .blockchain #blockPath4 {
-  stroke-dasharray: 772;
-  stroke-dashoffset: 772;
-}
-.core-wrap .blockchain #blockPath5 {
-  stroke-dasharray: 524;
-  stroke-dashoffset: 524;
-}
-.core-wrap .blockchain #blockPath6 {
-  stroke-dasharray: 772;
-  stroke-dashoffset: 772;
-}
-.core-wrap .blockchain #blockPath7 {
-  stroke-dasharray: 1008;
-  stroke-dashoffset: 1008;
-}
-.core-wrap .blockchain #blockPath8 {
-  stroke-dasharray: 778;
-  stroke-dashoffset: 778;
-}
-.core-wrap .blockchain #blockPath9 {
-  stroke-dasharray: 392;
-  stroke-dashoffset: 392;
-}
-.core-wrap .blockchain #blockPath10 {
-  stroke-dasharray: 888;
-  stroke-dashoffset: 888;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1400;
 }
 .core-wrap .cloud #cloudPath1 {
-  stroke-dasharray: 1070;
-  stroke-dashoffset: 1070;
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2200;
 }
 .core-wrap .cloud #cloudPath2 {
-  stroke-dasharray: 506;
-  stroke-dashoffset: 506;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1200;
 }
 .core-wrap .cloud #cloudPath3 {
-  stroke-dasharray: 548;
-  stroke-dashoffset: 548;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 1800;
 }
 .core-wrap .cloud #cloudPath4 {
-  stroke-dasharray: 874;
-  stroke-dashoffset: 874;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1300;
 }
 .core-wrap .cloud #cloudPath5 {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 1800;
+}
+.core-wrap .cloud #cloudPath6 {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1200;
+}
+.core-wrap .cloud #cloudPath7 {
   stroke-dasharray: 760;
   stroke-dashoffset: 760;
 }
-
+.core-wrap .cloud #cloudPath8 {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1400;
+}
+.core-wrap .cloud #cloudPath9 {
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2200;
+}
 /* aos */
 .core-wrap .bg-text[data-aos="svg-stroke"] {
   opacity: 0;
