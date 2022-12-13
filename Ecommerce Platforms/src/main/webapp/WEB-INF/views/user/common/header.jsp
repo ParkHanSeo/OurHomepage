@@ -1,4 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<script type="text/javascript">
+	$.ajax({
+		url : "/user/comm/json/menuHeaderList" ,
+		method : "GET" ,
+		dataType : "JSON" , 
+		headers : {
+			"Accept" : "application/json",
+			"Content-Type" : "application/json"
+		},
+		success : function(data, status){
+			var menu = data.list;
+			var menu2 = data.list2;
+			var display = '';
+			for(var i = 0; i < menu.length; i++){
+				if(menu[i].status != 'n'){
+					display = "<li class>"
+							+ " <a href='"+menu[i].url+"'>"+menu[i].title+"</a>"
+							+ "  <section class='sub sub-menu"+(i+1)+"'>"
+							+ "   <div class='sub-wrap'>"
+							+ "   <ul class='sub-2depth'>"							
+							for(var j = 0; j < data.list2.length; j++){
+								if(data.list[i].code == data.list2[j].originNo && menu2[j].status != 'n'){
+									display	+= "<li><a href='"+menu2[j].url+"'>"+menu2[j].title+"</a></li>"
+											
+								}
+							}
+					display	+= '  </ul>'
+						    + '   </div>'
+						    + '  </section>'
+						    + '</li>';
+					$('#menuHeader').append(display)
+				}
+			}
+		}
+	})	
+</script>
       <!-- 공통 header -->
       <header id="header" class="root">
         <div class="inner">
@@ -9,69 +45,7 @@
           </h1>
           <nav class="gnb-wrap">
 					<ul id="menuHeader">
-						<li class=""><a href="/company/overview">소개</a>
-							<section class="sub sub-menu1">
-								<div class="sub-wrap">
-									<ul class="sub-2depth">
-										<li><a href="/company/overview">소개</a></li>
-										<li><a href="/company/ceo_greeting">리더십</a></li>
-										<li><a href="/company/history">히스토리</a></li>
-										<li><a href="/company/location">위치</a></li>
-									</ul>
-								</div>
-							</section></li>
-						<li class=""><a href="/user/company/businessList">회사소개</a>
-							<section class="sub sub-menu2">
-								<div class="sub-wrap">
-									<ul class="sub-2depth">
-										<li><a href="/user/company/businessList">사업개요</a></li>
-										<li><a href="/user/company/ceoList">CEO 메시지</a></li>
-										<li><a href="/user/company/divisionList">사업부 소개</a></li>
-										<li><a href="/user/company/historyList">연혁</a></li>
-										<li><a href="/user/company/ciList">CI</a></li>
-										<li><a href="/user/company/directionsList">오시는 길</a></li>
-									</ul>
-								</div>
-							</section></li>
-						<li class=""><a href="/user/introduction/solutionList">사업소개</a>
-							<section class="sub sub-menu3">
-								<div class="sub-wrap">
-									<ul class="sub-2depth">
-										<li><a href="/user/introduction/solutionList">Solution</a></li>
-										<li><a href="/user/introduction/consultingList">컨설팅</a></li>
-										<li><a href="/user/introduction/siList">SI</a></li>
-									</ul>
-								</div>
-							</section></li>
-						<li class=""><a href="/user/partner/partnerShipList">파트너</a>
-							<section class="sub sub-menu4">
-								<div class="sub-wrap">
-									<ul class="sub-2depth">
-										<li><a href="/user/partner/partnerShipList">Partner
-												Ship</a></li>
-										<li><a href="/user/partner/partnerList">Partner</a></li>
-									</ul>
-								</div>
-							</section></li>
-						<li class=""><a href="인재정보2">인재정보</a>
-							<section class="sub sub-menu5">
-								<div class="sub-wrap">
-									<ul class="sub-2depth">
-										<li><a href="채용안내">채용안내</a></li>
-										<li><a href="인재상">인재상</a></li>
-										<li><a href="인사제도">인사제도</a></li>
-									</ul>
-								</div>
-							</section></li>
-						<li class=""><a href="/user/notice/noticeList">공지사항</a>
-							<section class="sub sub-menu6">
-								<div class="sub-wrap">
-									<ul class="sub-2depth">
-										<li><a href="/user/notice/irList">IR 자료</a></li>
-										<li><a href="/user/notice/etcDataList">기타 자료</a></li>
-									</ul>
-								</div>
-							</section></li>
+						
 					</ul>
 				</nav>
 

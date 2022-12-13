@@ -320,7 +320,7 @@
 						</a>
 						<ul class="treeview-menu" id="serviceMenu" >
 							<li>
-								<a href="/admin/board/listBoard">
+								<a href="/admin/service/getServiceList">
 									<i class="fa fa-circle-o"></i> 리스트
 								</a>
 							</li>
