@@ -106,11 +106,11 @@ var mainSlider = (function ($) {
 
       $btn.on("click", function () {
         if ($(this).hasClass("is-pause")) {
-          $(this).removeClass("is-pause").text("�뺤�");
+          $(this).removeClass("is-pause").text("정지");
           slideControl($slider.find(".swiper-slide-active").index());
           $timer.addClass("active");
         } else {
-          $(this).addClass("is-pause").text("�쒖옉");
+          $(this).addClass("is-pause").text("시작");
           $timer.stop().removeAttr("style").removeClass("active");
         }
       });

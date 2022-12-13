@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
       <!-- 공통 header -->
-      <header id="header">
+      <header id="header" class="root">
         <div class="inner">
           <h1 class="logo">
             <a href="${pageContext.request.contextPath}/user/dashBoard">

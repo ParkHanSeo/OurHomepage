@@ -20,7 +20,7 @@
       var businessDetail_num = "";
     </script>
     <script src="//rum.beusable.net/script/checker/b200701e124559u075/dc76114514?url=https%3A%2F%2Fwww.cjolivenetworks.co.kr%2F" async="" type="text/javascript"></script>
-<!-- 	<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$.ajax({
 		url : "/user/comm/json/menuHeaderList" ,
 		method : "GET" ,
@@ -76,13 +76,13 @@
             </p>
 
             <div class="hash_area search_tag">
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','AI')" class="hash_tag">#AI</a> 
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','블록체인')" class="hash_tag">#블록체인</a>
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','NFT')" class="hash_tag" >#NFT</a> 
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','빅데이터')" class="hash_tag">#빅데이터</a> 
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','클라우드')" class="hash_tag">#클라우드</a>
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','CJONE')" class="hash_tag">#CJONE</a>
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','데이터마케팅')" class="hash_tag">#데이터마케팅</a>
+				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','AI')" class="hash_tag">#내담</a> 
+				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','블록체인')" class="hash_tag">#주요사업</a>
+				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','NFT')" class="hash_tag" >#비전</a> 
+				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','빅데이터')" class="hash_tag">#솔루션</a> 
+				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','클라우드')" class="hash_tag">#SI사업</a>
+				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','CJONE')" class="hash_tag">#채용안내</a>
+				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','데이터마케팅')" class="hash_tag">#오시는길</a>
 			</div>
           </div>
           <a href="" class="btn_close_search">
@@ -573,38 +573,36 @@
 							</div>
 							<div class="service-list-wrap">
 								<ul class="service-list">
-									<li class="factory-one aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear"><a
-										href="/business/ai_factory_solution">
-											<h3 class="tit-label">FactoryOne</h3>
-											<h4 class="tit">AI팩토리</h4>
+									<li class="factory-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										<a href="/business/ai_factory_solution">
+											<h3 class="tit-label">Digital Twin</h3>
+											<h4 class="tit">산업 데이터 모니터링</h4>
 											<p class="description">
-												제조 현장의 최적 운영을 위한<br /> 스마트 팩토리 구축 서비스
+												설계에서 제조 및 건설, 운영 및 유지 관리<br /> 가상의 트윈 사용자의 문제를 미리 예방한다.
 											</p>
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
 											</p>
-									</a></li>
-									<li class="eliss-one aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear"><a
-										href="/business/ai_logistics">
-											<h3 class="tit-label">ELissOne</h3>
-											<h4 class="tit">AI로지스틱스</h4>
+										</a>
+									</li>
+									<li class="eliss-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										<a href="/business/ai_logistics">
+											<h3 class="tit-label">Vision AI</h3>
+											<h4 class="tit">객체 인식 및 분석</h4>
 											<p class="description">
-												물류 생산성과 효율성을 높이는<br /> 스마트 물류센터 구축 서비스
+												인공지는 서비스 제공<br /> 이미지 분류 및 사고예방
 											</p>
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
 											</p>
-									</a></li>
+										</a>
+									</li>
 									<li class="cj-one-ad aos-init" data-aos="fade-up"
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear"><a
 										href="/business/cj_one_ad">
-											<h3 class="tit-label">CJ ONE AD</h3>
-											<h4 class="tit">CJ ONE AD</h4>
+											<h3 class="tit-label">PLM</h3>
+											<h4 class="tit">Rule & Process 기반 시스템 구축</h4>
 											<p class="description">
 												2,800만 회원 데이터를 활용한<br /> 타겟 맞춤형 광고 큐레이션 서비스
 											</p>
@@ -616,10 +614,10 @@
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear"><a
 										href="/business/smart_store_solution">
-											<h3 class="tit-label">OneOrder</h3>
-											<h4 class="tit">매장 통합관리 솔루션</h4>
+											<h3 class="tit-label">AMS</h3>
+											<h4 class="tit">설비자신의 최적 관리를 통한 가치창출</h4>
 											<p class="description">
-												스마트한 매장 관리를 위한<br /> 주문 통합 솔루션
+												자산관리로 관리영역 확장<br /> 수익 창출의 설비
 											</p>
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
@@ -629,10 +627,10 @@
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear"><a
 										href="/business/media_culture_spaces">
-											<h3 class="tit-label">Smart Culture Space</h3>
-											<h4 class="tit">스마트 컬처 스페이스</h4>
+											<h3 class="tit-label">MSP</h3>
+											<h4 class="tit">Cloud MSP 시스템 구축</h4>
 											<p class="description">
-												최신 디지털 경험을 선사하는<br /> 미디어 문화 공간 디자인
+												클라우드 인프라 이용<br /> 시스템 구축과 서비스 제공
 											</p>
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
@@ -642,10 +640,10 @@
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear"><a
 										href="/business/messaging_service">
-											<h3 class="tit-label">mplace</h3>
-											<h4 class="tit">통합 커뮤니케이션 플랫폼</h4>
+											<h3 class="tit-label">SCM</h3>
+											<h4 class="tit">인공지능, 머신러닝 SCM</h4>
 											<p class="description">
-												데이터와 API 플랫폼을 활용한<br /> 고객 맞춤형 커뮤니케이션 채널
+												친환경 공급망<br /> 공급망의 투명성
 											</p>
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
@@ -656,25 +654,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="esg-wrap section">
-					<a href="/sustainability/compliance/ceo_practice">
-						<div class="inner_container">
-							<h2 class="tit">ESG</h2>
-							<p class="point-text">
-								<strong>우리는 지속 가능한 성장을 통해 함께하는
-									내일을 그려갑니다</strong>
-							</p>
-							<div class="btn-area">
-								<p class="common-btn is-black">
-									<span>자세히 보기</span><i class="icon link-arrow2"></i>
-								</p>
-							</div>
-						</div>
-					</a>
-				</div>
 				<div class="culture-wrap section">
 					<div class="inner_container">
-						<div class="section-title-area">
+<!-- 						<div class="section-title-area"> -->
 							<a href="/culture/people">
 								<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0"
 									data-aos-duration="250" data-aos-easing="linear">
@@ -700,31 +682,24 @@
 									data-aos-offset="0" data-aos-duration="250"
 									data-aos-delay="100" data-aos-easing="linear"
 									data-aos="fade-up">
-									<h3 class="tit">올네인 이야기</h3>
+									<h3 class="tit">내담의 비전</h3>
 									<p class="description">
-										“복지와 문화, 커리어를 모두<br /> 잡을 수 있는 회사라고 생각해요.”
+										고객사의 고객만족 및 내부 경쟁력 향상
+								  <br />IT Total Service Provider로의 성장 
 									</p>
 									<p class="btn-arrow is-black">
 										<span class="blind">자세히 보기</span>
 									</p>
 								</a>
 							</div>
-							<div class="is-right">
-								<a href="/recruit/job_notice" class="banner is-recruit aos-init"
-									data-aos-offset="0" data-aos-duration="250"
-									data-aos-delay="100" data-aos-easing="linear"
-									data-aos="fade-up">
-									<h3 class="tit">진행 중인 공고</h3>
-									<p class="description">
-										<span class="recruit-num" id="recruit-num">60</span> 건 진행 중
-									</p>
+							<div class="is-right"> 
+								<a href="/recruit/job_notice" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+									<h3 class="tit">채용 안내</h3>
 									<p class="btn-arrow is-black">
 										<span class="blind">자세히 보기</span>
 									</p>
-								</a> <a href="/culture/growth" class="banner is-growth aos-init"
-									data-aos-offset="0" data-aos-duration="250"
-									data-aos-delay="100" data-aos-easing="linear"
-									data-aos="fade-up">
+								</a> 
+								<a href="/culture/growth" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
 									<h3 class="tit">성장</h3>
 									<p class="description">
 										차세대 신기술 개발과<br /> 혁신의 중추적 역할을 해 나갈<br /> IT 기술 전문가를 양성합니다.

@@ -244,29 +244,6 @@
 							<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 						</a>
 					</li>
-					<li class="treeview">
-						<a href="#"> 
-							<i class="fa fa-shopping-cart"></i> <span>주문 관리</span> 
-							<i class="fa fa-angle-left pull-right"></i>
-						</a>
-						<ul class="treeview-menu">
-							<li>
-								<a href="${pageContext.request.contextPath }/admin/order/list">
-									<i class="fa fa-circle-o"></i> 주문 리스트
-								</a>
-							</li>
-							<li>
-								<a href="https://iniweb.inicis.com/security/login.do" target="_new">
-									<i class="fa fa-circle-o"></i> 이니시스 상점관리자
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/order/log_list">
-									<i class="fa fa-circle-o"></i> 카드결제로그 리스트
-								</a>
-							</li>
-						</ul>
-					</li>
 					<li class="treeview" id="menuManage">
 						<a href="#"> 
 							<i class="fa fa-file-text-o"></i> <span>메뉴 관리</span> 
@@ -288,11 +265,6 @@
 									<i class="fa fa-circle-o"></i> 하단 관리
 								</a>
 							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/menu/meta">
-									<i class="fa fa-circle-o"></i> 메타 관리
-								</a>
-							</li>
 						</ul>
 					</li>
 					<li class="treeview" id="boardManage">
@@ -304,29 +276,6 @@
 							<li>
 								<a href="/admin/board/listBoard">
 									<i class="fa fa-circle-o"></i> 리스트
-								</a>
-							</li>
-						</ul>
-					</li>
-					<li class="treeview" id="productManage">
-						<a href="${pageContext.request.contextPath }/admin/product/list"> 
-							<i class="fa fa-gift"></i> <span>제품</span> 
-							<i class="fa fa-angle-left pull-right"></i>
-						</a>
-						<ul class="treeview-menu">
-							<li>
-								<a href="${pageContext.request.contextPath }/admin/product/list">
-									<i class="fa fa-circle-o"></i> 리스트 
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath }/admin/product/category">
-									<i class="fa fa-circle-o"></i> 카테고리 
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath }/admin/product/option">
-									<i class="fa fa-circle-o"></i> 자주쓰는 옵션 관리 
 								</a>
 							</li>
 						</ul>
@@ -343,122 +292,49 @@
 								</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/member/withdrawalList.do">
-									<i class="fa fa-circle-o"></i> 탈퇴회원 리스트
-								</a>
-							</li>
-							<li>
 								<a href="${pageContext.request.contextPath}/admin/member/log">
 									<i class="fa fa-circle-o"></i> 회원 접속이력 관리
 								</a>
 							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/member/memberGrade.do">
-									<i class="fa fa-circle-o"></i> 등급 관리
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/member/point">
-									<i class="fa fa-circle-o"></i> 회원 적립금 관리
-								</a>
-							</li>
 						</ul>
 					</li>
-					<li class="" id="scheduleManage">
-						<a href="/admin/schedule/schedule"> 
-							<i class="fa fa-calendar"></i> <span>일정 관리</span>
-						</a>
-					</li>
-					<li class="treeview" id="statisticsManage">
+					<li class="treeview" id="employmentManage">
 						<a href="#"> 
-							<i class="fa fa-shopping-cart"></i> <span>통계</span> 
+							<i class="fa fa-user"></i> 
+							<span>채용 관리</span> 
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/statistics/periodProcess?type=D">
-									<i class="fa fa-circle-o"></i> 기간별 매출 통계 
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/statistics/product">
-									<i class="fa fa-circle-o"></i> 제품별 매출 통계 
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/statistics/member">
-									<i class="fa fa-circle-o"></i> 회원별 매출 통계 
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/statistics/address_day">
-									<i class="fa fa-circle-o"></i> 지역별 매출 통계 
+								<a href="${pageContext.request.contextPath}/admin/member/list.do">
+									<i class="fa fa-circle-o"></i> 채용
 								</a>
 							</li>
 						</ul>
-					</li>
-					<li class="treeview">
+					</li>		
+					<li class="treeview" id="solutionManage">
 						<a href="#"> 
-							<i class="fa fa-commenting"></i> <span>커뮤니티 관리</span> 
+							<i class="fa fa-user"></i> 
+							<span>서비스 관리</span> 
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
-						<ul class="treeview-menu">
+						<ul class="treeview-menu" id="serviceMenu" >
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/comm/email">
-									<i class="fa fa-circle-o"></i> 메일 설정
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/comm/emailList">
-									<i class="fa fa-circle-o"></i> 메일 발송 내역
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/comm/sms">
-									<i class="fa fa-circle-o"></i> SMS 설정
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/comm/smsList">
-									<i class="fa fa-circle-o"></i> SMS 발송 내역
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/comm/review">
-									<i class="fa fa-circle-o"></i> 주문후기 리스트
+								<a href="/admin/board/listBoard">
+									<i class="fa fa-circle-o"></i> 리스트
 								</a>
 							</li>
 						</ul>
-					</li>
+					</li>									
 					<li class="treeview">
 						<a href="#"> 
 							<i class="fa fa-gear"></i> <span>설정</span> 
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/setting/point">
-									<i class="fa fa-circle-o"></i> 적립금 관리
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/setting/coupon">
-									<i class="fa fa-circle-o"></i> 쿠폰 관리
-								</a>
-							</li>
-							<li id="popupManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/popup">
-									<i class="fa fa-circle-o"></i> 팝업 관리
-								</a>
-							</li>
 							<li id="mapManage">
 								<a href="${pageContext.request.contextPath }/admin/setting/map">
 									<i class="fa fa-circle-o"></i> 약도 관리
-								</a>
-							</li>
-							<li id="staffManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/staff.do">
-									<i class="fa fa-circle-o"></i> 임원 관리
 								</a>
 							</li>
 							<li id="historyManage">
@@ -476,46 +352,11 @@
 									<i class="fa fa-circle-o"></i> 약관 관리
 								</a>
 							</li>
-							<li>
-								<a href="${pageContext.request.contextPath }/admin/setting/delivery_setting">
-									<i class="fa fa-circle-o"></i> 배송 설정
-								</a>
-							</li>
-							<li id="companyManage">
-								<a href="${pageContext.request.contextPath }/admin/setting/delivery_company">
-									<i class="fa fa-circle-o"></i> 택배사 관리
-								</a>
-							</li>
 							<li id="infoManage">
 								<a href="${pageContext.request.contextPath}/admin/setting/info">
 									<i class="fa fa-circle-o"></i> 기본 설정
 								</a>
-							</li>
-							<li id="seoManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/seo">
-									<i class="fa fa-circle-o"></i> SEO 설정
-								</a>
-							</li>
-							<li id="paymentManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/paymentpg">
-									<i class="fa fa-circle-o"></i> 결제PG 설정
-								</a>
-							</li>
-							<li id="snsManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/snslogin">
-									<i class="fa fa-circle-o"></i> SNS 연동 설정
-								</a>
-							</li>
-							<li id="localeManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/locale">
-									<i class="fa fa-circle-o"></i> 다국어 번역
-								</a>
-							</li>
-							<li id="chattingManage" onclick="chattingPop()">
-								<a href="#">
-									<i class="fa fa-circle-o"></i> 채팅
-								</a>
-							</li>							
+							</li>					
 						</ul>
 					</li>
 					<li>

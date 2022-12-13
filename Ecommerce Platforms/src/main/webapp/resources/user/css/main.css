@@ -640,25 +640,25 @@ h4 {
 }
 .core-wrap .core-list .naedamcnc {
   position: absolute;
-  top: -600px;
-  right: -533px;
+  top: -400px;
+  right: -580px;
   width: 600%;
-  height: 600%;
+  height: 500%;
 }
 .core-wrap .core-list .solution {
   position: absolute;
   top: -600px;
-  right: -472px;
-  width: 200%;
+  right: -356px;
+  width: 168%;
   height: 600%;
 }
 
 .core-wrap .core-list .cunsulting {
   position: absolute;
-  top: -150%;
+  top: -97%;
   right: -355px;
-  width: 166%;
-  height: 397%;
+  width: 162%;
+  height: 320%;
 }
 
 .core-wrap .core-list .si {
