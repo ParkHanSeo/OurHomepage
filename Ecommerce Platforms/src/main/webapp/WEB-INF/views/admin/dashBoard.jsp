@@ -145,6 +145,7 @@
 			}
 		});	
 	})
+
 </script>
 
 <div class="content-wrapper">
