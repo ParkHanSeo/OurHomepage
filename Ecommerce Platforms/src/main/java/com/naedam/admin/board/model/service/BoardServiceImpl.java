@@ -39,14 +39,14 @@ public class BoardServiceImpl implements BoardService {
 		if("insert".equals(map.get("mode"))) {
 			boardDao.addBoard(board);
 			boardAuthority.setAuthorityBoard(board);
-			boardOption.setOptionBoard(board);
+			boardOption.setOptionBoard(board.getBoardNo());
 			boardDao.addAuthority(boardAuthority);
 			boardDao.addOption(boardOption);
 		//게시판 수정, 권한 수정, 옵션 수정
 		}else if("update".equals(map.get("mode"))) {
 			boardDao.updateBoard(board);
 			boardAuthority.setAuthorityBoard(board);
-			boardOption.setOptionBoard(board);
+			boardOption.setOptionBoard(board.getBoardNo());
 			boardDao.updateAuthority(boardAuthority);
 			boardDao.updateOption(boardOption);
 		//게시판 삭제

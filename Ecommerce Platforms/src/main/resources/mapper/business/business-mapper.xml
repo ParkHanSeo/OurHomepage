@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="business">
+
+	<insert id="addBusiness" parameterType="business" useGeneratedKeys="true" keyProperty="businessNo" keyColumn="business_no">
+		INSERT INTO business
+		(business_no,
+		 business_title,
+		 business_type,
+		 in_dtm)
+		VALUES
+		(NEXTVAL(seq_business_no),
+		 #{businessTitle : VARCHAR},
+		 #{businessType : VARCHAR},
+		 SYSDATE()
+		)
+		<selectKey keyProperty="businessNo" resultType="int" order="AFTER">
+			SELECT LASTVAL(seq_business_no) from dual
+		</selectKey>
+	</insert>
+	
+	<select id="getBusiness" resultType="business" parameterType="int">
+		SELECT 
+		tb1.*,
+		tb2.*
+		FROM business tb1, board_option tb2 
+		WHERE tb1.business_no = #{businessNo}
+		AND   tb1.business_no = tb2.board_no
+	</select>
+	
+	<select id="getBusinessList" resultType="business" parameterType="map">
+		SELECT * FROM business
+	</select>
+	
+	<update id="updateBusiness" parameterType="business">
+		UPDATE business
+		<set>
+			business_title = #{businessTitle},
+			business_type = #{businessType},
+			business_category = #{businessCategory}
+		</set>
+		WHERE business_no = #{businessNo}
+	</update>
+	
+	<delete id="deleteChoiceBusiness">
+		DELETE
+		FROM business
+		WHERE <foreach collection="list" item="businessNo" open="(" close=")" separator="or">
+				business_no = #{businessNo}
+			  </foreach>	
+	</delete>
+</mapper>

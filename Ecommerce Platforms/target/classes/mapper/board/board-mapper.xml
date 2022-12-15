@@ -256,7 +256,7 @@
 			   #{optionOrder : VARCHAR},
 			   #{optionAddinfo : VARCHAR},
 			   #{optionPopup : VARCHAR},
-			   #{optionBoard.boardNo : NUMERIC})	
+			   #{optionBoard : NUMERIC})	
 	</insert>	
 	
 	<insert id="addTranslate"	parameterType="boardTranslate">	

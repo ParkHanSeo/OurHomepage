@@ -135,10 +135,9 @@
 						}
 					}			
 				}
-			});	
-
+			});		
 			$.ajax({
-				url : "/admin/form/json/formList",
+				url : "/admin/business/json/getBusinessList",
 				method : "GET" ,
 				dataType : "json" ,
 				headers : {
@@ -150,15 +149,15 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/form/formPostList?formNo="+Data[i].formNo+">"
-									+ "<i class='fa fa-circle-o'></i> "+Data[i].title
+									+ "<a href=/admin/board/postList?boardNo="+Data[i].businessNo+">"
+									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle
 									+ "</a>"
 									+ "</li>"
-							$('#formMenu').append(display);
+							$('#businessMenu').append(display);
 						}
 					}			
 				}
-			});			
+			});					
 		}
 		
 		function chattingPop(){
@@ -315,12 +314,12 @@
 					<li class="treeview" id="solutionManage">
 						<a href="#"> 
 							<i class="fa fa-user"></i> 
-							<span>서비스 관리</span> 
+							<span>사업 관리</span> 
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
-						<ul class="treeview-menu" id="serviceMenu" >
+						<ul class="treeview-menu" id="businessMenu" >
 							<li>
-								<a href="/admin/service/getServiceList">
+								<a href="/admin/business/getBusinessList">
 									<i class="fa fa-circle-o"></i> 리스트
 								</a>
 							</li>
