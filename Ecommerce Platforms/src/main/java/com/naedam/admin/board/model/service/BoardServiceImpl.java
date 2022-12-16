@@ -121,7 +121,7 @@ public class BoardServiceImpl implements BoardService {
 					postName[i].transferTo(file2);
 					boardDao.addFile(boardFile);				
 				}
-			}else if(postName2.length != 0) {
+			}else if(postName2 != null) {
 				for(int i = 0; i < postName2.length; i++) {
 					boardFile.setFilePost(post);
 					boardFile.setFileName(postName2[i]);

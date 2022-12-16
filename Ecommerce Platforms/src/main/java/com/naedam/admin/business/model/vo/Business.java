@@ -3,6 +3,7 @@ package com.naedam.admin.business.model.vo;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.member.model.vo.Member;
 
 import lombok.AllArgsConstructor;
@@ -26,6 +27,7 @@ public class Business implements Serializable {
 	private String businessType;		//게시판 정보의 종류
 	private Member businessMemberNo;	//회원 데이터
 	private Date inDtm;
+	private BoardOption option;
 	private int count;
 	
 	

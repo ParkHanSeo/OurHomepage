@@ -8,6 +8,8 @@
     <title>내담씨앤씨</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/main.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/main.js"></script>
     <script>
       // url '+, &' 인코딩 처리
       function hashtagLink(url, param) {

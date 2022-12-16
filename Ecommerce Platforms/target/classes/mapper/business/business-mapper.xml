@@ -21,7 +21,45 @@
 		</selectKey>
 	</insert>
 	
-	<select id="getBusiness" resultType="business" parameterType="int">
+	<insert id="addBusinessPost" parameterType="businessPost" useGeneratedKeys="true" keyProperty="businessPostNo" keyColumn="BUSINESS_POST_NO">
+		INSERT
+		INTO business_post
+		(business_post_no,
+		 business_post_asc,
+		 business_no,
+		 business_post_title,
+		 business_post_contents,
+		 business_post_date,
+		 business_post_thombnail,
+		 business_post_viewcount,
+		 business_post_notice,
+		 business_post_origin_no,
+		 business_post_ord,
+		 business_post_layer,
+		 member_no)
+		VALUES
+		(NEXTVAL(seq_businessPost_no),
+	     NEXTVAL(allAsc_seq),
+	     #{business.businessNo},
+	     #{businessPostTitle},
+	     #{businessPostContents},
+	     <if test="businessPostDate == null or businessPostDate == ''">
+	   	  sysdate(),
+	     </if>
+	     <if test="businessPostDate != null">
+		  #{businessPostData : VARCHAR},
+	  	 </if>
+	  	 #{businessThombnail},
+	  	 0,
+	  	 0,
+	  	 LASTVAL(seq_businessPost_no),
+	  	 #{businessOrd},
+	  	 #{businessLayer},
+	  	 #{businessMember.memberNo}
+		)
+	</insert>
+	
+	<select id="getBusiness" parameterType="int" resultType="hashmap">
 		SELECT 
 		tb1.*,
 		tb2.*
@@ -30,8 +68,27 @@
 		AND   tb1.business_no = tb2.board_no
 	</select>
 	
+	<select id="getBusinessPost" parameterType="int" resultType="hashMap">
+		SELECT
+		*
+		FROM business_post
+		WHERE business_post_no = #{value}
+	</select>
+	
 	<select id="getBusinessList" resultType="business" parameterType="map">
 		SELECT * FROM business
+	</select>
+	
+	<select id="getBusinessPostList" resultType="hashmap" parameterType="map">
+		SELECT 
+		tb1.*
+		FROM business_post tb1 
+		LEFT OUTER JOIN business tb2
+		ON tb1.business_no = tb2.business_no
+		LEFT OUTER JOIN member tb3
+		ON tb1.member_no = tb3.member_no
+		WHERE tb1.business_no = #{businessNo}
+		ORDER BY tb1.business_post_asc ASC, tb1.business_post_ord ASC, tb1.business_post_layer ASC
 	</select>
 	
 	<update id="updateBusiness" parameterType="business">
@@ -44,11 +101,33 @@
 		WHERE business_no = #{businessNo}
 	</update>
 	
+	<update id="updateBusinessPost" parameterType="businessPost">
+		UPDATE business_post
+		<set>
+			business_post_title = #{businessPostTitle},
+			business_post_contents = #{businessPostContents},
+			business_post_thombnail = #{businessThomnail},
+			business_post_notice = #{businessPostNotice},
+			business_post_origin_no = #{businessOriginNo},
+			business_post_ord = #{businessOrd},
+			business_post_layer = #{businessLayer}
+		</set>
+		WHERE business_post_no = #{businessPostNo}
+	</update>
+	
 	<delete id="deleteChoiceBusiness">
 		DELETE
 		FROM business
 		WHERE <foreach collection="list" item="businessNo" open="(" close=")" separator="or">
 				business_no = #{businessNo}
+			  </foreach>	
+	</delete>
+	
+		<delete id="deleteChoiceBusinessPost">
+		DELETE
+		FROM business_post
+		WHERE <foreach collection="list" item="businessPostNo" open="(" close=")" separator="or">
+				business_post_no = #{businessPostNo}
 			  </foreach>	
 	</delete>
 </mapper>

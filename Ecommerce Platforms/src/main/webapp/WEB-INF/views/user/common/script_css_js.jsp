@@ -11,7 +11,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/jquery.scrollbar.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/language.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/main.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/script.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/swiper.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/ui.common.js"></script>
@@ -20,7 +19,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/component.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/jquery.scrollbar.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/main.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/swiper.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/swiper.min.css">

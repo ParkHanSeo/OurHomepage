@@ -36,7 +36,7 @@
 			<result property="optionOrder"			column="OPTION_ORDER"			jdbcType="VARCHAR"></result>
 			<result property="optionAddinfo"		column="OPTION_ADDINFO"			jdbcType="VARCHAR"></result>
 			<result property="optionPopup"			column="OPTION_POPUP"			jdbcType="VARCHAR"></result>
-			<result property="optionBoard.boardNo"		column="BOARD_NO"				jdbcType="NUMERIC"></result>
+			<result property="optionBoard"			column="BOARD_NO"				jdbcType="NUMERIC"></result>
 		</association>
 		
 	</resultMap>

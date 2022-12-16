@@ -18,7 +18,7 @@ public class NoticeController {
 		return mv;
 	}
 	
-	@RequestMapping(value="irDataList")
+	@RequestMapping(value="irList")
 	public ModelAndView irDataList(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("user/notice/irDataList");

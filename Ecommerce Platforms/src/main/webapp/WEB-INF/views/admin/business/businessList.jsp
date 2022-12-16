@@ -63,7 +63,7 @@
 			})	
 			//business 선택삭제 종료
 			
- 			// board 상세보기 시작
+ 			// business 상세보기 시작
 			$("button[name='updateBusiness']").on("click", function(){
 				
 				var businessNo = $(this).find('input').val();
@@ -76,37 +76,33 @@
 						"Content-Type" : "application/json"	 						
 					} ,
 					success : function(JSONData, status){
-						var a = JSONData.boardNo * 1
-						
-						$("#businessNo2").val(a);
-						$("#businessTitle2").val(JSONData.businessTitle);
-						$("#businessType2").val(JSONData.businessType);
-						$("#businessCategory2").val(JSONData.businessCategory);
-						if(JSONData.option.optionNotice == "y"){
+						$("#businessTitle2").val(JSONData.BUSINESS_TITLE);
+						$("#businessType2").val(JSONData.BUSINESS_TYPE);
+						if(JSONData.OPTION_NOTICE == "y"){
 							$("#optionNotice2").prop("checked", true)
 						}
-						if(JSONData.option.optionComment == "y"){
+						if(JSONData.OPTION_COMMENT == "y"){
 							$("#optionComment2").prop("checked", true)
 						}
-						if(JSONData.option.optionSecret == "y"){
+						if(JSONData.OPTION_SECRET == "y"){
 							$("#optionSecret2").prop("checked", true)
 						}
-						if(JSONData.option.optionAnswer == "y"){
+						if(JSONData.OPTION_ANSWER == "y"){
 							$("#optionAnswer2").prop("checked", true)
 						}
-						if(JSONData.option.optionCaptcha == "y"){
+						if(JSONData.OPTION_CAPTCHA == "y"){
 							$("#optionCaptcha2").prop("checked", true)
 						}
-						if(JSONData.option.optionMass == "y"){
+						if(JSONData.OPTION_MASS == "y"){
 							$("#optionMass2").prop("checked", true)
 						}
-						if(JSONData.option.optionOrder == "y"){
+						if(JSONData.OPTION_ORDER == "y"){
 							$("#optionOrder2").prop("checked", true)
 						}
-						if(JSONData.option.optionAddinfo == "y"){
+						if(JSONData.OPTION_ADDINFO == "y"){
 							$("#optionAddinfo2").prop("checked", true)
 						}
-						if(JSONData.option.optionPopup == "y"){
+						if(JSONData.OPTION_POPUP == "y"){
 							$("#optionPopup2").prop("checked", true)
 						}
 					}
@@ -203,7 +199,7 @@
 					                        </td>
 										  <td>${i}</td>
 										  <td align="left">${business.businessTitle}</td>
-										  <td align="left">http://localhost:8080/admin/board/postList?boardNo=${business.businessNo}]</td>
+										  <td align="left">http://localhost:8080/admin/board/postList</td>
 										  <td>
 											0
 										  </td>

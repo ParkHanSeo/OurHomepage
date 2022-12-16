@@ -149,7 +149,7 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/board/postList?boardNo="+Data[i].businessNo+">"
+									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+">"
 									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle
 									+ "</a>"
 									+ "</li>"

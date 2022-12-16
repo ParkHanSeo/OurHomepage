@@ -34,10 +34,6 @@
 					                </td>
 					            </tr>
 					            <tr>
-					                <td class="menu">카테고리</td>
-					                <td align="left" colspan="3"><input type="text" name="businessCategory" id="businessCategory2" class="form-control input-sm" placeholder=",(콤마)로 구분해 주세요"></td>
-					            </tr>
-					            <tr>
 					                <td class="menu">기타 옵션</td>
 					                <td align="left" colspan="3">
 						                <span class="option_tab"><input type="checkbox" name="optionNotice" id="optionNotice2" value="y">공지기능</span>
