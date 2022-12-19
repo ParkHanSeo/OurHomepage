@@ -24,12 +24,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.naedam.admin.member.model.service.MemberService;
 import com.naedam.admin.member.model.vo.MemberAccessHistoryListExcelForm;
 import com.naedam.admin.member.model.vo.MemberListExcelForm;
-import com.naedam.admin.order.model.service.OrderService;
-import com.naedam.admin.order.model.vo.OrderExcelForm;
-import com.naedam.admin.point.model.service.PointService;
-import com.naedam.admin.point.model.vo.MemberPointExcelForm;
-import com.naedam.admin.product.model.service.ProductService;
-import com.naedam.admin.product.model.vo.ProductExcelForm;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,19 +33,10 @@ import lombok.extern.slf4j.Slf4j;
 public class ExcelController {
 	
 	@Autowired
-	private OrderService orderService;
-	@Autowired
-	private ProductService productService;
-	@Autowired
-	private PointService pointService;
-	@Autowired
 	private MemberService memberService;
 	
 	private static final int WIDTH = 2800;
 
-    private final String[] orderHeader = {"순번", "주문번호", "상품명", "주문자", "연락처", "결제금액", "결제방법", "입금은행명", "예금주명", "수취인 성명", "수취인 연락처", "배송지 주소", "고객요청 사항", "상태"};
-    private final String[] productHeader = {"카테고리", "모델명", "상품명", "소제목", "요약", "소비자 가격", "가격", "상품옵션", "상세설명", "new아이템", "best아이템", "event아이템", "언어", "품절여부", "표출상태", "등록일자"};
-	private final String[] memberPointHeader = {"아이디", "이름", "이메일", "포인트 사용내역", "사용 포인트", "일시"};
 	private final String[] memberListHeader = {"아이디", "이름", "휴대폰", "이메일", "주소", "메모", "등급", "상태", "최근 접속일", "수정일자", "등록일자"};
 	private final String[] memberAccessHistoryListHeader = {"아이디", "이름", "접속 IP", "상태", "일시"};
 	
@@ -78,33 +63,7 @@ public class ExcelController {
 		Object[] data = null;
 		
 		// 주문 리스트 엑셀 다운로드
-		if(type.equals("order")) {
-			excelHeader = Arrays.asList(orderHeader);
-			sheet = wb.createSheet("order_list");
-			fileName += "order_list_" + dateCode();
-			List<OrderExcelForm> orderExcelFormList = orderService.selectOrderExcelForm();
-			for(OrderExcelForm o : orderExcelFormList) {
-				excelContentList.add(o);
-			}
-			
-		}else if(type.equals("product")) {
-			excelHeader = Arrays.asList(productHeader);
-			sheet = wb.createSheet("product_list");
-			fileName += "product_list_" + dateCode();
-			List<ProductExcelForm> productExcelFormList = productService.selectProductExcelForm();
-			for(ProductExcelForm p : productExcelFormList) {
-				excelContentList.add(p);
-			}
-		}else if(type.equals("memberPoint")) {
-			excelHeader = Arrays.asList(memberPointHeader);
-			sheet = wb.createSheet("member_point_history");
-			fileName += "member_point_history_" + dateCode();
-			// + 특정 회원 적립금 조회 가능
-			List<MemberPointExcelForm> MemberPointExcelFormList = pointService.selectMemberPointExcelForm(memberId);
-			for(MemberPointExcelForm p : MemberPointExcelFormList) {
-				excelContentList.add(p);
-			}
-		}else if(type.equals("memberList")) {
+		if(type.equals("memberList")) {
 			excelHeader = Arrays.asList(memberListHeader);
 			sheet = wb.createSheet("member_list");
 			fileName += "member_list_" + dateCode();

@@ -52,18 +52,19 @@ public class BusinessController {
 	}
 	
 	@PostMapping("businessPostProcess")
-	public String businessPostProcess(@ModelAttribute("business") Business business,
-									  @ModelAttribute("businessPost") BusinessPost businessPost,
-									  @RequestParam(value="businessPostName", required = false) MultipartFile[] businessPostName, @RequestParam(value="businessPostName", required = false) String[] businessPostName2, 
-									  @RequestParam(value="ThombnailName", required = false) MultipartFile ThombnailName, @RequestParam("secNo") String secNo, @RequestParam("mode") String mode,
-								      HttpServletRequest request) throws Exception{
+	public String businessPostProcess(@ModelAttribute("business") Business business
+									  ,@ModelAttribute("businessPost") BusinessPost businessPost
+									  ,@RequestParam(value="businessPostName", required = false) MultipartFile[] businessPostName  
+									  ,@RequestParam(value="ThombnailName", required = false) MultipartFile ThombnailName 
+									  ,@RequestParam("secNo") String secNo 
+									  ,@RequestParam("mode") String mode
+								      ,HttpServletRequest request) throws Exception{
 		String filePath = request.getServletContext().getRealPath("resources/imgs/imageBoard/board");	
 		Map<String, Object> businessPostMap	 = new HashMap<>();
 		businessPostMap.put("business", business);
 		businessPostMap.put("businessPost", businessPost);
 		businessPostMap.put("mode", mode);
 		businessPostMap.put("businessPostName", businessPostName);
-		businessPostMap.put("businessPostName2", businessPostName2);
 		businessPostMap.put("ThombnailName", ThombnailName);
 		businessPostMap.put("filePath", filePath);
 		businessPostMap.put("secNo", secNo);

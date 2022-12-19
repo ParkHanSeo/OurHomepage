@@ -8,19 +8,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.naedam.admin.banner.model.vo.Banner;
 import com.naedam.admin.category.model.vo.Category;
-import com.naedam.admin.coupon.model.vo.Coupon;
-import com.naedam.admin.delivery.model.vo.DeliveryCompany;
-import com.naedam.admin.delivery.model.vo.DeliveryNotice;
-import com.naedam.admin.delivery.model.vo.DeliverySetting;
-import com.naedam.admin.delivery.model.vo.Doseosangan;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.map.model.vo.Maps;
-import com.naedam.admin.point.model.vo.Point;
-import com.naedam.admin.point.model.vo.PointSave;
-import com.naedam.admin.point.model.vo.PointUse;
-import com.naedam.admin.popup.model.vo.Popup;
 import com.naedam.admin.setting.model.vo.AdminMenu;
 import com.naedam.admin.setting.model.vo.AdminSetting;
 import com.naedam.admin.setting.model.vo.Locale;
@@ -42,24 +32,6 @@ public class SettingDaoImpl implements SettingDao {
 	private SqlSession session;
 
 	@Override
-	public List<DeliveryCompany> selectDeliveryCompanyList() {
-		// TODO Auto-generated method stub
-		return session.selectList("setting.selectDeliveryCompanyList");
-	}
-
-	@Override
-	public DeliverySetting selectOneDeliverySetting() {
-		// TODO Auto-generated method stub
-		return session.selectOne("setting.selectOneDeliverySetting");
-	}
-
-	@Override
-	public List<Doseosangan> selectDoseosanganList() {
-		// TODO Auto-generated method stub
-		return session.selectList("setting.selectDoseosanganList");
-	}
-
-	@Override
 	public List<Maps> selectMapList() {
 		// TODO Auto-generated method stub
 		return session.selectList("setting.selectMapList");
@@ -72,45 +44,9 @@ public class SettingDaoImpl implements SettingDao {
 	}
 
 	@Override
-	public List<Banner> selectBannerList() {
-		// TODO Auto-generated method stub
-		return session.selectList("setting.selectBannerList");
-	}
-
-	@Override
 	public List<Category> selectMenuCteList() {
 		// TODO Auto-generated method stub
 		return session.selectList("setting.selectMenuCteList");
-	}
-
-	@Override
-	public List<Popup> selectPopupListByParam(Map<String, Object> param) {
-		// TODO Auto-generated method stub
-		return session.selectList("setting.selectPopupList", param);
-	}
-
-	@Override
-	public List<Coupon> selectCouponListByParam(Map<String, Object> param) {
-		// TODO Auto-generated method stub
-		return session.selectList("setting.selectCouponListByParam", param);
-	}
-
-	@Override
-	public Point selectPoint() {
-		// TODO Auto-generated method stub
-		return session.selectOne("setting.selectPoint");
-	}
-
-	@Override
-	public PointUse selectPointUse() {
-		// TODO Auto-generated method stub
-		return session.selectOne("setting.selectPointUse");
-	}
-
-	@Override
-	public PointSave selectPointSave() {
-		// TODO Auto-generated method stub
-		return session.selectOne("setting.selectPointSave");
 	}
 
 	@Override
@@ -132,21 +68,9 @@ public class SettingDaoImpl implements SettingDao {
 	}
 
 	@Override
-	public DeliveryNotice selectOneDeliveryNotice(String locale) {
-		// TODO Auto-generated method stub
-		return session.selectOne("setting.selectOneDeliveryNotice", locale);
-	}
-
-	@Override
 	public int updateAdminSetting(AdminSetting adminSetting) {
 		// TODO Auto-generated method stub
 		return session.update("setting.updateAdminSetting", adminSetting);
-	}
-
-	@Override
-	public int updateDeliveryNotice(DeliveryNotice deliveryNotice) {
-		// TODO Auto-generated method stub
-		return session.update("setting.updateDeliveryNotice", deliveryNotice);
 	}
 
 	@Override

@@ -511,8 +511,6 @@ input[type="search"] {
   border: 1px solid rgba(204, 204, 204, 0.5);
   font-size: 16px;
   color: rgba(255, 255, 255, 0.5);
-  font-family: "CJONLYONENEW", AppleGothic, Apple SD Gothic Neo, helvetica,
-    "돋움", Dotum, sans-serif;
 }
 
 input[type="tel"]:disabled,
@@ -536,8 +534,6 @@ textarea {
   appearance: none;
   border: 1px solid rgba(204, 204, 204, 0.5);
   font-size: 16px;
-  font-family: "CJONLYONENEW", AppleGothic, Apple SD Gothic Neo, helvetica,
-    "돋움", Dotum, sans-serif;
 }
 textarea::-webkit-input-placeholder {
   font-size: 16px;

@@ -331,24 +331,9 @@
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
-							<li id="mapManage">
-								<a href="${pageContext.request.contextPath }/admin/setting/map">
-									<i class="fa fa-circle-o"></i> 약도 관리
-								</a>
-							</li>
 							<li id="historyManage">
 								<a href="${pageContext.request.contextPath }/admin/setting/history">
 									<i class="fa fa-circle-o"></i> 연혁 관리
-								</a>
-							</li>
-							<li id="bannerManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/banner">
-									<i class="fa fa-circle-o"></i> 배너 관리
-								</a>
-							</li>
-							<li id="contractManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/contract">
-									<i class="fa fa-circle-o"></i> 약관 관리
 								</a>
 							</li>
 							<li id="infoManage">

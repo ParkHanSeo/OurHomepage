@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.naedam.admin.board.model.vo.Board;
-import com.naedam.admin.board.model.vo.BoardAuthority;
 import com.naedam.admin.board.model.vo.BoardComment;
 import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.BoardOption;

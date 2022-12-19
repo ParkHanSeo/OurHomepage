@@ -53,7 +53,6 @@ public class BusinessServiceImpl implements BusinessService {
 			businessPost.setBusinessMember(member);
 			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
 			MultipartFile[] businessPostName = (MultipartFile[]) map.get("businessPostName");
-			String[] businessPostName2 = (String[]) map.get("businessPostName2");
 			MultipartFile ThombnailName = (MultipartFile) map.get("ThombnailName");
 			File file = new File(map.get("filePath")+ThombnailName.getOriginalFilename());
 			if("insert".equals(map.get("mode"))) {

@@ -40,12 +40,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.naedam.admin.common.Mir9Utils;
-import com.naedam.admin.community.model.service.CommunityService;
-import com.naedam.admin.community.model.vo.EmailSetting;
-import com.naedam.admin.community.model.vo.SmsSetting;
-import com.naedam.admin.coupon.model.service.CouponService;
-import com.naedam.admin.coupon.model.vo.Coupon;
-import com.naedam.admin.coupon.model.vo.MemberCoupon;
 import com.naedam.admin.member.model.service.MemberService;
 import com.naedam.admin.member.model.vo.Address;
 import com.naedam.admin.member.model.vo.AddressBook;
@@ -56,8 +50,6 @@ import com.naedam.admin.member.model.vo.MemberEntity;
 import com.naedam.admin.member.model.vo.MemberGrade;
 import com.naedam.admin.member.model.vo.MemberMemo;
 import com.naedam.admin.member.model.vo.WithdrawalMemberEntity;
-import com.naedam.admin.point.model.service.PointService;
-import com.naedam.admin.point.model.vo.MemberPoint;
 
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;
@@ -72,9 +64,6 @@ public class MemberController {
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
-	
-	@Autowired
-	private CouponService couponService;
 	
 	/**
 	 * 회원 탈퇴
@@ -106,33 +95,6 @@ public class MemberController {
 		redirectAttribute.addFlashAttribute("msg", resultMap.get("msg"));
 		return (String)resultMap.get("return");
 			
-	}
-
-	@Autowired
-	private PointService pointService;
-	
-	/**
-	 * 회원 리스트 조회
-	 * @param cPage
-	 * @param model
-	 * @param request
-	 * @return
-	 */
-	@RequestMapping("/list.do")
-	public String memberList(@RequestParam(defaultValue = "1") int cPage, Model model, HttpServletRequest request) {
-		int limit = 10;
-		// 회원 리스트 전체 게시물 목록
-		Map<String, Object> resultMap = memberService.selectMemberList(cPage, limit, request.getRequestURI());
-		model.addAttribute("memberList", resultMap.get("memberList"));
-		// 전체 게시물 수
-		model.addAttribute("totalMemberListCount",resultMap.get("totalMemberListCount"));
-		// 명칭 가져오기
-		model.addAttribute("memberGradeList", resultMap.get("memberGradeList"));
-		// 쿠폰 리스트
-		model.addAttribute("couponList",resultMap.get("couponList"));
-		// pagebar
-		model.addAttribute("pagebar", resultMap.get("pagebar"));
-		return "admin/member/memberList";
 	}
 	
 	/**
@@ -405,7 +367,6 @@ public class MemberController {
 		// 전체 회원 포인트 목록 조회
 		Map<String, Object> resultMap = memberService.selectMemberPointListByParam(param);
 		model.addAttribute("mPointList",resultMap.get("mPointList"));
-		model.addAttribute("total", resultMap.get("totalPointCount"));
 		model.addAttribute("param",param);
 		model.addAttribute("pagebar", resultMap.get("pagebar"));
 		
@@ -444,7 +405,6 @@ public class MemberController {
 		// 전체 회원 포인트 목록 조회
 		Map<String, Object> resultMap = memberService.selectMemberPointListByParam(param);
 		model.addAttribute("mPointList",resultMap.get("mPointList"));
-		model.addAttribute("total", resultMap.get("totalPointCount"));
 		model.addAttribute("param",param);
 		model.addAttribute("pagebar", resultMap.get("pagebar"));
 		

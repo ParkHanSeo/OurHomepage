@@ -33,21 +33,16 @@ public class BoardServiceImpl implements BoardService {
 	public void boardProcess(Map<String, Object> map) throws Exception {
 		//기본 게시판 등록 실행 시 권한과 옵션도 같이 insert
 			Board board = (Board) map.get("board");
-			BoardAuthority boardAuthority = (BoardAuthority) map.get("boardAuthority");
 			BoardOption boardOption = (BoardOption) map.get("boardOption");
 		//게시판 등록, 권한 등록, 옵션 등록
 		if("insert".equals(map.get("mode"))) {
 			boardDao.addBoard(board);
-			boardAuthority.setAuthorityBoard(board);
 			boardOption.setOptionBoard(board.getBoardNo());
-			boardDao.addAuthority(boardAuthority);
 			boardDao.addOption(boardOption);
 		//게시판 수정, 권한 수정, 옵션 수정
 		}else if("update".equals(map.get("mode"))) {
 			boardDao.updateBoard(board);
-			boardAuthority.setAuthorityBoard(board);
 			boardOption.setOptionBoard(board.getBoardNo());
-			boardDao.updateAuthority(boardAuthority);
 			boardDao.updateOption(boardOption);
 		//게시판 삭제
 		}else if("delete".equals(map.get("mode"))) {

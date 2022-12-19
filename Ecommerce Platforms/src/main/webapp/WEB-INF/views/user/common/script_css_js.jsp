@@ -10,7 +10,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/aos.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/jquery.scrollbar.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/language.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/script.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/swiper.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/ui.common.js"></script>

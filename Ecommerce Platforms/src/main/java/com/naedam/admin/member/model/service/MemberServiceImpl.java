@@ -16,7 +16,6 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.naedam.admin.common.Mir9Utils;
-import com.naedam.admin.coupon.model.dao.CouponDao;
 import com.naedam.admin.member.model.dao.MemberDao;
 import com.naedam.admin.member.model.vo.Address;
 import com.naedam.admin.member.model.vo.AddressBook;
@@ -30,8 +29,6 @@ import com.naedam.admin.member.model.vo.MemberListExcelForm;
 import com.naedam.admin.member.model.vo.MemberMemo;
 import com.naedam.admin.member.model.vo.WithdrawalMember;
 import com.naedam.admin.member.model.vo.WithdrawalMemberEntity;
-import com.naedam.admin.point.model.dao.PointDao;
-import com.naedam.admin.point.model.vo.MemberPoint;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -40,10 +37,6 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDao memberDao;
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
-	@Autowired
-	private PointDao pointDao;
-	@Autowired
-	private CouponDao couponDao;
 	
 	// 회원관리 프로세스
 	public Map<String, Object> memberProcess(Map<String, Object> map) throws Exception{
@@ -255,7 +248,6 @@ public class MemberServiceImpl implements MemberService {
 			totalPoint = memberDao.selectMemberTotalPoint(memberNo);
 		} catch (Exception e) {}
 		resultMap.put("totalPoint", totalPoint);
-		resultMap.put("pointName",pointDao.selectPointName());
 		
 		return resultMap;
 	}
@@ -277,8 +269,6 @@ public class MemberServiceImpl implements MemberService {
 		resultMap.put("totalMemberListCount", memberDao.selectMemberListCount());
 		// 명칭 가져오기
 		resultMap.put("memberGradeList", memberDao.selectMemberGradeList());
-		// 쿠폰 리스트
-		resultMap.put("couponList", couponDao.selectCouponList());
 		// pagebar
 		resultMap.put("pagebar", Mir9Utils.getPagebar(cPage, limit, memberDao.selectMemberListCount(), url));
 		return resultMap;
@@ -403,29 +393,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public Authorities selectOneAuthorities(int memberNo) {
 		return memberDao.selectOneAuthorities(memberNo);
-	}
-	
-	// 회원 적립금 목록
-	@Override
-	public Map<String, Object> selectMemberPointListByParam(Map<String, Object> param) {
-		Map<String, Object> resultMap = new HashMap<>();
-		String pointAllUri = "";
-		if((param.get("field") == null || param.get("field") == "") && (param.get("keyword") == null || param.get("keyword") == "")) {
-			pointAllUri = (String)param.get("pointAllUri");
-		}else {
-			pointAllUri = (String)param.get("pointAllUri2");
-		}
-		resultMap.put("mPointList", memberDao.selectMemberPointListByParam(param));
-		resultMap.put("totalPointCount", memberDao.totalPointCount(param));
-		resultMap.put("param", param);
-		resultMap.put("pagebar", Mir9Utils.getPagebar((int)param.get("cPage"),(int)param.get("limit") , memberDao.totalPointCount(param), pointAllUri));
-		return resultMap;
-	}
-	
-	// 회원 적립금 목록 수 
-	@Override
-	public int totalPointCount(Map<String, Object> param) {
-		return memberDao.totalPointCount(param);
 	}
 
 	// 회원정보 수정(상세보기)
@@ -675,6 +642,12 @@ public class MemberServiceImpl implements MemberService {
 		resultMap.put("searchListCount", memberDao.selectSearchWithdrawalListCount(param));
 		resultMap.put("pagebar", Mir9Utils.getPagebarWithdrawal(cPage, limit, memberDao.selectSearchWithdrawalListCount(param), url));
 		return resultMap;
+	}
+
+	@Override
+	public Map<String, Object> selectMemberPointListByParam(Map<String, Object> param) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

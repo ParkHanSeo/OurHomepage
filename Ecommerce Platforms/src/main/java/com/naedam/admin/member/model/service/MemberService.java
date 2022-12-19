@@ -15,7 +15,6 @@ import com.naedam.admin.member.model.vo.MemberListExcelForm;
 import com.naedam.admin.member.model.vo.MemberMemo;
 import com.naedam.admin.member.model.vo.WithdrawalMember;
 import com.naedam.admin.member.model.vo.WithdrawalMemberEntity;
-import com.naedam.admin.point.model.vo.MemberPoint;
 
 public interface MemberService {
 	
@@ -81,9 +80,6 @@ public interface MemberService {
 	
 	// 회원 적립금 목록
 	Map<String, Object> selectMemberPointListByParam(Map<String, Object> param);
-
-	// 회원 적립금 목록 수
-	int totalPointCount(Map<String, Object> param);
 	
 	// 회원정보 수정(상세보기)
 	int memberUpdate(Member paramMember);

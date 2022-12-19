@@ -562,7 +562,7 @@
 											</p>
 										</a>
 									</li>
-									<li class="cj-one-ad aos-init" data-aos="fade-up"
+									<li class="nd-one-ad aos-init" data-aos="fade-up"
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear"><a
 										href="/business/cj_one_ad">

@@ -21,15 +21,6 @@ import com.naedam.admin.board.model.service.BoardService;
 import com.naedam.admin.board.model.vo.Board;
 import com.naedam.admin.member.model.service.MemberService;
 import com.naedam.admin.menu.model.service.MenuService;
-import com.naedam.admin.order.model.service.OrderService;
-import com.naedam.admin.order.model.vo.OrderDetail;
-import com.naedam.admin.order.model.vo.OrderStatus;
-import com.naedam.admin.payment.model.service.PaymentService;
-import com.naedam.admin.product.model.service.ProductService;
-import com.naedam.admin.product.model.vo.ProductDetail;
-import com.naedam.admin.statistics.model.service.StatisticsService;
-import com.naedam.admin.statistics.model.vo.BeforeYearStatisticVo;
-import com.naedam.admin.statistics.model.vo.PeriodStatisticVo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -40,17 +31,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HomeController {
 	@Autowired
-	private OrderService orderService;
-	@Autowired
-	private PaymentService paymentService;
-	@Autowired
 	private MemberService memberService;
 	@Autowired
 	private BoardService boardService;
-	@Autowired
-	private ProductService productService;
-	@Autowired
-	private StatisticsService statisticsService;
 	@Autowired	
 	private MenuService menuService;
 	/**

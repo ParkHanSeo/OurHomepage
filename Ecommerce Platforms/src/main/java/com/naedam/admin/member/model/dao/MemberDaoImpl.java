@@ -20,7 +20,6 @@ import com.naedam.admin.member.model.vo.MemberListExcelForm;
 import com.naedam.admin.member.model.vo.MemberMemo;
 import com.naedam.admin.member.model.vo.WithdrawalMember;
 import com.naedam.admin.member.model.vo.WithdrawalMemberEntity;
-import com.naedam.admin.point.model.vo.MemberPoint;
 
 @Repository
 public class MemberDaoImpl implements MemberDao {
@@ -142,18 +141,6 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public int memberUpdate(Member paramMember) {
 		return session.update("member.memberUpdate", paramMember);
-	}
-	
-	// 회원 적립금 목록
-	@Override
-	public List<MemberPoint> selectMemberPointListByParam(Map<String, Object> param) {
-		return session.selectList("member.selectMemberPointListByParam", param);
-	}
-	
-	// 회원 적립금 목록 수
-	@Override
-	public int totalPointCount(Map<String, Object> param) {
-		return session.selectOne("member.totalPointCount", param);
 	}
 
 	// 회원주소 수정(상세보기)

@@ -28,22 +28,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.naedam.admin.banner.model.vo.Banner;
 import com.naedam.admin.category.model.vo.Category;
 import com.naedam.admin.common.Mir9Utils;
-import com.naedam.admin.coupon.model.vo.Coupon;
-import com.naedam.admin.delivery.model.vo.DeliveryCompany;
-import com.naedam.admin.delivery.model.vo.DeliveryNotice;
-import com.naedam.admin.delivery.model.vo.DeliverySetting;
-import com.naedam.admin.delivery.model.vo.Doseosangan;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.map.model.service.MapService;
 import com.naedam.admin.map.model.vo.MapApi;
 import com.naedam.admin.map.model.vo.Maps;
-import com.naedam.admin.point.model.vo.Point;
-import com.naedam.admin.point.model.vo.PointSave;
-import com.naedam.admin.point.model.vo.PointUse;
-import com.naedam.admin.popup.model.vo.Popup;
 import com.naedam.admin.setting.model.service.SettingService;
 import com.naedam.admin.setting.model.vo.AdminMenu;
 import com.naedam.admin.setting.model.vo.AdminSetting;
@@ -74,32 +64,6 @@ public class SettingController {
 	ServletContext application;
 
 	/**
-	 * 설정 => 적립금 관리 조회
-	 * @param model
-	 */
-	@GetMapping("/point")
-	public void point(Model model) {
-		Map<String, Object> resultMap = settingService.selectPoint();
-		model.addAttribute("point", resultMap.get("point"));
-		model.addAttribute("pointUse", resultMap.get("pointUse"));
-		model.addAttribute("pointSave", resultMap.get("pointSave"));
-	}
-
-	/**
-	 * 설정 => 쿠폰 관리 조회
-	 * @param model
-	 * @param request
-	 * @throws Exception
-	 */
-	@GetMapping("/coupon")
-	public void coupon(Model model, HttpServletRequest request) throws Exception {
-		Map<String, Object> param = new HashMap<String, Object>();
-		param.put("mode", "1");
-		Map<String, Object> resultMap = settingService.selectCouponListByParam(param, request);
-		model.addAttribute("couponList", resultMap.get("couponList"));
-	}
-
-	/**
 	 * 설정 => 쿠폰관리 검색
 	 * @param request
 	 * @param model
@@ -112,36 +76,6 @@ public class SettingController {
 		Map<String, Object> resultMap = settingService.selectCouponListByParam(param, request);
 		model.addAttribute("couponList", resultMap.get("couponList"));
 		model.addAttribute("param",resultMap.get("param"));
-	}
-
-	/**
-	 * 설정 => 팝업 관리 조회
-	 * @param model
-	 */
-	@GetMapping("/popup")
-	public void popup(Model model) {
-		Map<String, Object> param = new HashMap<String, Object>();
-		List<Popup> popupList = settingService.selectPopupListByParam(param);
-		model.addAttribute("popupList", popupList);
-	}
-
-	/**
-	 * 설정 => 팝업 관리 검색
-	 * @param request
-	 * @param model
-	 * @return
-	 */
-	@PostMapping("/popup")
-	public String popup(HttpServletRequest request, Model model) {
-		Map<String, Object> param = new HashMap<String, Object>();
-		param.put("start_date", request.getParameter("start_date"));
-		param.put("end_date", request.getParameter("end_date"));
-		param.put("field", request.getParameter("field"));
-		param.put("keyword", request.getParameter("keyword"));
-		List<Popup> popupList = settingService.selectPopupListByParam(param);
-		model.addAttribute("param", param);
-		model.addAttribute("popupList", popupList);
-		return "/admin/setting/popup";
 	}
 
 	/**
@@ -168,45 +102,6 @@ public class SettingController {
 	}
 
 	/**
-	 * 설정 => 배너 관리 조회
-	 * @param model
-	 */
-	@GetMapping("/banner")
-	public void banner(Model model) {
-		List<Banner> bannerList = settingService.selectBannerList();
-		List<Category> menuCteList = settingService.selectMenuCteList();
-		model.addAttribute("bannerList", bannerList);
-		model.addAttribute("menuCteList", menuCteList);
-	}
-
-	/**
-	 * 설정 => 배송 설정 조회
-	 * @param model
-	 * @return
-	 */
-	@GetMapping("/delivery_setting")
-	public String deliverySertting(Model model) {
-		DeliverySetting deliverySetting = settingService.selectOneDeliverySetting();
-		List<Doseosangan> doseosanganList = settingService.selectDoseosanganList();
-		model.addAttribute("deliverySetting", deliverySetting);
-		model.addAttribute("doseosanganList", doseosanganList);
-		return "admin/setting/deliverySetting";
-	}
-
-	/**
-	 * 설정 => 택배사 관리 조회
-	 * @param model
-	 * @return
-	 */
-	@GetMapping("/delivery_company")
-	public String deliveryCompany(Model model) {
-		List<DeliveryCompany> deliveryCompanyList = settingService.selectDeliveryCompanyList();
-		model.addAttribute("deliveryCompanyList", deliveryCompanyList);
-		model.addAttribute("companyListCnt", deliveryCompanyList.size());
-		return "admin/setting/deliveryCompany";
-	}
-
-	/**
 	 * 설정 => 기본 설정 => 기본, 언어, 관리자 메뉴 조회
 	 * @param model
 	 */
@@ -230,39 +125,6 @@ public class SettingController {
 			url = adminSetting.getFaviconImg();
 		}
 		model.addAttribute("url", url);
-	}
-
-	/**
-	 * 설정 => 기본 설정 조회
-	 * @param locale
-	 * @return
-	 */
-	@PostMapping("/getDeliveryNotice.do")
-	@ResponseBody
-	public DeliveryNotice getDeliveryNotice(String locale) {
-		DeliveryNotice deliveryNotice = settingService.selectOneDeliveryNotice(locale);
-
-		return deliveryNotice;
-	}
-
-	/**
-	 * 설정 => 기본 설정 DML 프로세스 
-	 * @param request
-	 * @param adminSetting
-	 * @param deliveryNotice
-	 * @param adminMenu
-	 * @return
-	 */
-	@PostMapping("/process.do")
-	public String process(HttpServletRequest request, AdminSetting adminSetting, DeliveryNotice deliveryNotice,
-			AdminMenu adminMenu) {
-		Map<String, Object> map = new HashMap<>();
-		map.put("mode", request.getParameter("mode"));
-		map.put("request", request);
-		map.put("adminSetting", adminSetting);
-		map.put("deliveryNotice", deliveryNotice);
-		int result = settingService.infoProcess(map);
-		return "redirect:/admin/setting/info";
 	}
 
 	/**

@@ -66,12 +66,11 @@ public class BoardController {
 	 * @throws Exception
 	 */
 	@PostMapping("boardProcess")
-	public String boardProcess(@ModelAttribute("board") Board board, @ModelAttribute("boardAuthority") BoardAuthority boardAuthority, 
+	public String boardProcess(@ModelAttribute("board") Board board, 
 							   @ModelAttribute("boardOption") BoardOption boardOption,
 							   @RequestParam("mode") String mode) throws Exception {
 		Map<String, Object> boardMap = new HashMap<>();
 		boardMap.put("board", board);
-		boardMap.put("boardAuthority", boardAuthority);
 		boardMap.put("boardOption", boardOption);
 		boardMap.put("mode", mode);
 		boardService.boardProcess(boardMap);

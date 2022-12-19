@@ -15,18 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.naedam.admin.banner.model.vo.Banner;
 import com.naedam.admin.category.model.vo.Category;
-import com.naedam.admin.coupon.model.vo.Coupon;
-import com.naedam.admin.delivery.model.vo.DeliveryCompany;
-import com.naedam.admin.delivery.model.vo.DeliveryNotice;
-import com.naedam.admin.delivery.model.vo.DeliverySetting;
-import com.naedam.admin.delivery.model.vo.Doseosangan;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.map.model.vo.Maps;
-import com.naedam.admin.point.model.vo.PointSave;
-import com.naedam.admin.point.model.vo.PointUse;
-import com.naedam.admin.popup.model.vo.Popup;
 import com.naedam.admin.setting.model.dao.SettingDao;
 import com.naedam.admin.setting.model.vo.AdminMenu;
 import com.naedam.admin.setting.model.vo.AdminSetting;
@@ -247,7 +238,6 @@ public class SettingServiceImpl implements SettingService {
 		// TODO Auto-generated method stub
 		Map<String, Object> resultMap = new HashMap<>();
 		AdminSetting adminSetting = (AdminSetting) map.get("adminSetting");
-		DeliveryNotice deliveryNotice = (DeliveryNotice) map.get("deliveryNotice");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		int result = 0;
 		if("info".equals(map.get("mode"))) {
@@ -273,23 +263,9 @@ public class SettingServiceImpl implements SettingService {
 		
 			result = settingDao.updateLocaleDefault(request.getParameter("default_locale"));
 			result = settingDao.updateAdminSetting(adminSetting);			
-		}else if("updateGuide".equals(map.get("mode"))) {
-			result = settingDao.updateDeliveryNotice(deliveryNotice);
 		}
 		
 		return result;
-	}
-	
-	@Override
-	public List<DeliveryCompany> selectDeliveryCompanyList() {
-		// TODO Auto-generated method stub
-		return settingDao.selectDeliveryCompanyList();
-	}
-
-	@Override
-	public List<Doseosangan> selectDoseosanganList() {
-		// TODO Auto-generated method stub
-		return settingDao.selectDoseosanganList();
 	}
 
 	@Override
@@ -305,57 +281,9 @@ public class SettingServiceImpl implements SettingService {
 	}
 
 	@Override
-	public List<Banner> selectBannerList() {
-		// TODO Auto-generated method stub
-		return settingDao.selectBannerList();
-	}
-
-	@Override
 	public List<Category> selectMenuCteList() {
 		// TODO Auto-generated method stub
 		return settingDao.selectMenuCteList();
-	}
-
-	@Override
-	public List<Popup> selectPopupListByParam(Map<String, Object> param) {
-		// TODO Auto-generated method stub
-		return settingDao.selectPopupListByParam(param);
-	}
-
-	@Override
-	public Map<String, Object> selectCouponListByParam(Map<String, Object> map, HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		Map<String, Object> param = new HashMap<String, Object>();
-		Enumeration params = request.getParameterNames();
-		while (params.hasMoreElements()) {
-			String name = (String) params.nextElement();
-			param.put(name, request.getParameter(name));
-		}
-		List<Coupon> couponList = settingDao.selectCouponListByParam(param);
-		param.put("couponList", couponList);
-		return param;
-	}
-
-	@Override
-	public Map<String, Object> selectPoint() {
-		// TODO Auto-generated method stub
-		Map<String, Object> resultMap = new HashMap<>();
-		resultMap.put("point", settingDao.selectPoint());
-		resultMap.put("pointUse", settingDao.selectPointUse());
-		resultMap.put("pointSave", settingDao.selectPointSave());
-		return resultMap;
-	}
-
-	@Override
-	public PointUse selectPointUse() {
-		// TODO Auto-generated method stub
-		return settingDao.selectPointUse();
-	}
-
-	@Override
-	public PointSave selectPointSave() {
-		// TODO Auto-generated method stub
-		return settingDao.selectPointSave();
 	}
 
 	@Override
@@ -377,21 +305,9 @@ public class SettingServiceImpl implements SettingService {
 	}
 
 	@Override
-	public DeliveryNotice selectOneDeliveryNotice(String locale) {
-		// TODO Auto-generated method stub
-		return settingDao.selectOneDeliveryNotice(locale);
-	}
-
-	@Override
 	public int updateAdminSetting(AdminSetting adminSetting) {
 		// TODO Auto-generated method stub
 		return settingDao.updateAdminSetting(adminSetting);
-	}
-
-	@Override
-	public int updateDeliveryNotice(DeliveryNotice deliveryNotice) {
-		// TODO Auto-generated method stub
-		return settingDao.updateDeliveryNotice(deliveryNotice);
 	}
 
 	@Override
@@ -613,8 +529,15 @@ public class SettingServiceImpl implements SettingService {
 	}
 
 	@Override
-	public DeliverySetting selectOneDeliverySetting() {
-		return settingDao.selectOneDeliverySetting();
+	public Map<String, Object> selectCouponListByParam(Map<String, Object> param, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Map<String, Object> selectPoint() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

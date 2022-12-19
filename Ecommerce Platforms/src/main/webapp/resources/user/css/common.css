@@ -202,7 +202,7 @@ body.overflow::-webkit-scrollbar {
   border-bottom: 1px solid #eee;
   visibility: hidden;
   opacity: 0;
-  min-height: 170px;
+  min-height: 85px;
 }
 #header .inner .sub .sub-wrap {
   position: relative;
@@ -841,7 +841,6 @@ body.overflow::-webkit-scrollbar {
   font-size: 24px;
   color: #999;
   letter-spacing: -0.2px;
-  font-family: "CJONLYONENEW";
 }
 #search-layer .inner .area_search form .icon_search {
   position: absolute;
@@ -1095,8 +1094,7 @@ img {
 
 /* 상단 타이틀 */
 .sub_title_area {
-  padding-top: 40px;
-  padding-bottom: 24px;
+  padding-bottom: 6%;
 }
 .sub_title {
   font-size: 44px;
@@ -1187,7 +1185,7 @@ img {
   background-image: url(../images/img/img-keyvisual-visual-contact-pc@2x.png);
 } /* 고객센터 */
 .top_visual_area.recruit {
-  background-image: url(../images/recruit/img-keyvisual-career@2x.png);
+  background-image: url(../images/image_16.jpg);
 } /* 채용 */
 .top_visual_area.tech-01 {
   /*background-image:url(../images/tech/tech-img-keyvisual-visual-01-pc@2x.png);*/
