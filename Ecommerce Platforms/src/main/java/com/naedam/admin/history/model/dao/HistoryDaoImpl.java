@@ -44,6 +44,18 @@ public class HistoryDaoImpl implements HistoryDao {
 		// TODO Auto-generated method stub
 		return session.selectList("history.selectHistoryList");
 	}
+
+	@Override
+	public List<History> selectYearList() {
+		// TODO Auto-generated method stub
+		return session.selectList("history.selectYearList");
+	}
+
+	@Override
+	public List<History> selectMonthList() {
+		// TODO Auto-generated method stub
+		return session.selectList("history.selectMonthList");
+	}
 	
 	
 }
