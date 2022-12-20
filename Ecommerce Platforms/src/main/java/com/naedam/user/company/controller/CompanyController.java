@@ -75,6 +75,13 @@ public class CompanyController {
 		System.out.println(resultMap.get("history"));
 		mv.setViewName("user/company/historyList");
 		mv.addObject("history", resultMap.get("history"));
+		mv.addObject("years", resultMap.get("years"));
+		mv.addObject("months", resultMap.get("months"));
+		
+		System.out.println(">>>> history: " + resultMap.get("history"));
+		System.out.println(">>>> years: " + resultMap.get("years"));
+		System.out.println(">>>> months: " + resultMap.get("months"));
+		
 		return mv;
 	}
 	

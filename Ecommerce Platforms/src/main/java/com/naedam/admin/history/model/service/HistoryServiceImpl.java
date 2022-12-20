@@ -72,7 +72,12 @@ public class HistoryServiceImpl implements HistoryService {
 	public Map<String, Object> selectHistoryList() throws Exception {
 		// TODO Auto-generated method stub
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		/* 연혁 정보 */
 		resultMap.put("history", historyDao.selectHistoryList());
+		/* 기재 년도 조회 */
+		resultMap.put("years", historyDao.selectYearList());
+		/* 기재 월 조회 */
+		resultMap.put("months", historyDao.selectMonthList());
 		return resultMap;
 	}
 
