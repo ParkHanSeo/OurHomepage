@@ -2084,7 +2084,7 @@
   color: #fff;
 }
 .history .tab-cont-wrap {
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
 .history .tab-cont {
   position: relative;
@@ -2124,8 +2124,8 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background-color: #006aee;
+  width: 3px;
+  background-color: 	#00BFFF;
   opacity: 0.3;
 }
 .history .tab-cont ol li dl::after {
@@ -2135,7 +2135,7 @@
   left: -6px;
   width: 14px;
   height: 14px;
-  border: solid 1px #006aee;
+  border: solid 2px #00BFFF;
   background-color: #fff;
   border-radius: 14px;
   box-sizing: border-box;
@@ -2156,7 +2156,7 @@
   top: 7px;
 }
 .history .tab-cont ol li.first dl::after {
-  background-color: #006aee;
+  background-color: #00BFFF;
 }
 .history .tab-cont ol li.last dl {
   padding-bottom: 0 !important;

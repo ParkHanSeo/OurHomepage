@@ -10,10 +10,15 @@ public interface HistoryDao {
 
 	public List<History> selectHistoryList();
 	
+	public List<History> selectYearList();
+
+	public List<History> selectMonthList();
+	
 	int insertHistory(History history);
 
 	int updateHistory(History history);
 
 	int deleteHistory(int historyNo);
+
 
 }
