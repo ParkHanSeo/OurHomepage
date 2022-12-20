@@ -121,7 +121,7 @@ public class BoardController {
 		
 		//게시글 수
 		//각 게시판마다 게시글 수가 필요하여 List로 게시글 수를 뽑아와 List에 add하는 방식
-		List postCount = new ArrayList();
+		//List postCount = new ArrayList();
 		List<Board> board = boardService.getBoardTitle();
 		//게시판 리스트
 		Map<String, Object> map = new HashMap<String, Object>();

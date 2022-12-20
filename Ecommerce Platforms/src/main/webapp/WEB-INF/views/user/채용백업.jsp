@@ -6,41 +6,18 @@
 <title>내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-<script type="text/javascript">
-	function paging(cPage){
-		
-		alert("asd")
-		return;
-		
-		$.ajax({
-			url : "/admin/board/json/getPostList/",
-			type : "POST",
-			data : {
-				
-			},
-			success : function(JSONData, status){
-				alert("성공")
-			} ,
-			error : function(check){
-				alert("실패")
-			}
-		})
-	}
-</script>
 </head>
   <body>
   <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 <div id="search-layer">
     <div class="inner">
         <div class="area_search">
-            <form name="searchForm" autocomplete="off" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
-            	 <input type="hidden" name="boardNo" value="${board2.boardNo}">
-            	 <input type="hidden" name="cPage">
+            <form autocomplete="off" action="/searchall/search_results" method="post">
                  <input type="search" id="inputSearch" name="searchAll" placeholder="무엇이 궁금하신가요?" maxlength="30"> 
                  <label for="inputSearch" class="blind">검색어</label>
                  <span class="icon_search">
                     <!-- <img src="/images/common/03-foundation-icon-system-search-32-px.svg" alt=""> -->
-                    <input type="submit" id="searchKeyword" value="검색"> 
+                    <input type="submit" id="btnCommonSearchAll" value="검색"> 
                	</span>
             </form>
             
@@ -92,16 +69,29 @@ $(function(){
                     </div>
                 </div><!-- // .top_visual_area -->
 
+                <div class="common-swiper_area">
+                    <div class="inner_container">
+                        <div class="common-swiper_tab">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><a href="#self" onclick="recruit_type('Z')">전체</a></li>
+                                <li class="swiper-slide"><a href="#self" onclick="recruit_type('A')">신입</a></li>
+                                <li class="swiper-slide"><a href="#self" onclick="recruit_type('B')">경력</a></li>
+                                <li class="swiper-slide"><a href="#self" onclick="recruit_type('C')">인턴</a></li>
+                                <!-- <li class="swiper-slide"><a href="#self" onclick="recruit_type('K')">리턴십</a></li> -->
+                                <li class=""><a href="#self" onclick="recruit_type('T')">인재DB</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- // .common-swiper_area -->
+
                 <div class="layout_section_outer recruit">
                     <div class="inner_container">
 					<div id="recruit_DB"></div>
                         <div class="common-search_box_wrap" id="recruit_search">
                             <div class="common-search_box">
-                            	<form name="searchForm" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
-	                            	<input type="hidden" name="boardNo" value="${board2.boardNo}">
-	            	 				<input type="hidden" name="cPage">
+                            	<form action="javascript:recruitSearch()">
 	                            	<label class="common-search_label" for="recruit_search_txt">검색</label>
-	                                <input class="common-search_input" name="searchKeyword" id="recruit_search_txt" type="text" placeholder="검색어을 입력해주세요." title="검색어을 입력해주세요.">
+	                                <input class="common-search_input" id="recruit_search_txt" type="text" placeholder="직무명을 입력해주세요." title="직무명을 입력해주세요.">
 	                                <button type="button" class="common-search_btn" id="btnSearch">검색</button>
                             	</form>                                
                             </div>
@@ -125,38 +115,68 @@ $(function(){
 						</div>
 
 					<div class="common-text_list_area" id="recruit_detail">
-						<ul class="common-text_list">		
-								<li class="main_notice">
-									<div class="subj_box">
-										<p class="common-text_title">
-											제목
-										</p>
-									</div>
-									<div class="date_box center-left">
-										<p class="common-text_reg-date">
-											작성일자
-										</p>
-									</div>
-								</li>									
-							<c:forEach var="post" items="${list}">
+						<ul class="common-text_list">
 								<li>
 									<div class="subj_box">
 										<p class="common-text_txt2">
 											<a href="https://recruit.cj.net/recruit/ko/recruit/recruit/bestDetail.fo?zz_jo_num=J20220805009583" target="blank">
+												[CJ Olivenetworks/경력] Product Business
+												Model 기획 전문가(Tech 기반 Product Owner)
+											</a>
+										</p>
+									</div>
+									<div class="date_box center-left">
+										<p class="common-text_txt3">
+											D-<span>27</span>
+										</p>
+										<p class="common-text_txt4">2022.12.14 ~ 2023.01.15</p>
+									</div>
+									<div class="btn_box">
+										<a href="https://recruit.cj.net/recruit/ko/recruit/recruit/bestDetail.fo?zz_jo_num=J20220805009583" class="common-btn is-blue" target="_blank">
+											<span>지원하기</span>
+										</a>
+									</div>
+								</li>						
+							<c:forEach var="post" items="${list}">
+								<li>
+									<div class="subj_box">
+										<p class="common-text_txt2">
+											<a href="https://recruit.cj.net/recruit/ko/recruit/recruit/bestDetail.fo?zz_jo_num=J20220805009583" target="blank">[CJ Olivenetworks/경력] Product Business
 												${post.postTitle}<br />
 												${post.postContents}
 											</a>
 										</p>
 									</div>
 									<div class="date_box center-left">
-										<p class="common-text_txt4">${post.postDate}</p>
+										<p class="common-text_txt3">
+											D-<span>27</span>
+										</p>
+										<p class="common-text_txt4">${post.postData}</p>
+									</div>
+									<div class="btn_box">
+										<a href="https://recruit.cj.net/recruit/ko/recruit/recruit/bestDetail.fo?zz_jo_num=J20220805009583" class="common-btn is-blue" target="_blank">
+											<span>지원하기</span>
+										</a>
 									</div>
 								</li>
 							</c:forEach>
 						</ul>
 					</div>
 					<div id="page">
-						${pagebar}
+						<div class="common-pagination">
+							<a href="javascript:paging('first');" class="first"></a><a href="javascript:paging('prev');" class="prev"></a>
+						<div>
+							<a href="javascript:paging(1);">
+								<strong>1</strong>
+							</a>
+							<a href="javascript:paging(2);">2</a>
+							<a href="javascript:paging(3);">3</a>
+							<a href="javascript:paging(4);">4</a>
+							<a href="javascript:paging(5);">5</a>
+						</div>
+							<a href="javascript:paging('next');" class="next"></a>
+							<a href="javascript:paging('end');" class="last"></a>
+						</div>
 					</div>
                         <!--#include virtual ="/page/_include/inc_pagination.html"-->
                 	</div>
