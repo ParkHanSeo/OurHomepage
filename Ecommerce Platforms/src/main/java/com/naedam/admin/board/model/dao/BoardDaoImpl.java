@@ -199,6 +199,7 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public int updateOption(BoardOption boardOption) throws Exception {
+		System.out.println("log === "+boardOption);
 		return sqlSession.update("board.updateOption", boardOption);
 	}
 	//게시판 수정 (게시판, 권한, 옵션) 종료 //////////////////////////////

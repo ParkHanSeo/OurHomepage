@@ -1037,9 +1037,9 @@ img {
 
 /* LAYOUT 공통 */
 .layout_section_outer {
-	padding: 160px 0;
-	position: relative;
-	overflow: hidden;
+  padding-bottom: 130px;
+  position: relative;
+  overflow: hidden;
 }
 
 .layout_section_outer.is-gray {
@@ -1395,7 +1395,7 @@ img {
 		url(../images/img/img-keyvisual-visual-contact-pc@2x.png);
 } /* 고객센터 */
 .top_visual_area.recruit {
-	background-image: url(../images/recruit/img-keyvisual-career@2x.png);
+  background-image: url(../images/img-keyvisual-career@2x.png);
 } /* 채용 */
 .top_visual_area.tech-01 {
 	/*background-image:url(../images/tech/tech-img-keyvisual-visual-01-pc@2x.png);*/
@@ -1462,8 +1462,8 @@ img {
 }
 
 .top_visual_area.recruit .top_txt_outer .top_txt_area {
-	padding-top: 120px;
-	min-height: 400px;
+  padding-top: 0px;
+  min-height: 330px;
 }
 
 .top_visual_area.recruit .top_txt_outer .top_txt_area .top_txt2 {
@@ -1802,7 +1802,8 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 .common-swiper_area .common-swiper_tab ul {
-	
+  top: -103px;
+  height: 3%;
 }
 
 .common-swiper_area .common-swiper_tab ul li {

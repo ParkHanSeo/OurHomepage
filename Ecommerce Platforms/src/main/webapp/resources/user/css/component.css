@@ -1217,8 +1217,7 @@
   right: 0;
   top: 10px;
   text-indent: -99999px;
-  background: url(../../images/common/03-foundation-icon-system-search-32-px@2x.png)
-    0 0 no-repeat;
+  background: url(../images/search_x.png) 0 0 no-repeat;
   background-size: 32px;
 }
 .result-error-txt {
@@ -1410,7 +1409,7 @@
 .common-pagination button.prev,
 .common-pagination a.prev {
   margin: 0 12px 0 4px;
-  background-image: url(../../images/common/03-foundation-icon-system-chevron-left-24-px@2x.png);
+  background-image: url(../images/left_page.png);
 }
 .common-pagination button.prev:disabled,
 .common-pagination a.prev.disabled {
@@ -1419,7 +1418,7 @@
 .common-pagination button.next,
 .common-pagination a.next {
   margin: 0 4px 0 12px;
-  background-image: url(../../images/common/03-foundation-icon-system-chevron-right-24-px@2x.png);
+  background-image: url(../images/rigit_page.png);
 }
 .common-pagination button.next:disabled,
 .common-pagination a.next.disabled {
@@ -2225,6 +2224,14 @@
 }
 .history.award-sec .layout_body .award_sec {
   padding: 0;
+}
+.common-text_list_area .common-text_title {
+  text-align-last: center;
+  font-size: x-large;
+}
+.common-text_list_area .common-text_reg-date {
+  text-align-last: center;
+  font-size: large;
 }
 
 @media all and (max-width: 1024px) {
