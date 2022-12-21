@@ -13,6 +13,7 @@ window.onload=function(){
 			var menu = data.list;
 			var menu2 = data.list2;
 			var display = '';
+			console.log(data)
 			for(var i = 0; i < menu.length; i++){
 				if(menu[i].status != 'n'){
 					display = "<li class>"

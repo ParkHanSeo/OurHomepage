@@ -51,10 +51,6 @@ body {
 #cont1 li {
 	margin-left: 0px;
 }
-
-.history {
-	
-}
 </style>
 <script type="text/javascript">
 	/* 연혁 처음 값에 class 추가 */
@@ -90,16 +86,13 @@ body {
 					</div>
 				</div>
 				<!-- 서브 타이틀 -->
-				<div class="common-swiper_area">
+				<div class="common-swiper_area2" style="width: none;">
 					<div class="inner_container">
 						<div class="common-swiper_tab">
 						<p class="top_txt2"
-										style="color: black;">
+										style="color: black; margin-left: 40px">
 										(주)내담C&C의 연혁을 알려드립니다.</p>
-							<ul class="swiper-wrapper">
-							
-								
-							
+							<ul>
 								<!-- <li class="swiper-slide active"><a href="/company/history"
 									class="is-link">회사연혁</a></li> -->
 								<div class="layout_section_outer history_sec">
