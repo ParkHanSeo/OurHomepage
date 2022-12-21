@@ -86,6 +86,7 @@ public class MenuServiceImpl implements MenuService {
 	public Map<String, Object> getMenuList(Map<String,Object> map) throws Exception{
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("list", menuDao.getMenuList(map));
+		System.out.println("log1 == "+resultMap.get("list"));
 		resultMap.put("list2", menuDao.getHeadList(map));
 		resultMap.put("board", boardDao.getBoardTitle());
 		return resultMap;

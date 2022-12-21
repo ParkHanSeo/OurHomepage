@@ -107,9 +107,9 @@ body.overflow::-webkit-scrollbar {
 
 .inner_container {
 	width: 1280px;
-/* 	margin: 0 auto; */
+	margin: 0 auto;
 	position: relative;
-/* 	top: 83px; */
+	top: 83px;
 }
 
 #header {
@@ -2259,7 +2259,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 	}
 	.inner_container {
 		width: 100%;
-		/* padding: 0 80px; */
+		padding: 0 80px;
 	}
 	.inner_container.is-scroll {
 		padding: 0;
@@ -2458,7 +2458,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 	}
 	.inner_container {
 		width: 100%;
-		/* padding: 0 40px; */
+		padding: 0 40px;
 	}
 	.layout_section_outer .layout_head .top_txt1 {
 		font-size: 36px;
@@ -2766,7 +2766,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 	}
 	.inner_container {
 		width: 100%;
-		/* padding: 0 24px; */
+		padding: 0 24px;
 	}
 	#wrap.visual-center .top_visual_area:before {
 		width: 327px;
