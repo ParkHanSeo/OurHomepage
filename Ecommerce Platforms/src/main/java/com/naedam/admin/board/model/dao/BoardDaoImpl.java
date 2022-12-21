@@ -106,6 +106,18 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlSession.selectList("board.getPostList", map, rowBounds);
 	}
 	
+	//게시글 이전 이후 데이터
+	@Override
+	public Post getPrevPost(int postNo) throws Exception {
+		return sqlSession.selectOne("board.getPrevPost", postNo);
+	}
+	
+	//게시글 이전 이후 데이터
+	@Override
+	public Post getNextPost(int postNo) throws Exception {
+		return sqlSession.selectOne("board.getNextPost", postNo);
+	}
+	
 	//대쉬보드 게시글 목록
 	@Override
 	public List<Post> getPostList2(Map<String, Object> map) throws Exception {
@@ -243,7 +255,6 @@ public class BoardDaoImpl implements BoardDao {
 	public void updateUpAsc(Map<String, Object> map) throws Exception {
 		sqlSession.update("board.updateUpAsc", map);
 	}
-
 
 	
 }

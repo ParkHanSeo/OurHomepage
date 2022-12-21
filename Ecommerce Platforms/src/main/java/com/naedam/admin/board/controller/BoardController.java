@@ -92,7 +92,7 @@ public class BoardController {
 	 */
 	@PostMapping("postProcess")
 	public String postProcess(@ModelAttribute("board") Board board, @ModelAttribute("post") Post post,
-							  @RequestParam(value="postName", required = false) MultipartFile[] postName, @RequestParam(value="postName", required = false) String[] postName2, 
+//							  @RequestParam(value="postName", required = false) MultipartFile[] postName, @RequestParam(value="postName", required = false) String[] postName2, 
 							  @RequestParam(value="ThombnailName", required = false) MultipartFile ThombnailName, @RequestParam("secNo") String secNo, @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
 		String filePath = request.getServletContext().getRealPath("resources/imgs/imageBoard/board");	
@@ -100,8 +100,8 @@ public class BoardController {
 		postMap.put("board", board);
 		postMap.put("post", post);	
 		postMap.put("mode", mode);
-		postMap.put("postName", postName);
-		postMap.put("postName2", postName2);
+//		postMap.put("postName", postName);
+//		postMap.put("postName2", postName2);
 		postMap.put("ThombnailName", ThombnailName);
 		postMap.put("filePath", filePath);
 		postMap.put("secNo", secNo);

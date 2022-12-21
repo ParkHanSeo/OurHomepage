@@ -108,21 +108,21 @@ public class BoardServiceImpl implements BoardService {
 				post.setPostLayer(post2.getPostLayer());
 				boardDao.addAnswerPost(post);
 			}
-			if(postName.length != 0) {
-				for(int i = 0; i < postName.length; i++) {
-					File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
-					boardFile.setFilePost(post);
-					boardFile.setFileName(postName[i].getOriginalFilename());
-					postName[i].transferTo(file2);
-					boardDao.addFile(boardFile);				
-				}
-			}else if(postName2 != null) {
-				for(int i = 0; i < postName2.length; i++) {
-					boardFile.setFilePost(post);
-					boardFile.setFileName(postName2[i]);
-					boardDao.addFile(boardFile);
-				}
-			}
+//			if(postName.length != 0) {
+//				for(int i = 0; i < postName.length; i++) {
+//					File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
+//					boardFile.setFilePost(post);
+//					boardFile.setFileName(postName[i].getOriginalFilename());
+//					postName[i].transferTo(file2);
+//					boardDao.addFile(boardFile);				
+//				}
+//			}else if(postName2 != null) {
+//				for(int i = 0; i < postName2.length; i++) {
+//					boardFile.setFilePost(post);
+//					boardFile.setFileName(postName2[i]);
+//					boardDao.addFile(boardFile);
+//				}
+//			}
 		//게시글 선택삭제
 		}else if("delete".equals(map.get("mode"))) {
 			List<Integer> postArr = (List<Integer>) map.get("postArr");
@@ -283,6 +283,17 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void updateUpAsc(Map<String, Object> map) throws Exception {
 		boardDao.updateUpAsc(map);
+	}
+
+	@Override
+	public Map<String, Object> getNoticeDetail(Map<String, Object> map) throws Exception {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		Post post =	boardDao.getPostData((Integer) map.get("postNo"));
+		resultMap.put("post", post);
+		resultMap.put("board", boardDao.getBoardData(post.getPostBoard().getBoardNo()));
+		resultMap.put("postPrev", boardDao.getPrevPost((Integer) map.get("postNo")));
+		resultMap.put("postNext", boardDao.getNextPost((Integer) map.get("postNo")));
+		return resultMap;
 	}
 
 

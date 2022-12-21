@@ -82,7 +82,8 @@ public class NaedamUtils {
 		 * ● disabled & tabindex="-1" 처리
 		 */
 		if(pageNo == 1) {
-			pagebar.append("<a href=\"javascript:paging('prev');\" class=\"prev\"></a>\n");
+			pagebar.append("<a href=\"javascript:paging('prev');\" class=\"prev\"></a>\n"
+					+ " <div>\n");
 		}
 		/*
 		 * ● 자바 스크립트 함수 호출 : href=\"javascript:paging(" + (pageNo - 1) + ") --> 이전 페이지로.
@@ -100,7 +101,7 @@ public class NaedamUtils {
 				 * ● class 값으로 active 추가
 				 * ● a 태그 안에 pageNo
 				 */
-				pagebar.append("<div>\n<a href=\"javascript:paging("+ pageNo +")\")><strong>"+ pageNo +"</strong></a>\n");
+				pagebar.append("<a href=\"javascript:paging("+ pageNo +")\")><strong>"+ pageNo +"</strong></a>\n");
 			}
 			else {
 				/*

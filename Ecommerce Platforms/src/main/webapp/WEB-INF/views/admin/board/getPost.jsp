@@ -331,28 +331,6 @@
 						$("span[id='file_list']").append(display);
 					}
 				}
-			})
-
-			$.ajax({
-				url : "/admin/board/json/getCommentList/"+postNo,
-				method : "GET",
-				dataType : "JSON",	
-				headers : {
-					"Accept" : "application/json",
-					"Content-Type" : "application/json"	 						
-				} ,
-				success : function(JSONData, status){			
-					for(var i = 0; i < JSONData.length; i++){
-						var display = "";
-						display += '<tr name="comment'+JSONData[i].commentNo+'">'
-								+  '	<td>'+JSONData[i].commentWriter+'</td>'
-								+  '	<td align="left">'+JSONData[i].commentContents+'</td>'
-								+  '	<td>'+JSONData[i].commentData+'</td>'
-								+  '	<td><button type="button" class="btn btn-danger btn-xs" onclick="deleteComment('+JSONData[i].commentNo+');">삭제</button></td>'
-								+  '</tr>';
-						$("tbody[id='commentList']").append(display);
-					}
-				}
 			})			
 		})
 	})

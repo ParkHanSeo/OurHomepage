@@ -361,8 +361,8 @@
 }
 
 /* Text Area css */
-.textarea_wrap {
-}
+/* .textarea_wrap {
+} */
 .textarea_wrap label {
   display: inline-block;
   line-height: 1.63;
@@ -850,7 +850,7 @@
   color: #000;
   font-size: 14px;
   display: inline-block;
-  float: left;
+  /* float: left; */
   transition: all 0.2s ease-out;
   color: #000;
   transform: translateZ(0);
@@ -1083,8 +1083,8 @@
 }
 
 /* 테이블 */
-.table_area {
-}
+/* .table_area {
+} */
 .table_area .table_style1 {
   width: 100%;
   table-layout: fixed;
@@ -1119,8 +1119,8 @@
 }
 
 /* 리스트 타입 */
-.common-txt-list {
-}
+/* .common-txt-list {
+} */
 .common-txt-list > li {
   margin-top: 8px;
   padding-left: 14px;
@@ -1217,7 +1217,8 @@
   right: 0;
   top: 10px;
   text-indent: -99999px;
-  background: url(../images/search_x.png) 0 0 no-repeat;
+  /* background: url(../../images/common/03-foundation-icon-system-search-32-px@2x.png)
+    0 0 no-repeat; */
   background-size: 32px;
 }
 .result-error-txt {
@@ -1398,10 +1399,10 @@
 .common-pagination a.disabled {
   cursor: default;
 }
-.common-pagination button.first,
+/* .common-pagination button.first,
 .common-pagination a.first {
   background-image: url(../../images/common/03-foundation-icon-system-chevron-double-left-24-px@2x.png);
-}
+} */
 .common-pagination button.first:disabled,
 .common-pagination a.first.disabled {
   opacity: 0.4;
@@ -1424,10 +1425,10 @@
 .common-pagination a.next.disabled {
   opacity: 0.4;
 }
-.common-pagination button.last,
+/* .common-pagination button.last,
 .common-pagination a.last {
   background-image: url(../../images/common/03-foundation-icon-system-chevron-double-right-24-px@2x.png);
-}
+} */
 .common-pagination button.last:disabled,
 .common-pagination a.last.disabled {
   opacity: 0.4;
@@ -1514,8 +1515,8 @@
   display: flex;
   justify-content: center;
 }
-.search-result .search-result_inner {
-}
+/* .search-result .search-result_inner {
+} */
 .search-result .search-result_inner .result_keyword,
 .search-result .search-result_inner .result_txt {
   font-size: 32px;
@@ -1589,8 +1590,8 @@
   margin-left: 160px;
 }
 
-.btm_banner {
-}
+/* .btm_banner {
+} */
 .btm_banner .btm_banner_area {
   height: 424px;
   display: flex;
@@ -1733,8 +1734,8 @@
 .webzine_list_area {
   margin-top: 120px;
 }
-.webzine_list_area .webzine_list {
-}
+/* .webzine_list_area .webzine_list {
+} */
 .webzine_list_area .webzine_list > li {
   margin-top: 48px;
 }
@@ -1929,10 +1930,10 @@
   left: 7px;
 }
 
-.icon_item_box {
+/* .icon_item_box {
 }
 .icon_item_box .common-layout_3 {
-}
+} */
 .icon_item_box .common-layout_3 > li .icon_item_inner {
   height: 320px;
   padding: 40px;
@@ -1959,10 +1960,10 @@
 }
 
 /* 자주하는 질문 */
-.faq_area {
+/* .faq_area {
 }
 .faq_area .faq_list {
-}
+} */
 .faq_area .faq_list > li {
   margin-top: 15px;
   overflow: hidden;
@@ -2010,9 +2011,9 @@
   height: 18px;
   margin: -9px 0 0 -1px;
 }
-.faq_area .faq_list > li .btn-panel.active .faq_toggle_icon:before,
+/* .faq_area .faq_list > li .btn-panel.active .faq_toggle_icon:before,
 .faq_area .faq_list > li .btn-panel.active .faq_toggle_icon:after {
-}
+} */
 .faq_area .faq_list > li .btn-panel.active .faq_toggle_icon:after {
   transform: rotate(90deg);
   opacity: 0;
@@ -2083,7 +2084,7 @@
   color: #fff;
 }
 .history .tab-cont-wrap {
-  /* margin-top: 80px; */
+  margin-top: 80px;
 }
 .history .tab-cont {
   position: relative;
@@ -2123,8 +2124,8 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background-color: 	#00BFFF;
+  width: 2px;
+  background-color: #006aee;
   opacity: 0.3;
 }
 .history .tab-cont ol li dl::after {
@@ -2134,7 +2135,7 @@
   left: -6px;
   width: 14px;
   height: 14px;
-  border: solid 2px #00BFFF;
+  border: solid 1px #006aee;
   background-color: #fff;
   border-radius: 14px;
   box-sizing: border-box;
@@ -2155,7 +2156,7 @@
   top: 7px;
 }
 .history .tab-cont ol li.first dl::after {
-  background-color: #00BFFF;
+  background-color: #006aee;
 }
 .history .tab-cont ol li.last dl {
   padding-bottom: 0 !important;
@@ -2233,7 +2234,6 @@
   text-align-last: center;
   font-size: large;
 }
-
 @media all and (max-width: 1024px) {
   .layer_wrapper .layer_outer .layer_inner {
     width: 700px;

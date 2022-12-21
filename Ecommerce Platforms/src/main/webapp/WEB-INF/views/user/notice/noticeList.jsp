@@ -7,23 +7,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <script type="text/javascript">
-	function paging(cPage){
-		
-		var searchForm = 
-		alert("asd")
-		return;
-		
+ 	function paging(cPage){
+ 		$("li[id='postList']").remove();
+ 		$("#page .common-pagination").remove();
+		var search = $("form[name='searchForm']").serialize();
+		var boardNo = $("input[name='boardNo']").val();
+		var searchKeyword = $("input[name='searchKeyword']").val();
+		var searchType = $("input[name='searchType']").val();
 		$.ajax({
-			url : "/admin/board/json/getPostList/",
+			url : "/user/notice/noticeListCom?${_csrf.parameterName}=${_csrf.token}",
 			type : "POST",
 			data : {
-				
+				cPage,
+				boardNo,
+				searchKeyword,
+				searchType
 			},
 			success : function(JSONData, status){
-				alert("성공")
+				console.log(JSONData)
+				var display = '';
+				console.log(JSONData.list);
+				for(var i = 0; i < JSONData.list.length; i++){
+					console.log("접근")
+					display = '<li id ="postList">'
+							+ 	'<div class="subj_box">'
+							+ 	   '<p class="common-text_txt2">'
+							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].postNo+'" target="blank">'
+							+			 JSONData.list[i].postTitle
+							+			 '<br />'
+							+			 JSONData.list[i].postContents
+							+		  '</a>'
+							+		'</p>'
+							+	 '</div>'
+							+	 '<div class="date_box center-left">'
+							+		 '<p class="common-text_txt4">'+JSONData.list[i].postDate+'</p>'
+							+	 '</div>'
+							+ '</li>';
+					$(".common-text_list_area .common-text_list").append(display);
+				}
+				$("#page").append(JSONData.pagebar);
 			} ,
 			error : function(check){
 				alert("실패")
+				console.log(check)
 			}
 		})
 	}
@@ -34,7 +60,7 @@
 <div id="search-layer">
     <div class="inner">
         <div class="area_search">
-            <form name="searchForm" autocomplete="off" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
+            <form name="mainSearchForm" autocomplete="off" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
             	 <input type="hidden" name="boardNo" value="${board2.boardNo}">
             	 <input type="hidden" name="cPage">
                  <input type="search" id="inputSearch" name="searchAll" placeholder="무엇이 궁금하신가요?" maxlength="30"> 
@@ -83,7 +109,7 @@ $(function(){
                 <div class="top_visual_area recruit">
                     <div class="inner_container">
                         <div class="top_txt_outer">
-                            <div class="top_txt_area">
+                            <div class="top_txt_area txt_notice">
                                 <p class="top_txt2">${board2.boardCategory}</p>
                                 <p class="top_txt3">
                                     ${board2.boardEmail}
@@ -93,18 +119,18 @@ $(function(){
                     </div>
                 </div><!-- // .top_visual_area -->
 
-                <div class="layout_section_outer recruit">
-                    <div class="inner_container">
+                <div class="layout_section_outer_notice recruit">
+                    <div class="inner_container inner_container_notice">
 					<div id="recruit_DB"></div>
                         <div class="common-search_box_wrap" id="recruit_search">
                             <div class="common-search_box">
-                            	<form name="searchForm" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
+                            	<form name="searchForm" onsubmit="return false" onkeypress="if(event.keyCode==13){paging();}">
 	                            	<input type="hidden" name="boardNo" value="${board2.boardNo}">
-	            	 				<input type="hidden" name="cPage">
+	                            	<input type="hidden" name="searchType" value="1">
 	                            	<label class="common-search_label" for="recruit_search_txt">검색</label>
 	                                <input class="common-search_input" name="searchKeyword" id="recruit_search_txt" type="text" placeholder="검색어을 입력해주세요." title="검색어을 입력해주세요.">
 	                                <button type="button" class="common-search_btn" id="btnSearch">검색</button>
-                            	</form>                                
+                            	</form>
                             </div>
                         </div>
                         <div class="search-result" id="recruit_result" style="display:none;">
@@ -140,12 +166,11 @@ $(function(){
 									</div>
 								</li>									
 							<c:forEach var="post" items="${list}">
-								<li>
+								<li id="postList">
 									<div class="subj_box">
 										<p class="common-text_txt2">
-											<a href="https://recruit.cj.net/recruit/ko/recruit/recruit/bestDetail.fo?zz_jo_num=J20220805009583" target="blank">
-												${post.postTitle}<br />
-												${post.postContents}
+											<a href="/user/notice/getNoticeDetail/${post.postNo}" target="blank">
+												${post.postTitle}
 											</a>
 										</p>
 									</div>

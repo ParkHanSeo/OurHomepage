@@ -66,15 +66,6 @@
 		<result property="fileName"					column="FILE_NAME"				jdbcType="VARCHAR"></result>
 		<result property="filePost.postNo"			column="POST_NO"				jdbcType="NUMERIC"></result>
 	</resultMap>
-			
-	<resultMap id="commentSelectMap" type="boardComment">
-		<result property="commentNo"					column="COMMENT_NO"				jdbcType="NUMERIC"></result>
-		<result property="commentContents"				column="COMMENT_CONTENTS"		jdbcType="VARCHAR"></result>
-		<result property="commentData"					column="COMMENT_DATE"			jdbcType="VARCHAR"></result>
-		<result property="commentWriter"				column="COMMENT_WRITER"			jdbcType="VARCHAR"></result>
-		<result property="commentMember.memberNo"		column="MEMBER_NO"				jdbcType="NUMERIC"></result>
-		<result property="commentPost.postNo"			column="POST_NO"				jdbcType="NUMERIC"></result>
-	</resultMap>
 	
 	<resultMap id="memberSelectMap" type="member">
 		<result property="memberNo"					column="MEMBER_NO"				jdbcType="NUMERIC"></result>
@@ -229,22 +220,6 @@
 			   #{fileName : VARCHAR})
 	</insert>
 	
-	<insert id="addComment" parameterType="boardComment">
-		INSERT
-		INTO BOARD_COMMENT(COMMENT_NO,
-						   COMMENT_CONTENTS,
-						   COMMENT_DATE,
-						   COMMENT_WRITER,
-						   MEMBER_NO,
-						   POST_NO)
-		VALUES(NEXTVAL(board_comment_seq),	
-			   #{commentContents},
-			   sysdate(),
-			   #{commentWriter},
-			   #{commentMemberNo},
-			   #{commentPostNo})
-	</insert>
-	
 	<select id="getBoardList" resultType="hashmap" resultMap="BoardSelectMap" >
 		 SELECT
 				board_no,
@@ -355,6 +330,14 @@
 		WHERE post_no = #{value}
 	</select>
 	
+	<select id="getPrevPost" parameterType="int" resultMap="PostSelectMap">
+		SELECT * FROM post WHERE post_no <![CDATA[<]]> #{value} ORDER BY post_no DESC LIMIT 1
+	</select>
+	
+	<select id="getNextPost" parameterType="int" resultMap="PostSelectMap">
+		SELECT * FROM post WHERE post_no <![CDATA[>]]> #{value} ORDER BY post_no LIMIT 1 
+	</select>
+	
 	<select id="getBoardAllData" parameterType="int" resultMap="BoardSelectMap" >		
 		SELECT
 		tb1.board_no,
@@ -411,20 +394,6 @@
 		</if>
 		ORDER BY p.post_asc ASC, p.post_ord ASC, p.post_layer ASC
 	</select>
-	
-	<select id="getCommentList" parameterType="int" resultMap="commentSelectMap">
-		SELECT
-				c.comment_no,
-				c.comment_contents,
-				c.comment_date,
-				c.comment_writer,
-				c.member_no,
-				c.post_no
-		FROM	board_comment c, post p
-		WHERE	c.post_no = p.post_no
-		AND		c.post_no = #{value}
-		ORDER BY c.comment_no ASC
-	</select>
 			
 	<select id="getMemberData" parameterType="int" resultMap="memberSelectMap">
 		SELECT
@@ -480,12 +449,6 @@
 		DELETE
 		FROM board_file
 		WHERE file_no = #{value}
-	</delete>
-	
-	<delete id="deleteComment" parameterType="int">
-		DELETE
-		FROM board_comment
-		WHERE comment_no = #{value}
 	</delete>
 	
 	<update id="updateBoard" parameterType="board">
