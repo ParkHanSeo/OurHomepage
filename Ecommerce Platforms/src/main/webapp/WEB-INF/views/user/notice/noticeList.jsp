@@ -99,7 +99,7 @@ $(function(){
 
 </script>
 		<section id="container">
-            <div id="contents">
+            <div id="contents" class="contents_top">
                 <div class="sub_title_area">
                     <div class="inner_container">
                         <h2 class="sub_title">${board2.boardTitle}</h2>

@@ -10,25 +10,67 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 @RequestMapping("/user/introduction/*")
 public class IntroductionController {
+	
+	@RequestMapping(value="businessIntroduction")
+	public ModelAndView businessIntroduction() throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/businessIntroduction");
+		return mv;		
+	}
+	
+	@RequestMapping(value="digitalTwin")
+	public ModelAndView digitalTwin(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/digitalTwin");
+		return mv;
+	}
+	
+	@RequestMapping(value="visionAi")
+	public ModelAndView visionAi(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/visionAi");
+		return mv;
+	}
+	
+	@RequestMapping(value="cloudMsp")
+	public ModelAndView cloudMsp(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/cloudMsp");
+		return mv;
+	}
 
-	@RequestMapping(value="solutionList")
-	public ModelAndView solutionList(Model model) throws Exception{
+	@RequestMapping(value="scm")
+	public ModelAndView scm(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/introduction/solution");
+		mv.setViewName("user/introduction/solution/scm");
 		return mv;
 	}
 	
-	@RequestMapping(value="consultingList")
-	public ModelAndView consultingList(Model model) throws Exception{
+	@RequestMapping(value="innoPlm")
+	public ModelAndView innoPlm(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/introduction/consulting");
+		mv.setViewName("user/introduction/solution/innoPlm");
 		return mv;
 	}
 	
-	@RequestMapping(value="siList")
-	public ModelAndView siList(Model model) throws Exception{
+	@RequestMapping(value="innoAms")
+	public ModelAndView innoAms(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/introduction/si");
+		mv.setViewName("user/introduction/solution/innoAms");
+		return mv;
+	}
+	
+	@RequestMapping(value="mes")
+	public ModelAndView mes(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/mes");
+		return mv;
+	}
+	
+	@RequestMapping(value="solutionDevelopment")
+	public ModelAndView solutionDevelopment(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/solutionDevelopment");
 		return mv;
 	}
 	

@@ -22,3 +22,4 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/swiper.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/swiper.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/notice.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/service.css">

@@ -40,7 +40,7 @@
 </div>
         <section id="container">
             <div id="contents">
-                <div class="layout_section_outer type04 no-btm-margin">
+                <div class="layout_section_outer type04 no-btm-margin layout_notice_detail">
                     <div class="inner_container">
                         <div class="news_view">
 							<div class="detail_wrap">

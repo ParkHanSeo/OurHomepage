@@ -29,16 +29,13 @@ public class NoticeController {
 	@Autowired
 	private BoardService boardService;
 	
-	int pageUnit = 5;
-	int pageSize = 5;
-	
 	@RequestMapping(value="noticeList/{boardNo}")
 	public ModelAndView noticeList(HttpServletRequest request,
 								   @PathVariable("boardNo") int boardNo, 
 								   @RequestParam(defaultValue = "1") int cPage,
 								   @ModelAttribute("search") Search search) throws Exception{
 		//게시글 리스트 수 limit 10으로
-		int limit = 2;
+		int limit = 8;
 		int offset = (cPage - 1) * limit;
 		
 		ModelAndView mv = new ModelAndView();
@@ -71,7 +68,7 @@ public class NoticeController {
 											 @RequestParam("boardNo") int boardNo,
 											 @RequestParam("searchKeyword") String searchKeyword,
 											 @RequestParam("searchType") String searchType) throws Exception{
-		int limit = 2;
+		int limit = 8;
 		int offset = (cPage - 1) * limit;
 		Search search = new Search();
 		search.setSearchKeyword(searchKeyword);

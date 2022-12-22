@@ -45,10 +45,19 @@
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
+.swiper-wrapper.service_swiper_wrapper {
+  height: 10%;
+}
+.swiper-wrapper .service_swiper_slide {
+  margin-top: 17px;
+}
 .swiper-container-android .swiper-slide,
 .swiper-wrapper {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+.swiper_introduction_layout {
+  height: 45%;
 }
 .swiper-container-multirow > .swiper-wrapper {
   -webkit-flex-wrap: wrap;
@@ -695,4 +704,8 @@ button.swiper-pagination-bullet {
 }
 .swiper-container-coverflow .swiper-wrapper {
   -ms-perspective: 1200px;
+}
+.swiper-slide.service_swiper_slide {
+  height: 41%;
+  right: 42px;
 }
