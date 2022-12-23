@@ -79,20 +79,12 @@
 					} ,
 					success : function(JSONData, status){
 						var a = JSONData.boardNo * 1
-						
+
 						$("#boardNo2").val(a);
 						$("#boardTitle2").val(JSONData.boardTitle);
 						$("#boardType2").val(JSONData.boardType);
 						$("#boardCategory2").val(JSONData.boardCategory);
 						$("#boardEmail2").val(JSONData.boardEmail);
-						$("#authorityList2").val(JSONData.authority.authorityList)
-						$("#authorityView2").val(JSONData.authority.authorityView)
-						$("#authorityWrite2").val(JSONData.authority.authorityWrite)
-						$("#authorityUpdate2").val(JSONData.authority.authorityUpdate)
-						$("#authorityDelete2").val(JSONData.authority.authorityDelete)
-						$("#authorityAnswer2").val(JSONData.authority.authorityAnswer)
-						$("#authorityNotice2").val(JSONData.authority.authorityNotice)
-						$("#authorityComment2").val(JSONData.authority.authorityComment)
 						if(JSONData.option.optionNotice == "y"){
 							$("#optionNotice2").prop("checked", true)
 						}

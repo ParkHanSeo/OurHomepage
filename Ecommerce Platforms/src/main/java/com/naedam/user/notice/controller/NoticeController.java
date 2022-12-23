@@ -39,7 +39,6 @@ public class NoticeController {
 		int offset = (cPage - 1) * limit;
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/notice/noticeList");
 		//게시글 리스트 옵션과 권한의 조건에 따라 태그를 생성해야 함
 		Board board2 = boardService.getBoardAllData(boardNo);
 		mv.addObject("board2", board2);
@@ -47,18 +46,19 @@ public class NoticeController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("search", search);
 		map.put("boardNo", boardNo);
-		Map<String, Object> resultMap = boardService.getPostList(map, offset, limit);
+		map.put("limit", limit);
+		map.put("offset", offset);
+		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		
 		// pagebar
-		String url = request.getRequestURI();
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, url);
+		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		
 		mv.addObject("pagebar", pagebar);		
 		mv.addObject("list", resultMap.get("list")); 
 		mv.addObject("boardNo", boardNo);
 		mv.addObject("pageCount",totalPostListCount);		
-		
+		mv.setViewName("user/notice/noticeList");
 		return mv;
 	}
 	
@@ -73,14 +73,17 @@ public class NoticeController {
 		Search search = new Search();
 		search.setSearchKeyword(searchKeyword);
 		search.setSearchType(searchType);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("search", search);
 		map.put("boardNo", boardNo);
-		Map<String, Object> resultMap = boardService.getPostList(map, offset, limit);
+		map.put("limit", limit);
+		map.put("offset", offset);
+		
+		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		// pagebar
-		String url = request.getRequestURI();
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, url);
+		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		resultMap.put("pagebar", pagebar);
 		return resultMap;
 	}

@@ -24,23 +24,20 @@
 				searchType
 			},
 			success : function(JSONData, status){
-				console.log(JSONData)
 				var display = '';
-				console.log(JSONData.list);
 				for(var i = 0; i < JSONData.list.length; i++){
 					console.log("접근")
 					display = '<li id ="postList">'
 							+ 	'<div class="subj_box">'
 							+ 	   '<p class="common-text_txt2">'
-							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].postNo+'" target="blank">'
-							+			 JSONData.list[i].postTitle
+							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].post_no+'" target="blank">'
+							+			 JSONData.list[i].post_title
 							+			 '<br />'
-							+			 JSONData.list[i].postContents
 							+		  '</a>'
 							+		'</p>'
 							+	 '</div>'
 							+	 '<div class="date_box center-left">'
-							+		 '<p class="common-text_txt4">'+JSONData.list[i].postDate+'</p>'
+							+		 '<p class="common-text_txt4">'+JSONData.list[i].post_date+'</p>'
 							+	 '</div>'
 							+ '</li>';
 					$(".common-text_list_area .common-text_list").append(display);
@@ -169,13 +166,13 @@ $(function(){
 								<li id="postList">
 									<div class="subj_box">
 										<p class="common-text_txt2">
-											<a href="/user/notice/getNoticeDetail/${post.postNo}" target="blank">
-												${post.postTitle}
+											<a href="/user/notice/getNoticeDetail/${post.post_no}" target="blank">
+												${post.post_title}
 											</a>
 										</p>
 									</div>
 									<div class="date_box center-left">
-										<p class="common-text_txt4">${post.postDate}</p>
+										<p class="common-text_txt4">${post.post_date}</p>
 									</div>
 								</li>
 							</c:forEach>

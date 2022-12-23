@@ -78,10 +78,10 @@ $(function(){
                     <div class="inner_container">
                         <div class="common-swiper_tab">
                             <ul class="swiper-wrapper service_swiper_wrapper">
-                                <li class="swiper-slide active"><a href="#self">서비스 소개</a></li>
-                                <li class="swiper-slide"><a href="#self">추천대상</a></li>
-                                <li class="swiper-slide"><a href="#self">주요 서비스</a></li>
-                                <li class="swiper-slide"><a href="#self">차별화 포인트</a></li>
+                                <li class="swiper-slide service_swiper_slide active"><a href="#self">서비스 소개</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">추천대상</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">주요 서비스</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">차별화 포인트</a></li>
                             </ul>
                         </div>
                     </div>

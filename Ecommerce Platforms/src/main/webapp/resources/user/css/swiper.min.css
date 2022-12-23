@@ -59,6 +59,10 @@
 .swiper_introduction_layout {
   height: 45%;
 }
+.swiper_si_layout {
+  height: 39%;
+  right: 37px;
+}
 .swiper-container-multirow > .swiper-wrapper {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;

@@ -235,8 +235,7 @@
   margin: 0 auto;
 }
 .news .detail_header {
-  padding: 0;
-  padding-bottom: 10%;
+  padding: 40px 0 40px 0;
 }
 .news .detail_header .title {
   max-width: 700px;
@@ -405,6 +404,7 @@
 .news .news_view .btn_area {
   text-align: center;
   margin-top: 48px;
+  margin-bottom: 48px;
 }
 .news .news_view .btn_area .common-btn.is-white2 {
   border-color: #ccc;

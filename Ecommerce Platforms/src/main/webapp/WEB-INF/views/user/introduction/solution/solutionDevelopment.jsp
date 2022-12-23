@@ -63,11 +63,11 @@ $(function(){
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
-                                <p class="top_txt2">디지털 트윈 (Digital Twin)</p>
+                                <span class="top_txt1">고객의 니즈와 의견을 반영한 효율적인 솔루션</span>
+                                <p class="top_txt2">솔루션 개발의뢰 (Solution Development)</p>
                                 <p class="top_txt3">
-                                    현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768">
-                                    결과를 미리 예측하는 기술의 솔루션을 제공합니다.
+                                    레거시 시스템과 연계되는 응용 프로그램 개발 합니다. <br class="hide_768">
+									또한 고객과의 편안한 의사소통을 통해 귀사의 업무파악 및 프로세스를 정의하여 개발방향성을 공유합니다.
                                 </p>
                             </div>
                         </div>
@@ -78,10 +78,10 @@ $(function(){
                     <div class="inner_container">
                         <div class="common-swiper_tab">
                             <ul class="swiper-wrapper service_swiper_wrapper">
-                                <li class="swiper-slide active"><a href="#self">서비스 소개</a></li>
-                                <li class="swiper-slide"><a href="#self">추천대상</a></li>
-                                <li class="swiper-slide"><a href="#self">주요 서비스</a></li>
-                                <li class="swiper-slide"><a href="#self">차별화 포인트</a></li>
+                                <li class="swiper-slide service_swiper_slide active"><a href="#self">서비스 소개</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">추천대상</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">주요 서비스</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">차별화 포인트</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,25 +91,18 @@ $(function(){
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
-                                실시간 분석을 통해 대상을 감지, 예방, 예측 및 최적화하여 
-                                <br>비즈니스 가치를 제공하는 역할을 수행하는 솔루션을 소개합니다
+                                효율적인 개발을 진행하고 단계별, 통합 테스트와 운영, 유지보수까지 완변한 개발을 진행합니다. 
                             </p>
                             <p class="top_txt3">
-                                1. 산업 데이터 모니터링 : 설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 
-								   자산 수명 주기의 전 단계를 모니터링 합니다..<br>
-                                2. 데이터를 통한 공정관리 : 워크플로 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 있던 문제를 해결할 수 있습니다. <br>
-                                3. BIM, innoAMS와 Digital Twin : 디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 관리와 연결합니다. <br>
+                                1. 고객과 소통하는 개발 : 고객과의 편안한 의사소통을 통해 귀사의 업무파악 및 프로세스를 정의하여 개발방향성을 공유합니다.<br>
+                                2. 데이터베이스 시스템 구축 : 대용량, 중소형 데이터베이스 시스템 구축과 자동화 구현 및 DB/SQL 튜닝, 마이그레이션 가능하며 전문 모델러의 DW/DM/BI/OLAP/ETL 기술을 적용합니다. <br>
                                 <br><br>
-                                ※ 디지털 트윈이란<br>
-                                디지털 트윈은 자동차, 다리, 건물과 같은 물리적 자산 또는 환경에 대한 디지털 방식의 재현이다. 
-                                기존의 3D 모델보다는 정보 모델로 생각해보라. 디지털 트윈은 프로젝트 계획 단계에서 생성되는 공동 데이터 레퍼런스이기에, 
-                                설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 자산 수명 주기의 전 단계를 망라하고 있다.
                             </p>
                         </div>
 
                         <div class="layout_body">
                             <div class="common-img_box no-round">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin.jpg" alt="">
+                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/solutionDevelopment_1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -299,7 +292,7 @@ $(function(){
                             <ol class="difference_list">
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_2.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/solutionDevelopment_2.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -313,7 +306,7 @@ $(function(){
                                 </li>
                                 <li class="is-right">
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_3.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/solutionDevelopment_3.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -329,7 +322,7 @@ $(function(){
                                 </li>
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_4.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/solutionDevelopment_4.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">

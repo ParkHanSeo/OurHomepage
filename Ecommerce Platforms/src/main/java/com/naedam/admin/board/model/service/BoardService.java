@@ -41,10 +41,7 @@ public interface BoardService {
 	public List<Board> getBoardTitle() throws Exception;
 	
 	//게시글 목록
-	public Map<String, Object> getPostList(Map<String, Object> map, int offset, int limit) throws Exception;
-	
-	//대쉬보드 게시글 목록
-	public Map<String, Object> getPostList2(Map<String, Object> map) throws Exception;
+	public Map<String, Object> getPostList(Map<String, Object> map) throws Exception;
 	
 	//게시판의 데이터
 	public Board getBoardData(int boardNo) throws Exception;

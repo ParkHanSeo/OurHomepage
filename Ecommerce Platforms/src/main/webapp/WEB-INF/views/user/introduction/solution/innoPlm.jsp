@@ -63,11 +63,11 @@ $(function(){
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
-                                <p class="top_txt2">디지털 트윈 (Digital Twin)</p>
+                                <span class="top_txt1">초기 구상, 개발, 서비스, 폐기에 이르는 제품의 전체 여정을 관리하기 위한 전략적 프로세스의 소프트웨어</span>
+                                <p class="top_txt2">제품 수명 주기 관리 (Inno PLM)</p>
                                 <p class="top_txt3">
-                                    현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768">
-                                    결과를 미리 예측하는 기술의 솔루션을 제공합니다.
+                                    PLM은 제품의 탄생부터 폐기까지 제품과 관련된 모든 것의 관리함으로써<br class="hide_768">
+                                    글로벌 공급망 기술의 솔루션을 제공합니다.
                                 </p>
                             </div>
                         </div>
@@ -78,10 +78,10 @@ $(function(){
                     <div class="inner_container">
                         <div class="common-swiper_tab">
                             <ul class="swiper-wrapper service_swiper_wrapper">
-                                <li class="swiper-slide active"><a href="#self">서비스 소개</a></li>
-                                <li class="swiper-slide"><a href="#self">추천대상</a></li>
-                                <li class="swiper-slide"><a href="#self">주요 서비스</a></li>
-                                <li class="swiper-slide"><a href="#self">차별화 포인트</a></li>
+                                <li class="swiper-slide service_swiper_slide active"><a href="#self">서비스 소개</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">추천대상</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">주요 서비스</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">차별화 포인트</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,25 +91,26 @@ $(function(){
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
-                                실시간 분석을 통해 대상을 감지, 예방, 예측 및 최적화하여 
-                                <br>비즈니스 가치를 제공하는 역할을 수행하는 솔루션을 소개합니다
+                                글로벌 공급망 전반의 제품 또는 서비스 수명 주기의 모든 단계에서 
+                                <br>모든 정보와 프로세스를 관리하는 솔루션을 소개합니다. 
                             </p>
                             <p class="top_txt3">
-                                1. 산업 데이터 모니터링 : 설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 
-								   자산 수명 주기의 전 단계를 모니터링 합니다..<br>
-                                2. 데이터를 통한 공정관리 : 워크플로 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 있던 문제를 해결할 수 있습니다. <br>
-                                3. BIM, innoAMS와 Digital Twin : 디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 관리와 연결합니다. <br>
+                                1. Rule & Process 기반 시스템 구축 : 고객사 제품개발절차와 솔루션 내장된 Rule과 Process를 Mapping하여 PLM 운영 기반 정립
+								   업무 정확성/일관성을 보장하기 위한 기준 정보 표준화을 실행합니다. <br>
+                                2. Quick Implementation : JAVA 기반 Open Framework 기반 시스템아키텍처 및 Framework 적용 Template 기반 Configuration을 통한 구축 기간을 단축합니다. <br>
+                                3. Q/C/C 기반 가시성(Visibility) 확보 : Milestone 관리를 통한 과제진척 및 이력관리 WBS 기반 과제관리로 
+                                   To Do List 기반 업무 수행 다양한 Dashboard 제공으로 신속한 의사 결정 지원을 합니다. <br>
                                 <br><br>
-                                ※ 디지털 트윈이란<br>
-                                디지털 트윈은 자동차, 다리, 건물과 같은 물리적 자산 또는 환경에 대한 디지털 방식의 재현이다. 
-                                기존의 3D 모델보다는 정보 모델로 생각해보라. 디지털 트윈은 프로젝트 계획 단계에서 생성되는 공동 데이터 레퍼런스이기에, 
-                                설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 자산 수명 주기의 전 단계를 망라하고 있다.
+                                ※ Inno PLM이란<br>
+                                글로벌 공급망 전반의 제품 또는 서비스 수명 주기의 모든 단계에서 모든 정보와 프로세스를 관리하는 솔루션입니다. 
+                                여기에는 품목, 부품, 제품, 설명서, 요구 사항, 엔지니어링 변경 주문, 품질 워크플로 등의 데이터가 포함됩니다.
+                                전체적인 제품 개발 및 공급망 전략을 위한 디지털 기반과 전사적인 제품 기록을 제공합니다.
                             </p>
                         </div>
 
                         <div class="layout_body">
                             <div class="common-img_box no-round">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin.jpg" alt="">
+                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/plm_1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -299,7 +300,7 @@ $(function(){
                             <ol class="difference_list">
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_2.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/plm_2.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -313,7 +314,7 @@ $(function(){
                                 </li>
                                 <li class="is-right">
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_3.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/plm_3.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -329,7 +330,7 @@ $(function(){
                                 </li>
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_4.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/plm_4.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">

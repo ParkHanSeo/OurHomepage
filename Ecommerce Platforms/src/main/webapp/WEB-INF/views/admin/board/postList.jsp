@@ -277,36 +277,36 @@
 			                    </thead>
 			                    <tbody>
 				                    <c:forEach var="post" items="${list}">
-					                    <c:if test="${post.postNotice eq '1'}">
+					                    <c:if test="${post.post_notice eq '1'}">
 						                    <tr>
 						                        <td></td>
 						                        <td>공지</td>          
 						                   		<td align="left">
-						                   			<c:if test="${nowDate eq post.postDate}">
+						                   			<c:if test="${nowDate eq post.post_date}">
 						                   				<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/new.png" width="15">
 						                   			</c:if>           
-							                		<c:if test="${post.postLayer > 0}">
+							                		<c:if test="${post.post_layer > 0}">
 							                			&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/right.png" width="15">
 							                			&nbsp;&nbsp;
 							                		</c:if>                   				     				
-						                   			${post.postTitle}
-						                   			<c:if test="${post.postThombnail != null && post.postThombnail != ''}">
+						                   			${post.post_title}
+						                   			<c:if test="${post.post_thombnail != null && post.post_thombnail != ''}">
 						                   				<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/disk.png" width="15">
 						                   			</c:if>
 						                   		</td>        
-						                        <td>${post.postMemberName}</td>            
-						                        <td>${post.postDate}</td>                        
-						                        <td>${post.postViewCount}</td>
+						                        <td>${post.member_name}</td>            
+						                        <td>${post.post_date}</td>                        
+						                        <td>${post.post_viewcount}</td>
 						               			<c:if test="${board2.option.optionOrder eq 'y'}">
 						               				<td>
-						               					<input type="radio" name="order_code" value="${post.postAsc}" chack="">
-						               					<input type="hidden" name="originNo" value="${post.postOriginNo}">
+						               					<input type="radio" name="order_code" value="${post.post_asc}" chack="">
+						               					<input type="hidden" name="originNo" value="${post.post_origin_no}">
 						               				</td>
 						               			</c:if>                        
-						                        <td>${post.postDownloadCount}</td>
+						                        <td>${post.post_downloadcount}</td>
 						                        <td>
-						                			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.postNo}">상세보기
-						                			<input type="hidden" value="${post.postMember.memberNo}"></button>
+						                			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
+						                			<input type="hidden" value="${post.member_no}"></button>
 						                   		</td>
 						                    </tr>
 					                    </c:if>
@@ -316,14 +316,13 @@
 					                   		<td colspan="10"><br>등록된 자료가 없습니다.<br><br></td>
 					                   	</tr>
 				                    </c:if>
-				                  	<c:set var="i" value="0"/>
 				                   	<c:forEach var="post" items="${list}">
-					                	<c:if test="${post.postNotice eq '0'}">
+					                	<c:if test="${post.post_notice eq '0'}">
 					                   		<c:set var="i" value="${ i+1 }" />
 					                   		<tr>
 					                        	<td>
 							                        <div>
-							                        	<input type="checkbox" class="postNo" name="postNo"  value="${post.postNo}" />
+							                        	<input type="checkbox" class="postNo" name="postNo"  value="${post.post_no}" />
 							                        	<script>
 															$(".postNo").click(function() {
 																$("#allCheck").prop("checked", false);
@@ -331,35 +330,37 @@
 														</script>
 													</div>
 					                        	</td>
-					                   			<td>${ i }</td>
+					                   			<td>
+					                   				<fmt:formatNumber type="number" maxFractionDigits="0" value="${post.row_no}" />
+					                   			</td>
 					                   			<td align="left">
-					                   				<c:if test="${nowDate eq post.postDate}">
+					                   				<c:if test="${nowDate eq post.post_date}">
 					                   					<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/new.png" width="15">
 					                   				</c:if>           
-						                			<c:if test="${post.postLayer > 0}">
+						                			<c:if test="${post.post_layer > 0}">
 						                				&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/right.png" width="15">
 						                				&nbsp;&nbsp;
 						                			</c:if>                   				     				
-					                   				${post.postTitle}
-					                   				<c:if test="${post.postThombnail != null && post.postThombnail != ''}">
+					                   				${post.post_title}
+					                   				<c:if test="${post.post_thombnail != null && post.post_thombnail != ''}">
 					                   					<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/disk.png" width="15">
 					                   				</c:if>
 					                   			</td>
-					                   			<td>${post.postMemberName}</td>
+					                   			<td>${post.member_name}</td>
 					                   			<td>
-						                        	${post.postDate}
+						                        	${post.post_date}
 						                        </td>
-					                   			<td>${post.postViewCount}</td>
+					                   			<td>${post.post_viewcount}</td>
 					                   			<c:if test="${board2.option.optionOrder eq 'y'}">
 						                   			<td>
-						                   				<input type="radio" name="order_code" value="${post.postAsc}" chack="">
-						                   				<input type="hidden" name="originNo" value="${post.postOriginNo}">
+						                   				<input type="radio" name="order_code" value="${post.post_asc}" chack="">
+						                   				<input type="hidden" name="originNo" value="${post.post_origin_no}">
 						                   			</td>
 					                   			</c:if>
-					                   			<td>${post.postDownloadCount}</td>
+					                   			<td>${post.post_downloadcount}</td>
 					                   			<td>
-						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.postNo}">상세보기
-						                   				<input type="hidden" value="${post.postMember.memberNo}">
+						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
+						                   				<input type="hidden" value="${post.member_no}">
 						                   			</button>
 					                   			</td>
 					                   		</tr>

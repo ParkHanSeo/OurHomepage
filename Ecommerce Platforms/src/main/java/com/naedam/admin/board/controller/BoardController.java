@@ -92,16 +92,17 @@ public class BoardController {
 	 */
 	@PostMapping("postProcess")
 	public String postProcess(@ModelAttribute("board") Board board, @ModelAttribute("post") Post post,
-//							  @RequestParam(value="postName", required = false) MultipartFile[] postName, @RequestParam(value="postName", required = false) String[] postName2, 
-							  @RequestParam(value="ThombnailName", required = false) MultipartFile ThombnailName, @RequestParam("secNo") String secNo, @RequestParam("mode") String mode,
+							  @RequestParam(value="postName", required = false) MultipartFile[] postName,  
+							  @RequestParam(value="ThombnailName", required = false) MultipartFile ThombnailName, 
+							  @RequestParam("secNo") String secNo, 
+							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
 		String filePath = request.getServletContext().getRealPath("resources/imgs/imageBoard/board");	
 		Map<String, Object> postMap	 = new HashMap<>();
 		postMap.put("board", board);
 		postMap.put("post", post);	
 		postMap.put("mode", mode);
-//		postMap.put("postName", postName);
-//		postMap.put("postName2", postName2);
+		postMap.put("postName", postName);
 		postMap.put("ThombnailName", ThombnailName);
 		postMap.put("filePath", filePath);
 		postMap.put("secNo", secNo);
@@ -164,12 +165,12 @@ public class BoardController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("search", search);
 		map.put("boardNo", boardNo);
-		Map<String, Object> resultMap = boardService.getPostList(map, offset, limit);
+		map.put("limit", limit);
+		map.put("offset", offset);
+		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
-		
 		// pagebar
-		String url = request.getRequestURI();
-		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, url);
+		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		model.addAttribute("pagebar", pagebar);		
 		model.addAttribute("list", resultMap.get("list")); 
 		model.addAttribute("boardNo", boardNo);

@@ -164,16 +164,13 @@
 				"Content-Type" : "application/json"	 						
 			} ,
 			success : function(JSONData, status){
-				
-			}
 			
+			}
 		})
 	}
 	
 	function fncAddComment(){
-		
 		var secNo = $("input[name='secNo']").val();
-
 		$.ajax({
 			url : "/admin/board/json/getMemberData/"+secNo,
 			method : "GET",
@@ -183,7 +180,6 @@
 				"Content-Type" : "application/json"	 						
 			} ,
 			success : function(JSONData, status){
-				
 				$("input[id='commentName']").val(JSONData.lastName+JSONData.firstName);
 				$("input[id='commentMemberNo']").val(JSONData.memberNo);
 			}
@@ -191,7 +187,6 @@
 	}
 	
 	function deleteComment(commentNo){
-		
 		if(!confirm("정말 삭제 하시겠습니까?")){
 			alert("취소 되었습니다.");
 			return;
@@ -246,20 +241,14 @@
 					$("input[name='postLayer']").val(JSONData.postLayer);
 					$("input[name='postAsc']").val(JSONData.postAsc);
 					$("input[name='postOriginNo']").val(JSONData.postOriginNo);
-
 					CKEDITOR.instances.editor1.setData(JSONData.postContents)
-
 					if(JSONData.postThombnail != null){
-						
 						var thombnail = "'${pageContext.request.contextPath}/resources/imgs/imageBoard/board"+JSONData.postThombnail+"'"
 						if(JSONData.postThombnail != null && JSONData.postThombnail != ''){
 							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
 										+ '<button type="button" onclick="window.open('+thombnail+')" class="btn btn-success btn-xs">보기</button>'
 										+ '<button type="button" onclick="fncDeleteThombnail()" name="deleteThombnail" value="'+JSONData.postNo+'" class="btn btn-danger btn-xs">삭제</button>'
 										+ '</span>';
-										
-										
-										//<input type="hidden" name="postNo" id="getPostNo" >
 						$("td[name='thombnailTd']").append(display);
 						}else{
 							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'

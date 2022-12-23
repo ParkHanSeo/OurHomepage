@@ -101,9 +101,8 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//게시글 목록
 	@Override
-	public List<Post> getPostList(Map<String, Object> map, int offset, int limit) throws Exception {
-		RowBounds rowBounds = new RowBounds(offset, limit);
-		return sqlSession.selectList("board.getPostList", map, rowBounds);
+	public List<Map<String, Object>> getPostList(Map<String, Object> map) throws Exception {
+		return sqlSession.selectList("board.getPostList", map);
 	}
 	
 	//게시글 이전 이후 데이터
@@ -116,13 +115,6 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public Post getNextPost(int postNo) throws Exception {
 		return sqlSession.selectOne("board.getNextPost", postNo);
-	}
-	
-	//대쉬보드 게시글 목록
-	@Override
-	public List<Post> getPostList2(Map<String, Object> map) throws Exception {
-		// TODO Auto-generated method stub
-		return sqlSession.selectList("board.getPostList", map);
 	}
 	
 	//댓글 목록
@@ -211,7 +203,6 @@ public class BoardDaoImpl implements BoardDao {
 
 	@Override
 	public int updateOption(BoardOption boardOption) throws Exception {
-		System.out.println("log === "+boardOption);
 		return sqlSession.update("board.updateOption", boardOption);
 	}
 	//게시판 수정 (게시판, 권한, 옵션) 종료 //////////////////////////////

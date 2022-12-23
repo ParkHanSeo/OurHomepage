@@ -78,10 +78,10 @@ $(function(){
                     <div class="inner_container">
                         <div class="common-swiper_tab">
                             <ul class="swiper-wrapper service_swiper_wrapper">
-                                <li class="swiper-slide active"><a href="#self">서비스 소개</a></li>
-                                <li class="swiper-slide"><a href="#self">추천대상</a></li>
-                                <li class="swiper-slide"><a href="#self">주요 서비스</a></li>
-                                <li class="swiper-slide"><a href="#self">차별화 포인트</a></li>
+                                <li class="swiper-slide service_swiper_slide active"><a href="#self">서비스 소개</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">추천대상</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">주요 서비스</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">차별화 포인트</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,25 +91,24 @@ $(function(){
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
-                                실시간 분석을 통해 대상을 감지, 예방, 예측 및 최적화하여 
-                                <br>비즈니스 가치를 제공하는 역할을 수행하는 솔루션을 소개합니다
+                                MSP는 컨설팅과 시스템 구축은 물론 사후 서비스까지 클라우드와 관련된 모든 서비스를 제공합니다. 
                             </p>
                             <p class="top_txt3">
-                                1. 산업 데이터 모니터링 : 설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 
-								   자산 수명 주기의 전 단계를 모니터링 합니다..<br>
-                                2. 데이터를 통한 공정관리 : 워크플로 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 있던 문제를 해결할 수 있습니다. <br>
-                                3. BIM, innoAMS와 Digital Twin : 디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 관리와 연결합니다. <br>
+                                1. Cloud MSP 시스템 구축 : 클라우드 인프라를 이용하기 위해 필요로 하는 제반 시스템의 
+								   구축과 운영을 대행해주는 서비스를 제공한다.<br>
+                                2. 경제성 : 기업의 사업 환경이 급변하는 시기에 따라 시시각각 변하는 사업 요구에 준하는 시스템을 적재 적시에 제공한다.<br>
+                                3. 전문성 : 기업의 새로운 혁신 요구에 발맞춰 IoT, 디지털 트윈, 빅데이터, AI 등의 최첨단 IT 신기술을 적용할 수 있습니다. <br>
                                 <br><br>
-                                ※ 디지털 트윈이란<br>
-                                디지털 트윈은 자동차, 다리, 건물과 같은 물리적 자산 또는 환경에 대한 디지털 방식의 재현이다. 
-                                기존의 3D 모델보다는 정보 모델로 생각해보라. 디지털 트윈은 프로젝트 계획 단계에서 생성되는 공동 데이터 레퍼런스이기에, 
-                                설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 자산 수명 주기의 전 단계를 망라하고 있다.
+                                ※ MSP란<br>
+                                고객 비즈니스에 최적화된 클라우드 인프라 구축을 위해 아키텍처를 논의하고 보안을 점검합니다.<br>
+								무엇을 어디에 들이고 어떻게 연결할지, 무엇을 옮기고 또 옮기지 않을 것인지 등 설계에 따라 이전합니다.<br>
+								모니터링, 장애 대응, 보고서 발행 등 실제로 서비스를 운영하는 단계입니다. 얼마나 안전하고 효율적으로 클라우드 서비스를 관리하는지가 핵심입니다.
                             </p>
                         </div>
 
                         <div class="layout_body">
                             <div class="common-img_box no-round">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin.jpg" alt="">
+                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/msp_1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -299,7 +298,7 @@ $(function(){
                             <ol class="difference_list">
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_2.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/msp_2.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -313,7 +312,7 @@ $(function(){
                                 </li>
                                 <li class="is-right">
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_3.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/msp_3.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -329,7 +328,7 @@ $(function(){
                                 </li>
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_4.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/msp_4.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">

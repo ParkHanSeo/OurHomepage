@@ -66,7 +66,6 @@ public class BoardServiceImpl implements BoardService {
 			
 			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
 			MultipartFile[] postName = (MultipartFile[]) map.get("postName");
-			String[] postName2 = (String[]) map.get("postName2");
 			MultipartFile ThombnailName = (MultipartFile) map.get("ThombnailName");
 			File file = new File(map.get("filePath")+ThombnailName.getOriginalFilename());
 			
@@ -75,7 +74,13 @@ public class BoardServiceImpl implements BoardService {
 				post.setPostThombnail(ThombnailName.getOriginalFilename());
 				ThombnailName.transferTo(file);
 				boardDao.addPost(post);
-				
+				for(int i = 0; i < postName.length; i++) {
+					File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
+					boardFile.setFilePost(post);
+					boardFile.setFileName(postName[i].getOriginalFilename());
+					postName[i].transferTo(file2);
+					boardDao.addFile(boardFile);				
+				}				
 			//게시글 수정
 			}else if("update".equals(map.get("mode"))) {
 				if(ThombnailName.isEmpty() == false) {
@@ -108,21 +113,6 @@ public class BoardServiceImpl implements BoardService {
 				post.setPostLayer(post2.getPostLayer());
 				boardDao.addAnswerPost(post);
 			}
-//			if(postName.length != 0) {
-//				for(int i = 0; i < postName.length; i++) {
-//					File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
-//					boardFile.setFilePost(post);
-//					boardFile.setFileName(postName[i].getOriginalFilename());
-//					postName[i].transferTo(file2);
-//					boardDao.addFile(boardFile);				
-//				}
-//			}else if(postName2 != null) {
-//				for(int i = 0; i < postName2.length; i++) {
-//					boardFile.setFilePost(post);
-//					boardFile.setFileName(postName2[i]);
-//					boardDao.addFile(boardFile);
-//				}
-//			}
 		//게시글 선택삭제
 		}else if("delete".equals(map.get("mode"))) {
 			List<Integer> postArr = (List<Integer>) map.get("postArr");
@@ -181,19 +171,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public Map<String, Object> getPostList(Map<String, Object> map, int offset, int limit) throws Exception {
-		
+	public Map<String, Object> getPostList(Map<String, Object> map) throws Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("list", boardDao.getPostList(map, offset, limit));
-		resultMap.put("totalCount", boardDao.getTotalCount2(map));
-				
-		return resultMap;
-	}
-	
-	@Override
-	public Map<String, Object> getPostList2(Map<String, Object> map) throws Exception {
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("list", boardDao.getPostList2(map));
+		resultMap.put("list", boardDao.getPostList(map));
 		resultMap.put("totalCount", boardDao.getTotalCount2(map));
 		return resultMap;
 	}

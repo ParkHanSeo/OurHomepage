@@ -1942,6 +1942,9 @@
   border-radius: 16px;
   background-color: #f0f2f5;
 }
+.icon_item_box .common-layout_3 > li .icon_item_inner:hover {
+  background-color: #efefef;
+}
 .icon_item_box .common-layout_3 > li .icon_item_inner .icon_item_title {
   font-size: 24px;
   line-height: 36px;

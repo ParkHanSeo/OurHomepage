@@ -63,11 +63,11 @@ $(function(){
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
-                                <p class="top_txt2">디지털 트윈 (Digital Twin)</p>
+                                <span class="top_txt1">제조업체의 공장 관리를 위한 개념이자 구현 도구</span>
+                                <p class="top_txt2">제조 실행 시스템 (MES)</p>
                                 <p class="top_txt3">
-                                    현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768">
-                                    결과를 미리 예측하는 기술의 솔루션을 제공합니다.
+                                    주문에서 제품 생산에 이르기까지 관련 정보를 제공해 가장 효과적으로 활용할 수 있도록 하며, 현장의 정확한 데이터를 사용함으로써<br class="hide_768"> 
+                                    데이터들이 발생할 때마다 현장의 활동을 관리, 착수, 응답, 보고하는 솔루션을 제공합니다.
                                 </p>
                             </div>
                         </div>
@@ -78,10 +78,10 @@ $(function(){
                     <div class="inner_container">
                         <div class="common-swiper_tab">
                             <ul class="swiper-wrapper service_swiper_wrapper">
-                                <li class="swiper-slide active"><a href="#self">서비스 소개</a></li>
-                                <li class="swiper-slide"><a href="#self">추천대상</a></li>
-                                <li class="swiper-slide"><a href="#self">주요 서비스</a></li>
-                                <li class="swiper-slide"><a href="#self">차별화 포인트</a></li>
+                                <li class="swiper-slide service_swiper_slide active"><a href="#self">서비스 소개</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">추천대상</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">주요 서비스</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">차별화 포인트</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,25 +91,24 @@ $(function(){
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
-                                실시간 분석을 통해 대상을 감지, 예방, 예측 및 최적화하여 
-                                <br>비즈니스 가치를 제공하는 역할을 수행하는 솔루션을 소개합니다
+                                MES는 제품의 주문 단계에서 완성 단계까지
+                                <br>모든 생산 활동의 최적화를 가능하게 지원하는 솔루션을 소개합니다
                             </p>
                             <p class="top_txt3">
-                                1. 산업 데이터 모니터링 : 설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 
-								   자산 수명 주기의 전 단계를 모니터링 합니다..<br>
-                                2. 데이터를 통한 공정관리 : 워크플로 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 있던 문제를 해결할 수 있습니다. <br>
-                                3. BIM, innoAMS와 Digital Twin : 디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 관리와 연결합니다. <br>
+                                1. 실시간 생산 관리 및 분석 : 수동 생산공정관리 및 원자재 수기관리 등 비효율 관리로 인해 발생하는 생산성 저하 등의 문제를 해소할 수 있습니다.<br>
+                                2. 품질관리 시스템 구축 : 생산품의 품질 결과를 입력/유형분석 및 공정 별, 설비 별, 불량유형 별 통계분석 제공불량 발생 시 LOT 추적을 통한 문제 요인 탐색 가능합니다. <br>
+                                3. 통합관리, 생산성 개선, 경쟁력 향상 : 제조현장과 주변 시스템의 통합, 최적화한 생산 활동 지원, 생산 현장의 실시간(real time) 정보 통합, 
+								   통합 정보의 활용으로 최적의 의사결정 지원 등에 의한 통합화와 최적화할 수 있습니다. <br>
                                 <br><br>
-                                ※ 디지털 트윈이란<br>
-                                디지털 트윈은 자동차, 다리, 건물과 같은 물리적 자산 또는 환경에 대한 디지털 방식의 재현이다. 
-                                기존의 3D 모델보다는 정보 모델로 생각해보라. 디지털 트윈은 프로젝트 계획 단계에서 생성되는 공동 데이터 레퍼런스이기에, 
-                                설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 자산 수명 주기의 전 단계를 망라하고 있다.
+                                ※ MES란<br>
+                                MES는 실시간으로 정확한 데이터를 이용해 공장 내에 존재하는 모든 작업 활동을 가이드하고 착수하며 응답하고 보고한다.
+                                또한 상태 변화에 대한 신속한 응답과 값어치 없는(Non- value-added) 작업 활동의 감소에 초점을 맞추어 공장 내 작업과 공정들의 효율화를 높여준다.
                             </p>
                         </div>
 
                         <div class="layout_body">
                             <div class="common-img_box no-round">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin.jpg" alt="">
+                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/mes_3.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -299,7 +298,7 @@ $(function(){
                             <ol class="difference_list">
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_2.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/mes_2.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -313,7 +312,7 @@ $(function(){
                                 </li>
                                 <li class="is-right">
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_3.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/mes_1.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -329,7 +328,7 @@ $(function(){
                                 </li>
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_4.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/mes_4.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">

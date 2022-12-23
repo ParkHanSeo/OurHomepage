@@ -63,11 +63,11 @@ $(function(){
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
-                                <p class="top_txt2">디지털 트윈 (Digital Twin)</p>
+                                <span class="top_txt1">공급망 관리에 대한 정말 기본적인 정의의 소프트웨어</span>
+                                <p class="top_txt2">공급망 관리 (SCM)</p>
                                 <p class="top_txt3">
-                                    현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768">
-                                    결과를 미리 예측하는 기술의 솔루션을 제공합니다.
+                                    제품 및 서비스 제작, 주문 이행, 정보 추적의 모든 관련 당사자, <br class="hide_768">
+                                    즉 공급자, 제조자, 도매업체, 운송 및 물류 공급 업체, 소매업체를 위한 자재 처리와 소프트웨어 
                                 </p>
                             </div>
                         </div>
@@ -78,10 +78,10 @@ $(function(){
                     <div class="inner_container">
                         <div class="common-swiper_tab">
                             <ul class="swiper-wrapper service_swiper_wrapper">
-                                <li class="swiper-slide active"><a href="#self">서비스 소개</a></li>
-                                <li class="swiper-slide"><a href="#self">추천대상</a></li>
-                                <li class="swiper-slide"><a href="#self">주요 서비스</a></li>
-                                <li class="swiper-slide"><a href="#self">차별화 포인트</a></li>
+                                <li class="swiper-slide service_swiper_slide active"><a href="#self">서비스 소개</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">추천대상</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">주요 서비스</a></li>
+                                <li class="swiper-slide service_swiper_slide"><a href="#self">차별화 포인트</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,25 +91,25 @@ $(function(){
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
-                                실시간 분석을 통해 대상을 감지, 예방, 예측 및 최적화하여 
-                                <br>비즈니스 가치를 제공하는 역할을 수행하는 솔루션을 소개합니다
+                                원자재 조달에서 마지막 단계인 제품 배송에 이르기까지<br> 
+                                제품 또는 서비스와 관련된 상품, 데이터 및 재정의 흐름을 관리하는 솔루션을 소개합니다.
                             </p>
                             <p class="top_txt3">
-                                1. 산업 데이터 모니터링 : 설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 
-								   자산 수명 주기의 전 단계를 모니터링 합니다..<br>
-                                2. 데이터를 통한 공정관리 : 워크플로 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 있던 문제를 해결할 수 있습니다. <br>
-                                3. BIM, innoAMS와 Digital Twin : 디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 관리와 연결합니다. <br>
+                                1. 친환경 공급망 : 공급망 관리에 환경친화적인 관행을 통합하면 제품 디자인 및 자재 조달부터 제조, 물류, 배송 
+								   그리고 사용 수명 종료 시 제품과 장비에 수행하는 모든 조치를 혁신할 수 있습니다.<br>
+                                2. 공급망 투명성 : 고객은 윤리적인 원자재 제공과 생산에 사용되는 노동부터 배송 트럭의 연료에 
+                                   이르기까지 최신 공급망에 포함된 모든 연결 고리에 대한 원산지와 출처를 확인할 수 있습니다. <br>
                                 <br><br>
-                                ※ 디지털 트윈이란<br>
-                                디지털 트윈은 자동차, 다리, 건물과 같은 물리적 자산 또는 환경에 대한 디지털 방식의 재현이다. 
-                                기존의 3D 모델보다는 정보 모델로 생각해보라. 디지털 트윈은 프로젝트 계획 단계에서 생성되는 공동 데이터 레퍼런스이기에, 
-                                설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 자산 수명 주기의 전 단계를 망라하고 있다.
+                                ※ 공급망 관리 (SCM)이란<br>
+                                공급망 관리에 대한 정말 기본적인 정의는 고객에게 제품을 배송하기 위해 뒤에서 이루어지는 모든 작업입니다. 
+                                즉 구매와 주문, 제조, 운송, 재고 관리 등이 포함됩니다. 이 프로세스는 시장의 목소리에 귀를 기울여 고객이 원하는 것이 무엇이고 원하는 시기와 그 정도를 파악하는 데서 시작됩니다. 
+                                그런 다음 소싱에서 생산, 물류에 이르는 모든 단계를 진행합니다. 
                             </p>
                         </div>
 
                         <div class="layout_body">
                             <div class="common-img_box no-round">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin.jpg" alt="">
+                                <img src="${pageContext.request.contextPath}/resources/user/images/introduction/scm_1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -299,7 +299,7 @@ $(function(){
                             <ol class="difference_list">
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_2.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/scm_2.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -313,7 +313,7 @@ $(function(){
                                 </li>
                                 <li class="is-right">
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_3.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/scm_3.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
@@ -329,7 +329,7 @@ $(function(){
                                 </li>
                                 <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/digitalTwin_4.jpg" alt="">
+                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/scm_4.jpg" alt="">
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">

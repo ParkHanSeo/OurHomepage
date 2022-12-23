@@ -18,6 +18,20 @@ public class IntroductionController {
 		return mv;		
 	}
 	
+	@RequestMapping(value="consulting")
+	public ModelAndView consulting() throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/consulting");
+		return mv;		
+	}
+	
+	@RequestMapping(value="si")
+	public ModelAndView si() throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/si");
+		return mv;		
+	}
+	
 	@RequestMapping(value="digitalTwin")
 	public ModelAndView digitalTwin(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
