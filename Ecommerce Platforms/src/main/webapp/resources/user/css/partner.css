@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.icon_item_box .common-layout_3 > li .icon_item_inner.partner_a {
+  height: 150px;
+  padding: 40px;
+  display: block;
+  position: relative;
+  border-radius: 16px;
+  background-color: transparent;
+}
+.icon_item_box .common-layout_3 > li .icon_item_inner.partner_a:hover {
+  background-color: transparent;
+}
+
+li.items.partner_li.samsung_electronics {
+  background-image: url(../images/partner/samsung_electronics.jpg);
+}

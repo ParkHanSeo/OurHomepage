@@ -1,172 +1,140 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
 <title>내담씨앤씨</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta property="og:url" content="https://www.jhta.co.kr">
+
+<!-- include  -->
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-<script type="text/javascript">
- 	function paging(cPage){ 
-		var search = $("form[name='searchForm']").serialize();
-		var boardNo = $("input[name='boardNo']").val();
-		$.ajax({
-			url : "/user/notice/noticeListCom?${_csrf.parameterName}=${_csrf.token}",
-			type : "POST",
-			data : {
-				cPage,
-				boardNo,
-				search : search
-			},
-			success : function(JSONData, status){
-				var display = "";
-			} ,
-			error : function(check){
-				alert("실패")
-				console.log(check)
-			}
-		})
-	}
-</script>
+<!-- include end  -->
+<!-- 사용자 정의 끝 -->
 </head>
-  <body>
-  <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-<div id="search-layer">
-    <div class="inner">
-        <div class="area_search">
-            <form name="mainSearchForm" autocomplete="off" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
-            	 <input type="hidden" name="boardNo" value="${board2.boardNo}">
-            	 <input type="hidden" name="cPage">
-                 <input type="search" id="inputSearch" name="searchAll" placeholder="무엇이 궁금하신가요?" maxlength="30"> 
-                 <label for="inputSearch" class="blind">검색어</label>
-                 <span class="icon_search">
-                    <!-- <img src="/images/common/03-foundation-icon-system-search-32-px.svg" alt=""> -->
-                    <input type="submit" id="searchKeyword" value="검색"> 
-               	</span>
-            </form>
-            
-            <p class="result-error-txt" style="display:none;">검색어를 입력해주세요.</p>
-          
-            <div class="hash_area search_tag">
-            <a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','AI')" class="hash_tag">#AI</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','블록체인')" class="hash_tag">#블록체인</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','NFT')" class="hash_tag">#NFT</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','빅데이터')" class="hash_tag">#빅데이터</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','클라우드')" class="hash_tag">#클라우드</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','CJONE')" class="hash_tag">#CJONE</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','데이터마케팅')" class="hash_tag">#데이터마케팅</a></div>
-        </div>
-        <a href="" class="btn_close_search">
-            <span class="blind">검색창 닫기</span>
-            <i class="close-ico">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </i>
-        </a>
-    </div>
-</div>
+<style>
+.content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 1170px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;   
+}
+.content2 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 1170px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;   
+}
+
+img {
+    vertical-align: middle;
+    border: 0;    
+	display: block;
+    max-width: 100%;
+    height: auto;    
+}
+.main_title{
+	font-size: x-large;
+}
+</style>
+<!-- haeder -->
+<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
+<!-- haeder -->
+<body>
+
+<section id="wrapper">
+		<main id="contents">	
+			<div class="content">
+				<div class="heading">
+			        <h1 class="main_title">
+			            오시는 길
+			        </h1>
+			        <p class="center">
+			                        
+			        </p>
+		        </div>
+		        <div class="margin-bottom-30"></div>
+                <p>
+                    (주)내담C&amp;C는 고객분들의 방문을 환영합니다.
+                </p>
+                <div id="map1" style="width:100%;height:350px;"></div>
+              	<div class="map-explain">
+                  <h2>(주)내담C&amp;C 본사</h2>
+                  <p>
+                      <i class="fa fa-map-marker"></i> 경기도 성남시 분당구 판교역로231, S동 711호 (삼평동, H square)<br>
+                      <i class="fa fa-train"></i> 신분당선 판교역 1~4번 출구에서 버스로 3분 소요<br>
+                      - 71, 73, 602-14, 812번 버스<br>
+                      <i class="fa fa-phone"></i> 031-712-8315<br>
+                      <i class="fa fa-fax"></i> 031-789-3545
+                  </p>
+              	</div>
+              	<div class="margin-bottom-30"></div>	               		        		        
+                <div id="map2" style="width:100%;height:350px;"></div>
+
+                <div class="map-explain">
+                    <h2>(주)내담C&amp;C 가산지사</h2>
+                    <p>
+                        <i class="fa fa-map-marker"></i> 서울시 금천구 벛꽃로 298 대륭포스트타워6차 1104호 (가산동 50-3)<br>
+                        <i class="fa fa-train"></i> 7호선 가산디지털단지역 2번 출구 연결<br>
+                        <i class="fa fa-phone"></i> 02-2083-5590<br>
+                        <i class="fa fa-fax"></i> 02-2083-5594
+                    </p>
+                </div>
+
+            </div>	        
+		</main>
+	</section>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=980632dcd1b0ae95b2725f497c36e51d"></script>
 <script>
-$(function(){
-	// 검색어 유효성 체크
-	$("#btnCommonSearchAll").click(function(){
-		if($("#inputSearch").val() == "") {
-			$(".result-error-txt").show();
-			return false;	
-		}
-	});
+var mapContainer1 = document.getElementById('map1'), // 지도를 표시할 div 
+    mapOption1 = { 
+        center: new kakao.maps.LatLng(37.401323, 127.108592), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map1 = new kakao.maps.Map(mapContainer1, mapOption1); 
+
+// 마커가 표시될 위치입니다 
+var markerPosition1  = new kakao.maps.LatLng(37.401323, 127.108592);
+// 마커를 생성합니다
+var marker1 = new kakao.maps.Marker({
+    position: markerPosition1
 });
+// 마커가 지도 위에 표시되도록 설정합니다
+marker1.setMap(map1);
 
+
+var mapContainer2 = document.getElementById('map2'), // 지도를 표시할 div 
+    mapOption2 = { 
+        center: new kakao.maps.LatLng(37.481466, 126.883878), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map2 = new kakao.maps.Map(mapContainer2, mapOption2); 
+// 마커가 표시될 위치입니다 
+var markerPosition2  = new kakao.maps.LatLng(37.481466, 126.883878);
+// 마커를 생성합니다
+var marker2 = new kakao.maps.Marker({
+    position: markerPosition2
+});
+// 마커가 지도 위에 표시되도록 설정합니다
+marker2.setMap(map2);
 </script>
-		<section id="container">
-            <div id="contents">
-                <div class="sub_title_area">
-                    <div class="inner_container">
-                        <h2 class="sub_title">${board2.boardTitle}</h2>
-                    </div>
-                </div><!-- // .sub_title_area -->
 
-                <div class="top_visual_area recruit">
-                    <div class="inner_container">
-                        <div class="top_txt_outer">
-                            <div class="top_txt_area txt_notice">
-                                <p class="top_txt2">${board2.boardCategory}</p>
-                                <p class="top_txt3">
-                                    ${board2.boardEmail}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- // .top_visual_area -->
 
-                <div class="layout_section_outer_notice recruit">
-                    <div class="inner_container inner_container_notice">
-					<div id="recruit_DB"></div>
-                        <div class="common-search_box_wrap" id="recruit_search">
-                            <div class="common-search_box">
-                            	<form name="searchForm" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
-	                            	<input type="hidden" name="boardNo" value="${board2.boardNo}">
-	                            	<input type="hidden" name="searchType" value="1">
-	                            	<label class="common-search_label" for="recruit_search_txt">검색</label>
-	                                <input class="common-search_input" name="searchKeyword" id="recruit_search_txt" type="text" placeholder="검색어을 입력해주세요." title="검색어을 입력해주세요.">
-	                                <button type="button" class="common-search_btn" id="btnSearch">검색</button>
-                            	</form>                                
-                            </div>
-                        </div>
-                        <div class="search-result" id="recruit_result" style="display:none;">
-							<div class="search-result_inner">
-								<span class="result_keyword" id="recruit_result_txt"></span>
-								<span class="result_txt">검색 결과가 없습니다.</span>
-									<div class="result_msg">
-										<ul class="common-txt-list size_16">
-											<li>검색어가 올바르게 입력되었는지 확인해주세요.</li>
-											<li>검색어의 띄어쓰기를 다르게 해보세요.</li>
-											<li>키보드 언어 설정을 확인해주세요.</li>
-											<li>일반적인 단어로 다시 검색해보세요.</li>
-										</ul>
-									</div>
-								<div class="result_btn">
-									<a href="" class="common-btn is-white2" id="btnList"><span>목록</span></a>
-								</div>
-							</div>
-						</div>
-
-					<div class="common-text_list_area" id="recruit_detail">
-						<ul class="common-text_list">		
-								<li class="main_notice">
-									<div class="subj_box">
-										<p class="common-text_title">
-											제목
-										</p>
-									</div>
-									<div class="date_box center-left">
-										<p class="common-text_reg-date">
-											작성일자
-										</p>
-									</div>
-								</li>									
-							<c:forEach var="post" items="${list}">
-								<li id ="postList">
-									<div class="subj_box">
-										<p class="common-text_txt2">
-											<a href="https://recruit.cj.net/recruit/ko/recruit/recruit/bestDetail.fo?zz_jo_num=J20220805009583" target="blank">
-												${post.postTitle}<br />
-												${post.postContents}
-											</a>
-										</p>
-									</div>
-									<div class="date_box center-left">
-										<p class="common-text_txt4">${post.postDate}</p>
-									</div>
-								</li>
-							</c:forEach>
-						</ul>
-					</div>
-					<div id="page">
-						${pagebar}
-					</div>
-                        <!--#include virtual ="/page/_include/inc_pagination.html"-->
-                	</div>
-                </div><!-- // .layout_section_outer -->
-            </div><!-- // #contents -->
-        </section><!-- // #container -->
-</div>
-  
-   
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
-  </body>
+	
+	
+<!-- footer -->		
+<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+<!-- footer -->
+</body>
 </html>

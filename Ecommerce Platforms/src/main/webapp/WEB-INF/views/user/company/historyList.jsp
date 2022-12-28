@@ -64,7 +64,7 @@ body {
 	<!-- haeder -->
 	<div class="history" id="wrap">
 		<section id="container">
-			<div id="contents">
+			<div id="contents" class="contents_top">
 				<div class="sub_title_area">
 					<div class="common-swiper_area">
 						<div class="inner_container">
