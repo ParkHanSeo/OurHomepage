@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="recruit">
+
+	<resultMap type="com.naedam.admin.recruit.model.vo.recruitContentsDTO" id="contentsResultMap">
+		<id column="RECRUIT_CON_NO" property="recruitConNo"></id>
+		<!-- <result column="RECRUIT_SUB_TITLE" property="recruitSubTitle"/>
+		<result column="RECRUIT_CONTENTS" property="recruitContents"/> -->
+		<association property="recruitNum" resultMap="recruitResultMap"/>
+	</resultMap>
+
+	<resultMap type="com.naedam.admin.recruit.model.vo.recruitDTO" id="recruitResultMap">
+		<id column="RECRUIT_NO" property="recruitNo"/>
+		<result column="RECRUIT_TITLE" property="recruitTitle"/>
+		<result column="RECRUIT_VIEWCOUNT" property="recruitViewcount"/>
+		<result column="RECRUIT_START" property="recruitStart"/>
+		<result column="RECRUIT_END" property="recruitEnd" />
+		<result column="RECRUIT_DATE" property="recruitDate"/>
+		<result column="CAREER" property="career"/>
+		<result column="RECRUIT_DLE_STATUS" property="recruitDelStatus"/>
+		<result column="ROWNUM" property="rownum"/>
+	</resultMap>
+
+	<select id="getRecruitList" resultMap="recruitResultMap">
+		SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
+		R.*
+		FROM RECRUIT R,(SELECT @ROWNUM := 0) TMP
+		<if test="search.searchType != null">
+			WHERE R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
+		</if>
+		ORDER BY RECRUIT_NO ASC
+	</select>
+
+
+	<select id="getTotalCount" parameterType="hashmap"
+		resultType="int">
+		SELECT COUNT(*)
+		FROM (SELECT RECRUIT_NO,
+		RECRUIT_TITLE,
+		RECRUIT_VIEWCOUNT,
+		RECRUIT_START,
+		RECRUIT_END,
+		RECRUIT_DATE,
+		CAREER
+		FROM RECRUIT
+		<if test="search.searchType != null">
+			WHERE R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
+		</if>
+		ORDER BY RECRUIT_NO ASC)countTable
+	</select>
+
+	<update id="deleteRecruit">
+		UPDATE RECRUIT
+		SET RECRUIT_DLE_STATUS = 'Y'
+		WHERE RECRUIT_NO = #{recruitNum}
+	</update>
+
+	<insert id="insertRecruit">
+		INSERT INTO recruit
+		(
+		RECRUIT_NO,
+		RECRUIT_TITLE,
+		RECRUIT_VIEWCOUNT,
+		RECRUIT_START,
+		RECRUIT_END,
+		RECRUIT_DATE,
+		CAREER
+		)
+		VALUES
+		(
+		NEXTVAL(recruit_seq),
+		#{recruitTitle},
+		0,
+		#{recruitStart},
+		#{recruitEnd},
+		SYSDATE(),
+		#{career}
+		)
+	</insert>
+
+	<insert id="insertRecruitContents" parameterType="java.util.List">
+		INSERT INTO recruit_Contents(RECRUIT_NO, RECRUIT_CON_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS)
+		VALUES
+		<foreach collection="list" item="item" separator=",">
+			(#{recruitNo}, NEXTVAL(recruit_contents_seq), #{item.recruitSubTitle}, #{item.recruitContents}) 
+		</foreach>
+		
+		<selectKey keyProperty="recruitNo" order="BEFORE" resultType="int">
+			select next_not_cached_value from recruit_seq
+		</selectKey>
+	</insert>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
