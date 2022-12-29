@@ -30,7 +30,7 @@
 					display = '<li id ="postList">'
 							+ 	'<div class="subj_box">'
 							+ 	   '<p class="common-text_txt2">'
-							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].post_no+'" target="blank">'
+							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].post_no+'">'
 							+			 JSONData.list[i].post_title
 							+			 '<br />'
 							+		  '</a>'
@@ -166,7 +166,7 @@ $(function(){
 								<li id="postList">
 									<div class="subj_box">
 										<p class="common-text_txt2">
-											<a href="/user/notice/getNoticeDetail/${post.post_no}" target="blank">
+											<a href="/user/notice/getNoticeDetail/${post.post_no}">
 												${post.post_title}
 											</a>
 										</p>

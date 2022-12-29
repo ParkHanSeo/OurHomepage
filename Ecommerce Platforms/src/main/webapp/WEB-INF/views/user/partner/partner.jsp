@@ -1,196 +1,244 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%> <%@ taglib prefix="fmt"
-uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
-  <head>
-    <title>내담씨앤씨</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- jquery -->
-    <link
-      rel="stylesheet"
-      href="${pageContext.request.contextPath}/resources/css/ani.css"
-    />
-    <link
-      rel="stylesheet"
-      href="${pageContext.request.contextPath}/resources/css/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/html/_skin/js/vendor/jquery-3.2.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/js/swiper.js"></script>
-    <!-- ScrollMagic -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-    <!-- GSAP -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-    <!-- include  -->
-    <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-    <!-- include end  -->
-  </head>
-  <style>
-    .tung {
-      padding: 200;
-    }
-  </style>
+<head>
+<title>내담씨앤씨</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/partner.css">
+<jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
+</head>
   <body>
-    <div class="swiper mySwiper slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide bg1">
-          <span>Neadam</span>
-          <p>주요 사업</p>
-          <div>
-            Process 및 System 컨설팅 경험에서 축적된 Know How를 바탕으로 업무에
-            필요한 Solution을 개발/보급하고,
-            <br />자체 보유 Web 개발 툴을 활용하여 전문 SI Application 개발
-            서비스와 DB 모델링, 컨설팅 등을 제공합니다.
-          </div>
-        </div>
-        <div class="swiper-slide bg2">
-          <span>Neadam</span>
-          <p>고객사의 고객 만족</p>
-          <div>
-            (주)내담C&C는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된
-            Skill 및 Solution을 기반으로 고객사의 고객 만족 및 내부 경쟁력
-            향상을 이끌어 내어
-            <br />한단계 업그레이드 시키는 것을 Mission으로 하고 있으며 나아가
-            글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을
-            비전으로 하고 있습니다.
-          </div>
-        </div>
-        <div class="swiper-slide bg3">
-          <span>Neadam</span>
-          <p>IT Out Sourcing</p>
-          <div>
-            IT Outsourcing은 IT시스템 관련된 개발, 인력, 장비 등 IT전반에 대한
-            관리 활동을 외부 전문기업에 위탁하여 관리 하는 것을 말합니다.
-            <br />내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 인프라 등
-            다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를
-            기반으로
-          </div>
-        </div>
-        <div class="swiper-slide bg4">
-          <span>Neadam</span>
-          <p>PartnerShip</p>
-          <div>
-            일반 중소기업 및 중견기업에서는 현재 자본/기술 및 인력 문제와 내부
-            운영 효율 제고 및 경쟁력 향상이라는 과제를 안고 있으나, 자체적인
-            경영혁신 방법 및 투자 여력이 없는 실정입니다.
-            <br />이에 (주)내담C&C는 중소기업 및 중견기업과의 파트너쉽을 맺고
-            운영하며 최소 운영비로 지속적인 경영 혁신을 추진 가능하도록
-            지원합니다.
-          </div>
-        </div>
-      </div>
+  <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
+<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    
+
+    <div id="wrap" class="visual-center">
+
+<div id="search-layer">
+    <div class="inner">
+        <div class="area_search">
+            <form autocomplete="off" action="/searchall/search_results" method="post">
+                 <input type="search" id="inputSearch" name="searchAll" placeholder="무엇이 궁금하신가요?" maxlength="30"> 
+                 <label for="inputSearch" class="blind">검색어</label>
+                 <span class="icon_search">
+                    <img src="/images/common/03-foundation-icon-system-search-32-px.svg" alt="">
+                    <input type="submit" id="btnCommonSearchAll" value="검색"> 
+               	</span>
+            </form>
+            
+            <p class="result-error-txt" style="display:none;">검색어를 입력해주세요.</p>
+
+					<div class="hash_area search_tag">
+						<a href="javascript:void(0);"
+							onclick="hashtagLink('/searchall/search_results?searchAll=','AI')"
+							class="hash_tag">#AI</a><a href="javascript:void(0);"
+							onclick="hashtagLink('/searchall/search_results?searchAll=','블록체인')"
+							class="hash_tag">#블록체인</a><a href="javascript:void(0);"
+							onclick="hashtagLink('/searchall/search_results?searchAll=','NFT')"
+							class="hash_tag">#NFT</a><a href="javascript:void(0);"
+							onclick="hashtagLink('/searchall/search_results?searchAll=','빅데이터')"
+							class="hash_tag">#빅데이터</a><a href="javascript:void(0);"
+							onclick="hashtagLink('/searchall/search_results?searchAll=','클라우드')"
+							class="hash_tag">#클라우드</a><a href="javascript:void(0);"
+							onclick="hashtagLink('/searchall/search_results?searchAll=','CJONE')"
+							class="hash_tag">#CJONE</a><a href="javascript:void(0);"
+							onclick="hashtagLink('/searchall/search_results?searchAll=','데이터마케팅')"
+							class="hash_tag">#데이터마케팅</a>
+					</div>
+				</div>
+        <a href="" class="btn_close_search">
+            <span class="blind">검색창 닫기</span>
+            <i class="close-ico">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </i>
+        </a>
     </div>
-    <div class="tung">
-      <span> 빈 공백 </span>
-    </div>
-    <div>
-      <article>
-        <div class="main_visual__quick">
-          <nav class="main_visual__quick-nav inner" style="margin: 1 0 25%">
-            <a
-              href="${pageContext.request.contextPath}/user/company/businessList"
-              class="about"
-            >
-              <p class="btn__txt-wrap">
-                <span class="btn__txt">회사 소개</span>
-              </p>
-            </a>
-            <a
-              href="${pageContext.request.contextPath}/user/company/divisionList"
-              class="consult"
-            >
-              <p class="btn__txt-wrap">
-                <span class="btn__txt">사업부 소개</span>
-              </p>
-            </a>
-            <a
-              href="${pageContext.request.contextPath}/user/introduction/solutionList"
-              class="review"
-            >
-              <p class="btn__txt-wrap">
-                <span class="btn__txt">사업 부분</span>
-              </p>
-            </a>
-            <a href="${pageContext.request.contextPath}" class="location">
-              <p class="btn__txt-wrap">
-                <span class="btn__txt">채용 안내</span>
-              </p>
-            </a>
-            <a href="${pageContext.request.contextPath}" class="inquiry">
-              <p class="btn__txt-wrap">
-                <span class="btn__txt">공지사항</span>
-              </p>
-            </a>
-          </nav>
-        </div>
-      </article>
-    </div>
-    <div id="mid_solution">
-      <span>SOLUTION</span>
-    </div>
-    <div class="swiper mid">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide mg1">
-          <span>보유 솔루션</span>
-          <br />
-          <p>
-            다양한 IT 분야에서의<br />구축 경험을 토대로<br />다양한 솔류션과
-            서비스를 개발합니다.
-          </p>
-          <div class="chack">
-            <a>자세히 보기</a>
-          </div>
-        </div>
-        <div class="swiper-slide mg2">
-          <span>IT Out Sourcing</span>
-          <br />
-          <p>
-            IT Total System으로<br />IT 분야의 전반적인 관리가<br />편리해집니다.
-          </p>
-        </div>
-        <div class="swiper-slide mg3">
-          <span>Application 개발</span>
-          <br />
-          <p>
-            전문인력을 바탕으로<br />고객의 요구에 맞는 특화된 개발 서비스를<br />제공
-            가능합니다.
-          </p>
-        </div>
-        <div class="swiper-slide mg4">
-          <span>회사 조직도 및 연혁</span>
-        </div>
-        <div class="swiper-slide mg5">
-          <span>회사비전</span>
-        </div>
-        <div class="swiper-slide mg6">
-          <span>입사지원 바로가기</span>
-        </div>
-      </div>
-    </div>
-	<div id="wrap">
-	    <div class="ani ani1">
-	        <h1 data-role="animation">
-	        	앞선 기술력과 최고의 IT 서비스로
-			<br>고객 비즈니스의 혁신을 주도하는
-			<br>디지털 서비스 전문기업, CJ올리브네트웍스
-	        </h1>
-	    </div>
-	    <div class="ani ani2">
-	        <h1 data-role="animation">
-				앞선 기술력과 최고의 IT 서비스로
-			<br>고객 비즈니스의 혁신을 주도하는
-			<br>디지털 서비스 전문기업, CJ올리브네트웍스
-			</h1>
-	    </div>
-	    <div class="ani ani3">
-	        <h1 data-role="animation">Animation3</h1>
-	    </div>
-	</div>
-    <script src="${pageContext.request.contextPath}/resources/js/default.js"></script>
+</div>
+<script>
+$(function(){
+	// 검색어 유효성 체크
+	$("#btnCommonSearchAll").click(function(){
+		if($("#inputSearch").val() == "") {
+			$(".result-error-txt").show();
+			return false;	
+		}
+	});
+});
+
+</script>
+
+
+        <section id="container">
+            <div id="contents" class="contents_top">
+                <div class="sub_title_area">
+                    <div class="inner_container">
+                        <h2 class="sub_title">Partner</h2>
+                    </div>
+                </div><!-- // .sub_title_area -->
+
+                <div class="layout_section_outer sub-main type03 service_sub_main">
+                    <div class="inner_container">
+                        <div class="layout_head">
+                            <p class="top_txt1 service_txt1">
+                                내담C&C의 Partner를 소개합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div><!-- // .layout_section_outer -->
+
+                <div class="layout_section_outer sub-main type08 service_top_layout" data-js="anchor-target">
+                    <div class="inner_container">
+                        <div class="layout_body">
+                            <div class="icon_item_box">
+                                <ul class="common-layout_3 is-vertical introduction_vertical">
+                                    <li class="items partner_li samsung_electronics">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                삼성물산
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                삼성전기
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                삼성SDI
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                삼성SDS
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                삼성디스플레이
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                HUMAX
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                MagnaChip
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                SONY
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                DOOSAN
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                동부하이텍
+                                            </p> 
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                대한상공회의소
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                MEV 환경부
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                해양수산부
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                SK C&C
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                SK Hynix
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li class="items partner_li">
+                                        <a href="#" class="icon_item_inner partner_a">
+                                            <p class="icon_item_title">
+                                                EVERLANDRESORT
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // .layout_section_outer -->
+            </div><!-- // #contents -->
+        </section><!-- // #container -->
+    </div><!-- // #wrap -->
+
+<div>
+</div>
+
+    <div class="layer_wrapper is-movie" id="pop_movie">
+    <div class="layer_outer">
+        <div class="layer_inner">
+            <div class="layer_body">
+                <div class="movie_iframe_wrap">
+                    <iframe src="" title="" class="movie_iframe"></iframe>
+                </div>
+            </div>
+            <button type="button" class="icon pop-close" onclick="moviePopClose(this);">닫기</button>
+        </div><!-- // .layer_inner -->
+    </div><!-- // .layer_outer -->
+</div><!-- // .layer_wrapper -->
+
+
+
+
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"><div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div></div></body>
+  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
   </body>
 </html>

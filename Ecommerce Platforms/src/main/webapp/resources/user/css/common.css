@@ -380,11 +380,16 @@ body.overflow::-webkit-scrollbar {
   clear: both;
   display: block;
 }
+#footer .naedam_footer_img {
+  float: left;
+  padding: 4% 0% 0% 20%;
+}
 #footer .inner {
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 56px 80px;
+  float: right;
+  padding: 2% 40% 2% 0;
 }
 #footer .footer-menu:after {
   content: "";
@@ -419,7 +424,6 @@ body.overflow::-webkit-scrollbar {
   color: #000;
 }
 #footer address {
-  padding-top: 32px;
   font-style: normal;
 }
 #footer address span {
@@ -1223,6 +1227,11 @@ img {
 .top_visual_area.tech-02 {
   /*background-image:url(../images/tech/img-keyvisual-visual-02-pc@2x.png);*/
 } /* AI 비전연구 */
+.top_visual_area.tech-02.ci_visual_area {
+  background-position: right;
+  background-size: contain;
+  background-image: url(../images/nd_back.png);
+}
 .top_visual_area.tech-03 {
   /*background-image:url(../images/tech/img-keyvisual-visual-03-pc@2x.png);*/
 } /* AI 자연어연구 */
@@ -1821,8 +1830,11 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 .common-layout_3.is-vertical {
   flex-wrap: wrap;
 }
-.common-layout_3.is-vertical.introduction_vertical {
+.introduction_vertical {
   padding: 1px;
+}
+.is-vertical.location_list.introduction_vertical {
+  padding-top: 40px;
 }
 .common-layout_3.is-vertical .items {
   margin-top: 40px;
@@ -1894,6 +1906,9 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 .tab-panel_area .tab-panel.active {
   display: block;
+}
+.location_img img {
+  border-radius: 3%;
 }
 
 .btn-scroll-top {
