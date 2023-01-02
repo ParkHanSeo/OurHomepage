@@ -305,7 +305,7 @@
 						</a>
 						<ul class="treeview-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/member/list.do">
+								<a href="${pageContext.request.contextPath}/admin/recruitList">
 									<i class="fa fa-circle-o"></i> 채용
 								</a>
 							</li>
