@@ -98,14 +98,14 @@ $(function(){
                                         <a href="#" class="icon_item_inner partner_a">
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li samsung_electronics">
                                         <a href="#" class="icon_item_inner partner_a">
                                             <p class="icon_item_title">
                                                 삼성물산
                                             </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li samsung_electronics">
                                         <a href="#" class="icon_item_inner partner_a">
                                             <p class="icon_item_title">
                                                 삼성전기

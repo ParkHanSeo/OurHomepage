@@ -570,6 +570,7 @@ h4 {
 /* core technology */
 .core-wrap {
   position: relative;
+  background-color: #fff;
 }
 .core-wrap .inner_container {
   padding-top: 180px;
@@ -889,7 +890,7 @@ h4 {
 }
 
 .service-wrap .inner_container {
-  padding: 356px 0 176px;
+  padding: 135px 0 0;
   transition: 0.4s ease;
 }
 .service-wrap .section-title-area > a {
@@ -989,7 +990,7 @@ h4 {
 /* core & service bg response */
 .bg-responsive-container {
   position: relative;
-  background-color: #000;
+  background-color: #f7f7f7;
   transition: 0.4s ease;
 }
 .bg-responsive-container::before {
@@ -1008,7 +1009,7 @@ h4 {
 .bg-responsive-container .description,
 .bg-responsive-container .tit-label,
 .bg-responsive-container .common-btn.is-grad-blue span {
-  color: #fff;
+  color: black;
   transition: 0.4s ease;
 }
 .bg-responsive-container .common-btn.is-grad-blue .link-arrow {
@@ -1370,7 +1371,7 @@ h4 {
   }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 768px) and (max-width: 1023px) {
   .card-ui .image_box {
     display: block;
   }
@@ -1773,7 +1774,7 @@ h4 {
     margin-right: -32px;
   }
 }
-@media all and (max-width: 768px) {
+@media all and (min-width: 768px) and (max-width: 1023px) {
   h2 {
     font-size: 32px;
     line-height: 1.5;
@@ -1948,7 +1949,7 @@ h4 {
   }
   .core-wrap .core-list .ai > a,
   .core-wrap .core-list .cloud > a {
-    padding-top: calc(71.83vw + 16px); /*73.92vw*/
+    padding-top: calc(71.83vw + 40px); /*73.92vw*/
   }
   .core-wrap .core-list .big-data,
   .core-wrap .core-list .blockchain {

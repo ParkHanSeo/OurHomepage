@@ -13,7 +13,7 @@ window.onload=function(){
 			var menu = data.list;
 			var menu2 = data.list2;
 			var display = '';
-			console.log(data)
+			var sideDisplay = '';
 			for(var i = 0; i < menu.length; i++){
 				if(menu[i].status != 'n'){
 					display = "<li class>"
@@ -31,7 +31,20 @@ window.onload=function(){
 						    + '   </div>'
 						    + '  </section>'
 						    + '</li>';
-					$('#menuHeader').append(display)
+					sideDisplay = "<li>"
+								+ "	<a href='"+menu[i].url+"' class='btn_submenu'>"+menu[i].title+"</a>"
+								+ "		<div class='sub-wrap'>"
+								+ "			<ul class='sub-2depth'>"
+								for(var j = 0; j < data.list2.length; j++){
+									if(data.list[i].code == data.list2[j].originNo && menu2[j].status != 'n'){
+										sideDisplay	+= "<li><a href='"+menu2[j].url+"'>"+menu2[j].title+"</a></li>"				
+									}
+								}
+					sideDisplay += '		</ul>'
+								+ '		</div>'
+								+ '</li>';
+					$('#menuHeader').append(display);
+					$('#sideMenu').append(sideDisplay);
 				}
 			}
 		}
@@ -47,72 +60,19 @@ window.onload=function(){
             </a>
           </h1>
           <nav class="gnb-wrap">
-					<ul id="menuHeader">
-						
-					</ul>
-				</nav>
+		      <ul id="menuHeader">
 
-          <div id="sitemap" aria-hidden="true">
+			  </ul>
+		  </nav>
+
+        <div id="sitemap" aria-hidden="true">
             <div class="sitemap-body">
-              <ul>
-                <li>
-                  <a href="/company/overview" class="btn_submenu">메인페이지</a>
-                </li>
-                <li>
-                  <a href="/company/overview" class="btn_submenu">회사소개</a>
-                  <div class="sub-wrap">
-                    <ul class="sub-2depth">
-                      <li><a href="/company/overview">사업개요</a></li>
-                      <li><a href="/company/ceo_greeting">CEO 메시지</a></li>
-                      <li><a href="/company/history">사업부 소개</a></li>
-                      <li><a href="/company/location">연혁</a></li>
-                      <li><a href="/company/location">CI</a></li>
-                      <li><a href="/company/location">오시는 길</a></li>
-                    </ul>
-                  </div>
-                </li>   
-                <li>
-                  <a href="/company/overview" class="btn_submenu">사업소개</a>
-                  <div class="sub-wrap">
-                    <ul class="sub-2depth">
-                      <li><a href="/company/overview">Solution</a></li>
-                      <li><a href="/company/ceo_greeting">컨설팅</a></li>
-                      <li><a href="/company/history">SI</a></li>
-                    </ul>
-                  </div>
-                </li>   
-                <li>
-                  <a href="/company/overview" class="btn_submenu">파트너</a>
-                  <div class="sub-wrap">
-                    <ul class="sub-2depth">
-                      <li><a href="/company/overview">Partner Ship</a></li>
-                      <li><a href="/company/ceo_greeting">Partner</a></li>
-                    </ul>
-                  </div>
-                </li> 
-                <li>
-                  <a href="/company/overview" class="btn_submenu">인재정보</a>
-                  <div class="sub-wrap">
-                    <ul class="sub-2depth">
-                      <li><a href="/company/overview">채용안내</a></li>
-                      <li><a href="/company/ceo_greeting">인재상</a></li>
-                      <li><a href="/company/ceo_greeting">인사제도</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="/company/overview" class="btn_submenu">공지사항</a>
-                  <div class="sub-wrap">
-                    <ul class="sub-2depth">
-                      <li><a href="/company/overview">IR 자료</a></li>
-                      <li><a href="/company/ceo_greeting">기타 자료</a></li>
-                    </ul>
-                  </div>
-                </li>                                                                                                                    
+              <ul id="sideMenu">
+                                                                                                                                    
               </ul>
             </div>
         </div>
-<div class="header_util">
+		<div class="header_util">
             <div class="btn_util_wrap">
                 <a href="/util/contact_us" class="btn_contact">고객센터</a>
                 <!-- #수정 2022-05-25 국문 오픈전 숨김 끝 -->
@@ -137,7 +97,6 @@ window.onload=function(){
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </i>
-
             </a>
         </div>        
       </header>
