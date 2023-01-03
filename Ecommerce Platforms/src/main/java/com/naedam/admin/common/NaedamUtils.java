@@ -30,7 +30,7 @@ public class NaedamUtils {
 		int pageEnd = pageStart + pagebarSize - 1;
 		
 		int pageNo = pageStart;
-		
+		System.out.println("page 확인 === "+pageStart+" ||| "+pageEnd+" ||| "+pageNo);
 		/*
 		 *  ● disabled : 필요 없는 목록 비활성화 처리
 		 *  ● tabindex = "-1" : tab을 해도 건너 띄게끔 처리(disabled 처리 할 때 같이 처리) 
@@ -81,7 +81,7 @@ public class NaedamUtils {
 		 * ● pageNo == 1 이전 페이지가 없으므로,
 		 * ● disabled & tabindex="-1" 처리
 		 */
-		if(pageNo == 1) {
+		if(cPage == 1) {
 			pagebar.append("<a href=\"javascript:paging('prev');\" class=\"prev\"></a>\n"
 					+ " <div>\n");
 		}
@@ -89,7 +89,7 @@ public class NaedamUtils {
 		 * ● 자바 스크립트 함수 호출 : href=\"javascript:paging(" + (pageNo - 1) + ") --> 이전 페이지로.
 		 */
 		else {
-			pagebar.append("<a href=\\\"javascript:paging(" + (pageNo-1) + ");\\\" class=\\\"prev\\\"></a>\\n"
+			pagebar.append("<a href=\"javascript:paging(" + (cPage-1) + ");\" class=\"prev\"></a>\n"
 					+ " <div>\n");
 		}
 		
@@ -127,7 +127,7 @@ public class NaedamUtils {
 		 * ● 자바 스크립트 함수 호출 : href=\"javascript:paging(" + (pageNo) + ") --> 다음 페이지로.
 		 */
 		else {
-			pagebar.append("<a href=\"javascript:paging('next');\" class=\"next\"></a>\n"
+			pagebar.append("<a href=\"javascript:paging(" + (cPage+1) + ");\" class=\"next\"></a>\n"
 					+"		</div>\n");
 		}
 		return pagebar.toString();

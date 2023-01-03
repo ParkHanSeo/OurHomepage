@@ -47,7 +47,7 @@ $(function(){
                 </div>
 				<div class="sub_title_area contents_top">
                     <div class="inner_container">
-                        <h2 class="sub_title">사업부 소개</h2>
+                        <h2 class="sub_title business_sub_title">사업부 소개</h2>
                     </div>
                 </div><!-- // .sub_title_area -->
                 <div class="inner_business_container">

@@ -73,23 +73,6 @@ window.onload=function(){
             </div>
         </div>
 		<div class="header_util">
-            <div class="btn_util_wrap">
-                <a href="/util/contact_us" class="btn_contact">고객센터</a>
-                <!-- #수정 2022-05-25 국문 오픈전 숨김 끝 -->
-                <a href="" class="btn_search">
-                    <span class="blind">검색창 열기</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33">
-                        <g fill="none" fill-rule="evenodd">
-                            <path d="M0 .322h32v32.356H0z"></path>
-                            <g transform="translate(5 5.378)" stroke="#000">
-                                <ellipse cx="9" cy="9.1" rx="8.5" ry="8.6"></ellipse>
-                                <path stroke-linecap="round" d="m15 15.167 6.364 6.434"></path>
-                            </g>
-                        </g>
-                    </svg>
-                </a>
-            </div>
-
             <a href="javascript:;" class="btn_menu">
                 <span class="blind">전체메뉴 열기</span>
                 <i class="hamburger-ico">

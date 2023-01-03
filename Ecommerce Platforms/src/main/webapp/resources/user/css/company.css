@@ -396,6 +396,10 @@
 .business_division {
   height: 70%;
 }
+.business_sub_title {
+  padding-bottom: 3%;
+  padding-top: 10%;
+}
 @media all and (max-width: 1280px) {
   .common-layout_4 > .items {
     width: calc(100% / 2 - 20px);

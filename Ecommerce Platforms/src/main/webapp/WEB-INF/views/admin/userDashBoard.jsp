@@ -25,52 +25,6 @@
   <body>
     <div id="wrap">
 	<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-      <div id="search-layer">
-        <div class="inner">
-          <div class="area_search">
-			<form autocomplete="off" action="/searchall/search_results" method="post">
-				<input type="search" id="inputSearch" name="searchAll" placeholder="무엇이 궁금하신가요?" maxlength="30"/> 
-				<label for="inputSearch" class="blind">검색어</label> 
-				<span class="icon_search"> <img src="" alt="" /> 
-					<input type="submit" id="btnCommonSearchAll" value="검색" />
-				</span>
-			</form>
-
-			<p class="result-error-txt" style="display: none">
-              검색어를 입력해주세요.
-            </p>
-
-            <div class="hash_area search_tag">
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','AI')" class="hash_tag">#내담</a> 
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','블록체인')" class="hash_tag">#주요사업</a>
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','NFT')" class="hash_tag" >#비전</a> 
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','빅데이터')" class="hash_tag">#솔루션</a> 
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','클라우드')" class="hash_tag">#SI사업</a>
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','CJONE')" class="hash_tag">#채용안내</a>
-				<a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','데이터마케팅')" class="hash_tag">#오시는길</a>
-			</div>
-          </div>
-          <a href="" class="btn_close_search">
-            <span class="blind">검색창 닫기</span>
-            <i class="close-ico">
-              <span class="line line1"></span> <span class="line line2"></span>
-              <span class="line line3"></span>
-            </i>
-          </a>
-        </div>
-      </div>
-      <script>
-        $(function () {
-          // 검색어 유효성 체크
-          $("#btnCommonSearchAll").click(function () {
-            if ($("#inputSearch").val() == "") {
-              $(".result-error-txt").show();
-              return false;
-            }
-          });
-        });
-      </script>
-
 		<section id="container">
 			<div id="contents">
 				<div class="visual-wrapper section">

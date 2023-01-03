@@ -370,7 +370,7 @@
 				p.post_asc,
 				p.post_title,
 				p.post_contents,
-				p.post_date,
+				TO_CHAR(p.post_date, 'YYYY-MM-DD') post_date,
 				p.post_thombnail,
 				p.post_viewcount,
 				p.post_downloadcount,
