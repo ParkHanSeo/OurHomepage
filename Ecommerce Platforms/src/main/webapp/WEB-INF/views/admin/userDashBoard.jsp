@@ -60,20 +60,6 @@
         </div>
       </div>
       <script>
-        var html = "";
-        /* $.ajax({
-	url : "/searchall/hashtag",
-	type : "post",
-	datatype : "json",
-	success : function(data){
-		
-		for (var i = 0; i<data.length; i++) {
-			html += "<a href='javascript:void(0);' onclick=hashtagLink('/searchall/search_results?searchAll='," + "'" + data[i].slice(1) + "') class='hash_tag'>" + data[i] + "</a>";
-		} 
-		
-		$(".search_tag").append(html);
-	}
-}) */
         $(function () {
           // 검색어 유효성 체크
           $("#btnCommonSearchAll").click(function () {
@@ -88,18 +74,13 @@
 		<section id="container">
 			<div id="contents">
 				<div class="visual-wrapper section">
-					<div
-						class="visual-slider swiper-container-initialized swiper-container-horizontal">
-						<div class="swiper-wrapper"
-							style="transition-duration: 0ms; transform: translate3d(-1687px, 0px, 0px);">
-							<div class="swiper-slide swiper-slide-duplicate-next"
-								data-swiper-slide-index="0" style="width: 241px">
+					<div class="visual-slider swiper-container-initialized swiper-container-horizontal">
+						<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1687px, 0px, 0px);">
+							<div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" style="width: 241px">
 								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_17.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate"
-										data-aos="fade-up" data-aos-offset="0" data-aos-duration="400"
-										data-aos-delay="300" data-aos-easing="linear">
+									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
 										<div class="main-banner">
 											<h2 class="tit-slide">
 												IT서비스 업계 최초 <br />‘인간 중심’의 AI윤리원칙 선포
@@ -109,86 +90,64 @@
 											</p>
 										</div>
 										<div class="btn-area">
-											<a
-												href="https://www.cjolivenetworks.co.kr/sustainability/compliance/ai_ethics"
-												class="common-btn is-white2"> <span>솔루션 보기</span> <i
-												class="icon link-arrow"></i></a>
-											<!-- <a href="https://www.cjolivenetworks.co.kr/news/press_release/detail/514?ca=ALL" class="common-btn is-white">
-												<span>뉴스 보기</span>
-												<i class="icon link-arrow2"></i>
-											</a> -->
+											<a href="https://www.cjolivenetworks.co.kr/sustainability/compliance/ai_ethics" class="common-btn is-white2"> 
+												<span>솔루션 보기</span> 
+												<i class="icon link-arrow"></i>
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide" data-swiper-slide-index="1"
-								style="width: 241px">
-								<div class="view"
-									style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_9.jpg);"></div>
+							<div class="swiper-slide" data-swiper-slide-index="1" style="width: 241px">
+								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_9.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate"
-										data-aos="fade-up" data-aos-offset="0" data-aos-duration="400"
-										data-aos-delay="300" data-aos-easing="linear">
+									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
 										<div class="main-banner">
 											<h2 class="tit-slide">
 												공급망 투명석과 지속가능성의 <br /> 구축을 위한 SCM 기술
 											</h2>
 											<p class="description">
-												SCM을 통한 인공지능, 머신 러님, 예측 분석을 이용하여 <br /> 신속성과 탄력성을 향상시킬 수
-												있습니다.
+												SCM을 통한 인공지능, 머신 러님, 예측 분석을 이용하여 <br /> 신속성과 탄력성을 향상시킬 수 있습니다.
 											</p>
 										</div>
 										<div class="btn-area">
-											<a href="https://www.cjolivenetworks.co.kr/tech/ai_audio"
-												class="common-btn is-white2"> <span>솔루션 보기</span> <i
-												class="icon link-arrow"></i>
+											<a href="https://www.cjolivenetworks.co.kr/tech/ai_audio" class="common-btn is-white2"> 
+												<span>솔루션 보기</span> 
+												<i class="icon link-arrow"></i>
 											</a>
-											<!-- <a href="https://www.cjolivenetworks.co.kr/news/press_release/detail/595?ca=ALL" class="common-btn is-white">
-												<span>뉴스 보기</span>
-												<i class="icon link-arrow2"></i>
-											</a> -->
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide" data-swiper-slide-index="2"
-								style="width: 241px">
-								<div class="view"
-									style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_11.jpg);"></div>
+							<div class="swiper-slide" data-swiper-slide-index="2" style="width: 241px">
+								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_11.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate"
-										data-aos="fade-up" data-aos-offset="0" data-aos-duration="400"
-										data-aos-delay="300" data-aos-easing="linear">
+									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
 										<div class="main-banner">
 											<h2 class="tit-slide">
 												Digital Twin 플랫폼을 통한 <br />'산업현장'의 안전/관리 완전성
 											</h2>
 											<p class="description">
-												다양한 고객의 Needs를 수용할 수 있는 <br />Digital Twin기반의 SMART 관제시스템
-												구축하고 있습니다.
+												다양한 고객의 Needs를 수용할 수 있는 <br />
+												Digital Twin기반의 SMART 관제시스템 구축하고 있습니다.
 											</p>
 										</div>
 										<div class="btn-area">
-											<a
-												href="https://www.cjolivenetworks.co.kr/news/press_release/detail/560?ca=ALL"
-												class="common-btn is-white2"> <span>솔루션 보기</span> <i
-												class="icon link-arrow"></i>
+											<a href="https://www.cjolivenetworks.co.kr/news/press_release/detail/560?ca=ALL" class="common-btn is-white2">
+												<span>솔루션 보기</span> 
+												<i class="icon link-arrow"></i>
 											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide swiper-slide-prev"
-								data-swiper-slide-index="3" style="width: 241px">
-								<div class="view"
-									style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_3.jpg);"></div>
+							<div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="3" style="width: 241px">
+								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_3.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate"
-										data-aos="fade-up" data-aos-offset="0" data-aos-duration="400"
-										data-aos-delay="300" data-aos-easing="linear">
+									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
 										<div class="main-banner">
 											<h2 class="tit-slide">
 												Vision AI의 딥러닝의 <br /> 빅데이터를 기반의 솔루션
@@ -198,23 +157,19 @@
 											</p>
 										</div>
 										<div class="btn-area">
-											<a enetworks.co.kr/news/press_release/detail/547?ca=ALL
-												" class="common-btn is-white2"> <span>솔루션 보기</span> <i
-												class="icon link-arrow"></i>
+											<a enetworks.co.kr/news/press_release/detail/547?ca=ALL" class="common-btn is-white2"> 
+												<span>솔루션 보기</span> 
+												<i class="icon link-arrow"></i>
 											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide swiper-slide-active"
-								data-swiper-slide-index="4" style="width: 241px">
-								<div class="view"
-									style=" background-image: url(${pageContext.request.contextPath}/resources/user/images/image_13.jpg);"></div>
+							<div class="swiper-slide swiper-slide-active" data-swiper-slide-index="4" style="width: 241px">
+								<div class="view" style=" background-image: url(${pageContext.request.contextPath}/resources/user/images/image_13.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate"
-										data-aos="fade-up" data-aos-offset="0" data-aos-duration="400"
-										data-aos-delay="300" data-aos-easing="linear">
+									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
 										<div class="main-banner">
 											<h2 class="tit-slide">
 												Cloud MSP 기술로 <br />시스템 구축
@@ -224,35 +179,30 @@
 											</p>
 										</div>
 										<div class="btn-area">
-											<a href="https://www.cjolivenetworks.co.kr/business/nft"
-												class="common-btn is-white2"> <span>솔루션 보기</span> <i
-												class="icon link-arrow"></i>
+											<a href="https://www.cjolivenetworks.co.kr/business/nft" class="common-btn is-white2"> 
+												<span>솔루션 보기</span> 
+												<i class="icon link-arrow"></i>
 											</a>
-											<!-- <a href="https://www.cjolivenetworks.co.kr/news/press_release/detail/515?ca=ALL" class="common-btn is-white">
-												<span>뉴스 보기</span><i class="icon link-arrow2"></i>
-											</a> -->
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<span class="swiper-notification" aria-live="assertive"
-							aria-atomic="true"></span>
+						<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 					</div>
 					<div class="swiper-info-area">
 						<div class="inner">
 							<div class="slider-timer" style="display: block">
 								<button type="button" class="btn-control">정지</button>
-								<svg class="progress" width="64px" height="64px"
-									viewBox="0 0 64 64">
-                    <circle cx="32" cy="32" r="32" class="top"
-										style="stroke-dashoffset: 55.9282px"></circle>
-                    <circle cx="32" cy="32" r="32" class="bottom"></circle>
-                  </svg>
+								<svg class="progress" width="64px" height="64px" viewBox="0 0 64 64">
+				                    <circle cx="32" cy="32" r="32" class="top" style="stroke-dashoffset: 55.9282px"></circle>
+				                    <circle cx="32" cy="32" r="32" class="bottom"></circle>
+                  				</svg>
 							</div>
 							<div class="fraction swiper-pagination-custom">
-								<span class="current-num">5</span> <span class="div">|</span> <span
-									class="total-num">5</span>
+								<span class="current-num">5</span> 
+								<span class="div">|</span> 
+								<span class="total-num">5</span>
 							</div>
 						</div>
 					</div>
@@ -265,23 +215,20 @@
 				<div class="nft-wrap section">
 					<div class="inner_container">
 						<a href="/business/nft">
-							<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0"
-								data-aos-duration="250" data-aos-easing="linear">
+							<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 								고객사의 고객 만족 및 내부 경쟁력 향상
 							</h3>
-							<p class="description aos-init" data-aos="fade-up"
-								data-aos-offset="0" data-aos-duration="250"
-								data-aos-easing="linear">
+							<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 								(주)내담C&C는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로 
 								<br />고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며 
 								<br />나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
 							</p>
 						</a>
-						<div class="btn-area aos-init" data-aos="fade-up"
-							data-aos-offset="0" data-aos-duration="250"
-							data-aos-easing="linear">
-							<a href="/business/nft" class="common-btn is-white"><span>기업
-									알아보기</span><i class="icon link-arrow2"></i></a>
+						<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+							<a href="/business/nft" class="common-btn is-white">
+								<span>기업 알아보기</span>
+								<i class="icon link-arrow2"></i>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -290,20 +237,15 @@
 						<div class="inner_container">
 							<div class="section-title-area">
 								<a href="/tech/rnd">
-									<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0"
-										data-aos-duration="250" data-aos-easing="linear">주요 사업</h2>
-									<p class="description aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear">
-										(주)내담C&amp;은 친환경, 4차 산업혁명, DT(Digital Transformation), AI,
-										Cloud, DT(Digital Twin) 등의 경쟁력이 필요한 시점을 맞이하여, <br />고객의 성공적인
-										비즈니스를 위해 최적의 시스템을 제공합니다.
+									<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">주요 사업</h2>
+									<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										(주)내담C&amp;은 친환경, 4차 산업혁명, DT(Digital Transformation), AI, Cloud, DT(Digital Twin) 등의 경쟁력이 필요한 시점을 맞이하여, 
+										<br />고객의 성공적인 비즈니스를 위해 최적의 시스템을 제공합니다.
 									</p>
 								</a>
-								<div class="btn-area aos-init" data-aos="fade-up"
-									data-aos-offset="0" data-aos-duration="250"
-									data-aos-easing="linear">
-									<a href="/tech/rnd" class="common-btn is-white"> <span>확인하기</span>
+								<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+									<a href="/tech/rnd" class="common-btn is-white"> 
+										<span>확인하기</span>
 										<i class="icon link-arrow2"></i>
 									</a>
 								</div>
@@ -343,7 +285,7 @@
 					                          </linearGradient>
 					                        </defs>
 											<g id="레이어-1" vectornator:layerName="레이어 1">
-												<g opacity="1" stroke="#9bcc6a" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
+												<g fill="#fff" opacity="1" stroke="#9bcc6a" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
 													<path id="naedamPath1" stroke="url(#biglinearGradient-1)" d="M759.073 1402.52L588.407 1106.45L588.732 1402.71L507.523 1402.8L507.065 985.717L598.461 985.617L764.877 1276.6L764.558 985.434L845.767 985.345L846.225 1402.43L759.073 1402.52Z"/>
 													<path id="naedamPath2" stroke="url(#biglinearGradient-2)" d="M1132.34 985.031L1280.5 1401.95L1185.99 1402.05L1159.01 1316.35L1005.37 1316.52L976.6 1402.28L885.487 1402.38L1033.87 985.139L1132.34 985.031ZM1082.36 1080.44L1028.77 1244.62L1134.6 1244.5L1082.36 1080.44Z"/>
 													<path id="naedamPath3" stroke="url(#biglinearGradient-3)" d="M1639.42 1326.57L1639.5 1401.56L1323.44 1401.9L1322.98 984.822L1628.86 984.486L1628.94 1058.34L1408.23 1058.58L1408.33 1147.15L1610.93 1146.92L1611.01 1219.36L1408.41 1219.58L1408.53 1326.83L1639.42 1326.57Z"/>
@@ -354,18 +296,19 @@
 											</g>
 										</svg>
 									</div> 
-									<a href="/tech/ai_language">
+									<div class="main_aos_naedam_txt">
 										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">If you with NaedamC&C</h3>
 										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-											SCM(Supply Chain Management, 공급망 관리), <br />PLM(Product
-											Lifecycle Management), CRM, MES, <br />EIP(Enterprise
-											Information Portal) 등 <br />다양한 IT분야에서의 구축 경험을 토대로 고객사를 위한
-											다양한 솔루션과 서비스를 제공합니다.
+											SCM(Supply Chain Management, 공급망 관리), 
+											<br />PLM(Product Lifecycle Management), CRM, MES, 
+											<br />EIP(Enterprise Information Portal) 등 
+											<br />다양한 IT분야에서의 구축 경험을 토대로 고객사를 위한 다양한 솔루션과 서비스를 제공합니다.
 										</p>
 										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 											<span class="blind">자세히 보기</span>
 										</p>
-									</a>
+									</div>									
+									<a href="/tech/ai_language"></a>
 								</li>
 								<li class="big-data aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
@@ -402,7 +345,7 @@
 				                          </linearGradient>
 				                        </defs>
 										<g id="레이어-1" vectornator:layerName="레이어 1">
-											<g opacity="1" stroke="#9bcc6a" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
+											<g fill="#fff" opacity="1" stroke="#8e8f91" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
 												<path id="bigPath1" d="M312.92 1315.93C262.78 1315.93 223.361 1299.84 194.665 1267.68C165.969 1235.35 151.62 1191.05 151.62 1134.76C151.62 1073.9 167.939 1026.99 200.578 994.036C228.959 965.34 265.066 950.992 308.899 950.992C367.553 950.992 410.44 970.228 437.56 1008.7C452.539 1030.3 460.58 1051.98 461.684 1073.74L388.839 1073.74C384.109 1057.03 378.038 1044.41 370.628 1035.9C357.383 1020.76 337.753 1013.19 311.737 1013.19C285.248 1013.19 264.356 1023.88 249.062 1045.24C233.768 1066.61 226.121 1096.84 226.121 1135.94C226.121 1175.04 234.201 1204.33 250.363 1223.8C266.524 1243.28 287.061 1253.01 311.974 1253.01C337.517 1253.01 356.989 1244.66 370.391 1227.94C377.802 1218.96 383.951 1205.48 388.839 1187.5L460.974 1187.5C454.667 1225.5 438.545 1256.4 412.608 1280.21C386.671 1304.02 353.441 1315.93 312.92 1315.93Z"/>
 												<path id="bigPath2" d="M784.992 987.65C820.153 1019.66 837.733 1067.59 837.733 1131.45C837.733 1194.04 820.153 1241.98 784.992 1275.25C758.661 1302.37 720.583 1315.93 670.758 1315.93C620.933 1315.93 582.855 1302.37 556.524 1275.25C521.205 1241.98 503.546 1194.04 503.546 1131.45C503.546 1067.59 521.205 1019.66 556.524 987.65C582.855 960.531 620.933 946.971 670.758 946.971C720.583 946.971 758.661 960.531 784.992 987.65ZM670.758 1008.7C641.904 1008.7 618.884 1019.34 601.697 1040.63C584.511 1061.91 575.918 1092.19 575.918 1131.45C575.918 1170.71 584.511 1200.98 601.697 1222.27C618.884 1243.55 641.904 1254.2 670.758 1254.2C699.612 1254.2 722.514 1243.55 739.464 1222.27C756.414 1200.98 764.889 1170.71 764.889 1131.45C764.889 1092.35 756.414 1062.11 739.464 1040.75C722.514 1019.38 699.612 1008.7 670.758 1008.7Z"/>
 												<path id="bigPath3" d="M1102.39 1306.23L960.009 1058.6L960.009 1306.23L892.131 1306.23L892.131 957.614L968.523 957.614L1107.35 1200.98L1107.35 957.614L1175.23 957.614L1175.23 1306.23L1102.39 1306.23Z"/>
@@ -416,7 +359,8 @@
 											</g>
 										</g>
 									</svg>		                      
-									</div> <a href="/business/big_data">
+									</div> 
+									<div class="main_aos_consulting_txt">
 										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">컨설팅 사업부</h3>
 										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 											빅데이터 분석 역량과 솔루션 경쟁력을 더해<br /> 데이터 생태계를 강화하는데 앞장섭니다.
@@ -424,6 +368,8 @@
 										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 											<span class="blind">자세히 보기</span>
 										</p>
+									</div>									
+									<a href="/business/big_data">
 								</a>
 								</li>
 								<li class="blockchain aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
@@ -441,7 +387,7 @@
 					                          </linearGradient>
 											</defs>
 											<g id="레이어-1" vectornator:layerName="레이어 1">
-												<g opacity="1" stroke="#e9cd14" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
+												<g fill="#fff" opacity="1" stroke="#e9cd14" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
 													<path id="blockPath1" stroke="url(#blocklinearGradient-1)" clip-path="url(#TextBounds)" d="M1522.49 1140.25L1646.51 1170.03C1700.87 1183.05 1741.89 1200.47 1769.56 1222.28C1812.52 1256.13 1834.01 1305.12 1834.01 1369.25C1834.01 1435.01 1808.86 1489.61 1758.57 1533.07C1708.28 1576.53 1637.23 1598.25 1545.43 1598.25C1451.68 1598.25 1377.95 1576.85 1324.24 1534.05C1270.53 1491.24 1243.68 1432.4 1243.68 1357.53L1387.23 1357.53C1391.79 1390.41 1400.74 1414.99 1414.09 1431.26C1438.5 1460.88 1480.33 1475.7 1539.58 1475.7C1575.06 1475.7 1603.87 1471.79 1626 1463.98C1667.99 1449 1688.99 1421.17 1688.99 1380.48C1688.99 1356.72 1678.57 1338.33 1657.74 1325.3C1636.91 1312.61 1604.19 1301.38 1559.59 1291.61L1483.42 1274.52C1408.55 1257.6 1356.8 1239.2 1328.15 1219.35C1279.65 1186.14 1255.4 1134.22 1255.4 1063.59C1255.4 999.133 1278.83 945.585 1325.71 902.942C1372.58 860.298 1441.43 838.977 1532.25 838.977C1608.1 838.977 1672.79 859.078 1726.34 899.279C1779.89 939.481 1807.97 997.831 1810.57 1074.33L1666.04 1074.33C1663.44 1031.03 1644.56 1000.27 1609.4 982.043C1585.96 969.999 1556.83 963.977 1522 963.977C1483.26 963.977 1452.34 971.789 1429.22 987.414C1406.11 1003.04 1394.56 1024.85 1394.56 1052.84C1394.56 1078.56 1405.95 1097.77 1428.74 1110.46C1443.38 1118.92 1474.63 1128.85 1522.49 1140.25Z"/>
 													<path id="blockPath2" stroke="url(#blocklinearGradient-2)" clip-path="url(#TextBounds)" d="M1933.62 859.973L2083.03 859.973L2083.03 1579.7L1933.62 1579.7L1933.62 859.973Z"/>
 												</g>
@@ -485,7 +431,7 @@
 										  <stop stop-color="#F397DE" offset="99.9371722%"></stop>
 										</linearGradient>
 										<g id="레이어-1" vectornator:layerName="레이어 1">
-											<g opacity="1" stroke="#ed6d48" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
+											<g fill="#fff" opacity="1" stroke="#42657f" stroke-linecap="butt" stroke-linejoin="round" stroke-width="3">
 												<path id="cloudPath1" d="M192.818 1182.41L263.153 1199.31C293.982 1206.69 317.242 1216.57 332.934 1228.94C357.302 1248.13 369.486 1275.92 369.486 1312.28C369.486 1349.58 355.225 1380.54 326.703 1405.19C298.182 1429.83 257.892 1442.16 205.833 1442.16C152.666 1442.16 110.853 1430.02 80.3931 1405.74C49.9332 1381.47 34.7032 1348.1 34.7032 1305.64L116.114 1305.64C118.699 1324.28 123.775 1338.22 131.344 1347.45C145.19 1364.25 168.912 1372.65 202.51 1372.65C222.632 1372.65 238.969 1370.44 251.523 1366.01C275.337 1357.51 287.244 1341.73 287.244 1318.65C287.244 1305.18 281.337 1294.75 269.522 1287.36C257.707 1280.16 239.154 1273.79 213.863 1268.26L170.665 1258.56C128.206 1248.97 98.8537 1238.53 82.6084 1227.27C55.1021 1208.44 41.349 1179 41.349 1138.94C41.349 1102.39 54.6406 1072.02 81.2239 1047.84C107.807 1023.65 146.851 1011.56 198.356 1011.56C241.369 1011.56 278.06 1022.96 308.427 1045.76C338.795 1068.56 354.717 1101.65 356.194 1145.03L274.229 1145.03C272.752 1120.48 262.045 1103.03 242.108 1092.7C228.816 1085.87 212.294 1082.45 192.541 1082.45C170.573 1082.45 153.035 1086.88 139.928 1095.74C126.821 1104.6 120.268 1116.97 120.268 1132.85C120.268 1147.43 126.729 1158.32 139.652 1165.52C147.959 1170.32 165.681 1175.95 192.818 1182.41Z"/>
 												<path id="cloudPath2" d="M746.912 1058.64C788.079 1096.11 808.663 1152.23 808.663 1227C808.663 1300.29 788.079 1356.41 746.912 1395.36C716.083 1427.11 671.501 1442.99 613.165 1442.99C554.83 1442.99 510.248 1427.11 479.419 1395.36C438.067 1356.41 417.391 1300.29 417.391 1227C417.391 1152.23 438.067 1096.11 479.419 1058.64C510.248 1026.88 554.83 1011.01 613.165 1011.01C671.501 1011.01 716.083 1026.88 746.912 1058.64ZM613.165 1083.28C579.383 1083.28 552.43 1095.74 532.308 1120.66C512.186 1145.59 502.125 1181.03 502.125 1227C502.125 1272.96 512.186 1308.41 532.308 1333.33C552.43 1358.25 579.383 1370.71 613.165 1370.71C646.948 1370.71 673.762 1358.25 693.607 1333.33C713.452 1308.41 723.375 1272.96 723.375 1227C723.375 1181.21 713.452 1145.82 693.607 1120.8C673.762 1095.79 646.948 1083.28 613.165 1083.28Z"/>
 												<path id="cloudPath3" d="M1181.66 1375.7C1156.55 1420 1108.65 1442.16 1037.94 1442.16C967.239 1442.16 919.242 1420 893.951 1375.7C880.475 1351.51 873.736 1317.73 873.736 1274.35L873.736 1023.47L960.409 1023.47L960.409 1274.35C960.409 1302.41 963.732 1322.9 970.378 1335.82C980.715 1358.71 1003.24 1370.16 1037.94 1370.16C1072.46 1370.16 1094.89 1358.71 1105.23 1335.82C1111.88 1322.9 1115.2 1302.41 1115.2 1274.35L1115.2 1023.47L1201.87 1023.47L1201.87 1274.35C1201.87 1317.73 1195.14 1351.51 1181.66 1375.7Z"/>
@@ -499,17 +445,18 @@
 										</g>
 									</svg>					                      
 									</div> 
-										<a href="/business/cloud_service">
-											<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">Solution</h3>
-											<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												회삳 또는 영업활동에 필요한 요구사항과 소통을 통해 분석/설계하여<br /> 전산프로그램으로 구현합니다.
-												사용 프로그램과 차별화된 맞춤형 개발과 유지보수 지원 <br />
-												레거시 시스템과 연계되는 응용 프로그램 개발의뢰도 가능합니다. 
-											</p>
-											<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												<span class="blind">자세히 보기</span>
-											</p>
-										</a>
+									<div class="main_aos_solution_txt">
+										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">Solution</h3>
+										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											회삳 또는 영업활동에 필요한 요구사항과 소통을 통해 분석/설계하여<br /> 전산프로그램으로 구현합니다.
+											사용 프로그램과 차별화된 맞춤형 개발과 유지보수 지원 <br />
+											레거시 시스템과 연계되는 응용 프로그램 개발의뢰도 가능합니다. 
+										</p>
+										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											<span class="blind">자세히 보기</span>
+										</p>									
+									</div>									
+									<a href="/business/cloud_service"></a>
 								</li>
 							</ul>
 						</div>
@@ -518,21 +465,19 @@
 						<div class="inner_container">
 							<div class="section-title-area">
 								<a href="/business/our_services">
-									<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0"
-										data-aos-duration="250" data-aos-easing="linear">
-										OUR SERVICES</h2>
-									<p class="description aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear">
+									<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										OUR SERVICES
+									</h2>
+									<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 										CJ올리브네트웍스는 우리가 가진 기술력으로<br /> 디지털 혁신을 실현합니다.
 									</p>
 								</a>
-								<div class="btn-area aos-init" data-aos="fade-up"
-									data-aos-offset="0" data-aos-duration="250"
-									data-aos-easing="linear">
-									<a href="/business/our_services"
-										class="common-btn is-grad-blue"><span>전체보기<i
-											class="icon link-arrow"></i></span></a>
+								<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+									<a href="/business/our_services" class="common-btn is-grad-blue">
+										<span>전체보기
+											<i class="icon link-arrow"></i>
+										</span>
+									</a>
 								</div>
 							</div>
 							<div class="service-list-wrap">
@@ -561,10 +506,8 @@
 											</p>
 										</a>
 									</li>
-									<li class="nd-one-ad aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear"><a
-										href="/business/cj_one_ad">
+									<li class="nd-one-ad aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										<a href="/business/cj_one_ad">
 											<h3 class="tit-label">PLM</h3>
 											<h4 class="tit">Rule & Process 기반 시스템 구축</h4>
 											<p class="description">
@@ -573,11 +516,10 @@
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
 											</p>
-									</a></li>
-									<li class="one-order aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear"><a
-										href="/business/smart_store_solution">
+										</a>
+									</li>
+									<li class="one-order aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										<a href="/business/smart_store_solution">
 											<h3 class="tit-label">AMS</h3>
 											<h4 class="tit">설비자신의 최적 관리를 통한 가치창출</h4>
 											<p class="description">
@@ -586,11 +528,10 @@
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
 											</p>
-									</a></li>
-									<li class="smart-culture-space aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear"><a
-										href="/business/media_culture_spaces">
+										</a>
+									</li>
+									<li class="smart-culture-space aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										<a href="/business/media_culture_spaces">
 											<h3 class="tit-label">MSP</h3>
 											<h4 class="tit">Cloud MSP 시스템 구축</h4>
 											<p class="description">
@@ -599,11 +540,10 @@
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
 											</p>
-									</a></li>
-									<li class="mplace aos-init" data-aos="fade-up"
-										data-aos-offset="0" data-aos-duration="250"
-										data-aos-easing="linear"><a
-										href="/business/messaging_service">
+										</a>
+									</li>
+									<li class="mplace aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+										<a href="/business/messaging_service">
 											<h3 class="tit-label">SCM</h3>
 											<h4 class="tit">인공지능, 머신러닝 SCM</h4>
 											<p class="description">
@@ -612,7 +552,8 @@
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
 											</p>
-									</a></li>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -620,36 +561,28 @@
 				</div>
 				<div class="culture-wrap section">
 					<div class="inner_container">
-<!-- 						<div class="section-title-area"> -->
+						<div class="section-title-area">
 							<a href="/culture/people">
-								<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0"
-									data-aos-duration="250" data-aos-easing="linear">
+								<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<span>PEOPLE </span>&amp; CULTURE
 								</h2>
-								<p class="description aos-init" data-aos="fade-up"
-									data-aos-offset="0" data-aos-duration="250"
-									data-aos-easing="linear">우리와 함께 새로운 미래를
-									만들어 갈 당신을 기다립니다.</p>
+								<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+									우리와 함께 새로운 미래를 만들어 갈 당신을 기다립니다.
+								</p>
 							</a>
-							<div class="btn-area aos-init" data-aos="fade-up"
-								data-aos-offset="0" data-aos-duration="250"
-								data-aos-easing="linear">
-								<a href="/culture/people" class="common-btn is-grad-blue"><span>자세히
-										보기<i class="icon link-arrow"></i>
-								</span></a>
+							<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+								<a href="/culture/people" class="common-btn is-grad-blue">
+									<span>자세히 보기<i class="icon link-arrow"></i></span>
+								</a>
 							</div>
 						</div>
-						<div class="half-wrap aos-init" data-aos-offset="0"
-							data-aos-duration="250" data-aos-easing="linear">
+						<div class="half-wrap aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 							<div class="is-left">
-								<a href="/culture/people" class="banner is-people aos-init"
-									data-aos-offset="0" data-aos-duration="250"
-									data-aos-delay="100" data-aos-easing="linear"
-									data-aos="fade-up">
+								<a href="/culture/people" class="banner is-people aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
 									<h3 class="tit">내담의 비전</h3>
 									<p class="description">
 										고객사의 고객만족 및 내부 경쟁력 향상
-								  <br />IT Total Service Provider로의 성장 
+								  		<br />IT Total Service Provider로의 성장 
 									</p>
 									<p class="btn-arrow is-black">
 										<span class="blind">자세히 보기</span>
@@ -680,102 +613,53 @@
 					<div class="inner_container card-ui">
 						<div class="section-title-area">
 							<a href="/news/recent_news">
-								<h2 class="tit">NEWS</h2>
-								<p class="description">새로운 소식을 만나보세요.</p>
+								<h2 class="tit">공지사항</h2>
 							</a>
-							<div class="btn-area aos-init" data-aos="fade-up"
-								data-aos-offset="0" data-aos-duration="250"
-								data-aos-easing="linear">
-								<a href="/news/recent_news" class="common-btn is-grad-blue"><span>전체보기<i
-										class="icon link-arrow"></i></span></a>
+							<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+								<a href="/news/recent_news" class="common-btn is-grad-blue">
+									<span>전체보기<i class="icon link-arrow"></i></span>
+								</a>
 							</div>
 						</div>
 						<ul class="common-layout_3">
-							<li data-aos="fade-up" data-aos-offset="0"
-								data-aos-duration="250" data-aos-easing="linear"
-								class="items aos-init">
+							<li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init">
 								<div class="image_box">
 									<a href="/news/press_release/detail/621?ca=ALL">
 										<div class="img_cover">
-											<img
-												src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
+											<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
 										</div>
 									</a>
-								</div> <a href="/news/press_release/detail/621?ca=ALL"
-								class="desc_box">
-									<p class="ui_category">언론보도</p>
-									<p class="ui_title">CJ올리브네트웍스, 메타버스 커뮤니케이션 서비스 브릿지
-										오피스(Bridge Office)</p>
-							</a>
-
-								<div class="hash_area">
-									<a href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;\uBE0C\uB9BF\uC9C0\uC624\uD53C\uC2A4&quot;)"
-										class="hash_tag">#브릿지오피스</a> <a
-										href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;\uBA54\uD0C0\uBC84\uC2A4&quot;)"
-										class="hash_tag">#메타버스</a> <a
-										href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;\uCEE4\uBBA4\uB2C8\uCF00\uC774\uC158&quot;)"
-										class="hash_tag">#커뮤니케이션</a>
-								</div>
+								</div> 
+									<a href="/news/press_release/detail/621?ca=ALL" class="desc_box">
+										<p class="ui_category">언론보도</p>
+										<p class="ui_title">CJ올리브네트웍스, 메타버스 커뮤니케이션 서비스 브릿지 오피스(Bridge Office)</p>
+									</a>
 							</li>
-							<li data-aos="fade-up" data-aos-offset="0"
-								data-aos-duration="250" data-aos-easing="linear"
-								class="items aos-init">
+							<li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init">
 								<div class="image_box">
 									<a href="/news/press_release/detail/620?ca=ALL">
 										<div class="img_cover">
-											<img
-												src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
+											<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
 										</div>
 									</a>
-								</div> <a href="/news/press_release/detail/620?ca=ALL"
-								class="desc_box">
-									<p class="ui_category">언론보도</p>
-									<p class="ui_title">CJ올리브네트웍스, 찾아가는 ‘시니어 디지털 리터러시 교육’ 펼쳐</p>
-							</a>
-
-								<div class="hash_area">
-									<a href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;\uC2DC\uB2C8\uC5B4&quot;)"
-										class="hash_tag">#시니어</a> <a
-										href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;\uB514\uC9C0\uD138\uBB38\uD574&quot;)"
-										class="hash_tag">#디지털문해</a> <a
-										href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;\uC2A4\uB9C8\uD2B8\uD3F0&quot;)"
-										class="hash_tag">#스마트폰</a>
-								</div>
+								</div> 
+									<a href="/news/press_release/detail/620?ca=ALL" class="desc_box">
+										<p class="ui_category">언론보도</p>
+										<p class="ui_title">CJ올리브네트웍스, 찾아가는 ‘시니어 디지털 리터러시 교육’ 펼쳐</p>
+									</a>
 							</li>
-							<li data-aos="fade-up" data-aos-offset="0"
-								data-aos-duration="250" data-aos-easing="linear"
-								class="items aos-init">
+							<li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init">
 								<div class="image_box">
 									<a href="/news/press_release/detail/619?ca=ALL">
 										<div class="img_cover">
-											<img
-												src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
+											<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
 										</div>
 									</a>
-								</div> <a href="/news/press_release/detail/619?ca=ALL"
-								class="desc_box">
-									<p class="ui_category">언론보도</p>
-									<p class="ui_title">CJ올리브네트웍스, 데이터 마케팅 컨퍼런스 &lt;The
-										MAXONOMY 2023&gt; 개최</p>
-							</a>
-
-								<div class="hash_area">
-									<a href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;\uB370\uC774\uD130\uB9C8\uCF00\uD305\uC194\uB8E8\uC158&quot;)"
-										class="hash_tag">#데이터마케팅솔루션</a> <a
-										href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;MAXONOMY&quot;)"
-										class="hash_tag">#MAXONOMY</a> <a
-										href="javascript:void(0);"
-										onclick="hashtagLink('/news/recent_news?searchTag=', &quot;Braze&quot;)"
-										class="hash_tag">#Braze</a>
-								</div>
+								</div> 
+									<a href="/news/press_release/detail/619?ca=ALL" class="desc_box">
+										<p class="ui_category">언론보도</p>
+										<p class="ui_title">CJ올리브네트웍스, 데이터 마케팅 컨퍼런스 &lt;The MAXONOMY 2023&gt; 개최</p>
+									</a>
 							</li>
 						</ul>
 					</div>

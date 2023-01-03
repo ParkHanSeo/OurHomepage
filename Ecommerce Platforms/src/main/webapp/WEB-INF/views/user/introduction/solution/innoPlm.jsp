@@ -92,7 +92,7 @@ $(function(){
                                         </p>
                                     </div>
                                 </li>
-                                <li class="is-right">
+                                <li>
                                     <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <img src="${pageContext.request.contextPath}/resources/user/images/introduction/plm_3.jpg" alt="">
                                     </div>

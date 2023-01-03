@@ -80,7 +80,7 @@
 		<result property="profileImg"				column="PROFILE_IMG"			jdbcType="VARCHAR"></result>
 	</resultMap>	
 	
-	<insert id="addBoard" parameterType="board" useGeneratedKeys="true" keyProperty="boardNo" keyColumn="BOARD_NO">	
+	<insert id="addBoard" parameterType="board">	
 		INSERT
 		INTO BOARD(BOARD_NO,
 				   BOARD_TITLE,

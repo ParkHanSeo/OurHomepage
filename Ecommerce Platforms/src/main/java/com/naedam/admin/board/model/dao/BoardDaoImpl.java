@@ -30,8 +30,8 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//게시판 등록
 	@Override
-	public int addBoard(Board board) throws Exception {
-		return sqlSession.insert("board.addBoard", board);
+	public void addBoard(Board board) throws Exception {
+		sqlSession.insert("board.addBoard", board);
 	}
 	
 	//게시글 등록
