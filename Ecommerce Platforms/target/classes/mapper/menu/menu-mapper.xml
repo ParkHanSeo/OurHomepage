@@ -10,15 +10,9 @@
 		<result property="revision_code"		column="REVISION_CODE"		jdbcType="NUMERIC"></result>
 		<result property="title"				column="TITLE"				jdbcType="VARCHAR"></result>
 		<result property="content"				column="CONTENT"			jdbcType="VARCHAR"></result>
-		<result property="is_outer_link"		column="IS_OUTER_LINK"		jdbcType="VARCHAR"></result>
-		<result property="target"				column="TARGET"				jdbcType="VARCHAR"></result>
 		<result property="url"					column="URL"				jdbcType="VARCHAR"></result>
 		<result property="status"				column="STATUS"				jdbcType="VARCHAR"></result>
-		<result property="outer_mapping"		column="OUTER_MAPPING"		jdbcType="VARCHAR"></result>
 		<result property="menuDate"				column="MENU_DATE"			jdbcType="VARCHAR"></result>
-		<result property="is_meta"				column="IS_META"			jdbcType="VARCHAR"></result>
-		<result property="meta_title"			column="META_TITLE"			jdbcType="VARCHAR"></result>
-		<result property="meta_description"		column="META_DESCRIPTION"	jdbcType="VARCHAR"></result>
 		<result property="originNo"				column="ORIGIN_NO"			jdbcType="NUMERIC"></result>
 		<result property="ord"					column="ORD"				jdbcType="NUMERIC"></result>
 		<result property="menuAsc"				column="MENU_ASC"			jdbcType="NUMERIC"></result>		
@@ -35,12 +29,6 @@
 	<resultMap id="BottomSelectMap" type="bottom">
 		<result property="bottomNo"				column="BOTTOM_NO"			jdbcType="NUMERIC"></result>
 		<result property="content"				column="CONTENT"			jdbcType="VARCHAR"></result>
-	</resultMap>
-	
-	<resultMap id="MetaSelectMap" type="meta">
-		<result property="metaNo"				column="META_NO"			jdbcType="NUMERIC"></result>
-		<result property="meta_title"			column="META_TITLE"			jdbcType="VARCHAR"></result>
-		<result property="meta_description"		column="META_DESCRIPTION"	jdbcType="VARCHAR"></result>
 	</resultMap>
 	
 	<resultMap id="MenuCategorySelectMap" type="menuCategory">
@@ -60,15 +48,9 @@
 				  REVISION_CODE,
 				  TITLE,
 				  CONTENT,
-				  IS_OUTER_LINK,
-				  TARGET,
 				  URL,
 				  STATUS,
-				  OUTER_MAPPING,
 				  MENU_DATE,
-				  IS_META,
-				  META_TITLE,
-				  META_DESCRIPTION,
 				  ORIGIN_NO,
 				  ORD,
 				  MENU_ASC)
@@ -77,15 +59,9 @@
 			   0,
 			   #{title : VARCHAR},
 			   #{content : VARCHAR},
-			   #{is_outer_link : VARCHAR},
-			   #{target : VARCHAR},
 			   #{url : VARCHAR},
 			   #{status : VARCHAR},
-			   #{outer_mapping : NUMERIC},
 			   sysdate(),
-			   #{is_meta : VARCHAR},
-			   #{meta_title : VARCHAR},
-			   #{meta_description : VARCHAR},
 			   <if test="originNo == 0">
 			   	LASTVAL(menu_seq),
 			   </if>
@@ -122,15 +98,9 @@
 				  REVISION_CODE,
 				  TITLE,
 				  CONTENT,
-				  IS_OUTER_LINK,
-				  TARGET,
 				  URL,
 				  STATUS,
-				  OUTER_MAPPING,
 				  MENU_DATE,
-				  IS_META,
-				  META_TITLE,
-				  META_DESCRIPTION,
 				  ORIGIN_NO,
 				  ORD)
 		VALUES(NEXTVAL(menu_seq),
@@ -138,15 +108,9 @@
 			   1,
 			   #{title : VARCHAR},
 			   #{content : VARCHAR},
-			   #{is_outer_link : VARCHAR},
-			   #{target : VARCHAR},
 			   #{url : VARCHAR},
 			   #{status : VARCHAR},
-			   #{outer_mapping : NUMERIC},
 			   NOW(),
-			   #{is_meta : VARCHAR},
-			   #{meta_title : VARCHAR},
-			   #{meta_description : VARCHAR},
 			   #{originNo},
 			   #{ord})
 	</insert>	
@@ -167,12 +131,6 @@
 		SELECT *
 		FROM bottom
 		WHERE bottom_no = 1
-	</select>
-	
-	<select id="getMeta" resultMap="MetaSelectMap">
-		SELECT *
-		FROM meta
-		WHERE meta_no = 1
 	</select>
 	
 	<select id="getRevision" parameterType="menu" resultMap="MenuSelectMap">
@@ -218,15 +176,9 @@
 		revision_code,
 		title,
 		content,
-		is_outer_link,
-		target,
 		url,
 		status,
-		outer_mapping,
 		DATE_FORMAT(menu_date, '%Y-%m-%d %H:%i') menu_date,
-		is_meta,
-		meta_title,
-		meta_description,
 		origin_no,
 		ord
 		FROM menu
@@ -243,15 +195,9 @@
 		revision_code,
 		title,
 		content,
-		is_outer_link,
-		target,
 		url,
 		status,
-		outer_mapping,
 		DATE_FORMAT(menu_date, '%Y-%m-%d %H:%i') menu_date,
-		is_meta,
-		meta_title,
-		meta_description,
 		origin_no,
 		ord
 		FROM menu
@@ -316,14 +262,8 @@
 			REVISION_CODE = #{revision_code},
 			TITLE = #{title : VARCHAR},
 			CONTENT = #{content : VARCHAR},
-			IS_OUTER_LINK =#{is_outer_link : VARCHAR},
-			TARGET = #{target : VARCHAR},
 			URL =#{url : VARCHAR},
 			STATUS = #{status : VARCHAR},
-			OUTER_MAPPING = #{outer_mapping : NUMERIC},
-			IS_META = #{is_meta : VARCHAR},
-			META_TITLE = #{meta_title : VARCHAR},
-			META_DESCRIPTION = #{meta_description : VARCHAR}
 		</set>
 		WHERE CODE = #{code:NUMERIC}	
 	</update>
@@ -344,15 +284,6 @@
 			CONTENT = #{content : VARCHAR}
 		</set>
 		WHERE BOTTOM_NO = 1
-	</update>
-	
-	<update id="updateMeta" parameterType="meta">
-		UPDATE meta
-		<set>
-			META_TITLE = #{meta_title : VARCHAR},
-			META_DESCRIPTION = #{meta_description : VARCHAR}
-		</set>
-		WHERE META_NO = 1
 	</update>
 	
 	<update id="updateRevision" parameterType="int">

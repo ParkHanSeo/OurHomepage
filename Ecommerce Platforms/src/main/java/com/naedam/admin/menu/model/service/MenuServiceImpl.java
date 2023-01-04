@@ -12,7 +12,6 @@ import com.naedam.admin.menu.model.dao.MenuDao;
 import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
 import com.naedam.admin.menu.model.vo.Menu;
-import com.naedam.admin.menu.model.vo.Meta;
 
 @Service
 public class MenuServiceImpl implements MenuService {
@@ -56,11 +55,6 @@ public class MenuServiceImpl implements MenuService {
 				menuDao.updateBottom(bottom);
 			}
 			return "redirect:/admin/menu/bottomList";
-		}else if("meta".equals(map.get("part"))) {
-			Meta meta = (Meta) map.get("meta");
-			if("update".equals(map.get("mode"))) {
-				menuDao.updateMeta(meta);
-			}
 		}else if("revision".equals(map.get("part"))) {
 			List<String> menuArr = (List<String>) map.get("menuArr");
 			if("delete".equals(map.get("mode"))) {
@@ -180,12 +174,6 @@ public class MenuServiceImpl implements MenuService {
 	@Override
 	public Bottom getBottom() throws Exception {
 		return menuDao.getBottom();
-	}
-	
-	//메타 정보
-	@Override
-	public Meta getMeta() throws Exception {
-		return menuDao.getMeta();
 	}
 	
 	//리비젼 가져오기

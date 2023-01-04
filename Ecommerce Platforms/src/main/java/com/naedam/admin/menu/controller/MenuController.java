@@ -19,7 +19,6 @@ import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
 import com.naedam.admin.menu.model.vo.Menu;
 import com.naedam.admin.menu.model.vo.MenuCategory;
-import com.naedam.admin.menu.model.vo.Meta;
 
 
 
@@ -35,7 +34,6 @@ public class MenuController {
 	 * @param menu
 	 * @param head
 	 * @param bottom
-	 * @param meta
 	 * @param mode
 	 * @param part
 	 * @return
@@ -43,12 +41,11 @@ public class MenuController {
 	 */
 	@PostMapping("menuProcess")
 	public String menuProcess(@ModelAttribute("menu") Menu menu, @ModelAttribute("head") Head head, @ModelAttribute("bottom") Bottom bottom,
-							  @ModelAttribute("meta") Meta meta, @RequestParam("mode") String mode, @RequestParam("part") String part) throws Exception{
+							  @RequestParam("mode") String mode, @RequestParam("part") String part) throws Exception{
 		Map<String, Object> menuMap = new HashMap<>();
 		menuMap.put("menu", menu);
 		menuMap.put("head", head);
 		menuMap.put("bottom", bottom);
-		menuMap.put("meta", meta);
 		menuMap.put("mode", mode);
 		menuMap.put("part", part);
 		return menuService.menuProcess(menuMap);
@@ -161,18 +158,6 @@ public class MenuController {
 		model.addAttribute("bottom", bottom);
 		return "admin/menu/bottom";
 	}
-	
-	/**
-	 * 메뉴 관리 => 메타 관리 리스트 조회
-	 * @param request
-	 * @param model
-	 * @return
-	 * @throws Exception
-	 */
-	@RequestMapping(value="meta")
-	public String meta(HttpServletRequest request,Model model) throws Exception{		
-		return "admin/menu/meta";
-	}	
 
 }
 

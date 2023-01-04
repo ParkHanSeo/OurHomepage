@@ -1484,6 +1484,10 @@
   padding: 0 0 0 0;
 }
 
+.esg_program_list {
+  padding: 0 0 0 0;
+}
+
 @media all and (max-width: 1280px) {
   .equitable_edu .top_visual_area .top_txt_outer .top_txt_area {
     min-height: 400px;

@@ -13,7 +13,6 @@ import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
 import com.naedam.admin.menu.model.vo.Menu;
 import com.naedam.admin.menu.model.vo.MenuCategory;
-import com.naedam.admin.menu.model.vo.Meta;
 
 
 @Repository
@@ -116,12 +115,6 @@ public class MenuDaoImpl implements MenuDao {
 		return sqlSession.update("menu.updateBottom", bottom);
 	}
 	
-	//메타 수정
-	@Override
-	public int updateMeta(Meta meta) throws Exception {
-		return sqlSession.update("menu.updateMeta", meta);
-	}
-	
 	//메뉴 정보
 	@Override
 	public Menu getMenu(int code) throws Exception {
@@ -138,12 +131,6 @@ public class MenuDaoImpl implements MenuDao {
 	@Override
 	public Bottom getBottom() throws Exception {
 		return sqlSession.selectOne("menu.getBottom");
-	}
-
-	//메타 정보
-	@Override
-	public Meta getMeta() throws Exception {
-		return sqlSession.selectOne("menu.getMeta");
 	}
 	
 	//리비젼 가져오기
