@@ -71,7 +71,7 @@
 									</td>
 								</tr>
 								<tr>
-									<td class="menu">썸네일 파일</td>
+									<td class="menu">이미지 파일</td>
 									<td align="left"><input type="file" name="ThombnailName"
 										id="ThombnailName" class="form-control input-sm"
 										style="width: 80%; display: inline;"> <span
@@ -126,17 +126,15 @@
 				</tr>
 			<tr>
 				<td class="menu">썸네일 파일</td>
-				<td align="left"><input type="file" name="ThombnailName"
-					id="ThombnailName" class="form-control input-sm"
-					style="width: 80%; display: inline;"> <span
-					id="display_thumbnail" style="display: none;">
-						<button type="button"
-							onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');"
-							class="btn btn-success btn-xs">보기</button>
-						<button type="button"
-							onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());"
-							class="btn btn-danger btn-xs">삭제</button>
-				</span></td>
+				<td align="left">
+					<input type="file" name="ThombnailName" id="ThombnailName" class="form-control input-sm" style="width: 80%; display: inline;"> 
+					<span id="display_thumbnail" style="display: none;">
+							<button type="button" onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');"
+								class="btn btn-success btn-xs">보기</button>
+							<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());"
+								class="btn btn-danger btn-xs">삭제</button>
+					</span>
+				</td>
 			</tr>`);
 	}
 	
@@ -146,6 +144,10 @@
 			var startDay = $("#startDay").val();
 			var endDay = $("#endDay").val();
 			var career = $("#career").val();
+			
+			console.log("startDay >>>>>" , startDay);
+			console.log("endDay >>>>>" , endDay);
+			
 			//반복작업 필요한 내용
 			var subTitle = new Array();
 			$("input[name='subTitle']").each(function(){
@@ -155,30 +157,15 @@
 			$("textarea[name='contents']").each(function(){
 				contents.push($(this).val());
 			})
+			//이미지 (반복작업 필요)
+			var files = new Array();
+			$("input[name='ThombnailName']").each(function(){
+				files.push($(this).val());
+			})
 			
 			console.log("subTitle >>" + subTitle);
 			console.log("contents >>" + contents);
-			
-			/* var data = new Map();
-			var contentsArr = new Array(); */
-			
-			/* for(var i = 0; i < subTitle.length; i++){
-				console.log("subTitle >> " + subTitle[i]);
-				
-				data.set('title', subTitle[i]);
-				data.set('contents', contents[i]);
-				
-				console.log("data >> " + data);
-				console.log("data.getTitle() >>" + data.get('title'));
-				console.log("data.getContents() >>" + data.get('contents'));
-				
-				contentsArr.push(data.get('title'));
-				contentsArr.push(data.get('contents'));
-				console.log('contentsArr '+ [i] + '>>>>' + contentsArr);
-			} */
-			
-			//이미지 파일_잠시 보류_221226
-			//var subTitle = new Array();
+			console.log("files >>" + files);
 
 			if(title.length == 0){
 				alert("제목은 필수 항목입니다.");
@@ -203,19 +190,23 @@
 			}else{
 				
 		  		$.ajax({
-	  			 	 /* url : "/admin/board/json/postProcess?${_csrf.parameterName}=${_csrf.token}", */
 	  			 	 url : "/admin/insertRecruit?${_csrf.parameterName}=${_csrf.token}",
 		  		  	 type : "POST",
-	  		  	 	 data : { recruitTitle : title,
-	  		  	 			  recruitStart : startDay,
-	  		  			      recruitEnd : endDay,
-	  		  			  	  career : career,
-	  		  			  	  subTitle : subTitle,
-	  		  				  contents : contents
-	  		  	 		  	},
+	  		  	 	 data : {
+	 						"recruitTitle": title,
+							"recruitStart": startDay,
+							"recruitEnd": endDay,
+							"career": career,
+							"subTitle[]": subTitle,
+							"contents": contents,
+							"files": files		
+				        	 },
+	  		  	     processData: false,
+	  		  	     contentType: false,
 	    		 	 success : function(result){
-	    		 		alert(result.msg)
-	   			  		location.href = "/admin/recruitList?${_csrf.parameterName}=${_csrf.token}";
+	    		 		console.log("result >> ", result);
+	    		 		alert(result);
+	   			  		location.href = "/admin/recruitList";
 	  		  	 	 }
 		  		});		
 			}
