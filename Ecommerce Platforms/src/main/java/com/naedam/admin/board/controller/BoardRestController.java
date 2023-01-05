@@ -98,7 +98,7 @@ public class BoardRestController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("boardNo", boardNo);
 		map.put("search", search);
-		Map<String, Object> resultMap = boardService.getPostList2(map);
+		Map<String, Object> resultMap = boardService.getPostList(map);
 		return resultMap;
 	}	
 	
@@ -358,6 +358,15 @@ public class BoardRestController {
 		boardService.updateDownAsc(map);
 		boardService.updateDownAsc(map2);
 		result = true;
+		return result;
+	}
+	
+	
+	@PostMapping("json/testtest")
+	public Boolean testInsert(@RequestParam("formData") Map<String, Object> map) {
+		Boolean result = false;
+		System.out.println("map ==== "+map);
+		
 		return result;
 	}
 	

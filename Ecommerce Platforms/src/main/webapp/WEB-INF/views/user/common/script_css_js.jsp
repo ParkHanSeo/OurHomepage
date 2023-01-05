@@ -1,3 +1,13 @@
+<style>
+@font-face {
+  font-family: "NanumGothic"; /* 사용하고 싶은 font-family명을 지정 */
+  src: url("${pageContext.request.contextPath}/resources/user/font/NanumGothic.woff") format("opentype"); /* 폰트파일 불러오기 */
+}
+body {
+	font-family: "NanumGothic";
+}
+</style>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/font/NanumGothic.woff">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/html/js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/html/js/common.js" type="text/javascript"></script>
 
