@@ -198,14 +198,14 @@ public class RecruitController {
 			  log.info("insertResult >>> " + insertResult);
 
 			  // 채용 게시글 등록 완료 확인 
-			  if (recruitRecult > 1) { 
+			  if (recruitRecult == 1) { 
 				  msg = "게시글 등록이 완료 되었습니다."; 
 				  // 채용게시글 상세내용 등록 확인 
 				  if (insertResult == size) { 
 					  msg = "채용 게시글 등록이 완료 되었습니다."; }
-				  else { msg = "채용 게시글 등록을 실패했습니다."; } 
-				  } else { msg =
-			  "게시글 등록을 실패했습니다."; }
+				  		else { msg = "채용 게시글 등록을 실패했습니다."; } 
+				  	} else { msg =
+				  				"게시글 등록을 실패했습니다."; }
 		
 
 		return msg;
