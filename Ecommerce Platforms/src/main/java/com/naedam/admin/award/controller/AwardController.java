@@ -9,10 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.naedam.admin.award.model.service.AwardService;
 import com.naedam.admin.award.model.vo.Award;
+import com.naedam.admin.history.model.vo.History;
 
 @Controller
 @RequestMapping("/admin/award")
@@ -22,9 +24,21 @@ public class AwardController {
 	private AwardService awardService;
 	
 	/**
+	 * 설정 => 연혁 관리 정보 조회
+	 * @param historyNo
+	 * @return
+	 */
+	@PostMapping("/getAward")
+	@ResponseBody
+	public Award getHistory(int awardNo) {
+		Award award = awardService.selectDetailByNo(awardNo);
+		return award;
+	}
+	
+	/**
 	 * 설정 => 연혁 관리 DML 프로세스
 	 * @param request
-	 * @param history
+	 * @param award
 	 * @param redirectAttr
 	 * @return
 	 * @throws Exception
@@ -35,9 +49,12 @@ public class AwardController {
 		map.put("award", award);
 		map.put("mode", request.getParameter("mode"));
 		map.put("request", request);
+		System.out.println(map);
+		System.out.println(award);
 		Map<String, Object> resultMap = awardService.awardProcess(map);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
-		return "/admin/setting/history";
+		return "/admin/setting/award";
 	}
+	
 	
 }

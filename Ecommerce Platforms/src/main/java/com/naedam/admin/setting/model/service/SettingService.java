@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.category.model.vo.Category;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.map.model.vo.Maps;
@@ -39,6 +40,8 @@ public interface SettingService {
 	List<Maps> selectMapList();
 
 	List<History> selectHistoryList();
+	
+	List<Award> selectAwardList();
 
 	List<Category> selectMenuCteList();
 

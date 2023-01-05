@@ -1,5 +1,7 @@
 package com.naedam.admin.award.model.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,22 +17,32 @@ public class AwardDaoimpl implements AwardDao {
 	@Override
 	public void insertAward(Award award) {
 		session.insert("award.insertAward", award);
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void updateAward(Award award) {
-		// TODO Auto-generated method stub
 		session.update("award.insertAward", award);
-
 	}
 
 	@Override
 	public void deleteAward(int awardNo) {
-		// TODO Auto-generated method stub
 		session.delete("award.insertAward", awardNo);
+	}
 
+	@Override
+	public List<Award> selectAwardList() {
+
+		return session.selectList("award.getAwardList");
+	}
+
+	@Override
+	public Award selectDetailByNo(int awardNo) {
+		return session.selectOne("award.getDetailByNo", awardNo);
+	}
+
+	@Override
+	public int selectAwardNo() {
+		return session.selectOne("award.getAwardNo");
 	}
 
 }

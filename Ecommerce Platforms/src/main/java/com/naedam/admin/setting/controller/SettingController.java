@@ -28,6 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.category.model.vo.Category;
 import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.history.model.vo.History;
@@ -107,8 +108,9 @@ public class SettingController {
 	 */
 	@GetMapping("/award")
 	public void award(Model model) {
-		List<History> historyList = settingService.selectHistoryList();
-		model.addAttribute("historyList", historyList);
+		List<Award> awardList = settingService.selectAwardList();
+		model.addAttribute("awardList", awardList);
+		System.out.println("awardList+++++"+awardList);
 	}
 	/**
 	 * 설정 => 기본 설정 => 기본, 언어, 관리자 메뉴 조회

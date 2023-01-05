@@ -17,7 +17,7 @@ public class Award implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private int awardNo;
 	private Date awardDate;
-	private String contents;
+	private String content;
 	private String imgUrl;	
 	
 }

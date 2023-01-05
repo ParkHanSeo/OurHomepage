@@ -32,22 +32,22 @@
 				<div class="box">
 					<div class="box-body">
 						<div style="text-align: right;">
-							<button type="button" id="locale_ko" onclick="parent.location.href='?tpf=admin/setting/history&locale=ko'" class="btn btn-primary">
+							<button type="button" id="locale_ko" onclick="parent.location.href='?tpf=admin/setting/award&locale=ko'" class="btn btn-primary">
 								<i class="fa fa-globe" aria-hidden="true"></i> 한국어
 							</button>
-							<button type="button" id="locale_en" onclick="parent.location.href='?tpf=admin/setting/history&locale=en'" class="btn btn-default">
+							<button type="button" id="locale_en" onclick="parent.location.href='?tpf=admin/setting/award&locale=en'" class="btn btn-default">
 								<i class="fa fa-globe" aria-hidden="true"></i> ENG
 							</button>
-							<button type="button" id="locale_zh" onclick="parent.location.href='?tpf=admin/setting/history&locale=zh'" class="btn btn-default">
+							<button type="button" id="locale_zh" onclick="parent.location.href='?tpf=admin/setting/award&locale=zh'" class="btn btn-default">
 								<i class="fa fa-globe" aria-hidden="true"></i> 中国
 							</button>
-							<button type="button" id="locale_vn" onclick="parent.location.href='?tpf=admin/setting/history&locale=vn'" class="btn btn-default">
+							<button type="button" id="locale_vn" onclick="parent.location.href='?tpf=admin/setting/award&locale=vn'" class="btn btn-default">
 								<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt
 							</button>
 						</div>
-						<label style="margin-top: 5px;">총 ${historyList.size() } 건</label>
+						<label style="margin-top: 5px;">총 ${awardList.size() } 건</label>
 						<div class="box-tools pull-right" style="margin-bottom: 5px;"></div>
-						<form name="form_list" method="post" action="${pageContext.request.contextPath }/admin/history/history_process?${_csrf.parameterName}=${_csrf.token}">
+						<form name="form_list" method="post" action="${pageContext.request.contextPath }/admin/award/award_process?${_csrf.parameterName}=${_csrf.token}">
 							<input type="hidden" name="mode" id="mode">
 							<table class="table table-bordered table-hover">
 								<thead>
@@ -62,15 +62,15 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="history" items="${historyList }">
+									<c:forEach var="award" items="${awardList }">
 										<tr>
-											<td><input type="checkbox" name="list[]" value="${history.historyNo }" /></td>
-											<td>${history.historyNo }</td>
-											<td><fmt:formatDate value="${history.historyDate }" pattern="yyyy"/></td>
-											<td><fmt:formatDate value="${history.historyDate }" pattern="MM"/></td>
-											<td><fmt:formatDate value="${history.historyDate }" pattern="dd"/></td>
-											<td style="text-align: left;">${history.content }</td>
-											<td><button type="button" onclick="onclickUpdate(${history.historyNo });" class="btn btn-primary btn-xs">상세보기</button></td>
+											<td><input type="checkbox" name="list[]" value="${award.awardNo }" /></td>
+											<td>${award.awardNo }</td>
+											<td><fmt:formatDate value="${award.awardDate }" pattern="yyyy"/></td>
+											<td><fmt:formatDate value="${award.awardDate }" pattern="MM"/></td>
+											<td><fmt:formatDate value="${award.awardDate }" pattern="dd"/></td>
+											<td style="text-align: left;">${award.content }</td>
+											<td><button type="button" onclick="onclickUpdate(${award.awardNo });" class="btn btn-primary btn-xs">상세보기</button></td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -88,7 +88,7 @@
 						</button>
 						<div style="text-align: right;">
 							<ul class="pagination" style="margin: 0;">
-								<li class="active"><a href="?tpf=admin/setting/history&locale=ko&page=1">1</a></li>
+								<li class="active"><a href="?tpf=admin/setting/award&locale=ko&page=1">1</a></li>
 							</ul>
 						</div>
 					</div><!-- /.box-body -->
@@ -100,9 +100,9 @@
 	<div class="modal fade" id="modalContent" tabindex="-2" role="dialog" aria-labelledby="myModal" aria-hidden="true">
 		<div class="modal-dialog" style="width: 650px;">
 			<div class="modal-content">
-				<form name="form_register" method="post" action="${pageContext.request.contextPath }/admin/history/history_process?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
+				<form name="form_register" method="post" action="${pageContext.request.contextPath }/admin/award/award_process?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
 					<input type="hidden" name="mode" id="mode" value="insert"> 
-					<input type="hidden" name="historyNo" id="historyNo" value="0"> 
+					<input type="hidden" name="awardNo" id="awardNo" value="0"> 
 					<input type="hidden" name="imgUrl" />
 					<input type="hidden" name="locale" id="locale" value="ko">
 					<div class="modal-header">
@@ -158,8 +158,8 @@
 								<td align="left">
 									<input type="file" name="file1" class="form-control input-sm" style="width: 70%; display: inline;"> 
 									<span id="display_file" style="display: none;">
-										<button type="button" onclick="winOpen('?tpf=common/image_view&file_name=history/'+$('[name=code]').val());" class="btn btn-success btn-xs">보기</button>
-										<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&file_name=history/'+$('[name=code]').val()+'&code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
+										<button type="button" onclick="winOpen('?tpf=common/image_view&file_name=award/'+$('[name=code]').val());" class="btn btn-success btn-xs">보기</button>
+										<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&file_name=award/'+$('[name=code]').val()+'&code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
 									</span>
 									<div style="font-weight: normal">※ 이미지 크기 : 1920 X 580</div>
 								</td>
@@ -178,7 +178,7 @@
 	<div class="modal fade" id="modalCopyList" tabindex="-2" role="dialog" aria-labelledby="myModal" aria-hidden="true">
 		<div class="modal-dialog" style="width: 400px;">
 			<div class="modal-content">
-				<form name="historyCopyContent" method="post" action="${pageContext.request.contextPath }/admin/setting/history_process?${_csrf.parameterName}=${_csrf.token}">
+				<form name="awardCopyContent" method="post" action="${pageContext.request.contextPath }/admin/setting/award_process?${_csrf.parameterName}=${_csrf.token}">
 					<input type="hidden" name="mode" id="mode" value="copyContent"> <input type="hidden" name="locale" value="ko"> <input type="hidden" name="code" id="code">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
@@ -227,20 +227,20 @@
 	
 	function setData(code) {
 	    $.ajax({
-			url:'${pageContext.request.contextPath}/admin/history/getHistory',
+			url:'${pageContext.request.contextPath}/admin/award/getAward',
 			type:'post',
 			dataType:'json',
 			headers: {
 	            "${_csrf.headerName}" : "${_csrf.token}"
 	        },
 			data:{
-	            historyNo : code
+				awardNo : code
 			},
 			success(data){
 	            console.log(data);
-	            var date = new Date(data.historyDate);
+	            var date = new Date(data.awardDate);
 	            $('form[name="form_register"] #mode').val('update');
-	            $('[name=historyNo]').val(data.historyNo);
+	            $('[name=awardNo]').val(data.awardNo);
 	            $('[name=year]').val(date.getFullYear());
 	            $('[name=month]').val(date.getMonth() + 1);
 	            $('[name=date]').val(date.getDate());
@@ -280,7 +280,7 @@
 	                }
 	            }
 	            $('#modalCopyList').modal({backdrop:'static', show:true});
-	            historyCopyContent.code.value = code.substr(0, code.lastIndexOf(','));
+	            awardCopyContent.code.value = code.substr(0, code.lastIndexOf(','));
 	        }
 	        else {
 	            alert('항목을 선택하여야 합니다.');
@@ -295,10 +295,10 @@
 	
 	// 복사 확인버튼
 	function registerCopyContent() {
-	    if(historyCopyContent.to_locale.value == '') { alert('복사할 연혁이 선택되지 않았습니다.'); historyCopyContent.to_locale.focus(); return false;}
-	    historyCopyContent.target = 'iframe_process';
-	    historyCopyContent.to_locale.value = $('select[name=to_locale]').val();
-	    historyCopyContent.submit();
+	    if(awardCopyContent.to_locale.value == '') { alert('복사할 연혁이 선택되지 않았습니다.'); awardContent.to_locale.focus(); return false;}
+	    awardCopyContent.target = 'iframe_process';
+	    awardCopyContent.to_locale.value = $('select[name=to_locale]').val();
+	    awardCopyContent.submit();
 	}
 	
 	// 파일 업로드

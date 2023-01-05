@@ -2,19 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.award.award-mapper">
 
-<select id="getDetailByNo">
-
-</select>
-
-<insert id="insertAward">
-
-</insert>
-
-<update id="updateAward">
-
-</update>
-
-<delete id="deleteAward">
-
-</delete>
+	<select id="selectDetailByNo">
+	select *
+	from award
+	where award_no = #{awardNo}
+	</select>
+	
+	<select id="selectAwardList">
+	SELECT *  
+	FROM award
+	</select>
+	
+	<select id="selectAwardNo">
+	select awardNo
+	from award
+	</select>
+	
+	<insert id="insertAward">
+		INSERT INTO award
+			(award_no,img_url,award_date,content)
+		VALUE(NEXTVAL(award_seq),#{imgUrl},#{awardDate},#{content})
+	
+	</insert>
+	
+	<update id="updateAward">
+	
+	</update>
+	
+	<delete id="deleteAward">
+	
+	</delete>
 </mapper>

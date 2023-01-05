@@ -46,6 +46,7 @@ public class AwardServiceImpl implements AwardService {
 			Date date = resultDate;
 			award.setAwardDate(date);
 			if("insert".equals(map.get("mode"))) {
+				System.out.println("award등록!!!!!!!"+award);
 				awardDao.insertAward(award);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
@@ -62,4 +63,42 @@ public class AwardServiceImpl implements AwardService {
 		
 		return resultMap;
 	}
+
+	@Override
+	public void insertAward(Award award) {
+		// TODO Auto-generated method stub
+		awardDao.insertAward(award);
+	}
+
+	@Override
+	public void updateAward(Award award) {
+		// TODO Auto-generated method stub
+		awardDao.updateAward(award);
+	}
+
+	@Override
+	public void deleteAward(int awardNo) {
+		// TODO Auto-generated method stub
+		awardDao.deleteAward(awardNo);
+	}
+
+	@Override
+	public List<Award> selectAwardList() {
+		// TODO Auto-generated method stub
+		return awardDao.selectAwardList();
+	}
+
+	@Override
+	public Award selectDetailByNo(int awardNo) {
+
+		return awardDao.selectDetailByNo(awardNo);
+	}
+
+	@Override
+	public int selectAwardNo() {
+		// TODO Auto-generated method stub
+		return awardDao.selectAwardNo();
+	}
+
+	
 }

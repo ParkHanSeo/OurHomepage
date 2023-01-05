@@ -1,5 +1,7 @@
 package com.naedam.admin.award.model.dao;
 
+import java.util.List;
+
 import com.naedam.admin.award.model.vo.Award;
 
 public interface AwardDao {
@@ -10,5 +12,9 @@ public interface AwardDao {
 
 	void deleteAward(int awardNo);
 
+	public List<Award> selectAwardList();
+
+	public Award selectDetailByNo(int awardNo);
 	
+	public int selectAwardNo();
 }

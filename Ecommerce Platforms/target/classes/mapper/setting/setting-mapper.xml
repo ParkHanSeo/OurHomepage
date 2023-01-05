@@ -9,6 +9,10 @@
 		select * from history
 	</select>
 	
+	<select id="selectAwardList" resultType="award">
+		select * from award
+	</select>
+	
   	<select id="selectAdminMenuList" resultType="adminMenu">
   		select * from admin_menu
   	</select>
