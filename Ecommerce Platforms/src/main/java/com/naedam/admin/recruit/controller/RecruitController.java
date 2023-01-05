@@ -106,7 +106,7 @@ public class RecruitController {
 	@ResponseBody
 	public String insertRecruit(@RequestPart(value = "key") Map<String, Object> param,
 			@RequestPart(value = "file",required = false) List<MultipartFile> fileList,
-			HttpServletRequest request) throws ParseException {
+			HttpServletRequest request) throws Exception {
 
 		int recruitRecult = 0;
 		String msg="테스트 중입니다~~~";
@@ -145,13 +145,6 @@ public class RecruitController {
 		/* 리스트 생성 */
 		List<recruitContentsDTO> contentsList = new ArrayList<>();
 		
-		/* 배열꺼내기 */
-		/*
-		 * List<String> subTitle = new ArrayList<>();
-		 * subTitle.add(String.valueOf(param.get("subTitle"))); List<String> contents =
-		 * new ArrayList<>(); subTitle.add(String.valueOf(param.get("contents")));
-		 */
-		
 		System.out.println("subTitle>>>>" + param.get("subTitle"));
 		System.out.println("contents>>>>" + param.get("contents"));
 		
@@ -176,17 +169,20 @@ public class RecruitController {
 			if (fileList != null) {
 				//파일 처리 식별자 처리를 위한 UUID
 				UUID uuid = UUID.randomUUID();
-				//fileName 처리 
+				//fileName 처리 (저장될 파일이름)
 				String fileName = uuid + "_" + fileList.get(i).getOriginalFilename();
 				dtoContents.setFileName(fileName);
 				//filePath 처리
-				String filePath = request.getServletContext().getRealPath("resources/imgs/imgrecruit");
+				String filePath =request.getServletContext().getRealPath("resources/imgs/imgrecruit");
 				dtoContents.setFilePath(filePath);
 				
+				//파일 저장
+				File saveFile = new File(filePath,fileName);
+				fileList.get(i).transferTo(saveFile);
+
 				System.out.println("fileName >> " + fileName);
 				System.out.println("filePath >> " + filePath);
-				
-				
+
 				}
 			 contentsList.add(dtoContents);
 			  
@@ -196,16 +192,19 @@ public class RecruitController {
 			  int insertResult = recruitService.insertRecruitContents(contentsList);
 			  
 			  log.info("insertResult >>> " + insertResult);
-
-			  // 채용 게시글 등록 완료 확인 
-			  if (recruitRecult == 1) { 
+			  
+			  //채용 게시글 등록 완료 확인
+			  if(recruitRecult ==1) {
 				  msg = "게시글 등록이 완료 되었습니다."; 
-				  // 채용게시글 상세내용 등록 확인 
-				  if (insertResult == size) { 
+				  // 채용게시글 상세내용 등록 확인
+				  if(insertResult == size) {
 					  msg = "채용 게시글 등록이 완료 되었습니다."; }
-				  		else { msg = "채용 게시글 등록을 실패했습니다."; } 
-				  	} else { msg =
-				  				"게시글 등록을 실패했습니다."; }
+				  else {
+					  msg = "채용 게시글 등록을 실패했습니다.";
+				  }
+			  }else {
+				  msg = "게시글 등록을 실패했습니다.";
+			  }
 		
 
 		return msg;
