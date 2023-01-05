@@ -15,7 +15,7 @@ import com.naedam.admin.member.model.vo.Member;
 public interface BoardDao {
 	
 	//게시판 등록
-	public int addBoard(Board board) throws Exception;
+	public void addBoard(Board board) throws Exception;
 	
 	//게시글 등록
 	public int addPost(Post post) throws Exception;

@@ -16,7 +16,6 @@ import com.naedam.admin.menu.model.service.MenuService;
 import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
 import com.naedam.admin.menu.model.vo.Menu;
-import com.naedam.admin.menu.model.vo.Meta;
 
 @RestController
 @RequestMapping("/admin/menu/*")
@@ -55,12 +54,6 @@ public class MenuRestController {
 	public Bottom getBottom() throws Exception{
 		System.out.println("/json/getBottom 시작");
 		return menuService.getBottom();
-	}
-	
-	@PostMapping(value="json/getMeta")
-	public Meta getMeta() throws Exception{
-		System.out.println("/json/getMeta 시작");
-		return menuService.getMeta();
 	}
 	
 	@PostMapping(value="json/getRevisionList")

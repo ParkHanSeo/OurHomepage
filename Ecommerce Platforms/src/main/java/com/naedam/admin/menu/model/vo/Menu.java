@@ -24,15 +24,9 @@ public class Menu implements Serializable {
 	private int revision_code;
 	private String title; 
 	private String content;
-	private String is_outer_link; 
-	private String target; 
 	private String url; 
-	private String status; 
-	private String outer_mapping;	
+	private String status; 	
 	private String menuDate;
-	private String is_meta;	
-	private String meta_title;
-	private String meta_description;
 	private int menuAsc;
 	private int originNo;
 	private int ord;

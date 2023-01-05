@@ -81,7 +81,9 @@ $(function(){
 	                            </div>
                             </li>
                             <li class="items">
-                                <p id="map" style="width:100%; height: 453px; border-radius: 3%;"></p>
+                                <iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.5177283064227!2d127.10606707722165!3d37.40123603358722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7f434577899%3A0xae71bdfacd6566b1!2z64K064u07JSo7JWk7JSo!5e0!3m2!1sko!2skr!4v1672466052731!5m2!1sko!2skr" width="600" height="450"
+										style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="noreferrer-when-downgrade">
+								</iframe>
                             </li>
                             <li class="items">
                                 <p class="location_img">
@@ -99,7 +101,9 @@ $(function(){
 	                            </div>
                             </li>
                             <li class="items">
-								<p id="map2" style="width:100%; height: 453px; border-radius: 3%;"></p>            
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.1272088634846!2d126.8815848513167!3d37.481324379714785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f210b865e0d%3A0xadfac5f743c8151a!2z64yA66Wt7Y-s7Iqk7Yq47YOA7JuMNuywqA!5e0!3m2!1sko!2skr!4v1672639820068!5m2!1sko!2skr" width="600" height="450" 
+										style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+								</iframe>
                             </li>
                         </ul>
                     </div>
@@ -121,40 +125,5 @@ $(function(){
     </div><!-- // .layer_outer -->
 </div><!-- // .layer_wrapper -->
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=980632dcd1b0ae95b2725f497c36e51d"></script>
-<script>
-// 본사 map
-var mapContainer = document.getElementById('map'), 
-    mapOption = { 
-        center: new kakao.maps.LatLng(37.401323, 127.108592), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
-var map = new kakao.maps.Map(mapContainer, mapOption);
-//마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(37.401323, 127.108592);
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
-    position: markerPosition
-});
-// 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);
-
-//지사 map
-var mapContainer2 = document.getElementById('map2'), 
-mapOption2 = { 
-    center: new kakao.maps.LatLng(37.481466, 126.883878), // 지도의 중심좌표
-    level: 3 // 지도의 확대 레벨
-};
-var map2 = new kakao.maps.Map(mapContainer2, mapOption2);
-//마커가 표시될 위치입니다 
-var markerPosition2  = new kakao.maps.LatLng(37.481466, 126.883878);
-//마커를 생성합니다
-var marker2 = new kakao.maps.Marker({
-position: markerPosition2
-});
-//마커가 지도 위에 표시되도록 설정합니다
-marker2.setMap(map2);
-    
-</script>	
   </body>
 </html>
