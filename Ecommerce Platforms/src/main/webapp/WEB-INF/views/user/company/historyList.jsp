@@ -23,34 +23,6 @@
 	padding-left: 15px;
 	padding-right: 15px;
 }
-/* 
-img {
-	vertical-align: middle;
-	border: 0;
-	display: block;
-	max-width: 100%;
-	height: auto;
-} */
-.main_title {
-	font-size: x-large;
-}
-
-@font-face {
-	font-family: 'GothicA1-Light';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/GothicA1-Light.woff2')
-		format('woff2');
-	font-weight: 300;
-	font-style: normal;
-}
-
-body {
-	font-family: 'GothicA1-Light';
-}
-
-#cont1 li {
-	margin-left: 0px;
-}
 </style>
 <script type="text/javascript">
 	/* 연혁 처음 값에 class 추가 */
@@ -65,28 +37,26 @@ body {
 	<div class="history" id="wrap">
 		<section id="container">
 			<div id="contents" class="contents_top">
-				<div class="sub_title_area">
-					<div class="common-swiper_area">
+				<div class="sub_title_area history_sub_title_area">
+					<div class="common-swiper_area sub_history_area_top">
 						<div class="inner_container">
-							<h2 class="sub_title">(주)내담C&C 연혁</h2>
-						</div>
-
-					</div>
-					<!-- // .sub_title_area -->
-					<div class="top_visual_area type01">
-						<div class="inner_container">
-							<div class="top_txt_outer">
-								<div class="top_txt_area">
-									<!-- <p class="top_txt2"
-										style="color: black; margin-top: 160px;">
-										</p> -->
-								</div>
-							</div>
+							<h2 class="sub_title sub_title_area">연혁</h2>
+	                        <div class="layout_head">
+	                            <p class="top_txt1 service_txt1 history_txt1">
+	                                (주)내담C&C의 연혁을 알려드립니다.
+	                            </p>
+	                        </div>
+							<div class="common-swiper_tab">
+	                            <ul class="swiper-wrapper history_swiper">
+	                                <li class="swiper-slide"><a href="/company/history" class="is-link">회사연혁</a></li>
+	                                <li class="swiper-slide"><a href="/company/award" class="is-link">수상내역</a></li>
+	                            </ul>
+	                        </div>							
 						</div>
 					</div>
 				</div>
 				<!-- 서브 타이틀 -->
-				<div class="common-swiper_area2" style="width: none;">
+				<div class="common-swiper_area2 history_swiper_area2" style="width: none;">
 					<div class="inner_container">
 						<div class="common-swiper_tab">
 						<p class="top_txt2"
@@ -102,7 +72,7 @@ body {
 												<ol>
 													<c:forEach var="year" items="${years}">
 														<li>
-															<h3>
+															<h3 class="history_years">
 																<c:out value="${year.year}" />
 															</h3>
 															<dl>
@@ -128,41 +98,6 @@ body {
 
 														</li>
 													</c:forEach>
-													<!-- S: 삭제 예정 -->
-													<li>
-														<h3>2021</h3>
-														<dl>
-															<dt>05</dt>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dt>03</dt>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-														</dl>
-													</li>
-													<li>
-														<h3>2020</h3>
-														<dl>
-															<dt>02</dt>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dt>01</dt>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-														</dl>
-													</li>
-													<li>
-														<h3>2020</h3>
-														<dl>
-															<dt>02</dt>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dt>01</dt>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-															<dd>반델란드와 AI 스마트 물류 사업 업무 협약 체결</dd>
-														</dl>
-													</li>
-													<!-- E: 삭제 예정 -->
 												</ol>
 											</div>
 										</div>

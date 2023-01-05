@@ -91,7 +91,7 @@ $(function(){
                         <div class="inner_container">
                             <div class="common-swiper_tab swiper-container-initialized swiper-container-horizontal">
                                 <ul class="swiper-wrapper service_swiper_wrapper">
-                                    <li class="swiper-slide active swiper-slide-active service_swiper_slide"><a href="#self">SOLUTION</a></li>
+                                    <li class="swiper-slide swiper-slide-active service_swiper_slide"><a href="#self">SOLUTION</a></li>
                                     <li class="swiper-slide swiper-slide-next service_swiper_slide"><a href="#self">CONSULTING</a></li>
                                     <li class="swiper-slide service_swiper_slide"><a href="#self">S I</a></li>
                                 </ul>

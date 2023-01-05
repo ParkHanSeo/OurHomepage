@@ -1176,8 +1176,11 @@ img {
   background-position: center top; /*background-image:url(../images/img/img-keyvisual-visual-01-pc@2x.png);*/
   background-size: cover;
 } /* 데이터 마케팅 */
+.sub_history_area_top {
+  padding-bottom: 1%;
+}
 .top_visual_area.type01 {
-  /*background-image:url(../images/img/img-keyvisual-visual-02-pc@2x.png)*/
+  background-image: url(../images/keyvisual-1920-px-history-pc@2x.jpg);
 } /* 스마트 비지니스 */
 .top_visual_area.type01:before {
   background-image: url(../images/service/bg-05-pc.png);

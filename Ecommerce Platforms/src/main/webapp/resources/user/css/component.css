@@ -2219,6 +2219,33 @@
 .history .award_sec .tab-cont ol li:last-child dl dd {
   margin: auto 0 0 40px;
 }
+.history .tab-cont ol li .history_years {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000;
+  font-size: 40px;
+  font-weight: bolder;
+  letter-spacing: -1px;
+  box-sizing: border-box;
+  line-height: normal;
+}
+.history_sub_title_area {
+  height: 9%;
+}
+.history_swiper {
+  padding: 0 0 0 0;
+}
+.history_txt1 {
+  font-size: 40px;
+  line-height: 56px;
+  position: relative;
+  letter-spacing: -0.2px;
+}
+.history_swiper_area2 {
+  margin-left: -5%;
+  margin-top: 5%;
+}
 /*
 .history .award_sec .tab-cont ol li:last-child dl {padding:41px 0 0 20px}
 .history .award_sec .tab-cont ol li:last-child dl dd {padding:16px 16px 0; margin:0;}

@@ -61,7 +61,7 @@ $(function(){
                 <div class="layout_section_outer location_area type03">
                     <div class="inner_container">
                         <p class="common_txt-40">
-                            내담씨앤씨는 판교 본사, 가산을 지사로 두고 있습니다.
+                            내담씨앤씨는 판교 본사, 서울 지사를 두고 있습니다.
                         </p>
 
                         <ul class="common-layout_2 is-vertical location_list introduction_vertical">
@@ -90,7 +90,7 @@ $(function(){
                                 	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_map_2.jpg" alt="">
                                 </p>
                                 <div class="location_text">
-	                                <p class="location_name">가산 오피스</p>
+	                                <p class="location_name">서울 지사</p>
 	                                <p class="location_info">
 	                                    서울시 금천구 벛꽃로 298 대륭포스트타워6차 1104호 (가산동 50-3) <br>
 	                                    7호선 가산디지털단지역 2번 출구 연결 <br>

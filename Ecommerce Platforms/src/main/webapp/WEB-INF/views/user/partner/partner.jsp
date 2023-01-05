@@ -53,116 +53,68 @@ $(function(){
                                         <a href="#" class="icon_item_inner partner_a">
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li samsung_cnt">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                삼성물산
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li samsung_electro_mechanics">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                삼성전기
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li samsung_sdi">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                삼성SDI
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li samsung_sds">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                삼성SDS
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li samsung_display">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                삼성디스플레이
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li humax">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                HUMAX
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li magnachip">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                MagnaChip
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li sony">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                SONY
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li doosan">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                DOOSAN
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li dongbuhitek">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                동부하이텍
-                                            </p> 
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li daehansanggong">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                대한상공회의소
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li mev">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                MEV 환경부
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li mof">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                해양수산부
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li skcnc">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                SK C&C
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li skhynix">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                SK Hynix
-                                            </p>
                                         </a>
                                     </li>
-                                    <li class="items partner_li">
+                                    <li class="items partner_li everlandresort">
                                         <a href="#" class="icon_item_inner partner_a">
-                                            <p class="icon_item_title">
-                                                EVERLANDRESORT
-                                            </p>
                                         </a>
                                     </li>
                                 </ul>
