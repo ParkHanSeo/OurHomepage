@@ -45,17 +45,24 @@ public class RecruitServiceImpl implements RecruitService {
 		
 		log.info(">>>>>insertRecruitService 실행");
 		
-		int recruitRecult = recruitDao.insertRecruit(recruit);
+		int recruitResult = recruitDao.insertRecruit(recruit);
 		
-		System.out.println(">>>> recruitRecult: " + recruitRecult);
+		System.out.println(">>>> recruitRecult: " + recruitResult);
 		
-		return recruitRecult;
+		return recruitResult;
 	}
-
+	
 	@Override
-	public int insertRecruitContents(ArrayList<recruitContentsDTO> recruitContents) {
-		int contentsRecult = recruitDao.insertRecruitContents(recruitContents);
-		return contentsRecult;
+	public int insertRecruitContents(List<recruitContentsDTO> contentsList) {
+		log.info(">>>>>insertRecruitContents 실행");
+		int insertContentsResult = 0;
+		
+		for(int i = 0; i < contentsList.size(); i++) {
+			insertContentsResult += recruitDao.insertRecruitContents(contentsList.get(i));
+			System.out.println("contentsList.get(" + i + ") ==>" + contentsList.get(i));
+		}
+		
+		return insertContentsResult;
 	}
 	
 	

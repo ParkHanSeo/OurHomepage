@@ -6,9 +6,11 @@
 
 	<resultMap type="com.naedam.admin.recruit.model.vo.recruitContentsDTO" id="contentsResultMap">
 		<id column="RECRUIT_CON_NO" property="recruitConNo"></id>
-		<!-- <result column="RECRUIT_SUB_TITLE" property="recruitSubTitle"/>
-		<result column="RECRUIT_CONTENTS" property="recruitContents"/> -->
-		<association property="recruitNum" resultMap="recruitResultMap"/>
+		<result column="RECRUIT_SUB_TITLE" property="recruitSubTitle"/>
+		<result column="RECRUIT_CONTENTS" property="recruitContents"/>
+		<result column="RECRUIT_FILE_NAME" property="fileName"/>
+		<result column="RECRUIT_FILE_PATH" property="filePath"/>
+		<association property="recruitNo" resultMap="recruitResultMap"/>
 	</resultMap>
 
 	<resultMap type="com.naedam.admin.recruit.model.vo.recruitDTO" id="recruitResultMap">
@@ -78,18 +80,17 @@
 		SYSDATE(),
 		#{career}
 		)
+		
+		<selectKey keyProperty="recruitNo" order="AFTER" resultType="int">
+			SELECT LASTVAL(recruit_seq) from dual
+		</selectKey>
+		
 	</insert>
 
-	<insert id="insertRecruitContents" parameterType="java.util.List">
-		INSERT INTO recruit_Contents(RECRUIT_NO, RECRUIT_CON_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS)
+	<insert id="insertRecruitContents" parameterType="com.naedam.admin.recruit.model.vo.recruitContentsDTO">
+		INSERT INTO recruit_Contents(RECRUIT_NO, RECRUIT_CON_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS, RECRUIT_FILE_NAME, RECRUIT_FILE_PATH)
 		VALUES
-		<foreach collection="list" item="item" separator=",">
-			(#{recruitNo}, NEXTVAL(recruit_contents_seq), #{item.recruitSubTitle}, #{item.recruitContents}) 
-		</foreach>
-		
-		<selectKey keyProperty="recruitNo" order="BEFORE" resultType="int">
-			select next_not_cached_value from recruit_seq
-		</selectKey>
+		(#{recruitNo.recruitNo}, NEXTVAL(recruit_contents_seq), #{recruitSubTitle}, #{recruitContents}, #{fileName}, #{filePath}) 
 	</insert>
 
 </mapper>
