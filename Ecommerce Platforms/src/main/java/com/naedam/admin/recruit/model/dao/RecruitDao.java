@@ -24,7 +24,7 @@ public interface RecruitDao {
 	public int insertRecruit(recruitDTO recruit);
 
 	// 게시글 상세내용 등록
-	public int insertRecruitContents(ArrayList<recruitContentsDTO> recruitContents);
+	public int insertRecruitContents(recruitContentsDTO recruitContentsDTO);
 
 
 	
