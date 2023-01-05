@@ -1,5 +1,6 @@
 package com.naedam.admin.recruit.model.service;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.vo.Search;
 import com.naedam.admin.recruit.model.dao.RecruitDao;
@@ -51,7 +53,7 @@ public class RecruitServiceImpl implements RecruitService {
 		
 		return recruitResult;
 	}
-	
+
 	@Override
 	public int insertRecruitContents(List<recruitContentsDTO> contentsList) {
 		log.info(">>>>>insertRecruitContents 실행");

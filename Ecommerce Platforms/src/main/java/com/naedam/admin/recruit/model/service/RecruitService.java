@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
 import com.naedam.admin.recruit.model.vo.recruitDTO;
 
