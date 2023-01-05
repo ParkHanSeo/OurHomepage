@@ -76,7 +76,7 @@ public class UserBoardController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("search", search);
 		map.put("boardNo", boardNo);
-		Map<String, Object> resultMap = boardService.getPostList(map, offset, limit);
+		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		
 		// pagebar

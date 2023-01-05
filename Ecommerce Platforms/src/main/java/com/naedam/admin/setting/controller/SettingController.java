@@ -102,6 +102,15 @@ public class SettingController {
 	}
 
 	/**
+	 * 설정 => 수상 관리 조회
+	 * @param model
+	 */
+	@GetMapping("/award")
+	public void award(Model model) {
+		List<History> historyList = settingService.selectHistoryList();
+		model.addAttribute("historyList", historyList);
+	}
+	/**
 	 * 설정 => 기본 설정 => 기본, 언어, 관리자 메뉴 조회
 	 * @param model
 	 */
