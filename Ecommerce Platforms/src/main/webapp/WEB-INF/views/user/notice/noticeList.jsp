@@ -8,6 +8,15 @@
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <script type="text/javascript">
  	function paging(cPage){
+ 		
+ 		if(cPage == 'prev'){
+ 			alert("이전 페이지가 없습니다.");
+ 			return;
+ 		}else if(cPage == 'next'){
+ 			alert("다음 페이지가 없습니다.");
+ 			return;
+ 		}
+ 		
  		$("li[id='postList']").remove();
  		$("#page .common-pagination").remove();
 		var search = $("form[name='searchForm']").serialize();

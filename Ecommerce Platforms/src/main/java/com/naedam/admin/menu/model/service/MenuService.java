@@ -5,7 +5,6 @@ import java.util.Map;
 import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
 import com.naedam.admin.menu.model.vo.Menu;
-import com.naedam.admin.menu.model.vo.Meta;
 
 public interface MenuService {
 	
@@ -51,9 +50,6 @@ public interface MenuService {
 	
 	//하단 정보
 	public Bottom getBottom() throws Exception;
-	
-	//메타 정보
-	public Meta getMeta() throws Exception;
 	
 	//리비젼 가져오기
 	public Menu getRevision(Menu menu) throws Exception;

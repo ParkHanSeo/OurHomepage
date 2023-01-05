@@ -7,7 +7,6 @@ import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
 import com.naedam.admin.menu.model.vo.Menu;
 import com.naedam.admin.menu.model.vo.MenuCategory;
-import com.naedam.admin.menu.model.vo.Meta;
 
 public interface MenuDao {
 	
@@ -57,9 +56,6 @@ public interface MenuDao {
 	//하단 수정
 	public int updateBottom(Bottom bottom) throws Exception;
 	
-	//메타 수정
-	public int updateMeta(Meta meta) throws Exception;
-	
 	//메뉴 정보
 	public Menu getMenu(int code) throws Exception;
 	
@@ -71,9 +67,6 @@ public interface MenuDao {
 	
 	//하단 정보
 	public Bottom getBottom() throws Exception;
-	
-	//메타 정보
-	public Meta getMeta() throws Exception;
 	
 	//삭제리비전 복구
 	public void updateRevision(int code) throws Exception;

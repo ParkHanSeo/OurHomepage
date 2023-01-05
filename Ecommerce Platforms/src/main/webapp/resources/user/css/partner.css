@@ -15,3 +15,12 @@
 li.items.partner_li.samsung_electronics {
   background-image: url(../images/partner/samsung_electronics.jpg);
 }
+
+.items.partner_li {
+  border: solid #c5c3c3;
+  border-radius: 4%;
+}
+
+.layout_section_outer.sub-main .layout_body.partner_body {
+  margin-top: 65px;
+}

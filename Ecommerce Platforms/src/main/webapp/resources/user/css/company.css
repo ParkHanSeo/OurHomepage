@@ -11,6 +11,7 @@
 .visual_txt_area .txt1 {
   font-size: 44px;
   line-height: 62px;
+  color: black;
 }
 .visual_txt_area .txt2 {
   margin-top: 24px;
@@ -159,74 +160,9 @@
 .com_intro .com_intro_box .btn_area {
   margin-top: 40px;
 }
-
-.video-wrapper {
-  max-height: 1080px;
-  height: calc(100vh - 80px);
-  position: relative;
-  background-color: #000;
-  overflow: hidden;
+.business-wrapper {
+  height: 70%;
 }
-.video-wrapper .inner_container {
-  height: calc(100vh - 80px);
-}
-.video-wrapper video {
-  width: 1920px;
-  height: 1080px;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-
-.video-wrapper .video-timer {
-  width: 64px;
-  height: 64px;
-  position: absolute;
-  bottom: 80px;
-  z-index: 10;
-  transition: left 0.5s;
-}
-.video-wrapper .video-timer .btn-video_ctrl {
-  width: 64px;
-  height: 64px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border: 0;
-  z-index: 1;
-  background-image: url(../images/ceo_message_back.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 30px;
-  text-indent: -9999px;
-}
-.video-wrapper .video-timer .btn-video_ctrl.is-pause {
-  background-image: url(../images/common/icon-30-px-company-vod-stop-pc@2x.png);
-}
-
-.video-wrapper svg.progress {
-  width: 64px;
-  height: 64px;
-  overflow: visible;
-  transform: rotate(-90deg);
-}
-.video-wrapper svg.progress circle.top {
-  fill: transparent;
-  stroke: #fff;
-  stroke-width: 3;
-  stroke-dasharray: 201px;
-  stroke-dashoffset: 201px;
-  stroke-linecap: round;
-}
-.video-wrapper svg.progress circle.bottom {
-  fill: transparent;
-  stroke: rgba(255, 255, 255, 0.5);
-  stroke-width: 3;
-  stroke-dasharray: 201px;
-}
-
 .location_list {
   margin-top: 60px;
 }
@@ -444,6 +380,26 @@
   font-size: 20px;
   line-height: 30px;
   color: #666;
+}
+.business_top_img {
+  width: 1920px;
+  height: 900px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.inner_business_container {
+  text-align: center;
+  padding-bottom: 120px;
+}
+.business_division {
+  height: 78%;
+  margin-top: -50px;
+}
+.business_sub_title {
+  padding-bottom: 3%;
+  padding-top: 10%;
 }
 @media all and (max-width: 1280px) {
   .common-layout_4 > .items {

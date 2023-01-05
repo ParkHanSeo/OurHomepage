@@ -47,15 +47,13 @@ public class RecruitDaoImpl implements RecruitDao {
 	@Override
 	public int insertRecruit(recruitDTO recruit) {
 		log.info(">>>>>insertRecruitDAO 실행");
-		
 		return sqlSession.insert("recruit.insertRecruit", recruit);
 	}
 
 	@Override
-	public int insertRecruitContents(ArrayList<recruitContentsDTO> recruitContents) {
-		log.info("insertRecruitContentsDAO >>>> "+ recruitContents);
-		
-		return sqlSession.insert("recruit.insertRecruitContents", recruitContents);
+	public int insertRecruitContents(recruitContentsDTO recruitContentsDTO) {
+		log.info(">>>>>recruitContentsDTO :" + recruitContentsDTO);
+		return sqlSession.insert("recruit.insertRecruitContents", recruitContentsDTO);
 	}
 
 
