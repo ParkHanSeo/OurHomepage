@@ -49,6 +49,9 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	
+	<!-- MultipartResolver 빈 등록 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+	
 	<!-- #13.2 @Transactional 어노테이션 처리 -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

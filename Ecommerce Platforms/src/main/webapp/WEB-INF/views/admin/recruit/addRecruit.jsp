@@ -139,33 +139,6 @@
 	}
 	
 	function addRecruit(){
-			
-			var title = $("#title").val();
-			var startDay = $("#startDay").val();
-			var endDay = $("#endDay").val();
-			var career = $("#career").val();
-			
-			console.log("startDay >>>>>" , startDay);
-			console.log("endDay >>>>>" , endDay);
-			
-			//반복작업 필요한 내용
-			var subTitle = new Array();
-			$("input[name='subTitle']").each(function(){
-				subTitle.push($(this).val());
-			})
-			var contents = new Array();
-			$("textarea[name='contents']").each(function(){
-				contents.push($(this).val());
-			})
-			//이미지 (반복작업 필요)
-			var files = new Array();
-			$("input[name='ThombnailName']").each(function(){
-				files.push($(this).val());
-			})
-			
-			console.log("subTitle >>" + subTitle);
-			console.log("contents >>" + contents);
-			console.log("files >>" + files);
 
 			if(title.length == 0){
 				alert("제목은 필수 항목입니다.");
@@ -184,25 +157,67 @@
 				return;
 			}
 			
+			//반복작업 필요한 내용
+			var subTitle = new Array();
+			$("input[name='subTitle']").each(function(){
+				subTitle.push($(this).val());
+			})
+			var contents = new Array();
+			$("textarea[name='contents']").each(function(){
+				contents.push($(this).val());
+			})
+			//이미지 (반복작업 필요)
+			/* var files = new Array();
+			$("input[name='ThombnailName']").each(function(){
+				files.push($(this).val());
+			}) */
+			
+			console.log("subTitle >>" + subTitle);
+			console.log("contents >>" + contents);
+			
+			//FormData 새로운 객체 생성 
+			var formData = new FormData();
+			
+			//넘길 데이터
+			var data = {
+					"recruitTitle": $("#title").val(),
+					"recruitStart": $("#startDay").val(),
+					"recruitEnd": $("#endDay").val(),
+					"career": $("#career").val(),
+					"subTitle": subTitle,
+					"contents": contents		
+			}
+			
+			
+			var fileinput = $("input[name='ThombnailName']");
+			
+			for(var i = 0; i < fileinput.length; i++){
+				if(fileinput[i].files.length > 0){
+					for(var j = 0; j < fileinput[i].files.length; j++){
+						console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]);
+						
+						// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
+						formData.append('file', $("input[name='ThombnailName']")[i].files[j]);
+					}
+				}
+			}
+			
+			// 'key'라는 이름으로 위에서 담은 data를 formData에 append한다. type은 json 
+			formData.append('key', new Blob([ JSON.stringify(data) ], {type : "application/json"}));
+			
+
 			if(!confirm("채용 게시글을 등록하시겠습니까?")){
 				alert("취소 되었습니다.");
 				return;
 			}else{
-				
+
 		  		$.ajax({
 	  			 	 url : "/admin/insertRecruit?${_csrf.parameterName}=${_csrf.token}",
 		  		  	 type : "POST",
-	  		  	 	 data : {
-	 						"recruitTitle": title,
-							"recruitStart": startDay,
-							"recruitEnd": endDay,
-							"career": career,
-							"subTitle[]": subTitle,
-							"contents": contents,
-							"files": files		
-				        	 },
+	  		  	 	 data : formData,
 	  		  	     processData: false,
 	  		  	     contentType: false,
+	  		  	     enctype: 'multipart/form-data',
 	    		 	 success : function(result){
 	    		 		console.log("result >> ", result);
 	    		 		alert(result);
