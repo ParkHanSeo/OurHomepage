@@ -30,7 +30,7 @@ public class AwardController {
 	 */
 	@PostMapping("/getAward")
 	@ResponseBody
-	public Award getHistory(int awardNo) {
+	public Award getAward(int awardNo) {
 		Award award = awardService.selectDetailByNo(awardNo);
 		return award;
 	}

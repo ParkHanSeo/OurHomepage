@@ -64,7 +64,6 @@ public class AwardServiceImpl implements AwardService {
 		return resultMap;
 	}
 
-	@Override
 	public void insertAward(Award award) {
 		// TODO Auto-generated method stub
 		awardDao.insertAward(award);
@@ -82,11 +81,6 @@ public class AwardServiceImpl implements AwardService {
 		awardDao.deleteAward(awardNo);
 	}
 
-	@Override
-	public List<Award> selectAwardList() {
-		// TODO Auto-generated method stub
-		return awardDao.selectAwardList();
-	}
 
 	@Override
 	public Award selectDetailByNo(int awardNo) {
@@ -95,10 +89,17 @@ public class AwardServiceImpl implements AwardService {
 	}
 
 	@Override
-	public int selectAwardNo() {
+	public Map<String, Object> selectAwardList() throws Exception {
 		// TODO Auto-generated method stub
-		return awardDao.selectAwardNo();
+		Map<String, Object> awardmap = new HashMap<String, Object>();
+		awardmap.put("award", awardDao.selectAwardList());
+		awardmap.put("awardYear", awardDao.SelectYear());
+		awardmap.put("awardMonth", awardDao.SelectMonth());
+		
+		return awardmap;
 	}
+
+
 
 	
 }
