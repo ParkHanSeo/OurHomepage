@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.category.model.vo.Category;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.map.model.vo.Maps;
@@ -41,6 +42,13 @@ public class SettingDaoImpl implements SettingDao {
 	public List<History> selectHistoryList() {
 		// TODO Auto-generated method stub
 		return session.selectList("setting.selectHistoryList");
+	}
+	
+	@Override
+	public List<Award> selectAwardList() {
+		// TODO Auto-generated method stub
+		System.out.println("log++++"+session.selectList("setting.selectAwardList"));
+		return session.selectList("setting.selectAwardList");
 	}
 
 	@Override

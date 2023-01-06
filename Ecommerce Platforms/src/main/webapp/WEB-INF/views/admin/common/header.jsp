@@ -336,6 +336,11 @@
 									<i class="fa fa-circle-o"></i> 연혁 관리
 								</a>
 							</li>
+							<li id="awardManage">
+								<a href="${pageContext.request.contextPath }/admin/setting/award">
+									<i class="fa fa-circle-o"></i> 수상 관리
+								</a>
+							</li>
 							<li id="infoManage">
 								<a href="${pageContext.request.contextPath}/admin/setting/info">
 									<i class="fa fa-circle-o"></i> 기본 설정
