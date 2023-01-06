@@ -34,8 +34,8 @@ $(function(){
 </script>
         <section id="container" class="is-movie">
             <div id="contents">
-                <div class="business-wrapper">
-                    <img class="business_top_img" src="${pageContext.request.contextPath}/resources/user/images/business_top.jpg">
+                <div class="business-wrapper division_wrapper">
+                    <%-- <img class="business_top_img" src="${pageContext.request.contextPath}/resources/user/images/business_top.jpg"> --%>
                     <div class="inner_container">
                         <div class="visual_txt_area com_intro">
                             <p class="txt1">
@@ -45,14 +45,126 @@ $(function(){
                         </div>
                     </div>
                 </div>
-				<div class="sub_title_area contents_top">
+                <div>
+				<div class="sub_title_area">
                     <div class="inner_container">
                         <h2 class="sub_title business_sub_title">사업부 소개</h2>
                     </div>
                 </div><!-- // .sub_title_area -->
-                <div class="inner_business_container">
-                    <img class="business_division" src="${pageContext.request.contextPath}/resources/imgs/neadam/division_3.png">
-                </div>
+					<div class="inner_container">
+                        <p class="common_txt-40">
+                            내담씨앤씨의 사업부를 소개합니다.<!-- <br class="hide_768"> -->
+                        </p>
+
+                        <ul class="common-layout_2 is-vertical division_list">
+                            <li class="items item_left">
+                                <p class="division_img img_left">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_business.png" alt="">
+                                </p>
+                                <div class="div_division_left">
+	                                <p class="division_name">전략기획팀</p>
+	                                <p class="division_info">
+	                                    - 사업전략기획/수립<br>
+	                                    - 신규사업개발 및 제휴<br>
+	                                    - Global Business 연계<br>
+	                                    - 디자인 지원<br>
+	                                    - IR<br>
+	                                </p>
+	                            </div>
+                            </li>
+                            <li class="items item_left">
+                                <p class="division_img img_left">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_disital.png" alt="">
+                                </p>
+                                <div class="div_division_left">
+	                                <p class="division_name">Digital Twin 사업부</p>
+	                                <p class="division_info">
+	                                    - PLM 개발<br>
+	                                    - PLM대리점(삼성SDS)<br>
+	                                    - 공장 자동화 S/W<br>
+	                                    - EES S/W ERP/MES 개발<br>
+	                                    - 그룹웨어 개발<br>
+	                                </p>
+	                            </div>
+                            </li>
+                            <li class="items item_left">
+                                <p class="division_img img_left">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_consulting.png" alt="">
+                                </p>
+                                <div class="div_division_left">
+	                                <p class="division_name ">컨설팅 사업부</p>
+	                                <p class="division_info ">
+	                                    - SCM,CRM 컨설팅/개발<br>
+	                                    - System Modeling<br>
+	                                    - 외부 System 1/F<br>
+	                                    - Solution Business<br>
+	                                    - Si (System Integration)<br>
+	                                </p>
+                                </div>
+                            </li>
+                            <li class="items item_left">
+                                <p class="division_img img_left">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_hitech.jpeg" alt="">
+                                </p>
+                                <div class="div_division_left">
+	                                <p class="division_name">Hi-Tech 사업부</p>
+	                                <p class="division_info">
+	                                    - 사업전략기획/수립<br>
+	                                    - 신규사업개발 및 제휴<br>
+	                                    - Global Business 연계<br>
+	                                    - 디자인 지원<br>
+	                                    - IR<br>
+	                                </p>
+	                            </div>
+                            </li>
+                            <li class="items item_left">
+                                <p class="division_img img_left">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_visionai.jpeg" alt="">
+                                </p>
+                                <div class="div_division_left">
+	                                <p class="division_name">Vision AI 사업부</p>
+	                                <p class="division_info">
+	                                    - PLM 개발<br>
+	                                    - PLM대리점(삼성SDS)<br>
+	                                    - 공장 자동화 S/W<br>
+	                                    - EES S/W ERP/MES 개발<br>
+	                                    - 그룹웨어 개발<br>
+	                                </p>
+	                            </div>
+                            </li>
+                            <li class="items item_left">
+                                <p class="division_img img_left">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_cloud.png" alt="">
+                                </p>
+                                <div class="div_division_left">
+	                                <p class="division_name">Cloud MSP 사업부</p>
+	                                <p class="division_info">
+	                                    - 사업전략기획/수립<br>
+	                                    - 신규사업개발 및 제휴<br>
+	                                    - Global Business 연계<br>
+	                                    - 디자인 지원<br>
+	                                    - IR<br>
+	                                </p>
+	                            </div>
+                            </li>
+                            <li class="items item_left">
+                                <p class="division_img img_left">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_si.png" alt="">
+                                </p>
+                                <div class="div_division_left">
+	                                <p class="division_name">SI 사업부</p>
+	                                <p class="division_info">
+	                                    - SCM,CRM 컨설팅/개발<br>
+	                                    - System Modeling<br>
+	                                    - 외부 System 1/F<br>
+	                                    - Solution Business<br>
+	                                    - Si (System Integration)<br>
+	                                </p>
+	                            </div>
+                            </li>                            
+                        </ul>
+                    </div>
+                 </div>
             </div><!-- // #contents -->
         </section><!-- // #container -->
 <!-- footer -->		
