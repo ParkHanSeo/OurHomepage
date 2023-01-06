@@ -22,30 +22,3 @@
           </div>
         </footer>
       </div>
-    </div>
-
-    <div
-      style="
-        left: -1000px;
-        overflow: scroll;
-        position: absolute;
-        top: -1000px;
-        border: none;
-        box-sizing: content-box;
-        height: 200px;
-        margin: 0px;
-        padding: 0px;
-        width: 200px;
-      "
-    >
-      <div
-        style="
-          border: none;
-          box-sizing: content-box;
-          height: 200px;
-          margin: 0px;
-          padding: 0px;
-          width: 200px;
-        "
-      ></div>
-    </div>

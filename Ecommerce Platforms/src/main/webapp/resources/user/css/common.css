@@ -30,7 +30,7 @@ ul {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 40px;
+  /* padding-inline-start: 40px; */
 }
 
 li {
@@ -1630,7 +1630,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   margin-left: 12px;
 }
 .common-swiper_area.sub-main .common-swiper_tab ul li:first-child {
-  margin-left: 0;
+  margin-left: 40px;
 }
 .common-swiper_area.sub-main .common-swiper_tab ul li a {
   height: 46px;
@@ -1794,7 +1794,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 .common-layout_2.box-type02.is-vertical .items:nth-child(1),
 .common-layout_2.box-type02.is-vertical .items:nth-child(2) {
-  margin-top: 0;
+  margin-top: 22px;
 }
 
 .common-layout_2:not(.swiper-wrapper).is-vertical

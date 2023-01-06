@@ -1,0 +1,343 @@
+@charset "utf-8";
+
+/* .common-swiper_area + .layout_section_outer.recruit {padding:60px 0 120px;} */
+.layout_section_outer.recruit {
+  padding: 120px 0 120px;
+}
+.layout_section_outer.recruit .common-search_box_wrap {
+  margin-top: -60px;
+}
+.layout_section_outer.recruit2 {
+  padding: 120px 0 200px;
+}
+.layout_section_outer.recruit .inner_container {
+}
+.layout_section_outer.recruit2 .inner_container + .inner_container {
+  margin-top: 160px;
+}
+.layout_section_outer.recruit .common-search_box {
+  width: 400px;
+}
+
+.layout_section_outer .layout_body.process-area {
+  margin-top: 80px;
+}
+.process-flow .color1 {
+  background-color: #e0e8ff;
+}
+.process-flow .color2 {
+  background-color: #adc2ff;
+}
+.process-flow .color3 {
+  background-color: #688dfd;
+}
+.process-flow .color4 {
+  background-color: #3564f5;
+}
+.process-flow .color5 {
+  background-color: #002ee0;
+}
+.process-flow .color6 {
+  background-color: #f1f4ff;
+}
+
+.process-flow .flow_list {
+  overflow: hidden;
+}
+.process-flow .flow_list > li {
+  position: relative;
+  width: 20%;
+  float: left;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  text-align: center;
+  padding-top: 23.41%;
+}
+.process-flow .flow_list > li .flow_num {
+  display: none;
+}
+.process-flow .flow_list > li .flow_txt {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  line-height: 30px;
+  width: 80%;
+}
+
+.process-flow .flow_list > li .flow_txt em {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+}
+.process-flow .flow_list > li .flow_txt.txt-white {
+  color: #fff;
+}
+.process-flow .flow_list > li .flow_txt .sub_txt {
+  display: block;
+  font-size: 18px;
+  line-height: 36px;
+  color: #666;
+}
+.process-flow .process_txt {
+  margin-top: 120px;
+  font-size: 18px;
+  line-height: 28px;
+  color: #666;
+}
+.process-flow .process_txt span {
+  color: #000;
+}
+
+/*
+.process-flow .flow_list {overflow:hidden;}
+.process-flow .flow_list > li {width:300px; height:300px; margin-right:-55px; display:flex; align-items: center; justify-content: center; float:left; overflow:hidden; position:relative; border-radius:50%; text-align:center;}
+.process-flow .flow_list > li .flow_num {display:none;}
+.process-flow .flow_list > li .flow_txt {font-size:24px; line-height:36px;}
+.process-flow .flow_list > li .flow_txt em {font-weight:normal; font-style:normal;}
+.process-flow .flow_list > li .flow_txt.txt-white {color:#fff;}
+.process-flow .flow_list > li .flow_txt .sub_txt {display:block; font-size:18px; line-height:36px; color:#666;}
+.process-flow .process_txt {margin-top:120px; font-size:18px; line-height:28px; color:#666;}
+.process-flow .process_txt span {color:#000;}
+*/
+
+.process-flow .box-layout_3 {
+  margin-top: 60px;
+}
+.process-flow .box-layout_3 .common-cont_box {
+  padding: 24px 0;
+  margin-top: 56px;
+  border: 0;
+  border-top: 1px solid #e6e6e6;
+  border-radius: 0;
+}
+.process-flow
+  .box-layout_3
+  .common-cont_box:nth-child(1)
+  .process-flow
+  .box-layout_3
+  .common-cont_box:nth-child(2)
+  .process-flow
+  .box-layout_3
+  .common-cont_box:nth-child(3) {
+  margin-top: 0;
+}
+.process-flow .box-layout_3 .common-cont_box .cont_title {
+  font-size: 28px;
+  line-height: 44px;
+}
+.process-flow .box-layout_3 .common-cont_box .cont_title em {
+  font-size: 20px;
+  color: #0573e8;
+  font-style: normal;
+  display: inline-block;
+  margin-bottom: -2px;
+  vertical-align: text-bottom;
+}
+.process-flow .box-layout_3 .common-cont_box .cont_desc {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 28px;
+  color: #666;
+}
+
+.process_btn_area {
+  margin-top: 120px;
+  text-align: center;
+}
+.process_btn_area .common-btn {
+  margin-right: 16px;
+}
+.process_btn_area .common-btn.is-white2 {
+  border-color: #ccc;
+}
+.process_btn_area .common-btn.is-white2:hover {
+  border-color: rgba(204, 204, 204, 0.5);
+}
+.process-flow.size-02 .flow_list {
+  max-width: none;
+}
+@media (hover: hover) {
+  .process_btn_area .common-btn.is-white2:hover {
+    border-color: rgba(204, 204, 204, 0.5);
+  }
+}
+
+.process-flow.type01 .flow_list > li .flow_desc {
+  display: none;
+}
+/* .process-flow.size-01 .flow_list > li {width:280px; height:280px; margin-right:-30px;} */
+.process-flow.size-02 .flow_list > li {
+  width: 19.27%;
+  padding-top: 19.27%;
+  margin-left: -2.73%;
+}
+
+@media all and (max-width: 1280px) {
+  .process-flow .flow_list {
+    padding-left: 3.31%;
+  }
+}
+@media all and (max-width: 1262px) {
+  .process_btn_area .common-btn {
+    margin-top: 12px;
+  }
+}
+@media all and (max-width: 1024px) {
+  .process-flow .flow_list > li .flow_txt {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .process-flow .flow_list > li .flow_txt .sub_txt {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .process-flow .process_txt {
+    margin-top: 60px;
+  }
+  .process_btn_area {
+    margin-top: 68px;
+  }
+
+  .process-flow .box-layout_3.is-vertical {
+    margin-top: 30px;
+  }
+  .process-flow .box-layout_3.is-vertical .common-cont_box {
+    width: calc(50% - 20px);
+    margin-left: 40px;
+  }
+  .process-flow .box-layout_3.is-vertical .common-cont_box:nth-child(odd) {
+    margin-left: 0;
+  }
+  .process-flow
+    .box-layout_3.is-vertical
+    .common-cont_box:nth-child(1)
+    .process-flow
+    .box-layout_3.is-vertical
+    .common-cont_box:nth-child(2)
+    .process-flow
+    .box-layout_3.is-vertical
+    .common-cont_box:nth-child(3) {
+    margin-top: 0;
+  }
+  .process-flow .box-layout_3 .common-cont_box .cont_title {
+    font-size: 24px;
+    line-height: 40px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .common-swiper_area + .layout_section_outer.recruit {
+    padding: 64px 0 120px;
+  }
+  .layout_section_outer.recruit {
+    padding: 48px 0;
+  }
+  .layout_section_outer.recruit .common-search_box_wrap {
+    margin-top: -16px;
+  }
+  .layout_section_outer.recruit2 {
+    padding: 64px 0 120px;
+  }
+  .layout_section_outer.recruit2 .inner_container + .inner_container {
+    margin-top: 120px;
+  }
+  .layout_section_outer.recruit .common-search_box {
+    width: 100%;
+  }
+
+  .layout_section_outer .layout_body.process-area {
+    margin-top: 40px;
+  }
+  .process-flow .flow_list {
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .process-flow .flow_list > li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 20px 0;
+    float: none;
+    justify-content: flex-start;
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .process-flow .flow_list > li .flow_num {
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 50%;
+  }
+  .process-flow .flow_list > li .flow_num.txt-white {
+    color: #fff;
+  }
+  .process-flow .flow_list > li .flow_txt {
+    width: auto;
+    position: static;
+    transform: inherit;
+    margin-left: 16px;
+    text-align: left;
+  }
+  .process-flow .flow_list > li .flow_txt em {
+    display: none;
+  }
+  .process-flow .flow_list > li .flow_txt.txt-white {
+    color: #000;
+  }
+  .process-flow .process_txt {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .process_btn_area .common-btn {
+    width: 100%;
+  }
+  .process_btn_area .common-btn .mail_addr {
+    display: none;
+  }
+
+  .process-flow .box-layout_3 {
+    display: none;
+  }
+
+  .process-flow.type01 .flow_list > li {
+    padding-left: 60px;
+    display: block;
+    text-align: left;
+  }
+  .process-flow.type01 .flow_list > li .flow_num {
+    position: absolute;
+    left: 0;
+    top: 20px;
+  }
+  .process-flow.type01 .flow_list > li .flow_txt {
+    padding-top: 12px;
+    margin-left: 0;
+  }
+  .process-flow.type01 .flow_list > li .flow_desc {
+    margin-top: 12px;
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    color: #666;
+  }
+  .process-flow.size-01 .flow_list > li,
+  .process-flow.size-02 .flow_list > li {
+    width: 100%;
+    padding: 20px 20px 20px 64px;
+    margin: 0;
+  }
+}
+
+@media all and (max-width: 375px) {
+}
