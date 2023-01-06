@@ -1,64 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<html lang="ko">
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
+<!DOCTYPE html>
+
 <head>
-<title>내담씨앤씨</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<style type="text/css">
-h1.css1 {
-    font-size: 150px;
-}
-h2.css2 {
-    font-size: 120px;
-}
-@media all and (max-width: 1024px) {
-	h1.css1 {
-	    font-size: 120px;
-	}
-	h2.css2 {
-	    font-size: 90px;
-	}	
-} 
-@media all and (min-width: 768px) and (max-width:1023px) {
-	h1.css1 {
-	    font-size: 90px;
-	}
-	h2.css2 {
-	    font-size: 60px;
-	}
-}
-@media all and (max-width: 540px) {
-	h1.css1 {
-	    font-size: 60px;
-	}
-	h2.css2 {
-	    font-size: 30px;
-	}
-}
-@media all and (max-width: 425px) {
-	h1.css1 {
-	    font-size: 30px;
-	}
-	h2.css2 {
-	    font-size: 15px;
-	}
-}
-@media all and (max-width: 320px) {
-	h1.css1 {
-	    font-size: 120px;
-	}
-	h2.css2 {
-	    font-size: 90px;
-	}
-}	
-</style>
+
 </head>
+
 <body>
-	<div>
-		<h1 class="css1">반응형 웹디자인</h1>
-		<h2 class="css2">CSS 테스트입니다.</h2>
-	</div>
+        <form>
+            <textarea name="editor1" id="editor1" rows="10" cols="80">
+                This is my textarea to be replaced with CKEditor 4.
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+        </form>
+<script src="//cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
 </body>
-</html>
+	
