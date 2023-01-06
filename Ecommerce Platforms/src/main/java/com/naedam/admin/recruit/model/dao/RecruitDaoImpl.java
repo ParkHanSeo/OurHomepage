@@ -56,6 +56,18 @@ public class RecruitDaoImpl implements RecruitDao {
 		return sqlSession.insert("recruit.insertRecruitContents", recruitContentsDTO);
 	}
 
+	@Override
+	public recruitDTO getRecruitData(int recruitNo) {
+		System.out.println("getContentsData dao ==== " + recruitNo);
+		return sqlSession.selectOne("recruit.getRecruitData", recruitNo);
+	}
+
+	@Override
+	public List<recruitContentsDTO> getContentsData(int recruitNo) {
+		System.out.println("getContentsData dao ==== " + recruitNo);
+		return sqlSession.selectList("recruit.getContentsData", recruitNo);
+	}
+
 
 	
 }

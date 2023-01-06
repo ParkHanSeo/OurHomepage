@@ -214,9 +214,9 @@
 						                        <td>${post.rownum}</td>   <!-- 번호 -->       
 						                   		<td align="left">${post.recruitTitle}</td>        
 						                        <td>${post.career}</td>            
-						                        <td><fmt:formatDate type="date" pattern="yyyy-MM-dd" value="${post.recruitStart}"/></td>                        
-						                        <td><fmt:formatDate type="date" pattern="yyyy-MM-dd" value="${post.recruitEnd}"/></td>
-						               			<td><fmt:formatDate type="date" pattern="yyyy-MM-dd" value="${post.recruitDate}"/></td>        
+						                        <td >${post.recruitStart}</td>                        
+						                        <td>${post.recruitEnd}</td>
+						               			<td>${post.recruitDate}</td>        
 						               			<td>${post.recruitViewcount}</td>             
 						                        <td>
 						                			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.recruitNo}">상세보기</button>
@@ -249,6 +249,7 @@
 	</div>
 	
 <jsp:include page="/WEB-INF/views/admin/recruit/addRecruit.jsp"/>
+<jsp:include page="/WEB-INF/views/admin/recruit/getRecruit.jsp"/>
 </div><!-- /.content-wrapper -->
 
 <footer class="main-footer">

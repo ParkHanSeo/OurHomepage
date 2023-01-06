@@ -23,6 +23,12 @@ public interface RecruitService {
 	// 게시글 상세 내용 등록
 	public int insertRecruitContents(List<recruitContentsDTO> contentsList);
 
+	// 게시글 수정을 위한 게시글 조회
+	public recruitDTO getRecruitData(int recruitNo);
+
+	// 게시글 수정을 위한 상세내용 조회
+	public List<recruitContentsDTO> getContentsData(int recruitNo);
+
 
 
 	

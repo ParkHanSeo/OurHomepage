@@ -140,19 +140,19 @@
 	
 	function addRecruit(){
 
-			if(title.length == 0){
+			if($("#title").val().length == 0){
 				alert("제목은 필수 항목입니다.");
 				return;
 			}
-			if(startDay == null || startDay == ''){
+			if($("#startDay").val() == null || $("#startDay").val() == ''){
 				alert("시작일은 필수 항목입니다.");
 				return;
 			}
-			if(endDay == null || endDay == ''){
+			if($("#endDay").val() == null || $("#endDay").val() == ''){
 				alert("마감일은 필수 항목입니다.");
 				return;
 			}
-			if(startDay > endDay){
+			if($("#startDay").val() > $("#endDay").val()){
 				alert("시작일은 마감일보다 뒤일 수 없습니다.");
 				return;
 			}
@@ -177,6 +177,8 @@
 			
 			//FormData 새로운 객체 생성 
 			var formData = new FormData();
+			
+			console.log("start>>>>>>>>>>>>>", $("#startDay").val());
 			
 			//넘길 데이터
 			var data = {

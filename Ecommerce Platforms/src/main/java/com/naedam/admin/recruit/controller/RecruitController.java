@@ -13,30 +13,23 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.naedam.admin.board.model.vo.Search;
 import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.recruit.model.service.RecruitService;
 import com.naedam.admin.recruit.model.vo.SearchDTO;
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
 import com.naedam.admin.recruit.model.vo.recruitDTO;
-import com.naedam.admin.recruit.model.vo.recruitDataDTO;
-import com.naedam.admin.recruit.model.vo.recruitfileDTO;
 
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -104,12 +97,12 @@ public class RecruitController {
 
 	@PostMapping(value = "insertRecruit", produces = "application/text; charset=UTF-8")
 	@ResponseBody
-	public String insertRecruit(@RequestPart(value = "key") Map<String, Object> param,
+	public String insertRecruit(@RequestPart(value = "key" ,required = false) Map<String, Object> param,
 			@RequestPart(value = "file",required = false) List<MultipartFile> fileList,
 			HttpServletRequest request) throws Exception {
 
 		int recruitRecult = 0;
-		String msg="테스트 중입니다~~~";
+		String msg="";
 
 		System.out.println("param >>>>" + param);
 		System.out.println("fileList >>>>" + fileList);
@@ -120,19 +113,8 @@ public class RecruitController {
 		recruit.setRecruitTitle((String)param.get("recruitTitle"));
 		recruit.setCareer((String)param.get("career"));
 		
-		/* String 타입 date 타입으로 바꿔서 recruitDTO 담기*/
-		String startDate = (String) param.get("recruitStart");
-		String endDate = (String) param.get("recruitEnd");
-		
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		
-		Date fmtStartDate = formatter.parse(startDate);
-		Date fmtendDate = formatter.parse(endDate);
-		
-		recruit.setRecruitDate(fmtStartDate);
-		recruit.setRecruitEnd(fmtendDate);
-		
-		System.out.println("recruit >>>>>>> " + recruit);
+		recruit.setRecruitStart((String)param.get("recruitStart"));
+		recruit.setRecruitEnd((String)param.get("recruitEnd"));
 		
 		// 채용 게시글 입력
 		recruitRecult = recruitService.insertRecruit(recruit);
@@ -166,7 +148,7 @@ public class RecruitController {
 			dtoContents.setRecruitNo(dtoRecruit);
 			
 			/*세부 내용안의 이미지file*/
-			if (fileList != null) {
+			if ((fileList != null) && (fileList.size() > 0)) {
 				//파일 처리 식별자 처리를 위한 UUID
 				UUID uuid = UUID.randomUUID();
 				//fileName 처리 (저장될 파일이름)
@@ -209,6 +191,37 @@ public class RecruitController {
 
 		return msg;
 
+	}
+	
+	@GetMapping("getRecruitData")
+	@ResponseBody
+	public Map<String, Object> getRecruitData(Model model,@RequestParam("postNo") int recruitNo) {
+		//필요한 데이터
+		//제목, 채용시작일, 채용마감일, 경력, 소제목1, 내용1, 파일1, 소제목2, 내용2, 파일2....
+		System.out.println("======= getRecruitData 실행 =========");
+		System.out.println("postNo>>>>" + recruitNo);
+		
+		//채용글 1차
+		recruitDTO recruitData = recruitService.getRecruitData(recruitNo);
+		System.out.println("recruitData>>>>" + recruitData.getRecruitStart());
+		
+		//채용글 2차 (리스트 여러개)
+		List<recruitContentsDTO> contents = recruitService.getContentsData(recruitNo);
+		System.out.println("contents>>>>" + contents);
+		
+		/*
+		 * model.addAttribute("recruitData", recruitData);
+		 * model.addAttribute("contents", contents);
+		 */
+		Map<String, Object> resultMap = new HashMap<>();
+		
+		resultMap.put("recruitData", recruitData);
+		System.out.println("recruitData.recruitStart >>>" + recruitData.getRecruitStart());
+		resultMap.put("contents", contents);
+		
+		System.out.println("getRecruitData resultMap >>>>>" + resultMap);
+		
+		return resultMap;
 	}
 
 }

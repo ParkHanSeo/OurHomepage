@@ -66,6 +66,18 @@ public class RecruitServiceImpl implements RecruitService {
 		
 		return insertContentsResult;
 	}
+
+	@Override
+	public recruitDTO getRecruitData(int recruitNo) {
+		System.out.println("getRecruitData Service ==== " + recruitNo);
+		return recruitDao.getRecruitData(recruitNo);
+	}
+
+	@Override
+	public List<recruitContentsDTO> getContentsData(int recruitNo) {
+		System.out.println("getContentsData Service ==== " + recruitNo);
+		return recruitDao.getContentsData(recruitNo);
+	}
 	
 	
 }

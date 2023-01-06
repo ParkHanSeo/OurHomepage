@@ -27,12 +27,18 @@
 
 	<select id="getRecruitList" resultMap="recruitResultMap">
 		SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
-		R.*
+		R.RECRUIT_NO,
+		R.RECRUIT_TITLE,
+		R.RECRUIT_VIEWCOUNT,
+		TO_CHAR(R.RECRUIT_START, 'YYYY-MM-DD') as RECRUIT_START,
+		TO_CHAR(R.RECRUIT_END, 'YYYY-MM-DD') as RECRUIT_END,
+		TO_CHAR(R.RECRUIT_DATE, 'YYYY-MM-DD') as RECRUIT_DATE,
+		R.CAREER
 		FROM RECRUIT R,(SELECT @ROWNUM := 0) TMP
 		<if test="search.searchType != null">
 			WHERE R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
 		</if>
-		ORDER BY RECRUIT_NO ASC
+		ORDER BY RECRUIT_NO DESC
 	</select>
 
 
@@ -92,6 +98,19 @@
 		VALUES
 		(#{recruitNo.recruitNo}, NEXTVAL(recruit_contents_seq), #{recruitSubTitle}, #{recruitContents}, #{fileName}, #{filePath}) 
 	</insert>
+	
+	<select id="getRecruitData" resultMap="recruitResultMap">
+		SELECT *
+		  FROM RECRUIT
+		 WHERE RECRUIT_NO = #{recruitNo}
+	</select>
+	
+	<select id="getContentsData" resultMap="contentsResultMap">
+		SELECT *
+		  FROM RECRUIT_CONTENTS RC
+		  JOIN RECRUIT R ON(RC.RECRUIT_NO = R.RECRUIT_NO)
+		 WHERE RC.RECRUIT_NO = #{recruitNo}
+	</select>
 
 </mapper>
 

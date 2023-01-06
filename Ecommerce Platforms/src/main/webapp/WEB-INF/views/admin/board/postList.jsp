@@ -360,7 +360,6 @@
 					                   			<td>${post.post_downloadcount}</td>
 					                   			<td>
 						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
-						                   				<input type="hidden" value="${post.member_no}">
 						                   			</button>
 					                   			</td>
 					                   		</tr>
