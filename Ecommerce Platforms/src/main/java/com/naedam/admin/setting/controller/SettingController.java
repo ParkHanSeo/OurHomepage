@@ -110,7 +110,6 @@ public class SettingController {
 	public void award(Model model) {
 		List<Award> awardList = settingService.selectAwardList();
 		model.addAttribute("awardList", awardList);
-		System.out.println("awardList+++++"+awardList);
 	}
 	/**
 	 * 설정 => 기본 설정 => 기본, 언어, 관리자 메뉴 조회

@@ -12,9 +12,14 @@ public interface AwardDao {
 
 	void deleteAward(int awardNo);
 
-	public List<Award> selectAwardList();
-
 	public Award selectDetailByNo(int awardNo);
+
+	public List<Award> selectAwardList();
 	
-	public int selectAwardNo();
+	public List<Award> SelectYear();
+
+	public List<Award> SelectMonth();
+
+
+
 }

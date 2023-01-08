@@ -14,6 +14,10 @@
 <!-- 사용자 정의 끝 -->
 </head>
 <style>
+a:hover {
+	color: black;
+}
+
 .content {
 	padding-top: 40px;
 	padding-bottom: 40px;
@@ -41,34 +45,30 @@
 					<div class="common-swiper_area sub_history_area_top">
 						<div class="inner_container">
 							<h2 class="sub_title sub_title_area">연혁</h2>
-	                        <div class="layout_head">
-	                            <p class="top_txt1 service_txt1 history_txt1">
-	                                (주)내담C&C의 연혁을 알려드립니다.
-	                            </p>
-	                        </div>
+							<div class="layout_head">
+								<p class="top_txt1 service_txt1 history_txt1">(주)내담C&C의 연혁을
+									알려드립니다.</p>
+							</div>
 							<div class="common-swiper_tab">
-	                            <ul class="swiper-wrapper history_swiper">
-	                                <li class="swiper-slide"><a href="/company/history" class="is-link">회사연혁</a></li>
-	                                <li class="swiper-slide"><a href="/company/award" class="is-link">수상내역</a></li>
-	                            </ul>
-	                        </div>							
+								<ul class="swiper-wrapper history_swiper">
+									<li class="swiper-slide active" ><a href="javascript:void(0);" id="cont1" class="is-link">회사연혁</a></li>
+									<li class="swiper-slide"><a href="javascript:void(0);" id="cont2" class="is-link">수상내역</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 				<!-- 서브 타이틀 -->
-				<div class="common-swiper_area2 history_swiper_area2" style="width: none;">
+				<div class="common-swiper_area2 history_swiper_area2"
+					style="width: none;">
 					<div class="inner_container">
 						<div class="common-swiper_tab">
-						<p class="top_txt2"
-										style="color: black; margin-left: 40px">
-										(주)내담C&C의 연혁을 알려드립니다.</p>
 							<ul>
-								<!-- <li class="swiper-slide active"><a href="/company/history"
-									class="is-link">회사연혁</a></li> -->
 								<div class="layout_section_outer history_sec">
 									<div>
 										<div class="tab-cont-wrap">
-											<div class="tab-cont active" id="cont1">
+											<div class="tab-cont active" id="tab-cont1">
 												<ol>
 													<c:forEach var="year" items="${years}">
 														<li>
@@ -80,7 +80,41 @@
 																	<c:if test="${month.year == year.year}">
 																		<!-- 해당년도의 월 -->
 																		<dt>
-																			<fmt:formatNumber type="number" pattern="##" minIntegerDigits="2" value="${month.month}"/>
+																			<fmt:formatNumber type="number" pattern="##"
+																				minIntegerDigits="2" value="${month.month}" />
+																			<%-- <c:out value="${month.month}" /> --%>
+																		</dt>
+																		<!-- 해당하는 연혁 -->
+																		<c:forEach var="content" items="${history}">
+																			<c:if
+																				test="${(month.month == content.month)&&(month.year == content.year)}">
+																				<dd>
+																					<c:out value="${content.content}" />
+																				</dd>
+																			</c:if>
+																		</c:forEach>
+																	</c:if>
+																</c:forEach>
+															</dl>
+
+														</li>
+													</c:forEach>
+												</ol>
+											</div>
+											<div class="tab-cont" id="tab-cont2">
+												<ol>
+													<c:forEach var="year" items="${years}">
+														<li>
+															<h3 class="history_years">
+																<c:out value="${year.year}" />
+															</h3>
+															<dl>
+																<c:forEach var="month" items="${months}">
+																	<c:if test="${month.year == year.year}">
+																		<!-- 해당년도의 월 -->
+																		<dt>
+																			<fmt:formatNumber type="number" pattern="##"
+																				minIntegerDigits="2" value="${month.month}" />
 																			<%-- <c:out value="${month.month}" /> --%>
 																		</dt>
 																		<!-- 해당하는 연혁 -->
@@ -115,5 +149,22 @@
 	<!-- footer -->
 	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
 	<!-- footer -->
+	<script>
+	
+		$('#cont1').click(function() {
+			$('#cont2').parent().removeClass('active');
+			$('#cont1').parent().addClass('active');
+			$('#tab-cont2').removeClass('active');
+			$('#tab-cont1').addClass('active');
+		})
+			
+		$('#cont2').click(function() {
+			$('#cont1').parent().removeClass('active');
+			$('#cont2').parent().addClass('active');
+			$('#tab-cont1').removeClass('active');
+			$('#tab-cont2').addClass('active');
+		})
+		
+	</script>
 </body>
 </html>
