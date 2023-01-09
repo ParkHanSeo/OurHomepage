@@ -166,11 +166,6 @@
 			$("textarea[name='contents']").each(function(){
 				contents.push($(this).val());
 			})
-			//이미지 (반복작업 필요)
-			/* var files = new Array();
-			$("input[name='ThombnailName']").each(function(){
-				files.push($(this).val());
-			}) */
 			
 			console.log("subTitle >>" + subTitle);
 			console.log("contents >>" + contents);
@@ -192,6 +187,7 @@
 			
 			
 			var fileinput = $("input[name='ThombnailName']");
+			console.log("fileinput >>>" + fileinput);
 			
 			for(var i = 0; i < fileinput.length; i++){
 				if(fileinput[i].files.length > 0){
