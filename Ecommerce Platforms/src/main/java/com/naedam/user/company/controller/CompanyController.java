@@ -75,22 +75,27 @@ public class CompanyController {
 		System.out.println("historyList 시작");
 		ModelAndView mv = new ModelAndView();
 		Map<String, Object> resultMap = historyService.selectHistoryList();
-		System.out.println(resultMap.get("history"));
 		mv.setViewName("user/company/historyList");
 		mv.addObject("history", resultMap.get("history"));
 		mv.addObject("years", resultMap.get("years"));
 		mv.addObject("months", resultMap.get("months"));
+		
 		Map<String, Object> awardMap = awardService.selectAwardList();
-		System.out.println(awardMap.get("award"));
 		mv.addObject("award", awardMap.get("award"));
-		mv.addObject("years", awardMap.get("awardYears"));
-		mv.addObject("months", awardMap.get("awardMonths"));
+		mv.addObject("awardYears", awardMap.get("awardYears"));
+		mv.addObject("awardMonths", awardMap.get("awardMonths"));
 		
 		
 		
+		System.out.println("history");
 		System.out.println(">>>> history: " + resultMap.get("history"));
 		System.out.println(">>>> years: " + resultMap.get("years"));
 		System.out.println(">>>> months: " + resultMap.get("months"));
+		
+		System.out.println("award");
+		System.out.println(">>>> award: " + awardMap.get("award"));
+		System.out.println(">>>> awardYears: " + awardMap.get("awardYears"));
+		System.out.println(">>>> awardMonths: " + awardMap.get("awardMonths"));
 		
 		return mv;
 	}

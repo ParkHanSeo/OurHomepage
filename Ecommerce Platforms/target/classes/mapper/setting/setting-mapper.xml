@@ -9,7 +9,7 @@
 		select * from history
 	</select>
 	
-	<select id="selectAwardList" resultType="award">
+	<select id="selectAwardList" resultType="Award">
 		select * from award
 	</select>
 	

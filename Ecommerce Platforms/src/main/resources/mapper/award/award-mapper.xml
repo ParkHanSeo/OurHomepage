@@ -3,29 +3,43 @@
 <mapper namespace="award">
 
 	<select id="selectDetailByNo" parameterType="int" resultType="com.naedam.admin.award.model.vo.Award">
-	select *
-	from award
-	where award_no = #{value}
+	select * from award	where award_no = #{value}
 	</select>
-	
-	<select id="selectAwardList">
-	SELECT *  
-	FROM award
+
+	<select id="selectAwardList" resultType="map">
+	select *,
+		DATE_FORMAT(award_date, '%Y') AS year,
+		DATE_FORMAT(award_date, '%c') AS month
+		from award;
+	</select>
+
+	<select id="selectYear" resultType="map">
+	select distinct
+		DATE_FORMAT(award_date, '%Y') AS year
+		from award
+	</select>
+
+	<select id="selectMonth" resultType="map">
+	select distinct
+		DATE_FORMAT(award_date, '%Y') AS year,
+		DATE_FORMAT(award_date, '%c') AS month
+		from award
 	</select>
 	
 	<insert id="insertAward" parameterType="award" >
 		INSERT INTO award
-			(award_no,img_url,award_date,content)
-		VALUE(NEXTVAL(award_seq),#{imgUrl},#{awardDate},#{content})
+			(award_no, img_url, award_date, content, host)
+		VALUE(NEXTVAL(award_seq),#{imgUrl},#{awardDate},#{content}, #{host} )
 	</insert>
 	
 	<update id="updateAward">
 		UPDATE award
-		SET award_date=#{awardDate}, content=#{content}, img_url=#{imgUrl}
+		SET award_date=#{awardDate}, content=#{content}, img_url=#{imgUrl}, host = #{host}
 		WHERE award_no = #{awardNo}
 	</update>
 	
 	<delete id="deleteAward">
-	
+		delete from award
+		where award_no = #{awardNo}
 	</delete>
 </mapper>
