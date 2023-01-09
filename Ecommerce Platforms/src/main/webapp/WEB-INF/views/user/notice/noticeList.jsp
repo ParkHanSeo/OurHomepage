@@ -170,21 +170,32 @@ $(function(){
 											작성일자
 										</p>
 									</div>
-								</li>									
-							<c:forEach var="post" items="${list}">
-								<li id="postList">
-									<div class="subj_box">
-										<p class="common-text_txt2">
-											<a href="/user/notice/getNoticeDetail/${post.post_no}">
-												${post.post_title}
-											</a>
-										</p>
-									</div>
-									<div class="date_box center-left">
-										<p class="common-text_txt4">${post.post_date}</p>
-									</div>
 								</li>
-							</c:forEach>
+								<c:if test="${!empty list}">
+									<c:forEach var="post" items="${list}">
+										<li id="postList">
+											<div class="subj_box">
+												<p class="common-text_txt2">
+													<a href="/user/notice/getNoticeDetail/${post.post_no}">
+														${post.post_title}
+													</a>
+												</p>
+											</div>
+											<div class="date_box center-left">
+												<p class="common-text_txt4">${post.post_date}</p>
+											</div>
+										</li>
+									</c:forEach>
+								</c:if>
+								<c:if test="${empty list}">
+										<li id="postList">
+											<div class="subj_box">
+												<p class="common-text_txt2 notice_empty_txt">
+													등록된 자료가 없습니다.
+												</p>
+											</div>
+										</li>								
+								</c:if>
 						</ul>
 					</div>
 					<div id="page">

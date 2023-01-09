@@ -16,13 +16,17 @@ li.items.partner_li.samsung_electronics {
 }
 li.items.partner_li.samsung_cnt {
   background-image: url(../images/partner/samsung_cnt.jpg);
+  background-size: 350px;
+  background-repeat: no-repeat;
+  background-position-x: 28px;
+  background-position-y: 10px;
 }
 li.items.partner_li.samsung_electro_mechanics {
   background-image: url(../images/partner/samsung_electro_mechanics.png);
   background-repeat: no-repeat;
-  background-size: 325px;
-  background-position-x: 36px;
-  background-position-y: 16px;
+  background-size: 300px;
+  background-position-x: 37px;
+  background-position-y: 21px;
 }
 li.items.partner_li.samsung_sdi {
   background-image: url(../images/partner/samsung_sdi.png);
@@ -33,16 +37,16 @@ li.items.partner_li.samsung_sdi {
 }
 li.items.partner_li.samsung_sds {
   background-image: url(../images/partner/samsung_sds.jpg);
-  background-size: 370px;
+  background-size: 345px;
   background-repeat: no-repeat;
-  background-position-x: 15px;
+  background-position-x: 29px;
   background-position-y: -6px;
 }
 li.items.partner_li.samsung_display {
   background-image: url(../images/partner/samsung_display.jpg);
-  background-size: 329px;
+  background-size: 321px;
   background-repeat: no-repeat;
-  background-position-x: 35px;
+  background-position-x: 40px;
   background-position-y: 14px;
 }
 li.items.partner_li.humax {

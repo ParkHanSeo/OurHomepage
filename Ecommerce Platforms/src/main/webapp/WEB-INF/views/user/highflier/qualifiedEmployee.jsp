@@ -32,7 +32,8 @@
                                 	최고의 경쟁력을 가진 인재 육성
                                 </p>
                                 <p class="top_txt3">
-                                    (주)내담C&C는 진취적이고 프로정신을 가진 인재를 소중히 여기는 기업입니다.
+                                    (주)내담C&C는 진취적이고 프로정신을 가진 인재를 소중히 여기는 기업입니다.<br />
+                                    내담C&C와 미래를 함께 할 당신의 지원을 기다립니다.
                                 </p>
                             </div>
                         </div>
@@ -50,7 +51,7 @@
                                             </p>
                                             <p class="sub_txt">Excellence</p>
                                             <i class="icon culture-icon-01"></i>
-                                            <span class="icon card_ui-more"></span>
+                                            <span class="icon card_ui-more employee_icon_black"></span>
                                         </a>
                                         <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
@@ -68,7 +69,7 @@
                                             </p>
                                             <p class="sub_txt">Innovation</p>
                                             <i class="icon culture-icon-02"></i>
-                                            <span class="icon card_ui-more is-black"></span>
+                                            <span class="icon card_ui-more employee_icon_white"></span>
                                         </a>
                                         <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
@@ -86,7 +87,7 @@
                                             </p>
                                             <p class="sub_txt">Customer Fixation</p>
                                             <i class="icon culture-icon-03"></i>
-                                            <span class="icon card_ui-more is-black"></span>
+                                            <span class="icon card_ui-more employee_icon_black"></span>
                                         </a>
                                         <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
@@ -104,7 +105,7 @@
                                             </p>
                                             <p class="sub_txt">Teamwork</p>
                                             <i class="icon culture-icon-04"></i>
-                                            <span class="icon card_ui-more"></span>
+                                            <span class="icon card_ui-more employee_icon_white"></span>
                                         </a>
                                         <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
@@ -122,7 +123,7 @@
                                             </p>
                                             <p class="sub_txt">Community</p>
                                             <i class="icon culture-icon-04"></i>
-                                            <span class="icon card_ui-more"></span>
+                                            <span class="icon card_ui-more employee_icon_black"></span>
                                         </a>
                                         <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
@@ -140,7 +141,7 @@
                                             </p>
                                             <p class="sub_txt">Fun</p>
                                             <i class="icon culture-icon-04"></i>
-                                            <span class="icon card_ui-more"></span>
+                                            <span class="icon card_ui-more employee_icon_white"></span>
                                         </a>
                                         <div class="culture_card_detail">
                                             <ul class="culture_card_txt">

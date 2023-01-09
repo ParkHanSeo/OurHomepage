@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 		<!-- 공통 footer -->
-      <div>
         <footer id="footer">
           <button type="button" class="btn-scroll-top">
             <span class="blind">Top</span>
@@ -21,4 +20,3 @@
             </address>
           </div>
         </footer>
-      </div>

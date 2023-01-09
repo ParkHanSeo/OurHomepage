@@ -915,16 +915,6 @@
   margin-left: 2px;
   background-image: url(../images/common/icon-20-px-download@2x.png);
 }
-.icon.card_ui-more {
-  width: 32px;
-  height: 32px;
-  background-image: url(../images/common/icon-32-px-more-line-wh@2x.png);
-}
-.icon.card_ui-more.is-black {
-  width: 32px;
-  height: 32px;
-  background-image: url(../images/common/icon-32-px-more-line-bk@2x.png);
-}
 .icon.card_ui-close {
   width: 32px;
   height: 32px;

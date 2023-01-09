@@ -31,7 +31,7 @@
 					<div class="visual-slider swiper-container-initialized swiper-container-horizontal">
 						<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1687px, 0px, 0px);">
 							<div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_17.jpg);"></div>
+								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_itservice_1-1.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
 									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
@@ -53,7 +53,7 @@
 								</div>
 							</div>
 							<div class="swiper-slide" data-swiper-slide-index="1" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_9.jpg);"></div>
+								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_scm_1-3.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
 									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
@@ -75,7 +75,7 @@
 								</div>
 							</div>
 							<div class="swiper-slide" data-swiper-slide-index="2" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_11.jpg);"></div>
+								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_divitalTwin_1-5.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
 									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
@@ -98,7 +98,7 @@
 								</div>
 							</div>
 							<div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="3" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/image_3.jpg);"></div>
+								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_visionAi_1-2.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
 									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
@@ -120,7 +120,7 @@
 								</div>
 							</div>
 							<div class="swiper-slide swiper-slide-active" data-swiper-slide-index="4" style="width: 241px">
-								<div class="view" style=" background-image: url(${pageContext.request.contextPath}/resources/user/images/image_13.jpg);"></div>
+								<div class="view" style=" background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_cloud_1-1.jpg);"></div>
 								<p class="blind">배경이미지 대채텍스트</p>
 								<div class="inner">
 									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
@@ -439,7 +439,7 @@
 									<li class="factory-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 										<a href="/business/ai_factory_solution">
 											<h3 class="tit-label">Digital Twin</h3>
-											<h4 class="tit">산업 데이터 모니터링</h4>
+<!-- 											<h4 class="tit">산업 데이터 모니터링</h4> -->
 											<p class="description">
 												설계에서 제조 및 건설, 운영 및 유지 관리<br /> 가상의 트윈 사용자의 문제를 미리 예방한다.
 											</p>

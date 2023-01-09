@@ -19,7 +19,7 @@
 <body>
     <div id="wrap">
 		<section id="container">
-            <div id="contents" class="contents_top">>
+            <div id="contents" class="contents_top">
                 <div class="sub_title_area">
                     <div class="inner_container">
                         <h2 class="sub_title">인사제도</h2>
@@ -29,7 +29,7 @@
                 <div class="top_visual_area recruit">
                     <div class="inner_container">
                         <div class="top_txt_outer">
-                            <div class="top_txt_area">
+                            <div class="top_txt_area txt_notice">
                                 <p class="top_txt2">내담씨앤씨의 인사제도를 소개합니다.</p>
                                 <p class="top_txt3">
                                     (주)내담C&C는 삼성멀티캠퍼스의 집합 또는 온라인 교육과 현장 교육을 통해 인재를 육성하며 <br />

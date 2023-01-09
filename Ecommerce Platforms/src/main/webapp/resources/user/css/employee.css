@@ -595,6 +595,17 @@
 .employee_layout_body {
   margin-top: 10%;
 }
+.employee_icon_black {
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/common/recruit_plus_black.png);
+}
+.employee_icon_white {
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/common/recruit_plus_white.png);
+}
+
 @media all and (min-width: 1023px) {
   .culture_card_area
     .culture_card_list
