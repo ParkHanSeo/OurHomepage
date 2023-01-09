@@ -13,7 +13,7 @@
 <!-- 사용자 정의 끝 -->
 </head>
 <body>
-<!-- haeder -->
+<!-- haeder -->  
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 <!-- haeder -->
 <body>

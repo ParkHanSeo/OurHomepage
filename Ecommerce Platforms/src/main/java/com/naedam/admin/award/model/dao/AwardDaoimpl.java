@@ -21,28 +21,36 @@ public class AwardDaoimpl implements AwardDao {
 
 	@Override
 	public void updateAward(Award award) {
-		session.update("award.insertAward", award);
+		session.update("award.updateAward", award);
 	}
 
 	@Override
 	public void deleteAward(int awardNo) {
-		session.delete("award.insertAward", awardNo);
+		session.delete("award.deleteAward", awardNo);
 	}
 
 	@Override
 	public List<Award> selectAwardList() {
 
-		return session.selectList("award.getAwardList");
+		return session.selectList("award.selectAwardList");
 	}
 
 	@Override
 	public Award selectDetailByNo(int awardNo) {
-		return session.selectOne("award.getDetailByNo", awardNo);
+		return session.selectOne("award.selectDetailByNo", awardNo);
 	}
 
 	@Override
-	public int selectAwardNo() {
-		return session.selectOne("award.getAwardNo");
+	public List<Award> SelectYear() {
+		// TODO Auto-generated method stub
+		return session.selectList("award.selectYear");
 	}
+
+	@Override
+	public List<Award> SelectMonth() {
+		// TODO Auto-generated method stub
+		return session.selectList("award.selectMonth");
+	}
+
 
 }

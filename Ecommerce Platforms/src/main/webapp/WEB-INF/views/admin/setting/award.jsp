@@ -156,7 +156,7 @@
 							<tr>
 								<td class="menu">파일 <span class="text-light-blue"><i class="fa fa-check"></i></span></td>
 								<td align="left">
-									<input type="file" name="file1" class="form-control input-sm" style="width: 70%; display: inline;"> 
+									<input type="file" name="file1" class="form-control input-sm" style="width: 70%; display: inline;" accept="image/*"> 
 									<span id="display_file" style="display: none;">
 										<button type="button" onclick="winOpen('?tpf=common/image_view&file_name=award/'+$('[name=code]').val());" class="btn btn-success btn-xs">보기</button>
 										<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&file_name=award/'+$('[name=code]').val()+'&code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>

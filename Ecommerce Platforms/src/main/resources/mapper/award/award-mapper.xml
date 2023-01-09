@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.award.award-mapper">
+<mapper namespace="award">
 
-	<select id="selectDetailByNo">
+	<select id="selectDetailByNo" parameterType="int" resultType="com.naedam.admin.award.model.vo.Award">
 	select *
 	from award
-	where awardNo = #{awardNo}
+	where award_no = #{value}
 	</select>
 	
 	<select id="selectAwardList">
@@ -13,20 +13,16 @@
 	FROM award
 	</select>
 	
-	<select id="selectAwardNo">
-	select awardNo
-	from award
-	</select>
-	
-	<insert id="insertAward">
+	<insert id="insertAward" parameterType="award" >
 		INSERT INTO award
 			(award_no,img_url,award_date,content)
 		VALUE(NEXTVAL(award_seq),#{imgUrl},#{awardDate},#{content})
-	
 	</insert>
 	
 	<update id="updateAward">
-	
+		UPDATE award
+		SET award_date=#{awardDate}, content=#{content}, img_url=#{imgUrl}
+		WHERE award_no = #{awardNo}
 	</update>
 	
 	<delete id="deleteAward">

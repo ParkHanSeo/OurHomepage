@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.naedam.admin.award.model.service.AwardService;
 import com.naedam.admin.history.model.service.HistoryService;
 
 @Controller
@@ -21,6 +22,8 @@ public class CompanyController {
 	@Autowired
 	private HistoryService historyService;
 	
+	@Autowired
+	private AwardService awardService;
 	/**
 	 * 회사소개 => 사업개요 조회
 	 * @param model
@@ -77,6 +80,13 @@ public class CompanyController {
 		mv.addObject("history", resultMap.get("history"));
 		mv.addObject("years", resultMap.get("years"));
 		mv.addObject("months", resultMap.get("months"));
+		Map<String, Object> awardMap = awardService.selectAwardList();
+		System.out.println(awardMap.get("award"));
+		mv.addObject("award", awardMap.get("award"));
+		mv.addObject("years", awardMap.get("awardYears"));
+		mv.addObject("months", awardMap.get("awardMonths"));
+		
+		
 		
 		System.out.println(">>>> history: " + resultMap.get("history"));
 		System.out.println(">>>> years: " + resultMap.get("years"));

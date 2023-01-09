@@ -15,9 +15,9 @@ public interface AwardService {
 
 	void deleteAward(int awardNo);
 
-	public List<Award> selectAwardList();
+	public Map<String,Object> selectAwardList() throws Exception;
 
 	public Award selectDetailByNo(int awardNo);
 	
-	public int selectAwardNo();
+	
 }
