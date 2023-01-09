@@ -19,5 +19,5 @@ public class Award implements Serializable{
 	private Date awardDate; ;
 	private String content;
 	private String imgUrl;	
-	
+	private String host;
 }

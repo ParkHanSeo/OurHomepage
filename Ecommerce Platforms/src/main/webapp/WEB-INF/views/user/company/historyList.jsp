@@ -9,19 +9,16 @@
 <meta property="og:url" content="https://www.jhta.co.kr">
 
 <!-- include  -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/history.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <!-- include end  -->
 <!-- 사용자 정의 끝 -->
 </head>
 <style>
-a:hover {
-	color: black;
-}
-
 .content {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	width: 1170px;
+	width: 1170px;w
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 15px;
@@ -82,7 +79,6 @@ a:hover {
 																		<dt>
 																			<fmt:formatNumber type="number" pattern="##"
 																				minIntegerDigits="2" value="${month.month}" />
-																			<%-- <c:out value="${month.month}" /> --%>
 																		</dt>
 																		<!-- 해당하는 연혁 -->
 																		<c:forEach var="content" items="${history}">
@@ -96,40 +92,41 @@ a:hover {
 																	</c:if>
 																</c:forEach>
 															</dl>
-
 														</li>
 													</c:forEach>
 												</ol>
 											</div>
+											</div>
+											<div class="award_sec">
 											<div class="tab-cont" id="tab-cont2">
 												<ol>
-													<c:forEach var="year" items="${years}">
+													<c:forEach var="awardyear" items="${awardYears}">
 														<li>
 															<h3 class="history_years">
-																<c:out value="${year.year}" />
+																<c:out value="${awardyear.year}" />
 															</h3>
 															<dl>
-																<c:forEach var="month" items="${months}">
-																	<c:if test="${month.year == year.year}">
-																		<!-- 해당년도의 월 -->
-																		<dt>
-																			<fmt:formatNumber type="number" pattern="##"
-																				minIntegerDigits="2" value="${month.month}" />
-																			<%-- <c:out value="${month.month}" /> --%>
-																		</dt>
+																<c:forEach var="awardmonth" items="${awardMonths}">
+																	<c:if test="${awardmonth.year == awardyear.year}">
 																		<!-- 해당하는 연혁 -->
-																		<c:forEach var="content" items="${history}">
+																		<c:forEach var="awardcontent" items="${award}">
 																			<c:if
-																				test="${(month.month == content.month)&&(month.year == content.year)}">
+																				test="${(awardmonth.month == awardcontent.month)&&(awardmonth.year == awardcontent.year)}">
 																				<dd>
-																					<c:out value="${content.content}" />
+																					<span class=thumnail>
+																						<img class="img-thumbnail regist_thumbnail"  src="${pageContext.request.contextPath}/resources/user/images/company/award/awardLogo2.jpg" alt="...">
+																					</span>
+																					<span class="title">
+																						<c:out value="'${awardcontent.host} 주최'" />
+																						<br>
+																						<c:out value="${awardcontent.content}" />
+																					</span>
 																				</dd>
 																			</c:if>
 																		</c:forEach>
 																	</c:if>
 																</c:forEach>
 															</dl>
-
 														</li>
 													</c:forEach>
 												</ol>
