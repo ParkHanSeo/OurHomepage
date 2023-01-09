@@ -106,7 +106,6 @@
 					<input type="hidden" name="mode" id="mode" value="insert"> 
 					<input type="hidden" name="awardNo" id="awardNo" value="0"> 
 					<input type="hidden" name="imgUrl" />
-					<input type="hidden" name="host" />
 					<input type="hidden" name="locale" id="locale" value="ko">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
