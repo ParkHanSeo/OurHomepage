@@ -402,7 +402,7 @@
 									<div class="main_aos_solution_txt">
 										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">Solution</h3>
 										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-											회삳 또는 영업활동에 필요한 요구사항과 소통을 통해 분석/설계하여<br /> 전산프로그램으로 구현합니다.
+											회사 또는 영업활동에 필요한 요구사항과 소통을 통해 분석/설계하여<br /> 전산프로그램으로 구현합니다.
 											사용 프로그램과 차별화된 맞춤형 개발과 유지보수 지원 <br />
 											레거시 시스템과 연계되는 응용 프로그램 개발의뢰도 가능합니다. 
 										</p>
@@ -552,7 +552,8 @@
 								</a> 
 								<a href="/culture/growth" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
 									<h3 class="tit">성장</h3>
-									<p class="description">
+									<p class="description
+									">
 										차세대 신기술 개발과<br /> 혁신의 중추적 역할을 해 나갈<br /> IT 기술 전문가를 양성합니다.
 									</p>
 									<p class="btn-arrow is-black">

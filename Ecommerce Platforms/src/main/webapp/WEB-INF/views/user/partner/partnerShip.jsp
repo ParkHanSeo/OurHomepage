@@ -63,7 +63,7 @@ $(function(){
                         <div class="layout_head">
                             <p class="top_txt1">
                                 내담씨앤씨의 파트너십의 관계에 있어서 <br>
-                                성장 및 역략 강화를 지원합니다.
+                                성장 및 역량 강화를 지원합니다.
                             </p>
                         </div>
                         <div class="layout_body is-margin2">

@@ -118,11 +118,9 @@ public class SettingController {
 	@GetMapping("/info")
 	public void info(Model model) {
 		List<AdminMenu> adminMenuList = settingService.selectAdminMenuList();
-		List<Locale> localeList = settingService.selectLocaleList();
 		AdminSetting adminSetting = settingService.selectAdminSetting();
 		model.addAttribute("adminSetting", adminSetting);
 		model.addAttribute("adminMenuList", adminMenuList);
-		model.addAttribute("localeList", localeList);
 	}
 
 	@GetMapping("/img_view")
