@@ -57,6 +57,7 @@
 										<td style="width: 100px;">년도</td>
 										<td style="width: 100px;">월</td>
 										<td style="width: 100px;">일</td>
+										<td style="">주최</td>
 										<td style="">내용</td>
 										<td style="width: 80px;">명령</td>
 									</tr>
@@ -69,6 +70,7 @@
 											<td><fmt:formatDate value="${award.awardDate }" pattern="yyyy"/></td>
 											<td><fmt:formatDate value="${award.awardDate }" pattern="MM"/></td>
 											<td><fmt:formatDate value="${award.awardDate }" pattern="dd"/></td>
+											<td style="text-align: left;">${award.host }</td>
 											<td style="text-align: left;">${award.content }</td>
 											<td><button type="button" onclick="onclickUpdate(${award.awardNo });" class="btn btn-primary btn-xs">상세보기</button></td>
 										</tr>
@@ -148,6 +150,10 @@
 										<option value="${day }">${day }</option>
 									</c:forEach>
 								</select>
+							</tr>
+							<tr>
+								<td class="menu">주최</td>
+								<td align="left"><input type="text" name="host" class="form-control input-sm" placeholder=" 예) 환경부 주최 " style="width: 26%;" /></td>
 							</tr>
 							<tr>
 								<td class="menu">내용</td>
@@ -245,6 +251,7 @@
 	            $('[name=month]').val(date.getMonth() + 1);
 	            $('[name=date]').val(date.getDate());
 	            $('[name=content]').val(data.content);
+	            $('[name=host]').val(data.host);
 	            if(data.imgUrl != null) $('#display_file').css('display','');
 	            else $('#display_file').css('display','none');
 			},
