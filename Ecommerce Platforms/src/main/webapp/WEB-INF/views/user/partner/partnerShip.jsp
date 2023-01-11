@@ -63,7 +63,7 @@ $(function(){
                         <div class="layout_head">
                             <p class="top_txt1">
                                 내담씨앤씨의 파트너십의 관계에 있어서 <br>
-                                성장 및 역량 강화를 지원합니다.
+                                성장 및 역략 강화를 지원합니다.
                             </p>
                         </div>
                         <div class="layout_body is-margin2">
@@ -71,7 +71,7 @@ $(function(){
                                 <ul class="esg_program_list">
                                     <li>
                                         <div class="esg_program_img">
-                                        	<img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-06-pc@2x.jpg" alt="">
+                                        	<img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-01-pc@2x.png" alt="">
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담C&C</p>
@@ -83,7 +83,7 @@ $(function(){
                                     </li>
                                     <li class="is-right">
                                         <div class="esg_program_img">
-                                        	<img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-07-pc@2x.jpg" alt="">
+                                        	<img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-02-pc@2x.png" alt="">
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">기업의 이익 위하여</p>
@@ -95,7 +95,7 @@ $(function(){
                                     </li>
                                     <li>
                                         <div class="esg_program_img">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-08-pc@2x.jpg" alt="">
+                                            <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-03-pc@2x.png" alt="">
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담 파트너에 대한 우리의 약속</p>
@@ -108,7 +108,7 @@ $(function(){
                                     </li>
                                     <li class="is-right">
                                         <div class="esg_program_img">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-09-pc@2x.jpg" alt="">
+                                            <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-04-pc@2x.png" alt="">
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담의 목표</p>

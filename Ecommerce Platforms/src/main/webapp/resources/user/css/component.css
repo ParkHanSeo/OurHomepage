@@ -2212,7 +2212,7 @@
 .history .tab-cont ol li .history_years {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50;
   color: #000;
   font-size: 40px;
   font-weight: bolder;
