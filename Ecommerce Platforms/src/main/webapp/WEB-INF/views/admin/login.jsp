@@ -12,19 +12,19 @@
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- admin -->
-	<link href="${pageContext.request.contextPath}/resources/css/admin.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/resources/admin/css/admin.css" rel="stylesheet" type="text/css" />
 	<!-- Theme style -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/AdminLTE.min.css">
 	<!-- Bootstrap 3.3.7 -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/bootstrap.min.css">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/font-awesome.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/font-awesome.min.css">
 	<!-- Ionicons -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/ionicons.min.css">
 	<!-- jquery.vector-map -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery.vector-map.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/jquery.vector-map.css">
 	<!-- _all-skins.min -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/_all-skins.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/_all-skins.min.css">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -48,7 +48,7 @@
 		<div style="width: 400px;">
 			<div class="box box-primary">
 				<div class="box-body box-profile">
-					<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" style="height: 50px; margin: 20px;">
+					<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/neadam_logo.png" style="height: 50px; margin: 20px;">
 					<h3 class="profile-username text-center">웹사이트 운영을 위한 관리자 모드입니다.</h3>
 					<p class="text-muted text-center" style="padding: 10px;">아이디와 비밀번호 입력후 로그인해 주시기 바랍니다.</p>
 					<form name="form" action="${pageContext.request.contextPath }/admin/member/memberLogin.do" method="post" style="padding: 20px;">
@@ -77,7 +77,7 @@
 <script src="https://mir9.co.kr/resource/js/AdminLTE-2.4.2/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="https://mir9.co.kr/resource/js/AdminLTE-2.4.2/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/resources/js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="/resources/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
 
 <script>
 	function loginSubmit() {

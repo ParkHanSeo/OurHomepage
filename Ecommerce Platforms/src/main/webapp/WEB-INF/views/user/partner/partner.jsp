@@ -12,20 +12,6 @@
   <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
 <div id="wrap" class="visual-center">
-<script>
-$(function(){
-	// 검색어 유효성 체크
-	$("#btnCommonSearchAll").click(function(){
-		if($("#inputSearch").val() == "") {
-			$(".result-error-txt").show();
-			return false;	
-		}
-	});
-});
-
-</script>
-
-
         <section id="container">
             <div id="contents" class="contents_top">
                 <div class="sub_title_area">

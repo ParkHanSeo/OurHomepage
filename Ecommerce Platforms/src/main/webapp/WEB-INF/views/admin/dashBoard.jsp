@@ -12,11 +12,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-colorselector@0.1.0/dist/bootstrap-colorselector.min.js">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel='stylesheet'  href='${pageContext.request.contextPath}/resources/fullcalendar/lib/main.css'/>
-<link rel="stylesheet"  href="${pageContext.request.contextPath}/resources/css/colorselector.css">
-<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/main.js'></script>
-<script src='${pageContext.request.contextPath}/resources/fullcalendar/lib/locales/ko.js'></script>
-<script src='${pageContext.request.contextPath}/resources/js/moment.js'></script>
+<link rel='stylesheet'  href='${pageContext.request.contextPath}/resources/admin/fullcalendar/lib/main.css'/>
+<link rel="stylesheet"  href="${pageContext.request.contextPath}/resources/admin/css/colorselector.css">
+<script src='${pageContext.request.contextPath}/resources/admin/fullcalendar/lib/main.js'></script>
+<script src='${pageContext.request.contextPath}/resources/admin/fullcalendar/lib/locales/ko.js'></script>
+<script src='${pageContext.request.contextPath}/resources/admin/js/moment.js'></script>
 
 <style>
 	ul { list-style: none; }

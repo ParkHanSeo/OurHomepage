@@ -24,18 +24,18 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 		crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/bootstrap.min.css">
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/76afde4c0b.js" crossorigin="anonymous"></script>
 	<!-- Ionicons -->
 	<script src="https://unpkg.com/ionicons@4.4.1/dist/ionicons.js"></script>
 	<!-- jvectormap -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery.vector-map.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/jquery.vector-map.css">
 	<!-- Theme style -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/AdminLTE.min.css">
 	<!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/_all-skins.min.css">
-	<link href="${pageContext.request.contextPath}/resources/css/admin.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/_all-skins.min.css">
+	<link href="${pageContext.request.contextPath}/resources/admin/css/admin.css" rel="stylesheet" type="text/css" />
 	
 	<!-- fullcalendar -->
 	<link href="//mir9.co.kr/resource/css/bootstrap-colorselector.css" rel="stylesheet" />
@@ -77,7 +77,7 @@
 		<div style="width: 400px;">
 			<div class="box box-primary">
 				<div class="box-body box-profile">
-					<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" style="height: 50px; margin: 20px;">
+					<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/neadam_logo.png" style="height: 50px; margin: 20px;">
 					<h3 class="profile-username text-center">웹사이트 운영을 위한 관리자 모드입니다.</h3>
 					<p class="text-muted text-center" style="padding: 10px;">아이디와 비밀번호 입력후 로그인해 주시기 바랍니다.</p>
 					<form:form name="form" action="${pageContext.request.contextPath}/admin/member/memberLogin.do?${_csrf.parameterName}=${_csrf.token}" method="POST" style="padding: 20px;">
