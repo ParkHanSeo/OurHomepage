@@ -73,7 +73,6 @@ $(function(){
                         </div>
                     </div>
                 </div><!-- // .top_visual_area -->
-
                 <div class="layout_section_outer biz_difference is-gray" data-js="anchor-target">
                     <div class="inner_container">
                         <div class="layout_body">
@@ -84,11 +83,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                           실시간 생산 관리 및 분석
+
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                            당사는 수동 생산공정관리 및 원자재 수기관리 등 비효율 관리로 인해 발생하는 
+											생산성 저하 등의 문제를 해소하고자 하는 고객의 문제점을 해결하기 위해 생산공정의 
+											기준정보 수립 및 실시간 생산공정관리를 위한 MES를 제공한다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +100,16 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                            품질관리 시스템 구축
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            생산품의 품질 결과를 입력/유형분석 및 공정 별, 설비 별, 불량유형 별 통계분석 제공
+											 불량 발생 시 LOT 추적을 통한 문제 요인 탐색 가능
+											생산품의 품질 결과를 입력/유형을 분석하여 공정 별, 설비 별, 불량유형별 통계분석 제공
+											불량 발생 시 LOT 추적을 통한 문제 요인 탐색 가능
+
+
+
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +119,17 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+                                            통합관리, 생산성 개선, 경쟁력 향상
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+											제조현장과 주변 시스템의 통합, 최적화한 생산 활동 지원, 생산 현장의 실시간(real time) 정보 통합, 
+											통합 정보의 활용으로 최적의 의사결정 지원 등에 의한 통합화와 최적화한 생산 활동을 지원
+											생산성 지표 향상, 품질 향상, 원가 절감과 가격경쟁력 제고, 납기(delivery) 단축과 준수, 
+											유연성(flexibility) 증대 등에 의한 생산성 개선으로 기업경영에 기여
+											제조 사이클 시간 단축, 재고 손실 감소, 업무 지연 시간 축소, 제품 결합률 감소 등 
+											생산성 향상을 기대 가능
+
+
                                         </p>
                                     </div>
                                 </li>
@@ -135,7 +146,6 @@ $(function(){
     </div><!-- // #wrap -->
 
 <div>
-
 <div class="layer_wrapper" id="pop_customer">
     <div class="layer_outer">
         <div class="layer_inner">

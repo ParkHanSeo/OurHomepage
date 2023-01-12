@@ -84,11 +84,16 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                            코로나바이러스가 공급망에 미치는 영향
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                            2019년에는 2020년에 겪게 될 혼돈과 혼란의 물결에 대해 아무도 알지 못했습니다. 
+											이러한 상황을 알 수는 없었지만 확실히 더 잘 준비할 수 있었습니다. 
+											전 세계 기업들은 코로나19로 인해 일부 공급망 프로세스가 얼마나 취약하고 
+											구시대적이었는지 깨닫게 되었습니다. 
+											인공 지능, 머신 러닝, 예측 분석을 SCM 시스템에 통합한 기업은 스마트한 의사결정을 
+											내리고 예기치 못한 상황이 발생했을 때 신속하게 적응하며 탄력성을 향상시킬 수 있습니다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +103,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                            친환경 공급망
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            공급망 관리에 환경친화적인 관행을 통합하면 제품 디자인 및 자재 조달부터 제조, 물류, 배송 
+											그리고 사용 수명 종료 시 제품과 장비에 수행하는 모든 조치를 혁신할 수 있습니다. 
+											순환 공급망에서는 폐기된 제품의 플라스틱과 전자 부품 등을 재활용하는 데 그치지 않고 
+											용도를 변경하는 방법도 모색합니다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +120,15 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+                                            공급망 투명성
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            고객은 글로벌 경제에 대해 그 어느 때보다 잘 알고 있으며 공급망 관행과 정책이 
+											윤리적이라고 알려진 기업과 거래하려는 의욕으로 가득 차 있습니다. 
+											공급망 투명성과 지속가능성을 구축하기 위해 블록체인 및 추적 센서와 같은 기술이 사용되고 
+											있습니다. 고객은 윤리적인 원자재 제공과 생산에 사용되는 노동부터 배송 트럭의 연료에 
+											이르기까지 최신 공급망에 포함된 모든 연결 고리에 대한 원산지와 출처를 확인할 수 있습니다.
+
                                         </p>
                                     </div>
                                 </li>

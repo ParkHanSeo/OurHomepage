@@ -84,11 +84,16 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                            산업 데이터 모니터링
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                            설계에서 제조 및 건설, 운영 및 유지 관리, 심지어 향후 사용 또는 재사용에 이르기까지 
+											자산 수명 주기의 전 단계를 모니터링 한다.
+											AI, 기계학습(machine learning), IoT 기술을 이용하여 자산의 수명 주기 전반에 걸쳐 
+											데이터를 교환함으로써 물리적 대응체와 학습하고 업데이트하고 통신한다. 
+											이러한 동적 시뮬레이션을 통해, 가상의 디지털 트윈 사용자는 문제가 발생하기 전에 
+											미리 예방하고 새로운 기회를 탐색하며 미래를 계획할 수 있다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +103,15 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                            데이터를 통한 공정관리
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            워크플로 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 
+											있던 문제를 해결할 수 있다. 결과적으로 팀은 설계에서 해체까지 프로젝트 전체 수명 주기 동안 
+											연결성을 높일 수 있다. 또한, 디지털 트윈을 통해 구성 요소 사양 및 유지 관리 일정과 같은 
+											정적 데이터를 점유율 및 환경 조건과 같은 동적 데이터와 통합하고, 설계자에서 소유자에 
+											이르는 모든 사람이 자산의 성능과 수명 주기를 극대화하여 정보에 입각한 결정을 내릴 수 있다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +121,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+                                            BIM, innoAMS와 Digital Twin
+
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 
+											관리와 연결한다. BIM 프로세스를 지원하는 통합 워크플로 및 정보 공유를 통해 잠재력을 
+											최대로 끌어올릴 수 있고, 공정상 BIM을 통해 더 효율적인 공정관리가 가능하다
+
                                         </p>
                                     </div>
                                 </li>
