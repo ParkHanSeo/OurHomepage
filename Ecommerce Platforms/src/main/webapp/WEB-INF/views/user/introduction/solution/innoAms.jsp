@@ -84,11 +84,12 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                           설비자신의 최적 관리를 통한 가치창출
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                            설비 생산성을 생산현장의 관리로 국한된 것이 아닌 기업경영의 차원인 자산관리로 
+											그 관리영역을 확장하여 설비의 최적 경영관리를 목표로 하며, 설비가 그 생애(Life Cycle)를 통해 
+											최고의 효율성과 경제성 즉 수익을 창출하는 설비로서의 역할을 감당할 수 있도록 관리합니다
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +99,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                            주요기능
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            표준화 - 체계적인 설비자산 정보
+											계    획 - 예방작업 전략 수립
+											실    행 - 프로세스 전 구간에 가시성을 제공하는 부품관리
+											분    석 - 다양한 Analytics 정보 제공
+											환    경 - 공통 컴포넌트 및 다양한 기본 모듈 제공
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +116,12 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+                                            기대효과
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            설비의 Availability 확보  - 설비점검 주기와 부품교체 주기 최적화를 통한 설비 성능 증대 
+											설비의 Reliability 확보 - 예방/예지 정비를 통한 고장 감소
+											설비부품 Visibility 확보 - 정확한 설비부품 수요 예측
                                         </p>
                                     </div>
                                 </li>

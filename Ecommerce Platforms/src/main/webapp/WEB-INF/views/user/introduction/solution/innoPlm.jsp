@@ -84,11 +84,13 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                            Rule & Process 기반 시스템 구축
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                           선진 제조기업의 PLM 구축/운영의 노하우를 기반으로 솔루션 개발
+											고객사 제품개발절차와 솔루션 내장된 Rule과 Process를 Mapping하여 PLM 운영 기반 정립
+											업무 정확성/일관성을 보장하기 위한 기준 정보 표준화
+
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +100,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                             Quick Implementation
+
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            JAVA 기반 Open Framework 기반 시스템아키텍처 및 Framework 적용
+											Template 기반 Configuration을 통한 구축 기간 단축
+											선진 제조기업의 시스템 구축/운영 노하우를 활용한 시행착오 최소화
+
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +117,12 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+											Q/C/C 기반 가시성(Visibility) 확보
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            과제 Milestone 관리를 통한 과제진척 및 이력관리
+											WBS 기반 과제관리로 To Do List 기반 업무 수행
+											다양한 Dashboard 제공으로 신속한 의사 결정 지원
                                         </p>
                                     </div>
                                 </li>

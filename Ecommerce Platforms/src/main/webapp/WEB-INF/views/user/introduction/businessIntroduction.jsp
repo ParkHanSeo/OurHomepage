@@ -219,7 +219,7 @@ $(function(){
                             <div class="icon_item_box">
                                 <ul class="common-layout_3 is-vertical introduction_vertical">
                                     <li class="items">
-                                        <a href="/business/media_culture_spaces" class="icon_item_inner">
+                                        <a href="/user/introduction/consulting" class="icon_item_inner">
                                             <p class="icon_item_title">
                                                 CONSULTING
                                             </p>
