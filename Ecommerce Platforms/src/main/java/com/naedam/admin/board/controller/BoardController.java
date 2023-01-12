@@ -97,7 +97,7 @@ public class BoardController {
 							  @RequestParam("secNo") String secNo, 
 							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
-		String filePath = request.getServletContext().getRealPath("resources/imgs/imageBoard/board");
+		String filePath = request.getServletContext().getRealPath("resources/admin/imgs/imageBoard/board");
 		
 		Map<String, Object> postMap	 = new HashMap<>();
 		postMap.put("board", board);

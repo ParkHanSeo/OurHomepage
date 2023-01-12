@@ -491,6 +491,11 @@
   border: 0;
 }
 
+.notice_empty_txt {
+  text-align-last: center;
+  font-size: 25px;
+}
+
 @media screen and (max-width: 1280px) {
   .news .news_highlight .swiper-btn_area {
     position: static;

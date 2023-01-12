@@ -5,62 +5,9 @@
 <jsp:include page="/WEB-INF/views/admin/common/header.jsp">
 	<jsp:param value="1:1문의" name="title"/>
 </jsp:include>
-
-<jsp:useBean id="now" class="java.util.Date" />
-<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate"/>  
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- Tell the browser to be responsive to screen width -->
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<!-- Bootstrap 3.3.7 -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
-	<!-- jvectormap -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery-jvectormap.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AdminLTE.min.css">
-	<!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/_all-skins.min.css">
-	<link href="${pageContext.request.contextPath}/resources/css/admin.css" rel="stylesheet" type="text/css">
-	<link href="${pageContext.request.contextPath}/resources/css/jquery-ui.css" rel="stylesheet">
-	
+	<jsp:useBean id="now" class="java.util.Date" />
+	<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate"/>  
 	<!-- jQuery 3 -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
-	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-	<!-- FastClick -->
-	<script src="${pageContext.request.contextPath}/resources/js/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="${pageContext.request.contextPath}/resources/js/adminlte.min.js"></script>
-	<!-- Sparkline -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.sparkline.min.js"></script>
-	<!-- jvectormap  -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-jvectormap-1.2.2.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-jvectormap-world-mill-en.js"></script>
-	<!-- SlimScroll -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.slimscroll.min.js"></script>
-	<!-- ChartJS -->
-	<script src="${pageContext.request.contextPath}/resources/js/Chart.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/common.js" type="text/javascript" charset="utf-8"></script>
-	
-	<!-- plupload -->
-	<script src="${pageContext.request.contextPath}/resources/plupload/js/plupload.full.min.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-	<script src="${pageContext.request.contextPath}/resources/plupload/js/jquery.ui.plupload/jquery.ui.plupload.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/plupload/js/i18n/ko.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plupload/js/jquery.ui.plupload/css/jquery.ui.plupload.css">
-	<!-- 
-		<script src="${pageContext.request.contextPath}/resources/plupload/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-		<link  href="${pageContext.request.contextPath}/resources/plupload/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
-		<script src="${pageContext.request.contextPath}/resources/plupload/jquery-ui-1.12.1/jquery-ui.js"></script>
-	 -->
-	
 	<script type="text/javascript">
 		$(function(){
 			//post 선택삭제 시작
@@ -199,8 +146,7 @@
 		}
 	</script>
 	
-	<script src="${pageContext.request.contextPath}/resources/ckeditor_4.18.0_0efc8d0dbe1a/ckeditor/ckeditor.js"></script>
-</head>
+	<script src="${pageContext.request.contextPath}/resources/admin/ckeditor/ckeditor.js"></script>
 
 <div class="content-wrapper">
 	<section class="content-header">
@@ -283,15 +229,15 @@
 						                        <td>공지</td>          
 						                   		<td align="left">
 						                   			<c:if test="${nowDate eq post.post_date}">
-						                   				<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/new.png" width="15">
+						                   				<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/new.png" width="15">
 						                   			</c:if>           
 							                		<c:if test="${post.post_layer > 0}">
-							                			&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/right.png" width="15">
+							                			&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/right.png" width="15">
 							                			&nbsp;&nbsp;
 							                		</c:if>                   				     				
 						                   			${post.post_title}
 						                   			<c:if test="${post.post_thombnail != null && post.post_thombnail != ''}">
-						                   				<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/disk.png" width="15">
+						                   				<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/disk.png" width="15">
 						                   			</c:if>
 						                   		</td>        
 						                        <td>${post.member_name}</td>            
@@ -306,7 +252,7 @@
 						                        <td>${post.post_downloadcount}</td>
 						                        <td>
 						                			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
-						                			<input type="hidden" value="${post.member_no}"></button>
+						                			<input type="hidden" class="post_member_no" value="${post.member_no}"></button>
 						                   		</td>
 						                    </tr>
 					                    </c:if>
@@ -335,15 +281,15 @@
 					                   			</td>
 					                   			<td align="left">
 					                   				<c:if test="${nowDate eq post.post_date}">
-					                   					<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/new.png" width="15">
+					                   					<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/new.png" width="15">
 					                   				</c:if>           
 						                			<c:if test="${post.post_layer > 0}">
-						                				&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/right.png" width="15">
+						                				&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/right.png" width="15">
 						                				&nbsp;&nbsp;
 						                			</c:if>                   				     				
 					                   				${post.post_title}
 					                   				<c:if test="${post.post_thombnail != null && post.post_thombnail != ''}">
-					                   					<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/disk.png" width="15">
+					                   					<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/disk.png" width="15">
 					                   				</c:if>
 					                   			</td>
 					                   			<td>${post.member_name}</td>
@@ -360,6 +306,7 @@
 					                   			<td>${post.post_downloadcount}</td>
 					                   			<td>
 						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
+						                   			<input type="hidden" class="post_member_no" value="${post.member_no}"></button>
 						                   			</button>
 					                   			</td>
 					                   		</tr>
@@ -393,9 +340,4 @@
 <jsp:include page="/WEB-INF/views/admin/board/boardChange.jsp"/>
 </div><!-- /.content-wrapper -->
 
-<footer class="main-footer">
-	<div class="pull-right hidden-xs">
-	    <b>Version</b> 2.7.4
-	</div>
-	<strong>NDC&C<a href="/admin">  Since:2017  </a> Phone 031-712-8315 | Fax 031-789-3545</strong>
-</footer>
+<jsp:include page="/WEB-INF/views/admin/common/footer.jsp"/>

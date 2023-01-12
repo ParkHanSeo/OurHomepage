@@ -56,7 +56,7 @@ window.onload=function(){
         <div class="inner">
           <h1 class="logo">
             <a href="${pageContext.request.contextPath}/user/dashBoard">
-              <img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" alt="logo" class="basic_neadam" />
+              <img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/neadam_logo.png" alt="logo" class="basic_neadam" />
             </a>
           </h1>
           <nav class="gnb-wrap">

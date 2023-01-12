@@ -93,8 +93,8 @@ public class AwardServiceImpl implements AwardService {
 		// TODO Auto-generated method stub
 		Map<String, Object> awardmap = new HashMap<String, Object>();
 		awardmap.put("award", awardDao.selectAwardList());
-		awardmap.put("awardYear", awardDao.SelectYear());
-		awardmap.put("awardMonth", awardDao.SelectMonth());
+		awardmap.put("awardYears", awardDao.SelectYear());
+		awardmap.put("awardMonths", awardDao.SelectMonth());
 		
 		return awardmap;
 	}

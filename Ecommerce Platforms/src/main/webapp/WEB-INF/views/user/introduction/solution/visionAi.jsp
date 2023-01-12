@@ -84,11 +84,13 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                            객체 인식 및 분석 인공지능 서비스 제공
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                            딥러닝 기반으로 사전 학습한 빅데이터를 기반으로 사물의 종류와 위치 등을 파악
+											산업현장 관련 객체가 미리 학습되어 있어 비즈니스에 바로 접목이 가능하다.
+											특정 객체를 인식해야 한다면 각 사용자, 도메인에 맞게 커스터마이징 할 수 있다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +100,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                            이미지 분류
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            REST 및 RPC API를 통해 선행 학습된 강력한 모델을 제공한다. 이미지에 라벨을 
+											할당하고 사전 정의된 수백만 개의 카테고리로 빠르게 분류할 수 있다. 
+											객체 및 얼굴을 인식하고, 인쇄 및 손으로 쓴 텍스트 판독하고, 이미지 카탈로그에 중요한 
+											메타 데이터 추가할 수 있다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +117,13 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+                                            사고예방
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            산업현장을 카메라를 통해 상황을 분석하고, 그 결과를 데이터 화여 작업자의 안전 및 진행상황을
+											파악할 수 있다. 또 규정된 환경여부를 파악하고, 화재 및 문제가 발생될 수 있는 상황인 경우
+											양방향 통신을 통해 관리자에게 실시간으로 통보하여 사고를 예방할 수 있다.
+
                                         </p>
                                     </div>
                                 </li>

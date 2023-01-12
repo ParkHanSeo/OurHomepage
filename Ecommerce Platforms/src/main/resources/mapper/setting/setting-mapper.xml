@@ -9,16 +9,12 @@
 		select * from history
 	</select>
 	
-	<select id="selectAwardList" resultType="award">
+	<select id="selectAwardList" resultType="Award">
 		select * from award
 	</select>
 	
   	<select id="selectAdminMenuList" resultType="adminMenu">
   		select * from admin_menu
-  	</select>
-  	
-  	<select id="selectLocaleList" resultType="locale">
-  		select * from locale ORDER BY locale_name desc
   	</select>
   	
   	<select id="selectAdminSetting" resultType="adminSetting">

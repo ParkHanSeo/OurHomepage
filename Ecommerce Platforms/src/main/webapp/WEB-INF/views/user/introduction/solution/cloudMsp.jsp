@@ -84,11 +84,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                            Cloud MSP 시스템 구축
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                        	클라우드를 구축하려는 기업을 위해 클라우드 전환 관련 컨설팅, 디자인 및 개발 
+											그리고 운영 전반의 사업을 수행한다.
+											클라우드 인프라를 이용하기 위해 필요로 하는 제반 시스템의 
+											구축과 운영을 대행해주는 서비스를 제공한다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +101,13 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                            경제성
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            클라우드는 요구사항에 맞는 유연한 시스템을 저렴한 비용에(초기 투자 비용 관점) 빠른 속도로 
+											구축할 수 있게 한다. 따라서 기업의 사업 환경이 급변하는 시기에 따라 시시각각 변하는 
+											사업 요구에 준하는 시스템을 적재 적시에 제공한다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +117,12 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+                                            전문성
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            본사의 오랜 SI 및 솔루션 개발 경험을 통해 기존에 기업이 운영하고 있던 시스템 즉 
+											레거시 인프라와의 연계가 용이하고, 더 나아가 기업의 새로운 혁신 요구에 발맞춰 
+											IoT, 디지털 트윈, 빅데이터, AI 등의 최첨단 IT 신기술을 적용할 수 있다.
                                         </p>
                                     </div>
                                 </li>

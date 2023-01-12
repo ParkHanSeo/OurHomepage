@@ -39,10 +39,10 @@
 			var tree = document.getElementById("i_div"+code+"");
 			if(tree.style.display == 'none'){
 				tree.style.display = 'block';
-				$("img[name='j_img"+code+"']").attr("src", "${pageContext.request.contextPath}/resources/imgs/tree/plusbottom.gif")
+				$("img[name='j_img"+code+"']").attr("src", "${pageContext.request.contextPath}/resources/admin/imgs/tree/plusbottom.gif")
 			}else{
 				tree.style.display = 'none';
-				$("img[name='j_img"+code+"']").attr("src", "${pageContext.request.contextPath}/resources/imgs/tree/minusbottom.gif")
+				$("img[name='j_img"+code+"']").attr("src", "${pageContext.request.contextPath}/resources/admin/imgs/tree/minusbottom.gif")
 			}
 		}
 	</script>
@@ -74,31 +74,31 @@
 			'target'  : '_blank',	// name of the frame links will be opened in
 									// other possible values are: _blank, _parent, _search, _self and _top
 		
-			'icon_e'  : '${pageContext.request.contextPath}/resources/imgs/tree/empty.gif',	// empty image
-			'icon_l'  : '${pageContext.request.contextPath}/resources/imgs/tree/line.gif',	// vertical line
+			'icon_e'  : '${pageContext.request.contextPath}/resources/admin/imgs/tree/empty.gif',	// empty image
+			'icon_l'  : '${pageContext.request.contextPath}/resources/admin/imgs/tree/line.gif',	// vertical line
 		
-			'icon_32' : '${pageContext.request.contextPath}/resources/imgs/tree/base.gif',   // root leaf icon normal
-			'icon_36' : '${pageContext.request.contextPath}/resources/imgs/tree/base.gif',   // root leaf icon selected
+			'icon_32' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/base.gif',   // root leaf icon normal
+			'icon_36' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/base.gif',   // root leaf icon selected
 		
-			'icon_48' : '${pageContext.request.contextPath}/resources/imgs/tree/base.gif',   // root icon normal
-			'icon_52' : '${pageContext.request.contextPath}/resources/imgs/tree/base.gif',   // root icon selected
-			'icon_56' : '${pageContext.request.contextPath}/resources/imgs/tree/base.gif',   // root icon opened
-			'icon_60' : '${pageContext.request.contextPath}/resources/imgs/tree/base.gif',   // root icon selected
+			'icon_48' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/base.gif',   // root icon normal
+			'icon_52' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/base.gif',   // root icon selected
+			'icon_56' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/base.gif',   // root icon opened
+			'icon_60' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/base.gif',   // root icon selected
 		
-			'icon_16' : '${pageContext.request.contextPath}/resources/imgs/tree/folder.gif', // node icon normal
-			'icon_20' : '${pageContext.request.contextPath}/resources/imgs/tree/folderopen.gif', // node icon selected
-			'icon_24' : '${pageContext.request.contextPath}/resources/imgs/tree/folderopen.gif', // node icon opened
-			'icon_28' : '${pageContext.request.contextPath}/resources/imgs/tree/folderopen.gif', // node icon selected opened
+			'icon_16' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/folder.gif', // node icon normal
+			'icon_20' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/folderopen.gif', // node icon selected
+			'icon_24' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/folderopen.gif', // node icon opened
+			'icon_28' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/folderopen.gif', // node icon selected opened
 		
-			'icon_0'  : '${pageContext.request.contextPath}/resources/imgs/tree/page.gif', // leaf icon normal
-			'icon_4'  : '${pageContext.request.contextPath}/resources/imgs/tree/page.gif', // leaf icon selected
+			'icon_0'  : '${pageContext.request.contextPath}/resources/admin/imgs/tree/page.gif', // leaf icon normal
+			'icon_4'  : '${pageContext.request.contextPath}/resources/admin/imgs/tree/page.gif', // leaf icon selected
 		
-			'icon_2'  : '${pageContext.request.contextPath}/resources/imgs/tree/joinbottom.gif', // junction for leaf
-			'icon_3'  : '${pageContext.request.contextPath}/resources/imgs/tree/join.gif',       // junction for last leaf
-			'icon_18' : '${pageContext.request.contextPath}/resources/imgs/tree/plusbottom.gif', // junction for closed node
-			'icon_19' : '${pageContext.request.contextPath}/resources/imgs/tree/plus.gif',       // junctioin for last closed node
-			'icon_26' : '${pageContext.request.contextPath}/resources/imgs/tree/minusbottom.gif',// junction for opened node
-			'icon_27' : '${pageContext.request.contextPath}/resources/imgs/tree/minus.gif'       // junctioin for last opended node
+			'icon_2'  : '${pageContext.request.contextPath}/resources/admin/imgs/tree/joinbottom.gif', // junction for leaf
+			'icon_3'  : '${pageContext.request.contextPath}/resources/admin/imgs/tree/join.gif',       // junction for last leaf
+			'icon_18' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/plusbottom.gif', // junction for closed node
+			'icon_19' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/plus.gif',       // junctioin for last closed node
+			'icon_26' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/minusbottom.gif',// junction for opened node
+			'icon_27' : '${pageContext.request.contextPath}/resources/admin/imgs/tree/minus.gif'       // junctioin for last opended node
 		};
 	</script>    
 </head>
@@ -111,7 +111,7 @@
 			<tr>
 				<td nowrap="">
 					<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menuList');">
-						<img src="${pageContext.request.contextPath}/resources/imgs/tree/base.gif" border="0" align="absbottom" name="i_img0_0" class="t0im">Home
+						<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/base.gif" border="0" align="absbottom" name="i_img0_0" class="t0im">Home
 					</a>
 				</td>
 			</tr>
@@ -125,9 +125,9 @@
 				<c:if test="${menu.code == 1}">
 					<tr>
 						<td nowrap="">
-							<img src="${pageContext.request.contextPath}/resources/imgs/tree/joinbottom.gif" border="0" align="absbottom">
+							<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/joinbottom.gif" border="0" align="absbottom">
 								<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu.code}&originNo=${menu.originNo}&ord=${menu.ord}');"class="t0i" id="i_txt0_1">
-							<img src="${pageContext.request.contextPath}/resources/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_1" class="t0im">메인페이지</a>
+							<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_1" class="t0im">메인페이지</a>
 						</td>
 					</tr>
 				</c:if>
@@ -136,20 +136,20 @@
 						<c:if test="${!status.last}">
 							<td nowrap="">
 								<a>
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/minusbottom.gif" border="0" align="absbottom" name="j_img${menu.code}" onclick="displayTree(${menu.code})">
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/minusbottom.gif" border="0" align="absbottom" name="j_img${menu.code}" onclick="displayTree(${menu.code})">
 								</a>
 								<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu.code}&originNo=${menu.originNo}&ord=${menu.ord}');">
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/folderopen.gif" border="0" align="absbottom" name="i_img0_2" class="t0im">${menu.title}
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/folderopen.gif" border="0" align="absbottom" name="i_img0_2" class="t0im">${menu.title}
 								</a>
 							</td>
 						</c:if>
 						<c:if test="${status.last}">
 							<td nowrap="">
 								<a>
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/minus.gif" border="0" align="absbottom" name="j_img${menu.code}" onclick="displayTree(${menu.code})">
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/minus.gif" border="0" align="absbottom" name="j_img${menu.code}" onclick="displayTree(${menu.code})">
 								</a>
 								<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu.code}&originNo=${menu.originNo}&ord=${menu.ord}');">
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/folderopen.gif" border="0" align="absbottom" name="i_img0_2" class="t0im">${menu.title}
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/folderopen.gif" border="0" align="absbottom" name="i_img0_2" class="t0im">${menu.title}
 								</a>
 							</td>
 						</c:if>						
@@ -166,19 +166,19 @@
 							<tr>
 								<c:if test="${!status.last}">
 									<td nowrap="">
-										<img src="${pageContext.request.contextPath}/resources/imgs/tree/line.gif" border="0" align="absbottom">
-										<img src="${pageContext.request.contextPath}/resources/imgs/tree/join.gif" border="0" align="absbottom">
+										<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/line.gif" border="0" align="absbottom">
+										<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/join.gif" border="0" align="absbottom">
 											<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu2.code}&originNo=${menu2.code}&ord=${menu2.ord}');" >
-												<img src="${pageContext.request.contextPath}/resources/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_3" class="t0im">${menu2.title}
+												<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_3" class="t0im">${menu2.title}
 											</a>
 									</td>
 								</c:if>
 								<c:if test="${status.last}">
 									<td nowrap="">
-										<img src="${pageContext.request.contextPath}/resources/imgs/tree/empty.gif" border="0" align="absbottom">
-										<img src="${pageContext.request.contextPath}/resources/imgs/tree/join.gif" border="0" align="absbottom">
+										<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/empty.gif" border="0" align="absbottom">
+										<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/join.gif" border="0" align="absbottom">
 										<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu2.code}&originNo=${menu2.code}&ord=${menu2.ord}');" >
-											<img src="${pageContext.request.contextPath}/resources/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_3" class="t0im">${menu2.title}
+											<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_3" class="t0im">${menu2.title}
 										</a>
 									</td>
 								</c:if>							
@@ -200,9 +200,9 @@
 					<c:if test="${menu.code == 1}">
 						<tr>
 							<td nowrap="">
-								<img src="${pageContext.request.contextPath}/resources/imgs/tree/joinbottom.gif" border="0" align="absbottom">
+								<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/joinbottom.gif" border="0" align="absbottom">
 									<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu.code}&originNo=${menu.originNo}&ord=${menu.ord}');"class="t0i" id="i_txt0_1">
-								<img src="${pageContext.request.contextPath}/resources/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_1" class="t0im">메인페이지</a>
+								<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_1" class="t0im">메인페이지</a>
 							</td>
 						</tr>
 					</c:if>
@@ -210,10 +210,10 @@
 						<tr>
 							<td nowrap="">
 								<a>
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/minusbottom.gif" border="0" align="absbottom" name="j_img${menu.code}" onclick="displayTree(${menu.code})">
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/minusbottom.gif" border="0" align="absbottom" name="j_img${menu.code}" onclick="displayTree(${menu.code})">
 								</a>
 								<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu.code}&originNo=${menu.originNo}&ord=${menu.ord}');">
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/folderopen.gif" border="0" align="absbottom" name="i_img0_2" class="t0im">${menu.title}
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/folderopen.gif" border="0" align="absbottom" name="i_img0_2" class="t0im">${menu.title}
 								</a>
 							</td>
 						</tr>
@@ -225,10 +225,10 @@
 						<tbody>
 							<tr>
 								<td nowrap="">
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/line.gif" border="0" align="absbottom">
-									<img src="${pageContext.request.contextPath}/resources/imgs/tree/join.gif" border="0" align="absbottom">
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/line.gif" border="0" align="absbottom">
+									<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/join.gif" border="0" align="absbottom">
 									<a href="javascript:parent.list.location.replace('${pageContext.request.contextPath}/admin/menu/menu2?code=${menu.code}&originNo=${menu.code}&ord=${menu.ord}');" >
-										<img src="${pageContext.request.contextPath}/resources/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_3" class="t0im">${menu.title}
+										<img src="${pageContext.request.contextPath}/resources/admin/imgs/tree/page.gif" border="0" align="absbottom" name="i_img0_3" class="t0im">${menu.title}
 									</a>
 								</td>	
 							</tr>

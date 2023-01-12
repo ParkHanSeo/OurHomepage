@@ -84,11 +84,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                        	솔루션 개발 의뢰
+
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                            회사 또는 영업활동에 필요한 요구사항을 소통을 통해 분석/설계하여 전산프로그램으로 구현
+											상용 프로그램과 차별화된 맞춤형 개발과 유지보수 지원. 
+											레거시 시스템과 연계되는 응용 프로그램개발의뢰도 가능!
+
                                         </p>
                                     </div>
                                 </li>
@@ -98,13 +101,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                            데이터베이스 시스템 구축
+
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            대용량, 중소형 데이터베이스 시스템 구축과 자동화 구현 및 DB/SQL 튜닝, 마이그레이션 가능!
+											전문 모델러의 DW/DM/BI/OLAP/ETL 기술 적용
+											데이터추출, 통합, 정제, 분석 시스템 구축
+
                                         </p>
                                     </div>
                                 </li>
@@ -114,11 +118,15 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+											고객과 소통하는 개발
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            고객과의 편안한 의사소통을 통해 귀사의 업무파악 및 프로세스를 정의하여 
+											개발방향성을 공유한다.
+											이를 프로세스로 정의하여 가시화하고, 고객과의 협의를 통해 확정을 한다.
+											이 내용을 기반으로 효율적인 개발을 진행하고 단계별, 통합 테스트와 운영, 유지보수까지 
+											완변한 개발을 진행한다.
+
                                         </p>
                                     </div>
                                 </li>

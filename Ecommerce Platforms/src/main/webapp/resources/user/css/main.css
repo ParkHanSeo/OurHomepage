@@ -735,7 +735,7 @@ h4 {
   width: 550px;
   height: 550px;
   border-radius: 3%;
-  background-image: url(../images/image_20.jpg);
+  background-image: url(../images/solution/solution_1-3_1.jpg);
 }
 .core-wrap .core-list .cloud .bg-text {
   top: 394px;
@@ -948,11 +948,12 @@ h4 {
 }
 .service-wrap .service-list .tit-label {
   position: absolute;
-  top: 0;
-  left: -67px;
-  text-align: right;
+  width: 240px;
+  top: 250px;
+  left: 370px;
+  text-align: left;
   transform-origin: top right;
-  transform: translate(-100%, 0) rotate(-90deg);
+  transform: translate(-100%, 0) rotate(90deg);
 }
 .service-wrap .service-list .description {
   margin-top: 8px;

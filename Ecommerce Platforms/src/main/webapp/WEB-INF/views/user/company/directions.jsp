@@ -77,11 +77,10 @@ $(function(){
 	                                    TEL 031-712-8315 <br>
 	                                    FAX 031-789-3545
 	                                </p>
-	                                <a class="location_btn" href="https://www.google.co.kr/maps/place/%ED%8A%B8%EC%9C%88%EC%8B%9C%ED%8B%B0%EB%82%A8%EC%82%B0/@37.5508656,126.9706723,17z/data=!4m8!1m2!2m1!1z7ISc7Jq47Yq567OE7IucIOyaqeyCsOq1rCDtlZzqsJXrjIDroZwgMzY2!3m4!1s0x0:0x1c9209ffc65a5fe0!8m2!3d37.550738!4d126.9727197?shorturl=1" target="_blank" title="새창"><i class="icon pin"></i>지도보기</a>
 	                            </div>
                             </li>
                             <li class="items">
-                                <iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.5177283064227!2d127.10606707722165!3d37.40123603358722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7f434577899%3A0xae71bdfacd6566b1!2z64K064u07JSo7JWk7JSo!5e0!3m2!1sko!2skr!4v1672466052731!5m2!1sko!2skr" width="600" height="450"
+                                <iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.5177283064227!2d127.10606707722165!3d37.40123603358722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7f434577899%3A0xae71bdfacd6566b1!2z64K064u07JSo7JWk7JSo!5e0!3m2!1sko!2skr!4v1672466052731!5m2!1sko!2skr"
 										style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="noreferrer-when-downgrade">
 								</iframe>
                             </li>
@@ -97,11 +96,10 @@ $(function(){
 	                                    TEL 02-2083-5590 <br>
 	                                    FAX 02-2083-5594
 	                                </p>
-	                                <a class="location_btn" href="https://goo.gl/maps/6sm5Fz8c68DZ8LGRA" target="_blank" title="새창"><i class="icon pin"></i>지도보기</a>
 	                            </div>
                             </li>
                             <li class="items">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.1272088634846!2d126.8815848513167!3d37.481324379714785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f210b865e0d%3A0xadfac5f743c8151a!2z64yA66Wt7Y-s7Iqk7Yq47YOA7JuMNuywqA!5e0!3m2!1sko!2skr!4v1672639820068!5m2!1sko!2skr" width="600" height="450" 
+								<iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.1272088634846!2d126.8815848513167!3d37.481324379714785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f210b865e0d%3A0xadfac5f743c8151a!2z64yA66Wt7Y-s7Iqk7Yq47YOA7JuMNuywqA!5e0!3m2!1sko!2skr!4v1672639820068!5m2!1sko!2skr"  
 										style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 								</iframe>
                             </li>

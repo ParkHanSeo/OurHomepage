@@ -37,6 +37,11 @@ public class UserSettingController {
 		Map<String, Object> resultMap = historyService.selectHistoryList();
 		System.out.println(resultMap.get("history"));
 		model.addAttribute("history", resultMap.get("history"));
+		
+		Map<String, Object> awardMap = awardService.selectAwardList();
+		System.out.println(awardMap.get("award"));
+		model.addAttribute("award", awardMap.get("award"));
+
 		return "";
 	}
 	

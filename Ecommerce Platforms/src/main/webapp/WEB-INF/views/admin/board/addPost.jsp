@@ -163,11 +163,6 @@
 				                 <td class="menu">내용</td>
 				                 <td align="left">
 				                 	<textarea name="postContents" id="editor" rows="10" cols="80" style="visibility: hidden; display: none;"></textarea>
-				                 	<script type="text/javascript">
-									 CKEDITOR.replace('editor'
-									                , {filebrowserUploadUrl:'/admin/board/imageUpload?${_csrf.parameterName}=${_csrf.token}'}
-									 );
-									</script>
 				                 </td>
 				            </tr>
 					            <c:if test="${board2.option.optionSecret eq 'y'}">

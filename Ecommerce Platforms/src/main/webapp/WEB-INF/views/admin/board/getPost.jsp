@@ -243,7 +243,7 @@
 					$("input[name='postOriginNo']").val(JSONData.postOriginNo);
 					CKEDITOR.instances.editor1.setData(JSONData.postContents)
 					if(JSONData.postThombnail != null){
-						var thombnail = "'${pageContext.request.contextPath}/resources/imgs/imageBoard/board"+JSONData.postThombnail+"'"
+						var thombnail = "'${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/board"+JSONData.postThombnail+"'"
 						if(JSONData.postThombnail != null && JSONData.postThombnail != ''){
 							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
 										+ '<button type="button" onclick="window.open('+thombnail+')" class="btn btn-success btn-xs">보기</button>'
@@ -312,10 +312,10 @@
 					for(var i = 0; i < JSONData.length; i++){
 						var display = "";
 						display += '<span id="'+JSONData[i].fileNo+'" name="getFile" style="float:left; position:relative; text-align:center; padding-right:15px;">'
-								+  '<a href="${pageContext.request.contextPath}/resources/imgs/imageBoard/board'+JSONData[i].fileName+'" download="" value="'+postNo+'" name="fileDownload">'
-								+  '<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/board'+JSONData[i].fileName+'" style="width:80px; cursor:pointer;" onclick="fileDownload('+postNo+')">'
+								+  '<a href="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/board'+JSONData[i].fileName+'" download="" value="'+postNo+'" name="fileDownload">'
+								+  '<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/board'+JSONData[i].fileName+'" style="width:80px; cursor:pointer;" onclick="fileDownload('+postNo+')">'
 								+  '</a>'
-								+  '<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/delete.png" onclick="fncDeleteFile('+JSONData[i].fileNo+')" name="file'+JSONData[i].fileNo+'" style="width:30px;position: absolute;left:43px; top:3px; z-index:10; cursor:pointer;">'
+								+  '<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/delete.png" onclick="fncDeleteFile('+JSONData[i].fileNo+')" name="file'+JSONData[i].fileNo+'" style="width:30px;position: absolute;left:43px; top:3px; z-index:10; cursor:pointer;">'
 								+  '</span>';
 						$("span[id='file_list']").append(display);
 					}
