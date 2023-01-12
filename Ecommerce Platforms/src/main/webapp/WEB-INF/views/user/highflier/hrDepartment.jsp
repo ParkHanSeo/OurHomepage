@@ -11,7 +11,7 @@
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <!-- include end  -->
 <!-- 사용자 정의 끝 -->
-</head>
+</head> 
 <body>
 <!-- haeder -->  
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
