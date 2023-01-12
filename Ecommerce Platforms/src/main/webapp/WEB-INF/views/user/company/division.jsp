@@ -59,7 +59,8 @@ $(function(){
                         <ul class="common-layout_2 is-vertical division_list">
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_business.png" alt="">
+                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_business.png" alt=""> --%>
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_strategic.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">전략기획팀</p>
@@ -74,7 +75,8 @@ $(function(){
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_disital.png" alt="">
+                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_disital.png" alt=""> --%>
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_digtal twin.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Digital Twin 사업부</p>
@@ -89,7 +91,8 @@ $(function(){
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_consulting.png" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_consulting.jpg" alt="">
+                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_consulting.png" alt=""> --%>
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name ">컨설팅 사업부</p>
@@ -104,7 +107,8 @@ $(function(){
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_hitech.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_hi-tech.jpg" alt="">
+                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_hitech.jpeg" alt=""> --%>
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Hi-Tech 사업부</p>
@@ -119,7 +123,8 @@ $(function(){
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_visionai.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_vision ai.jpg" alt="">
+                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_visionai.jpeg" alt=""> --%>
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Vision AI 사업부</p>
@@ -134,7 +139,8 @@ $(function(){
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_cloud.png" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_cloud.jpg" alt="">
+                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_cloud.png" alt=""> --%>
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Cloud MSP 사업부</p>
@@ -149,7 +155,8 @@ $(function(){
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_si.png" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_si.jpg" alt="">
+                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_si.png" alt=""> --%>
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">SI 사업부</p>

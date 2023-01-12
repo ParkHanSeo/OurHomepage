@@ -8,8 +8,6 @@
 		<id column="RECRUIT_CON_NO" property="recruitConNo"></id>
 		<result column="RECRUIT_SUB_TITLE" property="recruitSubTitle"/>
 		<result column="RECRUIT_CONTENTS" property="recruitContents"/>
-		<result column="RECRUIT_FILE_NAME" property="fileName"/>
-		<result column="RECRUIT_FILE_PATH" property="filePath"/>
 		<association property="recruitNo" resultMap="recruitResultMap"/>
 	</resultMap>
 
@@ -22,6 +20,9 @@
 		<result column="RECRUIT_DATE" property="recruitDate"/>
 		<result column="CAREER" property="career"/>
 		<result column="RECRUIT_DLE_STATUS" property="recruitDelStatus"/>
+		<result column="RECRUIT_FILE_NAME_ORG" property="orgFileName"/>
+		<result column="RECRUIT_FILE_NAME" property="fileName"/>
+		<result column="RECRUIT_FILE_PATH" property="filePath"/>
 		<result column="ROWNUM" property="rownum"/>
 	</resultMap>
 
@@ -74,7 +75,10 @@
 		RECRUIT_START,
 		RECRUIT_END,
 		RECRUIT_DATE,
-		CAREER
+		CAREER,
+		RECRUIT_FILE_NAME_ORG, 
+		RECRUIT_FILE_NAME, 
+		RECRUIT_FILE_PATH
 		)
 		VALUES
 		(
@@ -84,7 +88,10 @@
 		#{recruitStart},
 		#{recruitEnd},
 		SYSDATE(),
-		#{career}
+		#{career}, 
+		#{orgFileName}, 
+		#{fileName}, 
+		#{filePath}
 		)
 		
 		<selectKey keyProperty="recruitNo" order="AFTER" resultType="int">
@@ -94,9 +101,9 @@
 	</insert>
 
 	<insert id="insertRecruitContents" parameterType="com.naedam.admin.recruit.model.vo.recruitContentsDTO">
-		INSERT INTO recruit_Contents(RECRUIT_NO, RECRUIT_CON_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS, RECRUIT_FILE_NAME, RECRUIT_FILE_PATH)
+		INSERT INTO recruit_Contents(RECRUIT_NO, RECRUIT_CON_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS)
 		VALUES
-		(#{recruitNo.recruitNo}, NEXTVAL(recruit_contents_seq), #{recruitSubTitle}, #{recruitContents}, #{fileName}, #{filePath}) 
+		(#{recruitNo.recruitNo}, NEXTVAL(recruit_contents_seq), #{recruitSubTitle}, #{recruitContents}) 
 	</insert>
 	
 	<select id="getRecruitData" resultMap="recruitResultMap">
