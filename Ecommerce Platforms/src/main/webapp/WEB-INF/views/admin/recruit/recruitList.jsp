@@ -234,7 +234,7 @@
 	                    </table>
 	                    <br>
 	                    <button type="button" id="deleteChoicePost" class="btn btn-danger btn-sm"><i class="fa fa-minus-square"></i> 선택삭제</button>
-	                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalContent"><i class="fa fa-plus-square"></i> 글 등록</button>
+	                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalContent" onclick="addData()"><i class="fa fa-plus-square"></i> 글 등록</button>
 	                    <div style="text-align: right;">
 							${pagebar}
 						</div>
@@ -247,6 +247,19 @@
 	<div id="list_file_tag" class="sr-only">
 	    <input type="file" name="file[]" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;">
 	</div>
+	
+<script>
+function addData() {
+	// 글 등록 전 초기화
+    $("#title").val("");
+    $("#startDay").val("");
+    $("#endDay").val("");
+    $("#fileName").val("");
+    $("#subTitle").val("");
+    $("#contents").val("");
+    $("#addContents").html("");
+};
+</script>
 	
 <jsp:include page="/WEB-INF/views/admin/recruit/addRecruit.jsp"/>
 <jsp:include page="/WEB-INF/views/admin/recruit/getRecruit.jsp"/>

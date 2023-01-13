@@ -58,6 +58,16 @@
 									</select></td>
 								</tr>
 								<tr>
+									<td class="menu">파일</td>
+									<td align="left">
+										<input type="file" name="fileName" id="fileName" class="form-control input-sm" style="width: 80%; display: inline;"> 
+										<span id="display_file" style="display: none;">
+											<button type="button" onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');" class="btn btn-success btn-xs">보기</button>
+											<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
+										</span>
+									</td>
+								</tr>
+								<tr>
 									<td class="menu">소제목</td>
 									<td align="left"><input type="text" name="subTitle"
 										id="subTitle" class="form-control input-sm"
@@ -69,20 +79,6 @@
 										<textarea name="contents" id="contents"
 												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
 									</td>
-								</tr>
-								<tr>
-									<td class="menu">이미지 파일</td>
-									<td align="left"><input type="file" name="ThombnailName"
-										id="ThombnailName" class="form-control input-sm"
-										style="width: 80%; display: inline;"> <span
-										id="display_thumbnail" style="display: none;">
-											<button type="button"
-												onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');"
-												class="btn btn-success btn-xs">보기</button>
-											<button type="button"
-												onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());"
-												class="btn btn-danger btn-xs">삭제</button>
-									</span></td>
 								</tr>
 							</tbody>
 							<tbody id="addContents">
@@ -123,19 +119,7 @@
 						<textarea name="contents" id="contents"
 							rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
 					</td>
-				</tr>
-			<tr>
-				<td class="menu">썸네일 파일</td>
-				<td align="left">
-					<input type="file" name="ThombnailName" id="ThombnailName" class="form-control input-sm" style="width: 80%; display: inline;"> 
-					<span id="display_thumbnail" style="display: none;">
-							<button type="button" onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');"
-								class="btn btn-success btn-xs">보기</button>
-							<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());"
-								class="btn btn-danger btn-xs">삭제</button>
-					</span>
-				</td>
-			</tr>`);
+				</tr>`);
 	}
 	
 	function addRecruit(){
@@ -186,7 +170,7 @@
 			}
 			
 			
-			var fileinput = $("input[name='ThombnailName']");
+			var fileinput = $("input[name='fileName']");
 			console.log("fileinput >>>" + fileinput);
 			
 			for(var i = 0; i < fileinput.length; i++){
@@ -195,7 +179,7 @@
 						console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]);
 						
 						// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
-						formData.append('file', $("input[name='ThombnailName']")[i].files[j]);
+						formData.append('file', $("input[name='fileName']")[i].files[j]);
 					}
 				}
 			}

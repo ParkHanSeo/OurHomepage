@@ -116,6 +116,31 @@ public class RecruitController {
 		recruit.setRecruitStart((String)param.get("recruitStart"));
 		recruit.setRecruitEnd((String)param.get("recruitEnd"));
 		
+		//file 등록
+		/*세부 내용안의 이미지file*/
+		if ((fileList != null) && (fileList.size() > 0)) {
+			//오리지널 이름 입력
+			recruit.setOrgFileName(fileList.get(0).getOriginalFilename());
+			System.out.println("dtoContents.setOrgName >>>>>" + fileList.get(0).getOriginalFilename());
+			//파일 처리 식별자 처리를 위한 UUID
+			UUID uuid = UUID.randomUUID();
+			//fileName 처리 (저장될 파일이름)
+			String fileName = uuid + "_" + fileList.get(0).getOriginalFilename();
+			recruit.setFileName(fileName);
+			//filePath 처리
+			String filePath =request.getServletContext().getRealPath("resources/imgs/imgrecruit");
+			recruit.setFilePath(filePath);
+			
+			//파일 저장
+			File saveFile = new File(filePath,fileName);
+			fileList.get(0).transferTo(saveFile);
+
+			System.out.println("fileName >> " + fileName);
+			System.out.println("filePath >> " + filePath);
+
+			}
+
+		
 		// 채용 게시글 입력
 		recruitRecult = recruitService.insertRecruit(recruit);
 
@@ -123,7 +148,7 @@ public class RecruitController {
 		int curRecruitNo = recruit.getRecruitNo();
 
 		System.out.println("curRecruitNo === " + curRecruitNo);
-
+		
 		/* 리스트 생성 */
 		List<recruitContentsDTO> contentsList = new ArrayList<>();
 		
@@ -147,26 +172,7 @@ public class RecruitController {
 			dtoRecruit.setRecruitNo(curRecruitNo);
 			dtoContents.setRecruitNo(dtoRecruit);
 			
-			/*세부 내용안의 이미지file*/
-			if ((fileList != null) && (fileList.size() > 0)) {
-				//파일 처리 식별자 처리를 위한 UUID
-				UUID uuid = UUID.randomUUID();
-				//fileName 처리 (저장될 파일이름)
-				String fileName = uuid + "_" + fileList.get(i).getOriginalFilename();
-				dtoContents.setFileName(fileName);
-				//filePath 처리
-				String filePath =request.getServletContext().getRealPath("resources/imgs/imgrecruit");
-				dtoContents.setFilePath(filePath);
-				
-				//파일 저장
-				File saveFile = new File(filePath,fileName);
-				fileList.get(i).transferTo(saveFile);
-
-				System.out.println("fileName >> " + fileName);
-				System.out.println("filePath >> " + filePath);
-
-				}
-			 contentsList.add(dtoContents);
+			contentsList.add(dtoContents);
 			  
 			 System.out.println("contents [" + i + "] >> " + contentsList);
 			}

@@ -102,10 +102,10 @@ public class NoticeController {
 		return mv;
 	}
 	
-	@RequestMapping(value="test")
-	public ModelAndView irDataList(Model model) throws Exception{
+	@RequestMapping(value="noticeList_temp")
+	public ModelAndView noticeList_temp(Model model) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/notice/test");
+		mv.setViewName("user/notice/getNotice");
 		return mv;
 	}
 	

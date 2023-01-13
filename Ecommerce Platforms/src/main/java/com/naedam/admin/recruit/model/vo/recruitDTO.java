@@ -17,6 +17,9 @@ public class recruitDTO {
 	private String recruitDate;			//게시글 등록일
 	private String career;				//경력
 	private String recruitDelStatus;	//삭제여부
+	private String orgFileName;				//이미지 원래 이름
+	private String fileName;			//이미지 파일 이름
+	private String filePath;			//이미지 파일 경로
 	private int rownum;
 	
 }
