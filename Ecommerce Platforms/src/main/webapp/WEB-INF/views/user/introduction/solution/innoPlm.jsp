@@ -84,13 +84,12 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            Rule & Process 기반 시스템 구축
+                                            Rule & Process 기반 시스템
                                         </p>
                                         <p class="difference_desc">
-                                           선진 제조기업의 PLM 구축/운영의 노하우를 기반으로 솔루션 개발
-											고객사 제품개발절차와 솔루션 내장된 Rule과 Process를 Mapping하여 PLM 운영 기반 정립
-											업무 정확성/일관성을 보장하기 위한 기준 정보 표준화
-
+                                           선진 제조기업의 PLM 구축/운영의 노하우를 기반으로 솔루션 개발을 진행합니다. <br>
+											고객사 제품개발절차와 솔루션에 내장된 Rule과 Process로 PLM 운영 기반을 정립하여,
+											업무의 정확성과 일관성을 보장하기 위한 기준 정보를 표준화 시킵니다.
                                         </p>
                                     </div>
                                 </li>
@@ -104,9 +103,9 @@ $(function(){
 
                                         </p>
                                         <p class="difference_desc">
-                                            JAVA 기반 Open Framework 기반 시스템아키텍처 및 Framework 적용
-											Template 기반 Configuration을 통한 구축 기간 단축
-											선진 제조기업의 시스템 구축/운영 노하우를 활용한 시행착오 최소화
+                                            JAVA 기반의 Open Framework와 시스템 아키텍처 및 Framework가 가지고 있는
+											Template 기반의 Configuration을 통한 구축 기간 단축 <br>
+											선진 제조기업의 시스템 구축의 운영 노하우를 활용한 시행 착오 최소화
 
                                         </p>
                                     </div>
@@ -117,12 +116,10 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-											Q/C/C 기반 가시성(Visibility) 확보
+											Q.C.C 기반 가시성(Visibility)
                                         </p>
                                         <p class="difference_desc">
-                                            과제 Milestone 관리를 통한 과제진척 및 이력관리
-											WBS 기반 과제관리로 To Do List 기반 업무 수행
-											다양한 Dashboard 제공으로 신속한 의사 결정 지원
+                                            Milestone을 통한 과제진척도 및 이력 관리와 WBS 기반의 과제 관리, To Do List 기반 업무 수행과 같은 다양한 Dashboard 제공으로 신속한 의사 결정을 지원합니다
                                         </p>
                                     </div>
                                 </li>

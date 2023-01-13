@@ -63,7 +63,7 @@ $(function(){
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">MSP가 제공하는 서비스는 다양한 영역</span>
+                                <span class="top_txt1">클라우드 기반의 인프라 관리 서비스</span>
                                 <p class="top_txt2">클라우드 (MSP)</p>
                                 <p class="top_txt3">
                                     MSP(Managed Service Provider)란 클라우드 매니지드 서비스 기업을 말합니다.<br class="hide_768">
@@ -87,10 +87,8 @@ $(function(){
                                             Cloud MSP 시스템 구축
                                         </p>
                                         <p class="difference_desc">
-                                        	클라우드를 구축하려는 기업을 위해 클라우드 전환 관련 컨설팅, 디자인 및 개발 
-											그리고 운영 전반의 사업을 수행한다.
-											클라우드 인프라를 이용하기 위해 필요로 하는 제반 시스템의 
-											구축과 운영을 대행해주는 서비스를 제공한다.
+                                        	클라우드를 구축하려는 기업을 위해 클라우드 전환 관련 컨설팅, 디자인 및 개발과 운영 전반의 사업을 수행합니다.<br>
+											클라우드 인프라를 이용하기 위해 필요로 하는 제반 시스템의 구축과 운영을 대행해주는 서비스를 제공합니다.
 
                                         </p>
                                     </div>
@@ -104,9 +102,8 @@ $(function(){
                                             경제성
                                         </p>
                                         <p class="difference_desc">
-                                            클라우드는 요구사항에 맞는 유연한 시스템을 저렴한 비용에(초기 투자 비용 관점) 빠른 속도로 
-											구축할 수 있게 한다. 따라서 기업의 사업 환경이 급변하는 시기에 따라 시시각각 변하는 
-											사업 요구에 준하는 시스템을 적재 적시에 제공한다.
+                                            클라우드는 요구사항에 맞는 유연한 시스템을 저렴한 비용에  빠른 속도로 구축할 수 있게 합니다. <br>
+                                            기업의 사업 환경의 변화 시기에 요구조건에 맞추어 시스템을 적재 적시에 제공합니다.
 
                                         </p>
                                     </div>
@@ -122,7 +119,7 @@ $(function(){
                                         <p class="difference_desc">
                                             본사의 오랜 SI 및 솔루션 개발 경험을 통해 기존에 기업이 운영하고 있던 시스템 즉 
 											레거시 인프라와의 연계가 용이하고, 더 나아가 기업의 새로운 혁신 요구에 발맞춰 
-											IoT, 디지털 트윈, 빅데이터, AI 등의 최첨단 IT 신기술을 적용할 수 있다.
+											IoT, 디지털 트윈, 빅데이터, AI 등의 최첨단 IT 신기술을 적용 할 수 있습니다.
                                         </p>
                                     </div>
                                 </li>
