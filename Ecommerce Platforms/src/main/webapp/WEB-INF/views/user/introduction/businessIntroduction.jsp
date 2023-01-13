@@ -129,7 +129,7 @@ $(function(){
                                                 Vision AI
                                             </p>
                                             <p class="icon_item_desc">
-                                                스마트 물류센터 구축의 모든 것
+                                                AI 기반의 얼굴인식 영상처리/분석 플랫폼 솔루션
                                             </p>
                                             <i class="icon service2-02"></i>
                                         </a>
@@ -140,7 +140,7 @@ $(function(){
                                                 Cloud MSP
                                             </p>
                                             <p class="icon_item_desc">
-                                                스마트 물류센터 구축의 모든 것
+                                                클라우드 기반의 인프라 관리 서비스
                                             </p>
                                             <i class="icon service2-02"></i>
                                         </a>
@@ -151,7 +151,7 @@ $(function(){
                                                 SCM
                                             </p>
                                             <p class="icon_item_desc">
-                                                스마트 물류센터 구축의 모든 것
+                                                공급망 관리에 대한 기본적인 정의의 소프트웨어
                                             </p>
                                             <i class="icon service2-02"></i>
                                         </a>
@@ -162,7 +162,7 @@ $(function(){
                                                Inno PLM
                                             </p>
                                             <p class="icon_item_desc">
-                                                스마트 물류센터 구축의 모든 것
+                                                초기 구상, 개발, 서비스, 폐기에 이르는 제품의 전체 여정을 관리하기 위한 전략적 프로세스의 소프트웨어
                                             </p>
                                             <i class="icon service2-02"></i>
                                         </a>
@@ -184,7 +184,7 @@ $(function(){
                                                 MES
                                             </p>
                                             <p class="icon_item_desc">
-                                                스마트 물류센터 구축의 모든 것
+                                                제조업체의 공장 관리를 위한 개념이자 구현 도구
                                             </p>
                                             <i class="icon service2-02"></i>
                                         </a>
@@ -196,7 +196,7 @@ $(function(){
                                                 Development
                                             </p>
                                             <p class="icon_item_desc">
-                                                스마트 물류센터 구축의 모든 것
+                                                고객의 니즈와 의견을 반영한 효율적인 솔루션
                                             </p>
                                             <i class="icon service2-02"></i>
                                         </a>

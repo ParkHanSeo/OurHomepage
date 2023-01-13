@@ -70,7 +70,7 @@ $(function(){
                                 	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_map_1.png" alt="">
                                 </p>
                                 <div class="location_text">
-	                                <p class="location_name">본사</p>
+	                                <h3 class="location_name">본사</h3>
 	                                <p class="location_info">
 	                                    경기도 성남시 분당구 판교역로231, S동 711호 (삼평동, H square) <br>
 	                                    신분당선 판교역 1~4번 출구에서 버스로 3분 소요 <br>
@@ -89,7 +89,7 @@ $(function(){
                                 	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_map_2.jpg" alt="">
                                 </p>
                                 <div class="location_text">
-	                                <p class="location_name">서울 지사</p>
+	                                <h3 class="location_name">서울 지사</h3>
 	                                <p class="location_info">
 	                                    서울시 금천구 벛꽃로 298 대륭포스트타워6차 1104호 (가산동 50-3) <br>
 	                                    7호선 가산디지털단지역 2번 출구 연결 <br>
