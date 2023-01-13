@@ -32,10 +32,6 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/css/_all-skins.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/css/admin.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/css/jquery-ui.css" />
-	<!-- fullcalendar -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/fullcalendar/css/bootstrap-colorselector.css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/fullcalendar/css/fullcalendar.min.css" type="text/css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/fullcalendar/css/fullcalendar.print.css" type="text/css" media="print" />
 
 
 	<!-- Google Font -->
@@ -63,9 +59,9 @@
 						document.getElementById("menuManage").style.display = 'none';
 					}if(Data[1].status == 'N'){
 						document.getElementById("boardManage").style.display = 'none';
-					}if(Data[3].status == 'N'){
+					}if(Data[2].status == 'N'){
 						document.getElementById("memberManage").style.display = 'none';
-					}if(Data[4].status == 'N'){
+					}if(Data[3].status == 'N'){
 						document.getElementById("employmentManage").style.display = 'none';
 					}
 				}

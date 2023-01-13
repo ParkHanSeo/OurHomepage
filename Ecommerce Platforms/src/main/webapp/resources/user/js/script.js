@@ -459,9 +459,13 @@ function tabMove() {
   //moveSessionScroll('equitable_edu', sessionStorage.getItem('esg_edu-st'));
   //moveSessionScroll('history', sessionStorage.getItem('history-st'));
   var sessionSt = sessionStorage.getItem("cur-st");
-  if (sessionSt && $(".common-swiper_tab li.active a").length > 0) {
+  var scrollYN = $(".scrollYN").val();
+  if (
+    sessionSt &&
+    $(".common-swiper_tab li.active a").length > 0 &&
+    scrollYN != "N"
+  ) {
     var $thisTargetTop = $(".common-swiper_tab li.active a").offset().top;
-
     $("#header").css("transition", "none");
     $("html, body")
       .stop()

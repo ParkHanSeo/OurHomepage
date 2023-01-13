@@ -36,6 +36,7 @@
 	<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 	<!-- haeder -->
 	<div class="history" id="wrap">
+		<input type="hidden" class="scrollYN" value="N">
 		<section id="container">
 			<div id="contents" class="contents_top">
 				<div class="sub_title_area history_sub_title_area">
@@ -114,13 +115,13 @@
 																				test="${(awardmonth.month == awardcontent.month)&&(awardmonth.year == awardcontent.year)}">
 																				<dd>
 																					<span class=thumnail>
-																						<img class="img-thumbnail regist_thumbnail"  src="${pageContext.request.contextPath}/resources/user/images/company/award/awardLogo2.jpg" alt="...">
+																						<img class="img-thumbnail regist_thumbnail"  src="${pageContext.request.contextPath}/resources/user/images/company/award/${awardcontent.img_url}" alt="...">
 																					</span>
 																					<span class="title">
 																						<c:out value="'${awardcontent.host} 주최'" />
 																						<br>
 																						<c:out value="${awardcontent.content}" />
-																					</span>
+<!-- 																					</span> -->
 																				</dd>
 																			</c:if>
 																		</c:forEach>

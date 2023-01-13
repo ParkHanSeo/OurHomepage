@@ -95,9 +95,9 @@
 	</section><!-- /.content -->
 	
 	<div class="modal fade" id="modalContent" tabindex="-2" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-	    <div class="modal-dialog" style="width:90%">
+	    <div class="modal-dialog" style="width:800px">
 	        <div class="modal-content">
-	            <form name="form_register" method="post" action="/admin/menu/menuProcess?${_csrf.parameterName}=${_csrf.token}">
+	            <form name="form_register" method="post" action="/admin/menu/headProcess?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
 		            <input type="hidden" name="mode" value="insert">
 		            <input type="hidden" name="part" value="head">
 		            <input type="hidden" name="locale" value="ko">
@@ -110,18 +110,6 @@
 			                <div class="col-xs-4">
 			                	<h4><p class="text-light-blue"><i class="fa fa-fw fa-info-circle"></i> 헤더 등록</p></h4>
 			                </div>
-		                	<div class="col-xs-8">
-				                <div class="btn-group pull-right">
-						      		<button type="button" id="locale_ko" onclick="setLocale('ko')" class="btn btn-primary">
-						      			<i class="fa fa-globe" aria-hidden="true"></i> 한국어</button>      
-						      		<button type="button" id="locale_en" onclick="setLocale('en')" class="btn btn-default">
-						      			<i class="fa fa-globe" aria-hidden="true"></i> ENG</button>      
-						      		<button type="button" id="locale_zh" onclick="setLocale('zh')" class="btn btn-default">
-						      			<i class="fa fa-globe" aria-hidden="true"></i> 中国</button>      
-						      		<button type="button" id="locale_vn" onclick="setLocale('vn')" class="btn btn-default">
-						      			<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>                
-				      			</div>
-		                	</div>
 		            	</div>
 		            	<table class="table table-bordered">
 			            	<tbody>
@@ -139,11 +127,23 @@
 					                </td>
 					            </tr>
 					            <tr>
+					            	<td class="menu">내용</td>
 					                <td colspan="2" style="text-align:left">
-					                ※ [menu] : 본 태그를 삽입시 각각의 서브페이지의 메뉴명을 표출 해 줍니다.
-					                	<textarea name="content" id="content-editor" rows="10" cols="80" "></textarea>
+					                	<textarea name="content" rows="10" cols="80" style="width:600px"></textarea>
 					                </td>
 					            </tr>
+								<tr>
+					            	<td class="menu">URL</td>
+					            	<td align="left">
+					            		<input type="text" class="form-control input-sm" name="headUrl" id="headUrl">
+					            	</td>
+					            </tr>					            
+					            <tr>
+					            	<td class="menu">이미지파일</td>
+					            	<td>
+					            		<input type="file" name="image" id="image" class="form-control input-sm">
+					            	</td>
+					            </tr>					            
 				            </tbody>
 			            </table>
 		            </div><!-- /.modal-body -->
@@ -156,9 +156,9 @@
 	</div><!-- /.modal fade -->
 	
 	<div class="modal fade" id="modalContent2" tabindex="-2" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-	    <div class="modal-dialog" style="width:90%">
+	    <div class="modal-dialog" style="width:800px">
 	        <div class="modal-content">
-	            <form name="form_register2" method="post" onsubmit="return false;" action="/admin/menu/menuProcess?${_csrf.parameterName}=${_csrf.token}">
+	            <form name="form_register2" method="post" action="/admin/menu/headProcess?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
 		            <input type="hidden" name="mode" value="update">
 		            <input type="hidden" name="part" value="head">
 		            <input type="hidden" name="headNo">
@@ -171,24 +171,13 @@
 			                <div class="col-xs-4">
 			                	<h4><p class="text-light-blue"><i class="fa fa-fw fa-info-circle"></i> 헤더 수정</p></h4>
 			                </div>
-			                <div class="col-xs-8">
-			                	<div class="btn-group pull-right">
-			      					<button type="button" id="locale_ko" onclick="setLocale('ko')" class="btn btn-primary">
-			      						<i class="fa fa-globe" aria-hidden="true"></i> 한국어</button>      
-			      					<button type="button" id="locale_en" onclick="setLocale('en')" class="btn btn-default">
-			      						<i class="fa fa-globe" aria-hidden="true"></i> ENG</button>      
-			      					<button type="button" id="locale_zh" onclick="setLocale('zh')" class="btn btn-default">
-			      						<i class="fa fa-globe" aria-hidden="true"></i> 中国</button>      
-			      					<button type="button" id="locale_vn" onclick="setLocale('vn')" class="btn btn-default">
-			      						<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>                
-			      				</div>
-			                </div>
 			            </div>
 			            <table class="table table-bordered">
 				            <tbody>
 					            <tr>
 					                <td class="menu">헤더명</td>
-					                <td align="left"><input type="text" name="title" class="form-control input-sm"></td>
+					                <td align="left">
+					                <input type="text" name="title" class="form-control input-sm"></td>
 					            </tr>
 					            <tr>
 					                <td class="menu">상태</td>
@@ -200,10 +189,22 @@
 					                </td>
 					            </tr>
 					            <tr>
+					            	<td class="menu">내용</td>
 					                <td colspan="2" style="text-align:left">
-					                	※ [menu] : 본 태그를 삽입시 각각의 서브페이지의 메뉴명을 표출 해 줍니다.
-					                	<textarea name="content" id="content-editor2" rows="10" cols="80" "></textarea>
+					                	<textarea name="content" rows="10" cols="80" style="width:600px"></textarea>
 					                </td>
+					            </tr>
+								<tr>
+					            	<td class="menu">URL</td>
+					            	<td align="left">
+					            		<input type="text" class="form-control input-sm" name="headUrl" id="headUrl">
+					            	</td>
+					            </tr>					            
+					            <tr>
+					            	<td class="menu">이미지파일</td>
+					            	<td class="headImageTb" align="left" >
+					            		<input type="file" name="image" id="image" style="display:inline;">
+					            	</td>
 					            </tr>
 				            </tbody>
 			            </table>
@@ -217,7 +218,7 @@
 	</div><!-- /.modal fade -->
 
 	<div class="modal fade" id="modalCopyHeader" tabindex="-2" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-	    <div class="modal-dialog" style="width:400px;">
+	    <div class="modal-dialog" style="width:600px;">
 	        <div class="modal-content">
 	            <form name="formCopyHeader" method="post" action="?tpf=admin/menu/process">
 		            <input type="hidden" name="mode" id="mode" value="copyHeader">
@@ -250,79 +251,9 @@
 	        </div><!-- /.modal-content -->
 	    </div><!-- /.modal-dialog -->
 	</div><!-- /.modal fade -->
-	<script src="//mir9.co.kr/resource/js/ckeditor4.7.2/ckeditor.js"></script>
 </div><!-- /.content-wrapper -->
 
 <script>
-	if (window.CKEDITOR) {  // CKEDITOR loading 여부 체크 (Web 버젼에서만 사용)
-	    var objEditor = CKEDITOR.replace('content-editor', {
-	        height: 500,
-	        extraPlugins : 'tableresize',
-	        extraPlugins: 'codemirror',
-	        removeButtons: 'Source',
-	        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-	        filebrowserImageUploadUrl: '/daemon/ckeditor_upload.php?command=QuickUpload&type=Images',
-	        contentsCss : ['/html/css/common.css','/html/css/style.css']
-	    });
-       
-        CKEDITOR.on('dialogDefinition', function (ev) {
-            var dialogName = ev.data.name;
-            var dialog = ev.data.definition.dialog;
-            var dialogDefinition = ev.data.definition;
-
-            if (dialogName == 'image') {
-                dialog.on('show', function (obj) {
-                    this.selectPage('Upload'); //업로드텝으로 시작
-                });
-                dialogDefinition.removeContents('advanced'); // 자세히탭 제거
-                dialogDefinition.removeContents('Link'); // 링크탭 제거
-            }
-        });
-        
-        CKEDITOR.config.allowedContent = true;
-        CKEDITOR.config.startupMode = 'source';
-        CKEDITOR.config.codemirror = {
-            // Set this to the theme you wish to use (codemirror themes)
-            theme: '3024-night',
-            // Whether or not to automatically format code should be done when the editor is loaded
-            autoFormatOnStart: false,
-        };
-    }
-       
-     if (window.CKEDITOR) {  // CKEDITOR loading 여부 체크 (Web 버젼에서만 사용)
-         var objEditor = CKEDITOR.replace('content-editor2', {
-             height: 500,
-             extraPlugins : 'tableresize',
-             extraPlugins: 'codemirror',
-             removeButtons: 'Source',
-             filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-             filebrowserImageUploadUrl: '/daemon/ckeditor_upload.php?command=QuickUpload&type=Images',
-             contentsCss : ['/html/css/common.css','/html/css/style.css']
-         });
-     
-         CKEDITOR.on('dialogDefinition', function (ev) {
-             var dialogName = ev.data.name;
-             var dialog = ev.data.definition.dialog;
-             var dialogDefinition = ev.data.definition;
-
-             if (dialogName == 'image') {
-                 dialog.on('show', function (obj) {
-                     this.selectPage('Upload'); //업로드텝으로 시작
-                 });
-                 dialogDefinition.removeContents('advanced'); // 자세히탭 제거
-                 dialogDefinition.removeContents('Link'); // 링크탭 제거
-             }
-         });
-         
-         CKEDITOR.config.allowedContent = true;
-         CKEDITOR.config.startupMode = 'source';
-         CKEDITOR.config.codemirror = {
-             // Set this to the theme you wish to use (codemirror themes)
-             theme: '3024-night',
-             // Whether or not to automatically format code should be done when the editor is loaded
-             autoFormatOnStart: false,
-         };
-     }   
      
      function setLocale(locale) {
          $('button[id^=locale_]').attr('class', 'btn btn-default');
@@ -361,14 +292,21 @@
                  $('[name=headNo]').val(code);
                  $('[name=title]').val(json_data.title);
                  $('[name=status]').val(json_data.status);
-                 if (json_data.content == null) json_data.content = '';
-
-                 setTimeout(function(){
-                     parent.objEditor.setData('\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n');
-                 }, 200);
-                 setTimeout(function(){
-                     parent.objEditor.setData(json_data.content);
-                 }, 210);
+                 $('[name=content]').text(json_data.content);
+                 $('[name=headUrl]').val(json_data.headUrl);
+				 if(json_data.headImage != null){
+					 var headImage = "'${pageContext.request.contextPath}/resources/user/images/main/"+json_data.headImage+"'"
+					 if(json_data.headImage != null && json_data.headImage != ''){
+						 var display = '<span id="display_headImage" name="headImageSpan">'
+										+ '<button type="button" onclick="window.open('+headImage+')" class="btn btn-success btn-xs">보기</button>'
+										+ '<button type="button" onclick="fncDeleteImage()" name="deleteImage" value="'+json_data.headNo+'" class="btn btn-danger btn-xs">삭제</button>'
+										+ '</span>';
+					 $(".headImageTb").append(display);
+					 }else{
+						 var display = '<span id="display_headImage" name="headImageSpan">'
+									  + '</span>';	
+					 }
+				 }
              },
              error:function(jqXHR, textStatus, errorThrown){
                  console.log(textStatus);
@@ -382,14 +320,6 @@
          form_register.reset();
          form_register.mode.value = 'insert';
          $('input:radio[name=icon_code]').attr('checked', false);
-         objEditor.setData('');
-
-         setTimeout(function(){
-             parent.objEditor.setData('\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n');
-         }, 200);
-         setTimeout(function(){
-             parent.objEditor.setData('');
-         }, 210);
      }
      
      function onclickUpdate(code) {

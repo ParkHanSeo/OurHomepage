@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.naedam.admin.award.model.service.AwardService;
@@ -44,13 +46,14 @@ public class AwardController {
 	 * @throws Exception
 	 */
 	@PostMapping("award_process")
-	public String award_process(HttpServletRequest request, Award award, RedirectAttributes redirectAttr) throws Exception {
+	public String award_process(HttpServletRequest request, Award award, 
+								RedirectAttributes redirectAttr,
+								@RequestParam(value="awardImage", required = false) MultipartFile awardImage) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put("award", award);
 		map.put("mode", request.getParameter("mode"));
 		map.put("request", request);
-		System.out.println(map);
-		System.out.println(award);
+		map.put("awardImage", awardImage);
 		Map<String, Object> resultMap = awardService.awardProcess(map);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
 		return "/admin/setting/award";

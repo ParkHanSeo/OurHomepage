@@ -1,5 +1,6 @@
 package com.naedam.admin.award.model.service;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -11,9 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.dao.AwardDao;
 import com.naedam.admin.award.model.vo.Award;
+import com.naedam.admin.menu.model.vo.Head;
 
 @Service
 public class AwardServiceImpl implements AwardService {
@@ -27,6 +30,10 @@ public class AwardServiceImpl implements AwardService {
 		Map<String, Object> resultMap = new HashMap<>();
 		Award award = (Award) map.get("award");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		String filePath = request.getServletContext().getRealPath("resources/user/images/company/award/");
+		MultipartFile awardImage = (MultipartFile) map.get("awardImage");
+		File file = new File(filePath+awardImage.getOriginalFilename());
+				
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
 			StringBuilder str = new StringBuilder();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
@@ -46,10 +53,20 @@ public class AwardServiceImpl implements AwardService {
 			Date date = resultDate;
 			award.setAwardDate(date);
 			if("insert".equals(map.get("mode"))) {
-				System.out.println("award등록!!!!!!!"+award);
+				award.setImgUrl(awardImage.getOriginalFilename());
+				awardImage.transferTo(file);
 				awardDao.insertAward(award);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
+				if(awardImage.isEmpty() == false) {
+					award.setImgUrl(awardImage.getOriginalFilename());
+					awardImage.transferTo(file);
+				}else if(awardImage.isEmpty() == true) {
+					Award awardData = awardDao.selectDetailByNo(award.getAwardNo());
+					award.setImgUrl(awardData.getImgUrl());
+					awardImage.transferTo(file);
+				}
+				
 				awardDao.updateAward(award);
 				resultMap.put("msg", "연혁 정보가 수정되었습니다.");
 			}

@@ -60,6 +60,9 @@ public class HomeController {
 	@RequestMapping(value = "/user/dashBoard", method = RequestMethod.GET)
 	public String goDashBoard2(Locale locale, Model model) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
+		Map<String, Object> map = new HashMap<String, Object>();
+		Map<String, Object> resultMap = menuService.getHeadList(map);
+		model.addAttribute("list", resultMap.get("list"));
 		return "user/userDashBoard";
 	}	
 

@@ -1,11 +1,13 @@
 package com.naedam.admin.menu.model.service;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.dao.BoardDao;
 import com.naedam.admin.menu.model.dao.MenuDao;
@@ -69,6 +71,36 @@ public class MenuServiceImpl implements MenuService {
 		}
 		return null;
 	}
+	
+	//헤더 프로세스
+	public String headProcess(Map<String, Object> map) throws Exception{
+		
+		Head head = (Head) map.get("head");
+		MultipartFile headImage = (MultipartFile) map.get("headImage");
+		File file = new File(map.get("filePath")+headImage.getOriginalFilename());
+		
+		if("insert".equals(map.get("mode"))) {
+			head.setHeadImage(headImage.getOriginalFilename());
+			headImage.transferTo(file);
+			System.out.println("check === "+file);
+			menuDao.addHead(head);
+		}else if("update".equals(map.get("mode"))) {
+			if(headImage.isEmpty() == false) {
+				head.setHeadImage(headImage.getOriginalFilename());
+				headImage.transferTo(file);
+			}else if(headImage.isEmpty() == true) {
+				Head headData = menuDao.getHead(head.getHeadNo());
+				head.setHeadImage(headData.getHeadImage());
+				headImage.transferTo(file);
+			}
+			menuDao.updateHead(head);
+		}else if("delete".equals(map.get("mode"))) {
+			List<Integer> headArr = (List<Integer>) map.get("menuArr");
+			menuDao.deleteChoiceHead(headArr);
+		}
+		return "redirect:/admin/menu/headList";
+	}
+	
 	//헤더관리 등록
 	@Override
 	public int addRevision(Menu menu) throws Exception {

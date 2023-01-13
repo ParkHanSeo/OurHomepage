@@ -17,10 +17,6 @@
         location.href = url + encParam;
       }
     </script>
-    <script>
-      var business_num = "";
-      var businessDetail_num = "";
-    </script>
   </head>
   <body>
     <div id="wrap">
@@ -30,117 +26,31 @@
 				<div class="visual-wrapper section">
 					<div class="visual-slider swiper-container-initialized swiper-container-horizontal">
 						<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1687px, 0px, 0px);">
-							<div class="swiper-slide" data-swiper-slide-index="0" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_itservice_1-1.jpg);"></div>
-								<p class="blind">배경이미지 대채텍스트</p>
-								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
-										<div class="main-banner">
-											<h2 class="tit-slide">
-												IT서비스 업계 최초 <br />‘인간 중심’의 AI윤리원칙 선포
-											</h2>
-											<p class="description">
-												AI기술을 활용할 때 구성원들이 반드시 실천해야 할 <br />5대 원칙을 만들었습니다.
-											</p>
-										</div>
-										<div class="btn-area">
-											<a href="https://www.cjolivenetworks.co.kr/sustainability/compliance/ai_ethics" class="common-btn is-white2"> 
-												<span>솔루션 보기</span> 
-												<i class="icon link-arrow"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide" data-swiper-slide-index="1" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_scm_1-3.jpg);"></div>
-								<p class="blind">배경이미지 대채텍스트</p>
-								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
-										<div class="main-banner">
-											<h2 class="tit-slide">
-												공급망 투명석과 지속가능성의 <br /> 구축을 위한 SCM 기술
-											</h2>
-											<p class="description">
-												SCM을 통한 인공지능, 머신 러님, 예측 분석을 이용하여 <br /> 신속성과 탄력성을 향상시킬 수 있습니다.
-											</p>
-										</div>
-										<div class="btn-area">
-											<a href="https://www.cjolivenetworks.co.kr/tech/ai_audio" class="common-btn is-white2"> 
-												<span>솔루션 보기</span> 
-												<i class="icon link-arrow"></i>
-											</a>
+							<c:forEach var="head" items="${list}" varStatus="status" >
+								<c:set var="i" value="${ i+1 }" />
+								<div class="swiper-slide" data-swiper-slide-index="${i}" style="width: 241px">
+									<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/${head.headImage});"></div>
+									<p class="blind">배경이미지 대채텍스트</p>
+									<div class="inner">
+										<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
+											<div class="main-banner">
+												<h2 class="tit-slide">
+													${head.title}
+												</h2>
+												<p class="description">
+													${head.content}
+												</p>
+											</div>
+											<div class="btn-area">
+												<a href="https://www.cjolivenetworks.co.kr/sustainability/compliance/ai_ethics" class="common-btn is-white2"> 
+													<span>솔루션 보기</span> 
+													<i class="icon link-arrow"></i>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="swiper-slide" data-swiper-slide-index="2" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_divitalTwin_1-5.jpg);"></div>
-								<p class="blind">배경이미지 대채텍스트</p>
-								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
-										<div class="main-banner">
-											<h2 class="tit-slide">
-												Digital Twin 플랫폼을 통한 <br />'산업현장'의 안전/관리 완전성
-											</h2>
-											<p class="description">
-												다양한 고객의 Needs를 수용할 수 있는 <br />
-												Digital Twin기반의 SMART 관제시스템 구축하고 있습니다.
-											</p>
-										</div>
-										<div class="btn-area">
-											<a href="https://www.cjolivenetworks.co.kr/news/press_release/detail/560?ca=ALL" class="common-btn is-white2">
-												<span>솔루션 보기</span> 
-												<i class="icon link-arrow"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="3" style="width: 241px">
-								<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_visionAi_1-2.jpg);"></div>
-								<p class="blind">배경이미지 대채텍스트</p>
-								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
-										<div class="main-banner">
-											<h2 class="tit-slide">
-												Vision AI의 딥러닝의 <br /> 빅데이터를 기반의 솔루션
-											</h2>
-											<p class="description">
-												객체인식 및 인공지능, 이미지 분류, 사고예방 등 <br />...
-											</p>
-										</div>
-										<div class="btn-area">
-											<a enetworks.co.kr/news/press_release/detail/547?ca=ALL" class="common-btn is-white2"> 
-												<span>솔루션 보기</span> 
-												<i class="icon link-arrow"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide swiper-slide-active" data-swiper-slide-index="4" style="width: 241px">
-								<div class="view" style=" background-image: url(${pageContext.request.contextPath}/resources/user/images/main/fix_main_cloud_1-1.jpg);"></div>
-								<p class="blind">배경이미지 대채텍스트</p>
-								<div class="inner">
-									<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
-										<div class="main-banner">
-											<h2 class="tit-slide">
-												Cloud MSP 기술로 <br />시스템 구축
-											</h2>
-											<p class="description">
-												클라우드 전환 관련 컨설팅, 디자인 및 개발 등 <br />제반 시스템의 서비스를 제공합니다.
-											</p>
-										</div>
-										<div class="btn-area">
-											<a href="https://www.cjolivenetworks.co.kr/business/nft" class="common-btn is-white2"> 
-												<span>솔루션 보기</span> 
-												<i class="icon link-arrow"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
+							</c:forEach>
 						</div>
 						<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 					</div>
@@ -154,7 +64,7 @@
                   				</svg>
 							</div>
 							<div class="fraction swiper-pagination-custom">
-								<span class="current-num">5</span> 
+<!-- 								<span class="current-num">5</span>  -->
 								<span class="div">|</span> 
 								<span class="total-num">5</span>
 							</div>

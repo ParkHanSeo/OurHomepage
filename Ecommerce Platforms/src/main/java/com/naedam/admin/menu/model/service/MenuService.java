@@ -12,6 +12,9 @@ public interface MenuService {
 	//메뉴 프로세서
 	public String menuProcess(Map<String, Object> map) throws Exception;
 	
+	//메뉴 프로세서
+	public String headProcess(Map<String, Object> map) throws Exception;
+	
 	//리비젼 생성
 	public int addRevision(Menu menu) throws Exception;
 	

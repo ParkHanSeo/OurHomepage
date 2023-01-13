@@ -1,5 +1,6 @@
 package com.naedam.admin.history.model.service;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -11,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.history.model.dao.HistoryDao;
 import com.naedam.admin.history.model.vo.History;
 
@@ -26,6 +29,10 @@ public class HistoryServiceImpl implements HistoryService {
 		Map<String, Object> resultMap = new HashMap<>();
 		History history = (History) map.get("history");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		String filePath = request.getServletContext().getRealPath("resources/user/images/company/award/");
+		MultipartFile historyImage = (MultipartFile) map.get("historyImage");
+		File file = new File(filePath+historyImage.getOriginalFilename());
+		
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
 			StringBuilder str = new StringBuilder();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
@@ -45,9 +52,19 @@ public class HistoryServiceImpl implements HistoryService {
 			Date date = resultDate;
 			history.setHistoryDate(date);
 			if("insert".equals(map.get("mode"))) {
+				history.setImgUrl(historyImage.getOriginalFilename());
+				historyImage.transferTo(file);
 				historyDao.insertHistory(history);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
+				if(historyImage.isEmpty() == false) {
+					history.setImgUrl(historyImage.getOriginalFilename());
+					historyImage.transferTo(file);
+				}else if(historyImage.isEmpty() == true) {
+					History historyData = historyDao.selectOneHistoryByHisNo(history.getHistoryNo());
+					history.setImgUrl(historyData.getImgUrl());
+					historyImage.transferTo(file);
+				}
 				historyDao.updateHistory(history);
 				resultMap.put("msg", "연혁 정보가 수정되었습니다.");
 			}

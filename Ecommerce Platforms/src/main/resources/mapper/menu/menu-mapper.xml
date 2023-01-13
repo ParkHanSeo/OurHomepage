@@ -23,22 +23,14 @@
 		<result property="title"				column="TITLE"				jdbcType="VARCHAR"></result>
 		<result property="status"				column="STATUS"				jdbcType="VARCHAR"></result>
 		<result property="content"				column="CONTENT"			jdbcType="VARCHAR"></result>
+		<result property="headImage"			column="HEAD_IMAGE"			jdbcType="VARCHAR"></result>
+		<result property="headUrl"				column="HEAD_URL"			jdbcType="VARCHAR"></result>
 		<result property="headAsc"				column="HEAD_ASC"			jdbcType="NUMERIC"></result>
 	</resultMap>
 	
 	<resultMap id="BottomSelectMap" type="bottom">
 		<result property="bottomNo"				column="BOTTOM_NO"			jdbcType="NUMERIC"></result>
 		<result property="content"				column="CONTENT"			jdbcType="VARCHAR"></result>
-	</resultMap>
-	
-	<resultMap id="MenuCategorySelectMap" type="menuCategory">
-		<result property="menuCategoryNo"		column="MENU_CATEGORY_NO"	jdbcType="NUMERIC"></result>
-		<result property="menuCategoryName"		column="MENU_CATEGORY_NAME"	jdbcType="VARCHAR"></result>
-		<result property="originNo"				column="ORIGIN_NO"			jdbcType="NUMERIC"></result>
-		<result property="ord"					column="ORD"				jdbcType="NUMERIC"></result>
-		<result property="layer"				column="LAYER"				jdbcType="NUMERIC"></result>
-		<result property="menuCategoryType"		column="MENU_CATEGORY_TYPE"	jdbcType="VARCHAR"></result>
-		<result property="status"				column="STATUS"				jdbcType="VARCHAR"></result>
 	</resultMap>	
 
 	<insert id="addMenu" parameterType="menu">
@@ -78,16 +70,22 @@
 	</insert>
 	
 	<insert id="addHead" parameterType="head">
-		INSERT
-		INTO HEAD(HEAD_NO,
-				  TITLE,
-				  STATUS,
-				  CONTENT,
-				  HEAD_ASC)
+		INSERT INTO head
+		(
+		HEAD_NO, 
+		TITLE, 
+		STATUS, 
+		CONTENT, 
+		HEAD_IMAGE, 
+		HEAD_URL, 
+		HEAD_ASC
+		)
 		VALUES(NEXTVAL(head_seq),
 			   #{title : VARCHAR},
 			   #{status : VARCHAR},
 			   #{content : VARCHAR},
+			   #{headImage : VARCHAR},
+			   #{headUrl : VARCHAR},
 			   NEXTVAL(allAsc_seq))
 	</insert>
 	
@@ -273,7 +271,9 @@
 		<set>
 			TITLE = #{title : VARCHAR},
 			STATUS = #{status : VARCHAR},
-			CONTENT = #{content : VARCHAR}
+			CONTENT = #{content : VARCHAR},
+			HEAD_IMAGE = #{headImage : VARCHAR},
+			HEAD_URL = #{headUrl : VARCHAR}
 		</set>
 		WHERE HEAD_NO = #{headNo : NUMERIC}
 	</update>

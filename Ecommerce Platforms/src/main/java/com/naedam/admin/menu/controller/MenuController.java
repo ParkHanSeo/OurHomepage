@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.menu.model.service.MenuService;
 import com.naedam.admin.menu.model.vo.Bottom;
@@ -40,8 +41,11 @@ public class MenuController {
 	 * @throws Exception
 	 */
 	@PostMapping("menuProcess")
-	public String menuProcess(@ModelAttribute("menu") Menu menu, @ModelAttribute("head") Head head, @ModelAttribute("bottom") Bottom bottom,
-							  @RequestParam("mode") String mode, @RequestParam("part") String part) throws Exception{
+	public String menuProcess(@ModelAttribute("menu") Menu menu, 
+							  @ModelAttribute("head") Head head, 
+							  @ModelAttribute("bottom") Bottom bottom,
+							  @RequestParam("mode") String mode, 
+							  @RequestParam("part") String part) throws Exception{
 		Map<String, Object> menuMap = new HashMap<>();
 		menuMap.put("menu", menu);
 		menuMap.put("head", head);
@@ -49,6 +53,20 @@ public class MenuController {
 		menuMap.put("mode", mode);
 		menuMap.put("part", part);
 		return menuService.menuProcess(menuMap);
+	}
+	
+	@PostMapping("headProcess")
+	public String headProcess(@ModelAttribute("head") Head head,
+							  @RequestParam("mode") String mode,
+							  @RequestParam(value="image", required = false) MultipartFile headImage,
+							  HttpServletRequest request) throws Exception{
+		String filePath = request.getServletContext().getRealPath("resources/user/images/main/");
+		Map<String, Object> headMap = new HashMap<>();
+		headMap.put("head", head);
+		headMap.put("mode", mode);
+		headMap.put("headImage", headImage);
+		headMap.put("filePath", filePath);
+		return menuService.headProcess(headMap);
 	}
 	
 	/**

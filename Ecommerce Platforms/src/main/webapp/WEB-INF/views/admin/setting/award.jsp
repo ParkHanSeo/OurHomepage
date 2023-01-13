@@ -31,20 +31,6 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-body">
-						<div style="text-align: right;">
-							<button type="button" id="locale_ko" onclick="parent.location.href='?tpf=admin/setting/award&locale=ko'" class="btn btn-primary">
-								<i class="fa fa-globe" aria-hidden="true"></i> 한국어
-							</button>
-							<button type="button" id="locale_en" onclick="parent.location.href='?tpf=admin/setting/award&locale=en'" class="btn btn-default">
-								<i class="fa fa-globe" aria-hidden="true"></i> ENG
-							</button>
-							<button type="button" id="locale_zh" onclick="parent.location.href='?tpf=admin/setting/award&locale=zh'" class="btn btn-default">
-								<i class="fa fa-globe" aria-hidden="true"></i> 中国
-							</button>
-							<button type="button" id="locale_vn" onclick="parent.location.href='?tpf=admin/setting/award&locale=vn'" class="btn btn-default">
-								<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt
-							</button>
-						</div>
 						<label style="margin-top: 5px;">총 ${awardList.size() } 건</label>
 						<div class="box-tools pull-right" style="margin-bottom: 5px;"></div>
 						<form name="form_list" method="post" action="${pageContext.request.contextPath }/admin/award/award_process?${_csrf.parameterName}=${_csrf.token}">
@@ -105,7 +91,6 @@
 				<form name="form_register" method="post" action="${pageContext.request.contextPath }/admin/award/award_process?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
 					<input type="hidden" name="mode" id="mode" value="insert"> 
 					<input type="hidden" name="awardNo" id="awardNo" value="0"> 
-					<input type="hidden" name="imgUrl" />
 					<input type="hidden" name="locale" id="locale" value="ko">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -161,13 +146,8 @@
 							</tr>
 							<tr>
 								<td class="menu">파일 <span class="text-light-blue"><i class="fa fa-check"></i></span></td>
-								<td align="left">
-									<input type="file" name="file1" class="form-control input-sm" style="width: 70%; display: inline;" accept="image/*"> 
-									<span id="display_file" style="display: none;">
-										<button type="button" onclick="winOpen('?tpf=common/image_view&file_name=award/'+$('[name=code]').val());" class="btn btn-success btn-xs">보기</button>
-										<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&file_name=award/'+$('[name=code]').val()+'&code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
-									</span>
-									<div style="font-weight: normal">※ 이미지 크기 : 1920 X 580</div>
+								<td align="left" class="awardFileTd">
+									<input type="file" name="awardImage" class="form-control input-sm" style="width: 70%; display: inline;" accept="image/*"> 
 								</td>
 							</tr>
 						</table>
@@ -244,6 +224,7 @@
 			},
 			success(data){
 	            console.log(data);
+	            $("#display_awardImage").remove();
 	            var date = new Date(data.awardDate);
 	            $('form[name="form_register"] #mode').val('update');
 	            $('[name=awardNo]').val(data.awardNo);
@@ -252,8 +233,19 @@
 	            $('[name=date]').val(date.getDate());
 	            $('[name=content]').val(data.content);
 	            $('[name=host]').val(data.host);
-	            if(data.imgUrl != null) $('#display_file').css('display','');
-	            else $('#display_file').css('display','none');
+	            if(data.imgUrl != null){
+					 var image = "'${pageContext.request.contextPath}/resources/user/images/main/"+data.imgUrl+"'"
+					 if(data.imgUrl != null && data.imgUrl != ''){
+						 console.log("1")
+						 var display = '<span id="display_awardImage" name="awardImageSpan">'
+										+ '<button type="button" onclick="window.open('+image+')" class="btn btn-success btn-xs">보기</button>'
+										+ '</span>';
+					 $(".awardFileTd").append(display);
+					 }else{
+						 var display = '<span id="display_awardImage" name="awardImageSpan">'
+									  + '</span>';	
+					 }
+				 }
 			},
 			error: console.log
 		});

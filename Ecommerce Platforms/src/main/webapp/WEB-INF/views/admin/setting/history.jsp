@@ -147,13 +147,8 @@
 							</tr>
 							<tr>
 								<td class="menu">파일 <span class="text-light-blue"><i class="fa fa-check"></i></span></td>
-								<td align="left">
-									<input type="file" name="file1" class="form-control input-sm" style="width: 70%; display: inline;"> 
-									<span id="display_file" style="display: none;">
-										<button type="button" onclick="winOpen('?tpf=common/image_view&file_name=history/'+$('[name=code]').val());" class="btn btn-success btn-xs">보기</button>
-										<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&file_name=history/'+$('[name=code]').val()+'&code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
-									</span>
-									<div style="font-weight: normal">※ 이미지 크기 : 1920 X 580</div>
+								<td align="left" class="historyFileTd">
+									<input type="file" name="historyImage" class="form-control input-sm" style="width: 70%; display: inline;"> 
 								</td>
 							</tr>
 						</table>
@@ -238,8 +233,19 @@
 	            $('[name=month]').val(date.getMonth() + 1);
 	            $('[name=date]').val(date.getDate());
 	            $('[name=content]').val(data.content);
-	            if(data.imgUrl != null) $('#display_file').css('display','');
-	            else $('#display_file').css('display','none');
+	            if(data.imgUrl != null){
+					 var image = "'${pageContext.request.contextPath}/resources/user/images/main/"+data.imgUrl+"'"
+					 if(data.imgUrl != null && data.imgUrl != ''){
+						 console.log("1")
+						 var display = '<span id="display_historyImage" name="historyImageSpan">'
+										+ '<button type="button" onclick="window.open('+image+')" class="btn btn-success btn-xs">보기</button>'
+										+ '</span>';
+					 $(".historyFileTd").append(display);
+					 }else{
+						 var display = '<span id="display_historyImage" name="historyImageSpan">'
+									  + '</span>';	
+					 }
+				 }
 			},
 			error: console.log
 		});

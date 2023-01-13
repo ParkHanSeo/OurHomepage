@@ -14,7 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.naedam.admin.history.model.service.HistoryService;
@@ -50,11 +52,13 @@ public class HistoryController {
 	 * @throws Exception
 	 */
 	@PostMapping("history_process")
-	public String history_process(HttpServletRequest request, History history, RedirectAttributes redirectAttr) throws Exception {
+	public String history_process(HttpServletRequest request, History history, RedirectAttributes redirectAttr,
+								  @RequestParam(value="historyImage", required = false) MultipartFile historyImage) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put("history", history);
 		map.put("mode", request.getParameter("mode"));
 		map.put("request", request);
+		map.put("historyImage", historyImage);
 		Map<String, Object> resultMap = historyService.historyProcess(map);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
 		return "/admin/setting/history";
