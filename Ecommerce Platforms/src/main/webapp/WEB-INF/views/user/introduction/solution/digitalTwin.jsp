@@ -122,7 +122,6 @@ $(function(){
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
                                             BIM, innoAMS와 Digital Twin
-
                                         </p>
                                         <p class="difference_desc">
                                             디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 

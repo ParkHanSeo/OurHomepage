@@ -79,7 +79,6 @@ $(function(){
                         <div class="common-swiper_tab">
                             <ul class="swiper-wrapper service_swiper_wrapper">
                                 <li class="swiper-slide service_swiper_slide active"><a href="#self">서비스 소개</a></li>
-                                <li class="swiper-slide service_swiper_slide"><a href="#self">추천대상</a></li>
                                 <li class="swiper-slide service_swiper_slide"><a href="#self">주요 서비스</a></li>
                                 <li class="swiper-slide service_swiper_slide"><a href="#self">차별화 포인트</a></li>
                             </ul>
@@ -115,80 +114,6 @@ $(function(){
                     </div>
                 </div><!-- // .layout_section_outer -->
 
-                <div class="layout_section_outer type01" data-js="anchor-target">
-                    <div class="inner_container">
-                        <div class="layout_head">
-                            <p class="top_txt1">
-                                이런 분들에게 적극 추천합니다
-                            </p>
-                        </div>
-
-                        <div class="layout_body">
-                            <div class="recomm_biz_slider size-228">
-                                <ul class="swiper-wrapper common-layout_3 swiper_introduction_layout">
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <div class="recomm_msg_box">
-                                                <p class="recomm_msg">
-                                                    후기 A
-                                                </p>
-                                                <p class="user_info">
-                                                    <span>우OO 36세</span>
-                                                    <span>A사 담당자</span>
-                                                </p>
-                                                <i class="icon recomm-1"></i>
-                                            </div>
-                                        </div>
-                                        <p class="recomm_desc">
-                                            대규모 좌석, 티켓 운영을 기본으로 NFT기술을
-                                            활용한 위조, 변조 불가한 디지털 티켓 서비스 등
-                                            최고 수준의 티켓 예매 솔루션 제공합니다.
-                                        </p>
-                                    </li>
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <div class="recomm_msg_box">
-                                                <p class="recomm_msg">
-                                                    후기 B
-                                                </p>
-                                                <p class="user_info">
-                                                    <span>이OO 41세</span>
-                                                    <span>A사 담당자</span>
-                                                </p>
-                                                <i class="icon recomm-2"></i>
-                                            </div>
-                                        </div>
-                                        <p class="recomm_desc">
-                                            다양한 티켓 솔루션 제공 노하우를 기반으로
-                                            참석자 규모, 장소, 행사 특성에 따라 적합한
-                                            솔루션을 빠르게 맞춤 제공해드릴 수 있습니다.
-                                        </p>
-                                    </li>
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <div class="recomm_msg_box">
-                                                <p class="recomm_msg">
-                                                    후기 A
-                                                </p>
-                                                <p class="user_info">
-                                                    <span>주OO 32세</span>
-                                                    <span>A사 담당자</span>
-                                                </p>
-                                                <i class="icon recomm-3"></i>
-                                            </div>
-                                        </div>
-                                        <p class="recomm_desc">
-                                            그룹사의 대용량 트래픽 처리 인프라를 통해
-                                            체계적이고 안정적인 티켓 예매 솔루션을 합리적인
-                                            가격으로 편리하게 이용하실 수 있습니다.
-                                        </p>
-                                    </li>
-                                </ul>
-                                <div class="swiper_pagination recomm_biz"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- // .layout_section_outer -->
 
                 <div class="layout_section_outer service_area introduction_area" data-js="anchor-target">
                     <div class="inner_container">
@@ -287,7 +212,7 @@ $(function(){
                         </div>
                     </div>
                 </div><!-- // .service_area -->
-
+            </div><!-- // #contents -->
                 <div class="layout_section_outer biz_difference is-gray" data-js="anchor-target">
                     <div class="inner_container">
                         <div class="layout_head">
@@ -303,11 +228,15 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+                                           산업 데이터 모니터링
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                            설계에서 개발, 운영 및 유지 관리, 이후의 사용 또는 재사용에 <br>
+                                             이르기까지 자산 수명 주기의 전 단계를 모니터링 합니다. <br>
+											AI, 기계학습(machine learning), IoT 기술을 이용하여 자산의 <br>
+											수명 주기 전반에 걸쳐 데이터 분석을 통해 학습하여
+											디지털 트윈 사용자는 문제가 발생하기 전에 가상의 동적 시뮬레이션을 통해<br>
+											문제를 미리 예방하는 등 미래를 계획할 수 있습니다.
                                         </p>
                                     </div>
                                 </li>
@@ -317,13 +246,15 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+                                             데이터를 통한 공정관리
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            Work-Flow 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 
+											있던 문제를 해결할 수 있으며, 결과적으로 팀은 설계에서 해체까지 프로젝트 전체 수명 주기 동안 
+											연결성을 높일 수 있습니다. 또한, 디지털 트윈을 통해 구성 요소 사양 및 유지 관리 일정과 같은 
+											정적 데이터를 점유율 및 환경 조건과 같은 동적 데이터와 통합하고, 설계자에서 소유자에 
+											이르는 모든 사람이 자산의 성능과 수명 주기를 극대화하여 정보에 입각한 결정을 내릴 수 있게 도움을 줍니다.
+
                                         </p>
                                     </div>
                                 </li>
@@ -333,11 +264,13 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
-                                        </p>
+											BIM, innoAMS와 Digital Twin
+										</p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                            디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 
+											관리와 연결합니다.<br> 
+											BIM 프로세스를 지원하는 통합 워크플로 및 정보 공유를 통해 잠재력을 
+											최대로 끌어올리며, 공정상 BIM을 통해 더 효율적인 공정관리가 가능하도록 만듭니다
                                         </p>
                                     </div>
                                 </li>
@@ -345,11 +278,6 @@ $(function(){
                         </div>
                     </div>
                 </div><!-- // .biz_difference -->
-                <div class="layout_section_outer card-ui">
-                    <div class="inner_container">
-                    </div>
-                </div><!-- // .card-ui -->
-            </div><!-- // #contents -->
         </section><!-- // #container -->
     </div><!-- // #wrap -->
 
