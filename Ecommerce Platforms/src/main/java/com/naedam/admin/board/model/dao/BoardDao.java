@@ -47,6 +47,9 @@ public interface BoardDao {
 	//게시글 목록
 	public List<Map<String, Object>> getPostList(Map<String, Object> map) throws Exception;
 	
+	//사용자 게시글 목록
+	public List<Post> getUserPostList(Map<String, Object> map) throws Exception;
+	
 	//게시글의 파일 데이터
 	public List<BoardFile> getPostFile(int postNo) throws Exception;
 	

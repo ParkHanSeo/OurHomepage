@@ -63,11 +63,11 @@ $(function(){
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
-                                <p class="top_txt2">디지털 트윈 (Digital Twin)</p>
+                                <span class="top_txt1">시스템에서 발생하는 데이터를 수집, 관리하여, 설비의 신뢰성을 높입니다.</span>
+                                <p class="top_txt2">설비자산관리시스템(Inno AMS)</p>
                                 <p class="top_txt3">
-                                    현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768">
-                                    결과를 미리 예측하는 기술의 솔루션을 제공합니다.
+                                    시스템에서 발생하는 데이터를 수집하여, 설비의 신뢰성을 높입니다.<br class="hide_768">
+                                    라이프사이클(Life Cycle)관리를 통해 최적화된 설비를 제공합니다.
                                 </p>
                             </div>
                         </div>
@@ -84,7 +84,7 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                           설비자신의 최적 관리를 통한 가치창출
+                                           생애 관리를 통한 설비의 최적화
                                         </p>
                                         <p class="difference_desc">
                                             설비 생산성을 생산현장의 관리로 국한된 것이 아닌 기업경영의 차원인 자산관리로 
@@ -99,14 +99,14 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            주요기능
+                                            주요 기능
                                         </p>
                                         <p class="difference_desc">
-                                            표준화 - 체계적인 설비자산 정보
-											계    획 - 예방작업 전략 수립
-											실    행 - 프로세스 전 구간에 가시성을 제공하는 부품관리
-											분    석 - 다양한 Analytics 정보 제공
-											환    경 - 공통 컴포넌트 및 다양한 기본 모듈 제공
+                                            표준화 - 체계적인 설비자산 정보<br>
+											계    획 - 예방작업 전략 수립<br>
+											실    행 - 프로세스 전 구간에 가시성을 제공하는 부품관리<br>
+											분    석 - 다양한 Analytics 정보 제공<br>
+											환    경 - 공통 컴포넌트 및 다양한 기본 모듈 제공<br>
                                         </p>
                                     </div>
                                 </li>
@@ -116,12 +116,12 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            기대효과
+                                            기대 효과
                                         </p>
                                         <p class="difference_desc">
-                                            설비의 Availability 확보  - 설비점검 주기와 부품교체 주기 최적화를 통한 설비 성능 증대 
-											설비의 Reliability 확보 - 예방/예지 정비를 통한 고장 감소
-											설비부품 Visibility 확보 - 정확한 설비부품 수요 예측
+                                            설비의 Availability 확보  - 설비점검 주기와 부품교체 주기 최적화를 통한 설비 성능 증대 <br>
+											설비의 Reliability 확보 - 예방/예지 정비를 통한 고장 감소 <br>
+											설비부품 Visibility 확보 - 정확한 설비부품 수요 예측 <br>
                                         </p>
                                     </div>
                                 </li>

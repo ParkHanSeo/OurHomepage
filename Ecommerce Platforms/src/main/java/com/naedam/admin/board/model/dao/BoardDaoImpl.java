@@ -105,6 +105,12 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlSession.selectList("board.getPostList", map);
 	}
 	
+	//사용자 게시글 목록
+	@Override
+	public List<Post> getUserPostList(Map<String, Object> map) throws Exception {
+		return sqlSession.selectList("board.getUserPostList", map);
+	}	
+	
 	//게시글 이전 이후 데이터
 	@Override
 	public Post getPrevPost(int postNo) throws Exception {

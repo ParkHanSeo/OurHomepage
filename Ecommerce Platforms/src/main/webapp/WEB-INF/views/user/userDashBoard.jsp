@@ -17,6 +17,18 @@
         location.href = url + encParam;
       }
     </script>
+    <style type="text/css">
+		@media all and (min-width: 769px) and (max-width: 1024px) {
+			body {
+				    background-color: red;
+			}
+		}
+		@media all and (min-width: 600px) and (max-width: 768px) {
+			body {
+				    background-color: blue;
+			}
+		}		
+    </style>
   </head>
   <body>
     <div id="wrap">

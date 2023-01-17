@@ -396,6 +396,40 @@
 		ORDER BY p.post_asc ASC, p.post_ord ASC, p.post_layer ASC
 		LIMIT #{limit} OFFSET #{offset}
 	</select>
+	
+	<select id="getUserPostList" parameterType="hashmap" resultMap="PostSelectMap" >	
+		SELECT
+				@rownum:=@rownum+1 as row_no,
+				p.post_no,
+				p.post_asc,
+				p.post_title,
+				p.post_contents,
+				TO_CHAR(p.post_date, 'YYYY-MM-DD') post_date,
+				p.post_thombnail,
+				p.post_viewcount,
+				p.post_downloadcount,
+				p.post_notice,
+				p.post_origin_no,
+				p.post_ord,
+				p.post_layer,
+				p.board_no,
+				p.member_no,
+				p.member_name
+		FROM	board b, post p, member m, (select @rownum:=0) row_reset
+		WHERE	b.board_no = p.board_no
+		AND		m.member_no = p.member_no
+		AND		b.board_no = #{boardNo}
+		<if test="search.searchType != null">
+			<if test="search.searchType == 1 and search.searchKeyword !='' ">
+			AND		p.post_title like concat ('%',#{search.searchKeyword},'%')
+			</if>
+			<if test="search.searchType == 2 and search.searchKeyword !='' ">
+			AND		p.member_name like concat ('%',#{search.searchKeyword},'%')
+			</if>
+		</if>
+		ORDER BY p.post_asc ASC, p.post_ord ASC, p.post_layer ASC
+		LIMIT #{limit} OFFSET #{offset}
+	</select>	
 			
 	<select id="getMemberData" parameterType="int" resultMap="memberSelectMap">
 		SELECT
