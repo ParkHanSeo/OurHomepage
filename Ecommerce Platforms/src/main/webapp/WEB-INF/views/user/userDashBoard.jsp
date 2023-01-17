@@ -10,25 +10,7 @@
     <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/main.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/main.js"></script>
-    <script>
-      // url '+, &' 인코딩 처리
-      function hashtagLink(url, param) {
-        var encParam = param.replace(/&/g, "%26").replace(/\+/g, "%2B");
-        location.href = url + encParam;
-      }
-    </script>
-    <style type="text/css">
-		@media all and (min-width: 769px) and (max-width: 1024px) {
-			body {
-				    background-color: red;
-			}
-		}
-		@media all and (min-width: 600px) and (max-width: 768px) {
-			body {
-				    background-color: blue;
-			}
-		}		
-    </style>
+
   </head>
   <body>
     <div id="wrap">
@@ -38,7 +20,7 @@
 				<div class="visual-wrapper section">
 					<div class="visual-slider swiper-container-initialized swiper-container-horizontal">
 						<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1687px, 0px, 0px);">
-							<c:forEach var="head" items="${list}" varStatus="status" >
+							<c:forEach var="head" items="${head}" varStatus="status" >
 								<c:set var="i" value="${ i+1 }" />
 								<div class="swiper-slide" data-swiper-slide-index="${i}" style="width: 241px">
 									<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/${head.headImage});"></div>
@@ -70,7 +52,7 @@
 						<div class="inner">
 							<div class="slider-timer" style="display: block">
 								<button type="button" class="btn-control">정지</button>
-							<!-- 	<svg class="progress" width="100px" height="100px" viewBox="0 0 100 100">
+								<!-- <svg class="progress" width="100px" height="64px" viewBox="0 0 64 64">
 									<line x1="100" y1="0" x2="100" y2="100" stroke="white" stroke-width="4" style="stroke-dashoffset: 55.9282px"  class="top"/>
 									<line x1="100" y1="0" x2="100" y2="100" stroke="white" stroke-width="4" class="bottom" />
 								</svg> -->
@@ -341,16 +323,15 @@
 							<div class="section-title-area">
 								<a href="/business/our_services">
 									<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										OUR SERVICES
+										Technology & Business
 									</h2>
 									<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										CJ올리브네트웍스는 우리가 가진 기술력으로<br /> 디지털 혁신을 실현합니다.
+										내담씨앤씨가 가진 기술력으로<br /> 다양한 서비스를 제공합니다.
 									</p>
 								</a>
 								<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-									<a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction" class="common-btn is-grad-blue">
-										<span>전체보기
-											<i class="icon link-arrow"></i>
+									<a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction" class="common-btn">
+										<span class="main_solution_services">전체보기
 										</span>
 									</a>
 								</div>
@@ -358,7 +339,7 @@
 							<div class="service-list-wrap">
 								<ul class="service-list">
 									<li class="factory-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										<a href="/business/ai_factory_solution">
+										<a href="/user/introduction/digitalTwin">
 											<h3 class="tit-label">Digital Twin</h3>
 <!-- 											<h4 class="tit">산업 데이터 모니터링</h4> -->
 											<p class="description">
@@ -370,7 +351,7 @@
 										</a>
 									</li>
 									<li class="eliss-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										<a href="/business/ai_logistics">
+										<a href="/user/introduction/visionAi">
 											<h3 class="tit-label">Vision AI</h3>
 											<h4 class="tit">객체 인식 및 분석</h4>
 											<p class="description">
@@ -382,7 +363,7 @@
 										</a>
 									</li>
 									<li class="nd-one-ad aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										<a href="/business/cj_one_ad">
+										<a href="/user/introduction/innoPlm">
 											<h3 class="tit-label">PLM</h3>
 											<h4 class="tit">Rule & Process 기반 시스템 구축</h4>
 											<p class="description">
@@ -394,7 +375,7 @@
 										</a>
 									</li>
 									<li class="one-order aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										<a href="/business/smart_store_solution">
+										<a href="/user/introduction/innoAms">
 											<h3 class="tit-label">AMS</h3>
 											<h4 class="tit">설비자신의 최적 관리를 통한 가치창출</h4>
 											<p class="description">
@@ -406,7 +387,7 @@
 										</a>
 									</li>
 									<li class="smart-culture-space aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										<a href="/business/media_culture_spaces">
+										<a href="/user/introduction/cloudMsp">
 											<h3 class="tit-label">MSP</h3>
 											<h4 class="tit">Cloud MSP 시스템 구축</h4>
 											<p class="description">
@@ -418,7 +399,7 @@
 										</a>
 									</li>
 									<li class="mplace aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										<a href="/business/messaging_service">
+										<a href="/user/introduction/scm">
 											<h3 class="tit-label">SCM</h3>
 											<h4 class="tit">인공지능, 머신러닝 SCM</h4>
 											<p class="description">
@@ -439,25 +420,20 @@
 						<div class="section-title-area">
 							<a href="/culture/people">
 								<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-									<span>PEOPLE </span>&amp; CULTURE
+									<span>People </span>&amp; Vision
 								</h2>
 								<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-									우리와 함께 새로운 미래를 만들어 갈 당신을 기다립니다.
+									내담과와 함께 새로운 미래를 만들어 갈 당신을 기다립니다.
 								</p>
 							</a>
-							<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-								<a href="/culture/people" class="common-btn is-grad-blue">
-									<span>자세히 보기<i class="icon link-arrow"></i></span>
-								</a>
-							</div>
 						</div>
 						<div class="half-wrap aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 							<div class="is-left">
-								<a href="/culture/people" class="banner is-people aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
-									<h3 class="tit">내담의 비전</h3>
+								<a href="/user/highflier/qualifiedEmployee" class="banner is-people aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+									<h3 class="tit">내담의 동료</h3>
 									<p class="description">
-										고객사의 고객만족 및 내부 경쟁력 향상
-								  		<br />IT Total Service Provider로의 성장 
+										우리는 진취적이고 프로정신을 가진 
+								  		<br />인재를 찾고 있습니다.
 									</p>
 									<p class="btn-arrow is-black">
 										<span class="blind">자세히 보기</span>
@@ -467,15 +443,18 @@
 							<div class="is-right"> 
 								<a href="/recruit/job_notice" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
 									<h3 class="tit">채용 안내</h3>
+									<p class="description">
+										내담과 함께하고싶은  
+								  		<br />여러분의 지원을 기다립니다.
+									</p>									
 									<p class="btn-arrow is-black">
 										<span class="blind">자세히 보기</span>
 									</p>
 								</a> 
-								<a href="/culture/growth" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
-									<h3 class="tit">성장</h3>
-									<p class="description
-									">
-										차세대 신기술 개발과<br /> 혁신의 중추적 역할을 해 나갈<br /> IT 기술 전문가를 양성합니다.
+								<a href="/user/highflier/hrDepartment" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+									<h3 class="tit">인사제도</h3>
+									<p class="description">
+										온라인 & 현장 교육<br /> 다양한 복리후생 지원
 									</p>
 									<p class="btn-arrow is-black">
 										<span class="blind">자세히 보기</span>
@@ -492,51 +471,22 @@
 								<h2 class="tit">공지사항</h2>
 							</a>
 							<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-								<a href="/news/recent_news" class="common-btn is-grad-blue">
+								<a href="/user/notice/noticeList/5001" class="common-btn is-grad-blue">
 									<span>전체보기<i class="icon link-arrow"></i></span>
 								</a>
 							</div>
 						</div>
 						<ul class="common-layout_3">
-							<li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init">
-								<div class="image_box">
-									<a href="/news/press_release/detail/621?ca=ALL">
-										<div class="img_cover">
-											<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
-										</div>
-									</a>
-								</div> 
-									<a href="/news/press_release/detail/621?ca=ALL" class="desc_box">
-										<p class="ui_category">언론보도</p>
-										<p class="ui_title">CJ올리브네트웍스, 메타버스 커뮤니케이션 서비스 브릿지 오피스(Bridge Office)</p>
-									</a>
-							</li>
-							<li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init">
-								<div class="image_box">
-									<a href="/news/press_release/detail/620?ca=ALL">
-										<div class="img_cover">
-											<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
-										</div>
-									</a>
-								</div> 
-									<a href="/news/press_release/detail/620?ca=ALL" class="desc_box">
-										<p class="ui_category">언론보도</p>
-										<p class="ui_title">CJ올리브네트웍스, 찾아가는 ‘시니어 디지털 리터러시 교육’ 펼쳐</p>
-									</a>
-							</li>
-							<li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init">
-								<div class="image_box">
-									<a href="/news/press_release/detail/619?ca=ALL">
-										<div class="img_cover">
-											<img src="${pageContext.request.contextPath}/resources/imgs/imageBoard/neadam_logo.png" />
-										</div>
-									</a>
-								</div> 
-									<a href="/news/press_release/detail/619?ca=ALL" class="desc_box">
-										<p class="ui_category">언론보도</p>
-										<p class="ui_title">CJ올리브네트웍스, 데이터 마케팅 컨퍼런스 &lt;The MAXONOMY 2023&gt; 개최</p>
-									</a>
-							</li>
+							<c:forEach var="post" items="${post}" varStatus="status" >
+								<li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init main_notice_items">
+									<div class="notice_box">
+										<a href="/user/notice/getNoticeDetail/${post.postNo}" class="desc_box">
+											<p class="ui_category">${post.postBoard.boardTitle}</p>
+											<p class="ui_title">${post.postTitle}</p>
+										</a>
+									</div> 
+								</li>
+							</c:forEach>
 						</ul>
 					</div>
 				</div>

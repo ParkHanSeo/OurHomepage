@@ -184,6 +184,11 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
+	public List<Post> getMainPostList() throws Exception {
+		return boardDao.getMainPostList();
+	}
+	
+	@Override
 	public int getUserGetTotalCount(Map<String, Object> map) throws Exception{
 		return boardDao.getTotalCount2(map);
 	}

@@ -39,6 +39,16 @@
 		<result property="postBoard.boardNo"		column="BOARD_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMember.memberNo"		column="MEMBER_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMemberName"			column="MEMBER_NAME"			jdbcType="VARCHAR"></result>
+		
+		<association property="postBoard" javaType="Board" >
+			<result property="boardNo"					column="BOARD_NO"			jdbcType="NUMERIC"></result>
+			<result property="boardTitle"				column="BOARD_TITLE"		jdbcType="VARCHAR"></result>
+			<result property="boardType"				column="BOARD_TYPE"			jdbcType="VARCHAR"></result>
+			<result property="boardCategory"			column="BOARD_CATEGORY"		jdbcType="VARCHAR"></result>
+			<result property="boardEmail"				column="BOARD_EMAIL"		jdbcType="VARCHAR"></result>
+			<result property="boardMemberNo.memberNo"	column="MEMBER_NO"			jdbcType="NUMERIC"></result>		
+		</association>
+		
 	</resultMap>	
 	
 	<resultMap id="optionSelectMap" type="boardOption">
@@ -430,6 +440,19 @@
 		ORDER BY p.post_asc ASC, p.post_ord ASC, p.post_layer ASC
 		LIMIT #{limit} OFFSET #{offset}
 	</select>	
+	
+	<select id="getMainPostList" resultMap="PostSelectMap" >	
+			select *
+			from(
+				select 
+				tb1.*,
+				dense_rank() over (order by date_format(tb1.POST_DATE, '%Y-%m-%d-%h-%m-%r') desc) as 'ranking'
+				from post tb1
+				) tbl1
+			left outer join board tbl2
+			on tbl1.board_no = tbl2.BOARD_NO 
+			where tbl1.ranking <![CDATA[<=]]> 3
+	</select>
 			
 	<select id="getMemberData" parameterType="int" resultMap="memberSelectMap">
 		SELECT

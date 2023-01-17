@@ -52,7 +52,7 @@ window.onload=function(){
 }
 </script>
       <!-- 공통 header -->
-      <header id="header" class="root">
+      <header id="header">
         <div class="inner">
           <h1 class="logo">
             <a href="${pageContext.request.contextPath}/user/dashBoard">

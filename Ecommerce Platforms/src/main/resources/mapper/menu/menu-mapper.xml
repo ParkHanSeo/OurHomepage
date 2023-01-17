@@ -209,6 +209,13 @@
 		ORDER BY HEAD_ASC ASC;
 	</select>
 	
+	<select id="getUserHeadList" resultType="hashmap" resultMap="HeadSelectMap">
+		SELECT *
+		FROM head
+		WHERE status = 'y'
+		ORDER BY HEAD_ASC ASC;
+	</select>	
+	
 	<select id="getMenuCategoryList" resultType="hashmap" resultMap="MenuSelectMap">
 		SELECT *
 		FROM menu
