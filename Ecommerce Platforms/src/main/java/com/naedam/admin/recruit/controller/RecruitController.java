@@ -62,10 +62,12 @@ public class RecruitController {
 		// 페이징 처리
 		String url = request.getRequestURI();
 		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalRecruitListCount, url);
-
+		
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("pageCount", totalRecruitListCount);
+		
+		System.out.println("resultMap.get(\"list\")" + resultMap.get("list"));
 
 		return "admin/recruit/recruitList";
 
@@ -89,8 +91,6 @@ public class RecruitController {
 			model.addAttribute("message", "삭제 실패!" + deleteResult);
 		}
 
-		System.out.println(">>> deleteResult: " + deleteResult);
-
 		return null;
 
 	}
@@ -103,25 +103,27 @@ public class RecruitController {
 
 		int recruitRecult = 0;
 		String msg="";
-
-		System.out.println("param >>>>" + param);
-		System.out.println("fileList >>>>" + fileList);
 		
 		
 		/* param 안의 일부값 recruitDTO에 담기*/
 		recruitDTO recruit = new recruitDTO();
 		recruit.setRecruitTitle((String)param.get("recruitTitle"));
 		recruit.setCareer((String)param.get("career"));
-		
 		recruit.setRecruitStart((String)param.get("recruitStart"));
 		recruit.setRecruitEnd((String)param.get("recruitEnd"));
+		recruit.setJobTitle((String)param.get("jobTitle"));
+		recruit.setRecruitType((String)param.get("recruitType"));
+		recruit.setRecruitPlace((String)param.get("recruitPlace"));
+		recruit.setJobIntro((String)param.get("jobIntro"));
+		recruit.setQualification((String)param.get("qualification"));
+		
+		System.out.println("===recruitDTO recruit==== : " + recruit);
 		
 		//file 등록
 		/*세부 내용안의 이미지file*/
 		if ((fileList != null) && (fileList.size() > 0)) {
 			//오리지널 이름 입력
 			recruit.setOrgFileName(fileList.get(0).getOriginalFilename());
-			System.out.println("dtoContents.setOrgName >>>>>" + fileList.get(0).getOriginalFilename());
 			//파일 처리 식별자 처리를 위한 UUID
 			UUID uuid = UUID.randomUUID();
 			//fileName 처리 (저장될 파일이름)
@@ -135,29 +137,18 @@ public class RecruitController {
 			File saveFile = new File(filePath,fileName);
 			fileList.get(0).transferTo(saveFile);
 
-			System.out.println("fileName >> " + fileName);
-			System.out.println("filePath >> " + filePath);
-
 			}
 
-		
 		// 채용 게시글 입력
 		recruitRecult = recruitService.insertRecruit(recruit);
 
 		// 채용 게시글 번호
-		int curRecruitNo = recruit.getRecruitNo();
-
-		System.out.println("curRecruitNo === " + curRecruitNo);
-		
+		int curRecruitNo = recruit.getRecruitNo();		
 		/* 리스트 생성 */
 		List<recruitContentsDTO> contentsList = new ArrayList<>();
 		
-		System.out.println("subTitle>>>>" + param.get("subTitle"));
-		System.out.println("contents>>>>" + param.get("contents"));
-		
 		int size = ((List<String>) param.get("subTitle")).size();
-		
-		System.out.println("size>>>>>>>>>>>>>>>>" + size);
+
 		
 		for (int i = 0; i < size; i++) {
 			
@@ -202,32 +193,138 @@ public class RecruitController {
 	@GetMapping("getRecruitData")
 	@ResponseBody
 	public Map<String, Object> getRecruitData(Model model,@RequestParam("postNo") int recruitNo) {
-		//필요한 데이터
-		//제목, 채용시작일, 채용마감일, 경력, 소제목1, 내용1, 파일1, 소제목2, 내용2, 파일2....
 		System.out.println("======= getRecruitData 실행 =========");
-		System.out.println("postNo>>>>" + recruitNo);
 		
 		//채용글 1차
 		recruitDTO recruitData = recruitService.getRecruitData(recruitNo);
-		System.out.println("recruitData>>>>" + recruitData.getRecruitStart());
 		
 		//채용글 2차 (리스트 여러개)
 		List<recruitContentsDTO> contents = recruitService.getContentsData(recruitNo);
-		System.out.println("contents>>>>" + contents);
 		
-		/*
-		 * model.addAttribute("recruitData", recruitData);
-		 * model.addAttribute("contents", contents);
-		 */
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		resultMap.put("recruitData", recruitData);
-		System.out.println("recruitData.recruitStart >>>" + recruitData.getRecruitStart());
 		resultMap.put("contents", contents);
-		
-		System.out.println("getRecruitData resultMap >>>>>" + resultMap);
+	
 		
 		return resultMap;
+	}
+	
+	
+	@PostMapping(value = "updateRecruit", produces = "application/text; charset=UTF-8")
+	@ResponseBody
+	public String updateRecruit(@RequestPart(value = "key" ,required = false) Map<String, Object> param,
+			@RequestPart(value = "file",required = false) List<MultipartFile> fileList,
+			HttpServletRequest request) throws Exception {
+
+		int recruitResult = 0;
+		String msg="";
+
+		System.out.println("updateparam >>>>" + param);
+		System.out.println("updatefileList >>>>" + fileList);
+		
+		int recruitNo = Integer.parseInt(String.valueOf(param.get("recruitNo")));
+		
+		/* param 안의 일부값 recruitDTO에 담기*/
+		recruitDTO recruit = new recruitDTO();
+		recruit.setRecruitNo(recruitNo);
+		recruit.setRecruitTitle((String)param.get("recruitTitle"));
+		recruit.setCareer((String)param.get("career"));
+		recruit.setJobTitle((String)param.get("jobTitle"));
+		recruit.setRecruitType((String)param.get("recruitType"));
+		recruit.setRecruitPlace((String)param.get("recruitPlace"));
+		recruit.setJobIntro((String)param.get("jobIntro"));
+		recruit.setQualification((String)param.get("qualification"));
+		
+		System.out.println("orgFileName>>>>>>>>>>" + param.get("orgFileName"));
+		
+		System.out.println("===updateRecruitrecruitDTO recruit==== : " + recruit);
+		
+		recruit.setRecruitStart((String)param.get("recruitStart"));
+		recruit.setRecruitEnd((String)param.get("recruitEnd"));
+		
+		//file 등록
+		/*세부 내용안의 이미지file*/
+		if ((fileList != null) && (fileList.size() > 0)) {
+			//오리지널 이름 입력
+			recruit.setOrgFileName(fileList.get(0).getOriginalFilename());
+			System.out.println("dtoContents.setOrgName >>>>>" + fileList.get(0).getOriginalFilename());
+			//파일 처리 식별자 처리를 위한 UUID
+			UUID uuid = UUID.randomUUID();
+			//fileName 처리 (저장될 파일이름)
+			String fileName = uuid + "_" + fileList.get(0).getOriginalFilename();
+			recruit.setFileName(fileName);
+			//filePath 처리
+			String filePath =request.getServletContext().getRealPath("resources/imgs/imgrecruit");
+			recruit.setFilePath(filePath);
+			
+			//파일 저장
+			File saveFile = new File(filePath,fileName);
+			fileList.get(0).transferTo(saveFile);
+
+			System.out.println("fileName >> " + fileName);
+			System.out.println("filePath >> " + filePath);
+
+			}
+
+		
+		// 채용 게시글 업데이트
+		recruitResult = recruitService.updateRecruit(recruit);
+
+		System.out.println("curRecruitNo === " + recruitNo);
+		
+		//업데이트를 위해 상세 내용 삭제
+		int deleteResult = recruitService.deleteRecruitContents(recruitNo);
+		System.out.println("삭제 상태 ====== " + deleteResult );
+		
+		/* 리스트 생성 */
+		List<recruitContentsDTO> contentsList = new ArrayList<>();
+		
+		System.out.println("subTitle>>>>" + param.get("subTitle"));
+		System.out.println("contents>>>>" + param.get("contents"));
+		
+		int size = ((List<String>) param.get("subTitle")).size();
+		
+		System.out.println("size>>>>>>>>>>>>>>>>" + size);
+		
+		for (int i = 0; i < size; i++) {
+			
+			recruitContentsDTO dtoContents = new recruitContentsDTO();
+			
+			/*세부 내용*/
+			dtoContents.setRecruitSubTitle(((List<String>) param.get("subTitle")).get(i));
+			dtoContents.setRecruitContents(((List<String>) param.get("contents")).get(i));
+			
+			/*세부 내용이 들어갈 채용 게시글 dto*/
+			recruitDTO dtoRecruit = new recruitDTO();
+			dtoRecruit.setRecruitNo(recruitNo);
+			dtoContents.setRecruitNo(dtoRecruit);
+			
+			contentsList.add(dtoContents);
+			  
+			 System.out.println("contents [" + i + "] >> " + contentsList);
+			}
+			  
+			  int insertResult = recruitService.insertRecruitContents(contentsList);
+			  
+			  log.info("insertResult >>> " + insertResult);
+			  
+			  //채용 게시글 등록 완료 확인
+			  if(recruitResult ==1) {
+				  msg = "게시글 수정이 완료 되었습니다."; 
+				  // 채용게시글 상세내용 등록 확인
+				  if(insertResult == size) {
+					  msg = "채용 게시글 수정이 완료 되었습니다."; }
+				  else {
+					  msg = "채용 게시글 수정을 실패했습니다.";
+				  }
+			  }else {
+				  msg = "게시글 수정을 실패했습니다.";
+			  }
+		
+
+		return msg;
+
 	}
 
 }

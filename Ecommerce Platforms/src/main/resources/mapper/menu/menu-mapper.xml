@@ -224,35 +224,7 @@
 		AND revision_code = 0
 		ORDER BY menu_asc ASC
 	</select>
-	
-	<select id="getMenuCategoryList3" resultType="hashmap" resultMap="MenuSelectMap">
-		WITH RECURSIVE CTS AS (
-		    SELECT  code
-		           ,title
-		           ,origin_no
-		           ,ord
-		           ,CAST(code as CHAR(1000)) lvl
-		    FROM menu
-		    WHERE origin_no IS NULL
-		    UNION ALL
-		    SELECT  b.code
-		           ,b.title
-		           ,b.origin_no
-		           ,b.ord
-		           ,CONCAT(c.lvl, ",", b.code) lvl
-		    FROM menu b
-		    INNER JOIN CTS c
-		    ON b.origin_no = c.code
-		)
-		SELECT code
-		      ,title
-		      ,origin_no
-		      ,ord
-		      ,lvl
-		from cts
-		ORDER BY lvl
-	</select>	
-	 
+		 
 	<update id="updateMenu" parameterType="menu">
 		UPDATE menu
 		<set>

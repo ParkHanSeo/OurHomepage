@@ -32,6 +32,12 @@ public interface RecruitDao {
 	// 게시글 수정을 위한 상세내용 조회
 	public List<recruitContentsDTO> getContentsData(int recruitNo);
 
+	// 게시글 수정
+	public int updateRecruit(recruitDTO recruit);
+
+	// 상세 내용 업데이트를 위한 삭제
+	public int deleteRecruitContents(int curRecruitNo);
+
 
 	
 }

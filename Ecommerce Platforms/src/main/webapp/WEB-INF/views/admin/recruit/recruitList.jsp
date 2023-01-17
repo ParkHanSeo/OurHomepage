@@ -5,50 +5,6 @@
 <jsp:include page="/WEB-INF/views/admin/common/header.jsp">
 	<jsp:param value="채용" name="title"/>
 </jsp:include>
-
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- Tell the browser to be responsive to screen width -->
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
-	<!-- jvectormap -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery-jvectormap.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AdminLTE.min.css">
-	<!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/_all-skins.min.css">
-	<link href="${pageContext.request.contextPath}/resources/css/admin.css" rel="stylesheet" type="text/css">
-	<link href="${pageContext.request.contextPath}/resources/css/jquery-ui.css" rel="stylesheet">
-	
-	<!-- jQuery 3 -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
-	<script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
-	<!-- FastClick -->
-	<script src="${pageContext.request.contextPath}/resources/js/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="${pageContext.request.contextPath}/resources/js/adminlte.min.js"></script>
-	<!-- Sparkline -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.sparkline.min.js"></script>
-	<!-- jvectormap  -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-jvectormap-1.2.2.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-jvectormap-world-mill-en.js"></script>
-	<!-- SlimScroll -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery.slimscroll.min.js"></script>
-	<!-- ChartJS -->
-	<script src="${pageContext.request.contextPath}/resources/js/Chart.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
-	<script src="${pageContext.request.contextPath }/resources/js/common.js" type="text/javascript" charset="utf-8"></script>
-	
-	<!-- plupload -->
-	<script src="${pageContext.request.contextPath}/resources/plupload/js/plupload.full.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/plupload/js/jquery.ui.plupload/jquery.ui.plupload.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/plupload/js/i18n/ko.js"></script>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/plupload/js/jquery.ui.plupload/css/jquery.ui.plupload.css">
 	
 	<script type="text/javascript">
 		$(function(){
@@ -112,8 +68,6 @@
 		} */
 	</script>
 	
-	<script src="${pageContext.request.contextPath}/resources/ckeditor_4.18.0_0efc8d0dbe1a/ckeditor/ckeditor.js"></script>
-</head>
 <style>
 /* recruit css */
 
@@ -200,6 +154,7 @@
 				                        <td style="width:140px;">마감일</td>
 				                        <td style="width:140px;">등록일</td>
 				                        <td style="width:80px;">조회수</td>
+				                        <td style="width:90px;">상태</td>
 				                        <td style="width:80px;">명령</td>
 				                    </tr>
 			                    </thead>
@@ -214,10 +169,14 @@
 						                        <td>${post.rownum}</td>   <!-- 번호 -->       
 						                   		<td align="left">${post.recruitTitle}</td>        
 						                        <td>${post.career}</td>            
-						                        <td >${post.recruitStart}</td>                        
+						                        <td>${post.recruitStart}</td>                        
 						                        <td>${post.recruitEnd}</td>
 						               			<td>${post.recruitDate}</td>        
-						               			<td>${post.recruitViewcount}</td>             
+						               			<td>${post.recruitViewcount}</td>
+						               			<td>
+							               			<c:if test="${post.contentsStatus == 'Y'}">채용중</c:if>
+							               			<c:if test="${post.contentsStatus == 'N'}">마감</c:if>
+												</td>
 						                        <td>
 						                			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.recruitNo}">상세보기</button>
 						                			<%-- <input type="hidden" value="${post.postMember.memberNo}"></button> --%>
@@ -257,17 +216,17 @@ function addData() {
     $("#fileName").val("");
     $("#subTitle").val("");
     $("#contents").val("");
-    $("#addContents").html("");
+    $("#addContents").html("");  
+    $("#jobTitle").val("");
+    $("#recruitType").val("");
+    $("#recruitPlace").val("");
+    $("#jobIntro").val("");
+    $("#qualification").val("");
 };
 </script>
 	
 <jsp:include page="/WEB-INF/views/admin/recruit/addRecruit.jsp"/>
-<jsp:include page="/WEB-INF/views/admin/recruit/getRecruit.jsp"/>
+<jsp:include page="/WEB-INF/views/admin/recruit/updateRecruit.jsp"/>
 </div><!-- /.content-wrapper -->
 
-<footer class="main-footer">
-	<div class="pull-right hidden-xs">
-	    <b>Version</b> 2.7.4
-	</div>
-	<strong>NDC&C<a href="/admin">  Since:2017  </a> Phone 031-712-8315 | Fax 031-789-3545</strong>
-</footer>
+<jsp:include page="/WEB-INF/views/admin/common/footer.jsp"/>

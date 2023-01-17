@@ -91,12 +91,6 @@ public class MenuDaoImpl implements MenuDao {
 		return sqlSession.selectList("menu.getMenuCategoryList2", map);
 	}
 	
-	//메뉴 카테고리 리스트3
-	@Override
-	public List<Menu> getMenuCategoryList3(Map<String, Object> map) throws Exception {
-		return sqlSession.selectList("menu.getMenuCategoryList3", map);
-	}	
-	
 	//메뉴 수정
 	@Override
 	public int updateMenu(Menu menu) throws Exception {

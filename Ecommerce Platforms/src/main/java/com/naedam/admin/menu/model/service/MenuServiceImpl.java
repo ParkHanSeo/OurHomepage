@@ -133,16 +133,6 @@ public class MenuServiceImpl implements MenuService {
 		return resultMap;
 	}	
 	
-	//조건식 메뉴 리스트 출력2
-	@Override
-	public Map<String, Object> getMenuList3(Map<String,Object> map) throws Exception{
-		
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("list", menuDao.getMenuList3(map));
-		
-		return resultMap;
-	}	
-	
 	//리비젼 리스트
 	@Override
 	public Map<String, Object> getRevisionList(Map<String, Object> map) throws Exception {
@@ -177,7 +167,6 @@ public class MenuServiceImpl implements MenuService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("list", menuDao.getMenuCategoryList(map));
 		resultMap.put("list2", menuDao.getMenuCategoryList2(map));
-		resultMap.put("list3", menuDao.getMenuCategoryList3(map));
 		return resultMap;
 	}
 	
