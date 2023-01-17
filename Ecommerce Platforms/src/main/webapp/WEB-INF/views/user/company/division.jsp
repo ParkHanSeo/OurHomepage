@@ -91,33 +91,15 @@ $(function(){
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_consulting.jpg" alt="">
-                                	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_consulting.png" alt=""> --%>
-                                </p>
-                                <div class="div_division_left">
-	                                <p class="division_name ">컨설팅 사업부</p>
-	                                <p class="division_info ">
-	                                    - SCM,CRM 컨설팅/개발<br>
-	                                    - System Modeling<br>
-	                                    - 외부 System 1/F<br>
-	                                    - Solution Business<br>
-	                                    - Si (System Integration)<br>
-	                                </p>
-                                </div>
-                            </li>
-                            <li class="items item_left">
-                                <p class="division_img img_left">
                                 	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_hi-tech.jpg" alt="">
                                 	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/company/division/division_hitech.jpeg" alt=""> --%>
                                 </p>
                                 <div class="div_division_left">
-	                                <p class="division_name">Hi-Tech 사업부</p>
+	                                <p class="division_name">ICT 사업부</p>
 	                                <p class="division_info">
+	                                	- SCM,PLM,CRM 개발<br>
 	                                    - 사업전략기획/수립<br>
 	                                    - 신규사업개발 및 제휴<br>
-	                                    - Global Business 연계<br>
-	                                    - 디자인 지원<br>
-	                                    - IR<br>
 	                                </p>
 	                            </div>
                             </li>

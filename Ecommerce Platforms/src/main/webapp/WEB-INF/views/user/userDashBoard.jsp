@@ -54,7 +54,7 @@
 												</p>
 											</div>
 											<div class="btn-area">
-												<a href="https://www.cjolivenetworks.co.kr/sustainability/compliance/ai_ethics" class="common-btn is-white2"> 
+												<a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 
 													<span>솔루션 보기</span> 
 													<i class="icon link-arrow"></i>
 												</a>
@@ -70,6 +70,10 @@
 						<div class="inner">
 							<div class="slider-timer" style="display: block">
 								<button type="button" class="btn-control">정지</button>
+							<!-- 	<svg class="progress" width="100px" height="100px" viewBox="0 0 100 100">
+									<line x1="100" y1="0" x2="100" y2="100" stroke="white" stroke-width="4" style="stroke-dashoffset: 55.9282px"  class="top"/>
+									<line x1="100" y1="0" x2="100" y2="100" stroke="white" stroke-width="4" class="bottom" />
+								</svg> -->
 								<svg class="progress" width="64px" height="64px" viewBox="0 0 64 64">
 				                    <circle cx="32" cy="32" r="32" class="top" style="stroke-dashoffset: 55.9282px"></circle>
 				                    <circle cx="32" cy="32" r="32" class="bottom"></circle>
@@ -77,14 +81,9 @@
 							</div>
 							<div class="fraction swiper-pagination-custom">
 <!-- 								<span class="current-num">5</span>  -->
-								<span class="div">|</span> 
+<!-- 								<span class="div">|</span>  -->
 								<span class="total-num">5</span>
 							</div>
-						</div>
-					</div>
-					<div class="scroll-guide-area">
-						<div class="scroll-guide">
-							<span class="blind">Scroll Down</span>
 						</div>
 					</div>
 				</div>
@@ -349,7 +348,7 @@
 									</p>
 								</a>
 								<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-									<a href="/business/our_services" class="common-btn is-grad-blue">
+									<a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction" class="common-btn is-grad-blue">
 										<span>전체보기
 											<i class="icon link-arrow"></i>
 										</span>

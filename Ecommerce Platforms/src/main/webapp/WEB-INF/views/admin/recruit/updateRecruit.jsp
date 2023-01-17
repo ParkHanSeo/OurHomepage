@@ -33,30 +33,42 @@ $("button[name='getPostBotton']").on("click", function(){
 
 			//채용 게시글
 			let recruitData = result.recruitData;
+			//게시글 번호
+			$("#recruitNo_u").val(recruitData.recruitNo);
+			console.log("recruitNo_u>>>>", recruitData.recruitNo);
 			//제목
 			$("#title_u").val(recruitData.recruitTitle);
 			//시작일(date)
 			let startDay = $("#startDay_u").val(recruitData.recruitStart);
-			console.log("startDay>>>>>" , startDay);
 			//마감일(date)
 			let endDay = $("#endDay_u").val(recruitData.recruitEnd);
-			console.log("endDay>>>>>" , endDay);
 			//경력(셀렉트)
 			$("#career_u").val(recruitData.career).prop("selected",true);
-			console.log("recruitData.fileName>>>", recruitData.fileName);
+			//직무명
+			$("#jobTitle_u").val(recruitData.jobTitle);
+			//근무형태
+			$("#recruitType_u").val(recruitData.recruitType);
+			//근무지
+			$("#recruitPlace_u").val(recruitData.recruitPlace);
+			//직무소개
+			$("#jobIntro_u").val(recruitData.jobIntro);
+			//지원자격
+			$("#qualification_u").val(recruitData.qualification);
+			
+			
+			
 			//파일
 			if(recruitData.fileName != null){
 				//파일이 있을 때
 				$("#file_u").append(`
 						<!-- 파일값 하나 넣기 -->
-						<td class="menu">파일1111</td>
+						<td class="menu">파일 변경</td>
 						<td align="left">
-							<span class="form-control input-sm">현재 파일 :` + recruitData.orgFileName + `</span> 
-							<input type="hidden" id="orgFileName_u" name="orgFileName_u" class="form-control input-sm" value =`+ recruitData.orgFileName + `>
-							<input type="file" id="fileName_u" name="fileName_u" class="form-control input-sm"> 
-							<span id="display_thumbnail" style="display: none;">
-								<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
+							<span class="form-control input-sm">현재 파일 :` + recruitData.orgFileName + `
+								<input type="hidden" id="orgFileName_u" name="orgFileName_u" class="form-control input-sm" value =`+ recruitData.orgFileName + `>
+								<button type="button" onclick="deleteFile()" class="btn btn-danger btn-xs">삭제</button>
 							</span>
+							<input type="file" id="fileName_u" name="fileName_u" class="form-control input-sm"> 
 						</td>`);
 			}else {
 				//파일이 없을 때
@@ -64,12 +76,7 @@ $("button[name='getPostBotton']").on("click", function(){
 						<!-- 파일값 하나 넣기 2222222-->
 						<td class="menu">파일2222</td>
 						<td align="left">
-						<span class="form-control input-sm">현재 파일 :</span> 
-							<input type="hidden" id="orgFileName_u" name="orgFileName_u" class="form-control input-sm">
-							<input type="file" id="fileName_u" name="fileName_u" class="form-control input-sm"> 
-							<span id="display_thumbnail" style="display: none;">
-								<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
-							</span>
+							<input type="file" id="fileName_u" name="fileName_u" class="form-control input-sm">
 						</td>`);
 				
 			}
@@ -107,6 +114,14 @@ $("button[name='getPostBotton']").on("click", function(){
 	})
 })
 
+function deleteFile(){
+	if(confirm('정말 삭제하시겠습니까?')){
+		console.log("$(this).parent() >>>>" , $("#orgFileName_u").parent());
+		$("#orgFileName_u").parent().remove();
+	}
+	
+}
+
 
 function updateRecruit(){
 	
@@ -131,54 +146,63 @@ function updateRecruit(){
 			alert("시작일은 마감일보다 뒤일 수 없습니다.");
 			return;
 		}
-		if(($("#subTitle_u").val() == null) && ($("#contents_u").val() != null)){
-			alert("소제목과 내용을 모두 입력해주세요.");
-			return;
-		}
-		if(($("#subTitle_u").val() != null) && ($("#contents_u").val() == null)){
-			alert("소제목과 내용을 모두 입력해주세요.");
-			return;
-		}
 		
 		//반복작업 필요한 내용
 		var subTitle = new Array();
 		$("input[name='subTitle_u']").each(function(){
+			console.log('subTitle_u', $("input[name='subTitle_u']").val());
 			subTitle.push($(this).val());
 		})
 		var contents = new Array();
 		$("textarea[name='contents_u']").each(function(){
+			console.log('contents_u', $("textarea[name='contents_u']").val());
 			contents.push($(this).val());
 		})
 		
-		console.log("subTitle >>" + subTitle);
-		console.log("contents >>" + contents);
+		for(let i = 0; i < subTitle.length; i++){
+			if(subTitle[i] != null && contents[i] == null){
+				alert(1+ i + "번째 소제목의 내용을 입력해 주세요.");
+				return;
+			}
+		}
 		
 		//FormData 새로운 객체 생성 
 		var formData = new FormData();
 		
-		console.log("start>>>>>>>>>>>>>", $("#startDay_u").val());
-		
 		//넘길 데이터
 		var data = {
+				"recruitNo": $("#recruitNo_u").val(),
 				"recruitTitle": $("#title_u").val(),
 				"recruitStart": $("#startDay_u").val(),
 				"recruitEnd": $("#endDay_u").val(),
 				"career": $("#career_u").val(),
+				"jobTitle": $("#jobTitle_u").val(),
+				"recruitType": $("#recruitType_u").val(),
+				"recruitPlace": $("#recruitPlace_u").val(),
+				"jobIntro": $("#jobIntro_u").val(),
+				"qualification": $("#qualification_u").val(),
+				"orgFileName" : $("#orgFileName_u").val()
 				"subTitle": subTitle,
 				"contents": contents		
 		}
 		
-		
 		var fileinput = $("input[name='fileName_u']");
 		console.log("fileinput >>>" + fileinput);
-	
-		for(var i = 0; i < fileinput.length; i++){
-			if(fileinput[i].files.length > 0){
-				for(var j = 0; j < fileinput[i].files.length; j++){
-					console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]);
-					
-					// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
-					formData.append('file', $("input[name='ThombnailName']")[i].files[j]);
+		
+		// org value 값이 있고 fileName_u == null 이면 유지
+		if( $("orgFileName_u") != null && fileinput == null){
+			formData.append('file', null);
+		} else {
+		// fileName_u != null 이면 파일 변경
+			for(var i = 0; i < fileinput.length; i++){
+				if(fileinput[i].files.length > 0){
+					for(var j = 0; j < fileinput[i].files.length; j++){
+						console.log("update fileInput[i].files[j] :::"+ fileinput[i].files[j]);
+		
+						// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
+						formData.append('file', $("input[name='fileName_u']")[i].files[j]);
+						
+					}
 				}
 			}
 		}
@@ -187,7 +211,7 @@ function updateRecruit(){
 		formData.append('key', new Blob([ JSON.stringify(data) ], {type : "application/json"}));
 		
 		$.ajax({
-			 	url : "/admin/insertRecruit?${_csrf.parameterName}=${_csrf.token}",
+			 	url : "/admin/updateRecruit?${_csrf.parameterName}=${_csrf.token}",
  		  	 	type : "POST",
 		  	 	data : formData,
 		  	    processData: false,
@@ -227,9 +251,7 @@ function addUpdateContents(){
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<form name="addPostForm" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="mode" id="mode" value="insert"> <input
-					type="hidden" name="secNo"
-					value="<sec:authentication property='principal.memberNo'/>">
+				<input type="hidden" name="recruitNo_u" id="recruitNo_u">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">×</button>
@@ -269,6 +291,38 @@ function addUpdateContents(){
 										<option value="경력">경력</option>
 								</select></td>
 							</tr>
+							<!-- 230116 내용추가 -->
+								<tr>
+									<td class="menu">직무명</td>
+									<td align="left"><input type="text" name="jobTitle_u"
+										id="jobTitle_u" class="form-control input-sm"></td>
+								</tr>
+								<tr>
+									<td class="menu">근무형태</td>
+									<td align="left"><input type="text" name="recruitType_u"
+										id="recruitType_u" class="form-control input-sm"></td>
+								</tr>
+								<tr>
+									<td class="menu">근무지</td>
+									<td align="left"><input type="text" name="recruitPlace_u"
+										id="recruitPlace_u" class="form-control input-sm"></td>
+								</tr>
+								
+								<tr>
+									<td class="menu">직무소개</td>
+									<td align="left">
+										<textarea name="jobIntro_u" id="jobIntro_u"
+												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="menu">지원자격</td>
+									<td align="left">
+										<textarea name="qualification_u" id="qualification_u"
+												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
+									</td>
+								</tr>
+								<!-- ---- -->
 							<!-- 파일 -->
 							<tr id="file_u">
 							</tr>

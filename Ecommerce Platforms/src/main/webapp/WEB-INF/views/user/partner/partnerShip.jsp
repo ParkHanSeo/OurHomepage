@@ -63,7 +63,7 @@ $(function(){
                         <div class="layout_head">
                             <p class="top_txt1">
                                 내담씨앤씨의 파트너십의 관계에 있어서 <br>
-                                성장 및 역략 강화를 지원합니다.
+                                성장 및 역량 강화를 지원합니다.
                             </p>
                         </div>
                         <div class="layout_body is-margin2">
@@ -77,7 +77,7 @@ $(function(){
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담C&C</p>
                                             <ul class="common-txt-list">
-                                                <li>내담C&C는 중소기업 및 중견기업과의 파트너쉽을 맺고 운영하고 있습니다.</li>
+                                                <li>내담C&C는 중소 기업 및 중견 기업과의 파트너쉽을 맺고 운영하고 있습니다.</li>
                                                 <li>내담C&C는 최소 운영비로 지속적인 경영 혁신을 추진 가능하도록 지원합니다.</li>
                                             </ul>
                                         </div>
@@ -90,7 +90,7 @@ $(function(){
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">기업의 이익 위하여</p>
                                             <ul class="common-txt-list">
-                                                <li>내담C&C는 정보시스템 운영 진단 및 추진과제 Road map을 제공합니다.</li>
+                                                <li>내담C&C는 정보시스템 운영 진단 및 추진과제의 Road map을 제공합니다.</li>
                                                 <li>내담C&C는 기업의 정보화 교육 및 컨설팅, Business Process 정립 및 보완을 지원합니다.</li>
                                             </ul>
                                         </div>
@@ -118,7 +118,7 @@ $(function(){
                                             <p class="esg_program_txt">내담의 목표</p>
                                             <ul class="common-txt-list">
                                                 <li>
-                                                	대한민국 중소기업 및 중견기업이 내담C&C와 나아감으로써<br>
+                                                	대한민국 중소 기업과 중견 기업이 내담C&C와 함께 성장함으로써<br>
                                                 	IT 경쟁력을 확보하고 IT Solution의 낭비요소를 제거하는 것이<br>
                                                 	내담C&C의 궁극적인 목표입니다.
                                                 </li>

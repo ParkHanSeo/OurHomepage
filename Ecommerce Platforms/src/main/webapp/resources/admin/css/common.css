@@ -650,7 +650,7 @@ body.overflow::-webkit-scrollbar {
 .top_visual_area.type06:before {
   background-image: url(../images/service/bg-01-pc.png);
 }
-.top_visual_area.type07:before {
+.top_visual_area .type07:before {
   background-image: url(../images/service/bg-03-pc.png);
 }
 .top_visual_area.customer {

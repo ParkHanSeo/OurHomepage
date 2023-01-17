@@ -66,9 +66,9 @@ $(function(){
                 </div><!-- // .sub_title_area -->
                 <div class="top_visual_area ceo_msg">
                     <div class="inner_container"> 
-                        <%-- <img class="ceo-img" src="${pageContext.request.contextPath}/resources/user/images/ceo_message_temp.jpg" alt="내담씨앤씨 대표 한 창 엽"> --%>
-                        <img class="ceo-img" src="${pageContext.request.contextPath}/resources/user/images/best_ceo.png" alt="내담씨앤씨 대표 한 창 엽">
-                        <div class="ceo_msg-box">
+                        <img class="ceo-img" src="${pageContext.request.contextPath}/resources/user/images/ceo_message_temp.jpg" alt="내담씨앤씨 대표 한 창 엽" style="width: 730px;">                        
+<%-- 						<img class="ceo-img" src="${pageContext.request.contextPath}/resources/user/images/best_ceo.png" alt="내담씨앤씨 대표 한 창 엽" >
+ --%>                        <div class="ceo_msg-box">
                             <p class="ceo_msg-txt1">
                                 안녕하십니까? <br>
                                 내담씨앤씨 <br class="show_768">대표이사 한창엽입니다.

@@ -20,6 +20,15 @@ public class recruitDTO {
 	private String orgFileName;				//이미지 원래 이름
 	private String fileName;			//이미지 파일 이름
 	private String filePath;			//이미지 파일 경로
+	private String jobTitle;			//직무명
+	private String recruitType;			//근무형태
+	private String recruitPlace;		//근무지
+	private String jobIntro;			//직무소개
+	private String qualification;		//지원자격
+	private String contentsStatus;		//채용게시글 게시상태
+	
+	
+	
 	private int rownum;
 	
 }

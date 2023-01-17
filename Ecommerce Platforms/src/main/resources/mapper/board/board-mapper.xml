@@ -101,7 +101,7 @@
 	
 	<insert id="addPost" parameterType="post" useGeneratedKeys="true" keyProperty="postNo" keyColumn="POST_NO">
 		INSERT
-		INTO POST(POST_NO,
+		INTO post(POST_NO,
 				  POST_ASC,		
 				  BOARD_NO,
 				  POST_TITLE,
@@ -358,7 +358,7 @@
 		tb2.OPTION_POPUP,
 		tb2.BOARD_NO
 		FROM board tb1
-		LEFT OUTER JOIN BOARD_OPTION tb2
+		LEFT OUTER JOIN board_option tb2
 		ON tb1.BOARD_NO = tb2.BOARD_NO
 		WHERE tb1.board_no = #{value}		
 	</select>
@@ -370,7 +370,7 @@
 				p.post_asc,
 				p.post_title,
 				p.post_contents,
-				TO_CHAR(p.post_date, 'YYYY-MM-DD') post_date,
+				date_format(POST_DATE, '%Y-%m-%d') post_date,
 				p.post_thombnail,
 				p.post_viewcount,
 				p.post_downloadcount,
