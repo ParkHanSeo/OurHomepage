@@ -78,6 +78,18 @@ public class RecruitServiceImpl implements RecruitService {
 		System.out.println("getContentsData Service ==== " + recruitNo);
 		return recruitDao.getContentsData(recruitNo);
 	}
+
+	@Override
+	public int updateRecruit(recruitDTO recruit) {
+		System.out.println("updateRecruit Service ==== " + recruit);
+		return recruitDao.updateRecruit(recruit);
+	}
+
+	@Override
+	public int deleteRecruitContents(int curRecruitNo) {
+		System.out.println("deleteRecruitContents Service ==== " + curRecruitNo);
+		return recruitDao.deleteRecruitContents(curRecruitNo);
+	}
 	
 	
 }

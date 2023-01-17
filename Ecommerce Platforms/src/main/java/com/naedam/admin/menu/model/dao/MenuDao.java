@@ -44,9 +44,6 @@ public interface MenuDao {
 	//메뉴 카테고리 리스트2
 	public List<Menu> getMenuCategoryList2(Map<String, Object> map) throws Exception;
 	
-	//메뉴 카테고리 리스트3
-	public List<Menu> getMenuCategoryList3(Map<String, Object> map) throws Exception;	
-	
 	//메뉴 수정
 	public int updateMenu(Menu menu) throws Exception;
 	

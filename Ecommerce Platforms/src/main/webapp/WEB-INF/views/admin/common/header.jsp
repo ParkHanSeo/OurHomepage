@@ -32,10 +32,6 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/css/_all-skins.min.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/css/admin.css" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/css/jquery-ui.css" />
-	<!-- fullcalendar -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/fullcalendar/css/bootstrap-colorselector.css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/fullcalendar/css/fullcalendar.min.css" type="text/css" />
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/resources/admin/fullcalendar/css/fullcalendar.print.css" type="text/css" media="print" />
 
 
 	<!-- Google Font -->

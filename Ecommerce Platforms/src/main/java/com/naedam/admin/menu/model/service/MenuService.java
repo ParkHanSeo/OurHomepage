@@ -21,9 +21,6 @@ public interface MenuService {
 	//조건식 메뉴 리스트
 	public Map<String, Object> getMenuList2(Map<String, Object> map) throws Exception;
 	
-	//조건식 메뉴 리스트2
-	public Map<String, Object> getMenuList3(Map<String, Object> map) throws Exception;
-	
 	//리비젼 리스트
 	public Map<String, Object> getRevisionList(Map<String, Object> map) throws Exception;
 	

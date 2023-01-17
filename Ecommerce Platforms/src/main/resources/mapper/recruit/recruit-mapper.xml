@@ -23,6 +23,12 @@
 		<result column="RECRUIT_FILE_NAME_ORG" property="orgFileName"/>
 		<result column="RECRUIT_FILE_NAME" property="fileName"/>
 		<result column="RECRUIT_FILE_PATH" property="filePath"/>
+		<result column="JOB_TITLE" property="jobTitle"/>
+		<result column="RECRUIT_TYPE" property="recruitType"/>
+		<result column="RECRUIT_PLACE" property="recruitPlace"/>
+		<result column="JOB_INTRO" property="jobIntro"/>
+		<result column="QUALIFICATION" property="qualification"/>
+		<result column="CONTENTS_STATUS" property="contentsStatus"/>
 		<result column="ROWNUM" property="rownum"/>
 	</resultMap>
 
@@ -31,14 +37,18 @@
 		R.RECRUIT_NO,
 		R.RECRUIT_TITLE,
 		R.RECRUIT_VIEWCOUNT,
-		TO_CHAR(R.RECRUIT_START, 'YYYY-MM-DD') as RECRUIT_START,
-		TO_CHAR(R.RECRUIT_END, 'YYYY-MM-DD') as RECRUIT_END,
-		TO_CHAR(R.RECRUIT_DATE, 'YYYY-MM-DD') as RECRUIT_DATE,
-		R.CAREER
-		FROM RECRUIT R,(SELECT @ROWNUM := 0) TMP
-		<if test="search.searchType != null">
-			WHERE R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
-		</if>
+		date_format(R.RECRUIT_START, '%Y-%m-%d')as RECRUIT_START,
+		date_format(R.RECRUIT_END, '%Y-%m-%d')as RECRUIT_END,
+		date_format(R.RECRUIT_DATE, '%Y-%m-%d')as RECRUIT_DATE,
+		R.CAREER,
+		R.CONTENTS_STATUS
+		FROM recruit R,(SELECT @ROWNUM := 0) TMP
+		<where>
+			<if test="search.searchType != null">
+				R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
+			</if>
+			AND RECRUIT_DLE_STATUS = 'N'
+		</where>
 		ORDER BY RECRUIT_NO DESC
 	</select>
 
@@ -53,23 +63,25 @@
 		RECRUIT_END,
 		RECRUIT_DATE,
 		CAREER
-		FROM RECRUIT
-		<if test="search.searchType != null">
-			WHERE R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
-		</if>
+		FROM recruit
+		<where>
+			<if test="search.searchType != null">
+				R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
+			</if>
+			AND RECRUIT_DLE_STATUS = 'N'
+		</where>
 		ORDER BY RECRUIT_NO ASC)countTable
 	</select>
 
 	<update id="deleteRecruit">
-		UPDATE RECRUIT
+		UPDATE recruit
 		SET RECRUIT_DLE_STATUS = 'Y'
 		WHERE RECRUIT_NO = #{recruitNum}
 	</update>
 
-	<insert id="insertRecruit">
+	<insert id="insertRecruit" parameterType="com.naedam.admin.recruit.model.vo.recruitDTO">
 		INSERT INTO recruit
 		(
-		RECRUIT_NO,
 		RECRUIT_TITLE,
 		RECRUIT_VIEWCOUNT,
 		RECRUIT_START,
@@ -78,11 +90,15 @@
 		CAREER,
 		RECRUIT_FILE_NAME_ORG, 
 		RECRUIT_FILE_NAME, 
-		RECRUIT_FILE_PATH
+		RECRUIT_FILE_PATH,
+		JOB_TITLE,
+		RECRUIT_TYPE,
+		RECRUIT_PLACE,
+		JOB_INTRO,
+		QUALIFICATION
 		)
 		VALUES
 		(
-		NEXTVAL(recruit_seq),
 		#{recruitTitle},
 		0,
 		#{recruitStart},
@@ -91,33 +107,64 @@
 		#{career}, 
 		#{orgFileName}, 
 		#{fileName}, 
-		#{filePath}
+		#{filePath},
+		#{jobTitle},
+		#{recruitType},
+		#{recruitPlace},
+		#{jobIntro},
+		#{qualification}
 		)
 		
 		<selectKey keyProperty="recruitNo" order="AFTER" resultType="int">
-			SELECT LASTVAL(recruit_seq) from dual
+			SELECT MAX(RECRUIT_NO) from recruit
 		</selectKey>
 		
 	</insert>
 
 	<insert id="insertRecruitContents" parameterType="com.naedam.admin.recruit.model.vo.recruitContentsDTO">
-		INSERT INTO recruit_Contents(RECRUIT_NO, RECRUIT_CON_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS)
+		INSERT INTO recruit_contents(RECRUIT_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS)
 		VALUES
-		(#{recruitNo.recruitNo}, NEXTVAL(recruit_contents_seq), #{recruitSubTitle}, #{recruitContents}) 
+		(#{recruitNo.recruitNo}, #{recruitSubTitle}, #{recruitContents}) 
 	</insert>
 	
 	<select id="getRecruitData" resultMap="recruitResultMap">
 		SELECT *
-		  FROM RECRUIT
+		  FROM recruit
 		 WHERE RECRUIT_NO = #{recruitNo}
 	</select>
 	
 	<select id="getContentsData" resultMap="contentsResultMap">
 		SELECT *
-		  FROM RECRUIT_CONTENTS RC
-		  JOIN RECRUIT R ON(RC.RECRUIT_NO = R.RECRUIT_NO)
+		  FROM recruit_contents RC
+		  JOIN recruit R ON(RC.RECRUIT_NO = R.RECRUIT_NO)
 		 WHERE RC.RECRUIT_NO = #{recruitNo}
 	</select>
+	
+	<update id="updateRecruit">
+		UPDATE recruit
+		SET 
+		RECRUIT_TITLE = #{recruitTitle},
+		RECRUIT_START = #{recruitStart},
+		RECRUIT_END = #{recruitEnd},
+		CAREER = #{career},
+		JOB_TITLE = #{jobTitle},
+		RECRUIT_TYPE = #{recruitType},
+		RECRUIT_PLACE = #{recruitPlace},
+		JOB_INTRO = #{jobIntro},
+		<if test="orgFileName != null">
+			RECRUIT_FILE_NAME_ORG = #{orgFileName}, 
+			RECRUIT_FILE_NAME = #{fileName}, 
+			RECRUIT_FILE_PATH = #{filePath},
+		</if>
+		QUALIFICATION = #{qualification}
+		WHERE RECRUIT_NO = #{recruitNo}
+	</update>
+	
+	<delete id="deleteRecruitContents">
+		DELETE 
+		  FROM recruit_contents 
+		 WHERE RECRUIT_NO = #{curRecruitNo} 
+	</delete>
 
 </mapper>
 
