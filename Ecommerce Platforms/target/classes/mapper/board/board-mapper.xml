@@ -404,7 +404,7 @@
 				p.post_asc,
 				p.post_title,
 				p.post_contents,
-				TO_CHAR(p.post_date, 'YYYY-MM-DD') post_date,
+				date_format(p.POST_DATE, '%Y-%m-%d') post_date,
 				p.post_thombnail,
 				p.post_viewcount,
 				p.post_downloadcount,

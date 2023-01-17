@@ -46,6 +46,9 @@ public interface BoardService {
 	//사용자 게시글 목록
 	public List<Post> getUserPostList(Map<String, Object> map) throws Exception;
 	
+	//사용자 게시글 카운트
+	public int getUserGetTotalCount(Map<String, Object> map) throws Exception;
+	
 	//게시판의 데이터
 	public Board getBoardData(int boardNo) throws Exception;
 	

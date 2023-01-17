@@ -81,12 +81,12 @@ public class NoticeController {
 		map.put("boardNo", boardNo);
 		map.put("limit", limit);
 		map.put("offset", offset);
-		
+		Map<String, Object> resultMap = new HashMap<String, Object>();
 		List<Post> postlist = boardService.getUserPostList(map);
-		Map<String, Object> resultMap = boardService.getPostList(map);
-		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
+		int totalPostListCount = boardService.getUserGetTotalCount(map);
 		// pagebar
 		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		resultMap.put("list", postlist);
 		resultMap.put("pagebar", pagebar);
 		return resultMap;
 	}

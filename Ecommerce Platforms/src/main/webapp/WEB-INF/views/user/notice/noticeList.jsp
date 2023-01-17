@@ -39,14 +39,14 @@
 					display = '<li id ="postList">'
 							+ 	'<div class="subj_box">'
 							+ 	   '<p class="common-text_txt2">'
-							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].post_no+'">'
-							+			 JSONData.list[i].post_title
+							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].postNo+'">'
+							+			 JSONData.list[i].postTitle
 							+			 '<br />'
 							+		  '</a>'
 							+		'</p>'
 							+	 '</div>'
 							+	 '<div class="date_box center-left">'
-							+		 '<p class="common-text_txt4">'+JSONData.list[i].post_date+'</p>'
+							+		 '<p class="common-text_txt4">'+JSONData.list[i].postDate+'</p>'
 							+	 '</div>'
 							+ '</li>';
 					$(".common-text_list_area .common-text_list").append(display);
@@ -176,13 +176,13 @@ $(function(){
 										<li id="postList">
 											<div class="subj_box">
 												<p class="common-text_txt2">
-													<a href="/user/notice/getNoticeDetail/${post.post_no}">
-														${post.post_title}
+													<a href="/user/notice/getNoticeDetail/${post.postNo}">
+														${post.postTitle}
 													</a>
 												</p>
 											</div>
 											<div class="date_box center-left">
-												<p class="common-text_txt4">${post.post_date}</p>
+												<p class="common-text_txt4">${post.postDate}</p>
 											</div>
 										</li>
 									</c:forEach>
