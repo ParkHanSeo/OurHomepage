@@ -431,6 +431,7 @@
 .division_wrapper {
   /* background-image: url(../images/business_top.jpg); */
   background-image: url(../images/business_ex2.jpg);
+  background-repeat: no-repeat;
 }
 @media all and (max-width: 1280px) {
   .common-layout_4 > .items {
