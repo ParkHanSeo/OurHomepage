@@ -33,10 +33,13 @@
 		  		  	 	 data : { postArr : postArr,
 		  		  	 		  	},
 		    		 	 success : function(result){
-		    		 		alert(result.message)
 		   			  		alert("게시글이 삭제 되었습니다.")
 		   			  		location.href = "/admin/recruitList";
-		  		  	 	 }
+		  		  	 	 },
+		  		  	 	 error : function(result){
+			   			  		alert("게시글 삭제 실패.")
+			   			  		location.href = "/admin/recruitList";
+			  		  	 	 }
 			  		});		
 				}
 			})	
@@ -117,7 +120,7 @@
 	            <div class="box">
 	                <div class="box-body">
 	                    <label style="margin-top:5px;">총 ${pageCount} 건</label>
-	                    <form name="searchForm" method="post" action="/admin/board/recruitList?${_csrf.parameterName}=${_csrf.token}">
+	                    <form name="searchForm" method="post" action="/admin/recruitList?${_csrf.parameterName}=${_csrf.token}">
 		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
 		                    	<%-- <input type="hidden" name="boardNo" value="${boardNo}"> --%>
 		                    	<input type="hidden" name="cPage">
@@ -153,7 +156,6 @@
 				                        <td style="width:140px;">시작일</td>
 				                        <td style="width:140px;">마감일</td>
 				                        <td style="width:140px;">등록일</td>
-				                        <td style="width:80px;">조회수</td>
 				                        <td style="width:90px;">상태</td>
 				                        <td style="width:80px;">명령</td>
 				                    </tr>
@@ -172,7 +174,6 @@
 						                        <td>${post.recruitStart}</td>                        
 						                        <td>${post.recruitEnd}</td>
 						               			<td>${post.recruitDate}</td>        
-						               			<td>${post.recruitViewcount}</td>
 						               			<td>
 							               			<c:if test="${post.contentsStatus == 'Y'}">채용중</c:if>
 							               			<c:if test="${post.contentsStatus == 'N'}">마감</c:if>
@@ -222,6 +223,13 @@ function addData() {
     $("#recruitPlace").val("");
     $("#jobIntro").val("");
     $("#qualification").val("");
+    
+    let managerComment = `E-mail:
+Tel:           
+FAX:
+    `
+    
+    $("#recruitManager").val(managerComment);
 };
 </script>
 	

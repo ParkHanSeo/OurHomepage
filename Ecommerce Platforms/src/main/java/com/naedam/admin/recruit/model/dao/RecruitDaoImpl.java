@@ -1,6 +1,5 @@
 package com.naedam.admin.recruit.model.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.naedam.admin.board.model.vo.Post;
-import com.naedam.admin.recruit.model.vo.SearchDTO;
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
 import com.naedam.admin.recruit.model.vo.recruitDTO;
 
@@ -29,14 +27,16 @@ public class RecruitDaoImpl implements RecruitDao {
 	}
 
 	@Override
-	public List<Post> getRecruitList(Map<String, Object> map, int offset, int limit) throws Exception {
+	public List<Post> getRecruitList(String search, int offset, int limit) throws Exception {
+		System.out.println("==========recruitList dao =================");
+		System.out.println("search>>>" + search);
 		RowBounds rowBounds = new RowBounds(offset, limit);
-		return sqlSession.selectList("recruit.getRecruitList", map, rowBounds);
+		return sqlSession.selectList("recruit.getRecruitList", search, rowBounds);
 	}
 	
 	@Override
-	public Object getTotalCount(Map<String, Object> map) {
-		return sqlSession.selectOne("recruit.getTotalCount", map);
+	public Object getTotalCount(String search) {
+		return sqlSession.selectOne("recruit.getTotalCount", search);
 	}
 
 	@Override

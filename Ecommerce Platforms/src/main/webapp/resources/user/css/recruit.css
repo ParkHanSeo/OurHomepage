@@ -160,6 +160,48 @@
 .process-flow.size-02 .flow_list {
   max-width: none;
 }
+
+/* 채용안내 */
+.recruit_search_imo{
+    background-image: url(../images/common/magnifying-glass-solid.jpg);
+}
+
+.recruit-search_box_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.application_btn {
+	border-color: #3E6D9C;
+    background-color: #3E6D9C;
+    color: #fff;
+    
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+}
+
+.application_btn_area a {
+	 text-decoration: none;
+	 color: #fff;
+}
+
+
+#postList a{
+	color: 	dimgray;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
 @media (hover: hover) {
   .process_btn_area .common-btn.is-white2:hover {
     border-color: rgba(204, 204, 204, 0.5);
@@ -341,3 +383,9 @@
 
 @media all and (max-width: 375px) {
 }
+
+
+
+
+
+

@@ -31,8 +31,9 @@
 	
 	function addRecruit(){
 
-			if($("#title").val().length == 0){
-				alert("제목은 필수 항목입니다.");
+			if($("#title").val().length == 0 || $("#jobTitle").val().length == 0 || $("#recruitType").val().length == 0 || $("#career").val().length == 0
+					|| $("#recruitPlace").val().length == 0 || $("#jobIntro").val().length == 0 || $("#recruitManager").val().length == 0 || $("#qualification").val().length == 0){
+				alert("필수항목을 모두 입력해주세요.");
 				return;
 			}
 			if($("#startDay").val() == null || $("#startDay").val() == ''){
@@ -57,17 +58,6 @@
 			$("textarea[name='contents']").each(function(){
 				contents.push($(this).val());
 			})
-			
-			for(let i = 0; i < subTitle.length; i++){
-				if(subTitle[i] =! null && contents[i] == null){
-					alert(i + "번째 소제목의 내용을 입력해 주세요.");
-					return;
-				}
-				else if(contents[i] =! null){
-					alert(i + "번째 내용의 소제목을 입력해 주세요.");
-					return;
-				}
-			}
 
 			console.log("subTitle >>" + subTitle);
 			console.log("contents >>" + contents);
@@ -88,6 +78,7 @@
 					"recruitPlace": $("#recruitPlace").val(),
 					"jobIntro": $("#jobIntro").val(),
 					"qualification": $("#qualification").val(),
+					"recruitManager": $("#recruitManager").val(),
 					"subTitle": subTitle,
 					"contents": contents		
 			}
@@ -172,7 +163,17 @@
 										id="endDay" class="form-control input-sm" style="width: 50%;"></td>
 								</tr>
 								<tr>
-									<td class="menu">경력</td>
+									<td class="menu">직무명<span style="color: red;">*</span></td>
+									<td align="left"><input type="text" name="jobTitle"
+										id="jobTitle" class="form-control input-sm"></td>
+								</tr>
+								<tr>
+									<td class="menu">근무형태<span style="color: red;">*</span></td>
+									<td align="left"><input type="text" name="recruitType"
+										id="recruitType" class="form-control input-sm"></td>
+								</tr>
+								<tr>
+									<td class="menu">경력<span style="color: red;">*</span></td>
 									<td align="left"><select name="career" id="career"
 										class="form-control input-sm" style="width: 50%;">
 											<option value="경력무관" selected="selected">경력무관</option>
@@ -180,38 +181,32 @@
 											<option value="경력">경력</option>
 									</select></td>
 								</tr>
-								<!-- 230116 내용추가 -->
 								<tr>
-									<td class="menu">직무명</td>
-									<td align="left"><input type="text" name="jobTitle"
-										id="jobTitle" class="form-control input-sm"></td>
-								</tr>
-								<tr>
-									<td class="menu">근무형태</td>
-									<td align="left"><input type="text" name="recruitType"
-										id="recruitType" class="form-control input-sm"></td>
-								</tr>
-								<tr>
-									<td class="menu">근무지</td>
+									<td class="menu">근무지<span style="color: red;">*</span></td>
 									<td align="left"><input type="text" name="recruitPlace"
 										id="recruitPlace" class="form-control input-sm"></td>
 								</tr>
-								
 								<tr>
-									<td class="menu">직무소개</td>
+									<td class="menu">직무소개<span style="color: red;">*</span></td>
 									<td align="left">
 										<textarea name="jobIntro" id="jobIntro"
 												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
 									</td>
 								</tr>
 								<tr>
-									<td class="menu">지원자격</td>
+									<td class="menu">담당자<span style="color: red;">*</span></td>
+									<td align="left">
+										<textarea name="recruitManager" id="recruitManager"
+												rows="4" cols="80"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="menu">지원자격<span style="color: red;">*</span></td>
 									<td align="left">
 										<textarea name="qualification" id="qualification"
 												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
 									</td>
 								</tr>
-								<!-- ---- -->
 								<tr>
 									<td class="menu">파일</td>
 									<td align="left">

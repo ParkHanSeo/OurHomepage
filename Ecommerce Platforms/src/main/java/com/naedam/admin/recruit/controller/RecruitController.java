@@ -43,18 +43,23 @@ public class RecruitController {
 	// 채용 게시글 조회
 	@RequestMapping("recruitList")
 	public String recruitList(Model model, @RequestParam(defaultValue = "1") int cPage, HttpServletRequest request,
-			@ModelAttribute("search") SearchDTO search) throws Exception {
+			@RequestParam(value= "searchKeyword",required = false) String searchKeyword) throws Exception {
 
+		System.out.println("==========recruitList controller =================");
+		System.out.println("searchKeyword >" +searchKeyword);
+		
 		// 게시글 조회 한도
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
 
 		// 검색
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		/*
+		 * Map<String, Object> map = new HashMap<String, Object>(); map.put("search",
+		 * search);
+		 */
 
 		// 게시글 리스트
-		Map<String, Object> resultMap = recruitService.getRecruitList(map, limit, offset);
+		Map<String, Object> resultMap = recruitService.getRecruitList(searchKeyword, limit, offset);
 
 		// 게시글 총 갯수
 		int totalRecruitListCount = Integer.parseInt(resultMap.get("totalCount").toString());
@@ -74,21 +79,23 @@ public class RecruitController {
 	}
 
 	@PostMapping("deleteRecruit")
-	public String deleteRecruit(@RequestParam(value = "postArr[]") List<Integer> postArr, Model model) {
+	@ResponseBody
+	public String deleteRecruit(@RequestParam(value = "postArr[]") List<Integer> postArr) {
 
 		int recruitNum;
 		int deleteResult = 0;
 
 		for (int i = 0; i < postArr.size(); i++) {
 			recruitNum = postArr.get(i);
+			System.out.println("recruitNum" + i + ">>>>>" + recruitNum);
 			deleteResult = +recruitService.deleteRecruit(recruitNum);
 		}
 		;
 
 		if (deleteResult == postArr.size()) {
-			model.addAttribute("message", "삭제 성공!");
+			System.out.println("게시글이 삭제 되었습니다.");
 		} else {
-			model.addAttribute("message", "삭제 실패!" + deleteResult);
+			System.out.println("게시글이 삭제 되었습니다." + deleteResult);
 		}
 
 		return null;
@@ -116,6 +123,7 @@ public class RecruitController {
 		recruit.setRecruitPlace((String)param.get("recruitPlace"));
 		recruit.setJobIntro((String)param.get("jobIntro"));
 		recruit.setQualification((String)param.get("qualification"));
+		recruit.setRecruitManager((String)param.get("recruitManager"));
 		
 		System.out.println("===recruitDTO recruit==== : " + recruit);
 		
@@ -235,6 +243,7 @@ public class RecruitController {
 		recruit.setRecruitPlace((String)param.get("recruitPlace"));
 		recruit.setJobIntro((String)param.get("jobIntro"));
 		recruit.setQualification((String)param.get("qualification"));
+		recruit.setRecruitManager((String)param.get("recruitManager"));
 		
 		System.out.println("orgFileName>>>>>>>>>>" + param.get("orgFileName"));
 		
@@ -261,6 +270,7 @@ public class RecruitController {
 			//파일 저장
 			File saveFile = new File(filePath,fileName);
 			fileList.get(0).transferTo(saveFile);
+			System.out.println("saveFile ============" + saveFile);
 
 			System.out.println("fileName >> " + fileName);
 			System.out.println("filePath >> " + filePath);
