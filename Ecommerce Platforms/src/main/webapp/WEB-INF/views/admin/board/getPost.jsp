@@ -92,16 +92,6 @@
 		$("form[name='getPostForm']").attr("method", "POST").attr("action", "/admin/board/postProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
 	
-	function fncDeleteThombnail(){
-		if(!confirm("정말 삭제 하시겠습니까?")){
-			alert("취소 되었습니다.");
-			return;
-		}else{
-			alert("해당 파일이 삭제 되었습니다.")
-			$("form[name='getPostForm']").attr("method", "POST").attr("action", "/admin/board/deleteThombnail?${_csrf.parameterName}=${_csrf.token}").submit();	
-		}
-	}
-	
 	function fncUpdatePost(){
 		if("${board2.option.optionMass}" != "y"){
 			var postFile = $("input[id='getPostFile']").length;
@@ -152,21 +142,6 @@
 		alert("파일이 삭제 되었습니다.")
   		$("span[id='"+fileNo+"']").remove();
 		}
-	}
-	
-	function fileDownload(postNo){
-		$.ajax({
-			url : "/admin/board/json/postFileCount/"+postNo,
-			method : "GET",
-			dataType : "JSON",	
-			headers : {
-				"Accept" : "application/json",
-				"Content-Type" : "application/json"	 						
-			} ,
-			success : function(JSONData, status){
-			
-			}
-		})
 	}
 	
 	function fncAddComment(){
@@ -237,25 +212,9 @@
 				success : function(JSONData, status){
 					$("input[name='postNo']").val(JSONData.postNo);
 					$("input[id='commentPostNo']").val(JSONData.postNo);
-					$("input[name='postOrd']").val(JSONData.postOrd);
-					$("input[name='postLayer']").val(JSONData.postLayer);
 					$("input[name='postAsc']").val(JSONData.postAsc);
 					$("input[name='postOriginNo']").val(JSONData.postOriginNo);
 					CKEDITOR.instances.editor1.setData(JSONData.postContents)
-					if(JSONData.postThombnail != null){
-						var thombnail = "'${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/board"+JSONData.postThombnail+"'"
-						if(JSONData.postThombnail != null && JSONData.postThombnail != ''){
-							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
-										+ '<button type="button" onclick="window.open('+thombnail+')" class="btn btn-success btn-xs">보기</button>'
-										+ '<button type="button" onclick="fncDeleteThombnail()" name="deleteThombnail" value="'+JSONData.postNo+'" class="btn btn-danger btn-xs">삭제</button>'
-										+ '</span>';
-						$("td[name='thombnailTd']").append(display);
-						}else{
-							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
-								+ '</span>';	
-						}
-					}
-					
 					$("#getPostTitle").val(JSONData.postTitle);
 					$("#getThombnailName").val(JSONData.postThombnail);
 					$("#getPostName").val(JSONData.postFile);
@@ -287,20 +246,6 @@
 			})
 			
 			$.ajax({
-				url : "/admin/board/json/postViewCount/"+postNo,
-				method : "GET",
-				dataType : "JSON",	
-				headers : {
-					"Accept" : "application/json",
-					"Content-Type" : "application/json"	 						
-				} ,
-				success : function(JSONData, status){
-					
-				}
-				
-			})
-			
-			$.ajax({
 				url : "/admin/board/json/getPostFile/"+postNo,
 				method : "GET",
 				dataType : "JSON",	
@@ -312,8 +257,8 @@
 					for(var i = 0; i < JSONData.length; i++){
 						var display = "";
 						display += '<span id="'+JSONData[i].fileNo+'" name="getFile" style="float:left; position:relative; text-align:center; padding-right:15px;">'
-								+  '<a href="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/board'+JSONData[i].fileName+'" download="" value="'+postNo+'" name="fileDownload">'
-								+  '<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/board'+JSONData[i].fileName+'" style="width:80px; cursor:pointer;" onclick="fileDownload('+postNo+')">'
+								+  '<a href="${pageContext.request.contextPath}/resources/user/downloadFile/'+JSONData[i].fileName+'" download="" value="'+postNo+'" name="fileDownload">'
+								+  '<img src="${pageContext.request.contextPath}/resources/user/downloadFile/'+JSONData[i].fileName+'" style="width:80px; cursor:pointer;">'
 								+  '</a>'
 								+  '<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/delete.png" onclick="fncDeleteFile('+JSONData[i].fileNo+')" name="file'+JSONData[i].fileNo+'" style="width:30px;position: absolute;left:43px; top:3px; z-index:10; cursor:pointer;">'
 								+  '</span>';
@@ -330,8 +275,6 @@
         <div class="modal-content">
             <form name="getPostForm" method="post" enctype="multipart/form-data">
 	            <input type="hidden" name="postNo" id="getPostNo" >
-	            <input type="hidden" name="postOrd" id="getPostOrd" >
-	            <input type="hidden" name="postLayer" id="getPostLayer" >
 	            <input type="hidden" name="postAsc" id="getPostAsc" >
 	            <input type="hidden" name="postOriginNo" id="getPostOriginNo" >
 	            <input type="hidden" name="mode" id="mode" value="update">
@@ -390,12 +333,6 @@
 					            </tr>
 				            </c:if>            
 				            <tr>
-				                <td class="menu">썸네일 파일</td>
-				                <td align="left" name="thombnailTd">
-				                	<input type="file" name="ThombnailName" id="getThombnailName" class="form-control input-sm" style="width:80%; display:inline;">
-				                </td>
-				            </tr>
-				            <tr>
 				                <td class="menu">파일</td>
 				                <td align="left">
 					                <c:if test="${board2.option.optionMass eq null}">
@@ -404,7 +341,7 @@
 						                    <button type="button" class="btn btn-primary btn-xs" onclick="fucAddFile();"><span class="glyphicon glyphicon-plus"></span> 파일추가</button><br>
 						                </p>
 					                    <div id="list_file" name="listFile">
-					                    	<input type="file" name="postName" id="postName" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;" >
+					                    	
 					                    </div>
 					                </c:if>
 					                <c:if test="${board2.option.optionMass eq 'y'}">

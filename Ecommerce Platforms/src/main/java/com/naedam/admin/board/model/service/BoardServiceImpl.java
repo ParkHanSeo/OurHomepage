@@ -66,13 +66,9 @@ public class BoardServiceImpl implements BoardService {
 			
 			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
 			MultipartFile[] postName = (MultipartFile[]) map.get("postName");
-			MultipartFile ThombnailName = (MultipartFile) map.get("ThombnailName");
-			File file = new File(map.get("filePath")+ThombnailName.getOriginalFilename());
 			
 			//게시글 등록
 			if("insert".equals(map.get("mode"))) {
-				post.setPostThombnail(ThombnailName.getOriginalFilename());
-				ThombnailName.transferTo(file);
 				boardDao.addPost(post);
 				for(int i = 0; i < postName.length; i++) {
 					File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
@@ -83,34 +79,20 @@ public class BoardServiceImpl implements BoardService {
 				}				
 			//게시글 수정
 			}else if("update".equals(map.get("mode"))) {
-				if(ThombnailName.isEmpty() == false) {
-					post.setPostThombnail(ThombnailName.getOriginalFilename());
-					ThombnailName.transferTo(file);
-				}else if(ThombnailName.isEmpty() == true) {
-					Post postData = boardDao.getPostData(post.getPostNo());
-					post.setPostThombnail(postData.getPostThombnail());
-					ThombnailName.transferTo(file);
+				if(postName.length > 0) {
+					for(int i = 0; i < postName.length; i++) {
+						File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
+						boardFile.setFilePost(post);
+						boardFile.setFileName(postName[i].getOriginalFilename());
+						postName[i].transferTo(file2);
+						boardDao.addFile(boardFile);				
+					}
 				}
-				boardDao.updatePost(post);
-			
+					boardDao.updatePost(post);
 			//게시글 답변 등록
 			}else if("answer".equals(map.get("mode"))) {
-				
-				//기존의 썸네일 파일이 있는지 체크 후 업로드 실행
-				//썸네일이 없을경우 파일업로드 실행				
-				if(ThombnailName.isEmpty() == false) {
-					post.setPostThombnail(ThombnailName.getOriginalFilename());
-					ThombnailName.transferTo(file);
-				//썸네일이 있을경우 기존의 데이터를 가져와 다시 값을 넣습니다.					
-				}else if(ThombnailName.isEmpty() == true) {
-					Post postData = boardDao.getPostData(post.getPostNo());
-					post.setPostThombnail(postData.getPostThombnail());
-					ThombnailName.transferTo(file);
-				}
 				//기존에 있던 게시글의 데이터를 가지고 와서 답변의 계층형 쿼리작업을 위해 데이터를 넣어 답변을 등록합니다.
 				Post post2 = boardDao.getPostData(post.getPostNo());
-				post.setPostOrd(post2.getPostAsc());
-				post.setPostLayer(post2.getPostLayer());
 				boardDao.addAnswerPost(post);
 			}
 		//게시글 선택삭제
@@ -285,6 +267,7 @@ public class BoardServiceImpl implements BoardService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		Post post =	boardDao.getPostData((Integer) map.get("postNo"));
 		resultMap.put("post", post);
+		resultMap.put("boardFile", boardDao.getPostFile(post.getPostNo()));
 		resultMap.put("board", boardDao.getBoardData(post.getPostBoard().getBoardNo()));
 		resultMap.put("postPrev", boardDao.getPrevPost((Integer) map.get("postNo")));
 		resultMap.put("postNext", boardDao.getNextPost((Integer) map.get("postNo")));

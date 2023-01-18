@@ -32,11 +32,10 @@ $(function(){
 });
 
 </script>
-        <section id="container" class="is-movie">
+        <section id="container" class="is-movie" style="padding-top: 0;">
             <div id="contents">
                 <div class="business-wrapper division_wrapper">
-                    <%-- <img class="business_top_img" src="${pageContext.request.contextPath}/resources/user/images/business_top.jpg"> --%>
-                    <div class="inner_container">
+                    <div class="division_container">
                         <div class="visual_txt_area com_intro">
                             <p class="txt1">
                             	혁신 그리고 신뢰와 열정으로

@@ -210,60 +210,22 @@
 				                        <td>제목</td>
 				                        <td style="width:100px;">작성자</td>
 				                        <td style="width:140px;">등록일</td>
-				                        <td style="width:80px;">조회수</td>
 				                        <c:if test="${board2.option.optionOrder eq 'y'}">
 					                        <td style="width:60px;">
 					                            <i onclick="fncDown();" name="up" class="fa fa-fw fa-arrow-circle-down cp" style="cursor:pointer;"></i>
 					                            <i onclick="fncUp();" class="fa fa-fw fa-arrow-circle-up cp" style="cursor:pointer;"></i>
 					                        </td>
 				                        </c:if>
-				                        <td style="width:100px;">다운로드수</td>
 				                        <td style="width:80px;">명령</td>
 				                    </tr>
 			                    </thead>
 			                    <tbody>
-				                    <c:forEach var="post" items="${list}">
-					                    <c:if test="${post.post_notice eq '1'}">
-						                    <tr>
-						                        <td></td>
-						                        <td>공지</td>          
-						                   		<td align="left">
-						                   			<c:if test="${nowDate eq post.post_date}">
-						                   				<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/new.png" width="15">
-						                   			</c:if>           
-							                		<c:if test="${post.post_layer > 0}">
-							                			&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/right.png" width="15">
-							                			&nbsp;&nbsp;
-							                		</c:if>                   				     				
-						                   			${post.post_title}
-						                   			<c:if test="${post.post_thombnail != null && post.post_thombnail != ''}">
-						                   				<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/disk.png" width="15">
-						                   			</c:if>
-						                   		</td>        
-						                        <td>${post.member_name}</td>            
-						                        <td>${post.post_date}</td>                        
-						                        <td>${post.post_viewcount}</td>
-						               			<c:if test="${board2.option.optionOrder eq 'y'}">
-						               				<td>
-						               					<input type="radio" name="order_code" value="${post.post_asc}" chack="">
-						               					<input type="hidden" name="originNo" value="${post.post_origin_no}">
-						               				</td>
-						               			</c:if>                        
-						                        <td>${post.post_downloadcount}</td>
-						                        <td>
-						                			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
-						                			<input type="hidden" class="post_member_no" value="${post.member_no}"></button>
-						                   		</td>
-						                    </tr>
-					                    </c:if>
-				                    </c:forEach>
 				                    <c:if test="${empty list}">
 					                    <tr>
 					                   		<td colspan="10"><br>등록된 자료가 없습니다.<br><br></td>
 					                   	</tr>
 				                    </c:if>
 				                   	<c:forEach var="post" items="${list}">
-					                	<c:if test="${post.post_notice eq '0'}">
 					                   		<c:set var="i" value="${ i+1 }" />
 					                   		<tr>
 					                        	<td>
@@ -282,35 +244,25 @@
 					                   			<td align="left">
 					                   				<c:if test="${nowDate eq post.post_date}">
 					                   					<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/new.png" width="15">
-					                   				</c:if>           
-						                			<c:if test="${post.post_layer > 0}">
-						                				&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/right.png" width="15">
-						                				&nbsp;&nbsp;
-						                			</c:if>                   				     				
+					                   				</c:if>                             				     				
 					                   				${post.post_title}
-					                   				<c:if test="${post.post_thombnail != null && post.post_thombnail != ''}">
-					                   					<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/disk.png" width="15">
-					                   				</c:if>
 					                   			</td>
 					                   			<td>${post.member_name}</td>
 					                   			<td>
 						                        	${post.post_date}
 						                        </td>
-					                   			<td>${post.post_viewcount}</td>
 					                   			<c:if test="${board2.option.optionOrder eq 'y'}">
 						                   			<td>
 						                   				<input type="radio" name="order_code" value="${post.post_asc}" chack="">
 						                   				<input type="hidden" name="originNo" value="${post.post_origin_no}">
 						                   			</td>
 					                   			</c:if>
-					                   			<td>${post.post_downloadcount}</td>
 					                   			<td>
 						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
 						                   			<input type="hidden" class="post_member_no" value="${post.member_no}"></button>
 						                   			</button>
 					                   			</td>
 					                   		</tr>
-					                      </c:if>
 				                   	 </c:forEach>                  	                   
 			      				</tbody>
 		      				</form>

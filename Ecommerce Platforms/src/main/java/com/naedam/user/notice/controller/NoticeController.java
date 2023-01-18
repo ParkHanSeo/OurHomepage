@@ -99,6 +99,7 @@ public class NoticeController {
 		Map<String, Object> resultMap = boardService.getNoticeDetail(map);
 		mv.addObject("post",resultMap.get("post"));
 		mv.addObject("board",resultMap.get("board"));
+		mv.addObject("boardFile", resultMap.get("boardFile"));
 		mv.addObject("postPrev",resultMap.get("postPrev"));
 		mv.addObject("postNext",resultMap.get("postNext"));
 		mv.setViewName("user/notice/noticeDetail");

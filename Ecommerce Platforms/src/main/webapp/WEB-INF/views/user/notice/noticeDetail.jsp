@@ -51,6 +51,18 @@
 										<span>${post.postTitle}</span>
 									</h2>
 								</div>
+								<div class="notice_file_area">
+									<c:forEach var="file" items="${boardFile}" varStatus="status" >
+										<ul class="noticeDetail_file">
+											<li>
+												<a href="/resources/user/downloadFile/${file.fileName}" download value="6012" name="fileDownload"> 
+													<i class="file_icon"></i>
+													${file.fileName}
+												</a>
+											</li>
+										</ul>
+									</c:forEach>
+								</div>
 								<div class="detail_body">
 									<div id="bodyContent">
 										${post.postContents}

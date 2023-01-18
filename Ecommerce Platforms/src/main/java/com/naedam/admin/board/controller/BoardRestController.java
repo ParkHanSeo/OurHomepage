@@ -68,7 +68,7 @@ public class BoardRestController {
 	public String plupload(@RequestParam("file") MultipartFile file, HttpServletRequest request)throws Exception{
 		System.out.println("/json/plupload 시작");
 		String a = file.getOriginalFilename();
-		String filePath = request.getServletContext().getRealPath("resources/imgs/imageBoard/board");
+		String filePath = request.getServletContext().getRealPath("resources/admin/imgs/imageBoard/board");
 		File file2 = new File(filePath+file.getOriginalFilename());
 		file.transferTo(file2);
 		return a;
@@ -159,30 +159,6 @@ public class BoardRestController {
 		System.out.println("json/getCommentList 시작");
 		List<BoardComment> boardComment = boardService.getCommentList(postNo);
 		return boardComment;
-	}
-	
-	/***
-	 * 게시판 리스트에서 게시글을 조회한 수를 확인하기 위한 메소드
-	 * @param postNo
-	 * @throws Exception
-	 */
-	@GetMapping(value="json/postViewCount/{postNo}")
-	public void postViewCount(@PathVariable("postNo") int postNo) throws Exception{
-		Post post = boardService.getPostData(postNo);
-		post.setPostViewCount(post.getPostViewCount()+1);
-		boardService.postViewCount(post);
-	}
-	
-	/***
-	 * 게시판 리스트에서 다운로드받은 수 조회
-	 * @param postNo
-	 * @throws Exception
-	 */
-	@GetMapping(value="json/postFileCount/{postNo}")
-	public void postFileCount(@PathVariable("postNo") int postNo) throws Exception{
-		Post post = boardService.getPostData(postNo);
-		post.setPostDownloadCount(post.getPostDownloadCount()+1);
-		boardService.postFileCount(post);
 	}
 	
 	/***

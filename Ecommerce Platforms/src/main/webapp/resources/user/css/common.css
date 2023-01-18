@@ -204,8 +204,8 @@ body.overflow::-webkit-scrollbar {
   top: 90px;
   overflow: hidden;
   transition: opacity 0.2s ease;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  /* border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; */
   visibility: hidden;
   opacity: 0;
   min-height: 85px;
@@ -898,8 +898,7 @@ body.overflow::-webkit-scrollbar {
   position: relative;
 }
 .contents_top {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  padding-top: 5%;
 }
 img {
   max-width: 100%;
@@ -1342,6 +1341,10 @@ img {
   margin-right: 16px;
   border-color: #fff;
 }
+.layout_section_outer.sub-main.type08.last_section {
+  padding-bottom: 100px;
+}
+
 @media (hover: hover) {
   .top_visual_area .top_btn_area .common-btn.is-white:hover {
     border-color: rgba(255, 255, 255, 0.5);
