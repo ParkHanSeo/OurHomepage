@@ -38,6 +38,9 @@ public interface MenuDao {
 	//헤더 리스트
 	public List<Head> getHeadList(Map<String, Object> map) throws Exception;
 	
+	//사용자 헤더 리스트
+	public List<Head> getUserHeadList(Map<String, Object> map) throws Exception;
+	
 	//메뉴 카테고리 리스트
 	public List<Menu> getMenuCategoryList(Map<String, Object> map) throws Exception;
 	

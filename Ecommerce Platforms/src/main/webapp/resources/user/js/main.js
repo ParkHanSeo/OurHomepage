@@ -350,7 +350,14 @@ $(".visual-wrapper").css("height", window.innerHeight);
 $(window).load(function () {
   AOS.init();
 });
-
+$(window).scroll(function () {
+  var st = $(window).scrollTop();
+  if (st <= 0) {
+    $("#header").addClass("root");
+  } else if (st > 0) {
+    $("#header").removeClass("root");
+  }
+});
 //梨꾩슜�뺣낫 API�몄텧.
 $(function () {
   mainSlider.init();
@@ -363,6 +370,8 @@ $(function () {
   var $currentFocusGnb = $("#header .inner .gnb-wrap .sub-menu1");
   if (st <= 0) {
     $("#header").addClass("root");
+  } else {
+    $("#header").removeClass("root");
   }
 
   var headerHover;

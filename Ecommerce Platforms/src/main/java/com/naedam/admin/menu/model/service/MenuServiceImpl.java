@@ -91,7 +91,6 @@ public class MenuServiceImpl implements MenuService {
 			}else if(headImage.isEmpty() == true) {
 				Head headData = menuDao.getHead(head.getHeadNo());
 				head.setHeadImage(headData.getHeadImage());
-				headImage.transferTo(file);
 			}
 			menuDao.updateHead(head);
 		}else if("delete".equals(map.get("mode"))) {
@@ -157,9 +156,16 @@ public class MenuServiceImpl implements MenuService {
 	public Map<String, Object> getHeadList(Map<String, Object> map) throws Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("list", menuDao.getHeadList(map));
-		
 		return resultMap;
 	}
+	
+	//헤더관리 리스트
+	@Override
+	public Map<String, Object> getUserHeadList(Map<String, Object> map) throws Exception {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("list", menuDao.getUserHeadList(map));
+		return resultMap;
+	}	
 	
 	//메뉴카테고리 리스트
 	@Override

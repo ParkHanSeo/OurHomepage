@@ -361,6 +361,20 @@ h4 {
   stroke-width: 3;
   stroke-dasharray: 201px;
 }
+.visual-wrapper svg.progress circle.line {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-dasharray: 201px;
+  stroke-dashoffset: 201px;
+  stroke-linecap: round;
+}
+.visual-wrapper svg.progress circle.line {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 3;
+  stroke-dasharray: 201px;
+}
 
 .visual-wrapper .scroll-guide-area {
   position: relative;
@@ -1000,6 +1014,10 @@ h4 {
   opacity: 1;
   transition: opacity 0.4s ease;
 }
+.common-btn.is-grad-blue .main_solution_services {
+  color: white;
+  transition: 0.4s ease;
+}
 .bg-responsive-container .tit,
 .bg-responsive-container .description,
 .bg-responsive-container .tit-label,
@@ -1155,7 +1173,7 @@ h4 {
   height: 100%;
 }
 .culture-wrap .half-wrap .is-people::before {
-  background-image: url(../images/main/img-main-bg-05-pc.png);
+  background-image: url(../images/main/main_employee_3.jpg);
 }
 .culture-wrap .half-wrap .tit {
   position: relative;
@@ -1183,7 +1201,7 @@ h4 {
   height: 272px;
 }
 .culture-wrap .half-wrap .is-recruit::before {
-  background-image: url(../images/main/img-main-bg-06-pc.png);
+  background-image: url(../images/main/main_employee_1.jpg);
 }
 .culture-wrap .half-wrap .is-recruit .recruit-num {
   font-size: 40px;
@@ -1194,7 +1212,7 @@ h4 {
   height: 396px;
 }
 .culture-wrap .half-wrap .is-growth::before {
-  background-image: url(../images/main/img-main-bg-07-pc.png);
+  background-image: url(../images/main/main_employee_2.jpg);
 }
 
 .news-wrap .tit {
@@ -1305,6 +1323,17 @@ h4 {
   margin-left: -55%;
   margin-top: 30%;
   padding-bottom: 6%;
+}
+.card-ui .notice_box {
+  position: relative;
+  padding: 0px 40px 0px 40px;
+}
+.common-layout_3 > .main_notice_items {
+  margin-left: 0;
+  background-color: aliceblue;
+  border-radius: 5%;
+  height: 140px;
+  margin-right: 2%;
 }
 
 /* button hover */
@@ -2095,10 +2124,10 @@ h4 {
   }
 
   .culture-wrap .half-wrap .is-people::before {
-    background-image: url(../images/main/img-main-bg-05-mo@2x.png);
+    background-image: url(../user/images/main/img-main-bg-05-mo@2x.png);
   }
   .culture-wrap .half-wrap .is-growth::before {
-    background-image: url(../images/main/img-main-bg-07-mo@2x.png);
+    background-image: url(../user/images/main/img-main-bg-07-mo@2x.png);
   }
 
   .news-wrap .inner_container {

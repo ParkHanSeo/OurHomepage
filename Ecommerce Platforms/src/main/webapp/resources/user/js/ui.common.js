@@ -181,7 +181,7 @@ var GNB = (function ($) {
         $header.addClass("hide_header");
       } else {
         $nav.removeClass("hide_nav");
-        $header.removeClass("hide_header");
+        $header.removeClass("root hide_header");
       }
 
       lastScrollTop = st;

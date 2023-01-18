@@ -8,9 +8,9 @@ body {
 }
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/font/NanumGothic.woff">
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/html/js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/html/js/common.js" type="text/javascript"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 
 <!-- 사용자 정의 -->
 <!-- jquery -->

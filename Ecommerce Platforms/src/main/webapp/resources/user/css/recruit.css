@@ -23,22 +23,22 @@
   margin-top: 80px;
 }
 .process-flow .color1 {
-  background-color: #e0e8ff;
+  background-color: #49b5eb;
 }
 .process-flow .color2 {
-  background-color: #adc2ff;
+  background-color: #32ace8;
 }
 .process-flow .color3 {
-  background-color: #688dfd;
+  background-color: #1ba3e6;
 }
 .process-flow .color4 {
-  background-color: #3564f5;
+  background-color: #1793d0;
 }
 .process-flow .color5 {
-  background-color: #002ee0;
+  background-color: #1483b9;
 }
 .process-flow .color6 {
-  background-color: #f1f4ff;
+  background-color: #27c8e7;
 }
 
 .process-flow .flow_list {
@@ -52,7 +52,7 @@
   line-height: 1.5;
   letter-spacing: -0.2px;
   text-align: center;
-  padding-top: 23.41%;
+  padding-top: 20%;
 }
 .process-flow .flow_list > li .flow_num {
   display: none;

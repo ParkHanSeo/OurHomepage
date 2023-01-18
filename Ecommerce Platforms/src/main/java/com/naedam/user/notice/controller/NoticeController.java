@@ -1,6 +1,7 @@
 package com.naedam.user.notice.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.naedam.admin.board.model.service.BoardService;
 import com.naedam.admin.board.model.vo.Board;
+import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.board.model.vo.Search;
 import com.naedam.admin.common.NaedamUtils;
 
@@ -48,6 +49,7 @@ public class NoticeController {
 		map.put("boardNo", boardNo);
 		map.put("limit", limit);
 		map.put("offset", offset);
+		List<Post> postlist = boardService.getUserPostList(map);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		
@@ -55,7 +57,7 @@ public class NoticeController {
 		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		
 		mv.addObject("pagebar", pagebar);		
-		mv.addObject("list", resultMap.get("list")); 
+		mv.addObject("list", postlist); 
 		mv.addObject("boardNo", boardNo);
 		mv.addObject("pageCount",totalPostListCount);		
 		mv.setViewName("user/notice/noticeList");
@@ -79,11 +81,12 @@ public class NoticeController {
 		map.put("boardNo", boardNo);
 		map.put("limit", limit);
 		map.put("offset", offset);
-		
-		Map<String, Object> resultMap = boardService.getPostList(map);
-		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		List<Post> postlist = boardService.getUserPostList(map);
+		int totalPostListCount = boardService.getUserGetTotalCount(map);
 		// pagebar
 		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		resultMap.put("list", postlist);
 		resultMap.put("pagebar", pagebar);
 		return resultMap;
 	}
@@ -96,6 +99,7 @@ public class NoticeController {
 		Map<String, Object> resultMap = boardService.getNoticeDetail(map);
 		mv.addObject("post",resultMap.get("post"));
 		mv.addObject("board",resultMap.get("board"));
+		mv.addObject("boardFile", resultMap.get("boardFile"));
 		mv.addObject("postPrev",resultMap.get("postPrev"));
 		mv.addObject("postNext",resultMap.get("postNext"));
 		mv.setViewName("user/notice/noticeDetail");

@@ -33,6 +33,9 @@ public interface MenuService {
 	//헤더 리스트
 	public Map<String, Object> getHeadList(Map<String, Object> map) throws Exception;
 	
+	//사용자 헤더 리스트
+	public Map<String, Object> getUserHeadList(Map<String, Object> map) throws Exception;
+	
 	//메뉴 카테고리 리스트
 	public Map<String, Object> getMenuCategoryList(Map<String, Object> map) throws Exception;
 	

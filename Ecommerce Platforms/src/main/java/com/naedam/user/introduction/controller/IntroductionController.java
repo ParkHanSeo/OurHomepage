@@ -28,7 +28,7 @@ public class IntroductionController {
 	@RequestMapping(value="si")
 	public ModelAndView si() throws Exception{
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("user/introduction/si");
+		mv.setViewName("user/introduction/si/si");
 		return mv;		
 	}
 	
@@ -87,5 +87,26 @@ public class IntroductionController {
 		mv.setViewName("user/introduction/solution/solutionDevelopment");
 		return mv;
 	}
+	
+	@RequestMapping(value="meatProcessing")
+	public ModelAndView meatProcessing(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/meatProcessing");
+		return mv;
+	}
+	
+	@RequestMapping(value="mixFeed")
+	public ModelAndView mixFeed(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/mixFeed");
+		return mv;
+	}
+	
+	@RequestMapping(value="erpManagement")
+	public ModelAndView erpManagement(Model model) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("user/introduction/solution/erpManagement");
+		return mv;
+	}	
 	
 }

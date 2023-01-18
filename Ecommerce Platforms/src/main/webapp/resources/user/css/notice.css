@@ -490,10 +490,25 @@
   height: 100%;
   border: 0;
 }
-
 .notice_empty_txt {
   text-align-last: center;
   font-size: 25px;
+}
+.noticeDetail_file a {
+  font-size: 16px;
+  color: #888;
+  text-decoration: underline;
+}
+.notice_file_area {
+  text-align: right;
+}
+.file_icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 4px 0 0 0;
+  background-image: url(../images/common/icon_file.png);
+  vertical-align: top;
 }
 
 @media screen and (max-width: 1280px) {

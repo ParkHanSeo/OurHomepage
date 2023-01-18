@@ -66,22 +66,22 @@
                                         </p>
                                     </li>
                                     <li class="color3">
-                                        <span class="flow_num color3 txt-white">03</span>
-                                        <p class="flow_txt txt-white">
+                                        <span class="flow_num color3">03</span>
+                                        <p class="flow_txt">
                                             <em>03</em><br class="hide_768">
                                             1차 서류전형
                                         </p>
                                     </li>
                                     <li class="color4">
-                                        <span class="flow_num color4 txt-white">04</span>
-                                        <p class="flow_txt txt-white">
+                                        <span class="flow_num color4">04</span>
+                                        <p class="flow_txt">
                                             <em>04</em><br class="hide_768">
                                             2차 면접전형
                                         </p>
                                     </li>
                                     <li class="color5">
-                                        <span class="flow_num color5 txt-white">05</span>
-                                        <p class="flow_txt txt-white">
+                                        <span class="flow_num color5">05</span>
+                                        <p class="flow_txt">
                                             <em>05</em><br class="hide_768">
                                             입사확정
                                         </p>

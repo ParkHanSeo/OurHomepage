@@ -33,12 +33,19 @@
 		<result property="postTitle"				column="POST_TITLE"				jdbcType="VARCHAR"></result>
 		<result property="postContents"				column="POST_CONTENTS"			jdbcType="VARCHAR"></result>
 		<result property="postDate"					column="POST_DATE"				jdbcType="VARCHAR"></result>
-		<result property="postThombnail"			column="POST_THOMBNAIL"			jdbcType="VARCHAR"></result>
-		<result property="postViewCount"			column="POST_VIEWCOUNT"			jdbcType="NUMERIC"></result>
-		<result property="postDownloadCount"		column="POST_DOWNLOADCOUNT"		jdbcType="NUMERIC"></result>
 		<result property="postBoard.boardNo"		column="BOARD_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMember.memberNo"		column="MEMBER_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMemberName"			column="MEMBER_NAME"			jdbcType="VARCHAR"></result>
+		
+		<association property="postBoard" javaType="Board" >
+			<result property="boardNo"					column="BOARD_NO"			jdbcType="NUMERIC"></result>
+			<result property="boardTitle"				column="BOARD_TITLE"		jdbcType="VARCHAR"></result>
+			<result property="boardType"				column="BOARD_TYPE"			jdbcType="VARCHAR"></result>
+			<result property="boardCategory"			column="BOARD_CATEGORY"		jdbcType="VARCHAR"></result>
+			<result property="boardEmail"				column="BOARD_EMAIL"		jdbcType="VARCHAR"></result>
+			<result property="boardMemberNo.memberNo"	column="MEMBER_NO"			jdbcType="NUMERIC"></result>		
+		</association>
+		
 	</resultMap>	
 	
 	<resultMap id="optionSelectMap" type="boardOption">
@@ -107,13 +114,7 @@
 				  POST_TITLE,
 				  POST_CONTENTS,
 				  POST_DATE,
-				  POST_THOMBNAIL,
-				  POST_VIEWCOUNT,
-				  POST_DOWNLOADCOUNT,
-				  POST_NOTICE,
 				  POST_ORIGIN_NO,
-				  POST_ORD,
-				  POST_LAYER,
 				  MEMBER_NO,
 				  MEMBER_NAME)
 		VALUES(NEXTVAL(post_seq),
@@ -127,13 +128,7 @@
 			   <if test="postDate != null">
 			   #{postDate : VARCHAR},
 			   </if>
-			   #{postThombnail : VARCHAR},			   
-			   0,
-			   0,
-			   0,
 			   LASTVAL(post_seq),
-			   #{postOrd : NUMERIC},
-			   #{postLayer : NUMERIC},
 			   #{postMember.memberNo},
 			   #{postMemberName : VARCHAR})		
 			   
@@ -150,12 +145,7 @@
 				  POST_TITLE,
 				  POST_CONTENTS,
 				  POST_DATE,
-				  POST_THOMBNAIL,
-				  POST_VIEWCOUNT,
-				  POST_NOTICE,
 				  POST_ORIGIN_NO,
-				  POST_ORD,
-				  POST_LAYER,
 				  MEMBER_NO,
 				  MEMBER_NAME)
 		VALUES(NEXTVAL(post_seq),
@@ -164,12 +154,7 @@
 			   #{postTitle : VARCHAR},
 			   #{postContents : VARCHAR},
 			   sysdate(),
-			   #{postThombnail : VARCHAR},			   
-			   0,
-			   0,
 			   #{postOriginNo : NUMERIC},
-			   #{postOrd : NUMERIC}+1,
-			   #{postLayer : NUMERIC}+1,
 			   #{postMember.memberNo},
 			   #{postMemberName : VARCHAR})		
 	</insert>	
@@ -257,13 +242,7 @@
 										p.post_title,
 										p.post_contents,
 										p.post_date,
-										p.post_thombnail,
-										p.post_viewcount,
-										p.post_downloadcount,
-										p.post_notice,
 										p.post_origin_no,
-										p.post_ord,
-										p.post_layer,
 										p.board_no,
 										p.member_no,
 										p.member_name
@@ -279,7 +258,7 @@
 									AND		p.member_name like concat ('%',#{search.searchKeyword},'%')
 									</if>
 								</if>
-								ORDER BY p.post_asc ASC, p.post_ord ASC, p.post_layer ASC) countTable
+								ORDER BY p.post_asc ASC) countTable
 	</select>	
 	
 	<select id="getTotalCount3" parameterType="int" resultType="int" >
@@ -290,13 +269,7 @@
 										p.post_title,
 										p.post_contents,
 										p.post_date,
-										p.post_thombnail,
-										p.post_viewcount,
-										p.post_downloadcount,
-										p.post_notice,
 										p.post_origin_no,
-										p.post_ord,
-										p.post_layer,
 										p.board_no,
 										p.member_no,
 										p.member_name
@@ -304,7 +277,7 @@
 								WHERE	b.board_no = p.board_no
 								AND		m.member_no = p.member_no
 								AND		b.board_no = #{boardNo}		
-								ORDER BY p.post_asc ASC, p.post_ord ASC, p.post_layer ASC) countTable
+								ORDER BY p.post_asc ASC) countTable
 	</select>
 	
 	
@@ -371,13 +344,7 @@
 				p.post_title,
 				p.post_contents,
 				date_format(POST_DATE, '%Y-%m-%d') post_date,
-				p.post_thombnail,
-				p.post_viewcount,
-				p.post_downloadcount,
-				p.post_notice,
 				p.post_origin_no,
-				p.post_ord,
-				p.post_layer,
 				p.board_no,
 				p.member_no,
 				p.member_name
@@ -393,8 +360,49 @@
 			AND		p.member_name like concat ('%',#{search.searchKeyword},'%')
 			</if>
 		</if>
-		ORDER BY p.post_asc ASC, p.post_ord ASC, p.post_layer ASC
+		ORDER BY p.post_asc ASC
 		LIMIT #{limit} OFFSET #{offset}
+	</select>
+	
+	<select id="getUserPostList" parameterType="hashmap" resultMap="PostSelectMap" >	
+		SELECT
+				@rownum:=@rownum+1 as row_no,
+				p.post_no,
+				p.post_asc,
+				p.post_title,
+				p.post_contents,
+				date_format(p.POST_DATE, '%Y-%m-%d') post_date,
+				p.post_origin_no,
+				p.board_no,
+				p.member_no,
+				p.member_name
+		FROM	board b, post p, member m, (select @rownum:=0) row_reset
+		WHERE	b.board_no = p.board_no
+		AND		m.member_no = p.member_no
+		AND		b.board_no = #{boardNo}
+		<if test="search.searchType != null">
+			<if test="search.searchType == 1 and search.searchKeyword !='' ">
+			AND		p.post_title like concat ('%',#{search.searchKeyword},'%')
+			</if>
+			<if test="search.searchType == 2 and search.searchKeyword !='' ">
+			AND		p.member_name like concat ('%',#{search.searchKeyword},'%')
+			</if>
+		</if>
+		ORDER BY p.post_asc ASC
+		LIMIT #{limit} OFFSET #{offset}
+	</select>	
+	
+	<select id="getMainPostList" resultMap="PostSelectMap" >	
+			select *
+			from(
+				select 
+				tb1.*,
+				dense_rank() over (order by date_format(tb1.POST_DATE, '%Y-%m-%d-%h-%m-%r') desc) as 'ranking'
+				from post tb1
+				) tbl1
+			left outer join board tbl2
+			on tbl1.board_no = tbl2.BOARD_NO 
+			where tbl1.ranking <![CDATA[<=]]> 3
 	</select>
 			
 	<select id="getMemberData" parameterType="int" resultMap="memberSelectMap">
@@ -419,7 +427,7 @@
 			   post_no,
 			   file_name
 		FROM   board_file
-		WHERE  post_no = #{boardNo}
+		WHERE  post_no = #{postNo}
 	</select>
 	
 	<select id="getFileData" parameterType="int" resultMap="fileSelectMap">
@@ -469,11 +477,7 @@
 		<set>
 			post_title = #{postTitle},
 			post_Contents = #{postContents},
-			post_thombnail = #{postThombnail},
-			post_notice = #{postNotice},
-			post_origin_no = #{postOriginNo},
-			post_ord = #{postOrd},
-			post_layer = #{postLayer}
+			post_origin_no = #{postOriginNo}
 		</set>
 		WHERE post_no = #{postNo}
 	</update>
@@ -523,14 +527,6 @@
 		<set>
 			POST_VIEWCOUNT = #{postViewCount}
 		</set>	
-		WHERE post_no = #{postNo}
-	</update>
-	
-	<update id="postFileCount" parameterType="post">
-		UPDATE POST
-		<set>
-			POST_DOWNLOADCOUNT = #{postDownloadCount}
-		</set>
 		WHERE post_no = #{postNo}
 	</update>
 	

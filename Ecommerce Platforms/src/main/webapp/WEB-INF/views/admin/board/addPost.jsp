@@ -173,14 +173,6 @@
 						                </td>
 						            <tr>
 					            </c:if>
-				                <td class="menu">썸네일 파일</td>
-				                <td align="left">
-					                <input type="file" name="ThombnailName" id="ThombnailName" class="form-control input-sm" style="width:80%; display:inline;">
-					                <span id="display_thumbnail" style="display:none;">
-					                	<button type="button" onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');" class="btn btn-success btn-xs">보기</button>
-					                	<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
-					                </span>
-				                </td>
 				            </tr>
 				            <tr>
 				                <td class="menu">파일</td>

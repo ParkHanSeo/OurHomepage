@@ -82,8 +82,7 @@ public class BoardController {
 	 * @param board
 	 * @param post
 	 * @param postName
-	 * @param postName2
-	 * @param ThombnailName
+	 * @param postName2 
 	 * @param secNo
 	 * @param mode
 	 * @param request
@@ -92,19 +91,16 @@ public class BoardController {
 	 */
 	@PostMapping("postProcess")
 	public String postProcess(@ModelAttribute("board") Board board, @ModelAttribute("post") Post post,
-							  @RequestParam(value="postName", required = false) MultipartFile[] postName,  
-							  @RequestParam(value="ThombnailName", required = false) MultipartFile ThombnailName, 
+							  @RequestParam(value="postName", required = false) MultipartFile[] postName,   
 							  @RequestParam("secNo") String secNo, 
 							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
-		String filePath = request.getServletContext().getRealPath("resources/admin/imgs/imageBoard/board");
-		
+		String filePath = request.getSession().getServletContext().getRealPath("resources/user/downloadFile/");
 		Map<String, Object> postMap	 = new HashMap<>();
 		postMap.put("board", board);
 		postMap.put("post", post);	
 		postMap.put("mode", mode);
 		postMap.put("postName", postName);
-		postMap.put("ThombnailName", ThombnailName);
 		postMap.put("filePath", filePath);
 		postMap.put("secNo", secNo);
 		boardService.postProcess(postMap);

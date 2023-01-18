@@ -61,8 +61,8 @@ public class HomeController {
 	public String goDashBoard2(Locale locale, Model model) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
-		Map<String, Object> resultMap = menuService.getHeadList(map);
-		model.addAttribute("list", resultMap.get("list"));
+		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
+		model.addAttribute("post", boardService.getMainPostList());
 		return "user/userDashBoard";
 	}	
 
