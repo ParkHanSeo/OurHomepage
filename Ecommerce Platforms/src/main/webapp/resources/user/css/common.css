@@ -1025,6 +1025,13 @@ img {
   position: relative;
   letter-spacing: -0.2px;
 }
+.layout_section_outer .layout_head .si_txt1 {
+  font-size: 25px;
+  font-weight:bold;
+  line-height: 56px;
+  position: relative;
+  letter-spacing: -0.2px;
+}
 .layout_section_outer .layout_head .top_txt1.type01 {
   font-size: 32px;
   line-height: 48px;

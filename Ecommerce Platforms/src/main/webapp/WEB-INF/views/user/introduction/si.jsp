@@ -77,8 +77,8 @@ $(function(){
                 <div class="layout_section_outer type01 si_layout" data-js="anchor-target">
                     <div class="inner_container">
                         <div class="layout_head">
-                            <p class="top_txt1">
-                                이런 산업에 <br class="show_768">추천합니다
+                            <p class="si_txt1">
+                            	IT Total Service 시스템 구축 전문가들이 함께 합니다.
                             </p>
                         </div>
                         <div class="layout_body">
@@ -148,11 +148,12 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            HTML 기반의 맞춤형<br>
-                                            온라인 예매 서비스 제공
+											업무에 필요한 시스템 구축
                                         </p>
                                         <p class="difference_desc">
-                                            HTML기반의 온라인 예매시스템은 웹표준 및 접근성을 준수하고, 고객사 홈페이지 및 시스템에 쉽게 적용이 가능한 맞춤형 온라인 서비스를 제공합니다. 크롬,사파리 등 멀티브라우저 제공 및 장애인차별금지법 대응이 가능합니다.
+                                           고객사 업무에 필요로 하는 정보시스템에 관한 기획에서부터 <br>
+                                           최적의 시스템을 구축합니다.
+											고객사 시스템을 안정적으로 신속하게 운영할 수 있도록 유지보수 서비스를 제공합니다.
                                         </p>
                                     </div>
                                 </li>
@@ -162,13 +163,15 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            통계분석을 통한<br>
-                                            원활한 행사 진행
+											통합 유지보수
                                         </p>
                                         <p class="difference_desc">
-                                            극장별, 일자별 예매추이 분석을 통해 탄력적인 행사 진행이 가능하며,
-                                            고객사 자체 회원 DB를 이용한 예매시스템 연동으로 회원데이터 활용이
-                                            자유롭습니다.
+                                            <Strong>시스템/보안/네트워크 정보시스템의 최적의 통합 유지보수 수행</Strong> <br>
+                                            업무에 필요로 하는 정보시스템에 관한 기획에서부터 최적의 시스템을 
+											안정적으로 신속하게 운영할 수 있도록 유지보수 서비스 제공합니다.
+											
+											장애 수정, 기능 개선, 버전 업데이트, 정기점검 등을 통해 유저들이 시스템을
+											안정적으로 사용 할 수 있도록 운영/관리를 위한 서비스를 제공합니다.
                                         </p>
                                     </div>
                                 </li>
@@ -178,11 +181,13 @@ $(function(){
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            One PG(CJ Payment Platform)을 통한 안정적인 결제 환경 제공
+											농협 전문서비스
                                         </p>
                                         <p class="difference_desc">
-                                            CJ그룹의 온/오프라인 결제를 담당하는 One PG(Payment 플랫폼)을 통해 신용카드, 휴대폰, 계좌이체 등 다양한 결제수단을 제공합니다.
-                                            또한 월 2천만 건 규모 이상 결제를 수용할 수 있는 검증된 안정적인 결제 환경을 제공합니다.
+                                        	농협 경제 업무 및 유통 축산 업무에 특화된 시스템 개발
+
+											특화된 높은 기술력과 오랜 개발 경험을 기반으로 최적의 역량을 투입하여 최상의 사용성과 성능을 보유한 시스템을 개발하여 고객사 서비스의 성공적인 런칭과 활성화를 위한 서비스를 제공합니다.
+
                                         </p>
                                     </div>
                                 </li>
