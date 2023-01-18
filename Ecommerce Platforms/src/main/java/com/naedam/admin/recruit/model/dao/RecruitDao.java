@@ -12,10 +12,10 @@ import com.naedam.admin.recruit.model.vo.recruitDTO;
 public interface RecruitDao {
 
 	// 게시글 목록
-	public List<Post> getRecruitList(Map<String, Object> map, int offset, int limit) throws Exception;
+	public List<Post> getRecruitList(String search, int offset, int limit) throws Exception;
 
 	// 게시글 총 갯수
-	public Object getTotalCount(Map<String, Object> map);
+	public Object getTotalCount(String search);
 
 	// 게시글 삭제
 	public int deleteRecruit(int recruitNum);

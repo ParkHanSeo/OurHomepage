@@ -54,6 +54,8 @@ $("button[name='getPostBotton']").on("click", function(){
 			$("#jobIntro_u").val(recruitData.jobIntro);
 			//지원자격
 			$("#qualification_u").val(recruitData.qualification);
+			//채용 담당자
+			$("#recruitManager_u").val(recruitData.recruitManager);
 			
 			
 			
@@ -130,10 +132,12 @@ function updateRecruit(){
 		return;
 	}else{
 		
-		if($("#title_u").val().length == 0){
-			alert("제목은 필수 항목입니다.");
+		if($("#title_u").val().length == 0 || $("#jobTitle_u").val().length == 0 || $("#recruitType_u").val().length == 0 || $("#career_u").val().length == 0
+				|| $("#recruitPlace_u").val().length == 0 || $("#jobIntro_u").val().length == 0 || $("#recruitManager_u").val().length == 0 || $("#qualification_u").val().length == 0){
+			alert("필수항목을 모두 입력해주세요.");
 			return;
 		}
+		
 		if($("#startDay_u").val() == null || $("#startDay_u").val() == ''){
 			alert("시작일은 필수 항목입니다.");
 			return;
@@ -181,7 +185,8 @@ function updateRecruit(){
 				"recruitPlace": $("#recruitPlace_u").val(),
 				"jobIntro": $("#jobIntro_u").val(),
 				"qualification": $("#qualification_u").val(),
-				"orgFileName" : $("#orgFileName_u").val()
+				"recruitManager": $("#recruitManager_u").val(),
+				"orgFileName" : $("#orgFileName_u").val(),
 				"subTitle": subTitle,
 				"contents": contents		
 		}
@@ -283,16 +288,6 @@ function addUpdateContents(){
 									id="endDay_u" class="form-control input-sm" style="width: 50%;"></td>
 							</tr>
 							<tr>
-								<td class="menu">경력</td>
-								<td align="left"><select name="career_u" id="career_u"
-									class="form-control input-sm" style="width: 50%;">
-										<option value="경력무관" selected="selected">경력무관</option>
-										<option value="신입">신입</option>
-										<option value="경력">경력</option>
-								</select></td>
-							</tr>
-							<!-- 230116 내용추가 -->
-								<tr>
 									<td class="menu">직무명</td>
 									<td align="left"><input type="text" name="jobTitle_u"
 										id="jobTitle_u" class="form-control input-sm"></td>
@@ -302,17 +297,32 @@ function addUpdateContents(){
 									<td align="left"><input type="text" name="recruitType_u"
 										id="recruitType_u" class="form-control input-sm"></td>
 								</tr>
+							<tr>
+								<td class="menu">경력</td>
+								<td align="left"><select name="career_u" id="career_u"
+									class="form-control input-sm" style="width: 50%;">
+										<option value="경력무관" selected="selected">경력무관</option>
+										<option value="신입">신입</option>
+										<option value="경력">경력</option>
+								</select></td>
+							</tr>
 								<tr>
 									<td class="menu">근무지</td>
 									<td align="left"><input type="text" name="recruitPlace_u"
 										id="recruitPlace_u" class="form-control input-sm"></td>
 								</tr>
-								
 								<tr>
 									<td class="menu">직무소개</td>
 									<td align="left">
 										<textarea name="jobIntro_u" id="jobIntro_u"
 												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="menu">담당자</td>
+									<td align="left">
+										<textarea name="recruitManager_u" id="recruitManager_u"
+												rows="10" cols="80"></textarea>
 									</td>
 								</tr>
 								<tr>
@@ -322,7 +332,6 @@ function addUpdateContents(){
 												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
 									</td>
 								</tr>
-								<!-- ---- -->
 							<!-- 파일 -->
 							<tr id="file_u">
 							</tr>

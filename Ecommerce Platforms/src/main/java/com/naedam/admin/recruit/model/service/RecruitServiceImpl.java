@@ -1,18 +1,13 @@
 package com.naedam.admin.recruit.model.service;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.naedam.admin.board.model.vo.Search;
 import com.naedam.admin.recruit.model.dao.RecruitDao;
-import com.naedam.admin.recruit.model.vo.SearchDTO;
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
 import com.naedam.admin.recruit.model.vo.recruitDTO;
 
@@ -26,10 +21,14 @@ public class RecruitServiceImpl implements RecruitService {
 	private RecruitDao recruitDao;
 
 	@Override
-	public Map<String, Object> getRecruitList(Map<String, Object> map, int limit, int offset) throws Exception {
+	public Map<String, Object> getRecruitList(String search, int limit, int offset) throws Exception {
+		
+		System.out.println("==========recruitList service =================");
+		System.out.println("search>>>" + search);
+		
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("list", recruitDao.getRecruitList(map, offset, limit));
-		resultMap.put("totalCount", recruitDao.getTotalCount(map));
+		resultMap.put("list", recruitDao.getRecruitList(search, offset, limit));
+		resultMap.put("totalCount", recruitDao.getTotalCount(search));
 		
 		return resultMap;
 	}
