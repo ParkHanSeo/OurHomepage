@@ -1,12 +1,61 @@
 @charset "utf-8";
-
+.company_culture{
+	width:800px;
+	float: left;
+	padding-bottom: 30px;
+}
+.company_culture_imgbox{
+	padding-bottom:30px;
+	width:440px;
+	height:491px;
+	float: right;
+}
+.company_culture_imgbox > img{
+	width: 100%;
+	height: 100%;
+}
+.employee_detail{
+	width:800px;
+	float: left;
+}
+.employee_layout_body .main_title{
+	font-size: 32px;
+	font-weight: bolder;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	
+}
+.employee_layout_body .culture_sub_titlebox {
+    position: relative;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1;
+    color: rgb(0, 0, 0);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.employee_layout_body .culture_sub_title{
+	font-size: 20px;
+	font-weight: bolder;
+	
+}
+.employee_layout_body .culture_sub_titlebox::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+}
 #wrap {
   margin-bottom: 12%;
 }
 .culture_card_area {
   position: relative;
-}
-.culture_card_area .culture_card_list {
 }
 .culture_card_area .culture_card_list.common-layout_2 > li {
   width: 213px;
@@ -69,8 +118,6 @@
 .culture_card_area .culture_card_list > li.active a .sub_txt {
   opacity: 0;
   transition: opacity 0.5s;
-}
-.culture_card_area .culture_card_list > li .culture_card_txt {
 }
 .culture_card_area .culture_card_list > li .culture_card_txt > li {
   margin-top: 24px;
@@ -136,9 +183,6 @@
   background-color: rgba(0, 0, 0, 0.2); /*opacity:0; transition:opacity 0.3s;*/
   border-radius: 16px;
 }
-.culture_card_area .culture_card_list > li.active .culture_card_detail {
-  /*opacity:1; transition:opacity 0.3s;*/
-}
 .culture_card_area
   .culture_card_list
   > li
@@ -176,10 +220,6 @@
   color: #666;
 }
 
-.culture_story_area {
-}
-.culture_story_area .culture_story_list {
-}
 .culture_story_area .culture_story_list > li {
   margin-top: 120px;
   display: flex;
@@ -213,8 +253,6 @@
   top: 50%;
   background: url(../../images/common/icon-80-px-play@2x.png) 0 0 no-repeat;
   background-size: 100%;
-}
-.culture_story_area .culture_story_list > li .culture_story_movie a img {
 }
 .culture_story_area .culture_story_list > li .culture_story_desc {
   width: 550px;
@@ -272,8 +310,6 @@
   margin-top: 56px;
 }
 
-.welfare_benefit_area {
-}
 .welfare_benefit_area .welfare_benefit_list {
   display: flex;
 }
@@ -367,14 +403,6 @@
   .welfare_benefit_box
   .benefit_list
   > li
-  ul {
-}
-.welfare_benefit_area
-  .welfare_benefit_list
-  > li
-  .welfare_benefit_box
-  .benefit_list
-  > li
   ul
   li {
   padding-left: 15px;
@@ -405,8 +433,6 @@
 }
 .location_wrap .location_img {
   width: 840px;
-}
-.location_wrap .location_img img {
 }
 .location_wrap .location_img img + img {
   display: none;
@@ -457,14 +483,10 @@
   margin-left: 16px;
   background-image: url(../../images/common/slider-icon-20-px-arrow-right@2x.png);
 }
-.location_wrap .location_img_slider li img {
-}
 .location_wrap .location_img_slider li img + img {
   display: none;
 }
 
-.company_culture_area {
-}
 .company_culture_area .company_culture_block {
   display: flex;
   margin-top: 120px;
@@ -590,7 +612,7 @@
   letter-spacing: -0.2px;
 }
 .employee_contents {
-  height: 85%;
+  height: 60%;
 }
 .employee_layout_body {
   margin-top: 10%;
@@ -624,19 +646,6 @@
 @media all and (max-width: 1024px) {
   .culture_card_area .culture_card_list > li a {
     width: 100%;
-  }
-
-  .culture_story_area
-    .culture_story_list
-    > li
-    .culture_story_desc
-    .culture_desc_txt1 {
-  }
-  .culture_story_area
-    .culture_story_list
-    > li
-    .culture_story_desc
-    .culture_desc_txt2 {
   }
 
   .culture_btm_banner {
