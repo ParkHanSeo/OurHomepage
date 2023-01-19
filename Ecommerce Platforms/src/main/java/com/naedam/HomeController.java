@@ -62,7 +62,7 @@ public class HomeController {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
-		model.addAttribute("post", boardService.getMainPostList());
+//		model.addAttribute("post", boardService.getMainPostList());
 		return "user/userDashBoard";
 	}	
 

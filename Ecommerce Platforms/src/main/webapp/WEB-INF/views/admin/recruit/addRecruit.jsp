@@ -36,18 +36,6 @@
 				alert("필수항목을 모두 입력해주세요.");
 				return;
 			}
-			if($("#startDay").val() == null || $("#startDay").val() == ''){
-				alert("시작일은 필수 항목입니다.");
-				return;
-			}
-			if($("#endDay").val() == null || $("#endDay").val() == ''){
-				alert("마감일은 필수 항목입니다.");
-				return;
-			}
-			if($("#startDay").val() > $("#endDay").val()){
-				alert("시작일은 마감일보다 뒤일 수 없습니다.");
-				return;
-			}
 			
 			//반복작업 필요한 내용
 			var subTitle = new Array();
@@ -62,6 +50,40 @@
 			console.log("subTitle >>" + subTitle);
 			console.log("contents >>" + contents);
 			
+			let contentsStatus;
+			let recruitStart;
+			let recruitEnd;
+			
+			if($("input:checkbox[name='always']").is(":checked")){
+				contentsStatus = $("#always").val();
+				recruitStart = null;
+				recruitEnd = null;
+			}else{
+				contentsStatus = null;
+				recruitStart = $("#startDay").val();
+				recruitEnd = $("#endDay").val();
+			}
+			
+			
+			if(recruitStart == null || recruitStart == ''){
+				if(contentsStatus == null || contentsStatus ==''){
+					alert("시작일은 필수 항목입니다.");
+					return;
+				}
+			}
+			if(recruitEnd == null || recruitEnd == ''){
+				if(contentsStatus == null || contentsStatus ==''){
+					alert("마감일은 필수 항목입니다.");
+					return;
+				}
+			}
+			if($("#startDay").val() > $("#endDay").val()){
+				alert("시작일은 마감일보다 뒤일 수 없습니다.");
+				return;
+			}
+			
+			console.log("contentsStatus>>>>>>" ,contentsStatus);
+			
 			//FormData 새로운 객체 생성 
 			var formData = new FormData();
 			
@@ -70,8 +92,8 @@
 			//넘길 데이터
 			var data = {
 					"recruitTitle": $("#title").val(),
-					"recruitStart": $("#startDay").val(),
-					"recruitEnd": $("#endDay").val(),
+					"recruitStart": recruitStart,
+					"recruitEnd": recruitEnd,
 					"career": $("#career").val(),
 					"jobTitle": $("#jobTitle").val(),
 					"recruitType": $("#recruitType").val(),
@@ -79,6 +101,7 @@
 					"jobIntro": $("#jobIntro").val(),
 					"qualification": $("#qualification").val(),
 					"recruitManager": $("#recruitManager").val(),
+					"contentsStatus": contentsStatus,
 					"subTitle": subTitle,
 					"contents": contents		
 			}
@@ -122,7 +145,33 @@
 		  		});		
 			}
 		}
-	
+	$(document).ready(function() {
+		
+		$("input:checkbox[name='always']").on('click', function() {
+			
+			let chk = $(this).is(":checked");
+			
+			console.log("버튼누름",chk);
+			
+			if(chk){
+				/* $("input:checkbox[name='always']").prop('checked', true); */
+				document.getElementById('startDay').disabled = true;
+				document.getElementById('endDay').disabled = true;
+				
+				$('#startDay').val('');
+				$('#endDay').val('');
+				
+				console.log("startDay vla ==" , $('#startDay').val());
+				console.log("endDay vla ==" , $('#endDay').val());
+				console.log("always vla ==" , $('#always').val());	
+			} else {
+				console.log("실패");
+				$("input:checkbox[name='always']").prop('checked', false); 
+				document.getElementById('startDay').disabled = false;
+				document.getElementById('endDay').disabled = false;
+			}
+		})
+	})
 	</script>
 	<div class="modal fade" id="modalContent" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
@@ -159,8 +208,11 @@
 								</tr>
 								<tr>
 									<td class="menu">채용 마감일<span style="color: red;">*</span></td>
-									<td align="left"><input type="date" name="endDay"
-										id="endDay" class="form-control input-sm" style="width: 50%;"></td>
+									<td align="left">
+									<input type="date" name="endDay" id="endDay" class="form-control input-sm" style="width: 50%;">
+									<input style="zoom:0.7;" type="checkbox" id="always" name='always' value="R">
+										<label style="padding-top: 10px;" for="always">상시채용</label>
+									</td>
 								</tr>
 								<tr>
 									<td class="menu">직무명<span style="color: red;">*</span></td>
@@ -187,17 +239,17 @@
 										id="recruitPlace" class="form-control input-sm"></td>
 								</tr>
 								<tr>
-									<td class="menu">직무소개<span style="color: red;">*</span></td>
-									<td align="left">
-										<textarea name="jobIntro" id="jobIntro"
-												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
-									</td>
-								</tr>
-								<tr>
 									<td class="menu">담당자<span style="color: red;">*</span></td>
 									<td align="left">
 										<textarea name="recruitManager" id="recruitManager"
 												rows="4" cols="80"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="menu">직무소개<span style="color: red;">*</span></td>
+									<td align="left">
+										<textarea name="jobIntro" id="jobIntro"
+												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
 									</td>
 								</tr>
 								<tr>

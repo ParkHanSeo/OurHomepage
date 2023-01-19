@@ -77,7 +77,16 @@
                                 </ul>
                             </div>
                         </div>
-						<div class="layout_sub_body">
+                    </div>
+                </div>
+				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
+                    <div class="inner_container">
+                        <div class="layout_head">
+                            <p class="top_txt1">
+                            	Vision & Mission
+                            </p>
+                        </div>
+                        <div class="layout_sub_body">
                             <div class="welfare_benefit_area">
                                 <ul class="welfare_benefit_list common-layout_2 is-vertical">
                                     <li class="items_2">
@@ -106,11 +115,16 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>                        
+                        </div> 
                     </div>
-                </div>
-                <div class="layout_section_outer type04" data-js="anchor-target">
+                </div>                
+                <div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
                 	<div class="inner_container">
+                        <div class="layout_head">
+                            <p class="top_txt1">
+                            	핵심 가치
+                            </p>
+                        </div>                	
 						<div class="layout_body process-area">
 	                         <div class="business-flow">
 	                             <ol class="flow_list">

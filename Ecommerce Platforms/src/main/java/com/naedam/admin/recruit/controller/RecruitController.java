@@ -124,6 +124,7 @@ public class RecruitController {
 		recruit.setJobIntro((String)param.get("jobIntro"));
 		recruit.setQualification((String)param.get("qualification"));
 		recruit.setRecruitManager((String)param.get("recruitManager"));
+		recruit.setContentsStatus((String)param.get("contentsStatus"));
 		
 		System.out.println("===recruitDTO recruit==== : " + recruit);
 		
@@ -244,6 +245,7 @@ public class RecruitController {
 		recruit.setJobIntro((String)param.get("jobIntro"));
 		recruit.setQualification((String)param.get("qualification"));
 		recruit.setRecruitManager((String)param.get("recruitManager"));
+		recruit.setContentsStatus((String)param.get("contentsStatus"));
 		
 		System.out.println("orgFileName>>>>>>>>>>" + param.get("orgFileName"));
 		

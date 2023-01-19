@@ -279,16 +279,16 @@
 									<i class="fa fa-circle-o"></i> 수상 관리
 								</a>
 							</li>
-							<li id="infoManage">
-								<a href="${pageContext.request.contextPath}/admin/setting/info">
-									<i class="fa fa-circle-o"></i> 기본 설정
+							<li id="partnerManage">
+								<a href="${pageContext.request.contextPath }/admin/setting/listPartner">
+									<i class="fa fa-circle-o"></i> 파트너 관리
 								</a>
 							</li>							
 							<li id="infoManage">
 								<a href="${pageContext.request.contextPath}/admin/setting/info">
 									<i class="fa fa-circle-o"></i> 기본 설정
 								</a>
-							</li>			
+							</li>									
 						</ul>
 					</li>
 					<li>
