@@ -170,13 +170,28 @@
 						                        </td><!-- 체크박스 -->
 						                        <td>${post.rownum}</td>   <!-- 번호 -->       
 						                   		<td align="left">${post.recruitTitle}</td>        
-						                        <td>${post.career}</td>            
-						                        <td>${post.recruitStart}</td>                        
-						                        <td>${post.recruitEnd}</td>
+						                        <td>${post.career}</td>
+						                        <c:choose>
+						                        	<c:when test="${post.recruitStart == null}">
+						                        		<td>-</td>
+						                        	</c:when>
+						                        	<c:when test="${post.recruitStart != null}">
+						                        		<td>${post.recruitStart}</td>
+						                        	</c:when>
+						                         </c:choose>
+						                         <c:choose>
+						                        	<c:when test="${post.recruitEnd == null}">
+						                        		<td>-</td>
+						                        	</c:when>
+						                        	<c:when test="${post.recruitEnd != null}">
+						                        		<td>${post.recruitEnd}</td>
+						                        	</c:when>
+						                        </c:choose>           
 						               			<td>${post.recruitDate}</td>        
 						               			<td>
 							               			<c:if test="${post.contentsStatus == 'Y'}">채용중</c:if>
 							               			<c:if test="${post.contentsStatus == 'N'}">마감</c:if>
+							               			<c:if test="${post.contentsStatus == 'R'}">상시채용</c:if>
 												</td>
 						                        <td>
 						                			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.recruitNo}">상세보기</button>
@@ -222,14 +237,16 @@ function addData() {
     $("#recruitType").val("");
     $("#recruitPlace").val("");
     $("#jobIntro").val("");
-    $("#qualification").val("");
     
     let managerComment = `E-mail:
 Tel:           
 FAX:
     `
-    
     $("#recruitManager").val(managerComment);
+    $("input:checkbox[name='always']").prop("checked", false);
+    document.getElementById('startDay').disabled = false;
+	document.getElementById('endDay').disabled = false;
+    
 };
 </script>
 	

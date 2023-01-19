@@ -95,6 +95,7 @@
 		RECRUIT_PLACE,
 		JOB_INTRO,
 		QUALIFICATION,
+		CONTENTS_STATUS,
 		RECRUIT_MANAGER
 		)
 		VALUES
@@ -113,6 +114,14 @@
 		#{recruitPlace},
 		#{jobIntro},
 		#{qualification},
+		<choose>
+			<when test='contentsStatus == "R"'>
+			"R",
+			</when>
+			<otherwise>
+			"Y",
+			</otherwise>
+		</choose>
 		#{recruitManager}
 		)
 		
@@ -163,6 +172,14 @@
 			RECRUIT_FILE_PATH = null,
 		</if>
 		QUALIFICATION = #{qualification},
+		<choose>
+			<when test='contentsStatus == "R"'>
+			CONTENTS_STATUS = 'R',
+			</when>
+			<otherwise>
+			CONTENTS_STATUS = 'Y',
+			</otherwise>
+		</choose>
 		RECRUIT_MANAGER = #{recruitManager}
 		WHERE RECRUIT_NO = #{recruitNo}
 	</update>
@@ -186,7 +203,7 @@
 				R.RECRUIT_TITLE like concat ('%',#{searchKeyword},'%')
 			</if>
 			AND RECRUIT_DLE_STATUS = 'N'
-			AND CONTENTS_STATUS = 'Y'
+			AND CONTENTS_STATUS != 'N'
 		</where>
 		ORDER BY RECRUIT_NO DESC
 		LIMIT #{limit} OFFSET #{offset}	

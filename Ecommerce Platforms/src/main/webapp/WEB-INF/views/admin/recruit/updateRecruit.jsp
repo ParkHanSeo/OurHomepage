@@ -21,6 +21,10 @@ element.style {
 
 <script>
 $("button[name='getPostBotton']").on("click", function(){
+	//버튼 우선 활성화
+	document.getElementById('startDay_u').disabled = false;
+	document.getElementById('endDay_u').disabled = false;
+	
 	// 게시글 번호 받기
 	let postNo = $(this).val();
 	$("#file_u").html("");
@@ -38,10 +42,6 @@ $("button[name='getPostBotton']").on("click", function(){
 			console.log("recruitNo_u>>>>", recruitData.recruitNo);
 			//제목
 			$("#title_u").val(recruitData.recruitTitle);
-			//시작일(date)
-			let startDay = $("#startDay_u").val(recruitData.recruitStart);
-			//마감일(date)
-			let endDay = $("#endDay_u").val(recruitData.recruitEnd);
 			//경력(셀렉트)
 			$("#career_u").val(recruitData.career).prop("selected",true);
 			//직무명
@@ -56,7 +56,26 @@ $("button[name='getPostBotton']").on("click", function(){
 			$("#qualification_u").val(recruitData.qualification);
 			//채용 담당자
 			$("#recruitManager_u").val(recruitData.recruitManager);
-			
+			//상시채용 여부
+			if(recruitData.contentsStatus == 'R'){
+				//상시채용 체크박스 true
+				$("input:checkbox[name='always_u']").prop("checked", true);
+				//채용일자 비활성화
+				document.getElementById('startDay_u').disabled = true;
+				document.getElementById('endDay_u').disabled = true;
+				
+				//시작일(date)
+				let startDay = $("#startDay_u").val("");
+				//마감일(date)
+				let endDay = $("#endDay_u").val("");
+			}else{
+				//채용일자 활성화
+				
+				//시작일(date)
+				let startDay = $("#startDay_u").val(recruitData.recruitStart);
+				//마감일(date)
+				let endDay = $("#endDay_u").val(recruitData.recruitEnd);
+			}
 			
 			
 			//파일
@@ -170,6 +189,22 @@ function updateRecruit(){
 			}
 		}
 		
+		let contentsStatus;
+		let recruitStart;
+		let recruitEnd;
+		
+		if($("input:checkbox[name='always_u']").is(":checked")){
+			contentsStatus = $("#always_u").val();
+			recruitStart = null;
+			recruitEnd = null;
+		}else{
+			contentsStatus = null;
+			recruitStart = $("#startDay_u").val();
+			recruitEnd = $("#endDay_u").val();
+		}
+		
+		console.log('contentsStatus>>>>>' , contentsStatus);
+		
 		//FormData 새로운 객체 생성 
 		var formData = new FormData();
 		
@@ -177,8 +212,8 @@ function updateRecruit(){
 		var data = {
 				"recruitNo": $("#recruitNo_u").val(),
 				"recruitTitle": $("#title_u").val(),
-				"recruitStart": $("#startDay_u").val(),
-				"recruitEnd": $("#endDay_u").val(),
+				"recruitStart": recruitStart,
+				"recruitEnd": recruitEnd,
 				"career": $("#career_u").val(),
 				"jobTitle": $("#jobTitle_u").val(),
 				"recruitType": $("#recruitType_u").val(),
@@ -187,6 +222,7 @@ function updateRecruit(){
 				"qualification": $("#qualification_u").val(),
 				"recruitManager": $("#recruitManager_u").val(),
 				"orgFileName" : $("#orgFileName_u").val(),
+				"contentsStatus": contentsStatus,
 				"subTitle": subTitle,
 				"contents": contents		
 		}
@@ -250,6 +286,33 @@ function addUpdateContents(){
 			</tr>`);
 }
 
+$(document).ready(function() {
+	
+	$("input:checkbox[name='always_u']").on('click', function() {
+		
+		let chk = $(this).is(":checked");
+		let startDay = $('#startDay_u').val();
+		let endDay = $('#endDay_u').val();
+		
+		console.log("수정 버튼누름",chk);
+		
+		if(chk){
+			/* $("input:checkbox[name='always']").prop('checked', true); */
+			document.getElementById('startDay_u').disabled = true;
+			document.getElementById('endDay_u').disabled = true;
+			
+		} else {
+			console.log("채용일 활성화");
+			$("input:checkbox[name='always_u']").prop('checked', false); 
+			document.getElementById('startDay_u').disabled = false;
+			document.getElementById('endDay_u').disabled = false;
+			$('#startDay_u').val(startDay);
+			$('#endDay_u').val(endDay);
+			
+		}
+	})
+})
+
 </script>
 <div class="modal fade" id="modalContent4" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel">
@@ -278,14 +341,17 @@ function addUpdateContents(){
 							</tr>
 							<tr>
 								<td class="menu">채용 시작일<span style="color: red;">*</span></td>
-								<td align="left"><input type="date" name="startDay_u"
-									id="startDay_u" class="form-control input-sm"
-									style="width: 50%;"></td>
+								<td align="left">
+									<input type="date" name="startDay_u" id="startDay_u" class="form-control input-sm" style="width: 50%;">
+								</td>
 							</tr>
 							<tr>
 								<td class="menu">채용 마감일<span style="color: red;">*</span></td>
-								<td align="left"><input type="date" name="endDay_u"
-									id="endDay_u" class="form-control input-sm" style="width: 50%;"></td>
+								<td align="left">
+								<input type="date" name="endDay_u" id="endDay_u" class="form-control input-sm" style="width: 50%;">
+								<input style="zoom:0.7;" type="checkbox" id="always_u" name='always_u' value="R">
+									<label style="padding-top: 10px;" for="always_u">상시채용</label>	
+								</td>
 							</tr>
 							<tr>
 									<td class="menu">직무명</td>
@@ -312,17 +378,17 @@ function addUpdateContents(){
 										id="recruitPlace_u" class="form-control input-sm"></td>
 								</tr>
 								<tr>
-									<td class="menu">직무소개</td>
-									<td align="left">
-										<textarea name="jobIntro_u" id="jobIntro_u"
-												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
-									</td>
-								</tr>
-								<tr>
 									<td class="menu">담당자</td>
 									<td align="left">
 										<textarea name="recruitManager_u" id="recruitManager_u"
 												rows="10" cols="80"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td class="menu">직무소개</td>
+									<td align="left">
+										<textarea name="jobIntro_u" id="jobIntro_u"
+												rows="10" cols="80" placeholder="내용을 입력해 주세요."></textarea>
 									</td>
 								</tr>
 								<tr>

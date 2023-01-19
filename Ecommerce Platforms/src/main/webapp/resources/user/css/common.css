@@ -1228,7 +1228,8 @@ img {
   background-image: url(../images/img/img-keyvisual-visual-contact-pc@2x.png);
 } /* 고객센터 */
 .top_visual_area.recruit {
-  background-image: url(../images/naedam_ca_back.png);
+  /* background-image: url(../images/naedam_ca_back.png); */
+  background-image: url(../images/recruit_top.jpg);
 } /* 채용 */
 .top_visual_area.tech-01 {
   /*background-image:url(../images/tech/tech-img-keyvisual-visual-01-pc@2x.png);*/
