@@ -1,21 +1,28 @@
 package com.naedam.admin.setting.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.history.model.vo.History;
-
 import com.naedam.admin.setting.model.service.SettingService;
 import com.naedam.admin.setting.model.vo.AdminMenu;
 import com.naedam.admin.setting.model.vo.AdminSetting;
+import com.naedam.admin.setting.model.vo.Partner;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -59,5 +66,25 @@ public class SettingController {
 		model.addAttribute("adminSetting", adminSetting);
 		model.addAttribute("adminMenuList", adminMenuList);
 	}
+	
+	@PostMapping("partnerProcess")
+	public String partnerProcess(@ModelAttribute("partner") Partner partner,
+								 @RequestParam("mode") String mode,
+								 @RequestParam(value="file", required = false) MultipartFile file,
+								 HttpServletRequest request) throws Exception{
+		String filePath = request.getSession().getServletContext().getRealPath("resources/user/images/partner/");
+		Map<String, Object> partnerMap = new HashMap<>();
+		partnerMap.put("partner", partner);
+		partnerMap.put("mode", mode);
+		partnerMap.put("file", file);
+		partnerMap.put("filePath", filePath);
+		settingService.partnerProcess(partnerMap);
+		return "redirect:/admin/setting/listPartner";
+	}
 
+	@GetMapping("listPartner")
+	public String listPartner(Model model) throws Exception{
+		model.addAttribute("list", settingService.selectPartner());
+		return "admin/setting/partnerList";
+	}
 }

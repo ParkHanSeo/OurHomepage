@@ -82,7 +82,6 @@ public class MenuServiceImpl implements MenuService {
 		if("insert".equals(map.get("mode"))) {
 			head.setHeadImage(headImage.getOriginalFilename());
 			headImage.transferTo(file);
-			System.out.println("check === "+file);
 			menuDao.addHead(head);
 		}else if("update".equals(map.get("mode"))) {
 			if(headImage.isEmpty() == false) {

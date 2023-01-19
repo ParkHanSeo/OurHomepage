@@ -1,10 +1,7 @@
 package com.naedam.admin.setting.model.service;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.util.Arrays;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,10 +14,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.history.model.vo.History;
-
 import com.naedam.admin.setting.model.dao.SettingDao;
 import com.naedam.admin.setting.model.vo.AdminMenu;
 import com.naedam.admin.setting.model.vo.AdminSetting;
+import com.naedam.admin.setting.model.vo.Partner;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -61,6 +58,30 @@ public class SettingServiceImpl implements SettingService {
 		
 		return result;
 	}
+	
+	public void partnerProcess(Map<String, Object> map) throws Exception{
+		Partner partner = (Partner) map.get("partner");
+		MultipartFile file = (MultipartFile) map.get("file");
+		if("insert".equals(map.get("mode"))) {
+			File file2 = new File(map.get("filePath")+file.getOriginalFilename());
+			partner.setPartnerImage(file.getOriginalFilename());
+			file.transferTo(file2);
+			settingDao.addPartner(partner);
+		}else if("update".equals(map.get("mode"))) {
+			if(file.isEmpty() == false) {
+				File file2 = new File(map.get("filePath")+file.getOriginalFilename());
+				partner.setPartnerImage(file.getOriginalFilename());
+				file.transferTo(file2);
+			}else if(file.isEmpty() == true) {
+				Partner partnerData = settingDao.getPartner(partner.getPartnerNo());
+				partner.setPartnerImage(partnerData.getPartnerImage());
+			}
+			settingDao.updatePartner(partner);
+		}else if("delete".equals(map.get("mode"))) {
+			List<Integer> partnerArr = (List<Integer>) map.get("partnerArr");
+			settingDao.deletePartner(partnerArr);
+		}
+	}
 
 	@Override
 	public List<History> selectHistoryList() {
@@ -85,6 +106,17 @@ public class SettingServiceImpl implements SettingService {
 		// TODO Auto-generated method stub
 		return settingDao.selectAdminSetting();
 	}
+	
+	@Override
+	public List<Partner> selectPartner() throws Exception{
+		return settingDao.selectPartner();
+	}
+
+	@Override
+	public Partner getPartner(int partnerNo) throws Exception {
+		// TODO Auto-generated method stub
+		return settingDao.getPartner(partnerNo);
+	}
 
 	@Override
 	public int updateAdminSetting(AdminSetting adminSetting) {
@@ -103,5 +135,6 @@ public class SettingServiceImpl implements SettingService {
 		// TODO Auto-generated method stub
 		return settingDao.updateAdminMenuAllN();
 	}
+
 
 }

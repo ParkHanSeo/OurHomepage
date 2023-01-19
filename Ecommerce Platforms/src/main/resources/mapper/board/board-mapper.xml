@@ -391,8 +391,9 @@
 		ORDER BY p.post_asc ASC
 		LIMIT #{limit} OFFSET #{offset}
 	</select>	
-	
-	<select id="getMainPostList" resultMap="PostSelectMap" >	
+<!-- MariaDB rank함수 나온 후 -->
+
+<!-- 	<select id="getMainPostList" resultMap="PostSelectMap" >	
 			select *
 			from(
 				select 
@@ -403,6 +404,21 @@
 			left outer join board tbl2
 			on tbl1.board_no = tbl2.BOARD_NO 
 			where tbl1.ranking <![CDATA[<=]]> 3
+	</select> -->
+
+	<select id="getMainPostList" resultMap="PostSelectMap" >
+		select *
+		from
+			(select tb1.*,
+				(select count(*)+1
+				 from post
+				 where post_date>tb1.post_date) as rank
+			 from post tb1
+			 order by rank asc) tbl1
+		left outer join board tbl2
+		on tbl1.board_no = tbl2.BOARD_NO 
+		where tbl1.rank <![CDATA[<=]]> 3
+		order by tbl1.rank asc
 	</select>
 			
 	<select id="getMemberData" parameterType="int" resultMap="memberSelectMap">

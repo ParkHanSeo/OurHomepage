@@ -17,6 +17,8 @@
               <span class="line">대표전화 : 031-712-8315</span>
               <span>팩스번호 : 031-789-3545</span>
               <p class="copyright">© NDC&C. All Rights Reserved.</p>
+              <!-- 이모티콘 사용으로 인한 저작권 표시 -->
+              <a href="https://www.flaticon.com/kr/free-icons/ai-" title="ai 파일 아이콘" style="color:black;">Ai 파일 아이콘  제작자: Eucalyp - Flaticon</a>
             </address>
           </div>
         </footer>
