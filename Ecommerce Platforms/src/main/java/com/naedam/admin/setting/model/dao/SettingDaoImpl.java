@@ -13,12 +13,19 @@ import com.naedam.admin.history.model.vo.History;
 
 import com.naedam.admin.setting.model.vo.AdminMenu;
 import com.naedam.admin.setting.model.vo.AdminSetting;
+import com.naedam.admin.setting.model.vo.Partner;
 
 @Repository
 public class SettingDaoImpl implements SettingDao {
 	@Autowired
 	private SqlSession session;
 
+
+	@Override
+	public void addPartner(Partner partner) throws Exception {
+		session.insert("setting.addPartner", partner);
+	}
+	
 	@Override
 	public List<History> selectHistoryList() {
 		// TODO Auto-generated method stub
@@ -37,11 +44,23 @@ public class SettingDaoImpl implements SettingDao {
 		// TODO Auto-generated method stub
 		return session.selectList("setting.selectAdminMenuList");
 	}
+	
+	@Override
+	public List<Partner> selectPartner() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList("setting.selectPartnerList");
+	}
 
 	@Override
 	public AdminSetting selectAdminSetting() {
 		// TODO Auto-generated method stub
 		return session.selectOne("setting.selectAdminSetting");
+	}
+	
+	@Override
+	public Partner getPartner(int partnerNo) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne("setting.getPartner", partnerNo);
 	}
 
 	@Override
@@ -61,5 +80,18 @@ public class SettingDaoImpl implements SettingDao {
 		// TODO Auto-generated method stub
 		return session.update("setting.updateAdminMenuAllN");
 	}
+
+	@Override
+	public void updatePartner(Partner partner) throws Exception {
+		// TODO Auto-generated method stub
+		session.update("setting.updatePartner", partner);
+	}
+
+	@Override
+	public void deletePartner(List<Integer> partnerNo) throws Exception {
+		// TODO Auto-generated method stub
+		session.delete("setting.deletePartner", partnerNo);
+	}
+
 
 }

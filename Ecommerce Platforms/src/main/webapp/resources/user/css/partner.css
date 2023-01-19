@@ -1,5 +1,24 @@
 @charset "utf-8";
 
+.partner-flow .flow_list > li {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 19%;
+  float: left;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  text-align: center;
+  height: 110px;
+  border-radius: 3%;
+}
+.partner_li {
+  border: solid #c5c3c3;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -33px;
+}
 .icon_item_box .common-layout_3 > li .icon_item_inner.partner_a {
   height: 150px;
   padding: 40px;
@@ -11,122 +30,58 @@
 .icon_item_box .common-layout_3 > li .icon_item_inner.partner_a:hover {
   background-color: transparent;
 }
-li.items.partner_li.samsung_electronics {
+li.partner_li.samsung_electronics {
   background-image: url(../images/partner/samsung_electronics.jpg);
 }
-li.items.partner_li.samsung_cnt {
+li.partner_li.samsung_cnt {
   background-image: url(../images/partner/samsung_cnt.jpg);
-  background-size: 350px;
-  background-repeat: no-repeat;
-  background-position-x: 28px;
-  background-position-y: 10px;
 }
-li.items.partner_li.samsung_electro_mechanics {
-  background-image: url(../images/partner/samsung_electro_mechanics.png);
-  background-repeat: no-repeat;
-  background-size: 300px;
-  background-position-x: 37px;
-  background-position-y: 21px;
+li.partner_li.samsung_electro_mechanics {
+  background-image: url(../images/partner/samsung_electro_mechanics.jpg);
 }
-li.items.partner_li.samsung_sdi {
+li.partner_li.samsung_sdi {
   background-image: url(../images/partner/samsung_sdi.png);
-  background-size: 345px;
-  background-repeat: no-repeat;
-  background-position-x: 25px;
-  background-position-y: 43px;
 }
-li.items.partner_li.samsung_sds {
+li.partner_li.samsung_sds {
   background-image: url(../images/partner/samsung_sds.jpg);
-  background-size: 345px;
-  background-repeat: no-repeat;
-  background-position-x: 29px;
-  background-position-y: -6px;
 }
-li.items.partner_li.samsung_display {
+li.partner_li.samsung_display {
   background-image: url(../images/partner/samsung_display.jpg);
-  background-size: 321px;
-  background-repeat: no-repeat;
-  background-position-x: 40px;
-  background-position-y: 14px;
 }
-li.items.partner_li.humax {
+li.partner_li.humax {
   background-image: url(../images/partner/humax.png);
-  background-size: 329px;
-  background-repeat: no-repeat;
-  background-position-x: 35px;
-  background-position-y: 40px;
 }
-li.items.partner_li.magnachip {
+li.partner_li.magnachip {
   background-image: url(../images/partner/magnachip.jpg);
-  background-size: 374px;
-  background-repeat: no-repeat;
-  background-position-x: 17px;
-  background-position-y: 27px;
 }
-li.items.partner_li.sony {
+li.partner_li.sony {
   background-image: url(../images/partner/sony.png);
-  background-size: 330px;
-  background-repeat: no-repeat;
-  background-position-x: 34px;
-  background-position-y: 46px;
 }
-li.items.partner_li.doosan {
+li.partner_li.doosan {
   background-image: url(../images/partner/doosan.jpg);
-  background-size: 330px;
-  background-repeat: no-repeat;
-  background-position-x: 34px;
-  background-position-y: 46px;
 }
-li.items.partner_li.dongbuhitek {
+li.partner_li.dongbuhitek {
   background-image: url(../images/partner/dongbuhitek.png);
-  background-size: 370px;
-  background-repeat: no-repeat;
-  background-position-x: 13px;
-  background-position-y: 30px;
 }
-li.items.partner_li.daehansanggong {
+li.partner_li.daehansanggong {
   background-image: url(../images/partner/daehansanggong.jpg);
-  background-size: 447px;
-  background-repeat: no-repeat;
-  background-position-x: -24px;
-  background-position-y: -56px;
 }
-li.items.partner_li.mev {
+li.partner_li.mev {
   background-image: url(../images/partner/mev.jpg);
-  background-size: 368px;
-  background-repeat: no-repeat;
-  background-position-x: 19px;
-  background-position-y: 14px;
 }
-li.items.partner_li.mof {
+li.partner_li.mof {
   background-image: url(../images/partner/mof.jpg);
-  background-size: 417px;
-  background-repeat: no-repeat;
-  background-position-x: -8px;
-  background-position-y: 18px;
 }
-li.items.partner_li.skcnc {
+li.partner_li.skcnc {
   background-image: url(../images/partner/skcnc.png);
-  background-size: 220px;
-  background-repeat: no-repeat;
-  background-position-x: 95px;
-  background-position-y: 4px;
 }
-li.items.partner_li.skhynix {
+li.partner_li.skhynix {
   background-image: url(../images/partner/skhynix.jpg);
-  background-size: 240px;
-  background-repeat: no-repeat;
-  background-position-x: 88px;
-  background-position-y: 4px;
 }
-li.items.partner_li.everlandresort {
+li.partner_li.everlandresort {
   background-image: url(../images/partner/everlandresort.jpg);
-  background-size: 392px;
-  background-repeat: no-repeat;
-  background-position-x: 1px;
-  background-position-y: 34px;
 }
-.items.partner_li {
+.partner_li {
   border: solid #c5c3c3;
   border-radius: 4%;
 }

@@ -1925,7 +1925,7 @@
 .icon_item_box .common-layout_3 {
 } */
 .icon_item_box .common-layout_3 > li .icon_item_inner {
-  height: 320px;
+  height: 230px;
   padding: 40px;
   display: block;
   position: relative;
@@ -1933,15 +1933,17 @@
   background-color: #f0f2f5;
 }
 .icon_item_box .common-layout_3 > li .icon_item_inner:hover {
-  background-color: #efefef;
+  box-shadow: 2px 5px 7px -3px grey;
 }
+
 .icon_item_box .common-layout_3 > li .icon_item_inner .icon_item_title {
   font-size: 24px;
+  font-weight: 600;
   line-height: 36px;
   color: #000;
 }
 .icon_item_box .common-layout_3 > li .icon_item_inner .icon_item_desc {
-  margin-top: 16px;
+  margin-top: 5px;
   font-size: 18px;
   line-height: 28px;
   color: #666;
@@ -2253,6 +2255,61 @@
 .common-text_list_area .common-text_reg-date {
   text-align-last: center;
   font-size: large;
+}
+.items_main_text {
+  margin-top: 50px;
+}
+.icon_item_box .common-layout_3 li:hover > .icon_item_inner .bi_1 {
+  background-image: url(../images/icon/arrow.png);
+  width: 40px;
+  height: 40px;
+  bottom: 5px;
+  right: 20px;
+}
+.icon_item_box .common-layout_3 > li .icon_item_inner .bi_ic {
+  width: 40px;
+  height: 40px;
+  left: 40px;
+  top: 30px;
+}
+.bi_li_1 {
+  background-image: url(../images/icon/circuit.png);
+}
+.bi_li_2 {
+  background-image: url(../images/icon/ai_icon.png);
+}
+.bi_li_3 {
+  background-image: url(../images/icon/cloud_icon.png);
+}
+.bi_li_4 {
+  background-image: url(../images/icon/scm_icon.png);
+}
+.bi_li_5 {
+  background-image: url(../images/icon/plm_icon.png);
+}
+.bi_li_6 {
+  background-image: url(../images/icon/ams_icon.png);
+}
+.bi_li_7 {
+  background-image: url(../images/icon/mes_icon.png);
+}
+.bi_li_8 {
+  background-image: url(../images/icon/sd_icon.png);
+}
+.bi_li_9 {
+  background-image: url(../images/icon/meat_icon.png);
+}
+.bi_li_10 {
+  background-image: url(../images/icon/mix_icon.png);
+}
+.bi_li_11 {
+  background-image: url(../images/icon/erp_icon.png);
+}
+.bi_li_12 {
+  background-image: url(../images/icon/consulting_icon.png);
+}
+.bi_li_13 {
+  background-image: url(../images/icon/si_icon.png);
 }
 @media all and (max-width: 1024px) {
   .layer_wrapper .layer_outer .layer_inner {

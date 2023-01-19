@@ -3,7 +3,24 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="setting">
-
+	
+	<resultMap id="partnerSelectMap" type="partner">
+		<result property="partnerNo"				column="PARTNER_NO"				jdbcType="NUMERIC"></result>
+		<result property="partnerName"				column="PARTNER_NAME"			jdbcType="VARCHAR"></result>
+		<result property="in_dtm"					column="IN_DTM"					jdbcType="VARCHAR"></result>
+		<result property="partnerImage"				column="PARTNER_IMAGE"			jdbcType="VARCHAR"></result>
+	</resultMap>	
+	
+	<insert id="addPartner" parameterType="partner">
+		INSERT INTO partner
+		(PARTNER_NAME, 
+		 IN_DTM, 
+		 PARTNER_IMAGE)
+		VALUES
+		(#{partnerName}, 
+		 sysdate(), 
+		 #{partnerImage})	
+	</insert>
 	
 	<select id="selectHistoryList" resultType="history">
 		select * from history
@@ -19,6 +36,22 @@
   	
   	<select id="selectAdminSetting" resultType="adminSetting">
   		select * from admin_setting
+  	</select>
+  	
+  	<select id="selectPartnerList" resultMap="partnerSelectMap">
+  		select
+  		partner_no,
+  		partner_name,
+  		partner_image,
+  		date_format(in_dtm, '%Y-%m-%d') in_dtm
+  		from partner
+  	</select>
+  	
+  	<select id="getPartner" parameterType="int" resultMap="partnerSelectMap">
+  		SELECT	
+  		*
+  		FROM partner
+  		WHERE partner_no = #{value}
   	</select>
 
   	<update id="updateAdminSetting">
@@ -39,7 +72,22 @@
   	<update id="updateAdminMenu">
   		update admin_menu set status = 'Y' where menu_no = #{menuNo}
   	</update>
+  	
+  	<update id="updatePartner" parameterType="partner">
+		UPDATE partner
+		<set>
+			PARTNER_NAME = #{partnerName}, 
+			PARTNER_IMAGE = #{partnerImage}
+		</set>
+		WHERE PARTNER_NO = #{partnerNo}
+  	</update>
 
-
+	<delete id="deletePartner">
+		DELETE
+		FROM partner
+		WHERE <foreach collection="list" item="partnerNo" open="(" close=")" separator="or">
+				partner_no = #{partnerNo}
+			  </foreach>	
+	</delete>
 	
 </mapper>
