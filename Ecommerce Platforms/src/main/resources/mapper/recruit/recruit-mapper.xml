@@ -29,31 +29,30 @@
 		<result column="JOB_INTRO" property="jobIntro"/>
 		<result column="QUALIFICATION" property="qualification"/>
 		<result column="CONTENTS_STATUS" property="contentsStatus"/>
+		<result column="RECRUIT_MANAGER" property="recruitManager"/>
 		<result column="ROWNUM" property="rownum"/>
 	</resultMap>
 
-	<select id="getRecruitList" resultMap="recruitResultMap">
+	<select id="getRecruitList" resultMap="recruitResultMap" parameterType="String">
 		SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
-		R.RECRUIT_NO,
-		R.RECRUIT_TITLE,
-		R.RECRUIT_VIEWCOUNT,
-		date_format(R.RECRUIT_START, '%Y-%m-%d')as RECRUIT_START,
-		date_format(R.RECRUIT_END, '%Y-%m-%d')as RECRUIT_END,
-		date_format(R.RECRUIT_DATE, '%Y-%m-%d')as RECRUIT_DATE,
-		R.CAREER,
-		R.CONTENTS_STATUS
-		FROM recruit R,(SELECT @ROWNUM := 0) TMP
-		<where>
-			<if test="search.searchType != null">
-				R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
+		      R.RECRUIT_NO,
+		      R.RECRUIT_TITLE,
+		      R.RECRUIT_VIEWCOUNT,
+		      date_format(R.RECRUIT_START, '%Y-%m-%d')as RECRUIT_START,
+		      date_format(R.RECRUIT_END, '%Y-%m-%d')as RECRUIT_END,
+		      date_format(R.RECRUIT_DATE, '%Y-%m-%d')as RECRUIT_DATE,
+		      R.CAREER,
+		      R.CONTENTS_STATUS
+		 FROM recruit R,(SELECT @ROWNUM := 0) TMP
+		WHERE RECRUIT_DLE_STATUS = 'N'
+			<if test="value != null">
+			AND R.RECRUIT_TITLE like concat ('%',#{value},'%')
 			</if>
-			AND RECRUIT_DLE_STATUS = 'N'
-		</where>
-		ORDER BY RECRUIT_NO DESC
+		ORDER BY CONTENTS_STATUS DESC, RECRUIT_NO DESC
 	</select>
 
 
-	<select id="getTotalCount" parameterType="hashmap"
+	<select id="getTotalCount" parameterType="String"
 		resultType="int">
 		SELECT COUNT(*)
 		FROM (SELECT RECRUIT_NO,
@@ -65,12 +64,12 @@
 		CAREER
 		FROM recruit
 		<where>
-			<if test="search.searchType != null">
-				R.RECRUIT_TITLE like concat ('%',#{search.searchKeyword},'%')
+			<if test="value != null">
+				RECRUIT_TITLE like concat ('%',#{value},'%')
 			</if>
 			AND RECRUIT_DLE_STATUS = 'N'
 		</where>
-		ORDER BY RECRUIT_NO ASC)countTable
+		ORDER BY CONTENTS_STATUS, RECRUIT_NO DESC)countTable
 	</select>
 
 	<update id="deleteRecruit">
@@ -95,7 +94,8 @@
 		RECRUIT_TYPE,
 		RECRUIT_PLACE,
 		JOB_INTRO,
-		QUALIFICATION
+		QUALIFICATION,
+		RECRUIT_MANAGER
 		)
 		VALUES
 		(
@@ -112,7 +112,8 @@
 		#{recruitType},
 		#{recruitPlace},
 		#{jobIntro},
-		#{qualification}
+		#{qualification},
+		#{recruitManager}
 		)
 		
 		<selectKey keyProperty="recruitNo" order="AFTER" resultType="int">
@@ -156,7 +157,13 @@
 			RECRUIT_FILE_NAME = #{fileName}, 
 			RECRUIT_FILE_PATH = #{filePath},
 		</if>
-		QUALIFICATION = #{qualification}
+		<if test="orgFileName == null">
+			RECRUIT_FILE_NAME_ORG = null, 
+			RECRUIT_FILE_NAME = null, 
+			RECRUIT_FILE_PATH = null,
+		</if>
+		QUALIFICATION = #{qualification},
+		RECRUIT_MANAGER = #{recruitManager}
 		WHERE RECRUIT_NO = #{recruitNo}
 	</update>
 	
@@ -165,6 +172,51 @@
 		  FROM recruit_contents 
 		 WHERE RECRUIT_NO = #{curRecruitNo} 
 	</delete>
+	
+	<select id="selectRecruitList" resultMap="recruitResultMap">
+		SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
+		R.RECRUIT_NO,
+		R.RECRUIT_TITLE,
+		date_format(R.RECRUIT_END, '%Y-%m-%d')as RECRUIT_END,
+		R.CAREER,
+		R.CONTENTS_STATUS
+		FROM recruit R,(SELECT @ROWNUM := 0) TMP
+		<where>
+			<if test="searchType != null">
+				R.RECRUIT_TITLE like concat ('%',#{searchKeyword},'%')
+			</if>
+			AND RECRUIT_DLE_STATUS = 'N'
+			AND CONTENTS_STATUS = 'Y'
+		</where>
+		ORDER BY RECRUIT_NO DESC
+		LIMIT #{limit} OFFSET #{offset}	
+	</select>
+	
+	<select id="getUserTotalCount" parameterType="hashmap" resultType="int">
+		SELECT COUNT(*)
+		FROM (SELECT RECRUIT_NO,
+		RECRUIT_TITLE,
+		CAREER
+		FROM recruit
+		<where>
+			<if test="searchType != null">
+				R.RECRUIT_TITLE like concat ('%',#{searchKeyword},'%')
+			</if>
+			AND RECRUIT_DLE_STATUS = 'N'
+			AND CONTENTS_STATUS = 'Y'
+		</where>
+		ORDER BY RECRUIT_NO DESC)countTable
+	</select>
+	
+	
+	<select id="getFileInfo" resultMap="recruitResultMap">
+		SELECT 
+			   RECRUIT_FILE_PATH,
+			   RECRUIT_FILE_NAME,
+			   RECRUIT_FILE_NAME_ORG
+		  FROM recruit
+		 WHERE RECRUIT_NO = #{recruitNo}
+	</select>
 
 </mapper>
 

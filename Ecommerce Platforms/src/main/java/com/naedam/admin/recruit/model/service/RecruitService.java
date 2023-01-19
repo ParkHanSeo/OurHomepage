@@ -12,7 +12,7 @@ import com.naedam.admin.recruit.model.vo.recruitDTO;
 public interface RecruitService {
 
 	// 게시글 목록
-	public Map<String, Object> getRecruitList(Map<String, Object> map, int limit, int offset)throws Exception;
+	public Map<String, Object> getRecruitList(String search, int limit, int offset)throws Exception;
 
 	// 게시글 삭제
 	public int deleteRecruit(int recruitNum);
@@ -34,8 +34,6 @@ public interface RecruitService {
 
 	// 상세 내용 업데이트를 위한 삭제
 	public int deleteRecruitContents(int curRecruitNo);
-
-
 
 	
 	
