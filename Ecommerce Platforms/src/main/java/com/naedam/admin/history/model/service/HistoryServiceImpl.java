@@ -29,9 +29,8 @@ public class HistoryServiceImpl implements HistoryService {
 		Map<String, Object> resultMap = new HashMap<>();
 		History history = (History) map.get("history");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
-		String filePath = request.getServletContext().getRealPath("resources/user/images/company/award/");
+		String filePath = request.getServletContext().getRealPath("resources/user/images/company/history/");
 		MultipartFile historyImage = (MultipartFile) map.get("historyImage");
-		File file = new File(filePath+historyImage.getOriginalFilename());
 		
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
 			StringBuilder str = new StringBuilder();
@@ -52,18 +51,18 @@ public class HistoryServiceImpl implements HistoryService {
 			Date date = resultDate;
 			history.setHistoryDate(date);
 			if("insert".equals(map.get("mode"))) {
+				File file = new File(filePath+historyImage.getOriginalFilename());
 				history.setImgUrl(historyImage.getOriginalFilename());
 				historyImage.transferTo(file);
 				historyDao.insertHistory(history);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
 				if(historyImage.isEmpty() == false) {
+					File file = new File(filePath+historyImage.getOriginalFilename());
 					history.setImgUrl(historyImage.getOriginalFilename());
 					historyImage.transferTo(file);
 				}else if(historyImage.isEmpty() == true) {
 					History historyData = historyDao.selectOneHistoryByHisNo(history.getHistoryNo());
-					history.setImgUrl(historyData.getImgUrl());
-					historyImage.transferTo(file);
 				}
 				historyDao.updateHistory(history);
 				resultMap.put("msg", "연혁 정보가 수정되었습니다.");

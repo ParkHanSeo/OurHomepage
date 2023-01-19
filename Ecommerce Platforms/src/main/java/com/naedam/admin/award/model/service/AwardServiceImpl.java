@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -31,9 +32,8 @@ public class AwardServiceImpl implements AwardService {
 		Award award = (Award) map.get("award");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		String filePath = request.getServletContext().getRealPath("resources/user/images/company/award/");
+		System.out.println("경로==="+filePath);
 		MultipartFile awardImage = (MultipartFile) map.get("awardImage");
-		File file = new File(filePath+awardImage.getOriginalFilename());
-				
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
 			StringBuilder str = new StringBuilder();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
@@ -53,18 +53,19 @@ public class AwardServiceImpl implements AwardService {
 			Date date = resultDate;
 			award.setAwardDate(date);
 			if("insert".equals(map.get("mode"))) {
+				File file = new File(filePath+awardImage.getOriginalFilename());
 				award.setImgUrl(awardImage.getOriginalFilename());
 				awardImage.transferTo(file);
 				awardDao.insertAward(award);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
 				if(awardImage.isEmpty() == false) {
+					File file = new File(filePath+awardImage.getOriginalFilename());
 					award.setImgUrl(awardImage.getOriginalFilename());
 					awardImage.transferTo(file);
 				}else if(awardImage.isEmpty() == true) {
 					Award awardData = awardDao.selectDetailByNo(award.getAwardNo());
 					award.setImgUrl(awardData.getImgUrl());
-					awardImage.transferTo(file);
 				}
 				
 				awardDao.updateAward(award);

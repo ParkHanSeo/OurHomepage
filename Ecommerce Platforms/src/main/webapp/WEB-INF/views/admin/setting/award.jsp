@@ -234,7 +234,7 @@
 	            $('[name=content]').val(data.content);
 	            $('[name=host]').val(data.host);
 	            if(data.imgUrl != null){
-					 var image = "'${pageContext.request.contextPath}/resources/user/images/main/"+data.imgUrl+"'"
+					 var image = "'${pageContext.request.contextPath}/resources/user/images/company/award/"+data.imgUrl+"'"
 					 if(data.imgUrl != null && data.imgUrl != ''){
 						 console.log("1")
 						 var display = '<span id="display_awardImage" name="awardImageSpan">'

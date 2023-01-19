@@ -2,6 +2,7 @@ package com.naedam.admin.award.controller;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -54,6 +55,7 @@ public class AwardController {
 		map.put("mode", request.getParameter("mode"));
 		map.put("request", request);
 		map.put("awardImage", awardImage);
+		
 		Map<String, Object> resultMap = awardService.awardProcess(map);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
 		return "/admin/setting/award";

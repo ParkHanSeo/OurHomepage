@@ -3,20 +3,22 @@
 <mapper namespace="award">
 
 	<select id="selectDetailByNo" parameterType="int" resultType="com.naedam.admin.award.model.vo.Award">
-	select * from award	where award_no = #{value}
+	select * from award	where award_no = #{value} order by award_date desc;
 	</select>
 
 	<select id="selectAwardList" resultType="map">
 	select *,
 		DATE_FORMAT(award_date, '%Y') AS year,
 		DATE_FORMAT(award_date, '%c') AS month
-		from award;
+		from award 
+	order by award_date desc;
 	</select>
 
 	<select id="selectYear" resultType="map">
 	select distinct
 		DATE_FORMAT(award_date, '%Y') AS year
 		from award
+		order by award_date desc;
 	</select>
 
 	<select id="selectMonth" resultType="map">
@@ -24,6 +26,7 @@
 		DATE_FORMAT(award_date, '%Y') AS year,
 		DATE_FORMAT(award_date, '%c') AS month
 		from award
+		order by award_date desc;
 	</select>
 	
 	<insert id="insertAward" parameterType="award" >

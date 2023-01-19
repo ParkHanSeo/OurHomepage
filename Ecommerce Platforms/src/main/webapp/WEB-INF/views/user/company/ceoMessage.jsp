@@ -122,7 +122,7 @@ $(function(){
                         </div>
                     </div>
                 </div>
-
+<!-- 
                 <div class="layout_section_outer ceo-profile">
                     <div class="inner_container">
                         <div class="layout_head">
@@ -192,7 +192,7 @@ $(function(){
                         </div>
                     </div>
                 </div>
-
+ -->
             </div><!-- // #contents -->
         </section><!-- // #container -->
 </div>
