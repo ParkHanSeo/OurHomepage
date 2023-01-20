@@ -199,8 +199,9 @@
 		R.CONTENTS_STATUS
 		FROM recruit R,(SELECT @ROWNUM := 0) TMP
 		<where>
-			<if test="searchType != null">
-				R.RECRUIT_TITLE like concat ('%',#{searchKeyword},'%')
+			<if test="search != null">
+				(R.RECRUIT_TITLE like concat ('%',#{search},'%')
+			 OR	R.CAREER like concat ('%',#{search},'%'))
 			</if>
 			AND RECRUIT_DLE_STATUS = 'N'
 			AND CONTENTS_STATUS != 'N'
@@ -216,11 +217,12 @@
 		CAREER
 		FROM recruit
 		<where>
-			<if test="searchType != null">
-				R.RECRUIT_TITLE like concat ('%',#{searchKeyword},'%')
+			<if test="search != null">
+				(RECRUIT_TITLE like concat ('%',#{search},'%')
+			 OR	CAREER like concat ('%',#{search},'%'))
 			</if>
 			AND RECRUIT_DLE_STATUS = 'N'
-			AND CONTENTS_STATUS = 'Y'
+			AND CONTENTS_STATUS != 'N
 		</where>
 		ORDER BY RECRUIT_NO DESC)countTable
 	</select>

@@ -37,7 +37,7 @@
 									<span class="closing">
 									<c:choose>
 										<c:when test="${recruitData.contentsStatus eq 'Y'}">채용중</c:when>
-										<c:when test="${recruitData.contentsStatus eq 'A'}">상시채용</c:when>
+										<c:when test="${recruitData.contentsStatus eq 'R'}">상시채용</c:when>
 									</c:choose>
 									</span>
 								</strong>
@@ -84,9 +84,19 @@
 									</tr>
 									<tr>
 										<th scope="row">채용마감일</th>
-										<td scope="row" rowspan="1">
-											${recruitData.recruitEnd}
-										</td>
+										<c:choose>
+											<c:when test="${recruitData.recruitEnd != null}">
+												<td scope="row" rowspan="1">
+												${recruitData.recruitEnd}
+												</td>
+											</c:when>
+											<c:otherwise>
+												<td scope="row" rowspan="1">
+												상시채용
+												</td>
+											</c:otherwise>
+										</c:choose>
+										
 									</tr>
 									<tr>
 										<th scope="row">채용 담당자</th>

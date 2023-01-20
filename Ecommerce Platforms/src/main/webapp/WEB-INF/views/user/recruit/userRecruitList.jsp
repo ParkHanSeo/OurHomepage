@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/recruit.css">
 <script type="text/javascript">
 function paging(cPage){
+	console.log("paging 클릭!" + cPage);
 	if(cPage == 'prev'){
 			alert("이전 페이지가 없습니다.");
 			return;
@@ -16,10 +17,13 @@ function paging(cPage){
 			alert("다음 페이지가 없습니다.");
 			return;
 		}
+	
 	$("li[id='postList']").remove();
 	$("#page .common-pagination").remove();
 	var search = $("form[name='searchForm']").serialize();
 	var searchKeyword = $("input[name='searchKeyword']").val();
+	
+	console.log("searchKeyword>>>>", searchKeyword);
 	
 	$.ajax({
 		url : "/user/recruit/userRecruitListPaging?${_csrf.parameterName}=${_csrf.token}",
@@ -29,7 +33,7 @@ function paging(cPage){
 					searchKeyword
 				},
 				success : function(data){
-					console.log("paging data >>>> ", data)
+					console.log("paging 처리 결과 ", data)
 					let result = '';
 					for(var i =0; i < data.recruit.list.length; i++){
 						result = '<li id="postList">'
@@ -80,10 +84,6 @@ function paging(cPage){
 
 }
 
-function recruitSearch(){
-	
-}
-
 
 </script>
 </head>
@@ -126,13 +126,13 @@ function recruitSearch(){
                 			
                 		</div>
 						<div class="common-search_box">
-							<form name="searchForm" onsubmit="return false" style="float: right"
+							<form name="searchForm" action="#" onsubmit="return paging()" style="float: right"
 								onkeypress="if(event.keyCode==13){paging();}">
 								<input type="hidden" name="cPage">
 								<input class="common-search_input" name="searchKeyword"
 									id="recruit_search_txt" type="text" placeholder="검색어을 입력해주세요."
 									title="검색어을 입력해주세요.">
-								<button type="button" class="common-search_btn recruit_search_imo" id="btnSearch">
+								<button type="submit" class="common-search_btn recruit_search_imo" id="btnSearch">
 								</button>
 							</form>
 						</div>

@@ -88,6 +88,8 @@ public class userRecruitController {
 		map.put("limit", limit);
 		map.put("offset", offset);
 		
+		System.out.println("userRecruitListPaging map >>>> " + map);
+		
 		Map<String, Object> resultList = userRecruitService.selectRecruitList(map);
 		System.out.println("userRecruitListPaging resultMap>>>>>" + resultList);
 		//조회된 총 갯수
