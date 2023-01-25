@@ -89,6 +89,12 @@ public class RecruitServiceImpl implements RecruitService {
 		System.out.println("deleteRecruitContents Service ==== " + curRecruitNo);
 		return recruitDao.deleteRecruitContents(curRecruitNo);
 	}
+
+	@Override
+	public int updateContentsStatus() {
+		System.out.println("updateContentsStatus service ====");
+		return recruitDao.updateContentsStatus();
+	}
 	
 	
 }

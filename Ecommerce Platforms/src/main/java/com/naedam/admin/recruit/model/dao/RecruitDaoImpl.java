@@ -80,6 +80,12 @@ public class RecruitDaoImpl implements RecruitDao {
 		return sqlSession.delete("recruit.deleteRecruitContents", curRecruitNo);
 	}
 
+	@Override
+	public int updateContentsStatus() {
+		System.out.println("updateContentsStatus dao ==== " + sqlSession.update("recruit.updateContentsStatus"));
+		return sqlSession.update("recruit.updateContentsStatus");
+	}
+
 
 	
 }
