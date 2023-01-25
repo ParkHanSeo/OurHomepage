@@ -23,19 +23,19 @@
   margin-top: 80px;
 }
 .process-flow .color1 {
-  background-color: #49b5eb;
+  background-color: #035AA6;
 }
 .process-flow .color2 {
-  background-color: #32ace8;
+  background-color: #0468BF;
 }
 .process-flow .color3 {
-  background-color: #1ba3e6;
+  background-color: #0477BF;
 }
 .process-flow .color4 {
-  background-color: #1793d0;
+  background-color: #59A8D9;
 }
 .process-flow .color5 {
-  background-color: #1483b9;
+  background-color: #BDD4F2;
 }
 .process-flow .color6 {
   background-color: #27c8e7;
@@ -66,6 +66,7 @@
   font-size: 20px;
   line-height: 30px;
   width: 80%;
+  color:white;
 }
 
 .process-flow .flow_list > li .flow_txt em {

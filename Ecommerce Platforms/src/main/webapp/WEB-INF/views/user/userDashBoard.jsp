@@ -71,7 +71,7 @@
 				</div>
 				<div class="nft-wrap section">
 					<div class="inner_container">
-						<a href="/business/nft">
+						<a href="${pageContext.request.contextPath}/">
 							<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 								고객사의 고객 만족 및 내부 경쟁력 향상
 							</h3>
@@ -82,7 +82,7 @@
 							</p>
 						</a>
 						<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-							<a href="/business/nft" class="common-btn is-white">
+							<a href="/user/company/businessList" class="common-btn is-white">
 								<span>기업 알아보기</span>
 								<i class="icon link-arrow2"></i>
 							</a>
@@ -93,19 +93,11 @@
 					<div class="core-wrap section">
 						<div class="inner_container">
 							<div class="section-title-area">
-								<a href="/tech/rnd">
-									<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">주요 사업</h2>
-									<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-										(주)내담C&amp;은 친환경, 4차 산업혁명, DT(Digital Transformation), AI, Cloud, DT(Digital Twin) 등의 경쟁력이 필요한 시점을 맞이하여, 
-										<br />고객의 성공적인 비즈니스를 위해 최적의 시스템을 제공합니다.
-									</p>
-								</a>
-								<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-									<a href="/tech/rnd" class="common-btn is-white"> 
-										<span>확인하기</span>
-										<i class="icon link-arrow2"></i>
-									</a>
-								</div>
+								<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">주요 사업</h2>
+								<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+									(주)내담C&amp;은 친환경, 4차 산업혁명, DT(Digital Transformation), AI, Cloud, DT(Digital Twin) 등의 경쟁력이 필요한 시점을 맞이하여, 
+									<br />고객의 성공적인 비즈니스를 위해 최적의 시스템을 제공합니다.
+								</p>
 							</div>
 							<ul class="core-list">
 								<li class="ai aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
@@ -161,11 +153,7 @@
 											<br />EIP(Enterprise Information Portal) 등 
 											<br />다양한 IT분야에서의 구축 경험을 토대로 고객사를 위한 다양한 솔루션과 서비스를 제공합니다.
 										</p>
-										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-											<span class="blind">자세히 보기</span>
-										</p>
 									</div>									
-									<a href="/tech/ai_language"></a>
 								</li>
 								<li class="big-data aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
@@ -222,12 +210,7 @@
 										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 											빅데이터 분석 역량과 솔루션 경쟁력을 더해<br /> 데이터 생태계를 강화하는데 앞장섭니다.
 										</p>
-										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-											<span class="blind">자세히 보기</span>
-										</p>
 									</div>									
-									<a href="/business/big_data">
-								</a>
 								</li>
 								<li class="blockchain aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
@@ -310,7 +293,6 @@
 											레거시 시스템과 연계되는 응용 프로그램 개발의뢰도 가능합니다. 
 										</p>
 										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-											<span class="blind">자세히 보기</span>
 										</p>									
 									</div>									
 									<a href="/business/cloud_service"></a>

@@ -3,7 +3,6 @@ package com.naedam.user.recruit.controller;
 
 import java.io.File;
 import java.net.URLEncoder;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.lf5.util.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -114,13 +111,6 @@ public class userRecruitController {
 				
 		//채용글 2차 (리스트 여러개)
 		List<recruitContentsDTO> contents = recruitService.getContentsData(recruitNo);
-				
-		/*
-		 * Map<String, Object> resultMap = new HashMap<>();
-		 * 
-		 * resultMap.put("recruitData", recruitData); resultMap.put("contents",
-		 * contents);
-		 */
 		
 		System.out.println("user recruitData>>>>>" + recruitData);
 		System.out.println("user contents>>>>>" + contents);
@@ -140,7 +130,9 @@ public class userRecruitController {
 		
 		recruitDTO file = userRecruitService.getFileInfo(recruitNo);
 		
-		String filePath = file.getFilePath();
+//		String filePath = file.getFilePath();
+		String filePath = "/ndcnc/tomcat/webapps3/ROOT/resources/imgs/imgrecruit";
+		
 		String fileName = file.getFileName();
 		String orgFileName = file.getOrgFileName();
 

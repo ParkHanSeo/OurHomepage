@@ -222,7 +222,7 @@
 			 OR	CAREER like concat ('%',#{search},'%'))
 			</if>
 			AND RECRUIT_DLE_STATUS = 'N'
-			AND CONTENTS_STATUS != 'N
+			AND CONTENTS_STATUS != 'N'
 		</where>
 		ORDER BY RECRUIT_NO DESC)countTable
 	</select>

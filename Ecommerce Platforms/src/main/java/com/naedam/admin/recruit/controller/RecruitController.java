@@ -1,11 +1,7 @@
 package com.naedam.admin.recruit.controller;
 
 import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +21,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.recruit.model.service.RecruitService;
-import com.naedam.admin.recruit.model.vo.SearchDTO;
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
 import com.naedam.admin.recruit.model.vo.recruitDTO;
 
@@ -51,12 +45,6 @@ public class RecruitController {
 		// 게시글 조회 한도
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
-
-		// 검색
-		/*
-		 * Map<String, Object> map = new HashMap<String, Object>(); map.put("search",
-		 * search);
-		 */
 
 		// 게시글 리스트
 		Map<String, Object> resultMap = recruitService.getRecruitList(searchKeyword, limit, offset);
@@ -114,17 +102,18 @@ public class RecruitController {
 		
 		/* param 안의 일부값 recruitDTO에 담기*/
 		recruitDTO recruit = new recruitDTO();
-		recruit.setRecruitTitle((String)param.get("recruitTitle"));
-		recruit.setCareer((String)param.get("career"));
-		recruit.setRecruitStart((String)param.get("recruitStart"));
-		recruit.setRecruitEnd((String)param.get("recruitEnd"));
-		recruit.setJobTitle((String)param.get("jobTitle"));
-		recruit.setRecruitType((String)param.get("recruitType"));
-		recruit.setRecruitPlace((String)param.get("recruitPlace"));
-		recruit.setJobIntro((String)param.get("jobIntro"));
-		recruit.setQualification((String)param.get("qualification"));
-		recruit.setRecruitManager((String)param.get("recruitManager"));
-		recruit.setContentsStatus((String)param.get("contentsStatus"));
+		recruit.setRecruitTitle(String.valueOf(param.get("recruitTitle")));
+		recruit.setCareer(String.valueOf(param.get("career")));
+		recruit.setRecruitStart(String.valueOf(param.get("recruitStart")));
+		recruit.setRecruitEnd(String.valueOf(param.get("recruitEnd")));
+		recruit.setJobTitle(String.valueOf(param.get("jobTitle")));
+		recruit.setRecruitType(String.valueOf(param.get("recruitType")));
+		recruit.setRecruitPlace(String.valueOf(param.get("recruitPlace")));
+		recruit.setJobIntro(String.valueOf(param.get("jobIntro")));
+		recruit.setQualification(String.valueOf(param.get("qualification")));
+		recruit.setRecruitManager(String.valueOf(param.get("recruitManager")));
+		recruit.setContentsStatus(String.valueOf(param.get("contentsStatus")));
+		
 		
 		System.out.println("===recruitDTO recruit==== : " + recruit);
 		
@@ -139,7 +128,10 @@ public class RecruitController {
 			String fileName = uuid + "_" + fileList.get(0).getOriginalFilename();
 			recruit.setFileName(fileName);
 			//filePath 처리
-			String filePath =request.getServletContext().getRealPath("resources/imgs/imgrecruit");
+			String filePath =request.getServletContext().getRealPath("resources/imgs/imgrecruit/");
+			
+			//cafe24 filePath test
+//			String filePath ="/ndcnc/tomcat/webapps3/ROOT/resources/imgs/imgrecruit";
 			recruit.setFilePath(filePath);
 			
 			//파일 저장
@@ -156,30 +148,38 @@ public class RecruitController {
 		/* 리스트 생성 */
 		List<recruitContentsDTO> contentsList = new ArrayList<>();
 		
-		int size = ((List<String>) param.get("subTitle")).size();
-
+		int insertResult = 0;
+		int size = 0;
 		
-		for (int i = 0; i < size; i++) {
+		if(param.get("subTitle") != null){
 			
-			recruitContentsDTO dtoContents = new recruitContentsDTO();
+			size = ((List<String>) param.get("subTitle")).size();
+
 			
-			/*세부 내용*/
-			dtoContents.setRecruitSubTitle(((List<String>) param.get("subTitle")).get(i));
-			dtoContents.setRecruitContents(((List<String>) param.get("contents")).get(i));
-			
-			/*세부 내용이 들어갈 채용 게시글 dto*/
-			recruitDTO dtoRecruit = new recruitDTO();
-			dtoRecruit.setRecruitNo(curRecruitNo);
-			dtoContents.setRecruitNo(dtoRecruit);
-			
-			contentsList.add(dtoContents);
-			  
-			 System.out.println("contents [" + i + "] >> " + contentsList);
+			for (int i = 0; i < size; i++) {
+				
+				recruitContentsDTO dtoContents = new recruitContentsDTO();
+				
+				/*세부 내용*/
+				dtoContents.setRecruitSubTitle(((List<String>) param.get("subTitle")).get(i));
+				dtoContents.setRecruitContents(((List<String>) param.get("contents")).get(i));
+				
+				/*세부 내용이 들어갈 채용 게시글 dto*/
+				recruitDTO dtoRecruit = new recruitDTO();
+				dtoRecruit.setRecruitNo(curRecruitNo);
+				dtoContents.setRecruitNo(dtoRecruit);
+				
+				contentsList.add(dtoContents);
+				  
+				 System.out.println("contents [" + i + "] >> " + contentsList);
 			}
+			
+			insertResult = recruitService.insertRecruitContents(contentsList);
 			  
-			  int insertResult = recruitService.insertRecruitContents(contentsList);
-			  
-			  log.info("insertResult >>> " + insertResult);
+			log.info("insertResult >>> " + insertResult);
+			
+		}
+		
 			  
 			  //채용 게시글 등록 완료 확인
 			  if(recruitRecult ==1) {
