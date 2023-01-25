@@ -126,11 +126,10 @@ $(function(){
                                 <div class="div_division_left">
 	                                <p class="division_name">Cloud MSP 사업부</p>
 	                                <p class="division_info">
-	                                    - 사업전략기획/수립<br>
-	                                    - 신규사업개발 및 제휴<br>
-	                                    - Global Business 연계<br>
-	                                    - 디자인 지원<br>
-	                                    - IR<br>
+	                                    - 클라우드 인프라 컨설팅<br>
+	                                    - 고객 맞춤 아키텍쳐 설계<br>
+	                                    - 최적화된 Migration 설계<br>
+	                                    - 클라우드 서비스 운영 관리<br>
 	                                </p>
 	                            </div>
                             </li>

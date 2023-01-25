@@ -139,7 +139,13 @@
 							</tr>
 							<tr>
 								<td class="menu">일</td>
-								<td align="left"><input type="text" name="date" class="form-control input-sm" placeholder="예) 2017.10.23" style="width: 26%;" /></td>
+								<td align="left">
+								<select name="date" class="form-control input-sm" style="width: 120px;">
+									<option value=""></option>
+									<c:forEach begin="1" end="31" var="day" step="1">
+										<option value="${day }">${day }</option>
+									</c:forEach>
+								</select>
 							</tr>
 							<tr>
 								<td class="menu">내용</td>
