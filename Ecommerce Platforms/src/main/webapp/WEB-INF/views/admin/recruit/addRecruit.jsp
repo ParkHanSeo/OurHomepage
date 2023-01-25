@@ -101,23 +101,22 @@
 					"jobIntro": $("#jobIntro").val(),
 					"qualification": $("#qualification").val(),
 					"recruitManager": $("#recruitManager").val(),
-					"contentsStatus": contentsStatus,
-					"subTitle": subTitle,
-					"contents": contents		
+					/* "contentsStatus": contentsStatus */		
 			}
-			
+			console.log("data:" + data);
 			
 			var fileinput = $("input[name='fileName']");
 			console.log("fileinput >>>" + fileinput);
 			
 			for(var i = 0; i < fileinput.length; i++){
 				if(fileinput[i].files.length > 0){
-					for(var j = 0; j < fileinput[i].files.length; j++){
-						console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]);
+					/* for(var j = 0; j < fileinput[i].files.length; j++){
+						console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]); */
 						
 						// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
-						formData.append('file', $("input[name='fileName']")[i].files[j]);
-					}
+						/* formData.append('file', $("input[name='fileName']")[i].files[j]); */
+						formData.append('file', $("input[name='fileName']")[i].files);
+					/* } */
 				}
 			}
 			
