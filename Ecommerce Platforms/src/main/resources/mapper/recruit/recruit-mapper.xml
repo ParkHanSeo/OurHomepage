@@ -236,6 +236,12 @@
 		  FROM recruit
 		 WHERE RECRUIT_NO = #{recruitNo}
 	</select>
+	
+	<update id="updateContentsStatus">
+		UPDATE recruit
+		SET CONTENTS_STATUS = 'N'
+		WHERE SYSDATE() > RECRUIT_END
+	</update>
 
 </mapper>
 

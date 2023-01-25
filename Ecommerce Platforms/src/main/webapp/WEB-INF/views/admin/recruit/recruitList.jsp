@@ -190,7 +190,7 @@
 						               			<td>${post.recruitDate}</td>        
 						               			<td>
 							               			<c:if test="${post.contentsStatus == 'Y'}">채용중</c:if>
-							               			<c:if test="${post.contentsStatus == 'N'}">마감</c:if>
+							               			<c:if test="${post.contentsStatus == 'N'}">채용마감</c:if>
 							               			<c:if test="${post.contentsStatus == 'R'}">상시채용</c:if>
 												</td>
 						                        <td>

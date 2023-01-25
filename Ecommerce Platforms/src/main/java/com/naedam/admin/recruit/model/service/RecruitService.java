@@ -35,6 +35,9 @@ public interface RecruitService {
 	// 상세 내용 업데이트를 위한 삭제
 	public int deleteRecruitContents(int curRecruitNo);
 
+	//채용 게시글 상태값 변경
+	public int updateContentsStatus();
+
 	
 	
 }
