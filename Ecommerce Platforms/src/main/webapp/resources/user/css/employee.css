@@ -64,7 +64,7 @@
   overflow: hidden;
 }
 .culture_card_area .culture_card_list > li a {
-  height: 250px;
+  height: 220px;
   padding: 40px;
   display: block;
   position: relative;
@@ -129,7 +129,7 @@
   color: #000;
 }
 .culture_card_area .culture_card_list > li .culture_card_txt > li:first-child {
-  margin-top: 30px;
+  margin-top: 140px;
   margin-left: -11px;
 }
 .culture_card_area
