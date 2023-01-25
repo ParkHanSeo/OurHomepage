@@ -36,7 +36,7 @@
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담C&C</p>
                                             <ul class="common-txt-list">
-                                                <li>내담C&C는 중소 기업 및 중견 기업과의 파트너쉽을 맺고 운영하고 있습니다.</li>
+                                                <li>유수 대기업들과 파트너쉽을 맺고 운영하고 있습니다.</li>
                                                 <li>내담C&C는 최소 운영비로 지속적인 경영 혁신을 추진 가능하도록 지원합니다.</li>
                                             </ul>
                                         </div>
@@ -62,7 +62,7 @@
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담 파트너에 대한 우리의 약속</p>
                                             <ul class="common-txt-list">
-                                                <li>내담C&C 서비스를 통해 지속적인 경영 혁신을 추진할 수 있습니다.</li>
+                                                <li>내담C&C는 서비스를 통해 지속적인 경영 혁신을 추진할 수 있습니다.</li>
                                                 <li>내담C&C는 불필요한 IT Solution 투자를 최소화 합니다. </li>
                                                 <li>내담C&C는 IT Solution 운영부담을 최소화 합니다. </li>
                                             </ul>
@@ -77,7 +77,7 @@
                                             <p class="esg_program_txt">내담의 목표</p>
                                             <ul class="common-txt-list">
                                                 <li>
-                                                	대한민국 중소 기업과 중견 기업이 내담C&C와 함께 성장함으로써<br>
+                                                	고객과 내담C&C와 함께 성장함으로써<br>
                                                 	IT 경쟁력을 확보하고 IT Solution의 낭비요소를 제거하는 것이<br>
                                                 	내담C&C의 궁극적인 목표입니다.
                                                 </li>

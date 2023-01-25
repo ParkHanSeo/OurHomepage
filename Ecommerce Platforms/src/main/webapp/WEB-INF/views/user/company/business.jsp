@@ -79,45 +79,6 @@
                         </div>
                     </div>
                 </div>
-				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
-                    <div class="inner_container">
-                        <div class="layout_head">
-                            <p class="top_txt1">
-                            	Vision & Mission
-                            </p>
-                        </div>
-                        <div class="layout_sub_body">
-                            <div class="welfare_benefit_area">
-                                <ul class="welfare_benefit_list common-layout_2 is-vertical">
-                                    <li class="items_2">
-                                        <div class="business_layout_sub">
-                                            <p class="business_layout_sub_contents">
-                                            	글로벌 경쟁력을 갖춘<br />
-												IT Total Service로의<br />
-												성장 목표 
-                                            </p>
-											<p class="business_layout_sub_title">
-	                                            내담씨앤씨
-                                            </p>                                            
-                                        </div>
-                                    </li>
-                                    <li class="items_2">
-                                        <div class="business_layout_sub">
-                                            <p class="business_layout_sub_contents">
-                                            	고객사의 고객만족<br /> 
-                                            	및<br />
-                                            	내부 경쟁력 향상
-                                            </p>
-                                            <p class="business_layout_sub_title">
-                                            	파트너
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> 
-                    </div>
-                </div>                
                 <div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
                 	<div class="inner_container">
                         <div class="layout_head">
@@ -219,6 +180,45 @@
 	                     </div> 
 	                 </div>               
                 </div>           
+				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
+                    <div class="inner_container">
+                        <div class="layout_head">
+                            <p class="top_txt1">
+                            	Vision & Mission
+                            </p>
+                        </div>
+                        <div class="layout_sub_body">
+                            <div class="welfare_benefit_area">
+                                <ul class="welfare_benefit_list common-layout_2 is-vertical">
+                                    <li class="items_2">
+                                        <div class="business_layout_sub">
+                                            <p class="business_layout_sub_contents">
+                                            	글로벌 경쟁력을 갖춘<br />
+												IT Total Service로의<br />
+												성장 목표 
+                                            </p>
+											<p class="business_layout_sub_title">
+	                                            내담씨앤씨
+                                            </p>                                            
+                                        </div>
+                                    </li>
+                                    <li class="items_2">
+                                        <div class="business_layout_sub">
+                                            <p class="business_layout_sub_contents">
+                                            	고객사의 고객만족<br /> 
+                                            	및<br />
+                                            	내부 경쟁력 향상
+                                            </p>
+                                            <p class="business_layout_sub_title">
+                                            	파트너
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
+                </div>                
             </div><!-- // #contents -->
         </section><!-- // #container -->  
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	

@@ -76,11 +76,6 @@
 															<dl>
 																<c:forEach var="month" items="${months}">
 																	<c:if test="${month.year == year.year}">
-																		<!-- 해당년도의 월 -->
-																		<dt>
-																			<fmt:formatNumber type="number" pattern="##"
-																				minIntegerDigits="2" value="${month.month}" />
-																		</dt>
 																		<!-- 해당하는 연혁 -->
 																		<c:forEach var="content" items="${history}">
 																			<c:if
