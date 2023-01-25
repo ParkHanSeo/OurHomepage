@@ -1,7 +1,8 @@
 package com.naedam.admin.history.model.vo;
 
-import java.io.Serializable;
 import java.util.Date;
+
+import com.naedam.admin.common.Comm;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class History implements Serializable {
+public class History extends Comm {
 	/**
 	 * 
 	 */
@@ -22,5 +23,6 @@ public class History implements Serializable {
 	private Date historyDate;
 	private String content;
 	private String imgUrl;
+
 
 }

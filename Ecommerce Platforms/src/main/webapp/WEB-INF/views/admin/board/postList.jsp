@@ -230,7 +230,7 @@
 					                   		<tr>
 					                        	<td>
 							                        <div>
-							                        	<input type="checkbox" class="postNo" name="postNo"  value="${post.post_no}" />
+							                        	<input type="checkbox" class="postNo" name="postNo"  value="${post.postNo}" />
 							                        	<script>
 															$(".postNo").click(function() {
 																$("#allCheck").prop("checked", false);
@@ -239,27 +239,27 @@
 													</div>
 					                        	</td>
 					                   			<td>
-					                   				<fmt:formatNumber type="number" maxFractionDigits="0" value="${post.row_no}" />
+					                   				<fmt:formatNumber type="number" maxFractionDigits="0" value="${post.rownum}" />
 					                   			</td>
 					                   			<td align="left">
-					                   				<c:if test="${nowDate eq post.post_date}">
+					                   				<c:if test="${nowDate eq post.postDate}">
 					                   					<img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/new.png" width="15">
 					                   				</c:if>                             				     				
-					                   				${post.post_title}
+					                   				${post.postTitle}
 					                   			</td>
-					                   			<td>${post.member_name}</td>
+					                   			<td>${post.postMemberName}</td>
 					                   			<td>
-						                        	${post.post_date}
+						                        	${post.postDate}
 						                        </td>
 					                   			<c:if test="${board2.option.optionOrder eq 'y'}">
 						                   			<td>
-						                   				<input type="radio" name="order_code" value="${post.post_asc}" chack="">
-						                   				<input type="hidden" name="originNo" value="${post.post_origin_no}">
+						                   				<input type="radio" name="order_code" value="${post.postAsc}" chack="">
+						                   				<input type="hidden" name="originNo" value="${post.postOriginNo}">
 						                   			</td>
 					                   			</c:if>
 					                   			<td>
-						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.post_no}">상세보기
-						                   			<input type="hidden" class="post_member_no" value="${post.member_no}"></button>
+						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.postNo}">상세보기
+						                   			<input type="hidden" class="post_member_no" value="${post.postMember.memberNo}"></button>
 						                   			</button>
 					                   			</td>
 					                   		</tr>

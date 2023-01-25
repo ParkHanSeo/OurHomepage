@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.naedam.admin.board.model.service.BoardService;
 import com.naedam.admin.board.model.vo.Board;
 import com.naedam.admin.board.model.vo.Post;
-import com.naedam.admin.board.model.vo.Search;
+import com.naedam.admin.common.Comm;
 import com.naedam.admin.common.NaedamUtils;
 
 @Controller
@@ -34,7 +34,7 @@ public class NoticeController {
 	public ModelAndView noticeList(HttpServletRequest request,
 								   @PathVariable("boardNo") int boardNo, 
 								   @RequestParam(defaultValue = "1") int cPage,
-								   @ModelAttribute("search") Search search) throws Exception{
+								   @ModelAttribute("comm") Comm comm) throws Exception{
 		//게시글 리스트 수 limit 10으로
 		int limit = 8;
 		int offset = (cPage - 1) * limit;
@@ -45,7 +45,7 @@ public class NoticeController {
 		mv.addObject("board2", board2);
 		//게시글 리스트
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		map.put("comm", comm);
 		map.put("boardNo", boardNo);
 		map.put("limit", limit);
 		map.put("offset", offset);
@@ -72,12 +72,12 @@ public class NoticeController {
 											 @RequestParam("searchType") String searchType) throws Exception{
 		int limit = 8;
 		int offset = (cPage - 1) * limit;
-		Search search = new Search();
-		search.setSearchKeyword(searchKeyword);
-		search.setSearchType(searchType);
+		Comm comm = new Comm();
+		comm.setSearchKeyword(searchKeyword);
+		comm.setSearchType(searchType);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		map.put("comm", comm);
 		map.put("boardNo", boardNo);
 		map.put("limit", limit);
 		map.put("offset", offset);

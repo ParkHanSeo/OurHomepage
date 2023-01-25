@@ -1,8 +1,8 @@
 package com.naedam.admin.board.model.vo;
 
 import java.io.Serializable;
-import java.util.Date;
 
+import com.naedam.admin.common.Comm;
 import com.naedam.admin.member.model.vo.Member;
 
 import lombok.AllArgsConstructor;
@@ -29,5 +29,6 @@ public class Post implements Serializable {
 	private int postAsc;			//순서변경
 	private Member postMember;		//회원데이터
 	private String postMemberName;
+	private int rownum;
 	
 }

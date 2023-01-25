@@ -6,7 +6,7 @@
 	select * from award	where award_no = #{value} order by award_date desc;
 	</select>
 
-	<select id="selectAwardList" resultType="map">
+	<select id="selectAwardList" resultType="award">
 	select *,
 		DATE_FORMAT(award_date, '%Y') AS year,
 		DATE_FORMAT(award_date, '%c') AS month
@@ -14,14 +14,14 @@
 	order by award_date desc;
 	</select>
 
-	<select id="selectYear" resultType="map">
+	<select id="selectYear" resultType="award">
 	select distinct
 		DATE_FORMAT(award_date, '%Y') AS year
 		from award
 		order by award_date desc;
 	</select>
 
-	<select id="selectMonth" resultType="map">
+	<select id="selectMonth" resultType="award">
 	select distinct
 		DATE_FORMAT(award_date, '%Y') AS year,
 		DATE_FORMAT(award_date, '%c') AS month

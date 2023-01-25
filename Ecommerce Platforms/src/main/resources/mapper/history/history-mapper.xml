@@ -7,7 +7,7 @@
 		select * from history where history_no = #{history}
 	</select>
 
-	<select id="selectHistoryList" resultType="map">
+	<select id="selectHistoryList" resultType="history">
 		select
 		*,
 		DATE_FORMAT(history_date, '%Y') AS year,
@@ -15,13 +15,13 @@
 		from history;
 	</select>
 
-	<select id="selectYearList" resultType="map">
+	<select id="selectYearList" resultType="history">
 		select distinct
 		DATE_FORMAT(history_date, '%Y') AS year
 		from history;
 	</select>
 
-	<select id="selectMonthList" resultType="map">
+	<select id="selectMonthList" resultType="history">
 		select distinct
 		DATE_FORMAT(history_date, '%Y') AS year,
 		DATE_FORMAT(history_date, '%c') AS month

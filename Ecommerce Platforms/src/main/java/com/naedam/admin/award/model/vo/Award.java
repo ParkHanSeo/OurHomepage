@@ -1,7 +1,8 @@
 package com.naedam.admin.award.model.vo;
 
-import java.io.Serializable;
 import java.util.Date;
+
+import com.naedam.admin.common.Comm;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Award implements Serializable{
+public class Award extends Comm{
 
 	private static final long serialVersionUID = 1L;
 	private int awardNo;

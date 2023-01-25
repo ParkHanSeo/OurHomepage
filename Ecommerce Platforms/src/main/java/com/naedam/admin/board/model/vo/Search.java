@@ -1,11 +1,12 @@
 package com.naedam.admin.board.model.vo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
 
 @Data
-public class Search {
+public class Search implements Serializable {
 	
 	///Field
 	private int currentPage;
@@ -19,6 +20,8 @@ public class Search {
 	private String start_date;
 	private String end_date;
 	private String categoryCode;
+	private String year;
+	private String month;
 	
 	
 	public int getEndRowNum() {

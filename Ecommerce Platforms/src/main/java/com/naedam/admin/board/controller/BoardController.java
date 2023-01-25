@@ -7,7 +7,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,9 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,16 +30,11 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.naedam.admin.board.model.service.BoardService;
 import com.naedam.admin.board.model.vo.Board;
-import com.naedam.admin.board.model.vo.BoardAuthority;
-import com.naedam.admin.board.model.vo.BoardComment;
-import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.board.model.vo.Page;
 import com.naedam.admin.board.model.vo.Post;
-import com.naedam.admin.board.model.vo.Search;
+import com.naedam.admin.common.Comm;
 import com.naedam.admin.common.Mir9Utils;
-import com.naedam.admin.member.controller.MemberController;
-import com.naedam.admin.member.model.vo.Member;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -115,7 +107,7 @@ public class BoardController {
 	 * @throws Exception
 	 */
 	@GetMapping("listBoard")
-	public String listBoard(@ModelAttribute("search") Search search, Model model) throws Exception {
+	public String listBoard(@ModelAttribute("comm") Comm comm, Model model) throws Exception {
 		
 		//게시글 수
 		//각 게시판마다 게시글 수가 필요하여 List로 게시글 수를 뽑아와 List에 add하는 방식
@@ -123,13 +115,13 @@ public class BoardController {
 		List<Board> board = boardService.getBoardTitle();
 		//게시판 리스트
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		map.put("comm", comm);
 		map.put("board", board);
 		Map<String, Object> resultMap = boardService.getBoardList(map);
-		Page resultPage = new Page( search.getCurrentPage(), ((Integer)resultMap.get("totalCount")).intValue(), pageUnit, pageSize);
+		Page resultPage = new Page( comm.getCurrentPage(), ((Integer)resultMap.get("totalCount")).intValue(), pageUnit, pageSize);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("resultPage", resultPage);
-		model.addAttribute("search", search);
+		model.addAttribute("comm", comm);
 		model.addAttribute("postCount", resultMap.get("postCount"));
 		
 		return "admin/board/boardList";
@@ -145,11 +137,11 @@ public class BoardController {
 	 * @return admin/board/postList.jsp
 	 * @throws Exception
 	 */
-	@RequestMapping( value="postList")
+	@RequestMapping(value="postList")
 	public String listPost(Model model, HttpServletRequest request ,
 						   @RequestParam("boardNo") int boardNo, 
 						   @RequestParam(defaultValue = "1") int cPage,
-						   @ModelAttribute("search") Search search) throws Exception {
+						   @ModelAttribute("comm") Comm comm) throws Exception {
 		//게시글 리스트 수 limit 10으로
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
@@ -160,12 +152,13 @@ public class BoardController {
 		
 		//게시글 리스트
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		map.put("comm", comm);
 		map.put("boardNo", boardNo);
 		map.put("limit", limit);
 		map.put("offset", offset);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
+		System.out.println("check = ==== "+resultMap.get("list"));
 		// pagebar
 		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		model.addAttribute("pagebar", pagebar);		

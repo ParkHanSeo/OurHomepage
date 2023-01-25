@@ -45,7 +45,7 @@ public interface BoardDao {
 	public int getTotalCount(Map <String, Object> map) throws Exception;
 	
 	//게시글 목록
-	public List<Map<String, Object>> getPostList(Map<String, Object> map) throws Exception;
+	public List<Post> getPostList(Map<String, Object> map) throws Exception;
 	
 	//사용자 게시글 목록
 	public List<Post> getUserPostList(Map<String, Object> map) throws Exception;

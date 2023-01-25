@@ -115,14 +115,15 @@
 																				test="${(awardmonth.month == awardcontent.month)&&(awardmonth.year == awardcontent.year)}">
 																				<dd>
 																					<span class=thumnail>
-																						<img class="img-thumbnail regist_thumbnail"  src="${pageContext.request.contextPath}/resources/user/images/company/award/${awardcontent.img_url}" alt="...">
+																						<c:if test="${!empty awardcontent.imgUrl}">
+																							<img class="img-thumbnail regist_thumbnail"  src="${pageContext.request.contextPath}/resources/user/images/company/award/${awardcontent.imgUrl}">
+																						</c:if>
 																					</span>
 																					<span class="title">
 																						<c:out value="'${awardcontent.host} 주최'" />
 																						<br>
 																						<c:out value="${awardcontent.content}" />
-<!-- 																					</span> -->
-																				</dd>
+																					</span>																				</dd>
 																			</c:if>
 																		</c:forEach>
 																	</c:if>

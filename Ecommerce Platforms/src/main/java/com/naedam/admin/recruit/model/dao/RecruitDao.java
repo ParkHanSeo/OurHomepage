@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.naedam.admin.board.model.vo.Post;
-import com.naedam.admin.recruit.model.vo.SearchDTO;
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
 import com.naedam.admin.recruit.model.vo.recruitDTO;
 

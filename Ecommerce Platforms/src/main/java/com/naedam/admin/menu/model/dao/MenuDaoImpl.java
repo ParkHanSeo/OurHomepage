@@ -28,7 +28,8 @@ public class MenuDaoImpl implements MenuDao {
 	//메뉴관리 등록
 	@Override
 	public int addMenu(Menu menu) throws Exception {
-		return sqlSession.insert("menu.addMenu", menu);
+		sqlSession.insert("menu.addMenu", menu);
+		return sqlSession.insert("menu.updateAfMenu", menu);
 	}
 	
 	//헤더관리 등록

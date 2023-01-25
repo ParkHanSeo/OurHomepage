@@ -35,8 +35,7 @@
 
 	<insert id="addMenu" parameterType="menu">
 		INSERT
-		INTO MENU(CODE,
-				  CATEGORY_CODE,
+		INTO menu(CATEGORY_CODE,
 				  REVISION_CODE,
 				  TITLE,
 				  CONTENT,
@@ -46,27 +45,16 @@
 				  ORIGIN_NO,
 				  ORD,
 				  MENU_ASC)
-		VALUES(NEXTVAL(menu_seq),
-			   #{category_code},
+		VALUES(#{category_code},
 			   0,
 			   #{title : VARCHAR},
 			   #{content : VARCHAR},
 			   #{url : VARCHAR},
 			   #{status : VARCHAR},
-			   sysdate(),
-			   <if test="originNo == 0">
-			   	LASTVAL(menu_seq),
-			   </if>
-			   <if test="originNo != 0">
-			   	#{originNo},
-			   </if>
-			   <if test="ord == null or ord == 0">
-			   	0
-			   </if>
-			   <if test="ord != null and ord != '' ">
-			   	#{ord}
-			   </if>
-			   ,NEXTVAL(allAsc_seq))
+			   now(),
+			   0,
+			   0,
+			   0)
 	</insert>
 	
 	<insert id="addHead" parameterType="head">
@@ -91,8 +79,7 @@
 	
 	<insert id="addRevision" parameterType="menu">
 		INSERT
-		INTO MENU(CODE,
-				  CATEGORY_CODE,
+		INTO menu(CATEGORY_CODE,
 				  REVISION_CODE,
 				  TITLE,
 				  CONTENT,
@@ -100,9 +87,9 @@
 				  STATUS,
 				  MENU_DATE,
 				  ORIGIN_NO,
-				  ORD)
-		VALUES(NEXTVAL(menu_seq),
-			   #{category_code},
+				  ORD,
+				  MENU_ASC)
+		VALUES(#{category_code},
 			   1,
 			   #{title : VARCHAR},
 			   #{content : VARCHAR},
@@ -110,7 +97,8 @@
 			   #{status : VARCHAR},
 			   NOW(),
 			   #{originNo},
-			   #{ord})
+			   #{ord},
+			   0)
 	</insert>	
 	
 	<select id="getMenu" parameterType="int" resultMap="MenuSelectMap">
@@ -143,7 +131,7 @@
 		FROM menu
 		WHERE revision_code = 0
 		AND	  ORD = 0
-		ORDER BY MENU_ASC ASC
+		ORDER BY MENU_ASC ASC, CODE ASC
 	</select>
 	
 	<select id="getMenuList2" resultType="hashmap" resultMap="MenuSelectMap">
@@ -153,7 +141,7 @@
 		AND   origin_no = #{menu.code}
 		AND   code != 1
 		AND   ORD = #{menu.ord}
-		ORDER BY MENU_ASC ASC
+		ORDER BY MENU_ASC ASC, CODE ASC
 	</select>	
 	
 	
@@ -164,7 +152,7 @@
 		AND   origin_no = #{menu.originNo}
 		AND   code != 1
 		AND   ORD = 3
-		ORDER BY MENU_ASC ASC
+		ORDER BY MENU_ASC ASC, CODE ASC
 	</select>
 	
 	<select id="getRevisionList" resultType="hashmap" resultMap="MenuSelectMap">
@@ -206,14 +194,14 @@
 	<select id="getHeadList" resultType="hashmap" resultMap="HeadSelectMap">
 		SELECT *
 		FROM head
-		ORDER BY HEAD_ASC ASC;
+		ORDER BY HEAD_ASC ASC
 	</select>
 	
 	<select id="getUserHeadList" resultType="hashmap" resultMap="HeadSelectMap">
 		SELECT *
 		FROM head
 		WHERE status = 'y'
-		ORDER BY HEAD_ASC ASC;
+		ORDER BY HEAD_ASC ASC
 	</select>	
 	
 	<select id="getMenuCategoryList" resultType="hashmap" resultMap="MenuSelectMap">
@@ -221,7 +209,7 @@
 		FROM menu
 		WHERE ord = 0
 		AND revision_code = 0
-		ORDER BY menu_asc ASC
+		ORDER BY menu_asc ASC, code ASC
 	</select>
 	
 	<select id="getMenuCategoryList2" resultType="hashmap" resultMap="MenuSelectMap">
@@ -229,7 +217,7 @@
 		FROM menu
 		WHERE ord = 1
 		AND revision_code = 0
-		ORDER BY menu_asc ASC
+		ORDER BY menu_asc ASC, code ASC
 	</select>
 		 
 	<update id="updateMenu" parameterType="menu">
@@ -244,6 +232,26 @@
 		</set>
 		WHERE CODE = #{code:NUMERIC}	
 	</update>
+	
+	<update id="updateAfMenu" parameterType="menu">
+		UPDATE menu
+		<set>
+			ORIGIN_NO =<if test="originNo == 0">
+					   	#{code:NUMERIC},
+					   </if>
+					   <if test="originNo != 0">
+					   	#{originNo},
+					   </if>
+			ORD = <if test="ord == null or ord == 0">
+						   	0,
+						</if>
+						<if test="ord != null and ord != '' ">
+						  #{ord},						
+						</if>
+			MENU_ASC = #{code:NUMERIC}
+		</set>
+		WHERE CODE = #{code:NUMERIC}	
+	</update>	
 	
 	<update id="updateHead" parameterType="head">
 		UPDATE head
@@ -300,7 +308,7 @@
 	</update>
 	
 	<update id="updateHeadUpAsc" parameterType="map">
-		UPDATE HEAD
+		UPDATE 
 		<set>
 			HEAD_ASC = #{headUpAsc}
 		</set>
@@ -308,7 +316,7 @@
 	</update>	
 	
 	<update id="updateHeadDownAsc" parameterType="map">
-		UPDATE HEAD
+		UPDATE head
 		<set>
 			HEAD_ASC = #{headDownAsc}
 		</set>

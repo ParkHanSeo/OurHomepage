@@ -1,48 +1,21 @@
 package com.naedam.user.board.controller;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.apache.commons.codec.binary.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.naedam.admin.board.model.service.BoardService;
 import com.naedam.admin.board.model.vo.Board;
-import com.naedam.admin.board.model.vo.BoardAuthority;
-import com.naedam.admin.board.model.vo.BoardComment;
-import com.naedam.admin.board.model.vo.BoardFile;
-import com.naedam.admin.board.model.vo.BoardOption;
-import com.naedam.admin.board.model.vo.Page;
-import com.naedam.admin.board.model.vo.Post;
-import com.naedam.admin.board.model.vo.Search;
+import com.naedam.admin.common.Comm;
 import com.naedam.admin.common.Mir9Utils;
-import com.naedam.admin.member.controller.MemberController;
-import com.naedam.admin.member.model.vo.Member;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -63,7 +36,7 @@ public class UserBoardController {
 	public String listPost(Model model, HttpServletRequest request ,
 						   @RequestParam("boardNo") int boardNo, 
 						   @RequestParam(defaultValue = "1") int cPage,
-						   @ModelAttribute("search") Search search) throws Exception {
+						   @ModelAttribute("comm") Comm comm) throws Exception {
 		//게시글 리스트 수 limit 10으로
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
@@ -74,7 +47,7 @@ public class UserBoardController {
 		
 		//게시글 리스트
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		map.put("comm", comm);
 		map.put("boardNo", boardNo);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());

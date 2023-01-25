@@ -26,6 +26,10 @@
 			<result property="optionBoard"			column="BOARD_NO"				jdbcType="NUMERIC"></result>
 		</association>
 		
+		<association property="boardMemberNo" javaType="member" >
+			<result property="memberNo"				column="MEMBER_NO"				jdbcType="NUMERIC"></result>
+		</association>
+		
 	</resultMap>
 	
 	<resultMap id="PostSelectMap" type="post">
@@ -34,8 +38,11 @@
 		<result property="postContents"				column="POST_CONTENTS"			jdbcType="VARCHAR"></result>
 		<result property="postDate"					column="POST_DATE"				jdbcType="VARCHAR"></result>
 		<result property="postBoard.boardNo"		column="BOARD_NO"				jdbcType="NUMERIC"></result>
+		<result property="postAsc"					column="POST_ASC"				jdbcType="NUMERIC"></result>
+		<result property="postOriginNo"				column="POST_ORIGIN_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMember.memberNo"		column="MEMBER_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMemberName"			column="MEMBER_NAME"			jdbcType="VARCHAR"></result>
+		<result column="ROWNUM" property="rownum"/>
 		
 		<association property="postBoard" javaType="Board" >
 			<result property="boardNo"					column="BOARD_NO"			jdbcType="NUMERIC"></result>
@@ -89,27 +96,24 @@
 	
 	<insert id="addBoard" parameterType="board">	
 		INSERT
-		INTO BOARD(BOARD_NO,
-				   BOARD_TITLE,
-				   BOARD_TYPE,
-				   BOARD_CATEGORY,
+		INTO board(BOARD_TITLE, 
+				   BOARD_TYPE, 
+				   BOARD_CATEGORY, 
 				   BOARD_EMAIL,
 				   MEMBER_NO)
-		VALUES(NEXTVAL(board_seq),
-			   #{boardTitle : VARCHAR},
+		VALUES(#{boardTitle : VARCHAR},
 			   #{boardType : VARCHAR},
 			   #{boardCategory : VARCHAR},
 			   #{boardEmail : VARCHAR},
 			   #{boardMemberNo.memberNo})		
 		<selectKey keyProperty="boardNo" resultType="int" order="AFTER">
-			SELECT LASTVAL(board_seq) from dual
+			SELECT MAX(board_no) from board
 		</selectKey>
 	</insert>
 	
 	<insert id="addPost" parameterType="post" useGeneratedKeys="true" keyProperty="postNo" keyColumn="POST_NO">
 		INSERT
-		INTO post(POST_NO,
-				  POST_ASC,		
+		INTO post(POST_ASC,		
 				  BOARD_NO,
 				  POST_TITLE,
 				  POST_CONTENTS,
@@ -117,30 +121,28 @@
 				  POST_ORIGIN_NO,
 				  MEMBER_NO,
 				  MEMBER_NAME)
-		VALUES(NEXTVAL(post_seq),
-			   NEXTVAL(allAsc_seq),
+		VALUES(0,
 			   #{postBoard.boardNo},
 			   #{postTitle : VARCHAR},
 			   #{postContents : VARCHAR},
 			   <if test="postDate == null or postDate == ''">
-			   	sysdate(),
+			   	now(),
 			   </if>
 			   <if test="postDate != null">
 			   #{postDate : VARCHAR},
 			   </if>
-			   LASTVAL(post_seq),
+			   0,
 			   #{postMember.memberNo},
 			   #{postMemberName : VARCHAR})		
 			   
 		<selectKey keyProperty="postNo" resultType="int" order="AFTER">
-			SELECT LASTVAL(post_seq) from dual
+			SELECT MAX(post_no) from post
 		</selectKey>
 	</insert>
 	
 	<insert id="addAnswerPost" parameterType="post">
 		INSERT
-		INTO POST(POST_NO,
-				  POST_ASC,		
+		INTO post(POST_ASC,		
 				  BOARD_NO,
 				  POST_TITLE,
 				  POST_CONTENTS,
@@ -148,12 +150,11 @@
 				  POST_ORIGIN_NO,
 				  MEMBER_NO,
 				  MEMBER_NAME)
-		VALUES(NEXTVAL(post_seq),
-			   #{postAsc : NUMERIC},
+		VALUES(#{postAsc : NUMERIC},
 			   #{postBoard.boardNo},
 			   #{postTitle : VARCHAR},
 			   #{postContents : VARCHAR},
-			   sysdate(),
+			   now(),
 			   #{postOriginNo : NUMERIC},
 			   #{postMember.memberNo},
 			   #{postMemberName : VARCHAR})		
@@ -161,7 +162,7 @@
 	
 	<insert id="addOption"	parameterType="boardOption">	
 		INSERT
-		INTO BOARD_OPTION(OPTION_NO,
+		INTO board_option(
 				   OPTION_NOTICE,
 				   OPTION_COMMENT,
 				   OPTION_SECRET,
@@ -172,8 +173,7 @@
 				   OPTION_ADDINFO,
 				   OPTION_POPUP,
 				   BOARD_NO) 
-		VALUES(NEXTVAL(board_option_seq),
-			   #{optionNotice : VARCHAR},
+		VALUES(#{optionNotice : VARCHAR},
 			   #{optionComment : VARCHAR},
 			   #{optionSecret : VARCHAR},
 			   #{optionAnswer : VARCHAR},
@@ -183,25 +183,13 @@
 			   #{optionAddinfo : VARCHAR},
 			   #{optionPopup : VARCHAR},
 			   #{optionBoard : NUMERIC})	
-	</insert>	
-	
-	<insert id="addTranslate"	parameterType="boardTranslate">	
-		INSERT
-		INTO BOARD(TRANSLATE_NO,
-				   TRANSLATE_CATEGORY,
-				   BOARD_NO)	
-		VALUES(NEXTVAL(board_translate_seq),
-			   #{translateCategory : VARCHAR},
-			   #{boardNo.boardNo})	
-	</insert>		
+	</insert>			
 	
 	<insert id="addFile" parameterType="boardFile">
 		INSERT
-		INTO BOARD_FILE(FILE_NO,
-						POST_NO,
+		INTO board_file(POST_NO,
 						FILE_NAME)	
-		VALUES(NEXTVAL(board_file_seq),
-			   #{filePost.postNo},
+		VALUES(#{filePost.postNo},
 			   #{fileName : VARCHAR})
 	</insert>
 	
@@ -250,12 +238,12 @@
 								WHERE	b.board_no = p.board_no
 								AND		m.member_no = p.member_no
 								AND		b.board_no = #{boardNo}
-								<if test="search.searchType != null">
-									<if test="search.searchType == 1 and search.searchKeyword !='' ">
-									AND		p.post_title like concat ('%',#{search.searchKeyword},'%')
+								<if test="comm.searchType != null">
+									<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
+									AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
 									</if>
-									<if test="search.searchType == 2 and search.searchKeyword !='' ">
-									AND		p.member_name like concat ('%',#{search.searchKeyword},'%')
+									<if test="comm.searchType == 2 and comm.searchKeyword !='' ">
+									AND		p.member_name like concat ('%',#{comm.searchKeyword},'%')
 									</if>
 								</if>
 								ORDER BY p.post_asc ASC) countTable
@@ -336,13 +324,13 @@
 		WHERE tb1.board_no = #{value}		
 	</select>
 	
-	<select id="getPostList" parameterType="hashmap" resultType="hashmap" >	
+	<select id="getPostList" parameterType="hashmap" resultMap="PostSelectMap" >	
 		SELECT
-				@rownum:=@rownum+1 as row_no,
+				@rownum:=@rownum+1 as rownum,
 				p.post_no,
 				p.post_asc,
 				p.post_title,
-				p.post_contents,
+				p.post_contents as post_contents,
 				date_format(POST_DATE, '%Y-%m-%d') post_date,
 				p.post_origin_no,
 				p.board_no,
@@ -352,12 +340,12 @@
 		WHERE	b.board_no = p.board_no
 		AND		m.member_no = p.member_no
 		AND		b.board_no = #{boardNo}
-		<if test="search.searchType != null">
-			<if test="search.searchType == 1 and search.searchKeyword !='' ">
-			AND		p.post_title like concat ('%',#{search.searchKeyword},'%')
+		<if test="comm.searchType != null">
+			<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
+			AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
 			</if>
-			<if test="search.searchType == 2 and search.searchKeyword !='' ">
-			AND		p.member_name like concat ('%',#{search.searchKeyword},'%')
+			<if test="comm.searchType == 2 and comm.searchKeyword !='' ">
+			AND		p.member_name like concat ('%',#{comm.searchKeyword},'%')
 			</if>
 		</if>
 		ORDER BY p.post_asc ASC
@@ -366,7 +354,7 @@
 	
 	<select id="getUserPostList" parameterType="hashmap" resultMap="PostSelectMap" >	
 		SELECT
-				@rownum:=@rownum+1 as row_no,
+				@rownum:=@rownum+1 as rowNo,
 				p.post_no,
 				p.post_asc,
 				p.post_title,
@@ -380,12 +368,12 @@
 		WHERE	b.board_no = p.board_no
 		AND		m.member_no = p.member_no
 		AND		b.board_no = #{boardNo}
-		<if test="search.searchType != null">
-			<if test="search.searchType == 1 and search.searchKeyword !='' ">
-			AND		p.post_title like concat ('%',#{search.searchKeyword},'%')
+		<if test="comm.searchType != null">
+			<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
+			AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
 			</if>
-			<if test="search.searchType == 2 and search.searchKeyword !='' ">
-			AND		p.member_name like concat ('%',#{search.searchKeyword},'%')
+			<if test="comm.searchType == 2 and comm.searchKeyword !='' ">
+			AND		p.member_name like concat ('%',#{comm.searchKeyword},'%')
 			</if>
 		</if>
 		ORDER BY p.post_asc ASC
@@ -498,6 +486,15 @@
 		WHERE post_no = #{postNo}
 	</update>
 	
+	<update id="updateAfPost" parameterType="post">
+		UPDATE post
+		<set>
+			POST_ASC = #{postNo},
+			post_origin_no = #{postNo},
+		</set>
+		WHERE post_no = #{postNo}
+	</update>	
+	
 	<update id="updatePostReply" parameterType="post">
 		UPDATE post
 		<set>
@@ -507,39 +504,39 @@
 	</update>
 	
 	<update id="updateOption" parameterType="boardOption">
-		UPDATE BOARD_OPTION
+		UPDATE board_option
 		<set>
-			OPTION_NOTICE = #{optionNotice},
-			OPTION_COMMENT = #{optionComment},
-			OPTION_SECRET = #{optionSecret},
-			OPTION_ANSWER = #{optionAnswer},
-			OPTION_CAPTCHA = #{optionCaptcha},
-			OPTION_MASS = #{optionMass},
-			OPTION_ORDER = #{optionOrder},
-			OPTION_ADDINFO = #{optionAddinfo},
-			OPTION_POPUP = #{optionPopup}			
+			option_notice = #{optionnotice},
+			option_comment = #{optioncomment},
+			option_secret = #{optionsecret},
+			option_answer = #{optionanswer},
+			option_captcha = #{optioncaptcha},
+			option_mass = #{optionmass},
+			option_order = #{optionorder},
+			option_addinfo = #{optionaddinfo},
+			option_popup = #{optionpopup}			
 		</set>
 		WHERE board_no = #{optionBoard : NUMERIC}			
 	</update>
 	
 	<update id="updateUpAsc" parameterType="map">
-		UPDATE POST
+		UPDATE post
 		<set>
-			POST_ASC = #{boardUpAsc}
+			post_asc = #{boardUpAsc}
 		</set>
-		WHERE POST_ORIGIN_NO = #{upPostNo}
+		WHERE post_origin_no = #{upPostNo}
 	</update>	
 	
 	<update id="updateDownAsc" parameterType="map">
-		UPDATE POST
+		UPDATE post
 		<set>
-			POST_ASC = #{boardDownAsc}
+			post_asc = #{boardDownAsc}
 		</set>
-		WHERE POST_ORIGIN_NO = #{downPostNo}
+		WHERE post_origin_no = #{downPostNo}
 	</update>
 	
 	<update id="postViewCount" parameterType="post">
-		UPDATE POST
+		UPDATE post
 		<set>
 			POST_VIEWCOUNT = #{postViewCount}
 		</set>	
@@ -547,9 +544,9 @@
 	</update>
 	
 	<update id="updateThombnail" parameterType="post">
-		UPDATE POST
+		UPDATE post
 		<set>
-			POST_THOMBNAIL = #{postThombnail}
+			post_thombnail = #{postThombnail}
 		</set>
 		WHERE post_no = #{postNo}
 	</update>

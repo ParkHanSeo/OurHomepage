@@ -1,25 +1,27 @@
-package com.naedam.admin.recruit.model.vo;
+package com.naedam.admin.common;
 
-import java.util.Date;
+import java.io.Serializable;
 
 import lombok.Data;
 
 @Data
-public class SearchDTO {
+public class Comm  implements Serializable{
 	
 	///Field
 	private int currentPage;
-//	private String searchCondition;
+	private String searchCondition;
 	private String searchKeyword;
 	private String searchType;
 	private int searchSort;
 	private int pageSize;
 	private int endRowNum;
 	private int startRowNum;
-	/*
-	 * private String start_date; private String end_date; private String
-	 * categoryCode;
-	 */
+	private String start_date;
+	private String end_date;
+	private String categoryCode;
+	private String year;
+	private String month;
+	private String rowNo;
 	
 	
 	public int getEndRowNum() {
@@ -28,7 +30,4 @@ public class SearchDTO {
 	public int getStartRowNum() {
 		return (getCurrentPage()-1)*getPageSize()+1;
 	}
-
 }
-
-

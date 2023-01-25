@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,7 +26,7 @@ import com.naedam.admin.board.model.vo.Board;
 import com.naedam.admin.board.model.vo.BoardComment;
 import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.Post;
-import com.naedam.admin.board.model.vo.Search;
+import com.naedam.admin.common.Comm;
 import com.naedam.admin.member.model.vo.Member;
 import com.naedam.admin.setting.model.service.SettingService;
 import com.naedam.admin.setting.model.vo.AdminMenu;
@@ -93,11 +92,11 @@ public class BoardRestController {
 	@GetMapping(value="json/getPostList/{boardNo}")
 	public Map<String, Object> getPostList(@PathVariable("boardNo") int boardNo) throws Exception{
 		Board board = new Board();
-		Search search = new Search();
+		Comm comm = new Comm();
 		board.setBoardNo(boardNo);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("boardNo", boardNo);
-		map.put("search", search);
+		map.put("comm", comm);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		return resultMap;
 	}	

@@ -37,7 +37,9 @@ public class BoardDaoImpl implements BoardDao {
 	//게시글 등록
 	@Override
 	public int addPost(Post post) throws Exception {
-		return sqlSession.insert("board.addPost", post);
+		sqlSession.insert("board.addPost", post);
+		sqlSession.update("board.updateAfPost", post);
+		return 1;
 	}
 	
 	//게시글 답변 등록
@@ -101,7 +103,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//게시글 목록
 	@Override
-	public List<Map<String, Object>> getPostList(Map<String, Object> map) throws Exception {
+	public List<Post> getPostList(Map<String, Object> map) throws Exception {
 		return sqlSession.selectList("board.getPostList", map);
 	}
 	

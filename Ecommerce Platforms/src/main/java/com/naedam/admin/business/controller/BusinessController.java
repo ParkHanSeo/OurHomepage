@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.vo.BoardOption;
-import com.naedam.admin.board.model.vo.Search;
 import com.naedam.admin.business.model.service.BusinessService;
 import com.naedam.admin.business.model.vo.Business;
 import com.naedam.admin.business.model.vo.BusinessPost;
+import com.naedam.admin.common.Comm;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -80,16 +80,16 @@ public class BusinessController {
 	 * @throws Exception
 	 */
 	@GetMapping("getBusinessList")
-	public String getBusinessList(@ModelAttribute("search") Search search, Model model) throws Exception{
+	public String getBusinessList(@ModelAttribute("comm") Comm comm, Model model) throws Exception{
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		map.put("comm", comm);
 		Map<String, Object> resultMap = businessService.getBusinessList(map);
 		model.addAttribute("business", resultMap.get("list"));
 		return "admin/business/businessList";
 	}
 	
 	@RequestMapping( value="getBusinessPostList")
-	public String getBusinessPostList(@ModelAttribute("search") Search search, Model model, HttpServletRequest request ,
+	public String getBusinessPostList(@ModelAttribute("comm") Comm comm, Model model, HttpServletRequest request ,
 									  @RequestParam("businessNo") int businessNo, 
 									  @RequestParam(defaultValue = "1") int cPage) throws Exception{
 		//게시글 리스트 수 limit 10으로
@@ -101,7 +101,7 @@ public class BusinessController {
 		
 		
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("search", search);
+		map.put("comm", comm);
 		map.put("businessNo", businessNo);
 		Map<String, Object> resultMap = businessService.getBusinessPostList(map);
 		model.addAttribute("list", resultMap.get("list"));
