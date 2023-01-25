@@ -188,9 +188,6 @@
 												</span>
 											</div>
 		                                </div>
-		                                <div class="company_culture_imgbox">
-		                                	<img alt="" src="${pageContext.request.contextPath}/resources/user/images/company/division/1-12.jpg"> 
-		                                </div>
 	                                </section>
 	                                
                                 <div class="employee_detail">

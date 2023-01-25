@@ -730,7 +730,7 @@ h4 {
   border-radius: 3%;
   background-image: url(../images/image_16.jpg);
 }
-.core-wrap .core-list .blockchain > a {
+.core-wrap .core-list .blockchain > div{
   padding-top: 528px;
 }
 .core-wrap .core-list .blockchain .bg-text {

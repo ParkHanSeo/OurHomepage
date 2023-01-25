@@ -22,11 +22,10 @@
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
+                                <span class="top_txt1">경영과 관련 지표 제공 경영정보시스템 </span>
                                 <p class="top_txt2">생산관리 ERP</p>
                                 <p class="top_txt3">
-                                    현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768">
-                                    결과를 미리 예측하는 기술의 솔루션을 제공합니다.
+                                    효율적인 경영의사를 내릴 수 있게 도와 주며,  아울러 회계관리, 재고관리 및 영업관리 업무를 효율적으로 수행하는 지표 제공
                                 </p>
                             </div>
                         </div>
@@ -43,16 +42,10 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            산업 데이터 모니터링
+                                            생산수율관리
                                         </p>
                                         <p class="difference_desc">
-                                            설계에서 개발, 운영 및 유지 관리, 이후의 사용 또는 재사용에 <br>
-                                             이르기까지 자산 수명 주기의 전 단계를 모니터링 합니다. <br>
-											AI, 기계학습(machine learning), IoT 기술을 이용하여 자산의 <br>
-											수명 주기 전반에 걸쳐 데이터 분석을 통해 학습하여
-											디지털 트윈 사용자는 문제가 발생하기 전에 가상의 동적 시뮬레이션을 통해<br>
-											문제를 미리 예방하는 등 미래를 계획할 수 있습니다.
-
+                                            생산 공정 선진화를 위한 의사결정의 기초 지표로써, 지육의 중량에서 최종 생산물의 중량에 대한 비율을 제시 하여 작업 공정상의 Loss를 줄일 수 있는 획기적인 경영지표
                                         </p>
                                     </div>
                                 </li>
@@ -62,15 +55,10 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            데이터를 통한 공정관리
+                                            품목별 생산원가관리 
                                         </p>
                                         <p class="difference_desc">
-                                            Work-Flow 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 
-											있던 문제를 해결할 수 있으며, 결과적으로 팀은 설계에서 해체까지 프로젝트 전체 수명 주기 동안 
-											연결성을 높일 수 있습니다. 또한, 디지털 트윈을 통해 구성 요소 사양 및 유지 관리 일정과 같은 
-											정적 데이터를 점유율 및 환경 조건과 같은 동적 데이터와 통합하고, 설계자에서 소유자에 
-											이르는 모든 사람이 자산의 성능과 수명 주기를 극대화하여 정보에 입각한 결정을 내릴 수 있게 도움을 줍니다.
-
+                                            지육 구매비용 및 경비 항목을 이중배분율법에 의한 원가배분방식으로 품목별원가를 산출관리로 기초 원가 제공
                                         </p>
                                     </div>
                                 </li>
@@ -80,13 +68,12 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            BIM, innoAMS와 Digital Twin
+                                            재고자산관리
                                         </p>
                                         <p class="difference_desc">
-                                            디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 
-											관리와 연결합니다.<br> 
-											BIM 프로세스를 지원하는 통합 워크플로 및 정보 공유를 통해 잠재력을 
-											최대로 끌어올리며, 공정상 BIM을 통해 더 효율적인 공정관리가 가능하도록 만듭니다
+                                            매일 최종생산물의 시세를 반영하여 현가를 구하고 현가의 합계에 대한정보 제공, 이를 통해 
+											시세의 변동에 따른 출하시기 조절을 통해 수익을 극대화 할 수 있고,  회계 및 재무자료로 활용함으로 주요 경영의사 결정의 지표로 활용
+
                                         </p>
                                     </div>
                                 </li>

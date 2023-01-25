@@ -22,11 +22,12 @@
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
+                                <span class="top_txt1">생산이력 및 축산물 이력제 대응을 전제로 한 육가공관리시스템 </span>
                                 <p class="top_txt2">육가공 관리 시스템</p>
                                 <p class="top_txt3">
-                                    현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768">
-                                    결과를 미리 예측하는 기술의 솔루션을 제공합니다.
+                                    주문 -> 생산계획-> 작업지시-> 작업-> 포장-> 출고-> 배송<br class="hide_768">
+									Process에 대한 업무처리지원
+
                                 </p>
                             </div>
                         </div>
@@ -43,16 +44,11 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            산업 데이터 모니터링
+											스마트 팩토리 공정 자동화
                                         </p>
                                         <p class="difference_desc">
-                                            설계에서 개발, 운영 및 유지 관리, 이후의 사용 또는 재사용에 <br>
-                                             이르기까지 자산 수명 주기의 전 단계를 모니터링 합니다. <br>
-											AI, 기계학습(machine learning), IoT 기술을 이용하여 자산의 <br>
-											수명 주기 전반에 걸쳐 데이터 분석을 통해 학습하여
-											디지털 트윈 사용자는 문제가 발생하기 전에 가상의 동적 시뮬레이션을 통해<br>
-											문제를 미리 예방하는 등 미래를 계획할 수 있습니다.
-
+                                            생성공정 공정 자동화로 오류를 검출하는 모니터링 구현
+											AI 기반 구축으로 자동 포장  및 개체 이력정보 바코드  자동 라벨지 부착
                                         </p>
                                     </div>
                                 </li>
@@ -62,15 +58,11 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            데이터를 통한 공정관리
+                                            APP을 통한 모바일 기반의 고도화
                                         </p>
                                         <p class="difference_desc">
-                                            Work-Flow 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 
-											있던 문제를 해결할 수 있으며, 결과적으로 팀은 설계에서 해체까지 프로젝트 전체 수명 주기 동안 
-											연결성을 높일 수 있습니다. 또한, 디지털 트윈을 통해 구성 요소 사양 및 유지 관리 일정과 같은 
-											정적 데이터를 점유율 및 환경 조건과 같은 동적 데이터와 통합하고, 설계자에서 소유자에 
-											이르는 모든 사람이 자산의 성능과 수명 주기를 극대화하여 정보에 입각한 결정을 내릴 수 있게 도움을 줍니다.
-
+                                            축산물이력시스템과 연계하여 개체관리 투명성 제고
+											생산이력 및 출고, 배송 이력관리로 제품 이상 발생시에 리콜 대응 가능
                                         </p>
                                     </div>
                                 </li>
@@ -80,13 +72,11 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            BIM, innoAMS와 Digital Twin
+                                            APP을 통한 모바일 기반의 고도화
                                         </p>
                                         <p class="difference_desc">
-                                            디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보 
-											관리와 연결합니다.<br> 
-											BIM 프로세스를 지원하는 통합 워크플로 및 정보 공유를 통해 잠재력을 
-											최대로 끌어올리며, 공정상 BIM을 통해 더 효율적인 공정관리가 가능하도록 만듭니다
+                                            축산물이력시스템과 연계하여 개체관리 투명성 제고
+											생산이력 및 출고, 배송 이력관리로 제품 이상 발생시에 리콜 대응 가능
                                         </p>
                                     </div>
                                 </li>

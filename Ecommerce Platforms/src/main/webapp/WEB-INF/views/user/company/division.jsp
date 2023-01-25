@@ -110,11 +110,10 @@ $(function(){
                                 <div class="div_division_left">
 	                                <p class="division_name">Vision AI 사업부</p>
 	                                <p class="division_info">
-	                                    - PLM 개발<br>
-	                                    - PLM대리점(삼성SDS)<br>
-	                                    - 공장 자동화 S/W<br>
-	                                    - EES S/W ERP/MES 개발<br>
-	                                    - 그룹웨어 개발<br>
+	                                    - 객체 인식 / 분석 AI 서비스<br>
+	                                    - 선행 학습된 Model 제공 <br>
+	                                    - 객체 인식 및 텍스트 판독 <br>
+	                                    - 상황 분석 및 실시간 연동 <br>
 	                                </p>
 	                            </div>
                             </li>
