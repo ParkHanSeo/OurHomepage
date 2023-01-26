@@ -1,5 +1,16 @@
 @charset "utf-8";
-
+.vision_Icon{
+	background-image: url("../images/icon/vision2.png");
+    /* background-color: white; */
+    width: 170px;
+    height: 170px;
+    /* border: 2px solid white; */
+    position: relative;
+    left: 65px;
+    top: -35px;
+    border-radius: 100px;
+    background-size: cover;
+}
 .visual_txt_area {
   color: #fff;
 }
@@ -10,7 +21,8 @@
 .visual_txt_area .txt1 {
   font-size: 44px;
   line-height: 62px;
-  color: black;
+  color: white;
+  font-weight: bolder;
 }
 .visual_txt_area .txt2 {
   margin-top: 24px;
@@ -184,12 +196,12 @@
 }
 .business_layout_sub {
   color: white;
-  padding: 60px;
+  padding: 60px; 
   padding-top: 90px;
 }
 .common-layout_2 > .items_2 {
-  width: calc(100% / 2 - 265px);
-  margin-left: 178px;
+  width: calc(100% / 3 - 5px);
+  /* margin-left: 178px; */
 }
 .location_list {
   margin-top: 60px;
@@ -543,11 +555,12 @@
   padding-bottom: 45px;
 }
 .division_wrapper {
-  background-image: url(../images/business_top.jpg);
+  background-image: url(../images/company/division/stock-photo-network-community-concept-631791635.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100%;
+  
 }
 .division_container {
   display: flex;
@@ -559,6 +572,7 @@
   margin: 0 auto;
   padding: 0 140px;
   transition: 0.4s ease;
+  background-color: rgba(0,0,0,0.5);
 }
 @media all and (max-width: 1280px) {
   .common-layout_4 > .items {

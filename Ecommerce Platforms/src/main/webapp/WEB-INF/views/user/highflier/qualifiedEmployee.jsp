@@ -44,7 +44,7 @@
                     <div class="inner_container">
                         <div class="employee_layout_body">
                     		<div>
-	                    		<p class="main_title">핵심 가치</p>
+	                    		<p class="main_title">인재상</p>
     							<p class="talent_txt">(주)내담C&C는 진취적이고 프로정신을 가진 인재를 소중히 여기는 기업입니다.</p>                		
                     		</div>
                             <div class="culture_card_area">
@@ -189,17 +189,6 @@
 											</div>
 		                                </div>
 	                                </section>
-	                                
-                                <div class="employee_detail">
-									<div class="talent_development">
-										<p class="main_title">인재 육성<p>
-										<p class="develop_txt">내담은 유수의 대기업에서 진행하는 교육 기관과의 연계교육을 실시하고 있습니다.<p>
-										<div class="develop_section">
-											<img alt="" src="">
-										</div>
-										
-									</div>
-								</div>
                             </div>
                         </div>
                     </div>

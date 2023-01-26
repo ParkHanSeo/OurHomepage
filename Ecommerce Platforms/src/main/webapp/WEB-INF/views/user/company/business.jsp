@@ -85,6 +85,11 @@
                             <p class="top_txt1">
                             	핵심 가치
                             </p>
+                            <p class="top_txt3">
+                                고객 중심의 서비스와 지속적인 파트너쉽으로 고객이 새로운 가치를 경험 할 수 있도록 합니다.
+								신뢰, 존중, 열정, 정직, 도전을 바탕으로 최상의 팀웍을 통해, 끎임없이 변화하고 도전하며
+								최고의 고객가치를 창조하는 핵심가치를 실천 합니다.
+                            </p>
                         </div>                	
 						<div class="layout_body process-area">
 	                         <div class="business-flow">
@@ -179,38 +184,52 @@
 	                         </div>
 	                     </div> 
 	                 </div>               
-                </div>           
+                </div>
 				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
                             	Vision & Mission
                             </p>
+                            <p class="top_txt3">
+                                내담씨앤씨는 2008년 7월에 첫 발걸음을 내디뎠습니다. 
+								고객의 만족을 위하여 보다 합리적이고 최대한 많은 기업이 만족하길 바라는 마음에서
+								컨설턴트급 경력자로 구성된 내담人들이 같은 꿈을 갖고 목표를 함께하고 있습니다.
+                            </p>
                         </div>
                         <div class="layout_sub_body">
-                            <div class="welfare_benefit_area">
+                             <div class="welfare_benefit_area">
                                 <ul class="welfare_benefit_list common-layout_2 is-vertical">
                                     <li class="items_2">
                                         <div class="business_layout_sub">
-                                            <p class="business_layout_sub_contents">
-                                            	글로벌 경쟁력을 갖춘<br />
-												IT Total Service로의<br />
-												성장 목표 
-                                            </p>
+                                        	<img class="vision_Icon" >
 											<p class="business_layout_sub_title">
-	                                            내담씨앤씨
+	                                            VISION
                                             </p>                                            
+                                            <p class="business_layout_sub_contents">
+                                            	글로벌 경쟁력을 갖춘 IT Total Service로의 성장 목표 
+                                            </p>
                                         </div>
                                     </li>
+                                    <span class="jb-division-line"></span>
                                     <li class="items_2">
                                         <div class="business_layout_sub">
-                                            <p class="business_layout_sub_contents">
-                                            	고객사의 고객만족<br /> 
-                                            	및<br />
-                                            	내부 경쟁력 향상
-                                            </p>
                                             <p class="business_layout_sub_title">
-                                            	파트너
+                                            	MISION
+                                            </p>
+                                            <p class="business_layout_sub_contents">
+                                            	고객사의 고객만족 및  내부 경쟁력 향상
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <span class="jb-division-line"></span>
+                                    <li class="items_2">
+                                        <div class="business_layout_sub">
+                                            <p class="business_layout_sub_title">
+                                            	MISION
+                                            </p>
+                                            <p class="business_layout_sub_contents">
+                                            	고객사의 고객만족 및 내부 경쟁력 향상
                                             </p>
                                         </div>
                                     </li>
