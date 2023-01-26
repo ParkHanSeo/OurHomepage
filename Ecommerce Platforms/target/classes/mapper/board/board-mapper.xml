@@ -291,12 +291,26 @@
 		WHERE post_no = #{value}
 	</select>
 	
-	<select id="getPrevPost" parameterType="int" resultMap="PostSelectMap">
-		SELECT * FROM post WHERE post_no <![CDATA[<]]> #{value} ORDER BY post_no DESC LIMIT 1
+	<select id="getPrevPost" parameterType="post" resultMap="PostSelectMap">
+		SELECT 
+		* 
+		FROM post tb1
+		LEFT OUTER JOIN board tb2
+		ON tb1.board_no = tb2.board_no 
+		WHERE tb1.post_no <![CDATA[<]]> #{postNo}
+		AND   tb1.board_no <![CDATA[=]]> #{postBoard.boardNo}  
+		ORDER BY post_no DESC LIMIT 1
 	</select>
 	
-	<select id="getNextPost" parameterType="int" resultMap="PostSelectMap">
-		SELECT * FROM post WHERE post_no <![CDATA[>]]> #{value} ORDER BY post_no LIMIT 1 
+	<select id="getNextPost" parameterType="post" resultMap="PostSelectMap">
+		SELECT 
+		* 
+		FROM post tb1
+		LEFT OUTER JOIN board tb2
+		ON tb1.board_no = tb2.board_no
+		WHERE post_no <![CDATA[>]]> #{postNo} 
+		AND   tb1.board_no <![CDATA[=]]> #{postBoard.boardNo}
+		ORDER BY post_no LIMIT 1 
 	</select>
 	
 	<select id="getBoardAllData" parameterType="int" resultMap="BoardSelectMap" >		
@@ -506,15 +520,15 @@
 	<update id="updateOption" parameterType="boardOption">
 		UPDATE board_option
 		<set>
-			option_notice = #{optionnotice},
-			option_comment = #{optioncomment},
-			option_secret = #{optionsecret},
-			option_answer = #{optionanswer},
-			option_captcha = #{optioncaptcha},
-			option_mass = #{optionmass},
-			option_order = #{optionorder},
-			option_addinfo = #{optionaddinfo},
-			option_popup = #{optionpopup}			
+			option_notice = #{optionNotice},
+			option_comment = #{optionComment},
+			option_secret = #{optionSecret},
+			option_answer = #{optionAnswer},
+			option_captcha = #{optionCaptcha},
+			option_mass = #{optionMass},
+			option_order = #{optionOrder},
+			option_addinfo = #{optionAddinfo},
+			option_popup = #{optionPopup}			
 		</set>
 		WHERE board_no = #{optionBoard : NUMERIC}			
 	</update>

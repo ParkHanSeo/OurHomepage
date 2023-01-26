@@ -121,14 +121,15 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//게시글 이전 이후 데이터
 	@Override
-	public Post getPrevPost(int postNo) throws Exception {
-		return sqlSession.selectOne("board.getPrevPost", postNo);
+	public Post getPrevPost(Post post) throws Exception {
+		System.out.println("데이터 체크 === "+post);
+		return sqlSession.selectOne("board.getPrevPost", post);
 	}
 	
 	//게시글 이전 이후 데이터
 	@Override
-	public Post getNextPost(int postNo) throws Exception {
-		return sqlSession.selectOne("board.getNextPost", postNo);
+	public Post getNextPost(Post post) throws Exception {
+		return sqlSession.selectOne("board.getNextPost", post);
 	}
 	
 	//댓글 목록

@@ -319,6 +319,7 @@
   font-weight: 300 !important;
   line-height: 1.63;
   letter-spacing: -0.2px !important;
+  display: flow-root;
   color: #333;
 }
 .news .detail_body ul li {

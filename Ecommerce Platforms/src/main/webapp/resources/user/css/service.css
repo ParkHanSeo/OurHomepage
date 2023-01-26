@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 /* * {-webkit-tap-highlight-color:rgba(255,0,0,0.7) !important;} */
 /* 서비스소개 */
 .layout_section_outer.intro .layout_head .common-txt-list {
@@ -477,7 +476,9 @@
   min-width: 510px;
 }
 .difference_list > li .difference_img img {
-  width: 100%;
+  width: 1240px;
+  height: 400px;
+  border-radius: 2%;
 }
 .difference_list > li .difference_box {
   max-width: 550px;

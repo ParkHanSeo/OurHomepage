@@ -88,6 +88,7 @@ public class BoardController {
 							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
 		String filePath = request.getSession().getServletContext().getRealPath("resources/user/downloadFile/");
+		System.out.println("공지사항 프로세스 데이터 확인 === "+postName.length);
 		Map<String, Object> postMap	 = new HashMap<>();
 		postMap.put("board", board);
 		postMap.put("post", post);	
@@ -194,10 +195,12 @@ public class BoardController {
 	@PostMapping("imageUpload")
 	public void imageUpload(HttpServletRequest request, HttpServletResponse response,
 							MultipartHttpServletRequest multiFile,
-							@RequestParam MultipartFile upload) throws Exception{
+							@RequestParam(value="upload", required = false) MultipartFile upload) throws Exception{
+		System.out.println("ckeditor 이미지 업로드 로그 확인");
 		UUID uid = UUID.randomUUID();
 		OutputStream out = null;
 		PrintWriter printWriter = null;
+		System.out.println("ckeditor === "+upload);
 		try{ 
 			//파일 이름 가져오기 
 			String fileName = upload.getOriginalFilename(); 
