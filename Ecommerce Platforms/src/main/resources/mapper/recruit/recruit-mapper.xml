@@ -48,7 +48,7 @@
 			<if test="value != null">
 			AND R.RECRUIT_TITLE like concat ('%',#{value},'%')
 			</if>
-		ORDER BY CONTENTS_STATUS DESC, RECRUIT_NO DESC
+		ORDER BY CASE WHEN CONTENTS_STATUS IN ('Y', 'R') THEN 0 ELSE 1 END
 	</select>
 
 
@@ -236,24 +236,14 @@
 		  FROM recruit
 		 WHERE RECRUIT_NO = #{recruitNo}
 	</select>
+	
+	<update id="updateContentsStatus">
+		UPDATE recruit
+		SET CONTENTS_STATUS = 'N'
+		WHERE SYSDATE() > RECRUIT_END
+	</update>
 
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

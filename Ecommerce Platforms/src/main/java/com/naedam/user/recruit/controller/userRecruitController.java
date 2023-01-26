@@ -44,6 +44,9 @@ public class userRecruitController {
 	public ModelAndView recruitList(Model model, @RequestParam(value = "searchKeyword", required = false)String searchKeyword, 
 			@RequestParam(defaultValue = "1") int cPage, HttpServletRequest request) throws Exception {
 		
+		//조회 전 마감일자 지난 list들 채용마감으로 변경
+		recruitService.updateContentsStatus();
+		
 		//게시글 리스트 수 limit 10으로
 		int limit = 6;
 		int offset = (cPage - 1) * limit;
