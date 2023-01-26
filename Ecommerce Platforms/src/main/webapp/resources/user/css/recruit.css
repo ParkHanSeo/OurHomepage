@@ -23,36 +23,56 @@
   margin-top: 80px;
 }
 .process-flow .color1 {
-  background-color: #035AA6;
+  border: 4px solid #035aa6;
 }
 .process-flow .color2 {
-  background-color: #0468BF;
+  border: 4px solid #0468bf;
 }
 .process-flow .color3 {
-  background-color: #0477BF;
+  border: 4px solid #0477bf;
 }
 .process-flow .color4 {
-  background-color: #59A8D9;
+  border: 4px solid #59a8d9;
 }
 .process-flow .color5 {
-  background-color: #BDD4F2;
+  border: 4px solid #bdd4f2;
 }
-.process-flow .color6 {
-  background-color: #27c8e7;
+.icon.hr_ic {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 98px;
+  top: 60px;
 }
-
+.hr_li_1 {
+  background-image: url(../images/icon/01_file.png);
+}
+.hr_li_2 {
+  background-image: url(../images/icon/02_email.png);
+}
+.hr_li_3 {
+  background-image: url(../images/icon/03_document.png);
+}
+.hr_li_4 {
+  background-image: url(../images/icon/04_interview.png);
+}
+.hr_li_5 {
+  background-image: url(../images/icon/05_confirm.png);
+}
 .process-flow .flow_list {
   overflow: hidden;
 }
 .process-flow .flow_list > li {
   position: relative;
-  width: 20%;
+  width: 19%;
+  margin-left: 10px;
   float: left;
   font-size: 24px;
   line-height: 1.5;
   letter-spacing: -0.2px;
   text-align: center;
   padding-top: 20%;
+  border-radius: 10%;
 }
 .process-flow .flow_list > li .flow_num {
   display: none;
@@ -61,12 +81,12 @@
   width: 100%;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 65%;
   transform: translate(-50%, -50%);
   font-size: 20px;
   line-height: 30px;
   width: 80%;
-  color:white;
+  color: black;
 }
 
 .process-flow .flow_list > li .flow_txt em {
@@ -163,45 +183,37 @@
 }
 
 /* 채용안내 */
-.recruit_search_imo{
-    background-image: url(../images/common/magnifying-glass-solid.jpg);
+.recruit_search_imo {
+  background-image: url(../images/common/magnifying-glass-solid.jpg);
 }
 
 .recruit-search_box_wrap {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .application_btn {
-	border-color: #3E6D9C;
-    background-color: #3E6D9C;
-    color: #fff;
-    
-    height: 64px;
-    line-height: 64px;
-    text-align: center;
-    display: inline-block;
-    width: 200px;
+  border-color: #3e6d9c;
+  background-color: #3e6d9c;
+  color: #fff;
+
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  display: inline-block;
+  width: 200px;
 }
 
 .application_btn_area a {
-	 text-decoration: none;
-	 color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
-
-#postList a{
-	color: 	dimgray;
-	text-decoration: none;
-	font-size: 20px;
+#postList a {
+  color: dimgray;
+  text-decoration: none;
+  font-size: 20px;
 }
-
-
-
-
-
-
-
 
 @media (hover: hover) {
   .process_btn_area .common-btn.is-white2:hover {
@@ -384,9 +396,3 @@
 
 @media all and (max-width: 375px) {
 }
-
-
-
-
-
-

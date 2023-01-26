@@ -355,6 +355,9 @@
    			 		if(result == true){
    			 			parent.location.reload();
    			 		}
+   			  	 },
+   			  	 error : function(e){
+   			  		 alert("에러")
    			  	 }
    	 		});	
    		}

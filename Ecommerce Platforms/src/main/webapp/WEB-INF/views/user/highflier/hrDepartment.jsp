@@ -53,22 +53,29 @@
 							<div class="process-flow size-01 type01">
 								<ol class="flow_list">
 									<li class="color1"><span class="flow_num color1">01</span>
+										<i class="icon hr_ic hr_li_1"></i>
 										<p class="flow_txt">
 											<em>01</em><br class="hide_768"> 양식 다운로드/작성
-										</p></li>
+										</p>
+									</li>
 									<li class="color2"><span class="flow_num color2">02</span>
+										<i class="icon hr_ic hr_li_2"></i>
 										<p class="flow_txt">
 											<em>02</em><br class="hide_768"> Email 접수
-										</p></li>
+										</p>
+									</li>
 									<li class="color3"><span class="flow_num color3">03</span>
+										<i class="icon hr_ic hr_li_3"></i>
 										<p class="flow_txt">
 											<em>03</em><br class="hide_768"> 1차 서류전형
 										</p></li>
 									<li class="color4"><span class="flow_num color4">04</span>
+										<i class="icon hr_ic hr_li_4"></i>
 										<p class="flow_txt">
 											<em>04</em><br class="hide_768"> 2차 면접전형
 										</p></li>
 									<li class="color5"><span class="flow_num color5">05</span>
+										<i class="icon hr_ic hr_li_5"></i>
 										<p class="flow_txt">
 											<em>05</em><br class="hide_768"> 입사확정
 										</p></li>
