@@ -134,7 +134,7 @@ public class userRecruitController {
 		recruitDTO file = userRecruitService.getFileInfo(recruitNo);
 		
 //		String filePath = file.getFilePath();
-		String filePath = "/ndcnc/tomcat/webapps3/ROOT/resources/imgs/imgrecruit";
+		String filePath = request.getServletContext().getRealPath(file.getFilePath());
 		
 		String fileName = file.getFileName();
 		String orgFileName = file.getOrgFileName();

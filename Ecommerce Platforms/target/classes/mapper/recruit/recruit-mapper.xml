@@ -48,7 +48,7 @@
 			<if test="value != null">
 			AND R.RECRUIT_TITLE like concat ('%',#{value},'%')
 			</if>
-		ORDER BY CASE WHEN CONTENTS_STATUS IN ('Y', 'R') THEN 0 ELSE 1 END
+		ORDER BY CASE WHEN CONTENTS_STATUS IN ('Y', 'R') THEN 0 ELSE 1 END, RECRUIT_NO DESC
 	</select>
 
 
@@ -87,9 +87,9 @@
 		RECRUIT_END,
 		RECRUIT_DATE,
 		CAREER,
-		RECRUIT_FILE_NAME_ORG, 
+		<!-- RECRUIT_FILE_NAME_ORG, 
 		RECRUIT_FILE_NAME, 
-		RECRUIT_FILE_PATH,
+		RECRUIT_FILE_PATH, -->
 		JOB_TITLE,
 		RECRUIT_TYPE,
 		RECRUIT_PLACE,
@@ -102,13 +102,21 @@
 		(
 		#{recruitTitle},
 		0,
-		#{recruitStart},
-		#{recruitEnd},
+		<choose>
+			<when test='contentsStatus == "R"'>
+			null,
+			null,
+			</when>
+			<otherwise>
+			#{recruitStart},
+			#{recruitEnd},
+			</otherwise>
+		</choose>
 		SYSDATE(),
 		#{career}, 
-		#{orgFileName}, 
+		<!-- #{orgFileName}, 
 		#{fileName}, 
-		#{filePath},
+		#{filePath}, -->
 		#{jobTitle},
 		#{recruitType},
 		#{recruitPlace},
