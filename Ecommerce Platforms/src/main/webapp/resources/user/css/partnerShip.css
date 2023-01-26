@@ -1492,7 +1492,6 @@
   border-radius: 4%;
 }
 
-@charset "utf-8";
 
 .culture_card_area {
   position: relative;
@@ -1774,11 +1773,21 @@
   border-radius: 18px;
 }
 .welfare_benefit_area .welfare_benefit_list > .items_2 {
-  min-height: 360px;
-  border: 1px solid black;
-  border-radius: 175px;
-  background-color: #1f4e79;
+  	min-height: 360px;
+/*   border-right: 1px solid white; */
+/*   border-radius: 175px; */
+  	background-color: #1f4e79;
+	position: relative
 }
+.welfare_benefit_area .welfare_benefit_list > .items_2 ::after {
+	position:absolute;
+    left: 0;
+    top: 100px;
+    content: "";
+    width: 1px;
+    height: 300px;
+    background-color: white;
+	}
 .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box {
   padding: 60px;
 }
