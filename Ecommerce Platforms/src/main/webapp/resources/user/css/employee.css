@@ -1,8 +1,10 @@
 /* @charset "utf-8"; */
 
 .culture_section{
-    padding-bottom: 15px;
-    padding-top: 15px;
+    margin-bottom: 120px;
+    padding-top: 30px;
+    width: 1280px;
+    height: 400px;
 }
 .talent_txt{
 	font-size: 16px;
@@ -13,11 +15,45 @@
 	float: left;
 	padding-bottom: 30px;
 }
-.company_culture_imgbox{
-	padding-bottom:30px;
-	width:440px;
-	height:491px;
+.company_culture_box_right{
+	margin:45px;
+	width:550px;
+	height:300px;
+	float: left;
+	vertical-align: middle;
+	text-align: left;
+}
+.company_culture_box_left{
+	margin:45px;
+	width:550px;
+	height:300px;
 	float: right;
+	vertical-align: middle;
+	text-align: right;
+}
+.company_culture_imgbox_left_01{
+	background-image :url("../images/qualifiedEmployee1.jpg");
+	background-size: cover;
+	margin:45px;
+	width:550px;
+	height:300px;
+	float: left;
+}
+.company_culture_imgbox_right_02{
+	background-image :url("../images/qualifiedEmployee2.jpg");
+	background-size: cover;
+	margin:45px;
+	width:550px;
+	height:300px;
+	float: right;
+}
+.company_culture_imgbox_left_03{
+	background-image :url("../images/qualifiedEmployee3.jpg");
+	background-size: cover;
+	margin:45px;
+	width:550px;
+	height:300px;
+	float: left;
 }
 .company_culture_imgbox > img{
 	width: 100%;
@@ -32,7 +68,15 @@
 	font-weight: bolder;
 	padding-top: 75px;
 	padding-bottom: 0px;
+	width: 1280px;
 	
+}
+.culture_bar{
+	float: right;
+	width: 400px;
+	height:32px;
+	background-color: #dbdbdb;
+	content: "";
 }
 .employee_layout_body .culture_sub_titlebox {
     position: relative;
@@ -47,6 +91,8 @@
     margin-bottom: 10px;
 }
 .employee_layout_body .culture_sub_title{
+	margin-top:50px;
+	margin-bottom:30px;
 	font-size: 20px;
 	font-weight: bolder;
 	
