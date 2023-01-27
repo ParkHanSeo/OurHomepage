@@ -50,112 +50,136 @@
                             <div class="culture_card_area">
                                 <ul class="culture_card_list common-layout_2 box-type02 is-vertical">
                                     <li class="bg-type01 employee_li_items">
-                                        <a href="#self">
-                                            <p class="culture_card_title">
-                                                뛰어남
-                                            </p>
-                                            <p class="sub_txt">Excellence</p>
-                                            <i class="icon culture-icon-01"></i>
-                                            <span class="icon card_ui-more employee_icon_black"></span>
-                                        </a>
-                                        <div class="culture_card_detail">
+                                    	<div class="employee_box">
+	                                        <a href="#self" class="employee_image_box qualify_1">
+	                                        	<div class="employee_box_contents">
+		                                            <p class="culture_card_title">
+		                                                탁월함
+		                                            </p>
+		                                            <p class="sub_txt">Excellence</p>
+		                                            <i class="icon culture-icon-01"></i>
+		                                            <span class="icon card_ui-more employee_icon_white"></span>
+		                                        </div>
+	                                        </a>
+                                        </div>
+                                        <!-- <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
                                                 <li>
                                                     최고와 더불어 최선을 다하는 인재를 추구합니다.
                                                 </li>
                                             </ul>
                                             <button type="button" class="icon card_ui-close"></button>
-                                        </div>
+                                        </div> -->
                                     </li>
                                     <li class="bg-type02 employee_li_items">
-                                        <a href="#self">
-                                        	<p class="culture_card_title">
-                                                혁신
-                                            </p>
-                                            <p class="sub_txt">Innovation</p>
-                                            <i class="icon culture-icon-02"></i>
-                                            <span class="icon card_ui-more employee_icon_white"></span>
-                                        </a>
-                                        <div class="culture_card_detail">
+                                    	<div class="employee_box">
+	                                        <a href="#self" class="employee_image_box qualify_2">
+		                                        <div class="employee_box_contents">
+		                                        	<p class="culture_card_title">
+		                                                혁신
+		                                            </p>
+		                                            <p class="sub_txt">Innovation</p>
+		                                            <i class="icon culture-icon-02"></i>
+		                                            <span class="icon card_ui-more employee_icon_black"></span>
+	                                            </div>
+	                                        </a>
+	                                    </div>
+                                        <!-- <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
                                                 <li>
                                                     끊임없이 혁신을 꿈꾸는 인재를 추구합니다.
                                                 </li>
                                             </ul>
                                             <button type="button" class="icon card_ui-close is-black"></button>
-                                        </div>
+                                        </div> -->
                                     </li>                                                              
                                     <li class="bg-type03 employee_li_items">
-                                        <a href="#self">
-                                            <p class="culture_card_title">
-                                                고민
-                                            </p>
-                                            <p class="sub_txt">Customer Fixation</p>
-                                            <i class="icon culture-icon-03"></i>
-                                            <span class="icon card_ui-more employee_icon_black"></span>
-                                        </a>
-                                        <div class="culture_card_detail">
+	                                    <div class="employee_box">
+	                                        <a href="#self" class="employee_image_box qualify_3">
+		                                        <div class="employee_box_contents">
+		                                            <p class="culture_card_title">
+		                                                통찰력
+		                                            </p>
+		                                            <p class="sub_txt">Customer Fixation</p>
+		                                            <i class="icon culture-icon-03"></i>
+		                                            <span class="icon card_ui-more employee_icon_white"></span>
+	                                            </div>
+	                                        </a>
+                                        </div>
+                                        <!-- <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
                                                 <li>
-                                                    고객의 기대와 요구에 앞서 고민하고 실천하는 인재를 추구합니다.
+                                                    고객의 기대와 요구를 파악하며, 고민하고 실천하는 인재를 추구합니다.
                                                 </li>
                                             </ul>
                                             <button type="button" class="icon card_ui-close is-black"></button>
-                                        </div>
+                                        </div> -->
                                     </li>
                                     <li class="bg-type04 employee_li_items">
-                                        <a href="#self">
-                                            <p class="culture_card_title">
-                                                협동심
-                                            </p>
-                                            <p class="sub_txt">Teamwork</p>
-                                            <i class="icon culture-icon-04"></i>
-                                            <span class="icon card_ui-more employee_icon_white"></span>
-                                        </a>
-                                        <div class="culture_card_detail">
+	                                    <div class="employee_box">
+	                                        <a href="#self" class="employee_image_box qualify_4">
+		                                        <div class="employee_box_contents">
+		                                            <p class="culture_card_title">
+		                                                협동심
+		                                            </p>
+		                                            <p class="sub_txt">Teamwork</p>
+		                                            <i class="icon culture-icon-04"></i>
+		                                            <span class="icon card_ui-more employee_icon_black"></span>
+	                                            </div>
+	                                        </a>
+                                        </div>
+                                        <!-- <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
                                                 <li>
                                                     협력을 통해 더 큰 성과를 창출하는 인재를 추구합니다.
                                                 </li>
                                             </ul>
                                             <button type="button" class="icon card_ui-close"></button>
-                                        </div>
+                                        </div> -->
                                     </li>
                                     <li class="bg-type05 employee_li_items">
-                                        <a href="#self">
-                                            <p class="culture_card_title">
-                                                책임감
-                                            </p>
-                                            <p class="sub_txt">Community</p>
-                                            <i class="icon culture-icon-04"></i>
-                                            <span class="icon card_ui-more employee_icon_black"></span>
-                                        </a>
-                                        <div class="culture_card_detail">
+	                                    <div class="employee_box">
+	                                        <a href="#self" class="employee_image_box qualify_5">
+		                                        <div class="employee_box_contents">
+		                                            <p class="culture_card_title">
+		                                                책임감
+		                                            </p>
+		                                            <p class="sub_txt">Community</p>
+		                                            <i class="icon culture-icon-04"></i>
+		                                            <span class="icon card_ui-more employee_icon_white"></span>
+	                                            </div>
+	                                        </a>
+                                        </div>
+                                      <!--   <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
                                                 <li>
 													기업의 역할과 책임을 이해하고 실천하는 인재를 추구합니다.
                                                 </li>
                                             </ul>
                                             <button type="button" class="icon card_ui-close"></button>
-                                        </div>
+                                        </div> -->
                                     </li>
                                     <li class="bg-type06 employee_li_items">
-                                        <a href="#self">
-                                            <p class="culture_card_title">
-                                                유연한
-                                            </p>
-                                            <p class="sub_txt">Flexible</p>
-                                            <i class="icon culture-icon-04"></i>
-                                            <span class="icon card_ui-more employee_icon_white"></span>
-                                        </a>
-                                        <div class="culture_card_detail">
+	                                    <div class="employee_box">
+	                                        <a href="#self" class="employee_image_box qualify_6">
+		                                        <div class="employee_box_contents">
+		                                            <p class="culture_card_title">
+		                                                유연함
+		                                            </p>
+		                                            <p class="sub_txt">Flexible</p>
+		                                            <i class="icon culture-icon-04"></i>
+		                                            <span class="icon card_ui-more employee_icon_black"></span>
+	                                            </div>
+	                                        </a>
+                                        </div>
+                                        <!-- <div class="culture_card_detail">
                                             <ul class="culture_card_txt">
                                                 <li>
                                                     유머와 재능을 살려 즐겁게 일하는 일터를 만드는 인재를 추구합니다.
                                                 </li>
                                             </ul>
                                             <button type="button" class="icon card_ui-close"></button>
-                                        </div>
+                                        </div> -->
                                     </li>
                                 </ul>
 	                                <section class="contents_section">

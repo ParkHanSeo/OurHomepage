@@ -32,22 +32,5 @@ CKEDITOR.editorConfig = function (config) {
   // Remove some buttons provided by the standard plugins, which are
   // not needed in the Standard(s) toolbar.
   config.removeButtons = "Underline,Subscript,Superscript";
-
-  // Set the most common block elements.
-  config.format_tags = "p;h1;h2;h3;pre";
-
-  // Simplify the dialog windows.
-  config.removeDialogTabs = "image:advanced;link:advanced";
-
   config.filebrowserUploadMethod = "form";
-  config.font_defaultLabel = "굴림";
-  config.font_names =
-    "굴림;돋움;바탕;궁서;굴림체;돋움체;바탕체;궁서체;나눔고딕;나눔명조;" +
-    "Arial;Comic Sans MS;Courier New;Lucida Sans Unicode;monospace;sans-serif;serif;Tahoma;Times New Roman;Verdana";
-  config.extraPlugins = "codemirror";
-  config.allowedContent = true;
-  config.fillEmptyBlocks = false; // Prevent filler nodes in all empty blocks.
-  config.protectedSource.push(/<p[^>]*><\/p>/g);
-  config.protectedSource.push(/<span[^>]*><\/span>/g);
-  config.protectedSource.push(/<i[^>]*><\/i>/g);
 };

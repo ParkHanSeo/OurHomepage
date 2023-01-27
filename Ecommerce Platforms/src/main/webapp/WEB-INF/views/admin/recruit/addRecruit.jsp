@@ -101,7 +101,9 @@
 					"jobIntro": $("#jobIntro").val(),
 					"qualification": $("#qualification").val(),
 					"recruitManager": $("#recruitManager").val(),
-					/* "contentsStatus": contentsStatus */		
+					"contentsStatus": contentsStatus,
+					"subTitle": subTitle,
+					"contents": contents
 			}
 			console.log("data:" + data);
 			
@@ -110,20 +112,15 @@
 			
 			for(var i = 0; i < fileinput.length; i++){
 				if(fileinput[i].files.length > 0){
-					/* for(var j = 0; j < fileinput[i].files.length; j++){
-						console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]); */
-						
+					for(var j = 0; j < fileinput[i].files.length; j++){
+						console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]);
 						// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
-						/* formData.append('file', $("input[name='fileName']")[i].files[j]); */
-						formData.append('file', $("input[name='fileName']")[i].files);
-					/* } */
+						formData.append('file', $("input[name='fileName']")[i].files[j]); 
+					 } 
 				}
 			}
+		
 			
-			// 'key'라는 이름으로 위에서 담은 data를 formData에 append한다. type은 json 
-			formData.append('key', new Blob([ JSON.stringify(data) ], {type : "application/json"}));
-			
-
 			if(!confirm("채용 게시글을 등록하시겠습니까?")){
 				alert("취소 되었습니다.");
 				return;
@@ -132,14 +129,22 @@
 		  		$.ajax({
 	  			 	 url : "/admin/insertRecruit?${_csrf.parameterName}=${_csrf.token}",
 		  		  	 type : "POST",
-	  		  	 	 data : formData,
-	  		  	     processData: false,
-	  		  	     contentType: false,
-	  		  	     enctype: 'multipart/form-data',
+	  		  	 	 data : data,
 	    		 	 success : function(result){
 	    		 		console.log("result >> ", result);
-	    		 		alert(result);
-	   			  		location.href = "/admin/recruitList";
+	    		 		/* $.ajax({
+	   	  			 	 url : "/admin/insertFile?${_csrf.parameterName}=${_csrf.token}",
+	   		  		  	 type : "POST",
+	   	  		  	 	 data : formData,
+	   	  		  	     processData: false,
+	   	  		  	     contentType: false,
+	   	  		  	     enctype: 'multipart/form-data',
+	   	    		 	 success : function(result){
+	   	    		 		console.log("result222 >> ", result);
+	   	    		 		alert(result);
+	   	   			  		location.href = "/admin/recruitList";
+	   	  		  	 	 }
+	   		  		}) */
 	  		  	 	 }
 		  		});		
 			}
