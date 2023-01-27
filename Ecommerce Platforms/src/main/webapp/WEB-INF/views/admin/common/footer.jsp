@@ -37,7 +37,9 @@
 		
         <script type="text/javascript">
 	        var objEditor = CKEDITOR.replace('editor', {
-	          		filebrowserUploadUrl:'/admin/board/imageUpload?${_csrf.parameterName}=${_csrf.token}'}
+	        		filebrowserImageUploadUrl: '/admin/board/imageUpload?${_csrf.parameterName}=${_csrf.token}',
+	          		filebrowserUploadUrl:'/admin/board/imageUpload?${_csrf.parameterName}=${_csrf.token}',
+	        		fillEmptyBlocks : true}
 			);             	
 	        $.fn.modal.Constructor.prototype.enforceFocus = function () {
 	        	modal_this = this

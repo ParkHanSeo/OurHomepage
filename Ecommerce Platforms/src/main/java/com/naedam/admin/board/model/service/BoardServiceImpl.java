@@ -66,12 +66,13 @@ public class BoardServiceImpl implements BoardService {
 			
 			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
 			MultipartFile[] postName = (MultipartFile[]) map.get("postName");
-			
+			System.out.println("파일 확인 === "+postName);
 			//게시글 등록
 			if("insert".equals(map.get("mode"))) {
 				boardDao.addPost(post);
 				for(int i = 0; i < postName.length; i++) {
 					File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
+					System.out.println("공지사항 파일 주소 체크 === "+file2);
 					boardFile.setFilePost(post);
 					boardFile.setFileName(postName[i].getOriginalFilename());
 					postName[i].transferTo(file2);
@@ -269,8 +270,8 @@ public class BoardServiceImpl implements BoardService {
 		resultMap.put("post", post);
 		resultMap.put("boardFile", boardDao.getPostFile(post.getPostNo()));
 		resultMap.put("board", boardDao.getBoardData(post.getPostBoard().getBoardNo()));
-		resultMap.put("postPrev", boardDao.getPrevPost((Integer) map.get("postNo")));
-		resultMap.put("postNext", boardDao.getNextPost((Integer) map.get("postNo")));
+		resultMap.put("postPrev", boardDao.getPrevPost(post));
+		resultMap.put("postNext", boardDao.getNextPost(post));
 		return resultMap;
 	}
 

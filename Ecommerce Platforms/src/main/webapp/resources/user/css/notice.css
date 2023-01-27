@@ -301,7 +301,7 @@
 
 .news .detail_body {
   border-top: 1px solid #999;
-  padding: 64px 110px;
+  padding: 64px 50px;
 }
 .news .detail_body * {
   font-family: "CJONLYONENEW" !important;
@@ -319,6 +319,7 @@
   font-weight: 300 !important;
   line-height: 1.63;
   letter-spacing: -0.2px !important;
+  display: flow-root;
   color: #333;
 }
 .news .detail_body ul li {
