@@ -160,33 +160,47 @@
                                 </ul>
 	                                <section class="contents_section">
 										<div class="company_culture">
-											<p class="main_title">기업 문화<p>
+											<div class="main_title">
+												<span>기업 문화</span>
+												<span class="culture_bar" ></span>
+											</div>
 											<p class="culture_txt">내담은 기업과 근로자가 발 맞추어 성장하는 기업으로 상생을 추구합니다.<p>
-											<div class="culture_section">
-												<p class="culture_sub_titlebox">1. Communication </p>
-												<p class="culture_sub_title">내담은 신뢰와 존중을 사랑합니다. </p>
-												<span class="culture_txt">
-													더 나은 결과를 위해 자유롭게 자신의 의견을 표현하며, 서로의 견해가 다르다 하더라도 상대방의 의견에 귀를 기울입니다. <br>
-													또한 전달하는 형식에 있어서 포장보다는 내용에 집중합니다. 화려한 PPT보다는 핵심적인 한문장을 전달하기 위해 노력합니다.
-												</span>
-											</div>
-											<div class="culture_section">
-												<p class="culture_sub_titlebox">2. Growth</p>
-												<p class="culture_sub_title">내담은 인재육성에 있어서 투자를 아끼지 않습니다.  </p>
-												<span class="culture_txt">
-													구성원의 성장과 기업의 성장은 대동소이합니다. 따라서 내담은 교육사업에 지원을 아끼지 않습니다.<br>
-													재직자 교육, 연수원 교육, 직무향상교육 및 자격증 취득 등의 구성원의 성장을 지원합니다. <br>
-													또한 업무 중  필요한 장비가 있을 시, 회사에서 지원합니다.
-												</span>
-											</div>
-											<div class="culture_section">
-												<p class="culture_sub_titlebox">3. Obvious Process </p>
-												<p class="culture_sub_title">내담은 구성원들에게 명확한 Process를 제시합니다. </p>
-												<span class="culture_txt">
-													구성원들의 시간과 노력은  무엇보다 큰 자산이며, 모든일에 집중하기에는 크나큰 집중력이 필요로 합니다. <br>
-													따라서 내담은 구성원들에게 그들의 모든 일에 집중하는 것 보다는 효율적으로 일을 할 수 있도록 명확한 프로세스를 제시합니다.
-												</span>
-											</div>
+		                                	<div class="culture_section">
+		                                		<div class="company_culture_imgbox_left_01">
+		                                		</div>
+		                                		<div class="company_culture_box_right">
+													<p class="culture_sub_title">내담은 신뢰와 존중을 사랑합니다. </p>
+													<span class="culture_txt">
+														더 나은 결과를 위해 자유롭게 자신의 의견을 표현하며, 서로의 견해가 다르다 하더라도 상대방의 의견에 귀를 기울입니다. <br>
+														또한 전달하는 형식에 있어서 포장보다는 내용에 집중합니다. 화려한 PPT보다는 핵심적인 한문장을 전달하기 위해 노력합니다.
+													</span>
+		                                		</div>
+		                               		</div>
+										<div class="company_culture">
+		                                	<div class="culture_section">
+		                                		<div class="company_culture_imgbox_right_02">
+		                                		</div>
+		                                		<div class="company_culture_box_left">
+													<p class="culture_sub_title">내담은 인재육성에 있어서 투자를 아끼지 않습니다. </p>
+													<span class="culture_txt">
+														구성원의 성장과 기업의 성장은 대동소이합니다. 따라서 내담은 교육사업에 지원을 아끼지 않습니다.<br>
+														재직자 교육, 연수원 교육, 직무향상교육 및 자격증 취득 등의 구성원의 성장을 지원합니다. <br>
+														또한 업무 중  필요한 장비가 있을 시, 회사에서 지원합니다.
+													</span>
+		                                		</div>
+		                               		</div>
+										<div class="company_culture">
+		                                	<div class="culture_section">
+		                                		<div class="company_culture_imgbox_left_03">
+		                                		</div>
+		                                		<div class="company_culture_box_right">
+													<p class="culture_sub_title">내담은 구성원들에게 명확한 Process를 제시합니다. </p>
+													<span class="culture_txt">
+														구성원들의 시간과 노력은  무엇보다 큰 자산이며, 모든일에 집중하기에는 크나큰 집중력이 필요로 합니다. <br>
+														따라서 내담은 구성원들에게 그들의 모든 일에 집중하는 것 보다는 효율적으로 일을 할 수 있도록 명확한 프로세스를 제시합니다.
+													</span>
+		                                		</div>
+		                               		</div>
 		                                </div>
 	                                </section>
                             </div>
