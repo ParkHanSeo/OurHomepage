@@ -1,6 +1,9 @@
 package com.naedam.admin.recruit.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,6 +38,9 @@ public class RecruitController {
 
 	@Autowired
 	private RecruitService recruitService;
+	
+	//채용번호
+	private int curRecruitNo;
 
 	// 채용 게시글 조회
 	@RequestMapping("recruitList")
@@ -72,15 +78,7 @@ public class RecruitController {
 	@ResponseBody
 	public String deleteRecruit(@RequestParam(value = "postArr[]") List<Integer> postArr) {
 
-		int recruitNum;
-		int deleteResult = 0;
-
-		for (int i = 0; i < postArr.size(); i++) {
-			recruitNum = postArr.get(i);
-			System.out.println("recruitNum" + i + ">>>>>" + recruitNum);
-			deleteResult = +recruitService.deleteRecruit(recruitNum);
-		}
-		;
+		int deleteResult = recruitService.deleteRecruit(postArr);
 
 		if (deleteResult == postArr.size()) {
 			System.out.println("게시글이 삭제 되었습니다.");
@@ -102,55 +100,63 @@ public class RecruitController {
 		System.out.println("contents>>>>>>" + contents);
 		
 		int recruitRecult = 0;
-		String msg="";
 		
 		// 채용 게시글 입력
 		recruitRecult = recruitService.insertRecruit(recruit);
 		
 		// 채용 게시글 번호
-		int curRecruitNo = recruit.getRecruitNo();		
-		/* 리스트 생성 */
-		List<recruitContentsDTO> contentsList = new ArrayList<>();
-				
-		int insertResult = 0;
-				
-										
-			for (int i = 0; i < subTitle.size(); i++) {
-				System.out.println("i >> " + i);
-				recruitContentsDTO dtoContents = new recruitContentsDTO();
-						
-				/*세부 내용*/
-				dtoContents.setRecruitSubTitle(subTitle.get(i));
-				dtoContents.setRecruitContents(contents.get(i));
-						
-				/*세부 내용이 들어갈 채용 게시글 dto*/
-				recruitDTO dtoRecruit = new recruitDTO();
-				dtoRecruit.setRecruitNo(curRecruitNo);
-				dtoContents.setRecruitNo(dtoRecruit);
-						
-				contentsList.add(dtoContents);
-						  
-				System.out.println("contents [" + i + "] >> " + contentsList);
-			}
-					
-			insertResult = recruitService.insertRecruitContents(contentsList);
-					  
-			log.info("insertResult >>> " + insertResult);
-					
+		curRecruitNo = recruit.getRecruitNo();
 		
+		int insertResult = 0;
+		
+		if(subTitle != null) {
+			System.out.println("왜 넘어옴");
+			// 상세내용 추가 입력
+			insertResult = recruitService.insertRecruitContents(subTitle, contents, curRecruitNo);
+		}					
+		log.info("insertResult >>> " + insertResult);
+
 		if(recruitRecult == 1) {
-			msg = "게시글 등록이 완료 되었습니다."; 
-			// 채용게시글 상세내용 등록 확인
-			if(insertResult == subTitle.size()) {
-				 msg = "채용 게시글 등록이 완료 되었습니다."; 
-			} else {
-				msg = "채용 게시글 등록을 실패했습니다.";
+			System.out.println("recruitRecult == 1");
+			if(subTitle != null) {
+				// 채용게시글 상세내용 등록 확인
+				if(insertResult == subTitle.size()) {
+					System.out.println("insertResult == subTitleSize");
+				} else {
+					System.out.println("insertResult 실패");
+				}
 			}
 		} else {
-			msg = "게시글 등록을 실패했습니다.";
+			System.out.println("recruitRecult 실패");
 		}
 		
-		return msg;
+		return null;
+	}
+	
+	@PostMapping(value = "insertFile")
+	@ResponseBody
+	public int insertFile(@RequestParam(value = "file", required = false) List<MultipartFile> fileList,
+			@RequestPart(value = "file", required = false) List<MultipartFile> fileList2,
+			HttpServletRequest request) {
+
+		System.out.println("insertFile curRecruitNo>>>>>" + curRecruitNo);
+		System.out.println("insertFile fileList1>>>>>" + fileList);
+		System.out.println("insertFile fileList2>>>>>" + fileList2);
+		System.out.println("fileList.size() >>>" + fileList.size());
+		
+		int fileResult = recruitService.insertFile(fileList, request, curRecruitNo);
+		
+		int result;
+		
+		if(fileResult == 1) {
+			result = 1;	
+		} else if(fileResult == 0){
+			result = 2;
+		} else {
+			result = 3;
+		}
+
+		return result;
 	}
 	
 	@GetMapping("getRecruitData")

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
@@ -15,13 +17,18 @@ public interface RecruitService {
 	public Map<String, Object> getRecruitList(String search, int limit, int offset)throws Exception;
 
 	// 게시글 삭제
-	public int deleteRecruit(int recruitNum);
+	public int deleteRecruit(List<Integer> postArr);
 
 	// 게시글 등록
 	public int insertRecruit(recruitDTO recruit);
 
+	// 게시글 파일 추가
+	public int insertFile(recruitDTO recruit);//전
+	public int insertFile(List<MultipartFile> fileList,HttpServletRequest request, int curRecruitNo);
+
 	// 게시글 상세 내용 등록
-	public int insertRecruitContents(List<recruitContentsDTO> contentsList);
+	public int insertRecruitContents(List<recruitContentsDTO> contentsList);	//전
+	public int insertRecruitContents(List<String> subTitle, List<String> contents, int curRecruitNo);
 
 	// 게시글 수정을 위한 게시글 조회
 	public recruitDTO getRecruitData(int recruitNo);
@@ -37,6 +44,12 @@ public interface RecruitService {
 
 	//채용 게시글 상태값 변경
 	public int updateContentsStatus();
+
+	
+
+
+	
+
 
 	
 	

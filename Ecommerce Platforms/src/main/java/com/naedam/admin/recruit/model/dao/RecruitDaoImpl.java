@@ -51,6 +51,12 @@ public class RecruitDaoImpl implements RecruitDao {
 	}
 
 	@Override
+	public int insertFile(recruitDTO recruit) {
+		log.info(">>>>>insertFileDAO 실행");
+		return sqlSession.update("recruit.insertFile", recruit);
+	}
+
+	@Override
 	public int insertRecruitContents(recruitContentsDTO recruitContentsDTO) {
 		log.info(">>>>>recruitContentsDTO :" + recruitContentsDTO);
 		return sqlSession.insert("recruit.insertRecruitContents", recruitContentsDTO);
@@ -85,6 +91,7 @@ public class RecruitDaoImpl implements RecruitDao {
 		System.out.println("updateContentsStatus dao ==== " + sqlSession.update("recruit.updateContentsStatus"));
 		return sqlSession.update("recruit.updateContentsStatus");
 	}
+
 
 
 	

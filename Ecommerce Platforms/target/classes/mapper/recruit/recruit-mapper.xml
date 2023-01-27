@@ -138,6 +138,15 @@
 		</selectKey>
 		
 	</insert>
+	
+	<update id="insertFile">
+	UPDATE recruit
+	   SET 
+		   RECRUIT_FILE_NAME_ORG = #{orgFileName}, 
+		   RECRUIT_FILE_NAME = #{fileName}, 
+		   RECRUIT_FILE_PATH = #{filePath}
+	 WHERE RECRUIT_NO = #{recruitNo}
+	</update>
 
 	<insert id="insertRecruitContents" parameterType="com.naedam.admin.recruit.model.vo.recruitContentsDTO">
 		INSERT INTO recruit_contents(RECRUIT_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS)
