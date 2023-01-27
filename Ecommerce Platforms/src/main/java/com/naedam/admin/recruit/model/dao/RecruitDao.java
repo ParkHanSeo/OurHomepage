@@ -22,6 +22,9 @@ public interface RecruitDao {
 	// 게시글 등록
 	public int insertRecruit(recruitDTO recruit);
 
+	// 게시글 파일 추가
+	public int insertFile(recruitDTO recruit);
+
 	// 게시글 상세내용 등록
 	public int insertRecruitContents(recruitContentsDTO recruitContentsDTO);
 
@@ -39,6 +42,7 @@ public interface RecruitDao {
 
 	//채용 게시글 상태값 변경
 	public int updateContentsStatus();
+
 
 
 	

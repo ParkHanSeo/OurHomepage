@@ -120,6 +120,7 @@
 				}
 			}
 		
+			console.log("formData:" + formData.get(0));
 			
 			if(!confirm("채용 게시글을 등록하시겠습니까?")){
 				alert("취소 되었습니다.");
@@ -132,7 +133,7 @@
 	  		  	 	 data : data,
 	    		 	 success : function(result){
 	    		 		console.log("result >> ", result);
-	    		 		/* $.ajax({
+	    		 		$.ajax({
 	   	  			 	 url : "/admin/insertFile?${_csrf.parameterName}=${_csrf.token}",
 	   		  		  	 type : "POST",
 	   	  		  	 	 data : formData,
@@ -141,10 +142,18 @@
 	   	  		  	     enctype: 'multipart/form-data',
 	   	    		 	 success : function(result){
 	   	    		 		console.log("result222 >> ", result);
-	   	    		 		alert(result);
+	   	    		 		let msg;
+	   	    		 		if(result == 1){
+	   	    		 			msg = "게시글 등록에 성공했습니다.";
+	   	    		 		} else if(result == 2){
+	   	    		 			msg = "게시글 등록에 성공했습니다.(파일없음)";
+	   	    		 		} else {
+	   	    		 			msg = "게시글 등록에 실패했습니다.";
+	   	    		 		}
+	   	    		 		alert(msg);
 	   	   			  		location.href = "/admin/recruitList";
 	   	  		  	 	 }
-	   		  		}) */
+	   		  		})
 	  		  	 	 }
 		  		});		
 			}
