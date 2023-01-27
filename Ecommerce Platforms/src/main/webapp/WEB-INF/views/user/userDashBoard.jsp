@@ -233,19 +233,19 @@
 												</g>
 											</g>
 										</svg>				                     	 
-										</div> 
-										<a href="/tech/blockchain">
-											<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												SI사업부</h3>
-											<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 인프라 등 
-												<br/>다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를 기반으로
-												<br/>컨설팅, Application 개발/운영 서비스까지 고객사에서 필요로하는 IT영역의 Total Service를 제공하고 있습니다.
-											</p>
-											<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												<span class="blind">자세히 보기</span>
-											</p>
-										</a>
+									</div> 
+									<div class="main_aos_si_txt">
+										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											SI사업부</h3>
+										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 인프라 등 
+											<br/>다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를 기반으로
+											<br/>컨설팅, Application 개발/운영 서비스까지 고객사에서 필요로하는 IT영역의 Total Service를 제공하고 있습니다.
+										</p>
+										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											<span class="blind">자세히 보기</span>
+										</p>
+									</div>
 								</li>
 								<li class="cloud">
 									<div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
@@ -453,8 +453,8 @@
 								<h2 class="tit">공지사항</h2>
 							</a>
 							<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-								<a href="/user/notice/noticeList/5001" class="common-btn is-grad-blue">
-									<span>전체보기<i class="icon link-arrow"></i></span>
+								<a href="/user/notice/noticeList/5001" class="common-btn">
+									<span>전체보기</span>
 								</a>
 							</div>
 						</div>

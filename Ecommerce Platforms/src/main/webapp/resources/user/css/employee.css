@@ -1,4 +1,4 @@
-@charset "utf-8";
+/* @charset "utf-8"; */
 
 .culture_section{
     padding-bottom: 15px;
@@ -30,7 +30,7 @@
 .employee_layout_body .main_title{
 	font-size: 32px;
 	font-weight: bolder;
-	padding-top: 15px;
+	padding-top: 75px;
 	padding-bottom: 0px;
 	
 }
@@ -629,7 +629,7 @@
   height: 60%;
 }
 .employee_layout_body {
-  margin-top: 10%;
+ /*  margin-top: 10%; */
 }
 .employee_icon_black {
   width: 32px;

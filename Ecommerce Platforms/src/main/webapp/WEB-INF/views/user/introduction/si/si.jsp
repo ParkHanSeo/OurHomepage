@@ -69,7 +69,7 @@
                                     </li>
                                     <li class="items swiper-slide">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/img-sug-thumbnail-06-pc@2x.png" alt="전자상거래">
+                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_4.jpg" alt="전자상거래">
                                             <p class="recomm_txt">
                                                 전자상거래
                                             </p>
@@ -77,7 +77,7 @@
                                     </li>
                                     <li class="items swiper-slide">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/img-sug-thumbnail-11-pc@2x.png" alt="반도체">
+                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_5.jpg" alt="반도체">
                                             <p class="recomm_txt">
                                                 반도체
                                             </p>
@@ -85,7 +85,7 @@
                                     </li>
                                     <li class="items swiper-slide">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/img-sug-thumbnail-12-pc@2x.png" alt="물류/서비스">
+                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_6.jpg" alt="물류/서비스">
                                             <p class="recomm_txt">
                                                 물류 / 서비스
                                             </p>

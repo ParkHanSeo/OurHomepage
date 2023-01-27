@@ -39,14 +39,14 @@ $(function(){
                         <div class="visual_txt_area com_intro">
                             <p class="txt1">
                             	혁신 그리고 신뢰와 열정으로
-                            	<br />새로운 도전과 함께 큰 미래를 만들어갑니다.
+                            	<br />함께 미래를 만들어갑니다.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div>
 				<div class="sub_title_area">
-                    <div class="inner_container">
+                    <div class="inner_container contents_top">
                         <h2 class="sub_title business_sub_title">사업부 소개</h2>
                     </div>
                 </div><!-- // .sub_title_area -->
@@ -80,11 +80,11 @@ $(function(){
                                 <div class="div_division_left">
 	                                <p class="division_name">Digital Twin 사업부</p>
 	                                <p class="division_info">
-	                                    - PLM 개발<br>
-	                                    - PLM대리점(삼성SDS)<br>
-	                                    - 공장 자동화 S/W<br>
-	                                    - EES S/W ERP/MES 개발<br>
-	                                    - 그룹웨어 개발<br>
+	                                    - 산업 데이터 모니터링 <br>
+	                                    - 공정관리 시스템 <br>
+	                                    - 양방향 정보교환 설계<br>
+	                                    - 다자간 의사 결정 지원<br>
+	                                    - 제품 수명 주기 결정<br>
 	                                </p>
 	                            </div>
                             </li>
@@ -99,6 +99,8 @@ $(function(){
 	                                	- SCM,PLM,CRM 개발<br>
 	                                    - 사업전략기획/수립<br>
 	                                    - 신규사업개발 및 제휴<br>
+	                                    - 공장 자동화 S/W<br>
+										- EES S/W ERP/MES 개발<br>
 	                                </p>
 	                            </div>
                             </li>

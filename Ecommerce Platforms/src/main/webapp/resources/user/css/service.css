@@ -140,7 +140,9 @@
   position: relative;
 }
 .recomm_industry_slider .recomm_box img {
-  width: 100%;
+  width: 500px;
+  height: 300px;
+  border-radius: 2%;
 }
 .recomm_industry_slider .recomm_box .recomm_txt {
   width: 100%;

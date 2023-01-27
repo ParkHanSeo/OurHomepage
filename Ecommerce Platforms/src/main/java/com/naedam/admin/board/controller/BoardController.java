@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -83,7 +84,7 @@ public class BoardController {
 	 */
 	@PostMapping("postProcess")
 	public String postProcess(@ModelAttribute("board") Board board, @ModelAttribute("post") Post post,
-							  @RequestParam(value="postName", required = false) MultipartFile[] postName,   
+							  @RequestPart(value="postName") MultipartFile[] postName,   
 							  @RequestParam("secNo") String secNo, 
 							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
@@ -195,12 +196,16 @@ public class BoardController {
 	@PostMapping("imageUpload")
 	public void imageUpload(HttpServletRequest request, HttpServletResponse response,
 							MultipartHttpServletRequest multiFile,
-							@RequestParam(value="upload", required = false) MultipartFile upload) throws Exception{
+							@RequestPart(value="upload", required = false) MultipartFile upload) throws Exception{
 		System.out.println("ckeditor 이미지 업로드 로그 확인");
 		UUID uid = UUID.randomUUID();
 		OutputStream out = null;
 		PrintWriter printWriter = null;
-		System.out.println("ckeditor === "+upload);
+		if(upload.equals(null)) {
+			System.out.println("null값 체크");
+		}else {
+			System.out.println("null값 체크2");
+		}
 		try{ 
 			//파일 이름 가져오기 
 			String fileName = upload.getOriginalFilename(); 
