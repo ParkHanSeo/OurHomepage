@@ -691,7 +691,8 @@ h4 {
   width: 550px;
   height: 550px;
   border-radius: 3%;
-  background-image: url(../images/image_10.jpg);
+  background-image: url(../images/naedam.jpg);
+  background-size: cover;
 }
 .core-wrap .core-list .ai > a {
   /* padding-top: 250px; */
@@ -712,7 +713,8 @@ h4 {
   width: 660px;
   height: 504px;
   border-radius: 3%;
-  background-image: url(../images/image_15.jpg);
+  background-image: url(../images/consulting.jpg);
+  background-size: cover;
 }
 .core-wrap .core-list .big-data .bg-text {
   top: 346px;
@@ -728,7 +730,8 @@ h4 {
   width: 660px;
   height: 504px;
   border-radius: 3%;
-  background-image: url(../images/image_16.jpg);
+  background-image: url(../images/SI.jpg);
+  background-size: cover;
 }
 .core-wrap .core-list .blockchain > div {
   padding-top: 528px;
@@ -749,7 +752,8 @@ h4 {
   width: 550px;
   height: 550px;
   border-radius: 3%;
-  background-image: url(../images/solution/solution_1-3_1.jpg);
+  background-image: url(../images/solution.jpg);
+  background-size: cover;
 }
 .core-wrap .core-list .cloud .bg-text {
   top: 394px;

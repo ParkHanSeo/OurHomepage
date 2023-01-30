@@ -13,14 +13,14 @@
 		DATE_FORMAT(history_date, '%Y') AS year,
 		DATE_FORMAT(history_date, '%c') AS month
 		from history
-		order by history_date;
+		order by history_date desc;
 	</select>
 
 	<select id="selectYearList" resultType="history">
 		select distinct
 		DATE_FORMAT(history_date, '%Y') AS year
 		from history
-		order by history_date;
+		order by history_date desc;
 		
 	</select>
 
@@ -29,7 +29,7 @@
 		DATE_FORMAT(history_date, '%Y') AS year,
 		DATE_FORMAT(history_date, '%c') AS month
 		from history
-		order by history_date;
+		order by history_date desc;
 		
 	</select>
 
