@@ -1,4 +1,71 @@
 @charset "utf-8";
+.core_value_img{
+	background-image: url("../images/core_value.png");
+	width: 80%;
+	height: 80%;
+	margin:0 auto;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.business_txtbox{
+	width: 750px;
+	height: 200px;
+	position: relative;
+}
+.welfare_benefit_box1
+  .benefit_title {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: bold;
+  color:white;
+  text-align: right;
+  right: 100px;
+  position: relative;
+}
+  .welfare_benefit_box2
+  .benefit_title {
+  font-size: 32px;
+  line-height: 48px;
+  text-align: left;
+  font-weight: bold;
+  color:white;
+}
+.common-layout_2.is-vertical .items:nth-child(1), .common-layout_2.is-vertical .businessList_items:nth-child(2) {
+    margin-top: 0;
+}
+.common-layout_2.is-vertical .businessList_items:nth-child(even) {
+    margin-left: 0px;
+    margin-bottom:40px;
+}
+.common-layout_2.is-vertical .businessList_items {
+    margin-top: 40px;
+}
+.welfare_benefit_area .welfare_benefit_list > .businessList_items{
+    min-height: 500px;
+   /*  border: 1px solid #e6e6e6; */
+    border-radius: 18px;
+}
+.common-layout_2 > .businessList_items {
+    width: calc(100% / 2);
+}
+.businessList_top_txt1{
+    font-size: 40px;
+    font-weight:bold;
+    line-height: 56px;
+    position: relative;
+    letter-spacing: -0.2px;
+    text-align: center;
+}
+.businessList_top_txt2{
+    margin-top: 24px;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #666;
+}
 .vision_Icon{
 	background-image: url("../images/icon/vision2.png");
     /* background-color: white; */
@@ -195,12 +262,12 @@
   padding-top: 100px;
 }
 .business_layout_sub {
-  color: white;
+  color: black;
   padding: 60px; 
   padding-top: 90px;
 }
 .common-layout_2 > .items_2 {
-  width: calc(100% / 3 - 5px);
+  width: calc(100% / 2);
   /* margin-left: 178px; */
 }
 .location_list {
@@ -544,7 +611,7 @@
   font-size: 17px;
 }
 .layout_sub_body {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .items .division_name {
   font-size: 20px;

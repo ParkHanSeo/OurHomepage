@@ -454,6 +454,15 @@
   border: 1px solid #e6e6e6;
   border-radius: 18px;
 }
+.items .Executive_Summary_img1{
+	background-image:url("../images/businessList_cloud.jpg");
+	background-size: cover;
+	
+}
+.items .Executive_Summary_img2{
+	background-image:url("../images/businessList_website.jpg");
+	background-size: cover;
+}
 .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box {
   padding: 40px;
 }
@@ -464,6 +473,7 @@
   .benefit_title {
   font-size: 32px;
   line-height: 48px;
+  text-align: left;
 }
 .welfare_benefit_area
   .welfare_benefit_list

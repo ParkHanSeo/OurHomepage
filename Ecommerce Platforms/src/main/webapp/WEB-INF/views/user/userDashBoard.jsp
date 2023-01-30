@@ -349,7 +349,7 @@
 											<h3 class="tit-label">PLM</h3>
 											<h4 class="tit">Rule & Process 기반 시스템 구축</h4>
 											<p class="description">
-												2,800만 회원 데이터를 활용한<br /> 타겟 맞춤형 광고 큐레이션 서비스
+												제품 전체 여정을 관리하기 위한<br /> 전략적 프로세스의 소프트웨어
 											</p>
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
