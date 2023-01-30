@@ -156,7 +156,7 @@ function updateRecruit(){
 			alert("필수항목을 모두 입력해주세요.");
 			return;
 		}
-		
+		/* 
 		if($("#startDay_u").val() == null || $("#startDay_u").val() == ''){
 			alert("시작일은 필수 항목입니다.");
 			return;
@@ -168,7 +168,7 @@ function updateRecruit(){
 		if($("#startDay_u").val() > $("#endDay_u").val()){
 			alert("시작일은 마감일보다 뒤일 수 없습니다.");
 			return;
-		}
+		} */
 		
 		//반복작업 필요한 내용
 		var subTitle = new Array();
@@ -203,7 +203,24 @@ function updateRecruit(){
 			recruitEnd = $("#endDay_u").val();
 		}
 		
-		console.log('contentsStatus>>>>>' , contentsStatus);
+		if(recruitStart == null || recruitStart == ''){
+			if(contentsStatus == null || contentsStatus ==''){
+				alert("시작일은 필수 항목입니다.");
+				return;
+			}
+		}
+		if(recruitEnd == null || recruitEnd == ''){
+			if(contentsStatus == null || contentsStatus ==''){
+				alert("마감일은 필수 항목입니다.");
+				return;
+			}
+		}
+		if($("#startDay").val() > $("#endDay").val()){
+			alert("시작일은 마감일보다 뒤일 수 없습니다.");
+			return;
+		}
+		
+		console.log("contentsStatus>>>>>>" ,contentsStatus);
 		
 		//FormData 새로운 객체 생성 
 		var formData = new FormData();
@@ -251,6 +268,7 @@ function updateRecruit(){
 		// 'key'라는 이름으로 위에서 담은 data를 formData에 append한다. type은 json 
 		formData.append('key', new Blob([ JSON.stringify(data) ], {type : "application/json"}));
 		
+		//ajax 이후 변경해야됨
 		$.ajax({
 			 	url : "/admin/updateRecruit?${_csrf.parameterName}=${_csrf.token}",
  		  	 	type : "POST",
@@ -263,7 +281,42 @@ function updateRecruit(){
 		 			alert(result);
 			  		location.href = "/admin/recruitList";
 		  	 	 }
- 			});		
+ 			});
+		
+		//바뀐 ajax
+		$.ajax({
+			 	url : "/admin/updateRecruit?${_csrf.parameterName}=${_csrf.token}",
+ 		  	 	type : "POST",
+		  	 	data : data,
+		 	 	success : function(result){
+			 		console.log("result >> ", result);
+			 		//파일 변경사항이 있을 경우 실행
+			 		if( $("orgFileName_u") != null && fileinput == null){
+			 			$.ajax({
+			  			 	 url : "/admin/insertFile?${_csrf.parameterName}=${_csrf.token}",
+				  		  	 type : "POST",
+			  		  	 	 data : formData,
+			  		  	     processData: false,
+			  		  	     contentType: false,
+			  		  	     enctype: 'multipart/form-data',
+			    		 	 success : function(result){
+			    		 		console.log("result222 >> ", result);
+			    		 		let msg;
+			    		 		if(result == 1){
+			    		 			msg = "게시글 등록에 성공했습니다.";
+			    		 		} else if(result == 2){
+			    		 			msg = "게시글 등록에 성공했습니다.(파일없음)";
+			    		 		} else {
+			    		 			msg = "게시글 등록에 실패했습니다.";
+			    		 		}
+			    		 		alert(msg);
+			   			  		location.href = "/admin/recruitList";
+			  		  	 	 }
+				  		})
+			 		}
+		  	 	 }
+ 		});
+		
 	}
 	
 	
@@ -381,7 +434,7 @@ $(document).ready(function() {
 									<td class="menu">담당자</td>
 									<td align="left">
 										<textarea name="recruitManager_u" id="recruitManager_u"
-												rows="10" cols="80"></textarea>
+												rows="4" cols="80"></textarea>
 									</td>
 								</tr>
 								<tr>

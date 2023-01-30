@@ -9,7 +9,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/recruitDetail.css">
 </head>
 <body>
-<% String path = request.getServletContext().getRealPath("/"); %>
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 	<div id="contents" style="padding-top: 47px;">
 		<div class="area_sub_title">
@@ -28,7 +27,6 @@
 						<div class="inner_copy_header">
 							<!-- 제목 -->
 							<p>${recruitData.recruitTitle}</p>
-							<%= path %>
 							<div>
 								<strong class="recruit_status">
 									<span class="closing">

@@ -95,10 +95,7 @@ public class RecruitController {
 	public String insertRecruit(@ModelAttribute recruitDTO recruit,
 			@RequestParam(value = "subTitle[]", required = false)List<String> subTitle,
 			@RequestParam(value = "contents[]", required = false)List<String> contents) {
-
-		System.out.println("recruit>>>>>" + recruit);
-		System.out.println("contents>>>>>>" + contents);
-		
+	
 		int recruitRecult = 0;
 		
 		// 채용 게시글 입력
@@ -110,7 +107,6 @@ public class RecruitController {
 		int insertResult = 0;
 		
 		if(subTitle != null) {
-			System.out.println("왜 넘어옴");
 			// 상세내용 추가 입력
 			insertResult = recruitService.insertRecruitContents(subTitle, contents, curRecruitNo);
 		}					
@@ -182,120 +178,43 @@ public class RecruitController {
 	
 	@PostMapping(value = "updateRecruit", produces = "application/text; charset=UTF-8")
 	@ResponseBody
-	public String updateRecruit(@RequestPart(value = "key" ,required = false) Map<String, Object> param,
-			@RequestPart(value = "file",required = false) List<MultipartFile> fileList,
-			HttpServletRequest request) throws Exception {
+	public String updateRecruit(@ModelAttribute recruitDTO recruit,
+			@RequestParam(value = "subTitle[]", required = false)List<String> subTitle,
+			@RequestParam(value = "contents[]", required = false)List<String> contents) throws Exception {
 
 		int recruitResult = 0;
 		String msg="";
-
-		System.out.println("updateparam >>>>" + param);
-		System.out.println("updatefileList >>>>" + fileList);
 		
-		int recruitNo = Integer.parseInt(String.valueOf(param.get("recruitNo")));
-		
-		/* param 안의 일부값 recruitDTO에 담기*/
-		recruitDTO recruit = new recruitDTO();
-		recruit.setRecruitNo(recruitNo);
-		recruit.setRecruitTitle((String)param.get("recruitTitle"));
-		recruit.setCareer((String)param.get("career"));
-		recruit.setJobTitle((String)param.get("jobTitle"));
-		recruit.setRecruitType((String)param.get("recruitType"));
-		recruit.setRecruitPlace((String)param.get("recruitPlace"));
-		recruit.setJobIntro((String)param.get("jobIntro"));
-		recruit.setQualification((String)param.get("qualification"));
-		recruit.setRecruitManager((String)param.get("recruitManager"));
-		recruit.setContentsStatus((String)param.get("contentsStatus"));
-		
-		System.out.println("orgFileName>>>>>>>>>>" + param.get("orgFileName"));
-		
-		System.out.println("===updateRecruitrecruitDTO recruit==== : " + recruit);
-		
-		recruit.setRecruitStart((String)param.get("recruitStart"));
-		recruit.setRecruitEnd((String)param.get("recruitEnd"));
-		
-		//file 등록
-		/*세부 내용안의 이미지file*/
-		if ((fileList != null) && (fileList.size() > 0)) {
-			//오리지널 이름 입력
-			recruit.setOrgFileName(fileList.get(0).getOriginalFilename());
-			System.out.println("dtoContents.setOrgName >>>>>" + fileList.get(0).getOriginalFilename());
-			//파일 처리 식별자 처리를 위한 UUID
-			UUID uuid = UUID.randomUUID();
-			//fileName 처리 (저장될 파일이름)
-			String fileName = uuid + "_" + fileList.get(0).getOriginalFilename();
-			recruit.setFileName(fileName);
-			//filePath 처리
-			String filePath =request.getServletContext().getRealPath("resources/imgs/imgrecruit");
-			recruit.setFilePath(filePath);
-			
-			//파일 저장
-			File saveFile = new File(filePath,fileName);
-			fileList.get(0).transferTo(saveFile);
-			System.out.println("saveFile ============" + saveFile);
-
-			System.out.println("fileName >> " + fileName);
-			System.out.println("filePath >> " + filePath);
-
-			}
-
+		int recruitNo = recruit.getRecruitNo();
 		
 		// 채용 게시글 업데이트
 		recruitResult = recruitService.updateRecruit(recruit);
 
 		System.out.println("curRecruitNo === " + recruitNo);
-		
+
 		//업데이트를 위해 상세 내용 삭제
 		int deleteResult = recruitService.deleteRecruitContents(recruitNo);
 		System.out.println("삭제 상태 ====== " + deleteResult );
 		
-		/* 리스트 생성 */
-		List<recruitContentsDTO> contentsList = new ArrayList<>();
-		
-		System.out.println("subTitle>>>>" + param.get("subTitle"));
-		System.out.println("contents>>>>" + param.get("contents"));
-		
-		int size = ((List<String>) param.get("subTitle")).size();
-		
-		System.out.println("size>>>>>>>>>>>>>>>>" + size);
-		
-		for (int i = 0; i < size; i++) {
-			
-			recruitContentsDTO dtoContents = new recruitContentsDTO();
-			
-			/*세부 내용*/
-			dtoContents.setRecruitSubTitle(((List<String>) param.get("subTitle")).get(i));
-			dtoContents.setRecruitContents(((List<String>) param.get("contents")).get(i));
-			
-			/*세부 내용이 들어갈 채용 게시글 dto*/
-			recruitDTO dtoRecruit = new recruitDTO();
-			dtoRecruit.setRecruitNo(recruitNo);
-			dtoContents.setRecruitNo(dtoRecruit);
-			
-			contentsList.add(dtoContents);
-			  
-			 System.out.println("contents [" + i + "] >> " + contentsList);
-			}
-			  
-			  int insertResult = recruitService.insertRecruitContents(contentsList);
-			  
-			  log.info("insertResult >>> " + insertResult);
-			  
-			  //채용 게시글 등록 완료 확인
-			  if(recruitResult ==1) {
-				  msg = "게시글 수정이 완료 되었습니다."; 
-				  // 채용게시글 상세내용 등록 확인
-				  if(insertResult == size) {
-					  msg = "채용 게시글 수정이 완료 되었습니다."; }
-				  else {
-					  msg = "채용 게시글 수정을 실패했습니다.";
-				  }
-			  }else {
-				  msg = "게시글 수정을 실패했습니다.";
-			  }
-		
+		// 채용 상세 내용 업데이트
+		int insertResult = recruitService.insertRecruitContents(subTitle, contents, recruitNo);
 
-		return msg;
+		//채용 게시글 등록 완료 확인
+		if(recruitResult == 1) {
+			System.out.println("recruitRecult == 1");
+			if(subTitle != null) {
+				// 채용게시글 상세내용 등록 확인
+				if(insertResult == subTitle.size()) {
+					System.out.println("insertResult == subTitleSize");
+				} else {
+					System.out.println("insertResult 실패");
+				}
+			}
+		} else {
+			System.out.println("recruitRecult 실패");
+		}
+
+		return null;
 
 	}
 

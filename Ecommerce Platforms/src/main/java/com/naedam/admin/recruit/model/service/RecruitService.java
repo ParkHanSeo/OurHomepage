@@ -44,6 +44,9 @@ public interface RecruitService {
 
 	//채용 게시글 상태값 변경
 	public int updateContentsStatus();
+	
+
+	
 
 	
 
