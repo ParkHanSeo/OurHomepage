@@ -158,7 +158,7 @@
 								<li class="big-data aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
 									<svg class="cunsulting" height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 3370.82 2384.24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
-				                        <title>컨설팅 사업부</title>
+				                        <title>컨설팅</title>
 				                        <defs>
 				                          <linearGradient x1="50%" y1="200%" x2="200%" y2="200%" id="biglinearGradient-1">
 				                            <stop stop-color="#A9F5D2" offset="0%"></stop>
@@ -206,7 +206,7 @@
 									</svg>		                      
 									</div> 
 									<div class="main_aos_consulting_txt">
-										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">컨설팅 사업부</h3>
+										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">컨설팅</h3>
 										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 											빅데이터 분석 역량과 솔루션 경쟁력을 더해<br /> 데이터 생태계를 강화하는데 앞장섭니다.
 										</p>
@@ -215,7 +215,7 @@
 								<li class="blockchain aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
 										<svg class="si" height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 3370.82 2384.24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
-											<title>SI사업부</title>
+											<title>정보시스템통합</title>
 											<defs>
 					                          <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="blocklinearGradient-1">
 					                            <stop stop-color="#97A0F3" offset="0%"></stop>
@@ -233,19 +233,19 @@
 												</g>
 											</g>
 										</svg>				                     	 
-										</div> 
-										<a href="/tech/blockchain">
-											<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												SI사업부</h3>
-											<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 인프라 등 
-												<br/>다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를 기반으로
-												<br/>컨설팅, Application 개발/운영 서비스까지 고객사에서 필요로하는 IT영역의 Total Service를 제공하고 있습니다.
-											</p>
-											<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-												<span class="blind">자세히 보기</span>
-											</p>
-										</a>
+									</div> 
+									<div class="main_aos_si_txt">
+										<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											정보시스템통합</h3>
+										<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 인프라 등 
+											<br/>다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를 기반으로
+											<br/>컨설팅, Application 개발/운영 서비스까지 고객사에서 필요로하는 IT영역의 Total Service를 제공하고 있습니다.
+										</p>
+										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+											<span class="blind">자세히 보기</span>
+										</p>
+									</div>
 								</li>
 								<li class="cloud">
 									<div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
@@ -450,11 +450,11 @@
 					<div class="inner_container card-ui">
 						<div class="section-title-area">
 							<a href="/news/recent_news">
-								<h2 class="tit">공지사항</h2>
+								<h2 class="tit">Infomation</h2>
 							</a>
 							<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-								<a href="/user/notice/noticeList/5001" class="common-btn is-grad-blue">
-									<span>전체보기<i class="icon link-arrow"></i></span>
+								<a href="/user/notice/noticeList/5001" class="common-btn">
+									<span>전체보기</span>
 								</a>
 							</div>
 						</div>

@@ -6,7 +6,7 @@
 	<jsp:param value="1:1문의" name="title"/>
 </jsp:include>
 	<jsp:useBean id="now" class="java.util.Date" />
-	<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate"/>  
+	<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate"/> 
 	<!-- jQuery 3 -->
 	<script type="text/javascript">
 		$(function(){

@@ -678,7 +678,7 @@ h4 {
 
 .core-wrap .core-list .si {
   position: absolute;
-  top: -150%;
+  top: -186%;
   left: -14%;
   width: 166%;
   height: 397%;
@@ -730,7 +730,7 @@ h4 {
   border-radius: 3%;
   background-image: url(../images/image_16.jpg);
 }
-.core-wrap .core-list .blockchain > div{
+.core-wrap .core-list .blockchain > div {
   padding-top: 528px;
 }
 .core-wrap .core-list .blockchain .bg-text {

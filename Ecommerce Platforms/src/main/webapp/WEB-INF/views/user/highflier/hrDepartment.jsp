@@ -149,15 +149,39 @@
 									<ul class="box-layout_3 is-vertical">
 										<li class="items common-cont_box">
 											<p class="cont_title">
-												<em>01</em> 복리후생
+												<em>01</em> 휴무휴가
 											</p>
-											<p class="cont_desc">법정 4대보험, 출산지원금, 학자금 지원</p>
+											<p class="cont_desc">주5일 근무, 정규휴가, 연차(re-fresh 휴가), 경조사</p>
 										</li>
 										<li class="items common-cont_box">
 											<p class="cont_title">
-												<em>02</em> 경조금 지원
+												<em>02</em> 보상 제도
 											</p>
-											<p class="cont_desc">본인 결혼을 비롯해 부모회갑, 형제 결혼 등 경조사 지원</p>
+											<p class="cont_desc">
+												자녀 학자금 지원, 장기근속 포상, <br>
+												우수사원 표창/포상, 퇴직금(퇴직연금제), 인센티브, <br>
+												장기근속 우대 보상,각종경조금, 경조휴가제
+											</p>
+										</li>
+										<li class="items common-cont_box">
+											<p class="cont_title">
+												<em>03</em> 편의 지원
+											</p>
+											<p class="cont_desc">석식제공, 야간교통비 지급</p>
+										</li>
+										<li class="items common-cont_box">
+											<p class="cont_title">
+												<em>04</em> 교육 / 연수
+											</p>
+											<p class="cont_desc">
+												- 자격증취득지원(정보처리기사)
+											</p>
+											<p class="cont_desc"> 
+												- 사내교육 <br>	신입사원교육(ND OJT), 재직자교육(ND S-OJT) 
+											</p>
+											<p class="cont_desc"> 
+												- 직무향상교육 협약처 <br>사이버연수원 삼성SDS 직무/공통 교육, KOSTA(한국SW기술진흥협회) 직무교육
+											</p>
 										</li>
 									</ul>
 								</div>

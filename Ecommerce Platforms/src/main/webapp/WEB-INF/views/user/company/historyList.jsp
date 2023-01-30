@@ -50,7 +50,7 @@
 							<div class="common-swiper_tab">
 								<ul class="swiper-wrapper history_swiper">
 									<li class="swiper-slide active" ><a href="javascript:void(0);" id="cont1" class="is-link">회사연혁</a></li>
-									<li class="swiper-slide"><a href="javascript:void(0);" id="cont2" class="is-link">수상내역</a>
+									<li class="swiper-slide"><a href="javascript:void(0);" id="cont2" class="is-link">수상/인증</a>
 									</li>
 								</ul>
 							</div>
