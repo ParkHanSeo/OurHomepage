@@ -82,13 +82,9 @@
 				return;
 			}
 			
-			console.log("contentsStatus>>>>>>" ,contentsStatus);
-			
 			//FormData 새로운 객체 생성 
 			var formData = new FormData();
-			
-			console.log("start>>>>>>>>>>>>>", $("#startDay").val());
-			
+
 			//넘길 데이터
 			var data = {
 					"recruitTitle": $("#title").val(),
@@ -105,7 +101,6 @@
 					"subTitle": subTitle,
 					"contents": contents
 			}
-			console.log("data:" + data);
 			
 			var fileinput = $("input[name='fileName']");
 			console.log("fileinput >>>" + fileinput);
@@ -120,6 +115,7 @@
 				}
 			}
 		
+			formData.append("${_csrf.parameterName}", "${_csrf.token}");
 			console.log("formData:" + formData.get(0));
 			
 			if(!confirm("채용 게시글을 등록하시겠습니까?")){
@@ -134,7 +130,7 @@
 	    		 	 success : function(result){
 	    		 		console.log("result >> ", result);
 	    		 		$.ajax({
-	   	  			 	 url : "/admin/insertFile?${_csrf.parameterName}=${_csrf.token}",
+	   	  			 	 url : "/admin/insertFile?",
 	   		  		  	 type : "POST",
 	   	  		  	 	 data : formData,
 	   	  		  	     processData: false,

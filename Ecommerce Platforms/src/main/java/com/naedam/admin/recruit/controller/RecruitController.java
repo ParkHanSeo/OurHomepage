@@ -132,12 +132,10 @@ public class RecruitController {
 	@PostMapping(value = "insertFile")
 	@ResponseBody
 	public int insertFile(@RequestParam(value = "file", required = false) List<MultipartFile> fileList,
-			@RequestPart(value = "file", required = false) List<MultipartFile> fileList2,
 			HttpServletRequest request) {
 
 		System.out.println("insertFile curRecruitNo>>>>>" + curRecruitNo);
 		System.out.println("insertFile fileList1>>>>>" + fileList);
-		System.out.println("insertFile fileList2>>>>>" + fileList2);
 		System.out.println("fileList.size() >>>" + fileList.size());
 		
 		int fileResult = recruitService.insertFile(fileList, request, curRecruitNo);
@@ -185,19 +183,20 @@ public class RecruitController {
 		int recruitResult = 0;
 		String msg="";
 		
-		int recruitNo = recruit.getRecruitNo();
+		curRecruitNo = recruit.getRecruitNo();
 		
 		// 채용 게시글 업데이트
 		recruitResult = recruitService.updateRecruit(recruit);
 
-		System.out.println("curRecruitNo === " + recruitNo);
+		System.out.println("curRecruitNo === " + curRecruitNo);
 
 		//업데이트를 위해 상세 내용 삭제
-		int deleteResult = recruitService.deleteRecruitContents(recruitNo);
+		int deleteResult = recruitService.deleteRecruitContents(curRecruitNo);
 		System.out.println("삭제 상태 ====== " + deleteResult );
 		
 		// 채용 상세 내용 업데이트
-		int insertResult = recruitService.insertRecruitContents(subTitle, contents, recruitNo);
+		System.out.println("subTitle >>>" + contents);
+		int insertResult = recruitService.insertRecruitContents(subTitle, contents, curRecruitNo);
 
 		//채용 게시글 등록 완료 확인
 		if(recruitResult == 1) {

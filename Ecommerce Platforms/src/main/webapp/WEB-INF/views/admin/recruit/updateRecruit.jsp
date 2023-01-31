@@ -95,7 +95,7 @@ $("button[name='getPostBotton']").on("click", function(){
 				//파일이 없을 때
 				$("#file_u").append(`
 						<!-- 파일값 하나 넣기 2222222-->
-						<td class="menu">파일2222</td>
+						<td class="menu">파일 추가</td>
 						<td align="left">
 							<input type="file" id="fileName_u" name="fileName_u" class="form-control input-sm">
 						</td>`);
@@ -156,19 +156,6 @@ function updateRecruit(){
 			alert("필수항목을 모두 입력해주세요.");
 			return;
 		}
-		/* 
-		if($("#startDay_u").val() == null || $("#startDay_u").val() == ''){
-			alert("시작일은 필수 항목입니다.");
-			return;
-		}
-		if($("#endDay_u").val() == null || $("#endDay_u").val() == ''){
-			alert("마감일은 필수 항목입니다.");
-			return;
-		}
-		if($("#startDay_u").val() > $("#endDay_u").val()){
-			alert("시작일은 마감일보다 뒤일 수 없습니다.");
-			return;
-		} */
 		
 		//반복작업 필요한 내용
 		var subTitle = new Array();
@@ -265,24 +252,8 @@ function updateRecruit(){
 			}
 		}
 		
-		// 'key'라는 이름으로 위에서 담은 data를 formData에 append한다. type은 json 
-		formData.append('key', new Blob([ JSON.stringify(data) ], {type : "application/json"}));
-		
-		//ajax 이후 변경해야됨
-		$.ajax({
-			 	url : "/admin/updateRecruit?${_csrf.parameterName}=${_csrf.token}",
- 		  	 	type : "POST",
-		  	 	data : formData,
-		  	    processData: false,
-		  	    contentType: false,
-		  	    enctype: 'multipart/form-data',
-		 	 	success : function(result){
-		 			console.log("result >> ", result);
-		 			alert(result);
-			  		location.href = "/admin/recruitList";
-		  	 	 }
- 			});
-		
+		formData.append("${_csrf.parameterName}", "${_csrf.token}");
+
 		//바뀐 ajax
 		$.ajax({
 			 	url : "/admin/updateRecruit?${_csrf.parameterName}=${_csrf.token}",
@@ -291,9 +262,9 @@ function updateRecruit(){
 		 	 	success : function(result){
 			 		console.log("result >> ", result);
 			 		//파일 변경사항이 있을 경우 실행
-			 		if( $("orgFileName_u") != null && fileinput == null){
+			 		if( $("orgFileName_u") != null){
 			 			$.ajax({
-			  			 	 url : "/admin/insertFile?${_csrf.parameterName}=${_csrf.token}",
+			  			 	 url : "/admin/insertFile?$",
 				  		  	 type : "POST",
 			  		  	 	 data : formData,
 			  		  	     processData: false,
@@ -323,7 +294,7 @@ function updateRecruit(){
 	}
 	
 function addUpdateContents(){
-	$("#addContents").append(
+	$("#addContents_u").append(
 			`<tr>
 				<td class="menu">소제목</td>
 				<td align="left"><input type="text" name="subTitle_u"

@@ -23,11 +23,9 @@ public interface RecruitService {
 	public int insertRecruit(recruitDTO recruit);
 
 	// 게시글 파일 추가
-	public int insertFile(recruitDTO recruit);//전
 	public int insertFile(List<MultipartFile> fileList,HttpServletRequest request, int curRecruitNo);
 
 	// 게시글 상세 내용 등록
-	public int insertRecruitContents(List<recruitContentsDTO> contentsList);	//전
 	public int insertRecruitContents(List<String> subTitle, List<String> contents, int curRecruitNo);
 
 	// 게시글 수정을 위한 게시글 조회

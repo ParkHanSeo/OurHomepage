@@ -3,6 +3,7 @@ package com.naedam.admin.recruit.model.service;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,13 +69,6 @@ public class RecruitServiceImpl implements RecruitService {
 	}
 	
 	@Override
-	public int insertFile(recruitDTO recruit) {
-		log.info(">>>>>insertFileService 실행");
-		
-		return recruitDao.insertFile(recruit);
-	}
-	
-	@Override
 	public int insertFile(List<MultipartFile> fileList, HttpServletRequest request, int curRecruitNo) {
 		
 		recruitDTO recruit = new recruitDTO();
@@ -114,36 +108,49 @@ public class RecruitServiceImpl implements RecruitService {
 	}
 
 	@Override
-	public int insertRecruitContents(List<recruitContentsDTO> contentsList) {
-		log.info(">>>>>insertRecruitContents 실행");
-		int insertContentsResult = 0;
-		
-		for(int i = 0; i < contentsList.size(); i++) {
-			insertContentsResult += recruitDao.insertRecruitContents(contentsList.get(i));
-			System.out.println("contentsList.get(" + i + ") ==>" + contentsList.get(i));
-		}
-		
-		return insertContentsResult;
-	}
-	
-	@Override
 	public int insertRecruitContents(List<String> subTitle, List<String> contents, int curRecruitNo) {
 		/* 리스트 생성 */
 		List<recruitContentsDTO> contentsList = new ArrayList<>();
 		int subTitleSize = 0;
 		
-		if(subTitle.size() != 0) {
+		System.out.println("contents List >>>>" + contents);
+		
+		if(subTitle != null) {
 			subTitleSize = subTitle.size();
 		}
+		
+		//contentsList Dao로 전달
+		int insertContentsResult = 0;
 				
 		//contentsList에 내용 넣기
-		for (int i = 0; i < subTitleSize; i++) {
+		if(subTitleSize == 1) {
+			recruitContentsDTO dtoContents = new recruitContentsDTO();
+			
+			String subTitleStr = String.join(",", subTitle);
+			String contentsStr = String.join(",", contents);
+			System.out.println("subTitleStr>>>>>>>" + subTitleStr);
+			System.out.println("contentsStr>>>>>>>" + contentsStr);
+			
+			/*세부 내용*/
+			dtoContents.setRecruitSubTitle(subTitleStr);
+			dtoContents.setRecruitContents(contentsStr);
+					
+			/*세부 내용이 들어갈 채용 게시글 dto*/
+			recruitDTO dtoRecruit = new recruitDTO();
+			dtoRecruit.setRecruitNo(curRecruitNo);
+			dtoContents.setRecruitNo(dtoRecruit);
+					
+			insertContentsResult = recruitDao.insertRecruitContents(dtoContents);
+			
+		} else {
+			for (int i = 0; i < subTitleSize; i++) {
 				System.out.println("i >> " + i);
 				recruitContentsDTO dtoContents = new recruitContentsDTO();
 						
 				/*세부 내용*/
 				dtoContents.setRecruitSubTitle(subTitle.get(i));
 				dtoContents.setRecruitContents(contents.get(i));
+				System.out.println("contents.get(i)>>>>>>" + contents.get(i));
 						
 				/*세부 내용이 들어갈 채용 게시글 dto*/
 				recruitDTO dtoRecruit = new recruitDTO();
@@ -154,13 +161,14 @@ public class RecruitServiceImpl implements RecruitService {
 						  
 				System.out.println("contents [" + i + "] >> " + contentsList);
 			}
-		//contentsList Dao로 전달
-		int insertContentsResult = 0;
-		
-		for(int i = 0; i < contentsList.size(); i++) {
-			insertContentsResult += recruitDao.insertRecruitContents(contentsList.get(i));
-			System.out.println("contentsList.get(" + i + ") ==>" + contentsList.get(i));
+			
+			for(int i = 0; i < contentsList.size(); i++) {
+				insertContentsResult += recruitDao.insertRecruitContents(contentsList.get(i));
+				System.out.println("contentsList.get(" + i + ") ==>" + contentsList.get(i));
+			}
 		}
+		
+		
 		
 		return insertContentsResult;
 	}
