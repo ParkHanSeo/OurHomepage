@@ -24,7 +24,7 @@
 								<c:set var="i" value="${ i+1 }" />
 								<div class="swiper-slide" data-swiper-slide-index="${i}" style="width: 241px">
 									<div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/${head.headImage});"></div>
-									<p class="blind">배경이미지 대채텍스트</p>
+									<p class="blind">배경이미지 대체텍스트</p>
 									<div class="inner">
 										<div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
 											<div class="main-banner">
@@ -71,16 +71,14 @@
 				</div>
 				<div class="nft-wrap section">
 					<div class="inner_container">
-						<a href="${pageContext.request.contextPath}/">
-							<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-								고객사의 고객 만족 및 내부 경쟁력 향상
-							</h3>
-							<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-								(주)내담C&C는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로 
-								<br />고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며 
-								<br />나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
-							</p>
-						</a>
+						<h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+							고객사의 고객 만족 및 내부 경쟁력 향상
+						</h3>
+						<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+							(주)내담C&C는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로 
+							<br />고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며 
+							<br />나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
+						</p>
 						<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 							<a href="/user/company/businessList" class="common-btn is-white">
 								<span>기업 알아보기</span>

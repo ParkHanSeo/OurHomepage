@@ -87,7 +87,7 @@ $(function(){
                                             Rule & Process 기반 시스템
                                         </p>
                                         <p class="difference_desc">
-                                           선진 제조기업의 PLM 구축/운영의 노하우를 기반으로 솔루션 개발을 진행합니다. <br>
+                                           선진 제조기업의 PLM 구축/운영의 노하우를 기반으로 솔루션 개발을 진행합니다. 
 											고객사 제품개발절차와 솔루션에 내장된 Rule과 Process로 PLM 운영 기반을 정립하여,
 											업무의 정확성과 일관성을 보장하기 위한 기준 정보를 표준화 시킵니다.
                                         </p>
@@ -104,8 +104,8 @@ $(function(){
                                         </p>
                                         <p class="difference_desc">
                                             JAVA 기반의 Open Framework와 시스템 아키텍처 및 Framework가 가지고 있는
-											Template 기반의 Configuration을 통한 구축 기간 단축 <br>
-											선진 제조기업의 시스템 구축의 운영 노하우를 활용한 시행 착오 최소화
+											Template 기반의 Configuration을 통한 구축 기간을 단축하고,
+											선진 제조기업의 시스템 구축의 운영 노하우를 활용하여 시행 착오를 최소화시키는데 목적이 있습니다.
 
                                         </p>
                                     </div>
