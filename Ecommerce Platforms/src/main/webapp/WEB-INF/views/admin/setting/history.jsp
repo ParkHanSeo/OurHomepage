@@ -64,7 +64,7 @@
 								<c:forEach var="history" items="${historyList }">
 									<tr>
 										<td><input type="checkbox" name="list[]" value="${history.historyNo }" /></td>
-										<td>${history.historyNo }</td>
+										<td>${history.ROWNUM}</td>
 										<td><fmt:formatDate value="${history.historyDate }" pattern="yyyy"/></td>
 										<td><fmt:formatDate value="${history.historyDate }" pattern="MM"/></td>
 										<td><fmt:formatDate value="${history.historyDate }" pattern="dd"/></td>
@@ -209,6 +209,7 @@
 </div><!-- /.content-wrapper -->
 
 <script>
+
 	function register() {
 	    if(form_register.year.value == '') { alert('년도가 선택되지 않았습니다.'); form_register.year.focus(); return false;}
 	    if(form_register.month.value == '') { alert('월이 선택되지 않았습니다.'); form_register.month.focus(); return false;}
@@ -216,7 +217,20 @@
 	    //if(form_register.title.value == '') { alert('내용이 선택되지 않았습니다.'); form_register.title.focus(); return false;}
 	    if(form_register.content.value == '') { alert('내용이 선택되지 않았습니다.'); form_register.content.focus(); return false;}
 	    form_register.target = 'iframe_process';
-	    form_register.submit();
+	    
+	    if(!confirm("연혁을 등록하시겠습니까?")){
+			alert("취소 되었습니다.");
+			return;
+		}else{
+			form_register.submit();
+			alert("완료 되었습니다.");
+			/* location.reload(); */
+			/* location.href = location.href; */
+			/* location.reload(true); */
+			location.href = "${pageContext.request.contextPath }/admin/setting/history";
+			
+		}
+	    
 	}
 	
 	function setData(code) {

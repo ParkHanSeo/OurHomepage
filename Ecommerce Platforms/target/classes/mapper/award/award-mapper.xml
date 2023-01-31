@@ -11,14 +11,14 @@
 		DATE_FORMAT(award_date, '%Y') AS year,
 		DATE_FORMAT(award_date, '%c') AS month
 		from award 
-	order by award_date desc;
+	order by award_date DESC;
 	</select>
 
 	<select id="selectYear" resultType="award">
 	select distinct
 		DATE_FORMAT(award_date, '%Y') AS year
 		from award
-		order by award_date desc;
+		order by award_date DESC;
 	</select>
 
 	<select id="selectMonth" resultType="award">
@@ -31,8 +31,8 @@
 	
 	<insert id="insertAward" parameterType="award" >
 		INSERT INTO award
-			(award_no, img_url, award_date, content, host)
-		VALUE(NEXTVAL(award_seq),#{imgUrl},#{awardDate},#{content}, #{host} )
+			(img_url, award_date, content, host)
+		VALUE(#{imgUrl},#{awardDate},#{content}, #{host} )
 	</insert>
 	
 	<update id="updateAward">

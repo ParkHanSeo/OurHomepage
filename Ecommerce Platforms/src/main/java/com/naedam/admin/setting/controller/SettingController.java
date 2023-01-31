@@ -41,9 +41,12 @@ public class SettingController {
 	 * @param model
 	 */
 	@GetMapping("/history")
-	public void history(Model model) {
+	public String history(Model model) {
+		System.out.println("redirect: 처리됐나????");
 		List<History> historyList = settingService.selectHistoryList();
 		model.addAttribute("historyList", historyList);
+		
+		return "/admin/setting/history";
 	}
 
 	/**

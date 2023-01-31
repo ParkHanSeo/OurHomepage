@@ -52,7 +52,7 @@ public class HistoryController {
 	 * @throws Exception
 	 */
 	@PostMapping("history_process")
-	public String history_process(HttpServletRequest request, History history, RedirectAttributes redirectAttr,
+	public void history_process(HttpServletRequest request, History history, RedirectAttributes redirectAttr,
 								  @RequestParam(value="historyImage", required = false) MultipartFile historyImage) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put("history", history);
@@ -60,8 +60,10 @@ public class HistoryController {
 		map.put("request", request);
 		map.put("historyImage", historyImage);
 		Map<String, Object> resultMap = historyService.historyProcess(map);
+		System.out.println("resultMap >>>>" + resultMap);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
-		return "/admin/setting/history";
+		System.out.println("redirect:/admin/setting/history 처리완");
+		/* return "redirect:/admin/setting/history"; */
 	}
 	
 }

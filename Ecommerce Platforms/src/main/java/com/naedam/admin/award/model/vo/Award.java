@@ -21,4 +21,5 @@ public class Award extends Comm{
 	private String content;
 	private String imgUrl;	
 	private String host;
+	private int ROWNUM;
 }

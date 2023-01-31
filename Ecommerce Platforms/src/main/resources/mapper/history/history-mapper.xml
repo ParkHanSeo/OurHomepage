@@ -8,12 +8,12 @@
 	</select>
 
 	<select id="selectHistoryList" resultType="history">
-		select
-		*,
-		DATE_FORMAT(history_date, '%Y') AS year,
-		DATE_FORMAT(history_date, '%c') AS month
-		from history
-		order by history_date desc;
+		select @ROWNUM := @ROWNUM +1 AS ROWNUM,
+		H.*,
+		DATE_FORMAT(H.history_date, '%Y') AS year,
+		DATE_FORMAT(H.history_date, '%c') AS month
+		from history H,(SELECT @ROWNUM := 0) TMP
+		order by history_date;
 	</select>
 
 	<select id="selectYearList" resultType="history">
@@ -34,7 +34,10 @@
 	</select>
 
 	<insert id="insertHistroy">
-		insert into history values(nextval(seq_history_no), #{historyDate},
+		insert into history 
+		(history_date, content, img_url)
+		values
+		(#{historyDate},
 		#{content}, #{imgUrl})
 	</insert>
 

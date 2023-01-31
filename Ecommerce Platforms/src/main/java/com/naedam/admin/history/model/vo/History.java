@@ -23,6 +23,7 @@ public class History extends Comm {
 	private Date historyDate;
 	private String content;
 	private String imgUrl;
+	private int ROWNUM;
 
 
 }
