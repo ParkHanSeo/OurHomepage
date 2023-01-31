@@ -14,7 +14,7 @@
             <div id="contents" class="contents_top">
 				<div class="business_title_area">
                     <div class="inner_container">
-                        <h2 class="sub_title business_sub_title">사업 개요</h2>
+                        <h2 class="sub_title business_sub_title">Partner</h2>
                     </div>
                 </div><!-- // .sub_title_area -->                
 				<div class="layout_section_outer type04" data-js="anchor-target">

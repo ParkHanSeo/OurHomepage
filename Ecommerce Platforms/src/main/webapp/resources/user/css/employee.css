@@ -1,8 +1,7 @@
-/* @charset "utf-8"; */
+@charset "utf-8";
 
 .culture_section {
   margin-bottom: 120px;
-  padding-top: 30px;
   width: 1280px;
   height: 400px;
 }
@@ -12,7 +11,6 @@
 .company_culture {
   width: 850px;
   float: left;
-  padding-bottom: 30px;
 }
 .company_culture_box_right {
   margin: 45px;
@@ -62,12 +60,20 @@
   width: 800px;
   float: left;
 }
+.talentbox{
+	padding-bottom:30px;
+}
+.talent_section{
+	padding-bottom: 50px;
+}
 .employee_layout_body .main_title {
-  font-size: 32px;
-  font-weight: bolder;
-  padding-top: 75px;
+  padding-top: 0px;
   padding-bottom: 0px;
   width: 1280px;
+  font-size: 40px;
+  line-height: 56px;
+  position: relative;
+  letter-spacing: -0.2px;
 }
 .culture_bar {
   float: right;

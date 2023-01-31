@@ -12,6 +12,8 @@
   text-align: center;
   height: 110px;
   border-radius: 3%;
+  background-position: center;
+  background-size: auto;
 }
 .partner_li {
   border: solid #c5c3c3;
