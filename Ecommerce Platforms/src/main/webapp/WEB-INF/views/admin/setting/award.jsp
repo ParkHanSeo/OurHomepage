@@ -207,6 +207,7 @@
 	    if(form_register.month.value == '') { alert('월이 선택되지 않았습니다.'); form_register.month.focus(); return false;}
 	    if(form_register.date.value == '') { alert('일이 선택되지 않았습니다.'); form_register.date.focus(); return false;}
 	    if(form_register.content.value == '') { alert('내용이 선택되지 않았습니다.'); form_register.content.focus(); return false;}
+	    if(form_register.awardImage.value == '') { alert('이미지는 필수 사항입니다.'); form_register.content.focus(); return false;}
 	    form_register.target = 'iframe_process';
 	    form_register.submit();
 	}

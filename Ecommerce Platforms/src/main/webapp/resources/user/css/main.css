@@ -691,7 +691,7 @@ h4 {
   width: 550px;
   height: 550px;
   border-radius: 3%;
-  background-image: url(../images/naedam.jpg);
+  background-image: url(../images/together2.jpg);
   background-size: cover;
 }
 .core-wrap .core-list .ai > a {
@@ -1180,6 +1180,7 @@ h4 {
   background-image: url(../images/main/main_employee_3.jpg);
 }
 .culture-wrap .half-wrap .tit {
+  font-weight:bold;
   position: relative;
   font-size: 18px;
   line-height: 1.56;

@@ -1,7 +1,15 @@
 @charset "utf-8";
+.blur{
+    background-color: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(5px);
+}
+.businessfooter{
+	background-image: url("../images/footer_image2.jpg");
+	background-size: cover;
+}
 .left  {
 	text-align: left;
- 	left: 50%;
+ 	left: 65%;
 }
 .right {
 	text-align: left;
@@ -1770,6 +1778,7 @@
 }
 
 .welfare_benefit_area {
+	margin-top: 24px;
 }
 .welfare_benefit_area .welfare_benefit_list {
   display: flex;
@@ -1783,18 +1792,18 @@
   	min-height: 360px;
 /*   border-right: 1px solid white; */
 /*   border-radius: 175px; */
-  	background-color: #FEF7F3;
+/*   	background-color: #FEF7F3; */
 	position: relative
 }
 .welfare_benefit_area .welfare_benefit_list > .items_2 ::after {
-	position:absolute;
+/* 	position:absolute;
     left: 0;
     top: 25%;
     bottom: 25%;
     content: "";
     width: 1px;
     height: 55%;
-    background-color: black;
+    background-color: black; */
 	}
 .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box1 {
 	background-image:url("'../../../images/businessList_website2.jpg");
@@ -1805,16 +1814,16 @@
 .filter1{
    	content: "";
     position: relative;
-    height: 300px;;
+    height: 100%;
     background-color: rgba(233,115,0,.4);
-    padding: 60px;
+    padding: 8%;
 }
 .filter2{
    	content: "";
     position: relative;
-    height: 300px;;
+    height: 100%;
     background-color: rgba(177,80,197,.4);
-    padding: 60px;
+    padding: 8%;
 }
 .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box2 {
 	background-image:url("'../../../images/businessList_cloud.jpg");
