@@ -14,7 +14,7 @@ public interface SettingService {
 	
 	public void partnerProcess(Map<String, Object> map) throws Exception;
 	
-	List<History> selectHistoryList();
+	List<History> selectHistoryList(int limit, int offset);
 	
 	List<Award> selectAwardList();
 
@@ -33,5 +33,7 @@ public interface SettingService {
 	int updateAdminMenu(String menuNo);
 
 	int updateAdminMenuAllN();
+
+	int selectAllHistoryList();
 	
 }

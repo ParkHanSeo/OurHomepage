@@ -12,7 +12,7 @@ public interface SettingDao {
 
 	public void addPartner(Partner partner) throws Exception;
 	
-	List<History> selectHistoryList();
+	List<History> selectHistoryList(int limit, int offset);
 
 	List<Award> selectAwardList();
 	
@@ -33,5 +33,7 @@ public interface SettingDao {
 	public void updatePartner(Partner partner) throws Exception;
 	
 	public void deletePartner(List<Integer> partnerNo) throws Exception;
+
+	public int selectAllHistoryList();
 
 }

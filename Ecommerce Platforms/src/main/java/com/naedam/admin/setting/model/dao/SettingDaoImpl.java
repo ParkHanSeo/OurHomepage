@@ -1,5 +1,6 @@
 package com.naedam.admin.setting.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,9 +28,12 @@ public class SettingDaoImpl implements SettingDao {
 	}
 	
 	@Override
-	public List<History> selectHistoryList() {
+	public List<History> selectHistoryList(int limit, int offset) {
 		// TODO Auto-generated method stub
-		return session.selectList("setting.selectHistoryList");
+		Map<String, Integer> paging = new HashMap<>();
+		paging.put("limit", limit);
+		paging.put("offset", offset);
+		return session.selectList("setting.selectHistoryList", paging);
 	}
 	
 	@Override
@@ -91,6 +95,12 @@ public class SettingDaoImpl implements SettingDao {
 	public void deletePartner(List<Integer> partnerNo) throws Exception {
 		// TODO Auto-generated method stub
 		session.delete("setting.deletePartner", partnerNo);
+	}
+
+	@Override
+	public int selectAllHistoryList() {
+		// TODO Auto-generated method stub
+		return session.selectOne("setting.selectAllHistoryList");
 	}
 
 

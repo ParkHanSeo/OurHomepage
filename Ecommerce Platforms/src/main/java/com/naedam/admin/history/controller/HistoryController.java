@@ -54,6 +54,7 @@ public class HistoryController {
 	@PostMapping("history_process")
 	public void history_process(HttpServletRequest request, History history, RedirectAttributes redirectAttr,
 								  @RequestParam(value="historyImage", required = false) MultipartFile historyImage) throws Exception {
+		
 		Map<String, Object> map = new HashMap<>();
 		map.put("history", history);
 		map.put("mode", request.getParameter("mode"));
@@ -62,7 +63,8 @@ public class HistoryController {
 		Map<String, Object> resultMap = historyService.historyProcess(map);
 		System.out.println("resultMap >>>>" + resultMap);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
-		System.out.println("redirect:/admin/setting/history 처리완");
+		System.out.println("historyNo ===== " + resultMap.get("historyNo"));
+				
 		/* return "redirect:/admin/setting/history"; */
 	}
 	

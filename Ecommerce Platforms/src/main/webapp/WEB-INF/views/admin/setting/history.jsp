@@ -45,7 +45,7 @@
 								<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt
 							</button>
 						</div>
-						<label style="margin-top: 5px;">총 ${historyList.size() } 건</label>
+						<label style="margin-top: 5px;">총 ${pageCount} 건</label>
 						<div class="box-tools pull-right" style="margin-bottom: 5px;"></div>
 						<form name="form_list" method="post" action="${pageContext.request.contextPath }/admin/history/history_process?${_csrf.parameterName}=${_csrf.token}">
 							<input type="hidden" name="mode" id="mode">
@@ -85,9 +85,12 @@
 							<i class="fa fa-copy"></i> 연혁 복사
 						</button>
 						<div style="text-align: right;">
-							<ul class="pagination" style="margin: 0;">
+							<!-- <ul class="pagination" style="margin: 0;">
 								<li class="active"><a href="?tpf=admin/setting/history&locale=ko&page=1">1</a></li>
-							</ul>
+							</ul> -->
+							<div style="text-align: right;">
+							${pagebar}
+							</div>
 						</div>
 					</div><!-- /.box-body -->
 				</div><!-- /.box -->
@@ -223,11 +226,9 @@
 			return;
 		}else{
 			form_register.submit();
-			alert("완료 되었습니다.");
-			/* location.reload(); */
-			/* location.href = location.href; */
-			/* location.reload(true); */
-			location.href = "${pageContext.request.contextPath }/admin/setting/history";
+			console.log("함수실행");
+			$('.modal').modal('hide');
+			location.href = location.href;
 			
 		}
 	    

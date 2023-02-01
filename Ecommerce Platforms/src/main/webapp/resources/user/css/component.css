@@ -2153,6 +2153,7 @@
 .history .tab-cont ol li.first dl::after {
   background-color: #006aee;
 }
+
 .history .tab-cont ol li.last dl {
   padding-bottom: 0 !important;
 }

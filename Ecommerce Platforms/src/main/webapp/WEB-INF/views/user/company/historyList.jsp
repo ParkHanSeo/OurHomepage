@@ -29,6 +29,7 @@
 	/* 연혁 처음 값에 class 추가 */
 	$(document).ready(function() {
 		$('ol').children('li:eq(0)').addClass("first");
+		$('.award_ol').children('li:eq(0)').addClass("first");
 	})
 </script>
 <body>
@@ -95,7 +96,7 @@
 											</div>
 											<div class="award_sec">
 											<div class="tab-cont" id="tab-cont2">
-												<ol>
+												<ol class="award_ol">
 													<c:forEach var="awardyear" items="${awardYears}">
 														<li>
 															<h3 class="history_years">

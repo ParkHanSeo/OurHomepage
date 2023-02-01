@@ -26,14 +26,15 @@
 		select @ROWNUM := @ROWNUM +1 AS ROWNUM,
 		H.*
 		from history H,(SELECT @ROWNUM := 0) TMP
-		order by history_date DESC;
+		order by history_date DESC
+		LIMIT #{limit} OFFSET #{offset}
 	</select>
 	
 	<select id="selectAwardList" resultType="Award">
 		select @ROWNUM := @ROWNUM +1 AS ROWNUM,
 		A.*
 		from award A,(SELECT @ROWNUM := 0) TMP
-		order by award_date DESC;
+		order by award_date DESC
 	</select>
 	
   	<select id="selectAdminMenuList" resultType="adminMenu">
@@ -95,5 +96,12 @@
 				partner_no = #{partnerNo}
 			  </foreach>	
 	</delete>
+	
+	<select id="selectAllHistoryList" resultType="int">
+		select COUNT(*)
+		  from (select
+				H.*
+				from history H)countTable 	
+	</select>
 	
 </mapper>
