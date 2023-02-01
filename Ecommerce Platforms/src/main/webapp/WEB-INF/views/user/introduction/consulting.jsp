@@ -25,11 +25,10 @@
 						data-aos-delay="150" data-aos-easing="linear">
 						<div class="top_txt_outer">
 							<div class="top_txt_area">
-								<span class="top_txt1">물리적 자산, 시스템 또는 프로세스를 소프트웨어</span>
-								<p class="top_txt2">디지털 트윈 (Digital Twin)</p>
+								<span class="top_txt1">다년간 쌓인 KnowHow를 통한 고객만족 컨설팅 </span>
+								<p class="top_txt2">컨설팅 (Consulting)</p>
 								<p class="top_txt3">
-									현실에서 발생할 수 있는 상황을 컴퓨터로 시뮬레이션함으로써<br class="hide_768"> 결과를
-									미리 예측하는 기술의 솔루션을 제공합니다.
+									기업 경영 상의 여러 가지 문제점을 규명하고<br class="hide_768"> 실질적인 해결방안을 제시하는 전문적인 서비스를 제공합니다.
 								</p>
 							</div>
 						</div>
@@ -40,9 +39,6 @@
 				<div class="layout_section_outer biz_difference is-gray"
 					data-js="anchor-target">
 					<div class="inner_container">
-						<div class="layout_head">
-							<p class="top_txt1">디지털 트윈 (Digital Twin)만의 차별화 포인트</p>
-						</div>
 						<div class="layout_body">
 							<ol class="difference_list">
 								<li>
@@ -56,13 +52,11 @@
 									<div class="difference_box aos-init" data-aos="fade-up"
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear">
-										<p class="difference_title">산업 데이터 모니터링</p>
+										<p class="difference_title">다년간의 노하우를 기반한<br> 컨설팅</p>
 										<p class="difference_desc">
-											설계에서 개발, 운영 및 유지 관리, 이후의 사용 또는 재사용에 <br> 이르기까지 자산 수명 주기의
-											전 단계를 모니터링 합니다. <br>
-											<br> AI, 기계학습(machine learning), IoT 기술을 이용하여 자산의 <br>
-											수명 주기 전반에 걸쳐 데이터 분석을 통해 학습하여 디지털 트윈 사용자는 문제가 발생하기 전에 가상의 동적
-											시뮬레이션을 통해<br> 문제를 미리 예방하는 등 미래를 계획할 수 있습니다.
+											삼성그룹의 전자관련 계열사와 대외의 SCM/PLM/MES등의 분야에서 13년간 Know How 축적하였고, 
+											이를 바탕으로 삼성 외 국내 유수의 대기업에 단순 인력 파견이 아닌 컨설턴트 급 개발 업무수행합니다. <br><br>
+											주 내용은 DB 모델링 및 DW 수행, 데이터 아키텍처 및 품질 진단 등의 컨설팅 서비스 입니다.
 										</p>
 									</div>
 								</li>
@@ -77,14 +71,12 @@
 									<div class="difference_box aos-init" data-aos="fade-up"
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear">
-										<p class="difference_title">데이터를 통한 공정관리</p>
+										<p class="difference_title">컨설팅의 역할  <br>의사(Doctor)의 영역<br>[임시-Title]</p>
 										<p class="difference_desc">
-											Work-Flow 관점에서 디지털 트윈은 기존 사일로(또는 종이 파일)로 인해 데이터가 고립되어 있던 문제를
-											해결할 수 있으며, 결과적으로 팀은 설계에서 해체까지 프로젝트 전체 수명 주기 동안 연결성을 높일 수
-											있습니다. <br>
-											<br> 디지털 트윈을 통해 구성 요소 사양 및 유지 관리 일정과 같은 정적 데이터를 점유율 및 환경
-											조건과 같은 동적 데이터와 통합하고, 설계자에서 소유자에 이르는 모든 사람이 자산의 성능과 수명 주기를
-											극대화하여 정보에 입각한 결정을 내릴 수 있게 도움을 줍니다.
+											[임시-Contents]<br><br>
+											고객의 기업이 운영상황과 경영에 대한 전반적인 상황을 파악하고 그에 걸맞는 해결방안을 제시합니다.<br><br>
+											목표 수립과 그에 이르기 까지의 경영 전략 수립, 사업의 포트폴리오 정립 및 관리 등 목표 달성을 위한
+											과제 수립 등이 컨설팅의 주요 내용입니다.
 
 										</p>
 									</div>
@@ -100,11 +92,13 @@
 									<div class="difference_box aos-init" data-aos="fade-up"
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear">
-										<p class="difference_title">BIM, innoAMS와 Digital Twin</p>
+										<p class="difference_title">컨설팅의 역할  <br>대행(Agent)의 영역<br>[임시-Title]</p>
 										<p class="difference_desc">
-											디지털 트윈은 BIM와 innoAMS의 잠재력을 온전히 실현하여 데이터와 프로세스를 동적 실시간 양방향 정보
-											관리와 연결합니다.<br> <br> BIM 프로세스를 지원하는 통합 워크플로 및 정보 공유를
-											통해 잠재력을 최대로 끌어올리며, 공정상 BIM을 통해 더 효율적인 공정관리가 가능하도록 만듭니다
+											[임시-Contents]<br><br>
+											사업은 살아 있는 생물처럼 계속해서 변화합니다.<br>
+											그에 따라 실무를 진행하기 위해서는 그에 맞추어 다양한 경험을 쌓은 전문가들이 필요로합니다 <br><br>
+											따라서 내담은 <br>
+											단순히 대행 업무만을 행하는 파견 대행을 넘어 다양한 노하우를 가진 컨설턴트 급 전문가들로 팀을 구성하여 대행업무를 진행합니다.
 										</p>
 									</div>
 								</li>

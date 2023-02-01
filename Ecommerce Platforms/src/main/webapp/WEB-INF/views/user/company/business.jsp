@@ -17,8 +17,8 @@
                     <div class="division_container">
                         <div class="visual_txt_area com_intro">
                             <p class="txt3">
-                            	혁신 그리고 신뢰와 열정으로
-                            	<br />새로운 도전과 함께 큰 미래를 만들어갑니다.
+                            	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 <br>
+								디지털 트렌스포메이션의 성장 파트너 입니다.                            	
                             </p>
                         </div>
                     </div>
@@ -195,7 +195,7 @@
                      <div class="core_value_img">
                      </div> 
                 </div>
-				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0  80px;">
+				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0  100px;">
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="businessList_top_txt1">

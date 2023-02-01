@@ -96,10 +96,6 @@
                         </div>
                     </div>
                 </div><!-- // .biz_difference -->
-                <div class="layout_section_outer card-ui">
-                    <div class="inner_container">
-                    </div>
-                </div><!-- // .card-ui -->
             </div><!-- // #contents -->
         </section><!-- // #container -->
     </div><!-- // #wrap -->

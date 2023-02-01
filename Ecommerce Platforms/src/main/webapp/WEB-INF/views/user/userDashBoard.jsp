@@ -293,7 +293,6 @@
 										<p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 										</p>									
 									</div>									
-									<a href="/business/cloud_service"></a>
 								</li>
 							</ul>
 						</div>
@@ -301,14 +300,14 @@
 					<div class="service-wrap section">
 						<div class="inner_container">
 							<div class="section-title-area">
-								<a href="/business/our_services">
+								<div>
 									<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 										Technology & Business
 									</h2>
 									<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 										내담씨앤씨가 가진 기술력으로<br /> 다양한 서비스를 제공합니다.
 									</p>
-								</a>
+								</div>
 								<div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction" class="common-btn">
 										<span class="main_solution_services">전체보기
@@ -398,14 +397,14 @@
 				<div class="culture-wrap section">
 					<div class="inner_container">
 						<div class="section-title-area">
-							<a href="/culture/people">
+							<div>
 								<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									<span>People </span>&amp; Vision
 								</h2>
 								<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 									내담과와 함께 새로운 미래를 만들어 갈 당신을 기다립니다.
 								</p>
-							</a>
+							</div>
 						</div>
 						<div class="half-wrap aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 							<div class="is-left">
@@ -421,7 +420,7 @@
 								</a>
 							</div>
 							<div class="is-right"> 
-								<a href="/recruit/job_notice" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+								<a href="/user/recruit/userRecruitList" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
 									<h3 class="tit">채용 안내</h3>
 									<p class="description">
 										내담과 함께하고싶은  
@@ -474,6 +473,7 @@
 			<!-- // #contents -->
 		</section>
 		<!-- // #container -->
+		</div>
       <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />      
   </body>
 </html>
