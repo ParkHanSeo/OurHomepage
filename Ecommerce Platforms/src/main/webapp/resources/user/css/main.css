@@ -678,7 +678,7 @@ h4 {
 
 .core-wrap .core-list .si {
   position: absolute;
-  top: -186%;
+  top: -158%;
   left: -14%;
   width: 166%;
   height: 397%;
@@ -724,7 +724,7 @@ h4 {
 }
 .core-wrap .core-list .blockchain {
   width: 660px;
-  margin: 236px 0 0 0px;
+  margin: 375px 0 0 0px;
 }
 .core-wrap .core-list .blockchain::before {
   width: 660px;
@@ -734,10 +734,10 @@ h4 {
   background-size: cover;
 }
 .core-wrap .core-list .blockchain > div {
-  padding-top: 528px;
+  	padding-top: 528px;
 }
 .core-wrap .core-list .blockchain .bg-text {
-  top: 45%;
+  top: 0%;
   left: 70%;
   width: 70%;
   height: 50%;
@@ -746,7 +746,6 @@ h4 {
   align-self: flex-end;
   width: 100%;
   left: 55%;
-  margin: 236px 0 0 0;
 }
 .core-wrap .core-list .cloud::before {
   width: 550px;
@@ -1322,13 +1321,22 @@ h4 {
 }
 .main_aos_consulting_txt {
   margin-left: 0%;
-  margin-top: 44%;
+  margin-top: 40%;
+  top: -70px;
+  left: -31%;
+  position: relative;
+}
+.main_aos_si_txt{
+    position: relative;
+    left: 103%;
+    bottom: 205px;
 }
 .main_aos_solution_txt {
   margin-left: -55%;
   margin-top: 30%;
   padding-bottom: 6%;
 }
+
 .card-ui .notice_box {
   position: relative;
   padding: 0px 40px 0px 40px;
