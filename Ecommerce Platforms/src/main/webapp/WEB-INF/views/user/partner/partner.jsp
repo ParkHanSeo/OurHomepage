@@ -28,7 +28,7 @@
 	                         <div class="partner-flow">
 	                             <ol class="flow_list">
 	                             	<c:forEach var="partner" items="${list}" varStatus="status" >
-		                                <li class="partner_li" style="background-image: url(../../../../resources/user/images/partner/${partner.partnerImage});">
+		                                <li class="partner_li" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/partner/${partner.partnerImage});">
 		                                </li>
 		                            </c:forEach>
 	                             </ol>

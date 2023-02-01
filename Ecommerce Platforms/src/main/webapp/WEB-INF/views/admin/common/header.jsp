@@ -231,7 +231,8 @@
 							</li>
 						</ul>
 					</li>
-					<li class="treeview" id="memberManage">
+					<!-- 230201_미사용_임시로 닫음 -->
+					<%-- <li class="treeview" id="memberManage">
 						<a href="#"> 
 							<i class="fa fa-user"></i> <span>회원 관리</span> 
 							<i class="fa fa-angle-left pull-right"></i>
@@ -248,7 +249,7 @@
 								</a>
 							</li>
 						</ul>
-					</li>
+					</li> --%>
 					<li class="treeview" id="employmentManage">
 						<a href="#"> 
 							<i class="fa fa-user"></i> 
