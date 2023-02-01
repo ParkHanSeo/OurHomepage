@@ -86,7 +86,7 @@ public class RecruitServiceImpl implements RecruitService {
 			//파일 저장을 위한 filePath
 			String filePath = request.getServletContext().getRealPath("resources/imgs/imgrecruit/");
 			
-			//cafe24 filePath test(db 저장)
+			//cafe24 적용을 위해..
 			String filePath2 ="resources/imgs/imgrecruit/";
 			recruit.setFilePath(filePath2);
 			

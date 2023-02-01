@@ -126,7 +126,7 @@ function paging(cPage){
                 			
                 		</div>
 						<div class="common-search_box">
-							<form name="searchForm" action="#" onsubmit="return paging()" style="float: right"
+							<form name="searchForm" action="#" onsubmit="paging()" style="float: right"
 								onkeypress="if(event.keyCode==13){paging();}">
 								<input type="hidden" name="cPage">
 								<input class="common-search_input" name="searchKeyword"
