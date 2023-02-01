@@ -232,8 +232,8 @@
 	                                                CONSULTING
 	                                            </p>
 	                                            <p class="icon_item_desc">
-	                                                최신 디지털 경험을 선사하는 <br>
-	                                                문화 공간 디자인
+	                                                다년간 쌓인 KnowHow를 통한 <br>
+	                                               	고객만족 컨설팅
 	                                            </p>
 	                                            <i class="icon bi_1"></i>
 	                                        </div>

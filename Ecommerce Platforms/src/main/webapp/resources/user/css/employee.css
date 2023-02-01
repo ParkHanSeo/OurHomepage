@@ -1,5 +1,10 @@
 @charset "utf-8";
-
+#qulified{
+	margin-bottom:0;
+}
+.layout_section_outer.recruit2{
+	padding: 160px 0 0;
+}
 .culture_section {
   margin-bottom: 120px;
   width: 1280px;
@@ -64,7 +69,7 @@
 	padding-bottom:30px;
 }
 .talent_section{
-	padding-bottom: 50px;
+	padding-bottom: 100px;
 }
 .employee_layout_body .main_title {
   padding-top: 0px;

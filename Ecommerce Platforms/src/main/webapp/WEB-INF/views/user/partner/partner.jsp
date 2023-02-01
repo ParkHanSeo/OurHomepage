@@ -17,7 +17,7 @@
                         <h2 class="sub_title business_sub_title">Partner</h2>
                     </div>
                 </div><!-- // .sub_title_area -->                
-				<div class="layout_section_outer type04" data-js="anchor-target">
+				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0  100px;">
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">

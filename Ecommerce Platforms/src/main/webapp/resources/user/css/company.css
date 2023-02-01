@@ -1,4 +1,7 @@
 @charset "utf-8";
+.ceofooter{
+	padding-bottom: 100px;
+}
 .core_value_img{
 	background-image: url("../images/core_value.png");
 	width: 80%;
@@ -636,7 +639,7 @@
 }
 .inner_container .division_list {
   padding-top: 45px;
-  padding-bottom: 45px;
+  padding-bottom: 100px;
 }
 .division_wrapper {
   background-image: url(../images/company/division/stock-photo-network-community-concept-631791635.jpg);

@@ -93,6 +93,7 @@ body.overflow::-webkit-scrollbar {
 }
 .outer_container.is-gray {
   background-color: #f8f9fa;
+  
 }
 .inner_container {
   width: 1280px;
@@ -920,6 +921,7 @@ img {
 }
 .layout_section_outer.is-gray {
   background-color: #f7f7f7;
+   padding-bottom: 100px;
 }
 .layout_section_outer.type05.is-gray {
   background-color: #f0f2f5;
@@ -946,7 +948,7 @@ img {
   padding: 56px 0 160px;
 } /* 비주얼 없을 때 */
 .layout_section_outer.type03.location_area {
-  padding: 60px 0 160px;
+  padding: 60px 0 100px;
 } /* 비주얼 없을 때 */
 .layout_section_outer.sub-main.type03 {
   padding: 56px 0 0;

@@ -97,7 +97,7 @@ $(function(){
                     </div>
                 </div><!-- // .layout_section_outer -->
 
-                <div class="layout_section_outer intro tech type01 layout_symbol" data-js="anchor-target">
+                <div class="layout_section_outer intro tech type01 layout_symbol" style="padding: 0 0  100px;" data-js="anchor-target">
                     <div class="inner_container">
                         <div class="layout_body">
                             <div class="img-txt_box">

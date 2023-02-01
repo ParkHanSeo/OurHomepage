@@ -69,6 +69,7 @@ body.overflow::-webkit-scrollbar {
 }
 .outer_container.is-gray {
   background-color: #f8f9fa;
+  padding-bottom: 100px;
 }
 .inner_container {
   width: 1280px;
@@ -395,7 +396,7 @@ body.overflow::-webkit-scrollbar {
   padding: 56px 0 160px;
 } /* 비주얼 없을 때 */
 .layout_section_outer.type03.location_area {
-  padding: 60px 0 160px;
+  padding: 60px 0 100px;
 } /* 비주얼 없을 때 */
 .layout_section_outer.sub-main.type03 {
   padding: 0px 0 0;
