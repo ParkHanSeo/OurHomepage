@@ -154,12 +154,12 @@
 								<td class="menu">내용</td>
 								<td align="left"><textarea name="content" rows="4" style="width: 100%"></textarea></td>
 							</tr>
-							<tr>
+							<!-- <tr>
 								<td class="menu">파일 <span class="text-light-blue"><i class="fa fa-check"></i></span></td>
 								<td align="left" class="historyFileTd">
 									<input type="file" name="historyImage" class="form-control input-sm" style="width: 70%; display: inline;"> 
 								</td>
-							</tr>
+							</tr> -->
 						</table>
 					</div>
 					<div class="modal-footer">
