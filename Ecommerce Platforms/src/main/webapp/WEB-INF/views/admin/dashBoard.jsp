@@ -148,7 +148,7 @@
 						for(var i = 0; i < JSONData.recruitList.length; i++){
 							console.log("JSONData.recruitList=====" , JSONData.recruitList);
 							var recruit = JSONData.recruitList;
-							display = '<li name="postData">'
+							display = '<li name="recruitData">'
 									+ '<a href="/admin/recruitList">'+recruit[i].recruitTitle
 									+ '<span class="pull-right cs-m-right20">'+recruit[i].recruitDate+'</span>'
 									+ '</a>'
