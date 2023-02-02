@@ -402,7 +402,7 @@
 									<span>People </span>&amp; Vision
 								</h2>
 								<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-									내담과와 함께 새로운 미래를 만들어 갈 당신을 기다립니다.
+									내담과 함께 새로운 미래를 만들어 갈 당신을 기다립니다.
 								</p>
 							</div>
 						</div>

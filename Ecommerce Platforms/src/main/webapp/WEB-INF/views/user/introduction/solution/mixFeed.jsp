@@ -42,7 +42,8 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            배합사료관리 스마트 시스템 구축
+                                            배합사료관리 <br>
+                                            스마트 시스템 구축
                                         </p>
                                         <p class="difference_desc">
 										·  원료 입·출고.  제품 생산관리,  품질관리,  포장관리, BULK 출하관리,   제품재고 관리,   판매관리 시스템 등 표준화 시스템
@@ -61,20 +62,6 @@
                                         <p class="difference_desc">
                                             상 · 하차 및 계근시 보다 신속 하게 사무 자동화 시스템과 연동 토탈 시스템 구축
                                             배합사료 배송 차량과의 GPS 연동으로 농장 제품 배송시간 실시간 공유 시스템 구축 
-                                            
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_feed_3.jpg" alt="">
-                                    </div>
-                                    <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <p class="difference_title">
-                                        	(Title)
-                                        </p>
-                                        <p class="difference_desc">
-                                        	(Contents)
                                         </p>
                                     </div>
                                 </li>

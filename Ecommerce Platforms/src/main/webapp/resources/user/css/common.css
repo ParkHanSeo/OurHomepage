@@ -936,7 +936,8 @@ img {
   padding: 160px 0 0;
 }
 .layout_section_outer.type01.si_layout {
-  height: 100%;
+    height: 125%;
+    padding-bottom: 3%;
 }
 .layout_section_outer.intro.type01 {
   padding: 120px 0 0;

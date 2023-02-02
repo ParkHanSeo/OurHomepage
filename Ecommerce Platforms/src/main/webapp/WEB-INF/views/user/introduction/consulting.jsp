@@ -71,9 +71,8 @@
 									<div class="difference_box aos-init" data-aos="fade-up"
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear">
-										<p class="difference_title">컨설팅의 역할  <br>의사(Doctor)의 영역<br>[임시-Title]</p>
+										<p class="difference_title">컨설팅의 역할  <br>의사(Doctor)의 영역
 										<p class="difference_desc">
-											[임시-Contents]<br><br>
 											고객의 기업이 운영상황과 경영에 대한 전반적인 상황을 파악하고 그에 걸맞는 해결방안을 제시합니다.<br><br>
 											목표 수립과 그에 이르기 까지의 경영 전략 수립, 사업의 포트폴리오 정립 및 관리 등 목표 달성을 위한
 											과제 수립 등이 컨설팅의 주요 내용입니다.
@@ -92,9 +91,8 @@
 									<div class="difference_box aos-init" data-aos="fade-up"
 										data-aos-offset="0" data-aos-duration="250"
 										data-aos-easing="linear">
-										<p class="difference_title">컨설팅의 역할  <br>대행(Agent)의 영역<br>[임시-Title]</p>
+										<p class="difference_title">컨설팅의 역할  <br>대행(Agent)의 영역
 										<p class="difference_desc">
-											[임시-Contents]<br><br>
 											사업은 살아 있는 생물처럼 계속해서 변화합니다.<br>
 											그에 따라 실무를 진행하기 위해서는 그에 맞추어 다양한 경험을 쌓은 전문가들이 필요로합니다 <br><br>
 											따라서 내담은 <br>
