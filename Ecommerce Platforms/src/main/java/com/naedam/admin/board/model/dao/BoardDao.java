@@ -127,6 +127,9 @@ public interface BoardDao {
 	//다운로드수
 	public int postFileCount(Post post) throws Exception;
 
+	//dashboard에서 사용할 boardList
+	public List<String> getBoardList();
+
 	
 	
 }

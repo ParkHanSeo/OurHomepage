@@ -334,7 +334,7 @@
 											<h3 class="tit-label">Vision AI</h3>
 											<h4 class="tit">객체 인식 및 분석</h4>
 											<p class="description">
-												인공지는 서비스 제공<br /> 이미지 분류 및 사고예방
+												인공지능 서비스 제공<br /> 이미지 분류 및 사고예방
 											</p>
 											<p class="btn-arrow">
 												<span class="blind">자세히 보기</span>
@@ -356,7 +356,7 @@
 									<li class="one-order aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 										<a href="/user/introduction/innoAms">
 											<h3 class="tit-label">AMS</h3>
-											<h4 class="tit">설비자신의 최적 관리를 통한 가치창출</h4>
+											<h4 class="tit">설비자산의 최적 관리를 통한 가치창출</h4>
 											<p class="description">
 												자산관리로 관리영역 확장<br /> 수익 창출의 설비
 											</p>

@@ -988,22 +988,28 @@ h4 {
 }
 
 .service-wrap .service-list .factory-one::before {
-  background-image: url(../images/main/img-main-thumbnail-06-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-06-pc.png); */
+  background-image: url(../images/main/img1.jpg);
 }
 .service-wrap .service-list .eliss-one::before {
-  background-image: url(../images/main/img-main-thumbnail-07-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-07-pc.png); */
+  background-image: url(../images/main/img2.jpg);
 }
 .service-wrap .service-list .nd-one-ad::before {
-  background-image: url(../images/main/img-main-thumbnail-08-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-08-pc.png); */
+  background-image: url(../images/main/img3.jpg);
 }
 .service-wrap .service-list .one-order::before {
-  background-image: url(../images/main/img-main-thumbnail-09-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-09-pc.png); */
+  background-image: url(../images/main/img4.jpg);
 }
 .service-wrap .service-list .smart-culture-space::before {
-  background-image: url(../images/main/img-main-thumbnail-10-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-10-pc.png); */
+  background-image: url(../images/main/img5.jpg);
 }
 .service-wrap .service-list .mplace::before {
-  background-image: url(../images/main/img-main-thumbnail-11-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-11-pc.png); */
+  background-image: url(../images/main/img6.jpg);
 }
 
 /* core & service bg response */

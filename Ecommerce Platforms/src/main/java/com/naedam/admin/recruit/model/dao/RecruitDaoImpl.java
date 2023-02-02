@@ -27,11 +27,11 @@ public class RecruitDaoImpl implements RecruitDao {
 	}
 
 	@Override
-	public List<Post> getRecruitList(String search, int offset, int limit) throws Exception {
+	public List<recruitDTO> getRecruitList(String search, int offset, int limit) throws Exception {
 		System.out.println("==========recruitList dao =================");
 		System.out.println("search>>>" + search);
-		RowBounds rowBounds = new RowBounds(offset, limit);
-		return sqlSession.selectList("recruit.getRecruitList", search, rowBounds);
+		/* RowBounds rowBounds = new RowBounds(offset, limit); */
+		return sqlSession.selectList("recruit.getRecruitList", search);
 	}
 	
 	@Override

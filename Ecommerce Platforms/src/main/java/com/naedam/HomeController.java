@@ -42,6 +42,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String goIndex(Locale locale, Model model) {
 		log.debug("HomeController ---- forward ----> index.jsp");
+		
 		// welcompage
 		System.out.println("===================Index끝===============");
 		return "/admin/index";
@@ -53,6 +54,10 @@ public class HomeController {
 	@RequestMapping(value = "/admin/dashBoard", method = RequestMethod.GET)
 	public String goDashBoard(Locale locale, Model model) throws Exception {
 		log.debug("HomeController ---- forward ----> dashBoard");
+		
+		//board List 가져오기
+		List<String> boardList = boardService.getBoardList();
+		model.addAttribute(boardList);
 		return "admin/dashBoard";
 	}
 	

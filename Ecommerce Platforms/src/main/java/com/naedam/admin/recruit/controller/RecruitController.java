@@ -46,7 +46,7 @@ public class RecruitController {
 	@RequestMapping("recruitList")
 	public String recruitList(Model model, @RequestParam(defaultValue = "1") int cPage, HttpServletRequest request,
 			@RequestParam(value= "searchKeyword",required = false) String searchKeyword) throws Exception {
-		
+		System.out.println("recruitList start =======");
 		//조회 전 마감일자 지난 list들 채용마감으로 변경
 		int update = recruitService.updateContentsStatus();
 		
@@ -64,6 +64,8 @@ public class RecruitController {
 		String url = request.getRequestURI();
 		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalRecruitListCount, url);
 		
+		System.out.println("list======> " + resultMap.get("list"));
+		
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("pageCount", totalRecruitListCount);
@@ -73,7 +75,7 @@ public class RecruitController {
 		return "admin/recruit/recruitList";
 
 	}
-
+	
 	@PostMapping("deleteRecruit")
 	@ResponseBody
 	public String deleteRecruit(@RequestParam(value = "postArr[]") List<Integer> postArr) {

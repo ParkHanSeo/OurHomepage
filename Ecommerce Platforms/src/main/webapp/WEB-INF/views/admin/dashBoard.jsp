@@ -86,7 +86,7 @@
 			success : function(JSONData, status){
 				if(status == 'success'){
 					if(JSONData.list.length != 0){
-						for(var i = 0; i <= JSONData.list.length; i++){
+						for(var i = 0; i < JSONData.list.length; i++){
 							var post = JSONData.list;
 							display = '<li name="postData">'
 									+ '<a href="/admin/board/postList?boardNo='+post[i].postBoard.boardNo+'">'+post[i].postTitle+''
@@ -108,10 +108,13 @@
 	}
 	
 	$(function(){
+		
 		<c:forEach var="board" items="${boardList}" varStatus="status">
+			
 			<c:if test="${status.first}">
 				var boardNo = ${board.boardNo}
-			</c:if>						
+			</c:if>		
+			
 		</c:forEach>
 	
 		$.ajax({
@@ -123,10 +126,12 @@
 				"Content-Type" : "application/json"	 						
 			} ,
 			success : function(JSONData, status){
+				console.log("status=====", JSONData);
 				if(status == 'success'){
 					if(JSONData.list.length != 0){
-						for(var i = 0; i <= JSONData.list.length; i++){
+						for(var i = 0; i < JSONData.list.length; i++){
 							var post = JSONData.list;
+							console.log("post===="+i+"=====", post[i]);
 							display = '<li name="postData">'
 									+ '<a href="/admin/board/postList?boardNo='+post[i].postBoard.boardNo+'">'+post[i].postTitle+''
 									+ '<span class="pull-right cs-m-right20">'+post[i].postDate+'</span>'
@@ -138,12 +143,31 @@
 						display = '<li name="postData">등록된 게시물이 없습니다.</li>';
 						$("ul[class='list']").append(display);
 					}
+					
+					if(JSONData.recruitList.length != 0){
+						for(var i = 0; i < JSONData.recruitList.length; i++){
+							console.log("JSONData.recruitList=====" , JSONData.recruitList);
+							var recruit = JSONData.recruitList;
+							display = '<li name="recruitData">'
+									+ '<a href="/admin/recruitList">'+recruit[i].recruitTitle
+									+ '<span class="pull-right cs-m-right20">'+recruit[i].recruitDate+'</span>'
+									+ '</a>'
+									+ '</li>';
+							$("ul[class='recruitList']").append(display);
+						}
+					} else if(JSONData.recruitList.length == 0){
+						display = '<li name="postData">등록된 게시물이 없습니다.</li>';
+						$("ul[class='recruitList']").append(display);
+					}
+					
+					
 				}
 			},
 			error:function(request, status, error){
 				alert("에러")
 			}
 		});	
+
 	})
 
 </script>
@@ -151,7 +175,7 @@
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1>
-			Dashboard <small>ND 운영현황</small>
+			Dashboard <small>운영현황</small>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -168,26 +192,52 @@
 					<ul class="nav nav-tabs">
 						<c:forEach var="board" items="${boardList}" varStatus="status">
 							<c:if test="${status.first}">
-								<li class=""><a aria-expanded="true" name="dashBoardNo"
+								<li class="">
+								<a aria-expanded="true" name="dashBoardNo"
 									href="#tab_${board.boardNo}" data-toggle="tab"
-									onclick="fncPostList(${board.boardNo})">${board.boardTitle}</a>
+									onclick="fncPostList(${board.boardNo})">${board.boardTitle}
+								</a>
 								</li>
 							</c:if>
 							<c:if test="${!status.first}">
-								<li class=""><a aria-expanded="true" name="dashBoardNo"
-									href="#tab_${board.boardNo}" data-toggle="tab"
-									onclick="fncPostList(${board.boardNo})">${board.boardTitle}</a>
+								<li class="">
+								<a aria-expanded="true" name="dashBoardNo" href="#tab_${board.boardNo}" data-toggle="tab"
+									onclick="fncPostList(${board.boardNo})">${board.boardTitle}
+								</a>
 								</li>
 							</c:if>
 						</c:forEach>
-						<li class="pull-right"><a class="text-muted"
-							href="/admin/board/listBoard">더보기 <i
-								class="fa fa-arrow-circle-right"></i>
+						<li class="pull-right">
+						<a class="text-muted"
+							href="/admin/board/listBoard">더보기 
+							<i class="fa fa-arrow-circle-right"></i>
 						</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="tab_1">
-							<ul class="list"></ul>
+							<ul class="list">
+							</ul>
+						</div>
+					</div>
+					<!-- /.tab-content -->
+				</div>
+				<!-- /.nav-tabs-custom -->
+				<div class="nav-tabs-custom">
+					<h3 style="padding-left: 10px; padding-top: 10px; ">채용 관리</h3>
+					<ul class="nav nav-tabs">
+								<li class="">
+								<a href="/admin/recruitList">채용 LIST</a>
+								</li>
+						<li class="pull-right">
+						<a class="text-muted"
+							href="/admin/recruitList">더보기 
+							<i class="fa fa-arrow-circle-right"></i>
+						</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab_1">
+							<ul class="recruitList">
+							</ul>
 						</div>
 					</div>
 					<!-- /.tab-content -->
