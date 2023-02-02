@@ -262,6 +262,11 @@ public class BoardDaoImpl implements BoardDao {
 		sqlSession.update("board.updateUpAsc", map);
 	}
 
+	@Override
+	public List<String> getBoardList() {
+		return sqlSession.selectList("board.getBoardList");
+	}
+
 	
 }
 

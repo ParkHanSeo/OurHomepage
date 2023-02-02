@@ -28,6 +28,7 @@ import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.common.Comm;
 import com.naedam.admin.member.model.vo.Member;
+import com.naedam.admin.recruit.model.service.RecruitService;
 import com.naedam.admin.setting.model.service.SettingService;
 import com.naedam.admin.setting.model.vo.AdminMenu;
 
@@ -41,6 +42,9 @@ public class BoardRestController {
 	
 	@Autowired
 	private SettingService settingService;
+	
+	@Autowired
+	private RecruitService recruitService;
 	
 	/***
 	 * 게시판 => 게시글 => 게시글 댓글 달기
@@ -91,12 +95,21 @@ public class BoardRestController {
 	 */
 	@GetMapping(value="json/getPostList/{boardNo}")
 	public Map<String, Object> getPostList(@PathVariable("boardNo") int boardNo) throws Exception{
+		System.out.println("getPostList boardNo==== "+ boardNo);
+		//조회 전 마감일자 지난 list들 채용마감으로 변경
+		recruitService.updateContentsStatus();
 		Board board = new Board();
 		Comm comm = new Comm();
 		board.setBoardNo(boardNo);
+		
+		int limit = 5;
+		int offset = 0;
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("boardNo", boardNo);
 		map.put("comm", comm);
+		map.put("limit", limit);
+		map.put("offset", offset);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		return resultMap;
 	}	
