@@ -72,11 +72,10 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            APP을 통한 모바일 기반의 고도화
+											(Title)
                                         </p>
                                         <p class="difference_desc">
-                                            축산물이력시스템과 연계하여 개체관리 투명성 제고
-											생산이력 및 출고, 배송 이력관리로 제품 이상 발생시에 리콜 대응 가능
+											(Contents)
                                         </p>
                                     </div>
                                 </li>

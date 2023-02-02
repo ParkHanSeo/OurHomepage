@@ -320,7 +320,7 @@
 									<li class="factory-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 										<a href="/user/introduction/digitalTwin">
 											<h3 class="tit-label">Digital Twin</h3>
-<!-- 											<h4 class="tit">산업 데이터 모니터링</h4> -->
+ 											<h4 class="tit">산업 데이터 모니터링</h4> 
 											<p class="description">
 												설계에서 제조 및 건설, 운영 및 유지 관리<br /> 가상의 트윈 사용자의 문제를 미리 예방한다.
 											</p>

@@ -17,7 +17,7 @@
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 <!-- haeder -->
 <div id="wrap qulified">
-        <section id="container qualifiedEmployee">
+        <section id="container">
             <div id="contents" class="contents_top employee_contents">
                 <div class="sub_title_area">
                     <div class="inner_container">
