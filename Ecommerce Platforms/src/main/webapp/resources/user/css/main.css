@@ -669,30 +669,32 @@ h4 {
 }
 
 .core-wrap .core-list .cunsulting {
-  position: absolute;
-  top: -85%;
-  right: -355px;
-  width: 175%;
-  height: 317%;
+	position: absolute;
+    top: -76%;
+    right: -355px;
+    width: 175%;
+    height: 317%;
 }
 
 .core-wrap .core-list .si {
-  position: absolute;
-  top: -158%;
-  left: -14%;
-  width: 166%;
-  height: 397%;
+  	position: absolute;
+    top: -86%;
+    left: -60%;
+    width: 166%;
+    height: 397%;
 }
 
 .core-wrap .core-list .ai {
   width: 100%;
 }
 .core-wrap .core-list .ai::before {
-  width: 550px;
-  height: 550px;
-  border-radius: 3%;
-  background-image: url(../images/together2.jpg);
-  background-size: cover;
+      width: 660px;
+    height: 504px;
+    border-radius: 3%;
+    background-image: url(../images/together2.jpg);
+    background-size: cover;
+    position: fixed;
+    left: -52px;
 }
 .core-wrap .core-list .ai > a {
   /* padding-top: 250px; */
@@ -727,11 +729,13 @@ h4 {
   margin: 375px 0 0 0px;
 }
 .core-wrap .core-list .blockchain::before {
-  width: 660px;
-  height: 504px;
-  border-radius: 3%;
-  background-image: url(../images/SI.jpg);
-  background-size: cover;
+    width: 660px;
+    height: 504px;
+    border-radius: 3%;
+    background-image: url(../images/SI.jpg);
+    background-size: cover;
+    position: fixed;
+    left: -48px;
 }
 .core-wrap .core-list .blockchain > div {
   	padding-top: 528px;
@@ -748,11 +752,13 @@ h4 {
   left: 55%;
 }
 .core-wrap .core-list .cloud::before {
-  width: 550px;
-  height: 550px;
-  border-radius: 3%;
-  background-image: url(../images/solution.jpg);
-  background-size: cover;
+      width: 660px;
+    height: 504px;
+    border-radius: 3%;
+    background-image: url(../images/solution.jpg);
+    background-size: cover;
+    position: absolute;
+    left: -62px;
 }
 .core-wrap .core-list .cloud .bg-text {
   top: 394px;
@@ -1316,25 +1322,32 @@ h4 {
   margin-right: -290px;
 }
 .main_aos_naedam_txt {
-  margin-left: 44%;
-  margin-top: 27%;
+    margin-left: 44%;
+    margin-top: 27%;
+    position: relative;
+    left: 69px
 }
 .main_aos_consulting_txt {
   margin-left: 0%;
-  margin-top: 40%;
-  top: -70px;
-  left: -31%;
-  position: relative;
+    margin-top: 40%;
+    top: -106px;
+    left: -102%;
+    position: relative;
+    text-align: right;
 }
 .main_aos_si_txt{
     position: relative;
-    left: 103%;
-    bottom: 205px;
+    left: 96%;
+    bottom: 233px;
 }
 .main_aos_solution_txt {
-  margin-left: -55%;
-  margin-top: 30%;
-  padding-bottom: 6%;
+  	margin-left: -55%;
+    margin-top: 30%;
+    padding-bottom: 6%;
+    text-align: right;
+    position: relative;
+    left: -107%;
+    top: -26px;
 }
 
 .card-ui .notice_box {
