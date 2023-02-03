@@ -60,61 +60,19 @@ $(function(){
                     </div>
                 </div><!-- // .sub_title_area -->
 
-                <div class="layout_section_outer intro tech type01 layout_symbol" data-js="anchor-target">
-                    <div class="inner_container">
-                        <div class="layout_body">
-                            <div class="img-txt_box">
-                                <p class="img-txt_01 symbol_txt">워드 마크</p>
-                            </div>
-
-                            <div class="common-img_box symbol_img">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/nd.png" class="nd_symbol" alt="">
-                            </div>
-
-                        </div>
-                    </div>
-                </div><!-- // .layout_section_outer -->
 
                 <div class="layout_section_outer intro tech type01 layout_symbol" data-js="anchor-target">
                     <div class="inner_container">
                         <div class="layout_body">
-                            <div class="img-txt_box">
-                                <p class="img-txt_01 symbol_txt">
-                                	내담씨앤씨 의미
-                                </p>
-                                <p class="img_txt3">
-                                한 걸음 한 걸음 <strong class="img_txt_naedam">'내딛는'</strong> 내담C&C가 되겠습니다. <br>
-                                내담의 주 컬러인 파란색과 깔끔한 로고체를 사용하여 <strong>기술</strong>의 <strong>신뢰, 정직, 정확</strong> 그리고 <strong>열린 기업</strong>의 이미지를 뜻합니다.
-                                
-                            	</p>
-                            </div>
-
                             <div class="common-img_box naedam_main_img">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/nd_2.jpg" class="nd_main" alt="">
+                                <img src="${pageContext.request.contextPath}/resources/user/images/ci_contents.png" class="nd_main" alt="">
                             </div>
-
                         </div>
-                    </div>
-                </div><!-- // .layout_section_outer -->
-
-                <div class="layout_section_outer intro tech type01 layout_symbol" style="padding: 0 0  100px;" data-js="anchor-target">
-                    <div class="inner_container">
-                        <div class="layout_body">
                             <div class="img-txt_box">
-                                <p class="img-txt_01 symbol_txt">
-                                	로고의 의미
-                                </p>
-                                <p class="img_txt3">
-                                영문 이니셜을 뒤집었을 때 뒤에 위치한 회색선과 함께 내담의 한글로고가 구현됩니다. <br>
-                                이니셜을 구성하는 도형이 천지인을 상징하는 형태로서 세상을 담아내는 내담의 기업 이념을 뜻합니다.
-                            	</p>
+	                            <div class="common-img_box naedam_main_img">
+	                                <img src="${pageContext.request.contextPath}/resources/user/images/ci_footer.png" class="nd_reverse" alt="">
+	                            </div>
                             </div>
-
-                            <div class="common-img_box naedam_main_img">
-                                <img src="${pageContext.request.contextPath}/resources/user/images/nd_3.png" class="nd_reverse" alt="">
-                            </div>
-
-                        </div>
                     </div>
                 </div><!-- // .layout_section_outer -->
 

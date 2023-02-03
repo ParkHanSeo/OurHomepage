@@ -477,14 +477,14 @@
 }
 .naedam_main_img {
   text-align: center;
-  border: solid #c5c3c3;
+/*   border: solid #c5c3c3; */
 }
 .naedam_main_img .nd_main {
-  width: 60%;
+ /*  width: 60%; */
   padding: 70px;
 }
 .naedam_main_img .nd_reverse {
-  width: 35%;
+  width: 75%;
   padding: 70px;
 }
 .layout_symbol {
