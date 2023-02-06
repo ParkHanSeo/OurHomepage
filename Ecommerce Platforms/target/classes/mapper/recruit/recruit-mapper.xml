@@ -87,9 +87,6 @@
 		RECRUIT_END,
 		RECRUIT_DATE,
 		CAREER,
-		<!-- RECRUIT_FILE_NAME_ORG, 
-		RECRUIT_FILE_NAME, 
-		RECRUIT_FILE_PATH, -->
 		JOB_TITLE,
 		RECRUIT_TYPE,
 		RECRUIT_PLACE,
@@ -114,9 +111,6 @@
 		</choose>
 		SYSDATE(),
 		#{career}, 
-		<!-- #{orgFileName}, 
-		#{fileName}, 
-		#{filePath}, -->
 		#{jobTitle},
 		#{recruitType},
 		#{recruitPlace},
@@ -138,6 +132,25 @@
 		</selectKey>
 		
 	</insert>
+	
+	<update id="insertFile">
+	UPDATE recruit
+	   SET 
+<!-- 		   RECRUIT_FILE_NAME_ORG = #{orgFileName}, 
+		   RECRUIT_FILE_NAME = #{fileName}, 
+		   RECRUIT_FILE_PATH = #{filePath} -->
+	 	<if test="orgFileName != null">
+			RECRUIT_FILE_NAME_ORG = #{orgFileName}, 
+			RECRUIT_FILE_NAME = #{fileName}, 
+			RECRUIT_FILE_PATH = #{filePath}
+		</if>
+		<if test="orgFileName == null">
+			RECRUIT_FILE_NAME_ORG = null, 
+			RECRUIT_FILE_NAME = null, 
+			RECRUIT_FILE_PATH = null
+		</if>
+		WHERE RECRUIT_NO = #{recruitNo}
+	</update>
 
 	<insert id="insertRecruitContents" parameterType="com.naedam.admin.recruit.model.vo.recruitContentsDTO">
 		INSERT INTO recruit_contents(RECRUIT_NO, RECRUIT_SUB_TITLE, RECRUIT_CONTENTS)
@@ -162,23 +175,21 @@
 		UPDATE recruit
 		SET 
 		RECRUIT_TITLE = #{recruitTitle},
-		RECRUIT_START = #{recruitStart},
-		RECRUIT_END = #{recruitEnd},
+		<choose>
+			<when test='contentsStatus == "R"'>
+			RECRUIT_START = null,
+			RECRUIT_END = null,
+			</when>
+			<otherwise>
+			RECRUIT_START = #{recruitStart},
+			RECRUIT_END = #{recruitEnd},
+			</otherwise>
+		</choose>
 		CAREER = #{career},
 		JOB_TITLE = #{jobTitle},
 		RECRUIT_TYPE = #{recruitType},
 		RECRUIT_PLACE = #{recruitPlace},
 		JOB_INTRO = #{jobIntro},
-		<if test="orgFileName != null">
-			RECRUIT_FILE_NAME_ORG = #{orgFileName}, 
-			RECRUIT_FILE_NAME = #{fileName}, 
-			RECRUIT_FILE_PATH = #{filePath},
-		</if>
-		<if test="orgFileName == null">
-			RECRUIT_FILE_NAME_ORG = null, 
-			RECRUIT_FILE_NAME = null, 
-			RECRUIT_FILE_PATH = null,
-		</if>
 		QUALIFICATION = #{qualification},
 		<choose>
 			<when test='contentsStatus == "R"'>

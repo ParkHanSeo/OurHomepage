@@ -14,10 +14,10 @@
             <div id="contents" class="contents_top">
 				<div class="business_title_area">
                     <div class="inner_container">
-                        <h2 class="sub_title business_sub_title">사업 개요</h2>
+                        <h2 class="sub_title business_sub_title">Partner</h2>
                     </div>
                 </div><!-- // .sub_title_area -->                
-				<div class="layout_section_outer type04" data-js="anchor-target">
+				<div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0  100px;">
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
@@ -28,7 +28,7 @@
 	                         <div class="partner-flow">
 	                             <ol class="flow_list">
 	                             	<c:forEach var="partner" items="${list}" varStatus="status" >
-		                                <li class="partner_li" style="background-image: url(../../../../resources/user/images/partner/${partner.partnerImage});">
+		                                <li class="partner_li" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/partner/${partner.partnerImage});">
 		                                </li>
 		                            </c:forEach>
 	                             </ol>

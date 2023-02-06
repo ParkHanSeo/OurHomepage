@@ -84,9 +84,9 @@ public class SettingServiceImpl implements SettingService {
 	}
 
 	@Override
-	public List<History> selectHistoryList() {
+	public List<History> selectHistoryList(int limit, int offset) {
 		// TODO Auto-generated method stub
-		return settingDao.selectHistoryList();
+		return settingDao.selectHistoryList(limit, offset);
 	}
 
 	@Override
@@ -134,6 +134,12 @@ public class SettingServiceImpl implements SettingService {
 	public int updateAdminMenuAllN() {
 		// TODO Auto-generated method stub
 		return settingDao.updateAdminMenuAllN();
+	}
+
+	@Override
+	public int selectAllHistoryList() {
+		// TODO Auto-generated method stub
+		return settingDao.selectAllHistoryList();
 	}
 
 

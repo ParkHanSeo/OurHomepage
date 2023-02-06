@@ -17,6 +17,7 @@ public class HistoryDaoImpl implements HistoryDao {
 
 	@Override
 	public History selectOneHistoryByHisNo(int historyNo) {
+		System.out.println("selectOneHistoryByHisNo Dao >>>");
 		// TODO Auto-generated method stub
 		return session.selectOne("history.selectOneHistoryByHisNo", historyNo);
 	}
@@ -24,36 +25,42 @@ public class HistoryDaoImpl implements HistoryDao {
 	@Override
 	public int insertHistory(History history) {
 		// TODO Auto-generated method stub
+		System.out.println("insertHistory Dao >>>");
 		return session.insert("history.insertHistroy", history);
 	}
 
 	@Override
 	public int updateHistory(History history) {
 		// TODO Auto-generated method stub
+		System.out.println("updateHistory Dao >>>");
 		return session.update("history.updateHistory", history);
 	}
 
 	@Override
 	public int deleteHistory(int historyNo) {
 		// TODO Auto-generated method stub
+		System.out.println("deleteHistory Dao >>>");
 		return session.delete("history.deleteHistory", historyNo);
 	}
 
 	@Override
 	public List<History> selectHistoryList() {
 		// TODO Auto-generated method stub
+		System.out.println("selectHistoryList Dao >>>");
 		return session.selectList("history.selectHistoryList");
 	}
 
 	@Override
 	public List<History> selectYearList() {
 		// TODO Auto-generated method stub
+		System.out.println("selectYearList Dao >>>");
 		return session.selectList("history.selectYearList");
 	}
 
 	@Override
 	public List<History> selectMonthList() {
 		// TODO Auto-generated method stub
+		System.out.println("selectMonthList Dao >>>");
 		return session.selectList("history.selectMonthList");
 	}
 	

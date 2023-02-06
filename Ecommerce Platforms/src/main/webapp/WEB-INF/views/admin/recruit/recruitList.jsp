@@ -237,6 +237,7 @@ function addData() {
     $("#recruitType").val("");
     $("#recruitPlace").val("");
     $("#jobIntro").val("");
+    $("#qualification").val("");
     
     let managerComment = `E-mail:
 Tel:           

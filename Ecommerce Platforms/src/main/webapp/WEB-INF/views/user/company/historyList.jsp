@@ -29,6 +29,7 @@
 	/* 연혁 처음 값에 class 추가 */
 	$(document).ready(function() {
 		$('ol').children('li:eq(0)').addClass("first");
+		$('.award_ol').children('li:eq(0)').addClass("first");
 	})
 </script>
 <body>
@@ -50,7 +51,7 @@
 							<div class="common-swiper_tab">
 								<ul class="swiper-wrapper history_swiper">
 									<li class="swiper-slide active" ><a href="javascript:void(0);" id="cont1" class="is-link">회사연혁</a></li>
-									<li class="swiper-slide"><a href="javascript:void(0);" id="cont2" class="is-link">수상내역</a>
+									<li class="swiper-slide"><a href="javascript:void(0);" id="cont2" class="is-link">수상/인증</a>
 									</li>
 								</ul>
 							</div>
@@ -95,7 +96,7 @@
 											</div>
 											<div class="award_sec">
 											<div class="tab-cont" id="tab-cont2">
-												<ol>
+												<ol class="award_ol">
 													<c:forEach var="awardyear" items="${awardYears}">
 														<li>
 															<h3 class="history_years">

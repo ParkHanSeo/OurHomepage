@@ -122,6 +122,7 @@ public class BoardController {
 		Map<String, Object> resultMap = boardService.getBoardList(map);
 		Page resultPage = new Page( comm.getCurrentPage(), ((Integer)resultMap.get("totalCount")).intValue(), pageUnit, pageSize);
 		model.addAttribute("list", resultMap.get("list"));
+		model.addAttribute("recruitList", resultMap.get("recruitList"));
 		model.addAttribute("resultPage", resultPage);
 		model.addAttribute("comm", comm);
 		model.addAttribute("postCount", resultMap.get("postCount"));
@@ -145,7 +146,7 @@ public class BoardController {
 						   @RequestParam(defaultValue = "1") int cPage,
 						   @ModelAttribute("comm") Comm comm) throws Exception {
 		//게시글 리스트 수 limit 10으로
-		int limit = 10;
+		int limit = 5;
 		int offset = (cPage - 1) * limit;
 		
 		//게시글 리스트 옵션과 권한의 조건에 따라 태그를 생성해야 함

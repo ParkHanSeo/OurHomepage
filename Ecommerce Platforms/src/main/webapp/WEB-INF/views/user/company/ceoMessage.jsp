@@ -58,7 +58,7 @@ $(function(){
 
 
         <section id="container">
-            <div id="contents" class="contents_top">
+            <div id="contents" class="contents_top ceofooter">
                 <div class="sub_title_area">
                     <div class="inner_container">
                         <h2 class="sub_title">CEO Message</h2>

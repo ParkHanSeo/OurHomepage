@@ -11,7 +11,7 @@ import com.naedam.admin.recruit.model.vo.recruitDTO;
 public interface RecruitDao {
 
 	// 게시글 목록
-	public List<Post> getRecruitList(String search, int offset, int limit) throws Exception;
+	public List<recruitDTO> getRecruitList(String search, int offset, int limit) throws Exception;
 
 	// 게시글 총 갯수
 	public Object getTotalCount(String search);
@@ -21,6 +21,9 @@ public interface RecruitDao {
 
 	// 게시글 등록
 	public int insertRecruit(recruitDTO recruit);
+
+	// 게시글 파일 추가
+	public int insertFile(recruitDTO recruit);
 
 	// 게시글 상세내용 등록
 	public int insertRecruitContents(recruitContentsDTO recruitContentsDTO);
@@ -39,6 +42,7 @@ public interface RecruitDao {
 
 	//채용 게시글 상태값 변경
 	public int updateContentsStatus();
+
 
 
 	

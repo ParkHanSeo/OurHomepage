@@ -25,8 +25,7 @@
                                 <span class="top_txt1">현장 상황을 반영한 배합사료관리 최적의 Solution</span>
                                 <p class="top_txt2">배합사료 관리 시스템</p>
                                 <p class="top_txt3">
-                                    원료 입·출고. 제품 생산관리, 품질관리, 포장관리, BULK 출하관리, 제품재고 관리, 판매관리 시스템 등 표준화
-
+ 									·  다년간 경험과 현장 상황을 반영한 배합사료관리 최적의 Solution 구축
                                 </p>
                             </div>
                         </div>
@@ -43,10 +42,12 @@
                                     </div>
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
-                                            배합사료관리 스마트 시스템 구축
+                                            배합사료관리 <br>
+                                            스마트 시스템 구축
                                         </p>
                                         <p class="difference_desc">
-                                            공장 운영 및  관리업무의 합리화 및 질적 향상을 도모
+										·  원료 입·출고.  제품 생산관리,  품질관리,  포장관리, BULK 출하관리,   제품재고 관리,판매관리 시스템 등 표준화 시스템<br>
+										·  공장 운영 및  관리업무의 합리화 및 질적 향상을 도모할 수 있는  배합사료관리 스마트 시스템
                                         </p>
                                     </div>
                                 </li>
@@ -59,20 +60,8 @@
                                             AI 모듈 구현
                                         </p>
                                         <p class="difference_desc">
-                                            상 · 하차 및 계근시 보다 신속 하게 사무 자동화 시스템과 연동 토탈 시스템 구축
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_feed_3.jpg" alt="">
-                                    </div>
-                                    <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                        <p class="difference_title">
-                                            배합사료 배송차량 GPS 연동
-                                        </p>
-                                        <p class="difference_desc">
-                                           농장 제품 배송시간 실시간 공유 시스템 구축
+                                            사무 자동화 시스템과 연동 토탈 시스템 구축으로 업무 효율성 증대<br>
+                                            배합사료 배송 차량과의 GPS 연동으로 농장 제품 배송시간 실시간 공유 시스템 구축 
                                         </p>
                                     </div>
                                 </li>

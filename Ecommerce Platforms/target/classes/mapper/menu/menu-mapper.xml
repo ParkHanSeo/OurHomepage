@@ -308,7 +308,7 @@
 	</update>
 	
 	<update id="updateHeadUpAsc" parameterType="map">
-		UPDATE 
+		UPDATE head
 		<set>
 			HEAD_ASC = #{headUpAsc}
 		</set>

@@ -254,7 +254,7 @@
 	    <dependency>
 	        <groupId>commons-io</groupId>
 	        <artifactId>commons-io</artifactId>
-	        <version>2.6</version>
+	        <version>1.4</version> <!-- 변경_230131 -->
 	    </dependency>
 	    <dependency>
 	        <groupId>commons-fileupload</groupId>

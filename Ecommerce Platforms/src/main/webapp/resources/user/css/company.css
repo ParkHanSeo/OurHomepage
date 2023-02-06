@@ -1,4 +1,91 @@
 @charset "utf-8";
+.ceofooter{
+	padding-bottom: 100px;
+}
+.core_value_img{
+	background-image: url("../images/core_value.png");
+	width: 80%;
+	height: 80%;
+	margin:0 auto;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.business_txtbox{
+    width: 35%;
+    height: 100%;
+	position: relative;
+}
+.welfare_benefit_box1
+  .benefit_title {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+    right: 0px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    padding-right: 50px;
+}
+  .welfare_benefit_box2
+  .benefit_title {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    right: 0px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    padding-left: 50px;
+}
+.common-layout_2.is-vertical .items:nth-child(1), .common-layout_2.is-vertical .businessList_items:nth-child(2) {
+    margin-top: 0;
+}
+.common-layout_2.is-vertical .businessList_items:nth-child(even) {
+    margin-left: 0px;
+    margin-bottom:40px;
+}
+.common-layout_2.is-vertical .businessList_items {
+    margin-top: 50px;
+}
+.welfare_benefit_area .welfare_benefit_list > .businessList_items{
+    min-height: 500px;
+   /*  border: 1px solid #e6e6e6; */
+    border-radius: 18px;
+}
+.common-layout_2 > .businessList_items {
+    width: calc(100% / 2);
+}
+.businessList_top_txt1{
+    font-size: 40px;
+    font-weight:bold;
+    line-height: 56px;
+    position: relative;
+    letter-spacing: -0.2px;
+    text-align: center;
+}
+.businessList_top_txt2{
+    margin-top: 24px;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #666;
+}
+.businessList_top_txt3{
+    margin-top: 80px;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #666;
+}
 .vision_Icon{
 	background-image: url("../images/icon/vision2.png");
     /* background-color: white; */
@@ -200,7 +287,7 @@
   padding-top: 90px;
 }
 .common-layout_2 > .items_2 {
-  width: calc(100% / 3 - 5px);
+  width: calc(100% / 2);
   /* margin-left: 178px; */
 }
 .location_list {
@@ -390,14 +477,14 @@
 }
 .naedam_main_img {
   text-align: center;
-  border: solid #c5c3c3;
+/*   border: solid #c5c3c3; */
 }
 .naedam_main_img .nd_main {
-  width: 60%;
+ /*  width: 60%; */
   padding: 70px;
 }
 .naedam_main_img .nd_reverse {
-  width: 35%;
+  width: 75%;
   padding: 70px;
 }
 .layout_symbol {
@@ -544,7 +631,7 @@
   font-size: 17px;
 }
 .layout_sub_body {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .items .division_name {
   font-size: 20px;
@@ -552,7 +639,7 @@
 }
 .inner_container .division_list {
   padding-top: 45px;
-  padding-bottom: 45px;
+  padding-bottom: 100px;
 }
 .division_wrapper {
   background-image: url(../images/company/division/stock-photo-network-community-concept-631791635.jpg);

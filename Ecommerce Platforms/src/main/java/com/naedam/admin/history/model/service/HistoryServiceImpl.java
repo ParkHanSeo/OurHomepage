@@ -33,6 +33,7 @@ public class HistoryServiceImpl implements HistoryService {
 		MultipartFile historyImage = (MultipartFile) map.get("historyImage");
 		
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
+			System.out.println("history_process Service if insert >>>>");
 			StringBuilder str = new StringBuilder();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 			Date resultDate = new Date();
@@ -81,6 +82,7 @@ public class HistoryServiceImpl implements HistoryService {
 	@Override
 	public History selectOneHistoryByHisNo(int historyNo) {
 		// TODO Auto-generated method stub
+		System.out.println("selectOneHistoryByHisNo Service >>>>");
 		return historyDao.selectOneHistoryByHisNo(historyNo);
 	}
 	
@@ -94,6 +96,8 @@ public class HistoryServiceImpl implements HistoryService {
 		resultMap.put("years", historyDao.selectYearList());
 		/* 기재 월 조회 */
 		resultMap.put("months", historyDao.selectMonthList());
+		
+		System.out.println("selectHistoryList Service resultMap>>>>" + resultMap);
 		return resultMap;
 	}
 

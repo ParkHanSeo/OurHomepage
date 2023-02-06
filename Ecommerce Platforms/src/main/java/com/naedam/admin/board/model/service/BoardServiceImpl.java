@@ -22,12 +22,16 @@ import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.board.model.vo.BoardTranslate;
 import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.member.model.vo.Member;
+import com.naedam.admin.recruit.model.dao.RecruitDao;
 
 @Service
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
 	private BoardDao boardDao;
+	
+	@Autowired
+	private RecruitDao recruitDao;
 	
 	//게시판 프로세스
 	public void boardProcess(Map<String, Object> map) throws Exception {
@@ -158,6 +162,8 @@ public class BoardServiceImpl implements BoardService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("list", boardDao.getPostList(map));
 		resultMap.put("totalCount", boardDao.getTotalCount2(map));
+		//채용
+		resultMap.put("recruitList", recruitDao.getRecruitList(null, 10, 0));
 		return resultMap;
 	}
 	
@@ -273,6 +279,13 @@ public class BoardServiceImpl implements BoardService {
 		resultMap.put("postPrev", boardDao.getPrevPost(post));
 		resultMap.put("postNext", boardDao.getNextPost(post));
 		return resultMap;
+	}
+
+	//dashboard
+	@Override
+	public List<String> getBoardList() {
+		
+		return boardDao.getBoardList();
 	}
 
 

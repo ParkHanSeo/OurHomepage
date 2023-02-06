@@ -654,11 +654,11 @@ h4 {
   margin-top: 20px;
 }
 .core-wrap .core-list .naedamcnc {
-  position: absolute;
-  top: -400px;
-  right: -675px;
-  width: 600%;
-  height: 500%;
+    position: absolute;
+ 	top: -156%;
+    right: -11%;
+    width: 175%;
+    height: 317%;
 }
 .core-wrap .core-list .solution {
   position: absolute;
@@ -669,38 +669,41 @@ h4 {
 }
 
 .core-wrap .core-list .cunsulting {
-  position: absolute;
-  top: -85%;
-  right: -355px;
-  width: 175%;
-  height: 317%;
+	position: absolute;
+    top: -76%;
+    right: -355px;
+    width: 175%;
+    height: 317%;
 }
 
 .core-wrap .core-list .si {
-  position: absolute;
-  top: -186%;
-  left: -14%;
-  width: 166%;
-  height: 397%;
+  	position: absolute;
+    top: -86%;
+    left: -60%;
+    width: 166%;
+    height: 397%;
 }
 
 .core-wrap .core-list .ai {
   width: 100%;
 }
 .core-wrap .core-list .ai::before {
-  width: 550px;
-  height: 550px;
-  border-radius: 3%;
-  background-image: url(../images/image_10.jpg);
+      width: 660px;
+    height: 504px;
+    border-radius: 3%;
+    background-image: url(../images/together2.jpg);
+    background-size: cover;
+    position: fixed;
+    left: -52px;
 }
 .core-wrap .core-list .ai > a {
   /* padding-top: 250px; */
 }
 .core-wrap .core-list .ai .bg-text {
-  top: 394px;
-  left: 497px;
-  width: 286px;
-  height: 244px;
+    top: 112%;
+    left: 30%;
+    width: 70%;
+    height: 50%;
 }
 .core-wrap .core-list .big-data {
   align-self: flex-end;
@@ -712,7 +715,8 @@ h4 {
   width: 660px;
   height: 504px;
   border-radius: 3%;
-  background-image: url(../images/image_15.jpg);
+  background-image: url(../images/consulting.jpg);
+  background-size: cover;
 }
 .core-wrap .core-list .big-data .bg-text {
   top: 346px;
@@ -722,34 +726,39 @@ h4 {
 }
 .core-wrap .core-list .blockchain {
   width: 660px;
-  margin: 236px 0 0 0px;
+  margin: 375px 0 0 0px;
 }
 .core-wrap .core-list .blockchain::before {
-  width: 660px;
-  height: 504px;
-  border-radius: 3%;
-  background-image: url(../images/image_16.jpg);
+    width: 660px;
+    height: 504px;
+    border-radius: 3%;
+    background-image: url(../images/SI.jpg);
+    background-size: cover;
+    position: fixed;
+    left: -48px;
 }
 .core-wrap .core-list .blockchain > div {
-  padding-top: 528px;
+  	padding-top: 528px;
 }
 .core-wrap .core-list .blockchain .bg-text {
-  top: 348px;
-  left: -183px;
-  width: 1506px;
-  height: 244px;
+  top: 0%;
+  left: 70%;
+  width: 70%;
+  height: 50%;
 }
 .core-wrap .core-list .cloud {
   align-self: flex-end;
   width: 100%;
   left: 55%;
-  margin: 236px 0 0 0;
 }
 .core-wrap .core-list .cloud::before {
-  width: 550px;
-  height: 550px;
-  border-radius: 3%;
-  background-image: url(../images/solution/solution_1-3_1.jpg);
+      width: 660px;
+    height: 504px;
+    border-radius: 3%;
+    background-image: url(../images/solution.jpg);
+    background-size: cover;
+    position: absolute;
+    left: -62px;
 }
 .core-wrap .core-list .cloud .bg-text {
   top: 394px;
@@ -979,22 +988,28 @@ h4 {
 }
 
 .service-wrap .service-list .factory-one::before {
-  background-image: url(../images/main/img-main-thumbnail-06-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-06-pc.png); */
+  background-image: url(../images/main/img1.jpg);
 }
 .service-wrap .service-list .eliss-one::before {
-  background-image: url(../images/main/img-main-thumbnail-07-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-07-pc.png); */
+  background-image: url(../images/main/img2.jpg);
 }
 .service-wrap .service-list .nd-one-ad::before {
-  background-image: url(../images/main/img-main-thumbnail-08-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-08-pc.png); */
+  background-image: url(../images/main/img3.jpg);
 }
 .service-wrap .service-list .one-order::before {
-  background-image: url(../images/main/img-main-thumbnail-09-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-09-pc.png); */
+  background-image: url(../images/main/img4.jpg);
 }
 .service-wrap .service-list .smart-culture-space::before {
-  background-image: url(../images/main/img-main-thumbnail-10-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-10-pc.png); */
+  background-image: url(../images/main/img5.jpg);
 }
 .service-wrap .service-list .mplace::before {
-  background-image: url(../images/main/img-main-thumbnail-11-pc.png);
+  /* background-image: url(../images/main/img-main-thumbnail-11-pc.png); */
+  background-image: url(../images/main/img6.jpg);
 }
 
 /* core & service bg response */
@@ -1176,6 +1191,7 @@ h4 {
   background-image: url(../images/main/main_employee_3.jpg);
 }
 .culture-wrap .half-wrap .tit {
+  font-weight:bold;
   position: relative;
   font-size: 18px;
   line-height: 1.56;
@@ -1223,7 +1239,7 @@ h4 {
   color: #000;
 }
 .news-wrap .inner_container {
-  padding: 180px 0 174px;
+  padding: 180px 0 100px;
   transition: 0.4s ease;
 }
 .news-wrap .section-title-area {
@@ -1312,18 +1328,34 @@ h4 {
   margin-right: -290px;
 }
 .main_aos_naedam_txt {
-  margin-left: 44%;
-  margin-top: 27%;
+    margin-left: 44%;
+    margin-top: 27%;
+    position: relative;
+    left: 69px
 }
 .main_aos_consulting_txt {
   margin-left: 0%;
-  margin-top: 44%;
+    margin-top: 40%;
+    top: -106px;
+    left: -102%;
+    position: relative;
+    text-align: right;
+}
+.main_aos_si_txt{
+    position: relative;
+    left: 96%;
+    bottom: 233px;
 }
 .main_aos_solution_txt {
-  margin-left: -55%;
-  margin-top: 30%;
-  padding-bottom: 6%;
+  	margin-left: -55%;
+    margin-top: 30%;
+    padding-bottom: 6%;
+    text-align: right;
+    position: relative;
+    left: -107%;
+    top: -26px;
 }
+
 .card-ui .notice_box {
   position: relative;
   padding: 0px 40px 0px 40px;

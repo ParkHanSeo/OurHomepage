@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.vo.Award;
+import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.setting.model.service.SettingService;
 import com.naedam.admin.setting.model.vo.AdminMenu;
@@ -41,9 +42,28 @@ public class SettingController {
 	 * @param model
 	 */
 	@GetMapping("/history")
-	public void history(Model model) {
-		List<History> historyList = settingService.selectHistoryList();
+	public String history(Model model, @RequestParam(defaultValue = "1") int cPage,
+			HttpServletRequest request) {
+		System.out.println("redirect: 처리됐나????");
+		System.out.println("history cPage>>>>>>" + cPage);
+		// 게시글 조회 한도
+		int limit = 10;
+		int offset = (cPage - 1) * limit;
+		
+		List<History> historyList = settingService.selectHistoryList(limit, offset);
 		model.addAttribute("historyList", historyList);
+		
+		//게시글 총 갯수
+		int totalRecruitListCount = settingService.selectAllHistoryList();
+		
+		//페이징 처리
+		String url = request.getRequestURI();
+		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalRecruitListCount, url);
+		
+		model.addAttribute("pagebar", pagebar);
+		model.addAttribute("pageCount", totalRecruitListCount);
+		
+		return "/admin/setting/history";
 	}
 
 	/**

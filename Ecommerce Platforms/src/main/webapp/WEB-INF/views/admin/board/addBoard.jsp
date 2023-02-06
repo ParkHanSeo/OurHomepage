@@ -33,6 +33,7 @@
             <form name="addBoard" method="post">
 	            <input type="hidden" name="mode" id="mode" value="insert">
 	            <input type="hidden" name="board_code" id="board_code">
+	            <input type="hidden" name="cPage" id="cPage">
 	            <div class="modal-header">
 	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 	                <h4 class="modal-title" id="myModalLabel">게시판 생성</h4>
