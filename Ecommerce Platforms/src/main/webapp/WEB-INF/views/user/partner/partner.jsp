@@ -21,7 +21,7 @@
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1">
-                            	내담C&C의 Partner를 소개합니다.
+                            	내담씨앤씨의 Partner를 소개합니다.
                             </p>
                         </div>
                         <div class="layout_body">

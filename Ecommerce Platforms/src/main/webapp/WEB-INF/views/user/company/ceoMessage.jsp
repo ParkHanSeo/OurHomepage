@@ -74,7 +74,7 @@ $(function(){
                                 내담씨앤씨 <br class="show_768">대표이사 한창엽입니다.
                             </p>
                             <p class="ceo_msg-txt2 line-01">
-                                (주)내담C&C는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로, 고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며, 나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
+                                (주)내담씨앤씨는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로, 고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며, 나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
                             </p>
                             <p class="ceo_msg-txt2 line-03">
 								<strong>내담은 고객의 요구사항을 반영한 명확한 청사진을 제공합니다.</strong> <br>
@@ -89,7 +89,7 @@ $(function(){
 								다양한 꿈과 열정을 가진 인재들을 지원하며, 비즈니스 파트너로써 함께 성장하고자 합니다.
                             </p>                            
                             <p class="ceo_msg-txt2 line-04">
-                            	(주)내담C&C는 고객과 함께 발맞추어 성장하는 것을 목표로 만족스러운 서비스 그리고 새로운 시각에서 바라보는 솔루션을 통해 함께 성장해가는 동반자가 되는 내담이 되겠습니다.
+                            	(주)내담씨앤씨는 고객과 함께 발맞추어 성장하는 것을 목표로 만족스러운 서비스 그리고 새로운 시각에서 바라보는 솔루션을 통해 함께 성장해가는 동반자가 되는 내담이 되겠습니다.
                             </p>
                             <p class="ceo_msg-txt3">
                                 내담씨앤씨 대표 <span>한 창 엽</span>
@@ -97,7 +97,7 @@ $(function(){
                         </div>
                     </div>
                 </div>
-
+<!-- 
                 <div class="layout_section_outer ceo-msg-detail">
                     <div class="inner_container">
                         <div class="ceo_msg-box">
@@ -121,78 +121,7 @@ $(function(){
                             </p>
                         </div>
                     </div>
-                </div>
-<!-- 
-                <div class="layout_section_outer ceo-profile">
-                    <div class="inner_container">
-                        <div class="layout_head">
-                            <p class="top_txt1">
-                                CEO Profile
-                            </p>
-                        </div>
-<style>
-.layout_section_outer.ceo-profile .common-layout_2:not(.swiper-wrapper).is-vertical .items:nth-child(n + 3) {margin-top:48px;}
-.ceo_profile-list {}
-.ceo_profile-list dt {margin-bottom:24px; font-size:24px; line-height:36px; letter-spacing:-0.2px;}
-.ceo_profile-list dd {position:relative;}
-.ceo_profile-list dd + dd {margin-top:8px;}
-.ceo_profile-list dd .front {position:absolute; left:0; top:0; font-size:18px; line-height:28px; letter-spacing:-0.2px;}
-.ceo_profile-list dd .desc {padding-left:80px; font-size:18px; line-height:28px; color:#666; letter-spacing:-0.2px;}
-.ceo_profile-list.type01 dd .desc {padding-left:35px;}
-
-@media all and (max-width: 768px) {
-    .layout_section_outer.ceo-profile .common-layout_2:not(.swiper-wrapper).is-vertical .items:nth-child(n + 3) {margin-top:40px;}
-    .ceo_profile-list dt {margin-bottom:16px; font-size:20px; line-height:30px;}
-    .ceo_profile-list dd + dd {margin-top:16px;}
-    .ceo_profile-list dd .front {position:relative; display:block; font-size:16px; line-height:26px;}
-    .ceo_profile-list.type01 dd .front {position:absolute; left:0;}
-    .ceo_profile-list dd .desc {padding-left:0; font-size:16px; line-height:26px;margin-top: 4px;}
-    .ceo_profile-list.type01 dd .desc {padding-left:32px;}
-}
-</style>
-                        <div class="layout_body">
-                            <ul class="common-layout_2 is-vertical">
-                                <li class="items">
-                                    <dl class="ceo_profile-list">
-                                        <dt>주요 경력</dt>
-                                        <dd>
-                                            <span class="front">2020년</span>
-                                            <p class="desc">예시) 대표이사/그룹CDO 겸직</p>
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li class="items">
-                                    <dl class="ceo_profile-list type01">
-                                        <dt>외부 활동</dt>
-                                        <dd>
-                                            <span class="front">(現)</span>
-                                            <p class="desc">예시) 대통령직속 정책기획위 국정자문단 디지털뉴딜 부분과장</p>
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li class="items">
-                                    <dl class="ceo_profile-list">
-                                        <dt>학력</dt>
-                                        <dd>
-                                            <span class="front">2008년</span>
-                                            <p class="desc">예시) Drexel University, MBA</p>
-                                        </dd>
-                                    </dl>
-                                </li>
-                                <li class="items">
-                                    <dl class="ceo_profile-list">
-                                        <dt>수상경력</dt>
-                                        <dd>
-                                            <span class="front">2021년</span>
-                                            <p class="desc">예시) ‘제22회 소프트웨어 산업인의 날 유공자 포상’ <br class="hide_1024">과학기술정보통신부 장관 표창 </p>
-                                        </dd>
-                                    </dl>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
- -->
+                </div> -->
             </div><!-- // #contents -->
         </section><!-- // #container -->
 </div>

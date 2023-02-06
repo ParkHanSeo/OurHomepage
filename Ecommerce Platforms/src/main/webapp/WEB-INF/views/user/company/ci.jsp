@@ -83,7 +83,7 @@ $(function(){
                                 	내담씨앤씨 의미
                                 </p>
                                 <p class="img_txt3">
-                                한 걸음 한 걸음 <strong class="img_txt_naedam">'내딛는'</strong> 내담C&C가 되겠습니다. <br>
+                                한 걸음 한 걸음 <strong class="img_txt_naedam">'내딛는'</strong> 내담씨앤씨가 되겠습니다. <br>
                                 내담의 주 컬러인 파란색과 깔끔한 로고체를 사용하여 <strong>기술</strong>의 <strong>신뢰, 정직, 정확</strong> 그리고 <strong>열린 기업</strong>의 이미지를 뜻합니다.
                                 
                             	</p>

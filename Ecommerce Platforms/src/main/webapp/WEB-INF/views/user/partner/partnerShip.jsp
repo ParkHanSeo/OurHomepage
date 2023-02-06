@@ -34,10 +34,10 @@
                                         	<img src="${pageContext.request.contextPath}/resources/user/images/delete/partner1_2.jpg" class="img_partnership">
                                         </div>
                                         <div class="esg_program_desc">
-                                            <p class="esg_program_txt">내담C&C</p>
+                                            <p class="esg_program_txt">내담씨앤씨</p>
                                             <ul class="common-txt-list">
                                                 <li>유수 대기업들과 파트너쉽을 맺고 운영하고 있습니다.</li>
-                                                <li>내담C&C는 최소 운영비로 지속적인 경영 혁신을 추진 가능하도록 지원합니다.</li>
+                                                <li>내담씨앤씨는 최소 운영비로 지속적인 경영 혁신을 추진 가능하도록 지원합니다.</li>
                                             </ul>
                                         </div>
                                     </li>
@@ -49,8 +49,8 @@
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">기업의 이익 위하여</p>
                                             <ul class="common-txt-list">
-                                                <li>내담C&C는 정보시스템 운영 진단 및 추진과제의 Road map을 제공합니다.</li>
-                                                <li>내담C&C는 기업의 정보화 교육 및 컨설팅, Business Process 정립 및 보완을 지원합니다.</li>
+                                                <li>내담씨앤씨는 정보시스템 운영 진단 및 추진과제의 Road map을 제공합니다.</li>
+                                                <li>내담씨앤씨는 기업의 정보화 교육 및 컨설팅, Business Process 정립 및 보완을 지원합니다.</li>
                                             </ul>
                                         </div>
                                     </li>
@@ -62,9 +62,9 @@
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담 파트너에 대한 우리의 약속</p>
                                             <ul class="common-txt-list">
-                                                <li>내담C&C는 서비스를 통해 지속적인 경영 혁신을 추진할 수 있습니다.</li>
-                                                <li>내담C&C는 불필요한 IT Solution 투자를 최소화 합니다. </li>
-                                                <li>내담C&C는 IT Solution 운영부담을 최소화 합니다. </li>
+                                                <li>내담씨앤씨는 서비스를 통해 지속적인 경영 혁신을 추진할 수 있습니다.</li>
+                                                <li>내담씨앤씨는 불필요한 IT Solution 투자를 최소화 합니다. </li>
+                                                <li>내담씨앤씨는 IT Solution 운영부담을 최소화 합니다. </li>
                                             </ul>
                                         </div>
                                     </li>
@@ -77,9 +77,9 @@
                                             <p class="esg_program_txt">내담의 목표</p>
                                             <ul class="common-txt-list">
                                                 <li>
-                                                	고객과 내담C&C와 함께 성장함으로써<br>
+                                                	고객과 내담씨앤씨와 함께 성장함으로써<br>
                                                 	IT 경쟁력을 확보하고 IT Solution의 낭비요소를 제거하는 것이<br>
-                                                	내담C&C의 궁극적인 목표입니다.
+                                                	내담씨앤씨의 궁극적인 목표입니다.
                                                 </li>
                                                 
                                             </ul>
