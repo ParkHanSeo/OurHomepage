@@ -6,6 +6,10 @@
 @import url(./component.css);
 @import url(./aos.css);
 
+* {
+	word-break: keep-all;
+	}
+
 .css-transitions-preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -2518,6 +2522,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     /*background-image:url(../images/img/img-keyvisual-visual-01-mo@2x.png);*/
     background-position: center bottom;
   } /* 데이터 마케팅 */
+  
   .sub_title_area {
     padding-top: 24px;
     padding-bottom: 16px;
@@ -3116,6 +3121,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   display: block;
 }
 
+
 @media all and (max-width: 280px) {
   .show_280 {
     display: block;
@@ -3132,6 +3138,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .hide_320 {
     display: none;
   }
+  
 }
 
 @media all and (max-width: 375px) {
@@ -3171,10 +3178,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .common-layout_2 is-vertical location_list introduction_vertical > .items{
   
   }
-  #header .inner .gnb-wrap {
-    display: none;
-  }
-}
 
 @media all and (max-width: 1024px) {
   .show_1024 {
