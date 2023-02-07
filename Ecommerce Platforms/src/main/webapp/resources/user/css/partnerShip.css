@@ -1,19 +1,19 @@
 @charset "utf-8";
-.blur{
-    background-color: rgba(0, 0, 0, 0.2);
-	backdrop-filter: blur(5px);
+.blur {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
-.businessfooter{
-	background-image: url("../images/footer_image2.jpg");
-	background-size: cover;
+.businessfooter {
+  background-image: url("../images/footer_image2.jpg");
+  background-size: cover;
 }
-.left  {
-	text-align: left;
- 	left: 65%;
+.left {
+  text-align: left;
+  left: 65%;
 }
 .right {
-	text-align: left;
-	left: 5%;
+  text-align: left;
+  left: 5%;
 }
 .esg_msg {
   display: flex;
@@ -1507,7 +1507,6 @@
   border-radius: 4%;
 }
 
-
 .culture_card_area {
   position: relative;
 }
@@ -1778,7 +1777,7 @@
 }
 
 .welfare_benefit_area {
-	margin-top: 24px;
+  margin-top: 24px;
 }
 .welfare_benefit_area .welfare_benefit_list {
   display: flex;
@@ -1789,14 +1788,14 @@
   border-radius: 18px;
 }
 .welfare_benefit_area .welfare_benefit_list > .items_2 {
-  	min-height: 360px;
-/*   border-right: 1px solid white; */
-/*   border-radius: 175px; */
-/*   	background-color: #FEF7F3; */
-	position: relative
+  min-height: 360px;
+  /*   border-right: 1px solid white; */
+  /*   border-radius: 175px; */
+  /*   	background-color: #FEF7F3; */
+  position: relative;
 }
 .welfare_benefit_area .welfare_benefit_list > .items_2 ::after {
-/* 	position:absolute;
+  /* 	position:absolute;
     left: 0;
     top: 25%;
     bottom: 25%;
@@ -1804,32 +1803,32 @@
     width: 1px;
     height: 55%;
     background-color: black; */
-	}
+}
 .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box1 {
-	background-image:url("'../../../images/businessList_website2.jpg");
-	background-size:cover;
-	width:100%;
-	height:58%;
+  background-image: url("'../../../images/businessList_website2.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 58%;
 }
-.filter1{
-   	content: "";
-    position: relative;
-    height: 100%;
-    background-color: rgba(233,115,0,.4);
-    padding: 8%;
+.filter1 {
+  content: "";
+  position: relative;
+  height: 100%;
+  background-color: rgba(233, 115, 0, 0.4);
+  padding: 8%;
 }
-.filter2{
-   	content: "";
-    position: relative;
-    height: 100%;
-    background-color: rgba(177,80,197,.4);
-    padding: 8%;
+.filter2 {
+  content: "";
+  position: relative;
+  height: 100%;
+  background-color: rgba(177, 80, 197, 0.4);
+  padding: 8%;
 }
 .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box2 {
-	background-image:url("'../../../images/businessList_cloud.jpg");
-	background-size:cover;
-	width:100%;
-	height:58%;
+  background-image: url("'../../../images/businessList_cloud.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 58%;
 }
 .welfare_benefit_area
   .welfare_benefit_list
@@ -1842,7 +1841,7 @@
 .business_layout_sub_contents {
   font-size: 25px;
   text-align: center;
-  padding-top: 5%
+  padding-top: 5%;
 }
 .business_layout_sub_title {
   text-align: center;
@@ -1876,17 +1875,20 @@
   color: #666;
 }
 
-  .business_txtbox
-  .benefit_desc {
+.business_txtbox .benefit_desc {
   margin-top: 16px;
   font-size: 18px;
   line-height: 28px;
   color: #666;
 }
-.welfare_benefit_area .welfare_benefit_list > li  .welfare_benefit_box1  .benefit_list {
+.welfare_benefit_area
+  .welfare_benefit_list
+  > li
+  .welfare_benefit_box1
+  .benefit_list {
   margin-top: 32px;
 }
-.business_txtbox  .benefit_list > li {
+.business_txtbox .benefit_list > li {
   padding-left: 12px;
   margin-top: 8px;
   position: relative;
@@ -1894,7 +1896,12 @@
   line-height: 26px;
   color: #666;
 }
-.welfare_benefit_area  .welfare_benefit_list  > li  .welfare_benefit_box1  .benefit_list > li:first-child {
+.welfare_benefit_area
+  .welfare_benefit_list
+  > li
+  .welfare_benefit_box1
+  .benefit_list
+  > li:first-child {
   margin-top: 0;
 }
 .business_txtbox .benefit_list > li:before {
@@ -1908,14 +1915,14 @@
   background-color: #666;
   border-radius: 50%;
 }
-.business_txtbox  .benefit_list  > li  ul  li {
+.business_txtbox .benefit_list > li ul li {
   padding-left: 15px;
   position: relative;
   font-size: 18px;
   line-height: 28px;
   color: #666;
 }
-.business_txtbox .benefit_list > li ul  li:before {
+.business_txtbox .benefit_list > li ul li:before {
   content: "-";
   font-size: 18px;
   line-height: 28px;
@@ -1924,10 +1931,19 @@
   top: 0px;
   color: #666;
 }
-.welfare_benefit_area .welfare_benefit_list > li  .welfare_benefit_box2 .benefit_list {
+.welfare_benefit_area
+  .welfare_benefit_list
+  > li
+  .welfare_benefit_box2
+  .benefit_list {
   margin-top: 32px;
 }
-.welfare_benefit_area  .welfare_benefit_list  > li  .welfare_benefit_box2 .benefit_list > li:first-child {
+.welfare_benefit_area
+  .welfare_benefit_list
+  > li
+  .welfare_benefit_box2
+  .benefit_list
+  > li:first-child {
   margin-top: 0;
 }
 .business_txtbox .benefit_list > li:before {
@@ -1941,14 +1957,14 @@
   background-color: #666;
   border-radius: 50%;
 }
-.business_txtbox .benefit_list  > li  ul  li {
+.business_txtbox .benefit_list > li ul li {
   padding-left: 15px;
   position: relative;
   font-size: 18px;
   line-height: 28px;
   color: #666;
 }
-.business_txtbox .benefit_list > li ul  li:before {
+.business_txtbox .benefit_list > li ul li:before {
   content: "-";
   font-size: 18px;
   line-height: 28px;
@@ -2151,367 +2167,40 @@
 }
 
 @media all and (max-width: 1024px) {
-  .culture_card_area .culture_card_list > li a {
+  .img_partnership {
+    border-radius: 2%;
     width: 100%;
+    height: 60%;
   }
-
-  .culture_story_area
-    .culture_story_list
-    > li
-    .culture_story_desc
-    .culture_desc_txt1 {
-  }
-  .culture_story_area
-    .culture_story_list
-    > li
-    .culture_story_desc
-    .culture_desc_txt2 {
-  }
-
-  .culture_btm_banner {
-    background-image: url(../../images/culture/img-career-bg-01-mo@2x.png);
-    background-position: center bottom;
-    background-size: 420px;
+  .esg_program_desc {
+    padding: 20px 0 20px 0;
   }
 }
 
 @media all and (max-width: 768px) {
-  .culture_card_area .culture_card_list > li a {
+  .img_partnership {
+    border-radius: 2%;
     width: 100%;
-    height: 400px;
-    padding: 24px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-  }
-  .culture_card_area .culture_card_list > li a .sub_txt {
-    font-size: 16px;
-  }
-  .culture_card_area .culture_card_list > li a .culture_card_title {
-    font-size: 24px;
-    line-height: 36px;
-  }
-  .culture_card_area .culture_card_list > li .culture_card_txt > li {
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .culture_card_area
-    .culture_card_list
-    > li
-    .culture_card_txt
-    > li
-    .card_hash_tag {
-    font-size: 14px;
-    line-height: 24px;
-  }
-  .culture_card_area .culture_card_list > li a span.icon.card_ui-more {
-    left: 24px;
-    bottom: 24px;
-  }
-  .culture_card_area .culture_card_list > li .culture_card_detail {
-    padding: 24px;
-  }
-  .culture_card_area
-    .culture_card_list
-    > li
-    .culture_card_detail
-    .icon.card_ui-close {
-    left: 24px;
-    bottom: 24px;
-  }
-  .culture_card_area .culture_card_list > li a i.icon {
-    width: 232px;
-    height: 232px;
-  }
-
-  .culture_msg_box {
-    padding: 56px 0;
-  }
-  .culture_msg_box .culture_msg1 {
-    margin-top: 16px;
-    font-size: 18px;
-    line-height: 28px;
-  }
-  .culture_msg_box .culture_msg2 {
-    margin-top: 12px;
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  .culture_story_area .culture_story_list > li {
-    margin-top: 64px;
-    display: block;
-  }
-  .culture_story_area .culture_story_list > li .culture_story_movie {
-    width: 100%;
-    margin: 0;
-  }
-  .culture_story_area .culture_story_list > li.is-right .culture_story_movie {
-    margin: 0;
-  }
-  .culture_story_area .culture_story_list > li .culture_story_movie a:before {
-    width: 48px;
-    height: 48px;
-    margin: -24px 0 0 -24px;
-  }
-  .culture_story_area .culture_story_list > li .culture_story_desc {
-    width: 100%;
-    margin: 20px 0 0 0;
-  }
-  .culture_story_area
-    .culture_story_list
-    > li
-    .culture_story_desc
-    .culture_desc_txt1 {
-    font-size: 18px;
-    line-height: 28px;
-  }
-  .culture_story_area
-    .culture_story_list
-    > li
-    .culture_story_desc
-    .culture_desc_txt1
-    + .culture_desc_txt1 {
-    margin-top: 4px;
-  }
-  .culture_story_area
-    .culture_story_list
-    > li
-    .culture_story_desc
-    .culture_desc_txt2 {
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .culture_story_area .culture_story_list > li.is-right .culture_story_desc {
-    margin-left: 0;
-  }
-
-  .culture_btm_banner {
-    padding: 72px 0;
-    background-size: 100%;
-  }
-  .culture_btm_banner .culture_btm_txt1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-  .culture_btm_banner .culture_btm_txt2 {
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .culture_btm_banner .common-btn {
-    margin-top: 48px;
-  }
-
-  .welfare_benefit_area .welfare_benefit_list > li {
-    min-height: auto;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list.common-layout_2:not(.swiper-wrapper).is-vertical
-    .items {
-    margin-top: 24px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list.common-layout_2:not(.swiper-wrapper).is-vertical
-    .items:first-child {
-    margin-top: 0;
-  }
-  .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box {
-    padding: 24px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list
-    > li
-    .welfare_benefit_box
-    .benefit_title {
-    font-size: 24px;
-    line-height: 36px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list
-    > li
-    .welfare_benefit_box
-    .benefit_title
-    .number {
-    font-size: 18px;
-    line-height: 28px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list
-    > li
-    .welfare_benefit_box
-    .benefit_desc {
-    margin-top: 12px;
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list
-    > li
-    .welfare_benefit_box
-    .benefit_list {
-    margin-top: 20px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list
-    > li
-    .welfare_benefit_box
-    .benefit_list
-    > li {
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list
-    > li
-    .welfare_benefit_box
-    .benefit_list
-    > li
-    ul
-    li {
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .welfare_benefit_area
-    .welfare_benefit_list
-    > li
-    .welfare_benefit_box
-    .benefit_list
-    > li
-    ul
-    li:before {
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  .location_wrap {
-    display: block;
-  }
-  .location_wrap .location_img {
-    width: calc(100% + 48px);
-  }
-  .location_wrap .location_img img {
-    display: none;
-  }
-  .location_wrap .location_img img + img {
-    display: block;
-  }
-  .location_wrap .location_img_slider {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 24px;
-    overflow: visible;
-  }
-  .location_wrap .location_img_slider .location-bullet {
-    display: block;
-  }
-  .location_wrap .location_img_slider .location-slider-btn {
-    display: none;
-  }
-  .location_wrap .location_img_slider li img {
-    display: none;
-  }
-  .location_wrap .location_img_slider li img + img {
-    width: 100%;
-    display: block;
-  }
-
-  .company_culture_area .company_culture_block {
-    display: block;
-    margin-top: 40px;
-  }
-  .company_culture_area .company_culture_block .company_culture_list {
-    width: 100%;
-  }
-  .company_culture_area .company_culture_block .company_culture_list > li {
-    margin-top: 40px;
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list
-    > li
-    .culture_category {
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list
-    > li
-    .culture_hash_tag {
-    margin-top: 4px;
-    font-size: 20px;
-    line-height: 30px;
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list
-    > li
-    .culture_desc {
-    margin-top: 16px;
-    font-size: 16px;
-    line-height: 26px;
-  }
-  .company_culture_area .company_culture_block .company_culture_aside {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 40px;
-  }
-
-  .company_culture_area .company_culture_block .company_culture_list.is-flex {
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list.is-flex
-    > li {
-    display: block;
-    margin-top: 48px;
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list.is-flex
-    > li
-    .company_culture_desc_box {
-    margin-top: 16px;
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list.is-flex
-    > li
-    .company_culture_desc_box
-    .culture_hash_tag {
-    font-size: 20px;
-    line-height: 30px;
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list.is-flex
-    > li
-    .company_culture_desc_box,
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list.is-flex
-    > li
-    .company_culture_img_box {
-    width: 100%;
-    margin-left: 0;
-  }
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list.is-flex
-    > li.is-right
-    .company_culture_desc_box,
-  .company_culture_area
-    .company_culture_block
-    .company_culture_list.is-flex
-    > li.is-right
-    .company_culture_img_box {
-    margin-left: 0;
+    height: 50%;
   }
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 430px) {
+  .img_partnership {
+    border-radius: 2%;
+    width: 100%;
+    height: 30%;
+  }
+  .esg_program .esg_program_list > li .esg_program_desc .esg_program_txt {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .esg_program .esg_program_list > li .esg_program_desc .common-txt-list li {
+    margin-top: 4px;
+    font-size: 13px;
+  }
 }
 
 @media all and (max-width: 1280px) {
@@ -2562,6 +2251,11 @@
 
   .section.activity_process ol.recap {
     padding-left: 3.31%;
+  }
+
+  .inner_container {
+    width: 100%;
+    padding: 0 24px;
   }
 }
 
@@ -2955,7 +2649,8 @@
   }
   .esg_program .esg_program_list > li .esg_program_desc .esg_program_txt {
     margin-top: 16px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    font-size: 25px;
     line-height: 26px;
   }
   .esg_program .esg_program_list > li .esg_program_desc .esg_program_txt1 {
