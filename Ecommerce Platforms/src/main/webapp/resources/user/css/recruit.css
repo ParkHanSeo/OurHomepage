@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+s
 /* .common-swiper_area + .layout_section_outer.recruit {padding:60px 0 120px;} */
 .layout_section_outer.recruit {
   padding: 120px 0 120px;
@@ -221,6 +221,10 @@
   }
 }
 
+.common-text_reg-date{
+	width:140px;
+}
+
 .process-flow.type01 .flow_list > li .flow_desc {
   display: none;
 }
@@ -394,5 +398,49 @@
   }
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 768px) {
+	
+		
+	.main_notice {
+		/* display: none; */
+		visibility: hidden;
+		height: 0;
+	}
+	
+	.top_visual_area.recruit {
+		background-image: url(../images/recruit_top.jpg);
+	}
+	.application_btn {
+		width: 100%;
+	}
+	.searchForm.recruit {
+		width: 100%;
+		padding-top: 30px;
+	}
+	.recruit-search_box_wrap {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+	
+	.top_visual_area.recruit .top_txt_outer .top_txt_area {
+    	min-height: 442px;
+	}
+	
+	.common-text_reg-date {
+		width: 100%;
+	}
+	
+	.common-pagination {
+		margin: 40px 0;
+	}
+	
+	.top_visual_area .top_txt_outer .top_txt_area .top_txt2 {
+    	margin-top: 4px;
+    	font-size: 20px;
+    	line-height: 48px;
+	}
+
+
+
 }
