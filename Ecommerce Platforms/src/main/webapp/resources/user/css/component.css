@@ -2913,6 +2913,7 @@
   .icon_item_box .common-layout_3 > li .icon_item_inner .icon_item_title {
     font-size: 20px;
     line-height: 30px;
+    margin-top: 95px;
   }
   .icon_item_box .common-layout_3 > li .icon_item_inner .icon_item_desc {
     margin-top: 12px;
@@ -3056,6 +3057,12 @@
   }
   #pop_customer .dim {
     background-color: #fff;
+  }
+}
+@media all and (max-width: 430px) {
+  .layout_section_outer.sub-main .layout_head .service_txt1 {
+    font-size: 18px;
+    line-height: 35px;
   }
 }
 

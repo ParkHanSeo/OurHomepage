@@ -5,6 +5,7 @@
 <head>
 <title>내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
 <body>
@@ -19,7 +20,7 @@
 				</div>
 				<!-- // .sub_title_area -->
 
-				<div class="top_visual_area type02">
+				<div class="top_visual_area service_top_area type02">
 					<div class="inner_container aos-init aos-animate"
 						data-aos="fade-up" data-aos-offset="0" data-aos-duration="300"
 						data-aos-delay="150" data-aos-easing="linear">

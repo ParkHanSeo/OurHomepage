@@ -5,6 +5,7 @@
 <head>
 <title>내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/partnerShip.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
@@ -20,7 +21,7 @@
                 <div class="layout_section_outer esg_program-area type04 partner_layout">
                     <div class="inner_container">
                         <div class="layout_head">
-                            <p class="top_txt1">
+                            <p class="top_txt1 partnerShip_top_txt1">
                                 내담씨앤씨의 파트너십의 관계에 있어서 <br>
                                 성장 및 역량 강화를 지원합니다.
                             </p>
