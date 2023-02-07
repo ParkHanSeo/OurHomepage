@@ -7,10 +7,10 @@
 <title>내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta property="og:url" content="https://www.jhta.co.kr">
-
+<meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
 <!-- include  -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/history.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/history.css">
 <!-- include end  -->
 <!-- 사용자 정의 끝 -->
 </head>
@@ -18,7 +18,7 @@
 .content {
 	padding-top: 40px;
 	padding-bottom: 40px;
-	width: 1170px;w
+	width: 1170px;
 	margin-right: auto;
 	margin-left: auto;
 	padding-left: 15px;

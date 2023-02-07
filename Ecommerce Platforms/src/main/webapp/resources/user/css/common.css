@@ -3257,6 +3257,9 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .hide_768 {
     display: none;
   }
+  .common-layout_2 is-vertical location_list introduction_vertical > .items{
+  
+  }
 }
 
 @media all and (max-width: 1024px) {

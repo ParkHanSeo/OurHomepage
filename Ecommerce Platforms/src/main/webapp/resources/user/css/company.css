@@ -1,4 +1,12 @@
 @charset "utf-8";
+.ceo_msg-box_media{
+	display: none;
+}
+.ceo_msg-box_media.ceo_msg-txt2{
+	display: none;
+	
+}
+
 .ceofooter{
 	padding-bottom: 100px;
 }
@@ -681,13 +689,22 @@
     display: flex;
   }
   .top_visual_area.ceo_msg .ceo-img {
-    max-width: 390px;
     right: 24px;
   }
   .top_visual_area.ceo_msg .ceo_msg-box {
   }
 }
 
+@media all and (min-width: 1024px) {
+	  .ceo_msg-box_media{
+	display: none;
+}
+  .ceo_msg-box{
+	display: block;
+}
+
+
+  }
 @media all and (max-width: 1024px) {
   .com_identity .layout_body .identity_box {
     padding: 31px 0 31px;
@@ -702,17 +719,16 @@
   .top_visual_area.ceo_msg .ceo-img {
     right: 24px;
     bottom: -75px;
+    max-width: 600px;
   }
   .ceo_msg-box {
     max-width: 100%;
-    padding: 90px 0 110px;
   }
   .ceo_msg-box .ceo_msg-txt2.line-01,
   .ceo_msg-box .ceo_msg-txt2.line-02 {
     width: 100%;
   }
   .ceo_msg-box .ceo_msg-txt2 {
-    width: calc(100% - 430px);
   }
 
   .common-layout_2:not(.swiper-wrapper).location_list.is-vertical.location_list
@@ -941,6 +957,18 @@
   .ceo_profile-list.type01 dd .desc {
     padding-left: 32px;
   }
+      	  .ceo_msg-box_media{
+	display: block;
+	padding:10%;
+	
+}
+ .ceo_msg-box .ceo_msg-txt2{
+  display: none;
+  
+}
+ .ceo_msg-box .ceo_msg-txt3{
+  display: none;
+}
 }
 
 @media all and (max-width: 764px) {
@@ -1006,6 +1034,19 @@
   }
   .com_intro .com_intro_box .btn_area {
     margin-top: 32px;
+  }
+  .welfare_benefit_area .welfare_benefit_list > .businessList_items{
+    min-height: 500px;
+    width: 100%;
+    border-radius: 18px;
+}
+.welfare_benefit_box1 .benefit_title {
+	text-align: left;
+	padding-left: 50px;
+	}
+  .left {
+    text-align: left; 
+    left: 5%;
   }
 }
 
