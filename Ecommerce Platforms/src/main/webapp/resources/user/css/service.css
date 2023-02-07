@@ -1536,6 +1536,9 @@
   .layout_section_outer .layout_body .main_biz_slider {
     margin-top: 0px;
   }
+  .layout_section_outer {
+    padding: 50px 0;
+  }
   .layout_section_outer
     .layout_body
     .main_biz_slider
@@ -2029,6 +2032,10 @@
   .biz_download_area .btn_area .common-btn + .common-btn {
     margin-top: 10px;
   }
+  #wrap.visual-center .top_visual_area.service_top_area {
+    min-height: 300px;
+    padding: 48px 0;
+  }
 }
 
 @media all and (max-width: 480px) {
@@ -2069,26 +2076,35 @@
 }
 
 @media all and (max-width: 430px) {
-  .layout_section_outer
-    .layout_body
-    .main_biz_slider
-    .swiper-wrapper
-    .swiper-slide {
+  .biz_difference .difference_list > li .difference_box .difference_title {
+    margin-top: 0;
+    font-size: 27px;
+    line-height: 40px;
   }
-  .layout_section_outer
-    .layout_body
-    .main_biz_slider
-    .swiper-wrapper
-    .swiper-slide:first-child {
+  .biz_difference .difference_list > li .difference_box .difference_desc {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 22px;
   }
-  .layout_section_outer
-    .layout_body
-    .main_biz_slider
-    .swiper-wrapper
-    .swiper-slide
-    img {
-    width: 100%;
-    max-width: 100%;
+  .difference_list > li .difference_img img {
+    width: 1240px;
+    height: 290px;
+    border-radius: 2%;
+  }
+  .service_top_area .top_txt_outer .top_txt_area .top_txt2 {
+    margin-top: 4px;
+    font-size: 23px;
+    line-height: 35px;
+  }
+  .service_top_area .top_txt_outer .top_txt_area .top_txt3 {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .si_li img {
+    width: 200px;
+    height: 150px;
+    border-radius: 2%;
   }
 }
 

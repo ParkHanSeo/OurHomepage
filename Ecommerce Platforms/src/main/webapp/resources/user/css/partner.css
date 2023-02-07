@@ -14,7 +14,6 @@
   border-radius: 3%;
   background-position: center;
   background-size: 150px;
-  
 }
 .partner_li {
   border: solid #c5c3c3;
@@ -91,4 +90,57 @@ li.partner_li.everlandresort {
 
 .layout_section_outer.sub-main .layout_body.partner_body {
   margin-top: 65px;
+}
+
+@media all and (max-width: 1024px) {
+  .partner-flow .flow_list > li {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 23%;
+    float: left;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    text-align: center;
+    height: 110px;
+    border-radius: 3%;
+    background-position: center;
+    background-size: 150px;
+  }
+}
+@media all and (max-width: 768px) {
+  .partner-flow .flow_list > li {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 31%;
+    float: left;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    text-align: center;
+    height: 110px;
+    border-radius: 3%;
+    background-position: center;
+    background-size: 150px;
+  }
+}
+
+@media all and (max-width: 430px) {
+  .partner-flow .flow_list > li {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 46%;
+    float: left;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    text-align: center;
+    height: 105px;
+    border-radius: 3%;
+    background-position: center;
+    background-size: 107px;
+  }
 }

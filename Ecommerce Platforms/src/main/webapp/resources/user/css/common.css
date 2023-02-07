@@ -93,7 +93,6 @@ body.overflow::-webkit-scrollbar {
 }
 .outer_container.is-gray {
   background-color: #f8f9fa;
-  
 }
 .inner_container {
   width: 1280px;
@@ -213,7 +212,7 @@ body.overflow::-webkit-scrollbar {
 }
 #header .inner .sub .sub-wrap {
   position: relative;
-  max-width: 1250px;
+  max-width: 1330px;
   margin: 0 auto;
 }
 #header .inner .sub .sub-wrap .common-btn {
@@ -921,7 +920,7 @@ img {
 }
 .layout_section_outer.is-gray {
   background-color: #f7f7f7;
-   padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 .layout_section_outer.type05.is-gray {
   background-color: #f0f2f5;
@@ -936,8 +935,8 @@ img {
   padding: 160px 0 0;
 }
 .layout_section_outer.type01.si_layout {
-    height: 125%;
-    padding-bottom: 3%;
+  height: 125%;
+  padding-bottom: 3%;
 }
 .layout_section_outer.intro.type01 {
   padding: 120px 0 0;
@@ -1028,8 +1027,8 @@ img {
   letter-spacing: -0.2px;
 }
 .layout_section_outer .layout_head .si_txt1 {
-  font-size: 25px;
-  font-weight:bold;
+  font-size: 40px;
+  font-weight: bold;
   line-height: 56px;
   position: relative;
   letter-spacing: -0.2px;
@@ -1963,13 +1962,13 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #header .inner .sub .sub-wrap {
     max-width: none;
-    padding-left: 270px;
+    padding-left: 238px;
   }
 }
 
 @media all and (max-width: 1590px) {
   #header .inner .sub .sub-wrap {
-    padding-left: 0;
+    padding-left: 70px;
   }
   #header .inner .sub .sub-wrap .sub-2depth {
     margin: 0 auto;
@@ -1977,18 +1976,21 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 @media all and (max-width: 1440px) {
+  #header .inner .sub .sub-wrap {
+    padding-left: 70px;
+  }
   #header .inner {
     width: 100%;
     padding: 0 24px;
+  }
+  #footer .inner {
+    padding: 2% 35% 2% 0;
   }
 }
 
 @media all and (max-width: 1280px) {
   #header .inner {
     justify-content: flex-end;
-  }
-  #header .inner .gnb-wrap {
-    display: none;
   }
   #header .inner .header_util .btn_util_wrap a:not(.btn_search) {
     display: none;
@@ -2171,6 +2173,9 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 @media all and (max-width: 1024px) {
+  #header .inner .sub .sub-wrap {
+    padding-left: 236px;
+  }
   #sitemap .sitemap-body > ul > li > a {
     padding-right: 40px;
     padding-left: 40px;
@@ -2239,11 +2244,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #footer .footer-policy {
     right: 40px;
-  }
-
-  /* .sub_title_area {height:96px;}
-    .sub_title {padding-top:32px; font-size:32px; line-height:48px;} */
-  .card-ui .image_box {
   }
   .form-layout_2.full1,
   .form-layout_2.full2 {
@@ -2518,99 +2518,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     /*background-image:url(../images/img/img-keyvisual-visual-01-mo@2x.png);*/
     background-position: center bottom;
   } /* 데이터 마케팅 */
-  .top_visual_area.type01 {
-    /*background-image:url(../images/img/img-keyvisual-visual-02-mo@2x.png)*/
-  } /* 스마트 비지니스 */
-  .top_visual_area.type01:before {
-    background-image: url(../images/service/bg-05-mo.png);
-  }
-  .top_visual_area.type02 {
-    /*background-image:url(../images/img/img-keyvisual-visual-04-mo@2x.png)*/
-  } /* 이커머스 & 리테일 */
-  .top_visual_area.type02:before {
-    background-image: url(../images/service/bg-04-mo.png);
-  }
-  .top_visual_area.type03 {
-    /*background-image:url(../images/img/img-keyvisual-visual-05-mo@2x.png)*/
-  } /* 미디어 컨버전스 */
-  .top_visual_area.type03:before {
-    background-image: url(../images/service/bg-02-mo.png);
-  }
-  .top_visual_area.type04 {
-    /*background-image:url(../images/img/img-keyvisual-visual-03-mo@2x.png)*/
-  } /* 클라우드&인프라 */
-  .top_visual_area.type04:before {
-    background-image: url(../images/service/bg-06-mo.png);
-  }
-  .top_visual_area.type05 {
-    /*background-image:url(../images/img/img-keyvisual-visual-07-mo@2x.png)*/
-  } /* 정보보호 */
-  .top_visual_area.type05:before {
-    background-image: url(../images/service/bg-07-mo.png);
-  }
-  .top_visual_area.type06 {
-    /*background-image:url(../images/img/img-keyvisual-visual-06-mo@2x.png)*/
-  } /* 스마트 제조 물류 */
-  .top_visual_area.type06:before {
-    background-image: url(../images/service/bg-01-mo.png);
-  }
-  .top_visual_area.type07:before {
-    background-image: url(../images/service/bg-03-mo.png);
-  }
-  .top_visual_area.recruit {
-    background-image: url(../images/recruit/img-keyvisual-career-mo@2x.png);
-  } /* 채용 */
-  .top_visual_area.tech-01 {
-    /*background-image:url(../images/tech/tech-img-keyvisual-visual-01-mo@2x.png);*/
-  } /* 기술연구 */
-  .top_visual_area.tech-02 {
-    /*background-image:url(../images/tech/img-keyvisual-visual-02-mo@2x.png);*/
-  } /* AI 비전연구 */
-  .top_visual_area.tech-03 {
-    /*background-image:url(../images/tech/img-keyvisual-visual-03-mo@2x.png);*/
-  } /* AI 자연어연구 */
-  .top_visual_area.tech-04 {
-    /*background-image:url(../images/tech/img-keyvisual-visual-04-mo@2x.png);*/
-  } /* AI 오디오연구 */
-  .top_visual_area.tech-05 {
-    /*background-image:url(../images/tech/img-keyvisual-visual-05-mo@2x.png);*/
-  } /* 데이터 사이언스 */
-  .top_visual_area.tech-06 {
-    /*background-image:url(../images/tech/img-keyvisual-visual-06-mo@2x.png);*/
-  } /* 블록체인 */
-  .top_visual_area.tech-01:before {
-    background-image: url(../images/tech/tech-bg-01-mo.png);
-  }
-  .top_visual_area.tech-02:before {
-    background-image: url(../images/tech/tech-bg-02-mo.png);
-  }
-  .top_visual_area.tech-03:before {
-    background-image: url(../images/tech/tech-bg-03-mo.png);
-  }
-  .top_visual_area.tech-04:before {
-    background-image: url(../images/tech/tech-bg-04-mo.png);
-  }
-  .top_visual_area.tech-05:before {
-    background-image: url(../images/tech/tech-bg-05-mo.png);
-  }
-  .top_visual_area.tech-06:before {
-    background-image: url(../images/tech/tech-bg-06-mo.png);
-  }
-  .top_visual_area.esg-edu {
-    background-image: url(../images/esg/img-keyvisual-esg-mo@2x.png);
-  } /* esg 공평한 교육 */
-  .top_visual_area.esg-edu.bg-edu01 {
-    background-image: url(../images/esg/img-keyvisual-esg-mo-1@2x.png);
-  } /* esg 건강한 복지 */
-  .top_visual_area.esg-edu.bg-edu02 {
-    background-image: url(../images/esg/img-keyvisual-esg-05-mo@2x.png);
-  } /* esg 안전경영 */
-  .top_visual_area.esg-edu.bg-edu03 {
-    background-image: url(../images/esg/img-keyvisual-esg-mo-2@2x.png);
-  } /* esg 경제적기회 */
-  .top_visual_area.customer {
-    background-image: url(../images/img/img-keyvisual-visual-contact-mo@2x.png);
-  }
   .sub_title_area {
     padding-top: 24px;
     padding-bottom: 16px;
@@ -3140,6 +3047,10 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 @media all and (max-width: 430px) {
+  .layout_section_outer .layout_head .top_txt1 {
+    font-size: 16px;
+    line-height: 28px;
+  }
 }
 
 @media all and (max-width: 375px) {
@@ -3255,6 +3166,9 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     display: block;
   }
   .hide_768 {
+    display: none;
+  }
+  #header .inner .gnb-wrap {
     display: none;
   }
 }

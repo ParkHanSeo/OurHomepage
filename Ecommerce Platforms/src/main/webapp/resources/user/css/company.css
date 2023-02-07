@@ -1,102 +1,101 @@
 @charset "utf-8";
-.ceofooter{
-	padding-bottom: 100px;
+.ceofooter {
+  padding-bottom: 100px;
 }
-.core_value_img{
-	background-image: url("../images/core_value.png");
-	width: 80%;
-	height: 80%;
-	margin:0 auto;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+.core_value_img {
+  background-image: url("../images/core_value.png");
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.business_txtbox{
-    width: 35%;
-    height: 100%;
-	position: relative;
+.business_txtbox {
+  width: 35%;
+  height: 100%;
+  position: relative;
 }
-.welfare_benefit_box1
-  .benefit_title {
-    font-size: 32px;
-    line-height: 48px;
-    font-weight: bold;
-    color: white;
-    text-align: right;
-    right: 0px;
-    position: absolute;
-    background-color: rgba(0,0,0,0.5);
-    width: 100%;
-    padding-right: 50px;
+.welfare_benefit_box1 .benefit_title {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: bold;
+  color: white;
+  text-align: right;
+  right: 0px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding-right: 50px;
 }
-  .welfare_benefit_box2
-  .benefit_title {
-    font-size: 32px;
-    line-height: 48px;
-    font-weight: bold;
-    color: white;
-    text-align: left;
-    right: 0px;
-    position: absolute;
-    background-color: rgba(0,0,0,0.5);
-    width: 100%;
-    padding-left: 50px;
+.welfare_benefit_box2 .benefit_title {
+  font-size: 32px;
+  line-height: 48px;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  right: 0px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding-left: 50px;
 }
-.common-layout_2.is-vertical .items:nth-child(1), .common-layout_2.is-vertical .businessList_items:nth-child(2) {
-    margin-top: 0;
+.common-layout_2.is-vertical .items:nth-child(1),
+.common-layout_2.is-vertical .businessList_items:nth-child(2) {
+  margin-top: 0;
 }
 .common-layout_2.is-vertical .businessList_items:nth-child(even) {
-    margin-left: 0px;
-    margin-bottom:40px;
+  margin-left: 0px;
+  margin-bottom: 40px;
 }
 .common-layout_2.is-vertical .businessList_items {
-    margin-top: 50px;
+  margin-top: 50px;
 }
-.welfare_benefit_area .welfare_benefit_list > .businessList_items{
-    min-height: 500px;
-   /*  border: 1px solid #e6e6e6; */
-    border-radius: 18px;
+.welfare_benefit_area .welfare_benefit_list > .businessList_items {
+  min-height: 500px;
+  /*  border: 1px solid #e6e6e6; */
+  border-radius: 18px;
 }
 .common-layout_2 > .businessList_items {
-    width: calc(100% / 2);
+  width: calc(100% / 2);
 }
-.businessList_top_txt1{
-    font-size: 40px;
-    font-weight:bold;
-    line-height: 56px;
-    position: relative;
-    letter-spacing: -0.2px;
-    text-align: center;
+.businessList_top_txt1 {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 56px;
+  position: relative;
+  letter-spacing: -0.2px;
+  text-align: center;
 }
-.businessList_top_txt2{
-    margin-top: 24px;
-    margin-bottom: 30px;
-    position: relative;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    color: #666;
+.businessList_top_txt2 {
+  margin-top: 24px;
+  margin-bottom: 30px;
+  position: relative;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
 }
-.businessList_top_txt3{
-    margin-top: 80px;
-    margin-bottom: 30px;
-    position: relative;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    color: #666;
+.businessList_top_txt3 {
+  margin-top: 80px;
+  margin-bottom: 30px;
+  position: relative;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  color: #666;
 }
-.vision_Icon{
-	background-image: url("../images/icon/vision2.png");
-    /* background-color: white; */
-    width: 170px;
-    height: 170px;
-    /* border: 2px solid white; */
-    position: relative;
-    left: 65px;
-    top: -35px;
-    border-radius: 100px;
-    background-size: cover;
+.vision_Icon {
+  background-image: url("../images/icon/vision2.png");
+  /* background-color: white; */
+  width: 170px;
+  height: 170px;
+  /* border: 2px solid white; */
+  position: relative;
+  left: 65px;
+  top: -35px;
+  border-radius: 100px;
+  background-size: cover;
 }
 .visual_txt_area {
   color: #fff;
@@ -283,7 +282,7 @@
 }
 .business_layout_sub {
   color: white;
-  padding: 60px; 
+  padding: 60px;
   padding-top: 90px;
 }
 .common-layout_2 > .items_2 {
@@ -477,10 +476,10 @@
 }
 .naedam_main_img {
   text-align: center;
-/*   border: solid #c5c3c3; */
+  /*   border: solid #c5c3c3; */
 }
 .naedam_main_img .nd_main {
- /*  width: 60%; */
+  /*  width: 60%; */
   padding: 70px;
 }
 .naedam_main_img .nd_reverse {
@@ -626,8 +625,9 @@
   float: left;
 }
 .div_division_left {
-  margin-left: 410px;
+  float: left;
   margin-top: 35px;
+  margin-left: 20px;
   font-size: 17px;
 }
 .layout_sub_body {
@@ -647,7 +647,6 @@
   background-size: cover;
   background-position: center;
   height: 100%;
-  
 }
 .division_container {
   display: flex;
@@ -659,7 +658,12 @@
   margin: 0 auto;
   padding: 0 140px;
   transition: 0.4s ease;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.division_container_2 {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
 }
 @media all and (max-width: 1280px) {
   .common-layout_4 > .items {
@@ -719,6 +723,16 @@
     .items:nth-child(2) {
     margin-top: 0;
   }
+
+  .division_container_2 {
+    width: 100%;
+    padding: 40px 40px 0 40px;
+  }
+  .division_img img {
+    border-radius: 3%;
+    height: 230px;
+    width: 450px;
+  }
 }
 
 @media all and (max-width: 865px) {
@@ -730,6 +744,9 @@
 @media all and (max-width: 768px) {
   .history .top_visual_area {
     background-image: url(../images/company/history/keyvisual-1920-px-history-mo@2x.jpg);
+  }
+  .division_container .division_txt_area {
+    padding-top: 0;
   }
   .visual_txt_area {
     padding-top: 120px;
@@ -941,6 +958,10 @@
   .ceo_profile-list.type01 dd .desc {
     padding-left: 32px;
   }
+  .division_container_2 {
+    width: 100%;
+    padding: 40px 40px 0 24px;
+  }
 }
 
 @media all and (max-width: 764px) {
@@ -1008,7 +1029,21 @@
     margin-top: 32px;
   }
 }
-
+@media all and (max-width: 430px) {
+  .division_container {
+    padding: 0 45px;
+  }
+  .division_body_wrapper .common_txt-40 {
+    font-size: 24px;
+    line-height: 40px;
+  }
+  .div_division_left {
+    float: left;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-size: 17px;
+  }
+}
 @media all and (max-width: 376px) {
   /* .com_intro .com_intro_box {padding:36px 15px;} */
 }
