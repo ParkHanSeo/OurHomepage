@@ -6,6 +6,10 @@
 @import url(./component.css);
 @import url(./aos.css);
 
+* {
+	word-break: keep-all;
+	}
+
 .css-transitions-preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -2557,9 +2561,11 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .top_visual_area.type07:before {
     background-image: url(../images/service/bg-03-mo.png);
   }
-  .top_visual_area.recruit {
+  /* .top_visual_area.recruit {
     background-image: url(../images/recruit/img-keyvisual-career-mo@2x.png);
-  } /* 채용 */
+  } */
+  
+  /* 채용 */
   .top_visual_area.tech-01 {
     /*background-image:url(../images/tech/tech-img-keyvisual-visual-01-mo@2x.png);*/
   } /* 기술연구 */
@@ -3205,6 +3211,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   display: block;
 }
 
+
 @media all and (max-width: 280px) {
   .show_280 {
     display: block;
@@ -3221,6 +3228,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .hide_320 {
     display: none;
   }
+  
 }
 
 @media all and (max-width: 375px) {
@@ -3257,6 +3265,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .hide_768 {
     display: none;
   }
+  
 }
 
 @media all and (max-width: 1024px) {

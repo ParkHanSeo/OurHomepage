@@ -5,6 +5,7 @@
 <head>
 <title>내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/recruit.css">
 <script type="text/javascript">
@@ -125,14 +126,14 @@ function paging(cPage){
                 				</a>
                 			
                 		</div>
-						<div class="common-search_box">
-							<form name="searchForm" action="#" onsubmit="paging()" style="float: right"
+						<div class="common-search_box recruit">
+							<form class="searchForm recruit" name="searchForm" action="#" onsubmit="return false" style="float: right"
 								onkeypress="if(event.keyCode==13){paging();}">
 								<input type="hidden" name="cPage">
 								<input class="common-search_input" name="searchKeyword"
 									id="recruit_search_txt" type="text" placeholder="검색어을 입력해주세요."
 									title="검색어을 입력해주세요.">
-								<button type="submit" class="common-search_btn recruit_search_imo" id="btnSearch">
+								<!-- <button type="submit" class="common-search_btn recruit_search_imo" id="btnSearch"> -->
 								</button>
 							</form>
 						</div>
@@ -147,17 +148,17 @@ function paging(cPage){
 										</p>
 									</div>
 									<div class="date_box center-left">
-										<p class="common-text_reg-date" style="width:140px;">
+										<p class="common-text_reg-date">
 											<b>경력</b>
 										</p>
 									</div>
 									<div class="date_box center-left">
-										<p class="common-text_reg-date" style="width:140px;">
+										<p class="common-text_reg-date">
 											<b>마감일자</b>
 										</p>
 									</div>
 									<div class="date_box center-left">
-										<p class="common-text_reg-date" style="width:140px;">
+										<p class="common-text_reg-date">
 											<b>상태</b>
 										</p>
 									</div>
@@ -173,26 +174,26 @@ function paging(cPage){
 												</p>
 											</div>
 											<div class="date_box center-left">
-												<p class="common-text_reg-date" style="width:140px;">
+												<p class="common-text_reg-date">
 													${recruit.career}
 												</p>
 											</div>
 											<div class="date_box center-left">
 											<c:choose>
 												<c:when test="${recruit.recruitEnd != null}">
-													<p class="common-text_reg-date" style="width:140px;">
-														${recruit.recruitEnd}
+													<p class="common-text_reg-date">
+														${recruit.recruitEnd} 마감
 													</p>
 												</c:when>
 												<c:otherwise>
-													<p class="common-text_reg-date" style="width:140px;">
+													<p class="common-text_reg-date">
 														-
 													</p>
 												</c:otherwise>
 											</c:choose>
 											</div>
 											<div class="date_box center-left">
-												<p class="common-text_reg-date" style="width:140px;">
+												<p class="common-text_reg-date">
 													<c:choose>
 														<c:when test="${recruit.contentsStatus == 'Y'}">채용중</c:when>
 														<c:when test="${recruit.contentsStatus == 'R'}">상시채용</c:when>
