@@ -207,9 +207,10 @@ s
 }
 
 #postList a {
-  color: dimgray;
+  color: black;
   text-decoration: none;
   font-size: 20px;
+  font-weight: 900;
 }
 
 @media (hover: hover) {
@@ -287,9 +288,15 @@ s
     font-size: 24px;
     line-height: 40px;
   }
+  
 }
 
 @media all and (max-width: 768px) {
+	.common-text_list_area .common-text_list > li .date_box.center-left {
+    text-align: left;
+    color: dimgray;
+	}
+	
 	.layout_section_outer .layout_head .top_txt1hr {
     font-size: 36px;
     line-height: 40px;
@@ -461,7 +468,7 @@ s
 	
 	.top_visual_area .top_txt_outer .top_txt_area .top_txt2 {
     	margin-top: 4px;
-    	font-size: 36px;
+    	font-size: 20px;
     	line-height: 48px;
 	}
 	
@@ -486,7 +493,7 @@ s
     font-size: 36px;
     line-height: 40px;
 	}
-  
+	
 }
 
 @media all and (max-width: 430px) {
@@ -528,5 +535,18 @@ s
     width: 100%;
     margin-left: 0px;
 	}
+	
+	#postList a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 900;
+	}
+	
+	.common-text_list_area .common-text_reg-date {
+    font-size: 14px;
+    text-align-last: inherit;
+    margin-left: 20px;
+}
 }
 	

@@ -254,6 +254,14 @@ p{
     margin: 0px 50px;
     font-size: 28px;
     }
+    
+    .top_visual_area .top_txt_outer .top_txt_area .top_txt2 {
+    margin-top: 8px;
+    font-size: 30px;
+    line-height: 62px;
+    color: #fff;
+    letter-spacing: -0.2px;
+	}
 	
 }
 
