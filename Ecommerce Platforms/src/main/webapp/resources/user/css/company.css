@@ -396,6 +396,7 @@
   position: absolute;
   left: -20%;
   bottom: 8%;
+  max-width: 730px;
 }
 .ceo_msg-box {
   padding: 101px 0;
@@ -721,11 +722,6 @@
   .top_visual_area.ceo_msg .inner_container {
     height: auto;
   }
-  .top_visual_area.ceo_msg .ceo-img {
-    right: 24px;
-    bottom: -75px;
-    max-width: 600px;
-  }
   .ceo_msg-box {
     max-width: 100%;
   }
@@ -993,10 +989,10 @@
     padding: 40px 40px 0 24px;
   }
 	.visual_txt_area .txt3 {
-	  font-size: 36px;
+	  font-size: 24px;
 	}
 	.businessList_top_txt1 {
-	font-size: 36px;
+	font-size: 24px;
 }
 .welfare_benefit_box1 .benefit_title {
   font-size: 28px;

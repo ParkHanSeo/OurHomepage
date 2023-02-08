@@ -2161,7 +2161,11 @@
 }
 .history .tab-cont ol li:last-child dl::before {
   bottom: auto;
-  height: 7px;
+  height: 20px;
+}
+.award_sec .tab-cont ol li:last-child dl::before {
+    bottom: auto;
+    height: 10px;
 }
 .history .tab-cont ol li .history_img {
   width: 100%;
@@ -2987,7 +2991,19 @@
   .history .tab-cont ol li dl::after {
     width: 8px;
     height: 8px;
-    top: 10%;
+    top: 9%;
+    left: -3px;
+  }
+  .award_sec .tab-cont ol li:first-child dl::before {
+    top: 2%;
+}
+  .award_sec .tab-cont ol li dl::before {
+    width: 1px;
+  }
+  .award_sec .tab-cont ol li dl::after {
+    width: 8px;
+    height: 8px;
+    top: 2%;
     left: -3px;
   }
   .history .tab-cont ol li dl dt {
@@ -3017,7 +3033,6 @@
     padding: 41px 0 0 20px;
   }
   .history .award_sec .tab-cont ol li:last-child dl dd {
-    margin: 0 0 24px 0;
   }
   .history .award_sec .tab-cont ol li:last-child dl dd.last {
     margin-bottom: 0;
