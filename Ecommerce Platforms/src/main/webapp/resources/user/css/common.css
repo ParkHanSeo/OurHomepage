@@ -1592,6 +1592,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   background-color: #ccc;
 }
 .common-swiper_area .common-swiper_tab {
+	height: 68px;
 }
 .common-swiper_area .common-swiper_tab ul {
 }
@@ -1606,7 +1607,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   height: 76px;
   display: block;
   position: relative;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 76px;
   color: #666;
@@ -3049,6 +3050,9 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     width: 100%;
     margin-left: 0;
   }
+  .common-swiper_area .common-swiper_tab {
+	height: 60px;
+}
 }
 
 @media all and (max-width: 430px) {

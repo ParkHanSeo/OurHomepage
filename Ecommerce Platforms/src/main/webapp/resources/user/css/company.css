@@ -25,7 +25,7 @@
   position: relative;
 }
 .welfare_benefit_box1 .benefit_title {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 48px;
   font-weight: bold;
   color: white;
@@ -37,7 +37,7 @@
   padding-right: 50px;
 }
 .welfare_benefit_box2 .benefit_title {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 48px;
   font-weight: bold;
   color: white;
@@ -76,7 +76,7 @@
   text-align: center;
 }
 .businessList_top_txt2 {
-  margin-top: 24px;
+  margin-top: 20px;
   margin-bottom: 30px;
   position: relative;
   font-size: 20px;
@@ -128,6 +128,7 @@
   font-size: 44px;
   line-height: 62px;
   color: white;
+  font-weight: bold;
 }
 
 .company-sec1 {
@@ -290,8 +291,8 @@
 }
 .business_layout_sub {
   color: white;
-  padding: 60px;
-  padding-top: 90px;
+    padding: 5%;
+    padding-top: 90px;
 }
 .common-layout_2 > .items_2 {
   width: calc(100% / 2);
@@ -402,7 +403,7 @@
 }
 .ceo_msg-box .ceo_msg-txt1 {
   /* width: calc(100% / 2 + 100px); */
-  font-size: 40px;
+  font-size: 44px;
   line-height: 56px;
   color: #fff;
   letter-spacing: -0.2px;
@@ -664,7 +665,7 @@
   max-width: 1907px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 140px;
+  padding: 0 45px;
   transition: 0.4s ease;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -977,6 +978,7 @@
       	  .ceo_msg-box_media{
 	display: block;
 	padding:10%;
+	font-size: 16px;
 	
 }
  .ceo_msg-box .ceo_msg-txt2{
@@ -990,9 +992,48 @@
     width: 100%;
     padding: 40px 40px 0 24px;
   }
+	.visual_txt_area .txt3 {
+	  font-size: 36px;
+	}
+	.businessList_top_txt1 {
+	font-size: 36px;
+}
+.welfare_benefit_box1 .benefit_title {
+  font-size: 28px;
+}
+.welfare_benefit_box2 .benefit_title {
+  font-size: 28px;
+}
+	.businessList_top_txt2 {
+    font-size: 16px;
+}
+.businessList_top_txt3 {
+  font-size: 16px;
+}
 }
 
 @media all and (max-width: 764px) {
+	  .welfare_benefit_area .welfare_benefit_list > .businessList_items{
+    min-height: 500px;
+    width: 100%;
+    border-radius: 18px;
+}
+.welfare_benefit_box1 .benefit_title {
+	text-align: left;
+	padding-left: 50px;
+	}
+  .left {
+    text-align: left; 
+    left: 5%;
+  }
+	  .business_txtbox {
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+	}
+	  .common-layout_2 > .items_2{
+      width: calc(100% );
+  }
 }
 
 @media all and (max-width: 540px) {
@@ -1056,19 +1097,6 @@
   .com_intro .com_intro_box .btn_area {
     margin-top: 32px;
   }
-  .welfare_benefit_area .welfare_benefit_list > .businessList_items{
-    min-height: 500px;
-    width: 100%;
-    border-radius: 18px;
-}
-.welfare_benefit_box1 .benefit_title {
-	text-align: left;
-	padding-left: 50px;
-	}
-  .left {
-    text-align: left; 
-    left: 5%;
-  }
 }
 @media all and (max-width: 430px) {
   .division_container {
@@ -1084,6 +1112,16 @@
     margin-left: 5px;
     font-size: 17px;
   }
+  .businessList_top_txt3 {
+  font-size: 14px;
+}
+	.businessList_top_txt2 {
+    font-size: 14px;
+}
+   .ceo_msg-box_media{
+	font-size: 14px;
+	
+}
 }
 @media all and (max-width: 376px) {
   /* .com_intro .com_intro_box {padding:36px 15px;} */
