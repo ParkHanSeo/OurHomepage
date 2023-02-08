@@ -1135,12 +1135,12 @@
 }
 .common-txt-list.size_16 > li {
   margin-top: 4px;
-  font-size: 16px;
+  font-size: 20px; /* 230208_수정 */
   line-height: 26px;
 }
 .common-txt-list.size_18 > li {
   margin-top: 4px;
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   line-height: 28px;
 }
 .common-txt-list.size_20 > li {
@@ -1172,7 +1172,7 @@
   line-height: 52px;
   outline: none;
   color: #000;
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   letter-spacing: -0.2px;
   border-width: 0 0 1px 0;
   border-color: #ccc;
@@ -1183,17 +1183,17 @@
   border-color: #1a7cd2;
 }
 .common-search_box .common-search_input::-webkit-input-placeholder {
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   color: #999 !important;
   opacity: 1 !important;
 }
 .common-search_box .common-search_input:-ms-input-placeholder {
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */ 
   color: #999 !important;
   opacity: 1 !important;
 }
 .common-search_box .common-search_input::placeholder {
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   color: #999 !important;
   opacity: 1 !important;
 }
@@ -1249,7 +1249,7 @@
   text-align: center;
 }
 .common-text_list_area .common-text_list > li .common-text_txt1 {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 26px;
   color: #666;
 }
@@ -1456,7 +1456,7 @@
   border-radius: 18px;
 }
 .common-cont_box .cont_title {
-  font-size: 24px;
+  font-size: 40px;
   line-height: 36px;
 }
 .common-cont_box .cont_title.blue {
@@ -1509,7 +1509,7 @@
 } */
 .search-result .search-result_inner .result_keyword,
 .search-result .search-result_inner .result_txt {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 48px;
 }
 .search-result .search-result_inner .result_keyword {
@@ -1860,6 +1860,7 @@
 .common_txt-24 {
   font-size: 24px;
   line-height: 36px;
+  
 }
 .common_txt-32 {
   font-size: 32px;
@@ -2110,7 +2111,7 @@
   margin-left: 251px;
   padding-left: 115px;
   padding-bottom: 80px;
-  font-size: 18px;
+  font-size: 20px;
   box-sizing: border-box;
 }
 .history .tab-cont ol li dl::before {
@@ -2183,7 +2184,7 @@
   padding-bottom: 40px;
 }
 .history .award_sec .tab-cont ol li dl dd {
-  font-size: 16px;
+  font-size: 20px; /* 230208_수정 */
   line-height: 1.63;
   letter-spacing: -0.3px;
   width: 291px;
@@ -2230,7 +2231,7 @@
   padding: 0 0 0 0;
 }
 .history_txt1 {
-  font-size: 40px;
+  font-size: 44px; /* 230208_수정 */
   line-height: 56px;
   position: relative;
   letter-spacing: -0.2px;
@@ -2251,7 +2252,7 @@
 }
 .common-text_list_area .common-text_title {
   text-align-last: center;
-  font-size: x-large;
+  font-size: 20px; /* 230208_수정 */
 }
 .common-text_list_area .common-text_reg-date {
   text-align-last: center;
@@ -2404,7 +2405,7 @@
   }
 
   .common_txt-40 {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 52px;
   }
 }
