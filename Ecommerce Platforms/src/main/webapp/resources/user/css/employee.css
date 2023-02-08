@@ -841,7 +841,7 @@
 	}
 	
 	.layout_section_outer.recruit2 {
-    padding: 100px 0;
+    padding: 50px 0;
 	}
 	
 	ul {
@@ -929,6 +929,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: 0px;
+	}
+	
+	.contents_top {
+    padding-top: 5%;
+    min-height: 550px;
 	}
 	
 	
