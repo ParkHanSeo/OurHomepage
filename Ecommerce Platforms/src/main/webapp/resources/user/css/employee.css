@@ -6,7 +6,7 @@
 	padding-top:5%;
 }
 .layout_section_outer.recruit2{
-	padding: 160px 0 0;
+	padding: 50px 0 0;
 }
 .culture_section {
   margin-bottom: 120px;
@@ -14,7 +14,7 @@
   height: 400px;
 }
 .talent_txt {
-  font-size: 16px;
+  font-size: 20px;
 }
 .company_culture {
   width: 850px;
@@ -104,9 +104,13 @@
   margin-bottom: 10px;
 }
 .employee_layout_body .culture_sub_title {
-  margin-top: 50px;
+  /* margin-top: 50px;
   margin-bottom: 30px;
   font-size: 20px;
+  font-weight: bolder; */
+  margin-top: 16px;
+  margin-bottom: 10px;
+  font-size: 25px;
   font-weight: bolder;
 }
 .employee_layout_body .culture_txt {
@@ -829,8 +833,12 @@
 	
 	.top_visual_area .top_txt_outer .top_txt_area .top_txt2 {
     	margin-top: 4px;
-    	font-size: 20px;
+    	font-size: 36px;
     	line-height: 48px;
+	}
+	
+	.talent_txt {
+    font-size: 16px;
 	}
 	
 	
@@ -841,7 +849,7 @@
 	}
 	
 	.layout_section_outer.recruit2 {
-    padding: 100px 0;
+    padding: 50px 0;
 	}
 	
 	ul {
@@ -877,7 +885,7 @@
 	.culture_section {
     margin-bottom: 0px;
     width: 100%;
-    height: 400px;
+    /* height: 300px; */
 	}
 	
 	.company_culture_box_left {
@@ -931,5 +939,57 @@
     background-position-x: 0px;
 	}
 	
+	.contents_top {
+    padding-top: 5%;
+    min-height: 550px;
+	}
+	
+	.employee_layout_body .main_title {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 1280px;
+    font-size: 36px;
+    line-height: 56px;
+    position: relative;
+    letter-spacing: -0.2px;
+	}
+	
+	.employee_layout_body .main_title {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 1280px;
+    font-size: 36px;
+    line-height: 56px;
+    position: relative;
+    letter-spacing: -0.2px;
+	}
+	
+	.employee_layout_body .culture_txt {
+    font-size: 16px;
+    color: #666;
+	}
+	
 	
 }
+
+@media all and (max-width: 430px) {
+	
+	.top_visual_area .top_txt_outer .top_txt_area .top_txt3 {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 26px;
+	}
+
+	.talent_txt {
+    font-size: 14px;
+	}
+	
+	.employee_layout_body .culture_txt {
+    font-size: 14px;
+    color: #666;
+	}
+
+}
+
+
+

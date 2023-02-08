@@ -1135,12 +1135,12 @@
 }
 .common-txt-list.size_16 > li {
   margin-top: 4px;
-  font-size: 16px;
+  font-size: 20px; /* 230208_수정 */
   line-height: 26px;
 }
 .common-txt-list.size_18 > li {
   margin-top: 4px;
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   line-height: 28px;
 }
 .common-txt-list.size_20 > li {
@@ -1172,7 +1172,7 @@
   line-height: 52px;
   outline: none;
   color: #000;
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   letter-spacing: -0.2px;
   border-width: 0 0 1px 0;
   border-color: #ccc;
@@ -1183,17 +1183,17 @@
   border-color: #1a7cd2;
 }
 .common-search_box .common-search_input::-webkit-input-placeholder {
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   color: #999 !important;
   opacity: 1 !important;
 }
 .common-search_box .common-search_input:-ms-input-placeholder {
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */ 
   color: #999 !important;
   opacity: 1 !important;
 }
 .common-search_box .common-search_input::placeholder {
-  font-size: 18px;
+  font-size: 20px; /* 230208_수정 */
   color: #999 !important;
   opacity: 1 !important;
 }
@@ -1249,7 +1249,7 @@
   text-align: center;
 }
 .common-text_list_area .common-text_list > li .common-text_txt1 {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 26px;
   color: #666;
 }
@@ -1456,7 +1456,7 @@
   border-radius: 18px;
 }
 .common-cont_box .cont_title {
-  font-size: 24px;
+  font-size: 40px;
   line-height: 36px;
 }
 .common-cont_box .cont_title.blue {
@@ -1509,7 +1509,7 @@
 } */
 .search-result .search-result_inner .result_keyword,
 .search-result .search-result_inner .result_txt {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 48px;
 }
 .search-result .search-result_inner .result_keyword {
@@ -1860,6 +1860,7 @@
 .common_txt-24 {
   font-size: 24px;
   line-height: 36px;
+  
 }
 .common_txt-32 {
   font-size: 32px;
@@ -2186,7 +2187,7 @@
   padding-bottom: 40px;
 }
 .history .award_sec .tab-cont ol li dl dd {
-  font-size: 16px;
+  font-size: 20px; /* 230208_수정 */
   line-height: 1.63;
   letter-spacing: -0.3px;
   width: 291px;
@@ -2232,7 +2233,7 @@
   padding: 0 0 0 0;
 }
 .history_txt1 {
-  font-size: 40px;
+  font-size: 44px; /* 230208_수정 */
   line-height: 56px;
   position: relative;
   letter-spacing: -0.2px;
@@ -2252,7 +2253,7 @@
 }
 .common-text_list_area .common-text_title {
   text-align-last: center;
-  font-size: x-large;
+  font-size: 20px; /* 230208_수정 */
 }
 .common-text_list_area .common-text_reg-date {
   text-align-last: center;
@@ -2405,7 +2406,7 @@
   }
 
   .common_txt-40 {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 52px;
   }
 }
@@ -2481,7 +2482,7 @@
   }
 
   .common-pagination {
-    margin-top: 32px;
+    margin: 40px 0;
   }
   .common-pagination a.prev,
   .common-pagination button.prev {
@@ -3070,6 +3071,10 @@
   .history .tab-cont ol li .history_years {
     left: 12%;
 }
+  .common-search_box_wrap {
+    display: grid;
+    /* justify-content: flex-end; */
+	}
 }
 @media all and (max-width: 430px) {
   .layout_section_outer.sub-main .layout_head .service_txt1 {
@@ -3079,6 +3084,25 @@
     .history .tab-cont ol li dl {
     font-size: 14px;
   }
+  .common-pagination {
+    margin: 40px 0;
+  }
+  
+  .common-search_box_wrap {
+    display: grid;
+    justify-content: inherit;
+	}
+	
+	.common-search_box .common-search_input {
+    height: 42px;
+    font-size: 14px;
+    line-height: 28px;
+	}
+	
+	.common-text_list_area .common-text_list > li .common-text_txt2 a, .common-text_list_area .common-text_list > li .common-text_txt2 span {
+    font-size: 14px;
+    line-height: 26px;
+	}
 }
 
 @media all and (max-width: 375px) {
