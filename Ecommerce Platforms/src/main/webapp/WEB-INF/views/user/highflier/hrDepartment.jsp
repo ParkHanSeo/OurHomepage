@@ -8,9 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
 <!-- include  -->
+<jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/user/css/recruit.css">
-<jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <!-- include end  -->
 <!-- 사용자 정의 끝 -->
 </head>
@@ -48,7 +48,7 @@
 				<div class="layout_section_outer recruit2">
 					<div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1">채용 프로세스</p>
+							<p class="top_txt1hr">채용 프로세스</p>
 						</div>
 						<div class="layout_body process-area">
 							<div class="process-flow size-01 type01">
@@ -87,7 +87,7 @@
 
 					<div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1">인사제도</p>
+							<p class="top_txt1hr">인사제도</p>
 						</div>
 
 						<div class="layout_body process-area">
@@ -114,7 +114,7 @@
 					</div>
 					<div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1">교육제도</p>
+							<p class="top_txt1hr">교육제도</p>
 						</div>
 						<div class="layout_body process-area">
 							<div class="process-flow size-02 type01">
@@ -140,7 +140,7 @@
 					</div>
 					<div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1">복리후생</p>
+							<p class="top_txt1hr">복리후생</p>
 							<div class="layout_body process-area">
 								<div class="process-flow size-02 type01">
 									<ul class="box-layout_3 is-vertical">
