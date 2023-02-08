@@ -34,8 +34,8 @@
                     </div>
                 </div><!-- // .top_visual_area -->
 
-                
-                    <div class="inner_container">
+                <div class="layout_section_outer biz_difference is-gray" data-js="anchor-target">
+					<div class="inner_container">
                         <div class="layout_head">
                             <p class="si_txt1">
                             	IT Total Service 시스템 구축 전문가들이 함께 합니다.
@@ -43,56 +43,50 @@
                         </div>
 						<div class="layout_body process-area">
 							<div class="process-flow size-01 type01">
-								<ol class="flow_list">
-									<li class="si_li">
+								<ul class="flow_list">
+									<li class="si_li si_sub_1">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_1.jpg" alt="공공기관">
                                             <p class="recomm_txt">
                                                 공공기관
                                             </p>
                                         </div>
                                     </li>
-									<li class="si_li">
+									<li class="si_li si_sub_2">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_2.jpg" alt="금융">
                                             <p class="recomm_txt">
                                                 금융
                                             </p>
                                         </div>
                                     </li>
-                                    <li class="si_li">
+                                    <li class="si_li si_sub_3">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_3.jpg" alt="통신">
                                             <p class="recomm_txt">
                                                 통신
                                             </p>
                                         </div>
                                     </li>
-                                    <li class="si_li">
+                                    <li class="si_li si_sub_4">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_4.jpg" alt="전자상거래">
                                             <p class="recomm_txt">
                                                 전자상거래
                                             </p>
                                         </div>
                                     </li>
-                                    <li class="si_li">
+                                    <li class="si_li si_sub_5">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_5.jpg" alt="반도체">
                                             <p class="recomm_txt">
                                                 반도체
                                             </p>
                                         </div>
                                     </li>
-                                    <li class="si_li">
+                                    <li class="si_li si_sub_6">
                                         <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_6.jpg" alt="물류/서비스">
                                             <p class="recomm_txt">
                                                 물류 / 서비스
                                             </p>
                                         </div>
                                     </li>
-								</ol>
+								</ul>
 							</div>
 						</div>                        
                         <%-- <div class="layout_body">
@@ -149,10 +143,7 @@
                                 </ul>
                             </div>
                         </div> --%>
-                    
-                </div>
-
-                <div class="layout_section_outer biz_difference is-gray" data-js="anchor-target">
+                    </div>                
                     <div class="inner_container">
                         <div class="layout_body">
                             <ol class="difference_list">

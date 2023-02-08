@@ -13,7 +13,7 @@
   <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
         <section id="container">
             <div id="contents" class="contents_top">
-				<div class="business_title_area">
+				<div class="sub_title_area">
                     <div class="inner_container">
                         <h2 class="sub_title business_sub_title">Partner</h2>
                     </div>

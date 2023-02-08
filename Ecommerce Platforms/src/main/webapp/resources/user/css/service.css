@@ -506,7 +506,7 @@
 }
 .difference_list > li .difference_box .difference_desc {
   margin-top: 24px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 28px;
   color: #666;
 }
@@ -598,6 +598,55 @@
   .item_inner_box
   .common_txt-18 {
   color: #666;
+}
+.process-flow .flow_list {
+  height: 90%;
+}
+.process-area .flow_list .si_sub_1 {
+  background-image: url(../images/introduction/introduction_si_sub_1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.process-area .flow_list .si_sub_2 {
+  background-image: url(../images/introduction/introduction_si_sub_2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.process-area .flow_list .si_sub_3 {
+  background-image: url(../images/introduction/introduction_si_sub_3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.process-area .flow_list .si_sub_4 {
+  background-image: url(../images/introduction/introduction_si_sub_4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.process-area .flow_list .si_sub_5 {
+  background-image: url(../images/introduction/introduction_si_sub_5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.process-area .flow_list .si_sub_6 {
+  background-image: url(../images/introduction/introduction_si_sub_6.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+li.si_li {
+  position: relative;
+  width: 32%;
+  height: 35%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+  font-size: 26px;
+  line-height: 1.5;
+  letter-spacing: 1.8px;
+  text-align: center;
+  padding-top: 9%;
+  color: white;
+  border-radius: 2%;
 }
 
 /* 활용사례 */
@@ -1012,161 +1061,6 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-[class^="icon use_case-"] {
-  width: 240px;
-  height: 240px;
-}
-.icon.use_case-01 {
-  background-image: url(../images/img/img-case-thumbnail-01-pc-1@2x.png);
-}
-.icon.use_case-02 {
-  background-image: url(../images/img/img-case-thumbnail-02-pc-1@2x.png);
-}
-.icon.use_case-03 {
-  background-image: url(../images/img/img-case-thumbnail-03-pc-1@2x.png);
-}
-.icon.use_case-04 {
-  background-image: url(../images/img/img-case-thumbnail-04-pc@2x.png);
-}
-.icon.use_case-05 {
-  background-image: url(../images/img/img-case-thumbnail-05-pc@2x.png);
-}
-.icon.use_case-06 {
-  background-image: url(../images/img/img-case-thumbnail-06-pc@2x.png);
-}
-.icon.use_case-07 {
-  background-image: url(../images/img/img-case-thumbnail-07-pc@2x.png);
-}
-.icon.use_case-08 {
-  background-image: url(../images/img/img-case-thumbnail-08-pc@2x.png);
-}
-.icon.use_case-09 {
-  background-image: url(../images/img/img-case-thumbnail-09-pc@2x.png);
-}
-.icon.use_case-10 {
-  background-image: url(../images/img/img-case-thumbnail-10-pc@2x.png);
-}
-.icon.use_case-11 {
-  background-image: url(../images/img/img-case-thumbnail-11-pc@2x.png);
-}
-.icon.use_case-12 {
-  background-image: url(../images/img/img-case-thumbnail-12-pc@2x.png);
-}
-.icon.use_case-13 {
-  background-image: url(../images/img/img-case-thumbnail-13-pc@2x.png);
-}
-.icon.use_case-14 {
-  background-image: url(../images/img/img-case-thumbnail-14-pc@2x.png);
-}
-.icon.use_case-15 {
-  background-image: url(../images/img/img-case-thumbnail-15-pc@2x.png);
-}
-.icon.use_case-16 {
-  background-image: url(../images/img/img-case-thumbnail-16-pc@2x.png);
-}
-.icon.use_case-17 {
-  background-image: url(../images/img/img-case-thumbnail-17-pc@2x.png);
-}
-.icon.use_case-18 {
-  background-image: url(../images/img/img-case-thumbnail-18-pc@2x.png);
-}
-.icon.use_case-19 {
-  background-image: url(../images/img/img-case-thumbnail-19-pc@2x.png);
-}
-.icon.use_case-20 {
-  background-image: url(../images/img/img-case-thumbnail-20-pc@2x.png);
-}
-.icon.use_case-21 {
-  background-image: url(../images/img/img-case-thumbnail-21-pc@2x.png);
-}
-.icon.use_case-22 {
-  background-image: url(../images/img/img-case-thumbnail-22-pc@2x.png);
-}
-.icon.use_case-23 {
-  background-image: url(../images/img/img-case-thumbnail-23-pc@2x.png);
-}
-.icon.use_case-24 {
-  background-image: url(../images/img/img-case-thumbnail-24-pc@2x.png);
-}
-.icon.use_case-25 {
-  background-image: url(../images/img/img-case-thumbnail-25-pc@2x.png);
-}
-.icon.use_case-26 {
-  background-image: url(../images/img/img-case-thumbnail-26-pc@2x.png);
-}
-.icon.use_case-27 {
-  background-image: url(../images/img/img-case-thumbnail-27-pc@2x.png);
-}
-.icon.use_case-28 {
-  background-image: url(../images/img/img-case-thumbnail-28-pc@2x.png);
-}
-.icon.use_case-29 {
-  background-image: url(../images/img/img-case-thumbnail-29-pc@2x.png);
-}
-.icon.use_case-30 {
-  background-image: url(../images/img/img-case-thumbnail-30-pc@2x.png);
-}
-.icon.use_case-31 {
-  background-image: url(../images/img/img-case-thumbnail-31-pc@2x.png);
-}
-.icon.use_case-32 {
-  background-image: url(../images/img/img-case-thumbnail-32-pc@2x.png);
-}
-.icon.use_case-33 {
-  background-image: url(../images/img/img-case-thumbnail-33-pc@2x.png);
-}
-.icon.use_case-34 {
-  background-image: url(../images/img/img-case-thumbnail-34-pc@2x.png);
-}
-.icon.use_case-35 {
-  background-image: url(../images/img/img-case-thumbnail-35-pc@2x.png);
-}
-.icon.use_case-36 {
-  background-image: url(../images/img/img-case-thumbnail-36-pc@2x.png);
-}
-.icon.use_case-37 {
-  background-image: url(../images/img/img-case-thumbnail-37-pc@2x.png);
-}
-.icon.use_case-38 {
-  background-image: url(../images/img/img-case-thumbnail-38-pc@2x.png);
-}
-.icon.use_case-39 {
-  background-image: url(../images/img/img-case-thumbnail-39-pc@2x.png);
-}
-.icon.use_case-40 {
-  background-image: url(../images/img/img-case-thumbnail-40-pc@2x.png);
-}
-.icon.use_case-41 {
-  background-image: url(../images/img/img-case-thumbnail-41-pc@2x.png);
-}
-.icon.use_case-42 {
-  background-image: url(../images/img/img-case-thumbnail-42-pc@2x.png);
-}
-.icon.use_case-43 {
-  background-image: url(../images/img/img-case-thumbnail-43-pc@2x.png);
-}
-.icon.use_case-44 {
-  background-image: url(../images/img/img-case-thumbnail-44-pc@2x.png);
-}
-.icon.use_case-45 {
-  background-image: url(../images/img/img-case-thumbnail-45-pc@2x.png);
-}
-.icon.use_case-46 {
-  background-image: url(../images/img/img-case-thumbnail-46-pc@2x.png);
-}
-.icon.use_case-47 {
-  background-image: url(../images/img/img-case-thumbnail-47-pc@2x.png);
-}
-.icon.use_case-48 {
-  background-image: url(../images/img/img-case-thumbnail-48-pc@2x.png);
-}
-.icon.use_case-49 {
-  background-image: url(../images/img/img-case-thumbnail-49-pc@2x.png);
-}
-.icon.use_case-50 {
-  background-image: url(../images/img/img-case-thumbnail-50-pc@2x.png);
-}
-
 /* 수상내역 */
 .awards_item {
 }
@@ -1379,7 +1273,7 @@
   }
   .difference_list > li .difference_box .difference_desc {
     margin-top: 16px;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 26px;
   }
   .difference_list > li.is-right .difference_box {
@@ -1506,6 +1400,10 @@
   .biz_download_area .biz_download_txt {
     font-size: 36px;
     line-height: 52px;
+  }
+
+  li.si_li {
+    padding-top: 11%;
   }
 }
 
@@ -2036,6 +1934,28 @@
     min-height: 300px;
     padding: 48px 0;
   }
+  li.si_li {
+    position: relative;
+    width: 48%;
+    height: 25%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: left;
+    font-size: 22px;
+    line-height: 1.5;
+    letter-spacing: 1.8px;
+    text-align: center;
+    padding-top: 11%;
+    color: white;
+    border-radius: 2%;
+  }
+  .layout_section_outer .layout_head .si_txt1 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 56px;
+    position: relative;
+    letter-spacing: -0.2px;
+  }
 }
 
 @media all and (max-width: 480px) {
@@ -2104,6 +2024,25 @@
   .si_li img {
     width: 200px;
     height: 150px;
+    border-radius: 2%;
+  }
+  .process-flow .flow_list {
+    height: 70%;
+  }
+  li.si_li {
+    position: relative;
+    width: 48%;
+    height: 25%;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    float: left;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 1.8px;
+    text-align: center;
+    padding-top: 16%;
+    color: white;
     border-radius: 2%;
   }
 }

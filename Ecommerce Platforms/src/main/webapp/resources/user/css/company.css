@@ -1,10 +1,9 @@
 @charset "utf-8";
-.ceo_msg-box_media{
-	display: none;
+.ceo_msg-box_media {
+  display: none;
 }
-.ceo_msg-box_media.ceo_msg-txt2{
-	display: none;
-	
+.ceo_msg-box_media.ceo_msg-txt2 {
+  display: none;
 }
 
 .ceofooter {
@@ -627,7 +626,7 @@
 .division_img img {
   border-radius: 3%;
   height: 230px;
-  width: 390px;
+  width: 379px;
 }
 .division_list .items .img_left {
   float: left;
@@ -636,7 +635,7 @@
   float: left;
   margin-top: 35px;
   margin-left: 20px;
-  font-size: 17px;
+  font-size: 18px;
 }
 .layout_sub_body {
   margin-top: 50px;
@@ -700,15 +699,13 @@
 }
 
 @media all and (min-width: 1024px) {
-	  .ceo_msg-box_media{
-	display: none;
-}
-  .ceo_msg-box{
-	display: block;
-}
-
-
+  .ceo_msg-box_media {
+    display: none;
   }
+  .ceo_msg-box {
+    display: block;
+  }
+}
 @media all and (max-width: 1024px) {
   .com_identity .layout_body .identity_box {
     padding: 31px 0 31px;
@@ -974,18 +971,16 @@
   .ceo_profile-list.type01 dd .desc {
     padding-left: 32px;
   }
-      	  .ceo_msg-box_media{
-	display: block;
-	padding:10%;
-	
-}
- .ceo_msg-box .ceo_msg-txt2{
-  display: none;
-  
-}
- .ceo_msg-box .ceo_msg-txt3{
-  display: none;
-}
+  .ceo_msg-box_media {
+    display: block;
+    padding: 10%;
+  }
+  .ceo_msg-box .ceo_msg-txt2 {
+    display: none;
+  }
+  .ceo_msg-box .ceo_msg-txt3 {
+    display: none;
+  }
   .division_container_2 {
     width: 100%;
     padding: 40px 40px 0 24px;
@@ -1056,17 +1051,17 @@
   .com_intro .com_intro_box .btn_area {
     margin-top: 32px;
   }
-  .welfare_benefit_area .welfare_benefit_list > .businessList_items{
+  .welfare_benefit_area .welfare_benefit_list > .businessList_items {
     min-height: 500px;
     width: 100%;
     border-radius: 18px;
-}
-.welfare_benefit_box1 .benefit_title {
-	text-align: left;
-	padding-left: 50px;
-	}
+  }
+  .welfare_benefit_box1 .benefit_title {
+    text-align: left;
+    padding-left: 50px;
+  }
   .left {
-    text-align: left; 
+    text-align: left;
     left: 5%;
   }
 }

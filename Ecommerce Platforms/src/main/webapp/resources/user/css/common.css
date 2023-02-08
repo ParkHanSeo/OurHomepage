@@ -2357,7 +2357,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 
 @media all and (max-width: 950px) {
   #footer .inner {
-    padding: 48px 24px;
+    left: -55px;
   }
   #footer .footer-menu {
     display: flex;
@@ -2530,7 +2530,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 		padding-right: 40px */
   }
   .sub_title {
-    font-size: 32px;
+    font-size: 36px;
     line-height: 48px;
   }
   #wrap.visual-center .top_visual_area {
@@ -3017,6 +3017,18 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   #footer .footer-policy .select_policy .companyGroup li.mo_show {
     display: block;
   }
+  #header .inner .gnb-wrap {
+    display: none;
+  }
+  #footer .naedam_footer_img {
+    float: left;
+    margin: 5% 0 -4% 169px;
+    padding: 0 0 0 0;
+  }
+  #footer .inner {
+    padding: 0 0 48px 0;
+    left: -100px;
+}
 }
 
 @media all and (max-width: 480px) {
@@ -3053,7 +3065,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 
 @media all and (max-width: 430px) {
   .layout_section_outer .layout_head .top_txt1 {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 28px;
   }
 }
