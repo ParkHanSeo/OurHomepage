@@ -2049,7 +2049,7 @@
 }
 
 .history .layout_section_outer.history_sec {
-  padding: 48px 0 0 0;
+  padding: 0;
 }
 .history .common-swiper_tab2 {
   margin-top: 0;
@@ -2080,7 +2080,6 @@
   color: #fff;
 }
 .history .tab-cont-wrap {
-  margin-top: 80px;
 }
 .history .tab-cont {
   position: relative;
@@ -2163,7 +2162,11 @@
 }
 .history .tab-cont ol li:last-child dl::before {
   bottom: auto;
-  height: 7px;
+  height: 20px;
+}
+.award_sec .tab-cont ol li:last-child dl::before {
+    bottom: auto;
+    height: 10px;
 }
 .history .tab-cont ol li .history_img {
   width: 100%;
@@ -2225,7 +2228,6 @@
   line-height: normal;
 }
 .history_sub_title_area {
-  height: 9%;
 }
 .history_swiper {
   padding: 0 0 0 0;
@@ -2238,7 +2240,6 @@
 }
 .history_swiper_area2 {
   margin-left: -5%;
-  margin-top: 5%;
 }
 /*
 .history .award_sec .tab-cont ol li:last-child dl {padding:41px 0 0 20px}
@@ -2947,7 +2948,7 @@
     min-height: 442px;
   }
   .history .layout_section_outer.history_sec {
-    padding: 40px 0 0 0;
+    padding: 0;
   }
   .history
     .layout_section_outer.history_sec
@@ -2957,7 +2958,6 @@
   /* .history .common-swiper_area{overflow: visible;} */
   /* .history .common-swiper_area:before{left: -24px;right: -24px;width: auto;} */
   .history .tab-cont-wrap {
-    margin-top: 64px;
   }
   .history .tabMenu {
     margin-bottom: 22px;
@@ -2979,17 +2979,32 @@
     font-size: 20px;
   }
   .history .tab-cont ol li dl {
-    margin-left: 4px;
+    margin-left: 5%;
     padding: 50px 0 60px 44px;
-    font-size: 14px;
+    font-size: 16px;
   }
+  .history .tab-cont ol li:first-child dl::before {
+    top: 11%;
+}
   .history .tab-cont ol li dl::before {
     width: 1px;
   }
   .history .tab-cont ol li dl::after {
     width: 8px;
     height: 8px;
-    top: 4px;
+    top: 9%;
+    left: -3px;
+  }
+  .award_sec .tab-cont ol li:first-child dl::before {
+    top: 2%;
+}
+  .award_sec .tab-cont ol li dl::before {
+    width: 1px;
+  }
+  .award_sec .tab-cont ol li dl::after {
+    width: 8px;
+    height: 8px;
+    top: 2%;
     left: -3px;
   }
   .history .tab-cont ol li dl dt {
@@ -3003,7 +3018,7 @@
     margin-top: 4px;
   }
   .history .award_sec .tab-cont ol li dl {
-    padding: 41px 0 24px 20px;
+    padding: 90px 0 24px 20px;
   }
   .history .award_sec .tab-cont ol li dl dd span.title {
     font-size: 14px;
@@ -3011,20 +3026,14 @@
     display: block;
   }
   .history .award_sec .tab-cont ol li dl dd {
-    width: 100%;
-    margin: 0 0 24px 0;
     padding: 16px 16px 30px;
     min-height: 286px;
-    height: auto;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
   .history .award_sec .tab-cont ol li:last-child dl {
     padding: 41px 0 0 20px;
   }
   .history .award_sec .tab-cont ol li:last-child dl dd {
-    margin: 0 0 24px 0;
   }
   .history .award_sec .tab-cont ol li:last-child dl dd.last {
     margin-bottom: 0;
@@ -3059,7 +3068,9 @@
   #pop_customer .dim {
     background-color: #fff;
   }
-  
+  .history .tab-cont ol li .history_years {
+    left: 12%;
+}
   .common-search_box_wrap {
     display: grid;
     /* justify-content: flex-end; */
@@ -3069,6 +3080,9 @@
   .layout_section_outer.sub-main .layout_head .service_txt1 {
     font-size: 18px;
     line-height: 35px;
+  }
+    .history .tab-cont ol li dl {
+    font-size: 14px;
   }
   .common-pagination {
     margin: 40px 0;
