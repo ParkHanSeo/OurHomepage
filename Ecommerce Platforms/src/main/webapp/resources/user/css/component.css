@@ -2481,7 +2481,7 @@
   }
 
   .common-pagination {
-    margin-top: 32px;
+    margin: 40px 0;
   }
   .common-pagination a.prev,
   .common-pagination button.prev {
@@ -3059,12 +3059,36 @@
   #pop_customer .dim {
     background-color: #fff;
   }
+  
+  .common-search_box_wrap {
+    display: grid;
+    /* justify-content: flex-end; */
+	}
 }
 @media all and (max-width: 430px) {
   .layout_section_outer.sub-main .layout_head .service_txt1 {
     font-size: 18px;
     line-height: 35px;
   }
+  .common-pagination {
+    margin: 40px 0;
+  }
+  
+  .common-search_box_wrap {
+    display: grid;
+    justify-content: inherit;
+	}
+	
+	.common-search_box .common-search_input {
+    height: 42px;
+    font-size: 14px;
+    line-height: 28px;
+	}
+	
+	.common-text_list_area .common-text_list > li .common-text_txt2 a, .common-text_list_area .common-text_list > li .common-text_txt2 span {
+    font-size: 14px;
+    line-height: 26px;
+	}
 }
 
 @media all and (max-width: 375px) {

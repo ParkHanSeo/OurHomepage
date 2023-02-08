@@ -211,13 +211,13 @@ p{
     padding: 0 15px;
     margin-bottom: 20px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 28px;
     color: #1a1a1a;
 	}
 	
 	.recruit_detail dd {
     padding: 0 15px;
-    font-size: 15px;
+    font-size: 16px;
     color: #666;
     line-height: normal;
     word-break: keep-all;
@@ -229,14 +229,18 @@ p{
     border-top: 1px solid #e6e6e6;
     text-align: left;
     /* line-height: inherit; */
-    font-size: 15px;
+    font-size: 16px;
     }
     
     #contents .area_visual .copy_txt .copy_header p {
     	margin-top: 4px;
-    	font-size: 20px;
+    	font-size: 36px;
     	line-height: 48px;
     }
+    
+    #contents .area_visual .copy_txt .copy_header .recruit_status {
+    font-size: 28px;
+	}
     
     .back_btn {
     border-color: #444;
@@ -248,7 +252,31 @@ p{
     display: inline-block;
     width: 80%;
     margin: 0px 50px;
-    font-size: 24px;
+    font-size: 28px;
+    }
+	
+}
+
+@media all and (max-width: 430px) {
+	.recruit_detail {
+    padding: 50px 20px 0px 20px;
+	}
+	
+	.recruit_detail dd {
+    padding: 0 15px;
+    font-size: 14px;
+    color: #666;
+    line-height: normal;
+    word-break: keep-all;
+    word-wrap: break-word;
+    }
+    
+    .recruit_detail dl.tb_wrap th, .recruit_detail dl.tb_wrap td {
+    padding: 30px 15px 25px;
+    border-top: 1px solid #e6e6e6;
+    text-align: left;
+    /* line-height: inherit; */
+    font-size: 14px;
     }
 	
 }
