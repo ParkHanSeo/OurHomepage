@@ -72,7 +72,7 @@ p{
 }
 
 .mod_title_type .title {
-	font-size: 20px;
+	font-size: 36px;
 	color: #1a1a1a;
 	float: left;
     clear: both;
@@ -143,7 +143,7 @@ p{
 }
 
 .recruit_detail dt {
-    padding: 0 15px;
+    padding: 0 25px;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 16px;
@@ -208,7 +208,7 @@ p{
 
 @media all and (max-width: 768px) {
 	.recruit_detail dt {
-    padding: 0 15px;
+    padding: 0 25px;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 28px;
@@ -216,7 +216,7 @@ p{
 	}
 	
 	.recruit_detail dd {
-    padding: 0 15px;
+    padding: 0 25px;
     font-size: 16px;
     color: #666;
     line-height: normal;
@@ -225,7 +225,7 @@ p{
     }
     
     .recruit_detail dl.tb_wrap th, .recruit_detail dl.tb_wrap td {
-    padding: 30px 15px 25px;
+    padding: 30px 25px 25px;
     border-top: 1px solid #e6e6e6;
     text-align: left;
     /* line-height: inherit; */
