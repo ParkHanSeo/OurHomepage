@@ -59,8 +59,7 @@
 					</div>
 				</div>
 				<!-- 서브 타이틀 -->
-				<div class="common-swiper_area2 history_swiper_area2"
-					style="width: none;">
+				<div class="common-swiper_area2 history_swiper_area2" style="width: none;">
 					<div class="inner_container">
 						<div class="common-swiper_tab">
 							<ul>

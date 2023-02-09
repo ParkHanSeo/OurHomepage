@@ -9,9 +9,6 @@ body {
 </style>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/font/NanumGothic.woff">
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/html/js/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/html/js/common.js" type="text/javascript"></script>
-
 <!-- 사용자 정의 -->
 <!-- jquery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>

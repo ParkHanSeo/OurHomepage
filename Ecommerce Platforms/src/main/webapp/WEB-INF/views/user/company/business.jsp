@@ -47,11 +47,9 @@
                                 <ul class="welfare_benefit_list common-layout_2 is-vertical">
                                     <li class="businessList_items">
                                         <div class="welfare_benefit_box1">
-                                        	<div class="filter1">
-	                                            <p class="benefit_title">
-	                                            	<span class="number">|</span> 유형 전문 서비스
-	                                            </p>
-                                        	</div>
+                                            <p class="benefit_title">
+                                            	<span class="number">|</span> 유형 전문 서비스
+                                            </p>
                                         </div>
                                         	<div class="business_txtbox left">
 	                                            <p class="benefit_desc">

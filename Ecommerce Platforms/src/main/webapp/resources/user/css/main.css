@@ -2373,6 +2373,12 @@ h4 {
 }
 
 @media all and (max-width: 430px) {
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 28px;
+  }
   .sub-visual .inner_container .tit br,
   .sub-visual .inner_container .description br {
     display: none;
@@ -2388,10 +2394,54 @@ h4 {
     padding: 0 0 0 0;
   }
   .description {
-    font-size: 16px;
+    font-size: 14px;
   }
   .aos-animate svg {
     display: none;
+  }
+  .core-wrap .core-list .description {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 1.56;
+  }
+  .core-wrap .core-list .ai::before,
+  .core-wrap .core-list .cloud::before {
+    height: 340px;
+    width: 255px;
+  }
+  .core-wrap .core-list .big-data::before,
+  .core-wrap .core-list .blockchain::before {
+    height: 340px;
+    width: 255px;
+  }
+  .core-wrap .core-list .ai::before {
+    background-position-x: -50px;
+  }
+  .main_aos_naedam_txt {
+    width: 61%;
+    margin-left: 1%;
+    margin-top: 67%;
+    position: relative;
+  }
+  .core-wrap .core-list .big-data::before {
+    left: -65px;
+  }
+  .main_aos_consulting_txt {
+    margin-left: 0%;
+    margin-top: 51%;
+    top: 90px;
+    left: -61%;
+    position: relative;
+    text-align: right;
+  }
+  .core-wrap .core-list .blockchain::before {
+    left: -34px;
+  }
+  .main_aos_si_txt {
+    position: relative;
+    left: -7%;
+    bottom: 179px;
+    width: 61%;
   }
 }
 @media all and (max-width: 375px) {

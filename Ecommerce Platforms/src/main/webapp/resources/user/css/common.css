@@ -1636,6 +1636,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 
 .common-swiper_area.sub-main {
   margin-top: 48px;
+  margin-bottom: 48px;
 }
 .common-swiper_area.sub-main:before {
   display: none;
@@ -2438,6 +2439,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     height: 32px;
     margin: 14px 0;
     left: 24px;
+    top: 5px;
   }
   #header .inner {
     height: 60px;
