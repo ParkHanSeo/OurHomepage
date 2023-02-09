@@ -1804,7 +1804,7 @@
     height: 55%;
     background-color: black; */
 }
-.welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box1 {
+.welfare_benefit_box1 {
   background-image: url("'../../../images/businessList_website2.jpg");
   background-size: cover;
   width: 100%;
@@ -2183,24 +2183,24 @@
     height: 50%;
   }
   .welfare_benefit_area
-  .welfare_benefit_list
-  > li
-  .welfare_benefit_box1
-  .benefit_desc {
-  margin-top: 16px;
-  font-size: 16px;
-  line-height: 28px;
-  color: #666;
-}
-.business_layout_sub_title {
-  font-size: 36px;
-}
-.business_txtbox .benefit_list > li {
-  font-size: 16px;
-}
-.business_layout_sub_contents {
-  font-size: 16px;
-}
+    .welfare_benefit_list
+    > li
+    .welfare_benefit_box1
+    .benefit_desc {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #666;
+  }
+  .business_layout_sub_title {
+    font-size: 36px;
+  }
+  .business_txtbox .benefit_list > li {
+    font-size: 16px;
+  }
+  .business_layout_sub_contents {
+    font-size: 16px;
+  }
 }
 
 @media all and (max-width: 1280px) {

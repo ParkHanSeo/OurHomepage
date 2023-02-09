@@ -47,9 +47,11 @@
                                 <ul class="welfare_benefit_list common-layout_2 is-vertical">
                                     <li class="businessList_items">
                                         <div class="welfare_benefit_box1">
-                                            <p class="benefit_title">
-                                            	<span class="number">|</span> 유형 전문 서비스
-                                            </p>
+                                        	<div class="filter1">
+	                                            <p class="benefit_title">
+	                                            	<span class="number">|</span> 유형 전문 서비스
+	                                            </p>
+                                        	</div>
                                         </div>
                                         	<div class="business_txtbox left">
 	                                            <p class="benefit_desc">
@@ -86,7 +88,7 @@
                         </div>
                     
                 </div>
-                <div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 80px;">
+                <div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
                 	<div class="inner_container">
                         <div class="layout_head">
                             <p class="businessList_top_txt1">

@@ -1,10 +1,9 @@
 @charset "utf-8";
-.ceo_msg-box_media{
-	display: none;
+.ceo_msg-box_media {
+  display: none;
 }
-.ceo_msg-box_media.ceo_msg-txt2{
-	display: none;
-	
+.ceo_msg-box_media.ceo_msg-txt2 {
+  display: none;
 }
 
 .ceofooter {
@@ -291,8 +290,8 @@
 }
 .business_layout_sub {
   color: white;
-    padding: 5%;
-    padding-top: 90px;
+  padding: 5%;
+  padding-top: 90px;
 }
 .common-layout_2 > .items_2 {
   width: calc(100% / 2);
@@ -984,47 +983,47 @@
     width: 100%;
     padding: 40px 40px 0 24px;
   }
-	.visual_txt_area .txt3 {
-	  font-size: 24px;
-	}
-	.businessList_top_txt1 {
-	font-size: 24px;
-}
-.welfare_benefit_box1 .benefit_title {
-  font-size: 28px;
-}
-.welfare_benefit_box2 .benefit_title {
-  font-size: 28px;
-}
-	.businessList_top_txt2 {
+  .visual_txt_area .txt3 {
+    font-size: 24px;
+  }
+  .businessList_top_txt1 {
+    font-size: 24px;
+  }
+  .welfare_benefit_box1 .benefit_title {
+    font-size: 28px;
+  }
+  .welfare_benefit_box2 .benefit_title {
+    font-size: 28px;
+  }
+  .businessList_top_txt2 {
     font-size: 16px;
-}
-.businessList_top_txt3 {
-  font-size: 16px;
-}
+  }
+  .businessList_top_txt3 {
+    font-size: 16px;
+  }
 }
 
 @media all and (max-width: 764px) {
-	  .welfare_benefit_area .welfare_benefit_list > .businessList_items{
+  .welfare_benefit_area .welfare_benefit_list > .businessList_items {
     min-height: 500px;
     width: 100%;
     border-radius: 18px;
-}
-.welfare_benefit_box1 .benefit_title {
-	text-align: left;
-	padding-left: 50px;
-	}
+  }
+  .welfare_benefit_box1 .benefit_title {
+    text-align: left;
+    padding-left: 50px;
+  }
   .left {
-    text-align: left; 
+    text-align: left;
     left: 5%;
   }
-	  .business_txtbox {
-	    width: 100%;
-	    height: 100%;
-	    position: relative;
-	}
-	  .common-layout_2 > .items_2{
-      width: calc(100% );
+  .business_txtbox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .common-layout_2 > .items_2 {
+    width: calc(100%);
   }
 }
 
@@ -1118,15 +1117,14 @@
     font-size: 17px;
   }
   .businessList_top_txt3 {
-  font-size: 14px;
-}
-	.businessList_top_txt2 {
     font-size: 14px;
-}
-   .ceo_msg-box_media{
-	font-size: 14px;
-	
-}
+  }
+  .businessList_top_txt2 {
+    font-size: 14px;
+  }
+  .ceo_msg-box_media {
+    font-size: 14px;
+  }
 }
 @media all and (max-width: 376px) {
   /* .com_intro .com_intro_box {padding:36px 15px;} */
