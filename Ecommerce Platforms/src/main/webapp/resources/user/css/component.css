@@ -2412,6 +2412,9 @@
 }
 
 @media all and (max-width: 768px) {
+	.history_txt1 {
+    font-size: 36px;
+}
   .common-btn {
     padding: 8px 24px;
   }

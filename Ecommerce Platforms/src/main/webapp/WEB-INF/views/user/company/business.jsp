@@ -88,7 +88,7 @@
                         </div>
                     
                 </div>
-                <div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 80px;">
+                <div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
                 	<div class="inner_container">
                         <div class="layout_head">
                             <p class="businessList_top_txt1">
