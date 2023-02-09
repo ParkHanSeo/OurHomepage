@@ -4260,11 +4260,11 @@
           }
         });
   
-        observer.observe(target, {
+/*        observer.observe(target, {
           attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
           childList: typeof options.childList === 'undefined' ? true : options.childList,
           characterData: typeof options.characterData === 'undefined' ? true : options.characterData,
-        });
+        });*/
   
         swiper.observer.observers.push(observer);
       },
