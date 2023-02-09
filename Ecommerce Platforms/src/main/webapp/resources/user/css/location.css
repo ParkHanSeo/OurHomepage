@@ -23,7 +23,7 @@
     font-size: 16px;
 }
 .location_btn {
-    width: 718px;
+    max-width: 718px;
     height: 537px;
 }
 }
