@@ -1,10 +1,21 @@
 @charset "utf-8";
-
+.location_name{
+	padding-top:5px;	
+}
 .location_text {
-  padding-top: 40px;
+padding: 0% 0 5% 0;
   font-size: 20px;
 }
 
+.location_text:before{
+	content:"";
+  position:absolute;
+  display:block;
+  width:120px;
+  height:1px;
+  text-align:center;
+  background-color: #000;
+}
 .location_btn {
   border-radius: 3%;
   max-width: 1281px;
