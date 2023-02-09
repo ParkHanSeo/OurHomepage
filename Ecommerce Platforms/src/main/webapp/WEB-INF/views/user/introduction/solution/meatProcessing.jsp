@@ -48,8 +48,7 @@
 											스마트 팩토리 공정 자동화
                                         </p>
                                         <p class="difference_desc">
-                                            생성공정 공정 자동화로 오류를 검출하는 모니터링 구현
-											AI 기반 구축으로 자동 포장  및 개체 이력정보 바코드  자동 라벨지 부착
+                                            생산공정 자동화로 개체이력관리 및 작업상황의 실시간 모니터링 구현
                                         </p>
                                     </div>
                                 </li>
@@ -60,11 +59,11 @@
                                     <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                         <p class="difference_title">
                                             APP을 통한 <br>
-                                            모바일 기반의 고도화
+                                            모바일 기반의 생산관리시스템
                                         </p>
                                         <p class="difference_desc">
-                                            축산물이력시스템과 연계하여 개체관리 투명성 제고
-											생산이력 및 출고, 배송 이력관리로 제품 이상 발생시에 리콜 대응 가능
+                                            축산물이력시스템과 연계하여 개체이력관리의 투명성을 확보하고, <br>
+                                            작업과정과 출고, 배송의 전과정을 관리하여 제품 이상 발생시에 신속한 리콜 대응 가능
                                         </p>
                                     </div>
                                 </li>
