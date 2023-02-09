@@ -2412,6 +2412,12 @@
 }
 
 @media all and (max-width: 768px) {
+	.history .tab-cont ol li .history_years{
+	font-size:36px;
+	}
+	.history_txt1 {
+    font-size: 36px;
+}
   .common-btn {
     padding: 8px 24px;
   }
@@ -2980,11 +2986,11 @@
   }
   .history .tab-cont ol li dl {
     margin-left: 5%;
-    padding: 50px 0 60px 44px;
+    padding: 75px 0 60px 44px;
     font-size: 16px;
   }
   .history .tab-cont ol li:first-child dl::before {
-    top: 11%;
+  margin-top:1%;
 }
   .history .tab-cont ol li dl::before {
     width: 1px;
@@ -2992,8 +2998,8 @@
   .history .tab-cont ol li dl::after {
     width: 8px;
     height: 8px;
-    top: 9%;
     left: -3px;
+    margin-top:1%;
   }
   .award_sec .tab-cont ol li:first-child dl::before {
     top: 2%;
@@ -3004,7 +3010,7 @@
   .award_sec .tab-cont ol li dl::after {
     width: 8px;
     height: 8px;
-    top: 2%;
+    margin-top: 1%;
     left: -3px;
   }
   .history .tab-cont ol li dl dt {
@@ -3081,6 +3087,10 @@
     font-size: 18px;
     line-height: 35px;
   }
+  
+.history_txt1 {
+    font-size: 22px;
+}
     .history .tab-cont ol li dl {
     font-size: 14px;
   }

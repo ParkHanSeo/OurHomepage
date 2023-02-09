@@ -20,7 +20,7 @@
   background-repeat: no-repeat;
 }
 .business_txtbox {
-  width: 35%;
+  width: 50%;
   height: 100%;
   position: relative;
 }
@@ -753,6 +753,10 @@
 }
 
 @media all and (max-width: 768px) {
+	.naedam_main_img .nd_reverse {
+  width: 75%;
+  padding: 0 0 75px 0;
+}
   .history .top_visual_area {
     background-image: url(../images/company/history/keyvisual-1920-px-history-mo@2x.jpg);
   }
@@ -1104,6 +1108,9 @@
   }
 }
 @media all and (max-width: 430px) {
+	.naedam_main_img .nd_main {
+     padding: 0 0 75px 0;
+}
   .division_container {
     padding: 0 45px;
   }
