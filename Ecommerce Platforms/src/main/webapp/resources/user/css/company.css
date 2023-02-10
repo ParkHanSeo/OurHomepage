@@ -792,6 +792,11 @@
   }
 }
 @media all and (max-width: 768px) {
+	.welfare_benefit_area .welfare_benefit_list > .businessList_items {
+    min-height: 500px;
+    border-radius: 18px;
+    height: 0;
+}
 	.num-item {
      width: calc(100%/2);
 }

@@ -24,7 +24,7 @@
         <section id="container" style="padding-top: 0;">
             <div id="contents">
             	<div class="business_introduce_wrapper">
-<!--                     <div class="division_container"> -->
+               		<div class="division_container"> 
                         <div class="visual_txt_area com_intro">
                             <p class="txt3">
                             	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 <br>
