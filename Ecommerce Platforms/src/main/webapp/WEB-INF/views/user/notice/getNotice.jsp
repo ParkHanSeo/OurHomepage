@@ -5,6 +5,7 @@
 <head>
 <title>내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
   <body>

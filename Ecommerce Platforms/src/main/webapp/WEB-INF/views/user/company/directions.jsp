@@ -67,9 +67,6 @@ $(function(){
 
                         <ul class="common-layout_2 is-vertical location_list introduction_vertical">
                             <li class="items">
-                                <p class="location_img">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_map_1.png" alt="">
-                                </p>
                                 <div class="location_text">
 	                                <h3 class="location_name">본사</h3>
 	                                <p class="location_info">
@@ -79,6 +76,9 @@ $(function(){
 	                                    FAX 031-789-3545
 	                                </p>
 	                            </div>
+                                <p class="location_img">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_map_1.png" alt="">
+                                </p>
                             </li>
                             <li class="items">
                                 <iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.5177283064227!2d127.10606707722165!3d37.40123603358722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7f434577899%3A0xae71bdfacd6566b1!2z64K064u07JSo7JWk7JSo!5e0!3m2!1sko!2skr!4v1672466052731!5m2!1sko!2skr"
@@ -86,9 +86,6 @@ $(function(){
 								</iframe>
                             </li>
                             <li class="items">
-                                <p class="location_img">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_map_2.jpg" alt="">
-                                </p>
                                 <div class="location_text">
 	                                <h3 class="location_name">서울 지사</h3>
 	                                <p class="location_info">
@@ -98,6 +95,9 @@ $(function(){
 	                                    FAX 02-2083-5594
 	                                </p>
 	                            </div>
+                                <p class="location_img">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_map_2.jpg" alt="">
+                                </p>
                             </li>
                             <li class="items">
 								<iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.1272088634846!2d126.8815848513167!3d37.481324379714785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f210b865e0d%3A0xadfac5f743c8151a!2z64yA66Wt7Y-s7Iqk7Yq47YOA7JuMNuywqA!5e0!3m2!1sko!2skr!4v1672639820068!5m2!1sko!2skr"  

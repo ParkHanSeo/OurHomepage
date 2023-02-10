@@ -304,6 +304,7 @@
   padding: 64px 50px;
 }
 .news .detail_body * {
+  overflow:auto;
   font-family: "CJONLYONENEW" !important;
   word-break: break-word;
 }

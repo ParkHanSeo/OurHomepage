@@ -149,7 +149,7 @@
 			                                		</div>
 			                               		</div>
 		                               		</div>
-											<div class="company_culture">
+											<div class="company_culture2">
 			                                	<div class="culture_section">
 			                                		<div class="company_culture_imgbox_right_02">
 			                                		</div>
@@ -164,7 +164,7 @@
 			                                		</div>
 			                               		</div>
 			                               	</div>
-											<div class="company_culture">
+											<div class="company_culture2">
 			                                	<div class="culture_section end">
 			                                		<div class="company_culture_imgbox_left_03">
 			                                		</div>
