@@ -385,15 +385,18 @@ body.overflow::-webkit-scrollbar {
   display: block;
 }
 #footer .naedam_footer_img {
-  float: left;
-  padding: 4% 0% 0% 20%;
+  padding: 4% 0 4% 20%;
+  position: absolute;
 }
 #footer .inner {
   position: relative;
   max-width: 1440px;
-  margin: 0 auto;
-  float: right;
-  padding: 2% 40% 2% 0;
+  float: left;
+  margin-left: 36px;
+}
+#footer .nd_symbol{
+  float: left;
+  margin-top: 40px;
 }
 #footer .footer-menu:after {
   content: "";
@@ -1990,7 +1993,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     padding: 0 24px;
   }
   #footer .inner {
-    padding: 2% 35% 2% 0;
+    
   }
 }
 
@@ -2243,7 +2246,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #footer .inner {
     max-width: 1024px;
-    padding: 40px 40px;
   }
   #footer .footer-menu > ul > li {
     padding: 0 0 0 23px;
@@ -2358,9 +2360,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 @media all and (max-width: 950px) {
-  #footer .inner {
-    left: -55px;
-  }
   #footer .footer-menu {
     display: flex;
   }
@@ -2373,9 +2372,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #footer .footer-menu > ul > li {
     padding-left: 0;
-  }
-  #footer address {
-    padding-top: 40px;
   }
   #footer .footer-policy {
     position: static;
@@ -3025,14 +3021,17 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #footer .naedam_footer_img {
     float: left;
-    margin: 5% 0 -4% 169px;
-    padding: 0 0 0 0;
+  }
+  #footer .nd_symbol {
+    float: none;
+    margin-top: 40px;
   }
   #footer .inner {
-    padding: 0 0 48px 0;
-    left: -100px;
+    position: relative;
+    max-width: 1440px;
+    float: none;
+    margin: 10px 0 0 0;
   }
-  
   .common-text_list_area .common-text_list .main_notice{
   	display: none;
   }
@@ -3073,17 +3072,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
   .common-text_list_area .common-text_list .main_notice{
   	display: none;
-  }
-  
-  #footer .inner {
-    padding: 0 0 48px 0;
-    left: 10px;
-  }
-  
-  #footer .naedam_footer_img {
-    float: left;
-    margin: 5% 0 -4% 10px;
-    padding: 0 0 0 0;
   }
 }
 
@@ -3223,15 +3211,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .common-layout_2 is-vertical location_list introduction_vertical > .items{
   
   }
-
-@media all and (max-width: 1024px) {
-  .show_1024 {
-    display: block;
-  }
-  .hide_1024 {
-    display: none;
-  }
-}
 
 @media all and (max-width: 1280px) {
   .show_1280 {

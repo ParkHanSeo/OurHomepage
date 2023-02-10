@@ -4,20 +4,23 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>인재정보 | 인재상 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
-<!-- include  -->
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="인재정보 | 인재상 | 내담씨앤씨">
+<meta property="og:title" content="인재정보 | 인재상 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨는 이러한 인재를 찾고 있습니다.">
+<meta property="og:description" content="내담씨앤씨는 이러한 인재를 찾고 있습니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담C&C 신입사원, 내담씨앤씨 인재상, 내담씨앤씨 인재, 내담C&C 인재상, 내담C&C 인재">
+<meta property="og:url" content="http://ff561admin.duckdns.org/user/highflier/qualifiedEmployee">
+
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/employee.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-<!-- include end  -->
-<!-- 사용자 정의 끝 -->
 </head>
 <body>
-<!-- haeder -->
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-<!-- haeder -->
-<div id="wrap qulified">
+	<div id="wrap qulified">
         <section id="container">
             <div id="contents" class="contents_top employee_contents">
                 <div class="sub_title_area">
@@ -186,9 +189,7 @@
                     </div>
                 </div>
         </section><!-- // #container -->
-</div>
+	</div>
 </body>
-<!-- footer -->		
 <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
-<!-- footer -->
 </html>

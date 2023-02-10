@@ -3,108 +3,20 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>공지사항 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
-<jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-<script type="text/javascript">
- 	function paging(cPage){
- 		
- 		if(cPage == 'prev'){
- 			alert("이전 페이지가 없습니다.");
- 			return;
- 		}else if(cPage == 'next'){
- 			alert("다음 페이지가 없습니다.");
- 			return;
- 		}
- 		
- 		$("li[id='postList']").remove();
- 		$("#page .common-pagination").remove();
-		var search = $("form[name='searchForm']").serialize();
-		var boardNo = $("input[name='boardNo']").val();
-		var searchKeyword = $("input[name='searchKeyword']").val();
-		var searchType = $("input[name='searchType']").val();
-		$.ajax({
-			url : "/user/notice/noticeListCom?${_csrf.parameterName}=${_csrf.token}",
-			type : "POST",
-			data : {
-				cPage,
-				boardNo,
-				searchKeyword,
-				searchType
-			},
-			success : function(JSONData, status){
-				var display = '';
-				for(var i = 0; i < JSONData.list.length; i++){
-					console.log("접근")
-					display = '<li id ="postList">'
-							+ 	'<div class="subj_box">'
-							+ 	   '<p class="common-text_txt2">'
-							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].postNo+'">'
-							+			 JSONData.list[i].postTitle
-							+			 '<br />'
-							+		  '</a>'
-							+		'</p>'
-							+	 '</div>'
-							+	 '<div class="date_box center-left">'
-							+		 '<p class="common-text_txt4">'+JSONData.list[i].postDate+'</p>'
-							+	 '</div>'
-							+ '</li>';
-					$(".common-text_list_area .common-text_list").append(display);
-				}
-				$("#page").append(JSONData.pagebar);
-			} ,
-			error : function(check){
-				alert("실패")
-				console.log(check)
-			}
-		})
-	}
-</script>
-</head>
-  <body>
-  <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-<div id="search-layer">
-    <div class="inner">
-        <div class="area_search">
-            <form name="mainSearchForm" autocomplete="off" action="/user/notice/noticeList?${_csrf.parameterName}=${_csrf.token}" method="post">
-            	 <input type="hidden" name="boardNo" value="${board2.boardNo}">
-            	 <input type="hidden" name="cPage">
-                 <input type="search" id="inputSearch" name="searchAll" placeholder="무엇이 궁금하신가요?" maxlength="30"> 
-                 <label for="inputSearch" class="blind">검색어</label>
-                 <span class="icon_search">
-                    <!-- <img src="/images/common/03-foundation-icon-system-search-32-px.svg" alt=""> -->
-                    <input type="submit" id="searchKeyword" value="검색"> 
-               	</span>
-            </form>
-            
-            <p class="result-error-txt" style="display:none;">검색어를 입력해주세요.</p>
-          
-            <div class="hash_area search_tag">
-            <a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','AI')" class="hash_tag">#AI</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','블록체인')" class="hash_tag">#블록체인</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','NFT')" class="hash_tag">#NFT</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','빅데이터')" class="hash_tag">#빅데이터</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','클라우드')" class="hash_tag">#클라우드</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','CJONE')" class="hash_tag">#CJONE</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','데이터마케팅')" class="hash_tag">#데이터마케팅</a></div>
-        </div>
-        <a href="" class="btn_close_search">
-            <span class="blind">검색창 닫기</span>
-            <i class="close-ico">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </i>
-        </a>
-    </div>
-</div>
-<script>
-$(function(){
-	// 검색어 유효성 체크
-	$("#btnCommonSearchAll").click(function(){
-		if($("#inputSearch").val() == "") {
-			$(".result-error-txt").show();
-			return false;	
-		}
-	});
-});
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="공지사항 | 내담씨앤씨">
+<meta property="og:title" content="공지사항 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨의 소식을 알려드립니다.">
+<meta property="og:description" content="내담씨앤씨의 소식을 알려드립니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 공지사항, 내담C&C 공지사항">
 
-</script>
+<jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
+</head>
+<body>
+<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 		<section id="container">
             <div id="contents" class="contents_top">
                 <div class="sub_title_area">
@@ -207,9 +119,59 @@ $(function(){
                 </div><!-- // .layout_section_outer -->
             </div><!-- // #contents -->
         </section><!-- // #container -->
-</div>
-  
-   
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
   </body>
+<script type="text/javascript">
+ 	function paging(cPage){
+ 		
+ 		if(cPage == 'prev'){
+ 			alert("이전 페이지가 없습니다.");
+ 			return;
+ 		}else if(cPage == 'next'){
+ 			alert("다음 페이지가 없습니다.");
+ 			return;
+ 		}
+ 		
+ 		$("li[id='postList']").remove();
+ 		$("#page .common-pagination").remove();
+		var search = $("form[name='searchForm']").serialize();
+		var boardNo = $("input[name='boardNo']").val();
+		var searchKeyword = $("input[name='searchKeyword']").val();
+		var searchType = $("input[name='searchType']").val();
+		$.ajax({
+			url : "/user/notice/noticeListCom?${_csrf.parameterName}=${_csrf.token}",
+			type : "POST",
+			data : {
+				cPage,
+				boardNo,
+				searchKeyword,
+				searchType
+			},
+			success : function(JSONData, status){
+				var display = '';
+				for(var i = 0; i < JSONData.list.length; i++){
+					console.log("접근")
+					display = '<li id ="postList">'
+							+ 	'<div class="subj_box">'
+							+ 	   '<p class="common-text_txt2">'
+							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].postNo+'">'
+							+			 JSONData.list[i].postTitle
+							+			 '<br />'
+							+		  '</a>'
+							+		'</p>'
+							+	 '</div>'
+							+	 '<div class="date_box center-left">'
+							+		 '<p class="common-text_txt4">'+JSONData.list[i].postDate+'</p>'
+							+	 '</div>'
+							+ '</li>';
+					$(".common-text_list_area .common-text_list").append(display);
+				}
+				$("#page").append(JSONData.pagebar);
+			} ,
+			error : function(check){
+				alert("실패")
+			}
+		})
+	}
+</script>
 </html>
