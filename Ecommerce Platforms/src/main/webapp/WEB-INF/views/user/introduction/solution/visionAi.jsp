@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 Vision AI을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 Vision AI을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 Vision AI, 내담C&C Vision AI, 내담 Vision AI, 내담씨앤씨 비전AI, 내담C&C 비전AI, 내담 비전AI">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/visionAi">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/visionAi">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

@@ -261,6 +261,15 @@
 		SET CONTENTS_STATUS = 'N'
 		WHERE SYSDATE() > RECRUIT_END
 	</update>
+	
+	<update id="deleteFile">
+	UPDATE recruit
+	   SET 
+			RECRUIT_FILE_NAME_ORG = null, 
+			RECRUIT_FILE_NAME = null, 
+			RECRUIT_FILE_PATH = null
+	  WHERE RECRUIT_NO = #{curRecruitNo}
+	</update>
 
 </mapper>
 

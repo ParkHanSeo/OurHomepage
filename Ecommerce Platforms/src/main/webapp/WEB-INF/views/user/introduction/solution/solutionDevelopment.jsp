@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 Solution을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 Solution을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 Solution, 내담C&C Solution, 내담 Solution, 내담씨앤씨 솔루션, 내담C&C 솔루션, 내담 솔루션">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/solutionDevelopment">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/solutionDevelopment">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

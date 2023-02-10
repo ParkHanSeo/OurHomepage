@@ -6,10 +6,17 @@
 <head>
 <title>회사소개 | CEO메시지 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport"
-	content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/user/css/company.css">
+<<<<<<< HEAD
+<meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="회사소개 | CEO메시지 | 내담씨앤씨">
+<meta property="og:title" content="회사소개 | CEO메시지 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨 CEO 메시지입니다.">
+<meta property="og:description" content="내담씨앤씨 CEO 메시지입니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 한창엽 대표, 한창엽">
+<meta property="og:url" content="https://ndcc.co.kr/user/company/ceoList">
+
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/company.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
 <body>

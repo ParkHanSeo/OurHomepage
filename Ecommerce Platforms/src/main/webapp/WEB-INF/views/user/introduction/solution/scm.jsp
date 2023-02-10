@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 SCM을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 SCM을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 SCM, 내담C&C SCM, 내담 SCM, 내담씨앤씨 공급망 관리, 내담C&C 공급망 관리, 내담 공급망 관리">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/SCM">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/SCM">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

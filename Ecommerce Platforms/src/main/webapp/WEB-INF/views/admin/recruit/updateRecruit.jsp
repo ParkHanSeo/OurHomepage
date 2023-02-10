@@ -234,10 +234,14 @@ function updateRecruit(){
 		var fileinput = $("input[name='fileName_u']");
 		console.log("fileinput >>>" + fileinput);
 		
+		// fileName_u : 새로 update 하려는 파일 orgFileName_u
 		// org value 값이 있고 fileName_u == null 이면 유지
 		if( $("orgFileName_u") != null && fileinput == null){
 			formData.append('file', null);
+		} else if($("orgFileName_u") == null && fileinput == null){
+			formData.append('file', null);
 		} else {
+		}
 		// fileName_u != null 이면 파일 변경
 			for(var i = 0; i < fileinput.length; i++){
 				if(fileinput[i].files.length > 0){
@@ -253,6 +257,9 @@ function updateRecruit(){
 		}
 		
 		formData.append("${_csrf.parameterName}", "${_csrf.token}");
+		
+		console.log(">>>>>" , $("input[name='fileName_u']").val());
+		console.log("length >>> " , $("input[name='fileName_u']").length);
 
 		//바뀐 ajax
 		$.ajax({
@@ -276,7 +283,27 @@ function updateRecruit(){
 			    		 		if(result == 1){
 			    		 			msg = "게시글 등록에 성공했습니다.";
 			    		 		} else if(result == 2){
-			    		 			msg = "게시글 등록에 성공했습니다.(파일없음)";
+			    		 			msg = "게시글 등록에 성공했습니다.";
+			    		 		} else {
+			    		 			msg = "게시글 등록에 실패했습니다.";
+			    		 		}
+			    		 		alert(msg);
+			   			  		location.href = "/admin/recruitList";
+			  		  	 	 }
+				  		})
+			 		} else {
+			 			$.ajax({
+			  			 	 url : "/admin/insertFile?$",
+				  		  	 type : "POST",
+			  		  	 	 data : formData,
+			  		  	     processData: false,
+			  		  	     contentType: false,
+			  		  	     enctype: 'multipart/form-data',
+			    		 	 success : function(result){
+			    		 		console.log("result 333 >> ", result);
+			    		 		let msg;
+			    		 		if(result == 1){
+			    		 			msg = "게시글 등록에 성공했습니다.";
 			    		 		} else {
 			    		 			msg = "게시글 등록에 실패했습니다.";
 			    		 		}
@@ -285,10 +312,9 @@ function updateRecruit(){
 			  		  	 	 }
 				  		})
 			 		}
+			 		
 		  	 	 }
  		});
-		
-	}
 	
 	
 	}

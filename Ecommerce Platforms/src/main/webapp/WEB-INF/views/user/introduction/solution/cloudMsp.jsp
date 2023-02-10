@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 MSP을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 MSP을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 MSP, 내담C&C MSP, 내담 MSP, 내담씨앤씨 클라우드, 내담C&C 클라우드, 내담 클라우드">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/cloudMsp">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/cloudMsp">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

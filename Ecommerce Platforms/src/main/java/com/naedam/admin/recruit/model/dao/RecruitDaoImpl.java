@@ -92,6 +92,12 @@ public class RecruitDaoImpl implements RecruitDao {
 		return sqlSession.update("recruit.updateContentsStatus");
 	}
 
+	@Override
+	public int deleteFile(int curRecruitNo) {
+		
+		return sqlSession.update("recruit.deleteFile", curRecruitNo);
+	}
+
 
 
 	

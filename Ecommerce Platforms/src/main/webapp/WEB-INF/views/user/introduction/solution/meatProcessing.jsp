@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 육가공관리시스템을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 육가공관리시스템을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 육가공관리시스템, 내담C&C 육가공관리시스템, 내담 육가공관리시스템">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/businessIntroduction">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/businessIntroduction">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

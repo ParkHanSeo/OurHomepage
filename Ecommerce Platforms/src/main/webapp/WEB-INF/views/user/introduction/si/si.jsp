@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 SI을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 SI을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 SI, 내담C&C SI, 내담 SI">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/si">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/si">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

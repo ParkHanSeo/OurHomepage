@@ -43,6 +43,9 @@ public interface RecruitDao {
 	//채용 게시글 상태값 변경
 	public int updateContentsStatus();
 
+	//파일 삭제
+	public int deleteFile(int curRecruitNo);
+
 
 
 	

@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 MES을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 MES을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 MES, 내담C&C MES, 내담 MES, 내담씨앤씨 제조 실행 시스템, 내담C&C 제조 실행 시스템, 내담 제조 실행 시스템">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/mes">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/mes">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

@@ -600,7 +600,7 @@
   color: #666;
 }
 .process-flow .flow_list {
-  height: 90%;
+  height: 100%;
 }
 .process-area .flow_list .si_sub_1 {
   background-image: url(../images/introduction/introduction_si_sub_1.jpg);
