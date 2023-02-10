@@ -24,7 +24,7 @@
         <section id="container" style="padding-top: 0;">
             <div id="contents">
             	<div class="business_introduce_wrapper">
-                    <div class="division_container">
+<!--                     <div class="division_container"> -->
                         <div class="visual_txt_area com_intro">
                             <p class="txt3">
                             	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 <br>
@@ -33,11 +33,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="layout_section_outer biz_difference is-gray" style="padding: 0 0 0 0;">
+                	<div class="num-container" id="num-container">
+				        <div class="num-item">
+				            <h4 class="in-title">설립연도</h4>
+				            <span class="nums" data-count="2008">0</span><span id="num-unit">년</span><br>
+				        </div>
+				        <div class="num-item">
+				            <h4 class="in-title">대표이사</h4>
+				            <span class="nums" >한창엽</span><span id="num-unit"></span><br>
+				        </div>
+				        <div class="num-item">
+				            <h4 class="in-title">매출액</h4>
+				            <span class="nums" data-count="550">0</span><span id="num-unit">억+</span><br>
+				        </div>
+				        <div class="num-item">
+				            <h4 class="in-title">임직원 수</h4>
+				            <span class="nums" data-count="102">0</span><span id="num-unit">명</span><br>
+				        </div>
+				    </div>
+                </div>                
 				<div class="business_title_area">
-                    <!-- <div class="inner_container">
-                        <h2 class="sub_title business_sub_title">사업 개요</h2>
-                    </div> -->
-                </div><!-- // .sub_title_area -->                
+                </div><!-- // .sub_title_area -->
 				<div class="layout_section_outer type04" data-js="anchor-target"  style="padding: 0 0 80px;">
                     <div class="inner_container">
                         <div class="layout_head">
@@ -95,7 +112,6 @@
                                 </ul>
                             </div>
                         </div>
-                    
                 </div>
                 <div class="layout_section_outer type04" data-js="anchor-target" style="padding: 0 0 160px;">
                 	<div class="inner_container">
@@ -159,5 +175,27 @@
             </div><!-- // #contents -->
         </section><!-- // #container -->  
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
+<script type="text/javascript">
+  $('.nums').each(function () {
+      const $this = $(this),
+          countTo = $this.attr('data-count');
+
+      $({
+          countNum: $this.text()
+      }).animate({
+          countNum: countTo
+      }, {
+          duration: 1000,
+          easing: 'linear',
+          step: function () {
+              $this.text(Math.floor(this.countNum));
+          },
+          complete: function () {
+              $this.text(this.countNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+              //3자리 마다 콤마 표시 적용
+          }
+      });
+  });
+</script>
 </body>
 </html>
