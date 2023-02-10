@@ -2251,7 +2251,7 @@ h4 {
   }
   .news-wrap .card-ui .common-layout_3 .items,
   .news-wrap .card-ui .desc_box .ui_category {
-    margin-top: 16px;
+    margin-top: 0;
     padding-top: 13px;
     border-top: 0;
   }
@@ -2407,7 +2407,7 @@ h4 {
     padding-top: 70px;
   }
   .btn-area.aos-init.aos-animate {
-    padding-left: 95px;
+    width: auto;
   }
   .core-wrap .section-title-area {
     padding: 0 0 0 0;

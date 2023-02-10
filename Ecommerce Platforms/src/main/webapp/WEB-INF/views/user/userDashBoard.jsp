@@ -35,12 +35,12 @@
 													${head.content}
 												</p>
 											</div>
-											<div class="btn-area">
-												<a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 
-													<span>솔루션 보기</span> 
-													<i class="icon link-arrow"></i>
-												</a>
-											</div>
+										</div>
+										<div class="btn-area">
+											<a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 
+												<span>솔루션 보기</span> 
+												<i class="icon link-arrow"></i>
+											</a>
 										</div>
 									</div>
 								</div>

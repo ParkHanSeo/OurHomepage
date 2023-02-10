@@ -161,7 +161,7 @@ public class BoardController {
 		map.put("offset", offset);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
-		System.out.println("check = ==== "+resultMap.get("list"));
+
 		// pagebar
 		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		model.addAttribute("pagebar", pagebar);		

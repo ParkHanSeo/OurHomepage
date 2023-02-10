@@ -17,12 +17,6 @@
 <meta property="og:url" content="https://ndcc.co.kr/user/company/ceoList">
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/company.css">
-=======
-<meta name="viewport"
-	content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/user/css/company.css">
->>>>>>> branch 'master' of https://github.com/ParkHanSeo/Ecommerce-Platforms.git
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
 <body>
