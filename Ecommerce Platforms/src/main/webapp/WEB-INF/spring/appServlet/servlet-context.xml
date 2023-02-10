@@ -30,7 +30,7 @@
 	<interceptors>
 		<interceptor>
 		<!-- /** level 수 상관없이 모든 요청 -->
-			<mapping path="/**"/>
+			<mapping path="/admin/dashboard"/>
 			<beans:bean  class="com.naedam.admin.common.interceptor.LogInterceptor"/>
 		</interceptor>
 
