@@ -1096,6 +1096,7 @@
     min-height: 500px;
     width: 100%;
     border-radius: 18px;
+    height: 0;
   }
   .welfare_benefit_box1 .benefit_title {
     text-align: left;
