@@ -103,6 +103,10 @@ public class RecruitServiceImpl implements RecruitService {
 			fileResult = recruitDao.insertFile(recruit);
 			
 		}
+		
+		if(fileList.size() == 0) {
+			fileResult = recruitDao.deleteFile(curRecruitNo);
+		}
 
 		return fileResult;
 	}
