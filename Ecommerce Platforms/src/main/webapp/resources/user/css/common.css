@@ -385,15 +385,18 @@ body.overflow::-webkit-scrollbar {
   display: block;
 }
 #footer .naedam_footer_img {
-  float: left;
-  padding: 4% 0% 0% 20%;
+  padding: 4% 0 4% 20%;
+  position: absolute;
 }
 #footer .inner {
   position: relative;
   max-width: 1440px;
-  margin: 0 auto;
-  float: right;
-  padding: 2% 40% 2% 0;
+  float: left;
+  margin-left: 36px;
+}
+#footer .nd_symbol{
+  float: left;
+  margin-top: 40px;
 }
 #footer .footer-menu:after {
   content: "";
@@ -1185,7 +1188,7 @@ img {
   position: relative;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-position: center top; /*background-image:url(../images/img/img-keyvisual-visual-01-pc@2x.png);*/
+  background-position: center top; 
   background-size: cover;
 } /* 데이터 마케팅 */
 .sub_history_area_top {
@@ -1197,33 +1200,19 @@ img {
 .top_visual_area.type01:before {
   background-image: url(../images/service/bg-05-pc.png);
 }
-.top_visual_area.type02 {
-  /*background-image:url(../images/img/img-keyvisual-visual-04-pc@2x.png)*/
-} /* 이커머스 & 리테일 */
-.top_visual_area.type02:before {
-  background-image: url(../images/introduction/bg-04-pc.png);
-}
-.top_visual_area.type03 {
-  /*background-image:url(../images/img/img-keyvisual-visual-05-pc@2x.png)*/
-} /* 미디어 컨버전스 */
+/* 미디어 컨버전스 */
 .top_visual_area.type03:before {
   background-image: url(../images/service/bg-02-pc.png);
 }
-.top_visual_area.type04 {
-  /*background-image:url(../images/img/img-keyvisual-visual-03-pc@2x.png)*/
-} /* 클라우드&인프라 */
+/* 클라우드&인프라 */
 .top_visual_area.type04:before {
   background-image: url(../images/service/bg-06-pc.png);
 }
-.top_visual_area.type05 {
-  /*background-image:url(../images/img/img-keyvisual-visual-07-pc@2x.png)*/
-} /* 정보보호 */
+/* 정보보호 */
 .top_visual_area.type05:before {
   background-image: url(../images/service/bg-07-pc.png);
 }
-.top_visual_area.type06 {
-  /*background-image:url(../images/img/img-keyvisual-visual-06-pc@2x.png)*/
-} /* 스마트 제조 물류 */
+/* 스마트 제조 물류 */
 .top_visual_area.type06:before {
   background-image: url(../images/service/bg-01-pc.png);
 }
@@ -1237,61 +1226,13 @@ img {
   /* background-image: url(../images/naedam_ca_back.png); */
   background-image: url(../images/recruit_top.jpg);
 } /* 채용 */
-.top_visual_area.tech-01 {
-  /*background-image:url(../images/tech/tech-img-keyvisual-visual-01-pc@2x.png);*/
-} /* 기술연구 */
-.top_visual_area.tech-02 {
-  /*background-image:url(../images/tech/img-keyvisual-visual-02-pc@2x.png);*/
-} /* AI 비전연구 */
+
 .top_visual_area.tech-02.ci_visual_area {
   background-position: right;
   background-size: contain;
   background-image: url(../images/nd_back.png);
 }
-.top_visual_area.tech-03 {
-  /*background-image:url(../images/tech/img-keyvisual-visual-03-pc@2x.png);*/
-} /* AI 자연어연구 */
-.top_visual_area.tech-04 {
-  /*background-image:url(../images/tech/img-keyvisual-visual-04-pc@2x.png);*/
-} /* AI 오디오연구 */
-.top_visual_area.tech-05 {
-  /*background-image:url(../images/tech/img-keyvisual-visual-05-pc@2x.png);*/
-} /* 데이터 사이언스 */
-.top_visual_area.tech-06 {
-  /*background-image:url(../images/tech/img-keyvisual-visual-06-pc@2x.png);*/
-} /* 블록체인 */
-.top_visual_area.tech-01:before {
-  background-image: url(../images/tech/tech-bg-01-pc.png);
-}
-.top_visual_area.tech-02:before {
-  background-image: url(../images/tech/tech-bg-02-pc.png);
-}
-.top_visual_area.tech-03:before {
-  background-image: url(../images/tech/tech-bg-03-pc.png);
-}
-.top_visual_area.tech-04:before {
-  background-image: url(../images/introduction/bg-04-pc.png);
-}
-.top_visual_area.tech-05:before {
-  background-image: url(../images/tech/tech-bg-05-pc.png);
-}
-.top_visual_area.tech-06:before {
-  background-image: url(../images/tech/tech-bg-06-pc.png);
-}
-.top_visual_area.esg-edu {
-  background-image: url(../images/esg/img-keyvisual-esg-pc@2x.png);
-} /* esg 공평한 교육 */
-.top_visual_area.esg-edu.bg-edu01 {
-  background-image: url(../images/esg/img-keyvisual-esg-pc-1@2x.png);
-} /* esg 건강한 복지 */
-.top_visual_area.esg-edu.bg-edu02 {
-  background-image: url(../images/esg/img-keyvisual-esg-05-pc@2x.png);
-} /* esg 안전경영 */
-.top_visual_area.esg-edu.bg-edu03 {
-  background-image: url(../images/esg/img-keyvisual-esg-pc-2@2x.png);
-} /* esg 경제적기회 */
-.top_visual_area.ceo_msg {
-}
+
 
 .top_visual_area.recruit .top_txt_outer .top_txt_area {
   padding-top: 120px;
@@ -1636,6 +1577,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 
 .common-swiper_area.sub-main {
   margin-top: 48px;
+  margin-bottom: 48px;
 }
 .common-swiper_area.sub-main:before {
   display: none;
@@ -1989,7 +1931,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     padding: 0 24px;
   }
   #footer .inner {
-    padding: 2% 35% 2% 0;
+    
   }
 }
 
@@ -2242,7 +2184,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #footer .inner {
     max-width: 1024px;
-    padding: 40px 40px;
   }
   #footer .footer-menu > ul > li {
     padding: 0 0 0 23px;
@@ -2357,9 +2298,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 @media all and (max-width: 950px) {
-  #footer .inner {
-    left: -55px;
-  }
   #footer .footer-menu {
     display: flex;
   }
@@ -2372,9 +2310,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #footer .footer-menu > ul > li {
     padding-left: 0;
-  }
-  #footer address {
-    padding-top: 40px;
   }
   #footer .footer-policy {
     position: static;
@@ -2438,6 +2373,7 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     height: 32px;
     margin: 14px 0;
     left: 24px;
+    top: 5px;
   }
   #header .inner {
     height: 60px;
@@ -3023,14 +2959,17 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   }
   #footer .naedam_footer_img {
     float: left;
-    margin: 5% 0 -4% 169px;
-    padding: 0 0 0 0;
+  }
+  #footer .nd_symbol {
+    float: none;
+    margin-top: 40px;
   }
   #footer .inner {
-    padding: 0 0 48px 0;
-    left: -100px;
+    position: relative;
+    max-width: 1440px;
+    float: none;
+    margin: 10px 0 0 0;
   }
-  
   .common-text_list_area .common-text_list .main_notice{
   	display: none;
   }
@@ -3071,17 +3010,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
   .common-text_list_area .common-text_list .main_notice{
   	display: none;
-  }
-  
-  #footer .inner {
-    padding: 0 0 48px 0;
-    left: 10px;
-  }
-  
-  #footer .naedam_footer_img {
-    float: left;
-    margin: 5% 0 -4% 10px;
-    padding: 0 0 0 0;
   }
 }
 
@@ -3221,15 +3149,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .common-layout_2 is-vertical location_list introduction_vertical > .items{
   
   }
-
-@media all and (max-width: 1024px) {
-  .show_1024 {
-    display: block;
-  }
-  .hide_1024 {
-    display: none;
-  }
-}
 
 @media all and (max-width: 1280px) {
   .show_1280 {

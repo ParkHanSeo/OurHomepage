@@ -3,54 +3,23 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>회사소개 | 오시는 길 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="회사소개 | 오시는 길 | 내담씨앤씨">
+<meta property="og:title" content="회사소개 | 오시는 길 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨는 판교 본사, 서울 지사를 두고 있습니다.">
+<meta property="og:description" content="내담씨앤씨는 판교 본사, 서울 지사를 두고 있습니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 본사, 내담씨앤씨본사, 내담C&C 본사, 내담C&C본사, 내담 본사, 내담본사, 내담씨앤씨 지사, 내담씨앤씨지사, 내담C&C 지사, 내담C&C지사, 내담 지사, 내담지사">
+<meta property="og:url" content="https://ndcc.co.kr/user/company/directionsList">
+
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/location.css">
 </head>
-  <body>
+<body>
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-<div id="wrap" class="history">
-<div id="search-layer">
-    <div class="inner">
-        <div class="area_search">
-            <form autocomplete="off" action="/searchall/search_results" method="post">
-                 <input type="search" id="inputSearch" name="searchAll" placeholder="무엇이 궁금하신가요?" maxlength="30"> 
-                 <label for="inputSearch" class="blind">검색어</label>
-                 <span class="icon_search">
-                    <input type="submit" id="btnCommonSearchAll" value="검색"> 
-               	</span>
-            </form>
-            
-            <p class="result-error-txt" style="display:none;">검색어를 입력해주세요.</p>
-          
-            <div class="hash_area search_tag">
-            <a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','AI')" class="hash_tag">#AI</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','블록체인')" class="hash_tag">#블록체인</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','NFT')" class="hash_tag">#NFT</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','빅데이터')" class="hash_tag">#빅데이터</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','클라우드')" class="hash_tag">#클라우드</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','CJONE')" class="hash_tag">#CJONE</a><a href="javascript:void(0);" onclick="hashtagLink('/searchall/search_results?searchAll=','데이터마케팅')" class="hash_tag">#데이터마케팅</a></div>
-        </div>
-        <a href="" class="btn_close_search">
-            <span class="blind">검색창 닫기</span>
-            <i class="close-ico">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </i>
-        </a>
-    </div>
-</div>
-<script>
-$(function(){
-	// 검색어 유효성 체크
-	$("#btnCommonSearchAll").click(function(){
-		if($("#inputSearch").val() == "") {
-			$(".result-error-txt").show();
-			return false;	
-		}
-	});
-});
-</script>
-
-
+	<div id="wrap" class="history">
         <section id="container">
             <div id="contents" class="contents_top">
                 <div class="sub_title_area">
@@ -109,20 +78,8 @@ $(function(){
                 </div>
 
             </div><!-- // #contents -->
-        </section><!-- // #container -->
-</div>
-<div class="layer_wrapper is-movie" id="pop_movie">
-    <div class="layer_outer">
-        <div class="layer_inner">
-            <div class="layer_body">
-                <div class="movie_iframe_wrap">
-                    <iframe src="" title="" class="movie_iframe"></iframe>
-                </div>
-            </div>
-            <button type="button" class="icon pop-close" onclick="moviePopClose(this);">닫기</button>
-        </div><!-- // .layer_inner -->
-    </div><!-- // .layer_outer -->
-</div><!-- // .layer_wrapper -->
+      </section><!-- // #container -->
+	</div>
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
-  </body>
+</body>
 </html>

@@ -3,12 +3,20 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>사업소개 | 사업소개 | SI | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="사업소개 | 사업소개 | SI | 내담씨앤씨">
+<meta property="og:title" content="사업소개 | 사업소개 | SI | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨의 SI을 소개합니다.">
+<meta property="og:description" content="내담씨앤씨의 SI을 소개합니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 SI, 내담C&C SI, 내담 SI">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/si">
+
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
-  <body>
+<body>
   <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
    <div id="wrap" class="visual-center">
         <section id="container">
@@ -89,60 +97,6 @@
 								</ul>
 							</div>
 						</div>                        
-                        <%-- <div class="layout_body">
-                            <div class="recomm_industry_slider">
-                                <ul class="swiper-wrapper common-layout_3 is-vertical swiper_si_layout">
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_1.jpg" alt="공공기관">
-                                            <p class="recomm_txt">
-                                                공공기관
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_2.jpg" alt="금융">
-                                            <p class="recomm_txt">
-                                                금융
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_3.jpg" alt="통신">
-                                            <p class="recomm_txt">
-                                                통신
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_4.jpg" alt="전자상거래">
-                                            <p class="recomm_txt">
-                                                전자상거래
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_5.jpg" alt="반도체">
-                                            <p class="recomm_txt">
-                                                반도체
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="items swiper-slide">
-                                        <div class="recomm_box">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/introduction/introduction_si_sub_6.jpg" alt="물류/서비스">
-                                            <p class="recomm_txt">
-                                                물류 / 서비스
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> --%>
                     </div>                
                     <div class="inner_container">
                         <div class="layout_body">
@@ -202,5 +156,5 @@
         </section><!-- // #container -->
     </div><!-- // #wrap -->
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
-  </body>
+</body>
 </html>

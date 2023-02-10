@@ -273,7 +273,7 @@ var responsiveControl = (function ($) {
   dataSubViPc +=
     '<span data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear">怨좉컼 鍮꾩쫰�덉뒪�� �곸떊�� 二쇰룄�섎뒗</span>';
   dataSubViPc +=
-    '<span data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear">�붿��� �쒕퉬�� �꾨Ц湲곗뾽, CJ�щ━釉뚮꽕�몄썚��</span>';
+    '<span data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear">�붿��� �쒕퉬�� �꾨Ц湲곗뾽</span>';
 
   var dataSubViMo =
     '<span data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear">�욎꽑 湲곗닠�κ낵 理쒓퀬��</span>';
@@ -284,7 +284,7 @@ var responsiveControl = (function ($) {
   dataSubViMo +=
     '<span data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear">�붿��� �쒕퉬�� �꾨Ц湲곗뾽,</span>';
   dataSubViMo +=
-    '<span data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear">CJ�щ━釉뚮꽕�몄썚��</span>';
+    '<span data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear">�щ━釉뚮꽕�몄썚��</span>';
 
   var subViCondition =
     window.innerWidth > 768 ? [false, false] : [false, false];
@@ -415,36 +415,6 @@ $(function () {
   $(".notice-layer .control-area.second label").on("click", function () {
     $(this).closest(".notice-layer").removeClass("active");
     setCookie("pop_notice2", "Y", 1);
-  });
-});
-
-//梨꾩슜�뺣낫 API�몄텧.
-$(function () {
-  var company = "E10";
-  var business_unit = "E10BU";
-  var zz_target_1 = "Z";
-  var rowno = "1";
-  var pageno = "1";
-  var total_count = "1";
-  $.ajax({
-    //url: "https://recdev.cj.net/recruit/ko/common/common/jobListInfo.fo", //媛쒕컻
-    url: "https://recruit.cj.net/recruit/ko/common/common/jobListInfo.fo", //�댁쁺
-    type: "get",
-    dataType: "jsonp", // �쒕쾭濡쒕��� 由ы꽩 諛쏆븘�� �곗씠�� �뺤떇�� 吏���
-    //crossOrigin: true,    // �щ줈�ㅻ룄硫붿씤 �닿껐 �뚮윭洹몄씤
-    data: {
-      COMPANY: company,
-      BUSINESS_UNIT: business_unit,
-      ZZ_TARGET_1: zz_target_1,
-      ROWNO: rowno,
-      PAGENO: pageno,
-      TOTAL_COUNT: total_count,
-    },
-    callback: "list",
-    success: function (jsonStr) {
-      $("#recruit-num").text(jsonStr[0].ACTIVE_CNT);
-    },
-    error: function (xhr, option, error) {},
   });
 });
 

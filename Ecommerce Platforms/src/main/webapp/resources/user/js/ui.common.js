@@ -190,54 +190,7 @@ var GNB = (function ($) {
     setAtive();
   };
   var setAtive = function () {
-    var replaceUrlArr = [
-      {
-        replaceDepth: [0, 2],
-        page: ["/page/company/CJON-C-04.asp", "/company/award"],
-      },
-      {
-        replaceDepth: [3, 0],
-        page: [
-          "/page/esg/CJON-E-04.asp",
-          "/page/esg/CJON-E-05.asp",
-          "/page/esg/CJON-E-06.asp",
-          "/sustainability/compliance/code_of_ethics",
-          "/sustainability/compliance/ethics_policy",
-          "/sustainability/compliance/education",
-        ],
-      },
-      {
-        replaceDepth: [4, 0],
-        page: [
-          "/page/news/CJON-M-01.asp",
-          "/page/news/CJON-M-02.asp",
-          "/page/news/CJON-M-03.asp",
-          "/page/news/CJON-M-05.asp",
-          "/page/news/CJON-M-07.asp",
-          "/news/recent_news",
-          "/news/press_release",
-          "/news/blog",
-          "/news/notice",
-        ],
-      },
-      {
-        replaceDepth: [3, 3, 0],
-        page: [
-          "/page/esg/CJON-E-10.asp",
-          "/page/esg/CJON-E-11.asp",
-          "/page/esg/CJON-E-12.asp",
-          "/page/esg/CJON-E-13.asp",
-          "/page/esg/CJON-E-19.asp",
-          "/page/esg/CJON-E-20.asp",
-          "/sustainability/contribution/education",
-          "/sustainability/contribution/education_program",
-          "/sustainability/contribution/awards",
-          "/sustainability/contribution/education_volunteers",
-          "/sustainability/contribution/education_volunteers/member",
-          "/sustainability/contribution/education_volunteers/recruit",
-        ],
-      },
-    ];
+    var replaceUrlArr = [];
 
     if (
       $(

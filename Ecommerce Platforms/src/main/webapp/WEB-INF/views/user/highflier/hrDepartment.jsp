@@ -4,21 +4,22 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>인재정보 | 인사제도 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
-<!-- include  -->
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="인재정보 | 인사제도 | 내담씨앤씨">
+<meta property="og:title" content="인재정보 | 인사제도 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨의 인사제도를 소개합니다.">
+<meta property="og:description" content="내담씨앤씨의 인사제도를 소개합니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담C&C 신입사원, 내담씨앤씨 인사제도, 내담씨앤씨 인사, 내담C&C 인사제도, 내담C&C 인사">
+<meta property="og:url" content="https://ndcc.co.kr/user/highflier/qualifiedEmployee">
+
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/user/css/recruit.css">
-<!-- include end  -->
-<!-- 사용자 정의 끝 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/recruit.css">
 </head>
 <body>
-	<!-- haeder -->
-	<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-	<!-- haeder -->
-<body>
+  <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 	<div id="wrap">
 		<section id="container">
 			<div id="contents" class="contents_top">
@@ -192,9 +193,6 @@
 		</section>
 		<!-- // #container -->
 	</div>
-	<!-- // #wrap -->
-	<!-- footer -->
 	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
-	<!-- footer -->
 </body>
 </html>

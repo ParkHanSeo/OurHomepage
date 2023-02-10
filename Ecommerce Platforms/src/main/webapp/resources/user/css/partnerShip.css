@@ -9,7 +9,7 @@
 }
 .left {
   text-align: left;
-  left: 50%;
+  left: 65%;
 }
 .right {
   text-align: left;
@@ -1366,10 +1366,6 @@
   margin-left: 0;
 }
 
-.cont_box_wrapper.cj-unit .cont_item_box {
-  height: auto;
-}
-
 .cont_item_dl {
   margin-top: 8px;
 }
@@ -2183,24 +2179,24 @@
     height: 50%;
   }
   .welfare_benefit_area
-  .welfare_benefit_list
-  > li
-  .welfare_benefit_box1
-  .benefit_desc {
-  margin-top: 16px;
-  font-size: 16px;
-  line-height: 28px;
-  color: #666;
-}
-.business_layout_sub_title {
-  font-size: 36px;
-}
-.business_txtbox .benefit_list > li {
-  font-size: 16px;
-}
-.business_layout_sub_contents {
-  font-size: 16px;
-}
+    .welfare_benefit_list
+    > li
+    .welfare_benefit_box1
+    .benefit_desc {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #666;
+  }
+  .business_layout_sub_title {
+    font-size: 36px;
+  }
+  .business_txtbox .benefit_list > li {
+    font-size: 16px;
+  }
+  .business_layout_sub_contents {
+    font-size: 16px;
+  }
 }
 
 @media all and (max-width: 1280px) {
@@ -3272,12 +3268,6 @@
     margin-left: 0;
   }
 
-  .cont_box_wrapper.cj-unit
-    .common-layout_2:not(.swiper-wrapper).is-vertical
-    .items:nth-child(2) {
-    margin-top: 24px;
-  }
-
   .cont_item_dl {
     margin-top: 14px;
   }
@@ -3288,15 +3278,6 @@
   }
   .cont_item_dl dt {
     margin-top: 14px;
-  }
-
-  .cont_box_wrapper.cj-unit .cont_item_box > i.icon.cj-unit-01 {
-    width: 54px;
-    height: 48px;
-  }
-  .cont_box_wrapper.cj-unit .cont_item_box > i.icon.cj-unit-02 {
-    width: 40px;
-    height: 48px;
   }
 
   .section.activity_process ol.detail.type01 {

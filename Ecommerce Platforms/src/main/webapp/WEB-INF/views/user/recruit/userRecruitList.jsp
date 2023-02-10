@@ -3,19 +3,17 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>인재정보 | 채용안내 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
-
-<!-- 메타 데이터 예시 -->
-<meta name="title" content="채용 공고 | 채용 | 내담씨앤씨">
-<meta name="description" content="(주)내담씨앤씨에 입사 지원하실 분은 아래의 지원 양식을 다운로드 받아 채용 담당자 이메일로 접수하여 주시기 바랍니다. 서류면접을 통과하신 분들에겐 개별적으로 연락 드리겠습니다.">
-<meta property="og:title" content="채용 공고 | 채용 | 내담씨앤씨">
-<meta property="og:description" content="(주)내담씨앤씨에 입사 지원하실 분은 아래의 지원 양식을 다운로드 받아 채용 담당자 이메일로 접수하여 주시기 바랍니다. 서류면접을 통과하신 분들에겐 개별적으로 연락 드리겠습니다.">
-<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담채용, 내담 신입 채용, 내담공채, 내담씨앤씨 신입 채용, 내담C&C 채용, 내담씨앤씨 경력직 채용, 내담C&C 경력채용, it 경력직 공고, 내담 경력 채용">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/recruit/userRecruitList">
 <meta name="robots" content="index,nofollow">
-<!-- 메타 데이터 예시 끝 -->
+<meta name="title" content="인재정보 | 채용안내 | 내담씨앤씨">
+<meta property="og:title" content="인재정보 | 채용안내 | 내담씨앤씨">
+<meta name="description" content="(주)내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
+<meta property="og:description" content="(주)내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담채용, 내담 신입 채용, 내담공채, 내담씨앤씨 신입 채용, 내담C&C 채용, 내담씨앤씨 경력직 채용, 내담C&C 경력채용, it 경력직 공고, 내담 경력 채용">
+<meta property="og:url" content="https://ndcc.co.kr/user/recruit/userRecruitList">
+
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/recruit.css">
@@ -113,8 +111,8 @@ function paging(cPage){
                     <div class="inner_container">
                         <div class="top_txt_outer">
                             <div class="top_txt_area txt_notice">
-                                <p class="top_txt2">(
-                                주)내담씨앤씨는 진취적이며</br> 
+                                <p class="top_txt2">
+                                (주)내담씨앤씨는 진취적이며</br> 
                                 프로페셔널한 인재에게 언제나 열려 있습니다
                                 </p>
                                 <p class="top_txt3">
