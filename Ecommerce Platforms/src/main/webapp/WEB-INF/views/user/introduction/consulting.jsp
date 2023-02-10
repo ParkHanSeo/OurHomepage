@@ -118,6 +118,7 @@
 		<!-- // #container -->
 	</div>
 	<!-- // #wrap -->
+</body>
 <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
 </body>
 </html>
