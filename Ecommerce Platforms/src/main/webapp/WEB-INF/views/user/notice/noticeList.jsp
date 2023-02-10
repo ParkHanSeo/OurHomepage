@@ -4,65 +4,18 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>공지사항 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"
 	content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="공지사항 | 내담씨앤씨">
+<meta property="og:title" content="공지사항 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨의 소식을 알려드립니다.">
+<meta property="og:description" content="내담씨앤씨의 소식을 알려드립니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 공지사항, 내담C&C 공지사항">
+
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
-<script type="text/javascript">
- 	function paging(cPage){
- 		
- 		if(cPage == 'prev'){
- 			alert("이전 페이지가 없습니다.");
- 			return;
- 		}else if(cPage == 'next'){
- 			alert("다음 페이지가 없습니다.");
- 			return;
- 		}
- 		
- 		$("li[id='postList']").remove();
- 		$("#page .common-pagination").remove();
-		var search = $("form[name='searchForm']").serialize();
-		var boardNo = $("input[name='boardNo']").val();
-		var searchKeyword = $("input[name='searchKeyword']").val();
-		var searchType = $("input[name='searchType']").val();
-		$.ajax({
-			url : "/user/notice/noticeListCom?${_csrf.parameterName}=${_csrf.token}",
-			type : "POST",
-			data : {
-				cPage,
-				boardNo,
-				searchKeyword,
-				searchType
-			},
-			success : function(JSONData, status){
-				var display = '';
-				for(var i = 0; i < JSONData.list.length; i++){
-					console.log("접근")
-					display = '<li id ="postList">'
-							+ 	'<div class="subj_box">'
-							+ 	   '<p class="common-text_txt2">'
-							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].postNo+'">'
-							+			 JSONData.list[i].postTitle
-							+			 '<br />'
-							+		  '</a>'
-							+		'</p>'
-							+	 '</div>'
-							+	 '<div class="date_box center-left">'
-							+		 '<p class="common-text_txt4">'+JSONData.list[i].postDate+'</p>'
-							+	 '</div>'
-							+ '</li>';
-					$(".common-text_list_area .common-text_list").append(display);
-				}
-				$("#page").append(JSONData.pagebar);
-			} ,
-			error : function(check){
-				alert("실패")
-				console.log(check)
-			}
-		})
-	}
-</script>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/user/common/header.jsp" />
@@ -172,4 +125,57 @@
 
 	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
 </body>
+<script type="text/javascript">
+ 	function paging(cPage){
+ 		
+ 		if(cPage == 'prev'){
+ 			alert("이전 페이지가 없습니다.");
+ 			return;
+ 		}else if(cPage == 'next'){
+ 			alert("다음 페이지가 없습니다.");
+ 			return;
+ 		}
+ 		
+ 		$("li[id='postList']").remove();
+ 		$("#page .common-pagination").remove();
+		var search = $("form[name='searchForm']").serialize();
+		var boardNo = $("input[name='boardNo']").val();
+		var searchKeyword = $("input[name='searchKeyword']").val();
+		var searchType = $("input[name='searchType']").val();
+		$.ajax({
+			url : "/user/notice/noticeListCom?${_csrf.parameterName}=${_csrf.token}",
+			type : "POST",
+			data : {
+				cPage,
+				boardNo,
+				searchKeyword,
+				searchType
+			},
+			success : function(JSONData, status){
+				var display = '';
+				for(var i = 0; i < JSONData.list.length; i++){
+					console.log("접근")
+					display = '<li id ="postList">'
+							+ 	'<div class="subj_box">'
+							+ 	   '<p class="common-text_txt2">'
+							+ 		  '<a href="/user/notice/getNoticeDetail/'+JSONData.list[i].postNo+'">'
+							+			 JSONData.list[i].postTitle
+							+			 '<br />'
+							+		  '</a>'
+							+		'</p>'
+							+	 '</div>'
+							+	 '<div class="date_box center-left">'
+							+		 '<p class="common-text_txt4">'+JSONData.list[i].postDate+'</p>'
+							+	 '</div>'
+							+ '</li>';
+					$(".common-text_list_area .common-text_list").append(display);
+				}
+				$("#page").append(JSONData.pagebar);
+			} ,
+			error : function(check){
+				alert("실패")
+			}
+		})
+	}
+</script>
 </html>

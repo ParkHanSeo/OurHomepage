@@ -3,14 +3,21 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="ko">
 <head>
-<title>내담씨앤씨</title>
+<title>사업소개 | 사업소개 | 내담씨앤씨</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
+<meta name="robots" content="index,nofollow">
+<meta name="title" content="사업소개 | 사업소개 | 내담씨앤씨">
+<meta property="og:title" content="사업소개 | 사업소개 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨의 사업들을 소개합니다.">
+<meta property="og:description" content="내담씨앤씨의 사업들을 소개합니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 사업, 내담C&C 사업, 내담 사업, 내담씨앤씨 사업소개, 내담C&C 사업소개, 내담 사업소개">
+<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/businessIntroduction">
+
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
-  <body>
+<body>
   <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
-<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
     <div id="wrap" class="visual-center">
         <section id="container">
             <div id="contents" class="contents_top">
@@ -281,5 +288,5 @@
         </section><!-- // #container -->
     </div><!-- // #wrap -->
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
-  </body>
+</body>
 </html>
