@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 Digital Twin을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 Digital Twin을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 Digital Twin, 내담C&C Digital Twin, 내담 Digital Twin, 내담씨앤씨 디지털트윈, 내담C&C 디지털트윈, 내담 디지털트윈">
-<meta property="og:url" content="http://ff561admin.duckdns.org/user/introduction/digitalTwin">
+<meta property="og:url" content="https://ndcc.co.kr/user/introduction/digitalTwin">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

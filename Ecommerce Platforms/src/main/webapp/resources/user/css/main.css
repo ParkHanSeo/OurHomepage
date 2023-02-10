@@ -743,7 +743,6 @@ h4 {
   height: 50%;
 }
 .core-wrap .core-list .cloud {
-  align-self: flex-end;
   width: 100%;
   left: 55%;
 }
@@ -2444,13 +2443,13 @@ h4 {
     position: relative;
   }
   .core-wrap .core-list .big-data::before {
-    left: 100px;
+    left: 60px;
   }
   .main_aos_consulting_txt {
     margin-left: 0%;
     margin-top: 34%;
     top: 164px;
-    left: -32%;
+    left: -40%;
     position: relative;
     text-align: right;
   }
@@ -2464,17 +2463,14 @@ h4 {
     width: 61%;
   }
   .core-wrap .core-list .cloud::before {
-    left: -96px;
-  }
-  .core-wrap .core-list .cloud {
-    left: 103%;
+    left: 60px;
   }
   .main_aos_solution_txt {
     margin-left: 50%;
     margin-top: 30%;
     text-align: right;
     position: relative;
-    left: -69%;
+    left: -40%;
     top: 185px;
   }
   .service-wrap .service-list .tit-label {
@@ -2511,6 +2507,9 @@ h4 {
   .culture-wrap .half-wrap .description {
     font-size: 14px;
     line-height: 1.5;
+  }
+  .core-wrap .core-list .cloud {
+    left: 2%;
   }
 }
 @media all and (max-width: 375px) {
