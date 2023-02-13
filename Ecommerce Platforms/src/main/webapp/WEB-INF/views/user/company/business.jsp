@@ -45,11 +45,11 @@
 				        </div>
 				        <div class="num-item">
 				            <h4 class="in-title">매출액</h4>
-				            <span class="nums" data-count="550">0</span><span id="num-unit">억+</span><br>
+				            <span class="nums" data-count="315">0</span><span id="num-unit">억+</span><br>
 				        </div>
 				        <div class="num-item">
 				            <h4 class="in-title">임직원 수</h4>
-				            <span class="nums" data-count="102">0</span><span id="num-unit">명</span><br>
+				            <span class="nums" data-count="120">0</span><span id="num-unit">명</span><br>
 				        </div>
 				    </div>
                 </div>                
