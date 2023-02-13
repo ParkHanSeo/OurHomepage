@@ -35,7 +35,7 @@
                 </div>
                 <div class="layout_section_outer biz_difference is-gray" style="padding: 0 0 0 0;">
                 	<div class="num-container" id="num-container">
-				        <div class="num-item">
+				        <div class="num-item" id="num-item">
 				            <h4 class="in-title">설립연도</h4>
 				            <span class="nums" data-count="2008">0</span><span id="num-unit">년</span><br>
 				        </div>
@@ -175,27 +175,5 @@
             </div><!-- // #contents -->
         </section><!-- // #container -->  
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
-<script type="text/javascript">
-  $('.nums').each(function () {
-      const $this = $(this),
-          countTo = $this.attr('data-count');
-
-      $({
-          countNum: $this.text()
-      }).animate({
-          countNum: countTo
-      }, {
-          duration: 1000,
-          easing: 'linear',
-          step: function () {
-              $this.text(Math.floor(this.countNum));
-          },
-          complete: function () {
-              $this.text(this.countNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-              //3자리 마다 콤마 표시 적용
-          }
-      });
-  });
-</script>
 </body>
 </html>

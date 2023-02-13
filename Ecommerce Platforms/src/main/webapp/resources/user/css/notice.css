@@ -379,7 +379,9 @@
 .news .detail_body p:first-child {
   margin-top: 0 !important;
 }
-
+.news .detail_body * {
+  overflow:auto;
+}
 .news .detail_body *[style*="font-size: 11pt"],
 .news .detail_body *[style*="font-size: 12pt"],
 .news .detail_body *[style*="font-size: 14pt"],

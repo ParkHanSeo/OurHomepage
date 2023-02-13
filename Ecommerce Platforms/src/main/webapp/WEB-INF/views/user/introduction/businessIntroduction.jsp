@@ -272,7 +272,7 @@
 	                                                System Integration
 	                                            </p>
 	                                            <p class="icon_item_desc">
-	                                                광고주별 타겟 맞춤형 큐레이션 서비스
+	                                            	고객 맞춤형 시스템 및 솔루션 구축 서비스
 	                                            </p>
 	                                            <i class="icon bi_1"></i>
 	                                        </div>

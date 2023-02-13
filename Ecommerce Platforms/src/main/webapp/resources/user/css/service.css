@@ -599,35 +599,40 @@
   .common_txt-18 {
   color: #666;
 }
-.process-flow .flow_list {
-  height: 100%;
+.si_flow{
+	height: 100%;
+	
 }
-.process-area .flow_list .si_sub_1 {
+.process-flow .flow_list {
+  height: 40%;
+  
+}
+.process-area .si_flow .si_sub_1 {
   background-image: url(../images/introduction/introduction_si_sub_1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-.process-area .flow_list .si_sub_2 {
+.process-area .si_flow .si_sub_2 {
   background-image: url(../images/introduction/introduction_si_sub_2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-.process-area .flow_list .si_sub_3 {
+.process-area .si_flow .si_sub_3 {
   background-image: url(../images/introduction/introduction_si_sub_3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-.process-area .flow_list .si_sub_4 {
+.process-area .si_flow .si_sub_4 {
   background-image: url(../images/introduction/introduction_si_sub_4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-.process-area .flow_list .si_sub_5 {
+.process-area .si_flow .si_sub_5 {
   background-image: url(../images/introduction/introduction_si_sub_5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-.process-area .flow_list .si_sub_6 {
+.process-area .si_flow .si_sub_6 {
   background-image: url(../images/introduction/introduction_si_sub_6.jpg);
   background-size: cover;
   background-repeat: no-repeat;
