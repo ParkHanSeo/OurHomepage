@@ -49,7 +49,7 @@
 						<div class="inner_container">
 							<h2 class="sub_title sub_title_area">연혁</h2>
 							<div class="layout_head">
-								<p class="top_txt1 service_txt1 history_txt1">(주)내담씨앤씨의 연혁을
+								<p class="top_txt1 service_txt1 history_txt1">내담씨앤씨의 연혁을
 									알려드립니다.</p>
 							</div>
 							<div class="common-swiper_tab">

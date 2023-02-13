@@ -8,7 +8,7 @@
 	          	<img src="${pageContext.request.contextPath}/resources/user/images/naedam_footer.png" class="nd_symbol" alt="">
 	          	<div class="inner">
 		            <address>
-		              <span class="line">내담씨앤씨(주)</span>
+		              <span class="line">주식회사 내담씨앤씨</span>
 		              <span class="line">사업자번호 : 129-86-24627
 		              </span>
 		              <br class="show_1024" />

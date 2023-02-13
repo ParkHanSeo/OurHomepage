@@ -1,4 +1,42 @@
 @charset "utf-8";
+.upper_blank {
+    height: 300px;
+    background: yellowgreen;
+    text-align: center;
+    padding-top: 200px;
+}
+.num-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10%;
+}
+.num-item {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
+     font: bold 60px/1 'arial';
+     width: calc(100%/4);
+}
+.in-title {
+    font: 30px/1 'arial';
+    color: gray;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.sub-title {
+    font: 14px/1 'arial';
+    color: gray;
+}
+.nums {
+    font: bold 60px/1 'arial';
+    color: #343048;
+}
+#num-unit {
+    font: bold 60px/1 'arial';
+    color: dimgray;
+}
 .ceo_msg-box_media {
   display: none;
 }
@@ -62,6 +100,7 @@
   min-height: 500px;
   /*  border: 1px solid #e6e6e6; */
   border-radius: 18px;
+  height: 0px;
 }
 .common-layout_2 > .businessList_items {
   width: calc(100% / 2);
@@ -709,6 +748,9 @@
   }
 }
 @media all and (max-width: 1024px) {
+		.num-item {
+     width: calc(100%/2);
+}
   .com_identity .layout_body .identity_box {
     padding: 31px 0 31px;
   }
@@ -750,8 +792,25 @@
     width: 100%;
   }
 }
-
 @media all and (max-width: 768px) {
+.welfare_benefit_area .welfare_benefit_list > .businessList_items {
+    height: 0;
+}
+	.num-item {
+     width: calc(100%/2);
+}
+.in-title {
+    font: 24px/1 'arial';
+    font-weight: 600;
+}
+.nums {
+    font: bold 44px/1 'arial';
+    color: #343048;
+}
+#num-unit {
+    font: bold 44px/1 'arial';
+    color: dimgray;
+}
 	.naedam_main_img .nd_reverse {
   width: 75%;
   padding: 0 0 75px 0;
@@ -1008,11 +1067,6 @@
 }
 
 @media all and (max-width: 764px) {
-  .welfare_benefit_area .welfare_benefit_list > .businessList_items {
-    min-height: 500px;
-    width: 100%;
-    border-radius: 18px;
-  }
   .welfare_benefit_box1 .benefit_title {
     text-align: left;
     padding-left: 50px;
@@ -1042,6 +1096,9 @@
   .com_identity .layout_body .common-layout_2 > .items + .items {
     margin-top: 24px;
   }
+  	.num-item {
+     width: calc(100%);
+}
 }
 
 @media all and (max-width: 480px) {

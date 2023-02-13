@@ -36,7 +36,7 @@
                                 	최고의 경쟁력을 가진 인재 육성
                                 </p>
                                 <p class="top_txt3">
-                                    (주)내담씨앤씨는 진취적이고 프로정신을 가진 인재를 소중히 여기는 기업입니다.<br />
+                                    내담씨앤씨는 진취적이고 프로정신을 가진 인재를 소중히 여기는 기업입니다.<br />
                                     내담씨앤씨와 미래를 함께 할 당신의 지원을 기다립니다.
                                 </p>
                             </div>
@@ -51,7 +51,7 @@
                     			<div class="talent_section">
 		                    		<div class="talentbox">
 			                    		<p class="main_title">인재상</p>
-		    							<p class="talent_txt">(주)내담씨앤씨는 진취적이고 프로정신을 가진 인재를 소중히 여기는 기업입니다.</p>                		
+		    							<p class="talent_txt">내담씨앤씨는 진취적이고 프로정신을 가진 인재를 소중히 여기는 기업입니다.</p>                		
 		                    		</div>
 			                            <div class="culture_card_area">
 			                                <ul class="culture_card_list common-layout_2 box-type02 is-vertical">
