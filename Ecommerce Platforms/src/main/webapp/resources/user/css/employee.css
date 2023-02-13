@@ -9,7 +9,6 @@
 	padding: 50px 0 0;
 }
 .culture_section {
-  margin-bottom: 120px;
   width: 1280px;
   height: 400px;
 }
@@ -22,6 +21,11 @@
 }
 
 .company_culture2 {
+  width: 850px;
+  float: left;
+} 
+.company_culture3{
+	padding-bottom:100px;
   width: 850px;
   float: left;
 } 
@@ -772,7 +776,7 @@
   margin-left: 40px;
 }
 .layout_section_outer.layout_employee {
-  padding: 0 0 0 0;
+  padding: 50 0 0 0;
 }
 .common-layout_2.box-type02.is-vertical .items.employee_li_items {
   margin-top: 22px;
@@ -799,7 +803,38 @@
   height: 32px;
   background-image: url(../images/common/recruit_plus_white.png);
 }
+.culture_card_area .culture_card_list > li a .sub_txt2 {
+    display: block;
+    font-size: 13px;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    transition: opacity 0.5s;
+}
 
+.culture_card_area .culture_card_list > li a .overP1 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP2 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP3 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP4 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP5 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP6 {
+	display: none;
+}
 @media all and (min-width: 1023px) {
   .culture_card_area
     .culture_card_list
@@ -814,19 +849,16 @@
     display: none;
   }
 }
-
 @media all and (max-width: 1024px) {
   .culture_card_area .culture_card_list > li a {
     width: 100%;
   }
-
   .culture_btm_banner {
     background-image: url(../../images/culture/img-career-bg-01-mo@2x.png);
     background-position: center bottom;
     background-size: 420px;
   }
 }
-
 @media all and (max-width: 768px) {
 	
 	.top_visual_area.recruit {
@@ -985,7 +1017,6 @@
 	
 	
 }
-
 @media all and (max-width: 430px) {
 	
 	.top_visual_area .top_txt_outer .top_txt_area .top_txt3 {
@@ -993,7 +1024,6 @@
     font-size: 14px;
     line-height: 26px;
 	}
-
 	.talent_txt {
     font-size: 14px;
 	}
@@ -1013,9 +1043,5 @@
     width: 100%;
     float: left;
     height: 400px;
+	}
 }
-
-}
-
-
-

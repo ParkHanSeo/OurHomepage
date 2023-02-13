@@ -19,6 +19,16 @@
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
 <body>
+<script type="text/javascript">
+function over(num){
+	let p = document.getElementById('p'+num);
+	p.classList.remove("overP"+num);
+}
+function out(num){
+	let p = document.getElementById('p'+num);
+	p.classList.add("overP"+num);
+}
+</script>
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 	<div id="wrap qulified">
         <section id="container">
@@ -55,72 +65,78 @@
 		                    		</div>
 			                            <div class="culture_card_area">
 			                                <ul class="culture_card_list common-layout_2 box-type02 is-vertical">
-			                                    <li class="bg-type01 employee_li_items">
+			                                   <li class="bg-type01 employee_li_items" onmouseover="over(1)" onmouseout="out(1)">
 			                                    	<div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_1">
 				                                        	<div class="employee_box_contents">
 					                                            <p class="culture_card_title">탁월함</p>
 					                                            <p class="sub_txt">Excellence</p>
+					                                            <p class="sub_txt2 overP1" id="p1">최고와 더불어 최선을 추구하는 인재</p>
 					                                            <i class="icon culture-icon-01"></i>
 					                                            <span class="icon card_ui-more employee_icon_white"></span>
 					                                        </div>
 				                                        </a>
 			                                        </div>
 			                                    </li>
-			                                    <li class="bg-type02 employee_li_items">
+			                                   <li class="bg-type02 employee_li_items" onmouseover="over(2)" onmouseout="out(2)">
 			                                    	<div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_2">
-					                                        <div class="employee_box_contents">
+					                                       <div class="employee_box_contents" id="innovation">
 					                                        	<p class="culture_card_title">혁신</p>
 					                                            <p class="sub_txt">Innovation</p>
+					                                            <p class="sub_txt2 overP2" id="p2">끊임없이 혁신을 추구하는 인재끊임없이 혁신을 추구하는 인재</p>
 					                                            <i class="icon culture-icon-02"></i>
 					                                            <span class="icon card_ui-more employee_icon_black"></span>
 				                                            </div>
 				                                        </a>
 				                                    </div>
 			                                    </li>                                                              
-			                                    <li class="bg-type03 employee_li_items">
+			                                    <li class="bg-type03 employee_li_items" onmouseover="over(3)" onmouseout="out(3)">
 				                                    <div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_3">
-					                                        <div class="employee_box_contents">
+					                                        <div class="employee_box_contents" id="fixation">
 					                                            <p class="culture_card_title">통찰력</p>
 					                                            <p class="sub_txt">Customer Fixation</p>
+					                                            <p class="sub_txt2 overP3" id="p3">고객의 기대와 요구에 앞서 고민하고 실천하는 인재</p>
 					                                            <i class="icon culture-icon-03"></i>
 					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
 			                                    </li>
-			                                    <li class="bg-type04 employee_li_items">
+			                                   <li class="bg-type04 employee_li_items" onmouseover="over(4)" onmouseout="out(4)">
 				                                    <div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_4">
-					                                        <div class="employee_box_contents">
+					                                        <div class="employee_box_contents" id="teamwork">
 					                                            <p class="culture_card_title">협동심</p>
 					                                            <p class="sub_txt">Teamwork</p>
+					                                            <p class="sub_txt2 overP4" id="p4">협력을 통해 더 큰 성과를 창출하는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
 					                                            <span class="icon card_ui-more employee_icon_black"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
 			                                    </li>
-			                                    <li class="bg-type05 employee_li_items">
+			                                   <li class="bg-type05 employee_li_items" onmouseover="over(5)" onmouseout="out(5)">
 				                                    <div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_5">
-					                                        <div class="employee_box_contents">
+					                                        <div class="employee_box_contents" id="community">
 					                                            <p class="culture_card_title">책임감</p>
 					                                            <p class="sub_txt">Community</p>
+					                                            <p class="sub_txt2 overP5" id="p5">기업의 역할과 책임을 이해하고 실천하는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
 					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
 			                                    </li>
-			                                    <li class="bg-type06 employee_li_items">
+			                                    <li class="bg-type06 employee_li_items" onmouseover="over(6)" onmouseout="out(6)">
 				                                    <div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_6">
-					                                        <div class="employee_box_contents">
+				                                        	<div class="employee_box_contents" id="flexible">
 					                                            <p class="culture_card_title">유연함</p>
 					                                            <p class="sub_txt">Flexible</p>
+					                                            <p class="sub_txt2 overP6" id="p6">유머와 재능을 살려 즐겁게 일하는 일터를 만드는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
 					                                            <span class="icon card_ui-more employee_icon_black"></span>
 				                                            </div>
@@ -167,7 +183,7 @@
 			                                		</div>
 			                               		</div>
 			                               	</div>
-											<div class="company_culture2">
+											<div class="company_culture3">
 			                                	<div class="culture_section end">
 			                                		<div class="company_culture_imgbox_left_03">
 			                                		</div>

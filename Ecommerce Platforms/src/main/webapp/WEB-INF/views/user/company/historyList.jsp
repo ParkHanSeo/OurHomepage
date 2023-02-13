@@ -35,6 +35,10 @@
 		$('ol').children('li:eq(0)').addClass("first");
 		$('.award_ol').children('li:eq(0)').addClass("first");
 	})
+	$(document).ready(function() {
+		$('ol').children('li:eq(13)').addClass("last");
+		$('.award_ol').children('li:eq(13)').addClass("last");
+	})
 </script>
 <body>
 	<!-- haeder -->
