@@ -93,7 +93,7 @@
 							<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 						</div>
 						<a id="loginBtn" onclick="loginSubmit()" class="btn btn-primary btn-block"><b>로그인</b></a>&nbsp;
-						<a href="#none" onclick="enrollSubmit()" class="btn btn-primary btn-block"><b>회원가입</b></a>&nbsp;
+						<!-- <a href="#none" onclick="enrollSubmit()" class="btn btn-primary btn-block"><b>회원가입</b></a>&nbsp; -->
 						<a href="#" onclick="userSubmit()" class="btn btn-primary btn-block"><b>사용자</b></a>
 					</form:form>
 				</div>
