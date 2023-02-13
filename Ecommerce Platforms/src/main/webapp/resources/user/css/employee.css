@@ -800,6 +800,40 @@
   background-image: url(../images/common/recruit_plus_white.png);
 }
 
+.culture_card_area .culture_card_list > li a .sub_txt2 {
+    display: block;
+    font-size: 13px;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.culture_card_area .culture_card_list > li a .overP1 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP2 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP3 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP4 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP5 {
+	display: none;
+}
+
+.culture_card_area .culture_card_list > li a .overP6 {
+	display: none;
+}
+
+
 @media all and (min-width: 1023px) {
   .culture_card_area
     .culture_card_list
@@ -1013,7 +1047,7 @@
     width: 100%;
     float: left;
     height: 400px;
-}
+	}
 
 }
 
