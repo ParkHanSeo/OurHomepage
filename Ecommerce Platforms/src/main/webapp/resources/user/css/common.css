@@ -10,6 +10,7 @@
 	word-break: keep-all;
 	}
 
+BODY {overflow-y:scroll;}
 .css-transitions-preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -3131,11 +3132,16 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 @media all and (max-width: 480px) {
-  .show_480 {
+  .show_480{ 
     display: block;
   }
   .hide_480 {
     display: none;
+  }
+    #footer .naedam_footer_img {
+    float: left;
+      padding: 4% 0 4% 10%;
+    position: absolute;
   }
 }
 

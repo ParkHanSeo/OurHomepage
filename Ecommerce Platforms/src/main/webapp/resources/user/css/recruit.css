@@ -1,5 +1,8 @@
 @charset "utf-8";
-s
+.hrDepartment_process{
+	width:30%;
+	overflow: hidden;
+}
 /* .common-swiper_area + .layout_section_outer.recruit {padding:60px 0 120px;} */
 .layout_section_outer.recruit {
   padding: 120px 0 120px;
