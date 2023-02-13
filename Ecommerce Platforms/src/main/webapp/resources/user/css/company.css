@@ -1,41 +1,41 @@
 @charset "utf-8";
 .upper_blank {
-    height: 300px;
-    background: yellowgreen;
-    text-align: center;
-    padding-top: 200px;
+  height: 300px;
+  background: yellowgreen;
+  text-align: center;
+  padding-top: 200px;
 }
 .num-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10%;
 }
 .num-item {
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 30px;
-     font: bold 60px/1 'arial';
-     width: calc(100%/4);
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 30px;
+  font: bold 60px/1 "arial";
+  width: calc(100% / 4);
 }
 .in-title {
-    font: 30px/1 'arial';
-    color: gray;
-    font-weight: 600;
-    margin-bottom: 20px;
+  font: 30px/1 "arial";
+  color: gray;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 .sub-title {
-    font: 14px/1 'arial';
-    color: gray;
+  font: 14px/1 "arial";
+  color: gray;
 }
 .nums {
-    font: bold 60px/1 'arial';
-    color: #343048;
+  font: bold 60px/1 "arial";
+  color: #343048;
 }
 #num-unit {
-    font: bold 60px/1 'arial';
-    color: dimgray;
+  font: bold 60px/1 "arial";
+  color: dimgray;
 }
 .ceo_msg-box_media {
   display: none;
@@ -423,25 +423,22 @@
 }
 
 .top_visual_area.ceo_msg {
-  background: url(../images/ceo_message_back.png) top center no-repeat;
+  background-color: #4c5b72;
   background-size: cover;
 }
 .top_visual_area.ceo_msg .inner_container {
-  height: 856px;
+  height: 760px;
 }
 .top_visual_area.ceo_msg .ceo-img {
-  width: 69%;
+  width: 43%;
   position: absolute;
-  left: -20%;
-  bottom: 8%;
-  max-width: 730px;
+  bottom: 0;
 }
 .ceo_msg-box {
-  padding: 101px 0;
-  padding-left: 40%;
+  padding: 40px 0;
+  padding-left: 45%;
 }
 .ceo_msg-box .ceo_msg-txt1 {
-  /* width: calc(100% / 2 + 100px); */
   font-size: 44px;
   line-height: 56px;
   color: #fff;
@@ -733,24 +730,52 @@
     display: flex;
   }
   .top_visual_area.ceo_msg .ceo-img {
-    right: 24px;
+    left: 0;
+    width: 50%;
+  }
+  .ceo_msg-box {
+    padding: 52px 0;
+    padding-left: 51%;
   }
   .top_visual_area.ceo_msg .ceo_msg-box {
   }
 }
 
-@media all and (min-width: 1024px) {
-  .ceo_msg-box_media {
-    display: none;
+@media all and (max-width: 1024px) {
+  .top_visual_area.ceo_msg .ceo-img {
+    left: 0;
+    width: 400px;
   }
   .ceo_msg-box {
-    display: block;
+    padding: 52px 0;
+    padding-left: 0;
   }
-}
-@media all and (max-width: 1024px) {
-		.num-item {
-     width: calc(100%/2);
-}
+  .ceo_msg .inner_container {
+    width: 100%;
+    padding: 0 40px;
+  }
+  .ceo_msg-box .ceo_msg-txt2 {
+    margin: 20px 0 0 40%;
+    font-size: 16px;
+    line-height: 26px;
+    color: #fff;
+    letter-spacing: -0.2px;
+  }
+
+  .ceo_msg-box .ceo_msg-txt2.line-01 {
+    margin: 48px 0 0 0;
+  }
+
+  .ceo_msg-box .ceo_msg-txt3 {
+    margin: 40px 0 0 40%;
+    font-size: 16px;
+    line-height: 33px;
+    color: #fff;
+    letter-spacing: -0.2px;
+  }
+  .num-item {
+    width: calc(100% / 2);
+  }
   .com_identity .layout_body .identity_box {
     padding: 31px 0 31px;
   }
@@ -793,28 +818,28 @@
   }
 }
 @media all and (max-width: 768px) {
-.welfare_benefit_area .welfare_benefit_list > .businessList_items {
+  .welfare_benefit_area .welfare_benefit_list > .businessList_items {
     height: 0;
-}
-	.num-item {
-     width: calc(100%/2);
-}
-.in-title {
-    font: 24px/1 'arial';
+  }
+  .num-item {
+    width: calc(100% / 2);
+  }
+  .in-title {
+    font: 24px/1 "arial";
     font-weight: 600;
-}
-.nums {
-    font: bold 44px/1 'arial';
+  }
+  .nums {
+    font: bold 44px/1 "arial";
     color: #343048;
-}
-#num-unit {
-    font: bold 44px/1 'arial';
+  }
+  #num-unit {
+    font: bold 44px/1 "arial";
     color: dimgray;
-}
-	.naedam_main_img .nd_reverse {
-  width: 75%;
-  padding: 0 0 75px 0;
-}
+  }
+  .naedam_main_img .nd_reverse {
+    width: 75%;
+    padding: 0 0 75px 0;
+  }
   .history .top_visual_area {
     background-image: url(../images/company/history/keyvisual-1920-px-history-mo@2x.jpg);
   }
@@ -962,7 +987,7 @@
     margin-left: -163px;
   }
   .top_visual_area .ceo_msg-box {
-    padding: 48px 0 0;
+    padding: 35px 0 0;
   }
   .top_visual_area .ceo_msg-box .ceo_msg-txt1 {
     width: 100%;
@@ -1096,9 +1121,9 @@
   .com_identity .layout_body .common-layout_2 > .items + .items {
     margin-top: 24px;
   }
-  	.num-item {
-     width: calc(100%);
-}
+  .num-item {
+    width: calc(100%);
+  }
 }
 
 @media all and (max-width: 480px) {
@@ -1165,9 +1190,9 @@
   }
 }
 @media all and (max-width: 430px) {
-	.naedam_main_img .nd_main {
-     padding: 0 0 75px 0;
-}
+  .naedam_main_img .nd_main {
+    padding: 0 0 75px 0;
+  }
   .division_container {
     padding: 0 45px;
   }
