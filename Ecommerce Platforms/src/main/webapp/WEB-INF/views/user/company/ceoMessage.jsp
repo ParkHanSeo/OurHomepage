@@ -93,7 +93,6 @@
 		<!-- // #contents -->
 	</section>
 	<!-- // #container -->
-
 </body>
 <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
 </body>
