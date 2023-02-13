@@ -9,8 +9,8 @@
 <meta name="robots" content="index,nofollow">
 <meta name="title" content="인재정보 | 채용안내 | 내담씨앤씨">
 <meta property="og:title" content="인재정보 | 채용안내 | 내담씨앤씨">
-<meta name="description" content="(주)내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
-<meta property="og:description" content="(주)내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
+<meta name="description" content="내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
+<meta property="og:description" content="내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담채용, 내담 신입 채용, 내담공채, 내담씨앤씨 신입 채용, 내담C&C 채용, 내담씨앤씨 경력직 채용, 내담C&C 경력채용, it 경력직 공고, 내담 경력 채용">
 <meta property="og:url" content="https://ndcc.co.kr/user/recruit/userRecruitList">
 
@@ -112,11 +112,11 @@ function paging(cPage){
                         <div class="top_txt_outer">
                             <div class="top_txt_area txt_notice">
                                 <p class="top_txt2">
-                                (주)내담씨앤씨는 진취적이며</br> 
+                                내담씨앤씨는 진취적이며</br> 
                                 프로페셔널한 인재에게 언제나 열려 있습니다
                                 </p>
                                 <p class="top_txt3">
-                                   (주)내담씨앤씨에 입사 지원하실 분은 아래의 지원 양식을 다운로드 받아 채용 담당자 이메일로 접수하여 주시기 바랍니다.</br>
+                                    내담씨앤씨에 입사 지원하실 분은 아래의 지원 양식을 다운로드 받아 채용 담당자 이메일로 접수하여 주시기 바랍니다.</br>
 									서류면접을 통과하신 분들에겐 개별적으로 연락 드리겠습니다.
                                 </p>
                             </div>
