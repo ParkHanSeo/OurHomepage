@@ -2,7 +2,7 @@
 				<div class="pull-right hidden-xs">
 				    <b>Version</b> 2.7.4
 				</div>
-				<strong>NDC&C<a href="/admin">  Since:2017  </a> Phone 031-712-8315 | Fax 031-789-3545</strong>
+				<strong>NDC&C<a href="/admin">  All Rights Reserved. 2023  </a> Phone 031-712-8315 | Fax 031-789-3545</strong>
 			</footer>
 		</div>
 		<!-- jQuery 3 -->
