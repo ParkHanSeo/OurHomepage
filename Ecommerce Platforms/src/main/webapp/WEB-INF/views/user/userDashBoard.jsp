@@ -75,7 +75,7 @@
 							고객사의 고객 만족 및 내부 경쟁력 향상
 						</h3>
 						<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-							(주)내담씨앤씨는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로 
+							내담씨앤씨는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로 
 							<br />고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며 
 							<br />나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
 						</p>
@@ -93,7 +93,7 @@
 							<div class="section-title-area">
 								<h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">주요 사업</h2>
 								<p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-									(주)내담씨앤씨는 친환경, 4차 산업혁명, DT(Digital Transformation), AI, Cloud, DT(Digital Twin) 등의 경쟁력이 필요한 시점을 맞이하여, 
+									내담씨앤씨는 친환경, 4차 산업혁명, DT(Digital Transformation), AI, Cloud, DT(Digital Twin) 등의 경쟁력이 필요한 시점을 맞이하여, 
 									고객의 성공적인 비즈니스를 위해 최적의 시스템을 제공합니다.
 								</p>
 							</div>

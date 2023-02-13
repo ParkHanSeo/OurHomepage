@@ -39,7 +39,7 @@
 						<p class="ceo_msg-txt1">
 							안녕하십니까? <br> 내담씨앤씨 <br class="show_768">대표이사 한창엽입니다.
 						</p>
-						<p class="ceo_msg-txt2 line-01">(주)내담씨앤씨는 축적된 경험 및 Knowhow와 이를
+						<p class="ceo_msg-txt2 line-01">내담씨앤씨는 축적된 경험 및 Knowhow와 이를
 							뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로, 고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어
 							내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며, 나아가 글로벌 경쟁력을 갖춘 IT Total
 							Service Provider 기업으로의 성장을 비전으로 하고 있습니다.</p>
@@ -55,7 +55,7 @@
 							<strong>내담은 성장하고자 하는 마음에 진심으로 응답합니다.</strong> <br> 다양한 꿈과
 							열정을 가진 인재들을 지원하며, 비즈니스 파트너로써 함께 성장하고자 합니다.
 						</p>
-						<p class="ceo_msg-txt2 line-04">(주)내담씨앤씨는 고객과 함께 발맞추어 성장하는 것을
+						<p class="ceo_msg-txt2 line-04">내담씨앤씨는 고객과 함께 발맞추어 성장하는 것을
 							목표로 만족스러운 서비스 그리고 새로운 시각에서 바라보는 솔루션을 통해 함께 성장해가는 동반자가 되는 내담이
 							되겠습니다.</p>
 						<p class="ceo_msg-txt3">
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 			<div class="ceo_msg-box_media">
-				<p class="ceo_msg-txt2 line-01">(주)내담씨앤씨는 축적된 경험 및 Knowhow와 이를
+				<p class="ceo_msg-txt2 line-01">내담씨앤씨는 축적된 경험 및 Knowhow와 이를
 					뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로, 고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어
 					한단계 업그레이드 시키는 것을 Mission으로 하고 있으며, 나아가 글로벌 경쟁력을 갖춘 IT Total Service
 					Provider 기업으로의 성장을 비전으로 하고 있습니다.</p>
@@ -82,7 +82,7 @@
 					가진 인재들을 지원하며, 비즈니스 파트너로써 함께 성장하고자 합니다.
 				</p>
 				<p class="ceo_msg-txt2 line-04" style="margin: 20 0 0px;">
-					(주)내담씨앤씨는 고객과 함께 발맞추어 성장하는 것을 목표로 만족스러운 서비스 그리고 새로운 시각에서 바라보는 솔루션을
+					내담씨앤씨는 고객과 함께 발맞추어 성장하는 것을 목표로 만족스러운 서비스 그리고 새로운 시각에서 바라보는 솔루션을
 					통해 함께 성장해가는 동반자가 되는 내담이 되겠습니다.</p>
 				<p class="ceo_msg-txt3" style="margin: 40 0 0px;">
 					내담씨앤씨 대표 <span>한 창 엽</span>
