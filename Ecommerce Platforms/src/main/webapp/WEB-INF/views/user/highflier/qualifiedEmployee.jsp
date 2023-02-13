@@ -20,14 +20,17 @@
 </head>
 <body>
 <script type="text/javascript">
+
 function over(num){
 	let p = document.getElementById('p'+num);
 	p.classList.remove("overP"+num);
 }
+
 function out(num){
 	let p = document.getElementById('p'+num);
 	p.classList.add("overP"+num);
 }
+
 </script>
 <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 	<div id="wrap qulified">

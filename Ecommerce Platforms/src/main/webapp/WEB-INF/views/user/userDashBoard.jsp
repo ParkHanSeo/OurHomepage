@@ -35,12 +35,12 @@
 													${head.content}
 												</p>
 											</div>
-										</div>
-										<div class="btn-area">
-											<a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 
-												<span>솔루션 보기</span> 
-												<i class="icon link-arrow"></i>
-											</a>
+											<div class="btn-area">
+												<a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 
+													<span>솔루션 보기</span> 
+													<i class="icon link-arrow"></i>
+												</a>
+											</div>											
 										</div>
 									</div>
 								</div>
@@ -62,8 +62,6 @@
                   				</svg>
 							</div>
 							<div class="fraction swiper-pagination-custom">
-<!-- 								<span class="current-num">5</span>  -->
-<!-- 								<span class="div">|</span>  -->
 								<span class="total-num">5</span>
 							</div>
 						</div>

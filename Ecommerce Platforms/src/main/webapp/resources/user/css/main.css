@@ -1945,7 +1945,7 @@ h4 {
     margin-right: -32px;
   }
 }
-@media all and (min-width: 768px) and (max-width: 1023px) {
+@media all and (max-width: 768px) {
   h2 {
     font-size: 32px;
     line-height: 1.5;
@@ -2096,8 +2096,6 @@ h4 {
     opacity: 0 !important;
   }
   .core-wrap .inner_container .core-list li::before {
-    height: 425px;
-    width: 495px;
   }
   .core-wrap .core-list {
     margin-top: 80px;
@@ -2313,10 +2311,6 @@ h4 {
   .core-wrap .core-list .big-data::before {
     left: -115px;
   }
-  .main_aos_consulting_txt {
-    left: -23%;
-    margin-top: 70%;
-  }
   .main_aos_si_txt {
     position: relative;
     left: 0%;
@@ -2394,13 +2388,20 @@ h4 {
     width: 520px;
   }
   .core-wrap .core-list .ai {
-    margin-bottom: 40%;
+    min-width: 257px;
+    width: 71.83vw;
   }
   .core-wrap .core-list .big-data {
-    margin: 0 0 22% 0;
+    margin-left: 0;
+    min-width: 285px;
+    width: 79vw;
+    margin-top: 120px;
   }
   .core-wrap .core-list .blockchain {
-    margin: 0 0 50% 35px;
+    margin-left: 0;
+    min-width: 285px;
+    width: 79vw;
+    margin-top: 120px;
   }
   .nft-wrap .inner_container {
     padding-left: 30px;
@@ -2437,21 +2438,16 @@ h4 {
     background-position-x: -50px;
   }
   .main_aos_naedam_txt {
-    width: 61%;
-    margin-left: 1%;
-    margin-top: 67%;
-    position: relative;
+    padding-top: calc(20.83vw + 16px) /*73.92vw*/;
   }
   .core-wrap .core-list .big-data::before {
-    left: 60px;
+    left: 37%;
   }
   .main_aos_consulting_txt {
-    margin-left: 0%;
-    margin-top: 34%;
-    top: 164px;
-    left: -40%;
-    position: relative;
-    text-align: right;
+    padding-top: calc(79.49vw + 1%) /*62.58vw*/;
+    left: 13%;
+    top: 0;
+    margin: 0 0 0 0;
   }
   .core-wrap .core-list .blockchain::before {
     left: -34px;
@@ -2509,7 +2505,9 @@ h4 {
     line-height: 1.5;
   }
   .core-wrap .core-list .cloud {
-    left: 2%;
+    min-width: 257px;
+    width: 71.83vw;
+    margin-top: 120px;
   }
 }
 @media all and (max-width: 375px) {
