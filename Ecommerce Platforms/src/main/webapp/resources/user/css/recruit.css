@@ -16,7 +16,6 @@
 .layout_section_outer.recruit .inner_container {
 }
 .layout_section_outer.recruit2 .inner_container + .inner_container {
-  margin-top: 160px;
 }
 .layout_section_outer.recruit .common-search_box {
   width: 400px;

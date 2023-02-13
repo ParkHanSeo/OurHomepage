@@ -52,9 +52,6 @@ public class HistoryServiceImpl implements HistoryService {
 			Date date = resultDate;
 			history.setHistoryDate(date);
 			if("insert".equals(map.get("mode"))) {
-				File file = new File(filePath+historyImage.getOriginalFilename());
-				history.setImgUrl(historyImage.getOriginalFilename());
-				historyImage.transferTo(file);
 				historyDao.insertHistory(history);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {

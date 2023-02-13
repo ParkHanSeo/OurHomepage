@@ -68,7 +68,7 @@ function out(num){
 		                    		</div>
 			                            <div class="culture_card_area">
 			                                <ul class="culture_card_list common-layout_2 box-type02 is-vertical">
-			                                    <li class="bg-type01 employee_li_items" onmouseover="over(1)" onmouseout="out(1)">
+			                                   <li class="bg-type01 employee_li_items" onmouseover="over(1)" onmouseout="out(1)">
 			                                    	<div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_1">
 				                                        	<div class="employee_box_contents">
@@ -81,10 +81,10 @@ function out(num){
 				                                        </a>
 			                                        </div>
 			                                    </li>
-			                                    <li class="bg-type02 employee_li_items" onmouseover="over(2)" onmouseout="out(2)">
+			                                   <li class="bg-type02 employee_li_items" onmouseover="over(2)" onmouseout="out(2)">
 			                                    	<div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_2">
-					                                        <div class="employee_box_contents" id="innovation">
+					                                       <div class="employee_box_contents" id="innovation">
 					                                        	<p class="culture_card_title">혁신</p>
 					                                            <p class="sub_txt">Innovation</p>
 					                                            <p class="sub_txt2 overP2" id="p2">끊임없이 혁신을 추구하는 인재끊임없이 혁신을 추구하는 인재</p>
@@ -107,7 +107,7 @@ function out(num){
 				                                        </a>
 			                                        </div>
 			                                    </li>
-			                                    <li class="bg-type04 employee_li_items" onmouseover="over(4)" onmouseout="out(4)">
+			                                   <li class="bg-type04 employee_li_items" onmouseover="over(4)" onmouseout="out(4)">
 				                                    <div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_4">
 					                                        <div class="employee_box_contents" id="teamwork">
@@ -120,7 +120,7 @@ function out(num){
 				                                        </a>
 			                                        </div>
 			                                    </li>
-			                                    <li class="bg-type05 employee_li_items" onmouseover="over(5)" onmouseout="out(5)">
+			                                   <li class="bg-type05 employee_li_items" onmouseover="over(5)" onmouseout="out(5)">
 				                                    <div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_5">
 					                                        <div class="employee_box_contents" id="community">
@@ -136,7 +136,7 @@ function out(num){
 			                                    <li class="bg-type06 employee_li_items" onmouseover="over(6)" onmouseout="out(6)">
 				                                    <div class="employee_box">
 				                                        <a href="#self" class="employee_image_box qualify_6">
-					                                        <div class="employee_box_contents" id="flexible">
+				                                        	<div class="employee_box_contents" id="flexible">
 					                                            <p class="culture_card_title">유연함</p>
 					                                            <p class="sub_txt">Flexible</p>
 					                                            <p class="sub_txt2 overP6" id="p6">유머와 재능을 살려 즐겁게 일하는 일터를 만드는 인재</p>
@@ -186,7 +186,7 @@ function out(num){
 			                                		</div>
 			                               		</div>
 			                               	</div>
-											<div class="company_culture2">
+											<div class="company_culture3">
 			                                	<div class="culture_section end">
 			                                		<div class="company_culture_imgbox_left_03">
 			                                		</div>

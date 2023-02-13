@@ -2155,7 +2155,7 @@
 }
 
 .history .tab-cont ol li.last dl {
-  padding-bottom: 0 !important;
+  padding-bottom: 100px !important;
 }
 .history .tab-cont ol li.last dl dd:last-child {
   padding-bottom: 0;
