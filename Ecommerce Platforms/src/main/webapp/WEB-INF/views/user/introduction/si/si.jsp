@@ -51,7 +51,7 @@
                         </div>
 						<div class="layout_body process-area">
 							<div class="process-flow size-01 type01">
-								<ul class="flow_list">
+								<ul class="si_flow">
 									<li class="si_li si_sub_1">
                                         <div class="recomm_box">
                                             <p class="recomm_txt">

@@ -25,7 +25,7 @@
                 <div class="business-wrapper division_wrapper">
                     <div class="division_container">
                         <div class="visual_txt_area division_txt_area com_intro">
-                            <p class="txt1">
+                            <p class="txt3">
                             	혁신 그리고 신뢰와 열정으로
                             	<br />함께 미래를 만들어갑니다.
                             </p>
