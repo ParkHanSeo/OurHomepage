@@ -362,7 +362,7 @@
 			AND		p.member_name like concat ('%',#{comm.searchKeyword},'%')
 			</if>
 		</if>
-		ORDER BY p.post_asc ASC
+		ORDER BY p.post_asc DESC
 		LIMIT #{limit} OFFSET #{offset}
 	</select>
 	
@@ -390,7 +390,7 @@
 			AND		p.member_name like concat ('%',#{comm.searchKeyword},'%')
 			</if>
 		</if>
-		ORDER BY p.post_asc ASC
+		ORDER BY p.post_asc DESC
 		LIMIT #{limit} OFFSET #{offset}
 	</select>	
 <!-- MariaDB rank함수 나온 후 -->
