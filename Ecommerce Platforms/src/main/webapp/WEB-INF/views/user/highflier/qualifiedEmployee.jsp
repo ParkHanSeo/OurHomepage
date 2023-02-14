@@ -76,7 +76,6 @@ function out(num){
 					                                            <p class="sub_txt">Excellence</p>
 					                                            <p class="sub_txt2 overP1" id="p1">최고와 더불어 최선을 추구하는 인재</p>
 					                                            <i class="icon culture-icon-01"></i>
-					                                            <span class="icon card_ui-more employee_icon_white"></span>
 					                                        </div>
 				                                        </a>
 			                                        </div>
@@ -89,7 +88,6 @@ function out(num){
 					                                            <p class="sub_txt">Innovation</p>
 					                                            <p class="sub_txt2 overP2" id="p2">끊임없이 혁신을 추구하는 인재끊임없이 혁신을 추구하는 인재</p>
 					                                            <i class="icon culture-icon-02"></i>
-					                                            <span class="icon card_ui-more employee_icon_black"></span>
 				                                            </div>
 				                                        </a>
 				                                    </div>
@@ -102,7 +100,6 @@ function out(num){
 					                                            <p class="sub_txt">Customer Fixation</p>
 					                                            <p class="sub_txt2 overP3" id="p3">고객의 기대와 요구에 앞서 고민하고 실천하는 인재</p>
 					                                            <i class="icon culture-icon-03"></i>
-					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
@@ -115,7 +112,6 @@ function out(num){
 					                                            <p class="sub_txt">Teamwork</p>
 					                                            <p class="sub_txt2 overP4" id="p4">협력을 통해 더 큰 성과를 창출하는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
-					                                            <span class="icon card_ui-more employee_icon_black"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
@@ -128,7 +124,6 @@ function out(num){
 					                                            <p class="sub_txt">Community</p>
 					                                            <p class="sub_txt2 overP5" id="p5">기업의 역할과 책임을 이해하고 실천하는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
-					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
@@ -141,7 +136,6 @@ function out(num){
 					                                            <p class="sub_txt">Flexible</p>
 					                                            <p class="sub_txt2 overP6" id="p6">유머와 재능을 살려 즐겁게 일하는 일터를 만드는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
-					                                            <span class="icon card_ui-more employee_icon_black"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
@@ -150,12 +144,11 @@ function out(num){
 			                                </div>
 		                                </div>
 		                                <section class="contents_section">
+											<div class="main_title">
+												<span>기업 문화</span>
+											</div>
+											<p class="culture_txt">내담은 기업과 근로자가 발 맞추어 성장하는 기업으로 상생을 추구합니다.<p>
 											<div class="company_culture">
-												<div class="main_title">
-													<span>기업 문화</span>
-													<span class="culture_bar" ></span>
-												</div>
-												<p class="culture_txt">내담은 기업과 근로자가 발 맞추어 성장하는 기업으로 상생을 추구합니다.<p>
 			                                	<div class="culture_section">
 			                                		<div class="company_culture_imgbox_left_01">
 			                                		</div>
