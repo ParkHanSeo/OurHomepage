@@ -144,7 +144,8 @@
                            <div class="main_aos_naedam_txt">
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">If you with NaedamC&C</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                 SCM(Supply Chain Management, 공급망 관리), 
+                                 Digital Twin, Vison AI, SI
+                                 <br />SCM(Supply Chain Management, 공급망 관리), 
                                  <br />PLM(Product Lifecycle Management), CRM, MES, 
                                  <br />EIP(Enterprise Information Portal) 등 
                                  <br />다양한 IT분야에서의 구축 경험을 토대로 고객사를 위한 다양한 솔루션과 서비스를 제공합니다.
