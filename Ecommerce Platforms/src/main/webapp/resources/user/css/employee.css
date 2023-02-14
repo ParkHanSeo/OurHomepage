@@ -839,6 +839,7 @@
 .culture_card_area .culture_card_list > li a .sub_txt2 {
     display: block;
     font-size: 13px;
+    margin: 15 0 0 0;
     line-height: 28px;
     color: rgba(255, 255, 255, 0.8);
     opacity: 1;
