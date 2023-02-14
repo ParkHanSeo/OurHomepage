@@ -1,4 +1,8 @@
 @charset "utf-8";
+.location_img{
+	height: 100%;
+	
+}
 .location_name{
 	padding-top:5px;	
 }
