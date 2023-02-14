@@ -32,7 +32,7 @@
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
                                 <span class="top_txt1">초기 구상, 개발, 서비스, 폐기에 이르는 제품의 전체 여정을 관리하기 위한 전략적 프로세스의 소프트웨어</span>
-                                <p class="top_txt2">제품 수명 주기 관리 ()</p>
+                                <p class="top_txt2">제품 수명 주기 관리</p>
                                 <p class="top_txt3">
                                     PLM은 제품의 탄생부터 폐기까지 제품과 관련된 모든 것의 관리함으로써<br class="hide_768">
                                     글로벌 공급망 기술의 솔루션을 제공합니다.

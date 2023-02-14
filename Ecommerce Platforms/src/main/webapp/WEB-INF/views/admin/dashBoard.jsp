@@ -69,6 +69,10 @@
 	.fc-event { border: #fff; }
 	
 	h3, h4, strong{ font-weight : bolder; }
+	
+	.nav-tabs-custom .recruitList li:not(:last-child) {
+    margin: 0 0 13px;
+	}
 </style>
 
 <script>
