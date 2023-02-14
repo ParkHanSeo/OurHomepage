@@ -699,7 +699,7 @@ function eduMemberFaq() {
 }
 
 function videoHeight() {
-	var $obj = $(".video-wrapper");
+	var $obj = $(".video-wrapper");d
 
 	function autoHeight() {
 		var $winH = $(window).outerHeight(),
@@ -757,7 +757,7 @@ function btnScrollTop() {
 			$btn.removeClass("is-end");
 		}
 
-		if ($scrT >= $winH / 2 && $(window).width() >= 1024) {
+		if ($scrT >= $winH / 2 && $(window).width() >= 0) {
 			$btn.fadeIn(300);
 		} else {
 			$btn.fadeOut(300);
