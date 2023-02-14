@@ -125,11 +125,21 @@
 */
 
 .process-flow .box-layout_3 {
-  margin-top: 40px;
+  /* margin-top: 40px; */
+}
+
+.layout_section_outer .layout_body {
+    margin-top: 25px;
+}
+
+.layout_body process-area {
+	margin-top: 0px;
 }
 .process-flow .box-layout_3 .common-cont_box {
   padding: 24px 0;
-  margin-top: 56px;
+  /* margin-top: 56px; */
+  margin-top: 0px;
+  margin-bottom: 45px;
   border: 0;
   border-top: 1px solid #e6e6e6;
   border-radius: 0;
