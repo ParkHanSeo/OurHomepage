@@ -60,21 +60,19 @@
 	<insert id="addHead" parameterType="head">
 		INSERT INTO head
 		(
-		HEAD_NO, 
 		TITLE, 
 		STATUS, 
 		CONTENT, 
 		HEAD_IMAGE, 
-		HEAD_URL, 
-		HEAD_ASC
+		HEAD_URL
 		)
-		VALUES(NEXTVAL(head_seq),
+		VALUES(
 			   #{title : VARCHAR},
 			   #{status : VARCHAR},
 			   #{content : VARCHAR},
 			   #{headImage : VARCHAR},
-			   #{headUrl : VARCHAR},
-			   NEXTVAL(allAsc_seq))
+			   #{headUrl : VARCHAR}
+		)
 	</insert>
 	
 	<insert id="addRevision" parameterType="menu">
