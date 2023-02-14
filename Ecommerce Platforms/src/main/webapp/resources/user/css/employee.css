@@ -887,8 +887,19 @@
 }
 }
 @media all and (max-width: 1280px) {
+	.company_culture_imgbox_left_01 {
+    margin: 45 45 0 45;
+}
+	.company_culture_imgbox_right_02{
+    margin: 45 45 0 45;
+}
+	.company_culture_imgbox_left_03 {
+    margin: 45 45 0 45;
+}
+	
+	
 	.company_culture_box_left {
-    padding: 0 45 80 45px;
+    padding: 0 45 0 45px;
     margin: 0 45 0 0px;
     width: 100%;
     /* height: 300px; */
@@ -905,6 +916,14 @@
     vertical-align: middle;
     text-align: left;
 	}
+		.company_culture {
+		padding-bottom: 50px;
+	}
+	
+	.company_culture2 {
+		padding-bottom: 50px;
+	}
+	
 	
 }
 @media all and (min-width: 1023px) {
@@ -1002,11 +1021,13 @@
 	.company_culture {
     width: 100%;
     float: left;
+    padding-bottom: 0px
 	}
 	
 	.company_culture2 {
     width: 100%;
     float: left;
+    padding-bottom: 0px
 	}
 	
 	.culture_section {
@@ -1017,7 +1038,7 @@
 	
 	.company_culture_box_left {
     margin: 0 45 0 0px;
-     padding: 0 0 30 45px;
+     padding: 0 0 30 0px;
     width: 100%;
     float: left;
     vertical-align: middle;
@@ -1025,7 +1046,7 @@
 	}
 	
 	.company_culture_box_right {
-    margin: 0 45 0 45px;
+    margin: 0 45 0 0px;
     padding: 0 0 30 0px;
     width: 100%;
     float: left;
