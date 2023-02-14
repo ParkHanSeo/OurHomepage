@@ -699,7 +699,7 @@ function eduMemberFaq() {
 }
 
 function videoHeight() {
-	var $obj = $(".video-wrapper");d
+	var $obj = $(".video-wrapper");
 
 	function autoHeight() {
 		var $winH = $(window).outerHeight(),
