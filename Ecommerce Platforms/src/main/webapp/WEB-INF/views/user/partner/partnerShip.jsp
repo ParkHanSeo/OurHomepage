@@ -45,7 +45,7 @@
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담씨앤씨</p>
                                             <ul class="common-txt-list">
-                                                <li>유수 대기업들과 파트너쉽을 맺고 운영하고 있습니다.</li>
+                                                <li>유수의 대기업들과 파트너쉽을 맺고 운영하고 있습니다.</li>
                                                 <li>내담씨앤씨는 최소 운영비로 지속적인 경영 혁신을 추진 가능하도록 지원합니다.</li>
                                             </ul>
                                         </div>
