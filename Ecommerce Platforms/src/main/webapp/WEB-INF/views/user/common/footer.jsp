@@ -18,7 +18,7 @@
 		              <br class="hide_1024" />
 		              <span class="line">대표전화 : 031-712-8315</span>
 		              <span>팩스번호 : 031-789-3545</span>
-		              <p class="copyright">© NDC&C. All Rights Reserved. 2023</p>
+		              <p class="copyright">© NAEDAM C&C. All Rights Reserved. 2023</p>
 		            </address>
 	            </div>
 	          </div>
