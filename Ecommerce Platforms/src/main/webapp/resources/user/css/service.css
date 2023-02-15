@@ -507,8 +507,8 @@
 .difference_list > li .difference_box .difference_desc {
   margin-top: 24px;
   font-size: 20px;
-  line-height: 28px;
   color: #666;
+  line-height: 30px;
 }
 .difference_list > li .item_logo {
   height: 48px;

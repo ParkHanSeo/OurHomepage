@@ -47,7 +47,7 @@
 				<!-- // .top_visual_area -->
 
 				<div class="layout_section_outer recruit2">
-					<div class="inner_container">
+					<!-- <div class="inner_container">
 						<div class="layout_head">
 							<p class="top_txt1hr">채용 프로세스</p>
 						</div>
@@ -84,7 +84,7 @@
 								</ol>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="inner_container">
 						<div class="layout_head">
