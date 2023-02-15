@@ -341,30 +341,31 @@
 	</select>
 	
 	<select id="getPostList" parameterType="hashmap" resultMap="PostSelectMap" >	
-		SELECT
-				@rownum:=@rownum+1 as rownum,
-				p.post_no,
-				p.post_asc,
-				p.post_title,
-				<!-- p.post_contents, -->
-				date_format(POST_DATE, '%Y-%m-%d') post_date,
-				p.post_origin_no,
-				p.board_no,
-				p.member_no,
-				p.member_name
-		FROM	board b, post p, member m, (select @rownum:=0) row_reset
-		WHERE	b.board_no = p.board_no
-		AND		m.member_no = p.member_no
-		AND		b.board_no = #{boardNo}
-		<if test="comm.searchType != null">
-			<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
-			AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
-			</if>
-			<if test="comm.searchType == 2 and comm.searchKeyword !='' ">
-			AND		p.member_name like concat ('%',#{comm.searchKeyword},'%')
-			</if>
-		</if>
-		ORDER BY p.post_asc DESC
+		SELECT P.*
+		  FROM (SELECT
+						@rownum:=@rownum+1 as rownum,
+						p.post_no,
+						p.post_asc,
+						p.post_title,
+						<!-- p.post_contents, -->
+						date_format(POST_DATE, '%Y-%m-%d') post_date,
+						p.post_origin_no,
+						p.board_no,
+						p.member_no,
+						p.member_name
+				FROM	board b, post p, member m, (select @rownum:=0) row_reset
+				WHERE	b.board_no = p.board_no
+				AND		m.member_no = p.member_no
+				AND		b.board_no = #{boardNo}
+				<if test="comm.searchType != null">
+					<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
+					AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
+					</if>
+					<if test="comm.searchType == 2 and comm.searchKeyword !='' ">
+					AND		p.member_name like concat ('%',#{comm.searchKeyword},'%')
+					</if>
+				</if>
+				ORDER BY p.post_asc DESC) P
 		LIMIT #{limit} OFFSET #{offset}
 	</select>
 	

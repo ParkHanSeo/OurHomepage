@@ -59,6 +59,7 @@ public class MenuController {
 	public String headProcess(@ModelAttribute("head") Head head,
 							  @RequestParam("mode") String mode,
 							  @RequestParam(value="image", required = false) MultipartFile headImage,
+							  @RequestParam(value="imageStatus", required = false) String imageStatus,
 							  HttpServletRequest request) throws Exception{
 		String filePath = request.getServletContext().getRealPath("resources/user/images/main/");
 		Map<String, Object> headMap = new HashMap<>();
@@ -66,6 +67,11 @@ public class MenuController {
 		headMap.put("mode", mode);
 		headMap.put("headImage", headImage);
 		headMap.put("filePath", filePath);
+		headMap.put("imageStatus", imageStatus);
+		
+		System.out.println("imageStatus >>>" + imageStatus);
+		System.out.println("headMap.headImage >>>" + headMap.get("headImage"));
+		
 		return menuService.headProcess(headMap);
 	}
 	

@@ -47,6 +47,7 @@ public class RecruitController {
 	public String recruitList(Model model, @RequestParam(defaultValue = "1") int cPage, HttpServletRequest request,
 			@RequestParam(value= "searchKeyword",required = false) String searchKeyword) throws Exception {
 		System.out.println("recruitList start =======");
+		System.out.println("recruitList cPage ==== " + cPage);
 		//조회 전 마감일자 지난 list들 채용마감으로 변경
 		int update = recruitService.updateContentsStatus();
 		

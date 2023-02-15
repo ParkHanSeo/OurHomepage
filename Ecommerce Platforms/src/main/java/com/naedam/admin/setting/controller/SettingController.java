@@ -44,8 +44,6 @@ public class SettingController {
 	@GetMapping("/history")
 	public String history(Model model, @RequestParam(defaultValue = "1") int cPage,
 			HttpServletRequest request) {
-		System.out.println("redirect: 처리됐나????");
-		System.out.println("history cPage>>>>>>" + cPage);
 		// 게시글 조회 한도
 		int limit = 10;
 		int offset = (cPage - 1) * limit;

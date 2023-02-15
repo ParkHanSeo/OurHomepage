@@ -86,6 +86,10 @@
 				return;
 			}
 			
+			console.log("postFile >>", postFile);
+			
+			if($("input[id='postName']").val())
+			
 			for(var i = 0; i < postFile; i++){
 				postName[i] = $("input[id='postName']")[i].value;
 				//alert(postName[i])

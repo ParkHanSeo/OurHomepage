@@ -76,6 +76,7 @@ public class MenuServiceImpl implements MenuService {
 	public String headProcess(Map<String, Object> map) throws Exception{
 		
 		Head head = (Head) map.get("head");
+		
 		MultipartFile headImage = (MultipartFile) map.get("headImage");
 		File file = new File(map.get("filePath")+headImage.getOriginalFilename());
 		

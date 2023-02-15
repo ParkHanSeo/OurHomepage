@@ -202,7 +202,8 @@
 					            </tr>					            
 					            <tr>
 					            	<td class="menu">이미지파일</td>
-					            	<td class="headImageTb" align="left" >
+					            	<td align="left" >
+					            		<div class="headImageTb" id="cImg"></div>
 					            		<input type="file" name="image" id="image" style="display:inline;">
 					            	</td>
 					            </tr>
@@ -264,6 +265,7 @@
      
      function register() {
          if(form_register.title.value == '') { alert('헤더명이 입력되지 않았습니다.'); form_register.title.focus(); return false;}
+         if(form_register.image.value == '') { alert('이미지가 등록되지 않았습니다.'); return false;}
          alert("헤더가 등록 되었습니다.");
          $("form[name='form_register']").submit();
      }
@@ -288,6 +290,7 @@
              success:function(data, textStatus, jqXHR){
                  var json_data = data;
                  console.log(json_data);
+                 console.log('json_data.headImage::: ', json_data.headImage);
                  $('[name=mode]').val('update');
                  $('[name=headNo]').val(code);
                  $('[name=title]').val(json_data.title);
@@ -295,9 +298,11 @@
                  $('[name=content]').text(json_data.content);
                  $('[name=headUrl]').val(json_data.headUrl);
 				 if(json_data.headImage != null){
+					 $("#display_headImage").remove();
+					 $(".headImageTb").html('');
 					 var headImage = "'${pageContext.request.contextPath}/resources/user/images/main/"+json_data.headImage+"'"
 					 if(json_data.headImage != null && json_data.headImage != ''){
-						 var display = '<span id="display_headImage" name="headImageSpan">'
+						 var display = json_data.headImage + '&nbsp;&nbsp;&nbsp;<span id="display_headImage" name="headImageSpan">'
 										+ '<button type="button" onclick="window.open('+headImage+')" class="btn btn-success btn-xs">보기</button>'
 										+ '<button type="button" onclick="fncDeleteImage()" name="deleteImage" value="'+json_data.headNo+'" class="btn btn-danger btn-xs">삭제</button>'
 										+ '</span>';
@@ -315,7 +320,15 @@
          });
      }
      
+     function fncDeleteImage(){
+    	 if(confirm('정말 삭제하시겠습니까?')){
+    			$("#display_headImage").parent().remove();
+    			$("#imageStatus").remove();
+    		}
+     }
+     
      function onclickInsert() {
+    	 $('#content').val('');
          $('#modalContent').modal('show');
          form_register.reset();
          form_register.mode.value = 'insert';
