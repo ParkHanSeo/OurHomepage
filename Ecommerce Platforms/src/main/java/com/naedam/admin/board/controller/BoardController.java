@@ -89,7 +89,7 @@ public class BoardController {
 							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
 		String filePath = request.getSession().getServletContext().getRealPath("resources/user/downloadFile/");
-		System.out.println("공지사항 프로세스 데이터 확인 === "+postName.length);
+		
 		Map<String, Object> postMap	 = new HashMap<>();
 		postMap.put("board", board);
 		postMap.put("post", post);	

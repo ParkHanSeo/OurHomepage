@@ -73,46 +73,14 @@
 	});
 
 	function fncAddPost(){
-		if("${business.OPTION_MASS}" != "y"){
-			var businessPostFile = $("input[id='businessPostName']").length;
-			var businessPostTitle = $("input[id='businessPostTitle']").val();
-			var businessPostContents = CKEDITOR.instances.editor.getData();
-			var businessPostName = new Array(businessPostFile);
-			if(businessPostTitle == null || businessPostTitle == ''){
-				alert("제목을 입력하셔야 합니다.");
-				return;
-			}else if(businessPostContents == null || businessPostContents == ''){
-				alert("내용을 입력하셔야 합니다.");
-				return;
-			}
-			
-			for(var i = 0; i < businessPostFile; i++){
-				businessPostName[i] = $("input[id='businessPostName']")[i].value;
-				//alert(businessPostName[i])
-			}	
-			alert("게시글이 등록 되었습니다.")
-			$("form[name='addBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
-		}else if("${business.OPTION_MASS}" == "y"){
-			var businessPostFile = $("input[id='businessPostName']").length;
-			var businessPostTitle = $("input[id='businessPostTitle']").val();
-			var businessPostContents = CKEDITOR.instances.editor.getData();
-			var businessPostName = new Array(businessPostFile);
-			if(businessPostTitle == null || businessPostTitle == ''){
-				alert("제목을 입력하셔야 합니다.");
-				return;
-			}else if(businessPostContents == null || businessPostContents == ''){
-				alert("내용을 입력하셔야 합니다.");
-				return;
-			}
-			
-			for(var i = 0; i < businessPostFile; i++){
-				businessPostName[i] = $("input[id='businessPostName']")[i].value;
-				//alert(businessPostName[i])
-			}	
-			
-			alert("게시글이 등록 되었습니다.")
-			$("form[name='addBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();	
+		var businessPostTitle = $("input[id='businessPostTitle']").val();
+		var businessPostContents = $("input[id='businessPostContents']").val();		
+		if(businessPostTitle == null || businessPostTitle == ''){
+			alert("제목을 입력하셔야 합니다.");
+			return;
 		}
+		alert("게시글이 등록 되었습니다.")
+		$("form[name='addBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
 	
 	function fucAddFile(){
@@ -138,90 +106,45 @@
 				                <td class="menu">작성자</td>
 				                <td align="left"><input type="text" name="name" id="name" class="form-control input-sm"></td>
 				            </tr>
-				            <c:if test="${business.OPTION_ADDINFO eq 'y'}">
-					            <tr>
-					                <td class="menu">휴대전화</td>
-					                <td align="left"><input type="text" name="phone" id="phone" class="form-control input-sm" style="width:50%;"></td>
-					            </tr>
-					            <tr>
-					                <td class="menu">이메일</td>
-					                <td align="left"><input type="text" name="email" id="email" class="form-control input-sm" style="width:50%;"></td>
-					            </tr>
-				            </c:if>
+							<tr>
+				                <td class="menu">사업제목</td>
+				                <td align="left"><input type="text" name="businessPostTitle" id="businessPostTitle" class="form-control input-sm"></td>
+				            </tr>
+							<tr>
+				                <td class="menu">부제목</td>
+				                <td align="left"><input type="text" name="businessPostSubTitle" id="businessPostSubTitle" class="form-control input-sm"></td>
+				            </tr>				            
 				            <tr>
-				                <td class="menu">제목</td>
-				                <td align="left">
-					                <span style="float:left;width:80%;"><input type="text" name="businessPostTitle" id="businessPostTitle" class="form-control input-sm"></span>
-					                <c:if test="${business.OPTION_NOTICE eq 'y'}">
-						                <span>&nbsp;&nbsp;
-						                	<input type="checkbox" name="titleNotice" value="y">공지사항
-						                </span>
-						            </c:if>
+				            	<td class="menu">내용</td>
+				                <td colspan="2" style="text-align:left">
+				                	<textarea name="businessPostContents" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 							<tr>
-				                 <td class="menu">내용</td>
-				                 <td align="left">
-				                 	<textarea name="businessPostContents" id="editor" rows="10" cols="80" style="visibility: hidden; display: none;"></textarea>
-				                 	<script type="text/javascript">
-									 CKEDITOR.replace('editor'
-									                , {filebrowserUploadUrl:'/admin/board/imageUpload?${_csrf.parameterName}=${_csrf.token}'}
-									 );
-									</script>
-				                 </td>
-				            </tr>
-					            <c:if test="${business.OPTION_SECRET eq 'y'}">
-						            <td class="menu">비밀글</td>
-						            <td align="left">
-						                <span>&nbsp;&nbsp;
-						                	<input type="checkbox" name="is_secret" value="y"></span>
-						                </td>
-						            <tr>
-					            </c:if>
-				                <td class="menu">썸네일 파일</td>
-				                <td align="left">
-					                <input type="file" name="ThombnailName" id="ThombnailName" class="form-control input-sm" style="width:80%; display:inline;">
-					                <span id="display_thumbnail" style="display:none;">
-					                	<button type="button" onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');" class="btn btn-success btn-xs">보기</button>
-					                	<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
-					                </span>
+				            	<td class="menu">상세페이지 내용1</td>
+				                <td colspan="2" style="text-align:left">
+				                	<textarea name="businessPostText1" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
-				                <td class="menu">파일</td>
-				                <td align="left">
-					                <c:if test="${business.OPTION_MASS eq null}">
-						                <p>
-						                    <span id="file_list"></span>            
-						                </p>
-										
-						                <p style="padding-top:10px; float:left; width:100%;">
-						                    <button type="button" class="btn btn-primary btn-xs" onclick="fucAddFile();"><span class="glyphicon glyphicon-plus"></span> 파일추가</button><br>
-						                </p>
-					                    <div id="list_file" name="listFile"></div>
-					                </c:if>
-					                <c:if test="${business.OPTION_MASS eq 'y'}">
-						                <p id="diplay-plupload">
-						                    <span id="file_list"></span>            
-						                </p>  
-										<div id="uploader"></div>                              
-					                </c:if> 
+				            	<td class="menu">상세페이지 내용2</td>
+				                <td colspan="2" style="text-align:left">
+				                	<textarea name="businessPostText2" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
-				            </tr>
+				            </tr>				            
+		            	    <tr>
+				            	<td class="menu">아이콘파일</td>
+				            	<td>
+				            		<input type="file" name="icon" id="icon" class="form-control input-sm">
+				            	</td>
+				            </tr>				            				            
 			            </tbody>
 		            </table>
-		            <c:if test="${business.OPTION_COMMENT eq 'y'}">
-						<div id="displayMemo" style="">
-			            	<h4>
-			            		<p class="text-light-blue"><i class="fa fa-fw fa-info-circle"></i> 댓글 관리</p>
-			            	</h4>
-			            </div>
-		            </c:if>
 	            </div><!-- /.modal-body -->
 	            <div class="modal-footer">
 	            	<button type="button" onclick="fncAddPost()" class="btn btn-primary">확인</button>&nbsp;&nbsp;&nbsp;
 	            </div>
-	            <input type="hidden" value="${business.BUSINESS_NO}" name="businessNo">
+	            <input type="hidden" value="${business.businessNo}" name="businessNo">
 	        </form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

@@ -103,27 +103,8 @@
 	}
 	
 	function fncUpdateBusinessPost(){
-		if("${business.OPTION_MASS}" != "y"){
-			var businessPostFile = $("input[id='getBusinessPostFile']").length;
-			var businessPostName = new Array(businessPostFile);
-			
-			for(var i = 0; i < businessPostFile; i++){
-				businessPostName[i] = $("input[id='getBusinessPostFile']")[i].value;
-				alert(businessPostName[i])
-			}
-			alert("수정 되었습니다.");
-			$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
-		}else if("${business.OPTION_MASS}" == "y"){
-			var businessPostFile = $("input[id='getBusinessPostFile']").length;
-			var businessPostName = new Array(businessPostFile);
-			
-			for(var i = 0; i < businessPostFile; i++){
-				businessPostName[i] = $("input[id='getBusinessPostFile']")[i].value;
-				alert(businessPostName[i])
-			}
-			alert("수정 되었습니다.");
-			$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
-		}
+		alert("수정 되었습니다.");
+		$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
 	
 	function fucAddFile2(){
@@ -228,7 +209,7 @@
 			$("span[name='getFile']").remove();
 		})
 		
-		$("#getBusinessPostBotton").on("click", function(){
+		$(".getBusinessPost").on("click", function(){
 			var businessPostNo = $(this).val();
 			$.ajax({
 				url : "/admin/business/json/getBusinessPost/"+businessPostNo,
@@ -239,28 +220,26 @@
 					"Content-Type" : "application/json"	 						
 				} ,
 				success : function(JSONData, status){
-					
-					$("input[name='businessPostNo']").val(JSONData.BUSINESS_POST_NO);
-					$("input[id='commentPostNo']").val(JSONData.BUSINESS_POST_NO);
-					$("input[name='businessPostOrd']").val(JSONData.BUSINESS_POST_ORD);
-					$("input[name='businessPostLayer']").val(JSONData.BUSINESS_POST_LAYER);
-					$("input[name='businessPostAsc']").val(JSONData.BUSINESS_POST_ASC);
-					$("input[name='businessPostOriginNo']").val(JSONData.BUSINESS_POST_ORIGIN_NO);
-
-					CKEDITOR.instances.editor1.setData(JSONData.BUSINESS_POST_CONTENTS)
-
-					if(JSONData.BUSINESS_POST_THOBNAIL != null){
-						
-						var thombnail = "'${pageContext.request.contextPath}/resources/imgs/imageBoard/board"+JSONData.BUSINESS_POST_THOBNAIL+"'"
-						if(JSONData.BUSINESS_POST_THOBNAIL != null && JSONData.BUSINESS_POST_THOBNAIL != ''){
+					console.log(JSONData)
+					$("input[name='businessPostNo']").val(JSONData.businessPostNo);
+					$("input[name='businessPostTitle']").val(JSONData.businessPostTitle);
+					$("input[name='businessPostSubTitle']").val(JSONData.businessPostSubTitle);
+					$('[name=businessPostContents]').text(JSONData.businessPostContents);
+					$('[name=businessPostText1]').text(JSONData.businessPostText1);
+					$('[name=businessPostText2]').text(JSONData.businessPostText2);
+					$("input[name='businessPostAsc']").val(JSONData.businessPostAsc);
+					$("input[name='businessPostOriginNo']").val(JSONData.businessOriginNo);
+					if(JSONData.businessPostIcon != null){
+						var icon = "'${pageContext.request.contextPath}/resources/user/images/introduction/icon/"+JSONData.businessPostIcon+"'"
+						if(JSONData.businessPostIcon != null && JSONData.businessPostIcon != ''){
 							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
-										+ '<button type="button" onclick="window.open('+thombnail+')" class="btn btn-success btn-xs">보기</button>'
-										+ '<button type="button" onclick="fncDeleteThombnail()" name="deleteThombnail" value="'+JSONData.BUSINESS_POST_NO+'" class="btn btn-danger btn-xs">삭제</button>'
+										+ '<button type="button" onclick="window.open('+icon+')" class="btn btn-success btn-xs">보기</button>'
+										+ '<button type="button" onclick="fncDeleteThombnail()" name="deleteThombnail" value="'+JSONData.businessPostNo+'" class="btn btn-danger btn-xs">삭제</button>'
 										+ '</span>';
 										
 										
 										//<input type="hidden" name="businessPostNo" id="getPostNo" >
-						$("td[name='thombnailTd']").append(display);
+						$("td[name='iconTd']").append(display);
 						}else{
 							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
 								+ '</span>';	
@@ -269,12 +248,7 @@
 					
 					$("#getBusinessPostTitle").val(JSONData.BUSINESS_POST_TITLE);
 					$("#getThombnailName").val(JSONData.BUSINESS_POST_THOMBNAIL);
-					
-					if(JSONData.BUSINESS_POST_NOTICE == 0){
-						$("#getBusinessPostNotice").prop("checked", false);
-					}else if(JSONData.BUSINESS_POST_NOTICE == 1){
-						$("#getBusinessPostNotice").prop("checked", true);
-					}	
+
 				},
 				error:function(request,status,error){
 				  alert("에러")     
@@ -308,8 +282,7 @@
         <div class="modal-content">
             <form name="getBusinessPostForm" method="businessPost" enctype="multipart/form-data">
 	            <input type="hidden" name="businessPostNo" id="getPostNo" >
-	            <input type="hidden" name="businessPostOrd" id="getPostOrd" >
-	            <input type="hidden" name="businessPostLayer" id="getPostLayer" >
+	            <input type="hidden" name="businessNo" value="${business.businessNo}">
 	            <input type="hidden" name="businessPostAsc" id="getPostAsc" >
 	            <input type="hidden" name="businessPostOriginNo" id="getPostOriginNo" >
 	            <input type="hidden" name="mode" id="mode" value="update">
@@ -320,83 +293,42 @@
 	            </div>
             	<div class="modal-body">
 		            <h4><p class="text-light-blue"><i class="fa fa-fw fa-info-circle"></i> 글 <span name="board_sub_title">수정</span></p></h4>
-		            <table class="table table-bordered">
-            			<tbody>
-				            <tr>
-				                <td class="menu">작성자</td>
-				                <td align="left"><input type="text" name="name" id="businessPostGetName" class="form-control input-sm"></td>
-				            </tr>
-				            <c:if test="${board2.option.optionAddinfo eq 'y'}">
-					            <tr>
-					                <td class="menu">휴대전화</td>
-					                <td align="left"><input type="text" name="phone" id="businessPostGetPhone" class="form-control input-sm" style="width:50%;"></td>
-					            </tr>
-					            <tr>
-					                <td class="menu">이메일</td>
-					                <td align="left"><input type="text" name="email" id="businessPostGetEmail" class="form-control input-sm" style="width:50%;"></td>
-					            </tr>
-				            </c:if>
-				            <tr>
-				                <td class="menu">제목</td>
-				                <td align="left">
-					                <span style="float:left;width:80%;"><input type="text" name="businessPostTitle" id="getBusinessPostTitle" class="form-control input-sm"></span>
-					                <c:if test="${board2.option.optionNotice eq 'y'}">
-						                <span>&nbsp;&nbsp;
-						                	<input type="checkbox" id="getBusinessPostNotice" name="businessPostNotice" value="1" >공지사항
-						                </span>
-						            </c:if>
-				                </td>
-				            </tr>
+			        <table class="table table-bordered">
+			            <tbody>
 							<tr>
-				                <td class="menu">내용</td>
-				                <td align="left">
-				                 	<textarea name="businessPostContents" id="editor1" rows="10" cols="80" style="visibility: hidden; display: none;"></textarea>
-				                 	<script type="text/javascript">
-									 CKEDITOR.replace('editor1'
-									                , {filebrowserUploadUrl:'/admin/board/imageUpload?${_csrf.parameterName}=${_csrf.token}'}
-									 );
-									</script>	                 	
-				                </td>
+				                <td class="menu">사업제목</td>
+				                <td align="left"><input type="text" name="businessPostTitle" id="businessPostTitle" class="form-control input-sm"></td>
 				            </tr>
-				            <c:if test="${board2.option.optionSecret eq 'y'}">
-					            <tr>
-						            <td class="menu">비밀글</td>
-						            <td align="left">
-						                <span>&nbsp;&nbsp;
-						                <input type="checkbox" name="is_secret" value="y"></span>
-						            </td>
-					            </tr>
-				            </c:if>            
 				            <tr>
-				                <td class="menu">썸네일 파일</td>
-				                <td align="left" name="thombnailTd">
-				                	<input type="file" name="ThombnailName" id="getThombnailName" class="form-control input-sm" style="width:80%; display:inline;">
+				                <td class="menu">부제목</td>
+				                <td align="left"><input type="text" name="businessPostSubTitle" id="businessPostSubTitle" class="form-control input-sm"></td>
+				            </tr>
+				            <tr>
+				            	<td class="menu">내용</td>
+				                <td colspan="2" style="text-align:left">
+				                	<textarea name="businessPostContents" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
-				                <td class="menu">파일</td>
-				                <td align="left">
-					                <c:if test="${board2.option.optionMass eq null}">
-						                <p><span id="file_list"></span></p>
-						                <p style="padding-top:10px; float:left; width:100%;">
-						                    <button type="button" class="btn btn-primary btn-xs" onclick="fucAddFile();"><span class="glyphicon glyphicon-plus"></span> 파일추가</button><br>
-						                </p>
-					                    <div id="list_file" name="listFile">
-					                    	<input type="file" name="businessPostName" id="businessPostName" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;" >
-					                    </div>
-					                </c:if>
-					                <c:if test="${board2.option.optionMass eq 'y'}">
-						                <p id="diplay-plupload" style="heigth:150px; overflow-y:scroll;" >
-						                    <span id="file_list">
-						                    	<input type="hidden" name="businessPostName" id="businessPostName" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;" >
-						                    </span>            
-						                </p>  
-										<div id="uploader2"></div>                              
-					                </c:if> 
+				            	<td class="menu">상세페이지 내용1</td>
+				                <td colspan="2" style="text-align:left">
+				                	<textarea name="businessPostText1" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
-            			</tbody>
-            		</table>
+				            <tr>
+				            	<td class="menu">상세페이지 내용2</td>
+				                <td colspan="2" style="text-align:left">
+				                	<textarea name="businessPostText2" rows="10" cols="80" style="width:650px"></textarea>
+				                </td>
+				            </tr>
+		            	    <tr>
+				            	<td class="menu">아이콘파일</td>
+				            	<td align="left" name="iconTd">
+				            		<input type="file" name="icon" id="icon" class="form-control input-sm">
+				            	</td>
+				            </tr>				            				            
+			            </tbody>
+		            </table>
             		<c:if test="${board2.option.optionComment eq 'y'}">
 						<div id="displayMemo" style="">
 			            	<h4>

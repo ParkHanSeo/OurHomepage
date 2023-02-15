@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.business.model.service.BusinessService;
 import com.naedam.admin.business.model.vo.Business;
+import com.naedam.admin.business.model.vo.BusinessContents;
 import com.naedam.admin.business.model.vo.BusinessPost;
 
 @RestController
@@ -46,14 +46,26 @@ public class BusinessRestController {
 		businessPostMap.put("mode", mode);
 		businessPostMap.put("businessNo", businessNo);
 		businessPostMap.put("businessPostArr", businessPostArr);
-		System.out.println("log === "+businessPostMap);
+		System.out.println(mode);
 		businessService.businessPostProcess(businessPostMap);
 		result = true;
 		return result;
 	}
 	
+	@PostMapping("json/businessContentsProcess")
+	public Boolean BusinessContentsProcess(@RequestParam(value = "businessContentsArr[]") List<String> businessContentsArr,
+										   @RequestParam("mode") String mode) throws Exception{
+		Boolean result = false;
+		Map<String, Object> businessContentsMap = new HashMap<>();
+		businessContentsMap.put("mode", mode);
+		businessContentsMap.put("businessContentsArr", businessContentsArr);
+		businessService.businessContentsProcess(businessContentsMap);
+		result = true;
+		return result;
+	}
+	
 	@GetMapping("json/getBusiness/{businessNo}")
-	public Map<String, Object> getBusiness(@PathVariable("businessNo") int businessNo) throws Exception{ 
+	public Business getBusiness(@PathVariable("businessNo") int businessNo) throws Exception{ 
 		return businessService.getBusiness(businessNo);
 	}
 	
@@ -66,8 +78,13 @@ public class BusinessRestController {
 	}
 	
 	@GetMapping(value="json/getBusinessPost/{businessPostNo}")
-	public Map<String, Object> getBusinessPost(@PathVariable("businessPostNo") int businessPostNo)throws Exception{
-		System.out.println("log === "+businessPostNo);
+	public BusinessPost getBusinessPost(@PathVariable("businessPostNo") int businessPostNo)throws Exception{
 		return businessService.getBusinessPost(businessPostNo);
+	}
+	
+	@GetMapping(value="json/getBusinessContents/{businessContentsNo}")
+	public BusinessContents getBusinessContents(@PathVariable("businessContentsNo") int businessContentsNo) throws Exception{
+		System.out.println("log === "+businessContentsNo);		
+		return businessService.getBusinessContents(businessContentsNo);
 	}
 }

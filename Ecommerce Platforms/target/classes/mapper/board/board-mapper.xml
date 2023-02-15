@@ -188,8 +188,10 @@
 	<insert id="addFile" parameterType="boardFile">
 		INSERT
 		INTO board_file(POST_NO,
+						BUSINESS_NO,
 						FILE_NAME)	
 		VALUES(#{filePost.postNo},
+			   #{fileBusiness.businessNo},
 			   #{fileName : VARCHAR})
 	</insert>
 	

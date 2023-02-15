@@ -34,7 +34,7 @@
                                 <span class="top_txt1">현장 상황을 반영한 배합사료관리 최적의 Solution</span>
                                 <p class="top_txt2">배합사료 관리 시스템</p>
                                 <p class="top_txt3">
- 									·  다년간 경험과 현장 상황을 반영한 배합사료관리 최적의 Solution 구축
+ 									다년간 경험과 현장 상황을 반영한 배합사료관리 최적의 Solution 구축
                                 </p>
                             </div>
                         </div>

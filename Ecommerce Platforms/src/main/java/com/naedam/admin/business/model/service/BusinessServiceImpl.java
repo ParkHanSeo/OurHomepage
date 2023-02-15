@@ -11,10 +11,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.dao.BoardDao;
 import com.naedam.admin.board.model.vo.BoardFile;
-import com.naedam.admin.board.model.vo.BoardOption;
-import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.business.model.dao.BusinessDao;
 import com.naedam.admin.business.model.vo.Business;
+import com.naedam.admin.business.model.vo.BusinessContents;
 import com.naedam.admin.business.model.vo.BusinessPost;
 import com.naedam.admin.member.model.vo.Member;
 
@@ -30,14 +29,10 @@ public class BusinessServiceImpl implements BusinessService {
 
 	public void businessProcess(Map<String, Object> map) throws Exception{
 		Business business = (Business) map.get("business");
-		BoardOption boardOption = (BoardOption) map.get("boardOption");
 		if("insert".equals(map.get("mode"))) {
 			businessDao.addBusiness(business);
-			boardOption.setOptionBoard(business.getBusinessNo());
-			boardDao.addOption(boardOption);
 		}else if("update".equals(map.get("mode"))) {
 			businessDao.updateBusiness(business);
-			boardDao.updateOption(boardOption);
 		}else if("delete".equals(map.get("mode"))) {
 			List<Integer> businessArr = (List<Integer>) map.get("businessArr");
 			businessDao.deleteChoiceBusiness(businessArr);
@@ -52,21 +47,23 @@ public class BusinessServiceImpl implements BusinessService {
 			Member member = boardDao.getMemberData(Integer.parseInt(map.get("secNo").toString()));
 			businessPost.setBusinessMember(member);
 			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
-			MultipartFile[] businessPostName = (MultipartFile[]) map.get("businessPostName");
-			MultipartFile ThombnailName = (MultipartFile) map.get("ThombnailName");
-			File file = new File(map.get("filePath")+ThombnailName.getOriginalFilename());
+			MultipartFile iconName = (MultipartFile) map.get("icon");
+			
 			if("insert".equals(map.get("mode"))) {
-				businessPost.setBusinessThombnail(ThombnailName.getOriginalFilename());
-				ThombnailName.transferTo(file);
+				businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
+				if(iconName.isEmpty() == false){
+					File file = new File(map.get("filePath")+iconName.getOriginalFilename());
+					iconName.transferTo(file);	
+				}
 				businessDao.addBusinessPost(businessPost);
 			}else if("update".equals(map.get("mode"))) {
-				if(ThombnailName.isEmpty() == false) {
-					businessPost.setBusinessThombnail(ThombnailName.getOriginalFilename());
-					ThombnailName.transferTo(file);
-				}else if(ThombnailName.isEmpty() == true) {
-					Map<String, Object> thombnanilMap = businessDao.getBusinessPost(businessPost.getBusinessPostNo());
-					businessPost.setBusinessThombnail((String)thombnanilMap.get("BUSINESS_THOMBNAIL"));
-					ThombnailName.transferTo(file);
+				if(iconName.isEmpty() == false) {
+					File file = new File(map.get("filePath")+iconName.getOriginalFilename());
+					businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
+					iconName.transferTo(file);
+				}else if(iconName.isEmpty() == true) {
+					BusinessPost bp = businessDao.getBusinessPost(businessPost.getBusinessPostNo());
+					businessPost.setBusinessPostIcon(bp.getBusinessPostIcon());
 				}
 				businessDao.updateBusinessPost(businessPost);
 			}
@@ -76,13 +73,45 @@ public class BusinessServiceImpl implements BusinessService {
 		}
 	}
 	
+	public void businessContentsProcess(Map<String, Object> map) throws Exception{
+		BusinessContents businessContents = (BusinessContents) map.get("businessContents");
+		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
+			businessContents.setBusinessPost((BusinessPost) map.get("businessPost"));
+			MultipartFile imageName = (MultipartFile) map.get("file");
+			if("insert".equals(map.get("mode"))) {
+				if(imageName.isEmpty() == false){
+					System.out.println("확입합시다.");
+					File file = new File(map.get("filePath")+imageName.getOriginalFilename());
+					imageName.transferTo(file);
+					businessContents.setImage(imageName.getOriginalFilename());
+				}
+				businessDao.addBusinessContents(businessContents);
+			}else if("update".equals(map.get("mode"))) {
+				if(imageName.isEmpty() == false) {
+					File file = new File(map.get("filePath")+imageName.getOriginalFilename());
+					businessContents.setImage(imageName.getOriginalFilename());
+					imageName.transferTo(file);
+				}else if(imageName.isEmpty() == true) {
+					BusinessContents bp = businessDao.getBusinessContents(businessContents.getBusinessContentsNo());
+					businessContents.setImage(bp.getImage());
+				}
+				System.out.println("확인 === "+businessContents);
+				businessDao.updateBusinessContents(businessContents);
+			}
+		}
+		else if("delete".equals(map.get("mode"))) {
+			List<Integer> businessContentsArr = (List<Integer>) map.get("businessContentsArr");
+			businessDao.deleteChoiceBusinessContents(businessContentsArr);
+		}
+	}
+	
 	@Override
-	public Map<String, Object> getBusiness(int businessNo) throws Exception {
+	public Business getBusiness(int businessNo) throws Exception {
 		return businessDao.getBusiness(businessNo);
 	}
 	
 	@Override
-	public Map<String, Object> getBusinessPost(int businessPostNo) throws Exception {
+	public BusinessPost getBusinessPost(int businessPostNo) throws Exception {
 		return businessDao.getBusinessPost(businessPostNo);
 	}
 	
@@ -94,10 +123,23 @@ public class BusinessServiceImpl implements BusinessService {
 	}
 
 	@Override
-	public Map<String, Object> getBusinessPostList(Map<String, Object> map) throws Exception {
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("list", businessDao.getBusinessPostList(map));
-		return resultMap;
+	public List<BusinessPost> getBusinessPostList(Map<String, Object> map) throws Exception {
+		return businessDao.getBusinessPostList(map);
+	}
+
+	@Override
+	public List<BusinessPost> getBusinessPostAllList() throws Exception {
+		return businessDao.getBusinessPostAllList();
+	}
+	
+	@Override
+	public List<BusinessContents> getBusinessContentsList(Map<String, Object> map) throws Exception{
+		return businessDao.getBusinessContentsList(map);
+	}
+
+	@Override
+	public BusinessContents getBusinessContents(int businessPostNo) throws Exception {
+		return businessDao.getBusinessContents(businessPostNo);
 	}
 
 }

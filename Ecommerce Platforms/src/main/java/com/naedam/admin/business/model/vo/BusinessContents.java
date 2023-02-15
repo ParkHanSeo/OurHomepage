@@ -15,18 +15,19 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Business implements Serializable {
+public class BusinessContents implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int businessNo;			//business 테이블 primary 키
-	private String businessTitle; 		//게시판 제목
-	private Member businessMemberNo;	//회원 데이터
-	private Date inDtm;
-	private int count;
+	private int businessContentsNo;			
+	private BusinessPost businessPost;
+	private String businessContentsTitle; 	
+	private String businessContentsContent;	
+	private String image;
+	private String inDtm;
 	
 	
 	

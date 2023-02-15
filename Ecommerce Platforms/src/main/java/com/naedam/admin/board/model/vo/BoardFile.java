@@ -1,7 +1,8 @@
 package com.naedam.admin.board.model.vo;
 
 import java.io.Serializable;
-import java.util.Date;
+
+import com.naedam.admin.business.model.vo.Business;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class BoardFile implements Serializable {
 	
 	private int fileNo;			//파일 번호
 	private Post filePost;		//post의 데이터
+	private Business fileBusiness;
 	private String fileName;	//파일 이름
 	
 }
