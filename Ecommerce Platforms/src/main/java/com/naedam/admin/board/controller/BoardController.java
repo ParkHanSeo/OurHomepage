@@ -84,7 +84,7 @@ public class BoardController {
 	 */
 	@PostMapping("postProcess")
 	public String postProcess(@ModelAttribute("board") Board board, @ModelAttribute("post") Post post,
-							  @RequestPart(value="postName") MultipartFile[] postName,   
+							  @RequestPart(value="postName", required = false) MultipartFile[] postName,   
 							  @RequestParam("secNo") String secNo, 
 							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
@@ -146,7 +146,7 @@ public class BoardController {
 						   @RequestParam(defaultValue = "1") int cPage,
 						   @ModelAttribute("comm") Comm comm) throws Exception {
 		//게시글 리스트 수 limit 10으로
-		int limit = 5;
+		int limit = 10;
 		int offset = (cPage - 1) * limit;
 		
 		//게시글 리스트 옵션과 권한의 조건에 따라 태그를 생성해야 함
