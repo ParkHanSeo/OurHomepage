@@ -3,82 +3,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <script>
-	$(function() {
-		var result = {
-				"success" : 0,
-				"fail" : 0
-		}
-		var boardNo = $("input[name='boardNo']").val();
-	    var uploader = $("#uploader").plupload({
-	    	
-	        // General settings
-	        runtimes : 'html5,flash,silverlight,html4',
-	        multiple_queues: true,
-	        multipart: true,
-	        url : "/admin/board/json/plupload?${_csrf.parameterName}=${_csrf.token}",
-	        
-			//파일 형식 필터 집합
-	        filters : {
-	            // Maximum file size
-	            max_file_size : '1000mb',
-	            // Specify what files to browse for
-	        },
-            init : {
-            	FileUploaded: function(up, file, result) {
-                   console.log(file.name)
-                   var fileName = '<input type="hidden" name="businessPostName" id="businessPostName" value="'+file.name+'" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;">'
-                   $("#file_list").append(fileName);
-                   up.start();
-                }
-            },
-        
-	        //대기열에 있는 파일 이름 변환
-	        rename: true,
-			
-	        //업로드 우선 순위 변경 파일 정렬
-	        sortable: true,
-	
-	        //드래그 앤 드롭 하여 파일 삽입 가능
-	        dragdrop: true,
-	
-	        // Views to activate
-	        views: {
-	            list: true,
-	            thumbs: true, // Show thumbs
-	            active: 'thumbs'
-	        },
-
-	        // Flash swf의 url
-	        flash_swf_url : '../../js/Moxie.swf',
-	
-	        // Silverlight xap의 URL
-	        silverlight_xap_url : '../../js/Moxie.xap'
-	    });
-		
-	    $('#form').submit(function(e) {
-	        // Files in queue upload them first
-	        if ($('#uploader').plupload('getFiles').length > 0) {
-	
-	            // When all files are uploaded submit form
-	            $('#uploader').on('complete', function() {
-	                $('#form')[0].submit();
-	            });
-	
-	            $('#uploader').plupload('start');
-	        } else {
-	            alert('You must have at least one file in the queue.');
-	        }
-	        return false; // Keep the form from submitting
-	    });
-	});
 
 	function fncAddPost(){
 		var businessPostTitle = $("input[id='businessPostTitle']").val();
-		var businessPostContents = $("input[id='businessPostContents']").val();		
+		var businessPostSubTitle = $('[id=businessPostSubTitle]').val();
+		var businessPostContents = $('[id=businessPostContents]').val();	
+		var businessPostText1 = $('[id=businessPostText1]').val();
+		var businessPostText2 = $('[id=businessPostText2]').val();
+		var icon = $('[id=icon]').val();
+
 		if(businessPostTitle == null || businessPostTitle == ''){
-			alert("제목을 입력하셔야 합니다.");
+			alert("사업제목을 입력하셔야 합니다.");
 			return;
 		}
+		if(businessPostSubTitle == null || businessPostSubTitle == ''){
+			alert("부제목을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessPostContents == null || businessPostContents == ''){
+			alert("내용을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessPostText1 == null || businessPostText1 == ''){
+			alert("상세페이지 내용1을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessPostText2 == null || businessPostText2 == ''){
+			alert("상세페이지 내용1을 입력하셔야 합니다.");
+			return;
+		}
+		if(icon == null || icon == ''){
+			alert("아이콘을 첨부하셔야 합니다.");
+			return;
+		}
+
+		
 		alert("게시글이 등록 되었습니다.")
 		$("form[name='addBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
@@ -117,19 +76,19 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostContents" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostContents" id="businessPostContents" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 							<tr>
 				            	<td class="menu">상세페이지 내용1</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText1" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostText1" id="businessPostText1" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용2</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText2" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostText2" id="businessPostText2" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>				            
 		            	    <tr>

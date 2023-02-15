@@ -4,6 +4,22 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <script>
 	function fncAddPost(){
+		var businessContentsTitle = $("input[id='businessContentsTitle']").val();
+		var businessContentsContent = $('[id=businessContentsContent]').val();
+		var file = $('[id=file]').val();	
+
+		if(businessContentsTitle == null || businessContentsTitle == ''){
+			alert("제목을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessContentsContent == null || businessContentsContent == ''){
+			alert("내용을 입력하셔야 합니다.");
+			return;
+		}
+		if(file == null || file == ''){
+			alert("이미지를 첨부하셔야 합니다.");
+			return;
+		}
 		alert("게시글이 등록 되었습니다.")
 		$("form[name='addBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessContentsProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
@@ -34,7 +50,7 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessContentsContent" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessContentsContent" id="businessContentsContent" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 		            	    <tr>
