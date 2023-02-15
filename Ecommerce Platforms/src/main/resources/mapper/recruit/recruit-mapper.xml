@@ -34,21 +34,23 @@
 	</resultMap>
 
 	<select id="getRecruitList" resultMap="recruitResultMap" parameterType="String">
-		SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
-		      R.RECRUIT_NO,
-		      R.RECRUIT_TITLE,
-		      R.RECRUIT_VIEWCOUNT,
-		      date_format(R.RECRUIT_START, '%Y-%m-%d')as RECRUIT_START,
-		      date_format(R.RECRUIT_END, '%Y-%m-%d')as RECRUIT_END,
-		      date_format(R.RECRUIT_DATE, '%Y-%m-%d')as RECRUIT_DATE,
-		      R.CAREER,
-		      R.CONTENTS_STATUS
-		 FROM recruit R,(SELECT @ROWNUM := 0) TMP
-		WHERE RECRUIT_DLE_STATUS = 'N'
-			<if test="value != null">
-			AND R.RECRUIT_TITLE like concat ('%',#{value},'%')
-			</if>
-		ORDER BY CASE WHEN CONTENTS_STATUS IN ('Y', 'R') THEN 0 ELSE 1 END, RECRUIT_NO DESC
+		SELECT R.*
+		  FROM (SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
+		      			R.RECRUIT_NO,
+		      			R.RECRUIT_TITLE,
+		      			R.RECRUIT_VIEWCOUNT,
+		      			date_format(R.RECRUIT_START, '%Y-%m-%d')as RECRUIT_START,
+		      			date_format(R.RECRUIT_END, '%Y-%m-%d')as RECRUIT_END,
+		      			date_format(R.RECRUIT_DATE, '%Y-%m-%d')as RECRUIT_DATE,
+		      			R.CAREER,
+		      			R.CONTENTS_STATUS
+		 		   FROM recruit R,(SELECT @ROWNUM := 0) TMP
+				  WHERE RECRUIT_DLE_STATUS = 'N'
+						<if test="value != null">
+						AND R.RECRUIT_TITLE like concat ('%',#{search},'%')
+						</if>
+			   ORDER BY CASE WHEN CONTENTS_STATUS IN ('Y', 'R') THEN 0 ELSE 1 END, RECRUIT_NO DESC) R
+		LIMIT #{limit} OFFSET #{offset}
 	</select>
 
 

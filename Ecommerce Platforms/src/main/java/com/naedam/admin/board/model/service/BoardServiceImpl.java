@@ -162,7 +162,8 @@ public class BoardServiceImpl implements BoardService {
 		resultMap.put("list", boardDao.getPostList(map));
 		resultMap.put("totalCount", boardDao.getTotalCount2(map));
 		//채용
-		resultMap.put("recruitList", recruitDao.getRecruitList(null, 10, 0));
+		resultMap.put("recruitList", recruitDao.getRecruitList(null, 0, 5));
+		System.out.println("resultMap.recruitList >>>" + resultMap.get("recruitList"));
 		return resultMap;
 	}
 	
