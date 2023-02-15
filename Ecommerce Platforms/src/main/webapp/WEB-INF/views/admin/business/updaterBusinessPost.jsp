@@ -18,98 +18,42 @@
 </style>
 
 <script>
-	$(function() {
-		var result = {				
-				"success" : 0,				
-				"fail" : 0				
-		}
-		var boardNo = $("input[name='boardNo']").val();		
-	    var uploader2 = $("#uploader2").plupload({	    	
-	        // General settings
-	        runtimes : 'html5,flash,silverlight,html4',
-	        multiple_queues: true,
-	        multipart: true,
-	        url : "/admin/board/json/plupload?${_csrf.parameterName}=${_csrf.token}",	        
-			//파일 형식 필터 집합
-	        filters : {
-	            // Maximum file size
-	            max_file_size : '1000mb',
-	            // Specify what files to browse for
-	        },	        
-	        init : {
-	        	FileUploaded: function(up, file, result) {	               	               
-	               var fileName = '<input type="hidden" name="businessPostName" id="businessPostName" value="'+file.name+'" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;">'
-	               $("span[id='file_list']").append(fileName)	               
-	               up.start();
-	            }	            
-	        },
-	        //대기열에 있는 파일 이름 변환
-	        rename: true,			
-	        //
-	        //업로드 우선 순위 변경 파일 정렬
-	        sortable: true,	
-	        //드래그 앤 드롭 하여 파일 삽입 가능
-	        dragdrop: true,	
-	        // Views to activate
-	        views: {
-	            list: true,
-	            thumbs: true, // Show thumbs
-	            active: 'thumbs'
-	        },			
-	        // Flash swf의 url
-	        flash_swf_url : '../../js/Moxie.swf',	
-	        // Silverlight xap의 URL
-	        silverlight_xap_url : '../../js/Moxie.xap'
-	    });	
-	    $('#form').submit(function(e) {
-	        // Files in queue upload them first
-	        if ($('#uploader').plupload('getFiles').length > 0) {
-	
-	            // When all files are uploaded submit form
-	            $('#uploader').on('complete', function() {
-	                $('#form')[0].submit();
-	            });
-	
-	            $('#uploader').plupload('start');
-	        } else {
-	            alert('You must have at least one file in the queue.');
-	        }
-	        return false; // Keep the form from submitting
-	    });
-	});
-
-	function funReply(){	
-		$("span[name='board_sub_title']").text('답변');
-		$("button[name='display_reply']").css("display", "none");
-		$("button[name='updateBusinessPost']").attr("onclick", "funReply2();");
-		$("input[name='mode']").val('answer');
-		var append = $("#getBusinessPostTitle").val();
-		$("#getBusinessPostTitle").val(" RE   :   "+append);
-	}
-	
-	function funReply2(){	
-		alert("답변 등록이 완료되었습니다.")
-		$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/board/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
-	}
-	
-	function fncDeleteThombnail(){
-		if(!confirm("정말 삭제 하시겠습니까?")){
-			alert("취소 되었습니다.");
-			return;
-		}else{
-			alert("해당 파일이 삭제 되었습니다.")
-			$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/board/deleteThombnail?${_csrf.parameterName}=${_csrf.token}").submit();	
-		}
-	}
 	
 	function fncUpdateBusinessPost(){
+		
+		var businessPostTitle = $("input[id='businessPostTitle2']").val();
+		var businessPostSubTitle = $('[id=businessPostSubTitle2]').val();
+		var businessPostContents = $('[id=businessPostContents2]').val();	
+		var businessPostText1 = $('[id=businessPostText1_1]').val();
+		var businessPostText2 = $('[id=businessPostText2_2]').val();
+		var icon = $('[id=icon]').val();
+
+		if(businessPostTitle == null || businessPostTitle == ''){
+			alert("사업제목을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessPostSubTitle == null || businessPostSubTitle == ''){
+			alert("부제목을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessPostContents == null || businessPostContents == ''){
+			alert("내용을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessPostText1 == null || businessPostText1 == ''){
+			alert("상세페이지 내용1을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessPostText2 == null || businessPostText2 == ''){
+			alert("상세페이지 내용1을 입력하셔야 합니다.");
+			return;
+		}
+		
 		alert("수정 되었습니다.");
 		$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessPostProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
 	
-	function fucAddFile2(){
-		$("div[name='listFile2']").append('<input type="file" name="businessPostName" id="getBusinessPostFile" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;">');
-	}
+
 	
 	function fncDeleteFile(fileNo){
 		
@@ -132,65 +76,6 @@
 		})
 		alert("파일이 삭제 되었습니다.")
   		$("span[id='"+fileNo+"']").remove();
-		}
-	}
-	
-	function fileDownload(businessPostNo){
-		$.ajax({
-			url : "/admin/board/json/businessPostFileCount/"+businessPostNo,
-			method : "GET",
-			dataType : "JSON",	
-			headers : {
-				"Accept" : "application/json",
-				"Content-Type" : "application/json"	 						
-			} ,
-			success : function(JSONData, status){
-				
-			}
-			
-		})
-	}
-	
-	function fncAddComment(){
-		
-		var secNo = $("input[name='secNo']").val();
-
-		$.ajax({
-			url : "/admin/board/json/getMemberData/"+secNo,
-			method : "GET",
-			dataType : "JSON",
-			headers : {
-				"Accept" : "application/json",
-				"Content-Type" : "application/json"	 						
-			} ,
-			success : function(JSONData, status){
-				
-				$("input[id='commentName']").val(JSONData.lastName+JSONData.firstName);
-				$("input[id='commentMemberNo']").val(JSONData.memberNo);
-			}
-		})
-	}
-	
-	function deleteComment(commentNo){
-		
-		if(!confirm("정말 삭제 하시겠습니까?")){
-			alert("취소 되었습니다.");
-			return;
-		}else{
-			$.ajax({
-				url : "/admin/board/json/deleteComment/"+commentNo,
-				method : "GET",
-				dataType : "JSON",	
-				headers : {
-					"Accept" : "application/json",
-					"Content-Type" : "application/json"	 						
-				} ,
-				success : function(JSONData, status){
-					
-				}
-			})
-			alert("파일이 삭제 되었습니다.")
-	  		$("tr[name='comment"+commentNo+"']").remove();
 		}
 	}
 
@@ -221,14 +106,13 @@
 				} ,
 				success : function(JSONData, status){
 					console.log(JSONData)
-					$("input[name='businessPostNo']").val(JSONData.businessPostNo);
-					$("input[name='businessPostTitle']").val(JSONData.businessPostTitle);
-					$("input[name='businessPostSubTitle']").val(JSONData.businessPostSubTitle);
-					$('[name=businessPostContents]').text(JSONData.businessPostContents);
-					$('[name=businessPostText1]').text(JSONData.businessPostText1);
-					$('[name=businessPostText2]').text(JSONData.businessPostText2);
-					$("input[name='businessPostAsc']").val(JSONData.businessPostAsc);
-					$("input[name='businessPostOriginNo']").val(JSONData.businessOriginNo);
+					$("input[id='businessPostNo2']").val(JSONData.businessPostNo);
+					$("input[id='businessPostTitle2']").val(JSONData.businessPostTitle);
+					$("input[id='businessPostSubTitle2']").val(JSONData.businessPostSubTitle);
+					$('[id=businessPostContents2]').text(JSONData.businessPostContents);
+					$('[id=businessPostText1_1]').text(JSONData.businessPostText1);
+					$('[id=businessPostText2_2]').text(JSONData.businessPostText2);
+
 					if(JSONData.businessPostIcon != null){
 						var icon = "'${pageContext.request.contextPath}/resources/user/images/introduction/icon/"+JSONData.businessPostIcon+"'"
 						if(JSONData.businessPostIcon != null && JSONData.businessPostIcon != ''){
@@ -281,7 +165,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form name="getBusinessPostForm" method="businessPost" enctype="multipart/form-data">
-	            <input type="hidden" name="businessPostNo" id="getPostNo" >
+	            <input type="hidden" name="businessPostNo" id="businessPostNo2" >
 	            <input type="hidden" name="businessNo" value="${business.businessNo}">
 	            <input type="hidden" name="businessPostAsc" id="getPostAsc" >
 	            <input type="hidden" name="businessPostOriginNo" id="getPostOriginNo" >
@@ -297,28 +181,28 @@
 			            <tbody>
 							<tr>
 				                <td class="menu">사업제목</td>
-				                <td align="left"><input type="text" name="businessPostTitle" id="businessPostTitle" class="form-control input-sm"></td>
+				                <td align="left"><input type="text" name="businessPostTitle" id="businessPostTitle2" class="form-control input-sm"></td>
 				            </tr>
 				            <tr>
 				                <td class="menu">부제목</td>
-				                <td align="left"><input type="text" name="businessPostSubTitle" id="businessPostSubTitle" class="form-control input-sm"></td>
+				                <td align="left"><input type="text" name="businessPostSubTitle" id="businessPostSubTitle2" class="form-control input-sm"></td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostContents" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostContents" id="businessPostContents2" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용1</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText1" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostText1" id="businessPostText1_1" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용2</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText2" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostText2" id="businessPostText2_2" rows="10" cols="80" style="width:650px"></textarea>
 				                </td>
 				            </tr>
 		            	    <tr>

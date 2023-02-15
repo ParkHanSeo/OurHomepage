@@ -20,6 +20,18 @@
 <script>
 	
 	function fncUpdateBusinessPost(){
+		var businessContentsTitle = $("input[id='businessContentsTitle2']").val();
+		var businessContentsContent = $('[id=businessContentsContent2]').val();
+
+		if(businessContentsTitle == null || businessContentsTitle == ''){
+			alert("제목을 입력하셔야 합니다.");
+			return;
+		}
+		if(businessContentsContent == null || businessContentsContent == ''){
+			alert("내용을 입력하셔야 합니다.");
+			return;
+		}
+		return;
 		alert("수정 되었습니다.");
 		$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessContentsProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
@@ -135,7 +147,7 @@
 		            	    <tr>
 				            	<td class="menu">이미지파일</td>
 				            	<td name="imageTd" align="left">
-				            		<input type="file" name="file" id="file" class="form-control input-sm">
+				            		<input type="file" name="file" id="file2" class="form-control input-sm">
 				            	</td>
 				            </tr>				            				            
 			            </tbody>

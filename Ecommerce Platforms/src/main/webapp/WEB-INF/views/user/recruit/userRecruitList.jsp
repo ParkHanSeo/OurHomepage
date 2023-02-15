@@ -101,7 +101,6 @@ function paging(cPage){
   <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
 		<section id="container">
             <div id="contents" class="contents_top">
-<<<<<<< HEAD
             	<div>
 	                <div class="sub_title_area">
 	                    <div class="inner_container">
@@ -163,52 +162,6 @@ function paging(cPage){
 										</p></li>
 								</ol>
 							</div>
-=======
-                <div class="sub_title_area">
-                    <div class="inner_container">
-                        <h2 class="sub_title">채용안내</h2>
-                    </div>
-                </div><!-- // .sub_title_area -->
-
-                <div class="top_visual_area recruit">
-                    <div class="inner_container">
-                        <div class="top_txt_outer">
-                            <div class="top_txt_area txt_notice">
-                                <p class="top_txt2">
-                                내담씨앤씨는 진취적이며</br> 
-                                프로페셔널한 인재에게 언제나 열려 있습니다
-                                </p>
-                                <p class="top_txt3">
-                                    내담씨앤씨에 입사 지원하실 분은 아래의 지원 양식을 다운로드 받아 채용 담당자 이메일로 접수하여 주시기 바랍니다.</br>
-									서류면접을 통과하신 분들에겐 개별적으로 연락 드리겠습니다.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- // .top_visual_area -->
-
-                <div class="layout_section_outer_notice recruit">
-                    <div class="inner_container inner_container_notice">
-					<div class="recruit-search_box_wrap" id="recruit_search">
-						<div class = "application_btn_area">
-                				<a href="/resources/user/downloadFile/recruit/RECRUIT_NAEDAM.docx" download>
-                				<button class="application_btn">
-                				입사지원 양식 다운로드
-                				</button>
-                				</a>
-                			
-                		</div>
-						<div class="common-search_box recruit">
-							<form class="searchForm recruit" name="searchForm" action="#" onsubmit="return false" style="float: right"
-								onkeypress="if(event.keyCode==13){paging();}">
-								<input type="hidden" name="cPage">
-								<input class="common-search_input" name="searchKeyword"
-									id="recruit_search_txt" type="text" placeholder="검색어를 입력해주세요."
-									title="검색어을 입력해주세요.">
-								<!-- <button type="submit" class="common-search_btn recruit_search_imo" id="btnSearch"> -->
-								</button>
-							</form>
->>>>>>> branch 'master' of https://github.com/ParkHanSeo/Ecommerce-Platforms.git
 						</div>
 					</div>
 	
