@@ -50,7 +50,7 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessContentsContent" id="businessContentsContent" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessContentsContent" id="businessContentsContent" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 		            	    <tr>

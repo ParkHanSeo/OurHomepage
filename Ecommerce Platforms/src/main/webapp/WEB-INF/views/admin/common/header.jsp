@@ -60,7 +60,7 @@
 					}if(Data[1].status == 'N'){
 						document.getElementById("boardManage").style.display = 'none';
 					}if(Data[2].status == 'N'){
-						document.getElementById("memberManage").style.display = 'none';
+						document.getElementById("businessManage").style.display = 'none';
 					}if(Data[3].status == 'N'){
 						document.getElementById("employmentManage").style.display = 'none';
 					}
@@ -209,11 +209,6 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/admin/menu/headList">
 									<i class="fa fa-circle-o"></i> 헤더 관리
-								</a>
-							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/menu/bottomList">
-									<i class="fa fa-circle-o"></i> 하단 관리
 								</a>
 							</li>
 						</ul>

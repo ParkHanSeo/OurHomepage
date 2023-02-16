@@ -65,12 +65,8 @@
 			                                        <a href="/user/introduction/introduction?businessPostNo=${businessPost.businessPostNo}" class="icon_item_inner">
 			                                        	<div class="items_main_text">
 			                                        		<i class="icon bi_ic bi_li_12" style="background-image: url(/resources/user/images/icon/${businessPost.businessPostIcon});"></i>
-				                                            <p class="icon_item_title">
-				                                                ${businessPost.businessPostTitle}
-				                                            </p>
-				                                            <p class="icon_item_desc">
-				                                                ${businessPost.businessPostContents}
-				                                            </p>
+				                                            <p class="icon_item_title">${businessPost.businessPostTitle}</p>
+				                                            <p class="icon_item_desc" style="white-space:pre-line;">${businessPost.businessPostContents}</p>
 				                                            <i class="icon bi_1"></i>
 				                                        </div>
 			                                        </a>

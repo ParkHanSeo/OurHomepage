@@ -31,11 +31,9 @@
                     <div class="inner_container aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="300" data-aos-delay="150" data-aos-easing="linear">
                         <div class="top_txt_outer">
                             <div class="top_txt_area">
-                                <span class="top_txt1">${businessPost.businessPostText2}</span>
+                                <span class="top_txt1" style="white-space:pre-line;">${businessPost.businessPostText2}</span>
                                 <p class="top_txt2">${businessPost.businessPostSubTitle}</p>
-                                <p class="top_txt3">
-                                    ${businessPost.businessPostText1}
-                                </p>
+                                <p class="top_txt3" style="white-space:pre-line;">${businessPost.businessPostText1}</p>
                             </div>
                         </div>
                     </div>
@@ -57,12 +55,8 @@
 		                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/${businessContents.image}" alt="">
 		                                    </div>
 		                                    <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-		                                        <p class="difference_title">
-		                                            ${businessContents.businessContentsTitle}
-		                                        </p>
-		                                        <p class="difference_desc">
-		                                        	${businessContents.businessContentsContent}
-		                                        </p>
+		                                        <p class="difference_title" style="white-space:pre-line;">${businessContents.businessContentsTitle}</p>
+		                                        <p class="difference_desc" style="white-space:pre-line;">${businessContents.businessContentsContent}</p>
 		                                    </div>
 		                                </li>
                             	</c:forEach>
