@@ -289,8 +289,6 @@
              },
              success:function(data, textStatus, jqXHR){
                  var json_data = data;
-                 console.log(json_data);
-                 console.log('json_data.headImage::: ', json_data.headImage);
                  $('[name=mode]').val('update');
                  $('[name=headNo]').val(code);
                  $('[name=title]').val(json_data.title);
