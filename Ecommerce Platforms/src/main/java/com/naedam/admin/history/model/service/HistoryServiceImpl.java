@@ -26,11 +26,14 @@ public class HistoryServiceImpl implements HistoryService {
 	@Override
 	public Map<String, Object> historyProcess(Map<String, Object> map) throws Exception {
 		// TODO Auto-generated method stub
+		System.out.println("============historyProcess HistoryServiceImpl===============");
 		Map<String, Object> resultMap = new HashMap<>();
 		History history = (History) map.get("history");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		String filePath = request.getServletContext().getRealPath("resources/user/images/company/history/");
 		MultipartFile historyImage = (MultipartFile) map.get("historyImage");
+		
+		System.out.println("request.getParameter(\"history\") >>>>" + history);
 		
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
 			System.out.println("history_process Service if insert >>>>");
@@ -55,13 +58,18 @@ public class HistoryServiceImpl implements HistoryService {
 				historyDao.insertHistory(history);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
-				if(historyImage.isEmpty() == false) {
-					File file = new File(filePath+historyImage.getOriginalFilename());
-					history.setImgUrl(historyImage.getOriginalFilename());
-					historyImage.transferTo(file);
-				}else if(historyImage.isEmpty() == true) {
-					History historyData = historyDao.selectOneHistoryByHisNo(history.getHistoryNo());
-				}
+				/*
+				 * if(historyImage.isEmpty() == false) { File file = new
+				 * File(filePath+historyImage.getOriginalFilename());
+				 * history.setImgUrl(historyImage.getOriginalFilename());
+				 * historyImage.transferTo(file); }else if(historyImage.isEmpty() == true) {
+				 * History historyData =
+				 * historyDao.selectOneHistoryByHisNo(history.getHistoryNo()); }
+				 */
+				/*
+				 * History historyData =
+				 * historyDao.selectOneHistoryByHisNo(history.getHistoryNo());
+				 */
 				historyDao.updateHistory(history);
 				resultMap.put("msg", "연혁 정보가 수정되었습니다.");
 			}
