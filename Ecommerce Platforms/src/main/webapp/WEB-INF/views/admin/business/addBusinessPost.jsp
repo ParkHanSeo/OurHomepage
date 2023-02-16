@@ -76,19 +76,19 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostContents" id="businessPostContents" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostContents" id="businessPostContents" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 							<tr>
 				            	<td class="menu">상세페이지 내용1</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText1" id="businessPostText1" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostText1" id="businessPostText1" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용2</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText2" id="businessPostText2" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessPostText2" id="businessPostText2" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>				            
 		            	    <tr>

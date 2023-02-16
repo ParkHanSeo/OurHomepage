@@ -31,7 +31,6 @@
 			alert("내용을 입력하셔야 합니다.");
 			return;
 		}
-		return;
 		alert("수정 되었습니다.");
 		$("form[name='getBusinessPostForm']").attr("method", "POST").attr("action", "/admin/business/businessContentsProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
@@ -141,7 +140,7 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessContentsContent" id="businessContentsContent2" rows="10" cols="80" style="width:650px"></textarea>
+				                	<textarea name="businessContentsContent" id="businessContentsContent2" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 		            	    <tr>

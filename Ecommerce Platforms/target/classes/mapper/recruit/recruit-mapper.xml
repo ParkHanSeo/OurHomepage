@@ -33,7 +33,7 @@
 		<result column="ROWNUM" property="rownum"/>
 	</resultMap>
 
-	<select id="getRecruitList" resultMap="recruitResultMap" parameterType="String">
+	<select id="getRecruitList" resultMap="recruitResultMap" parameterType="hashmap">
 		SELECT R.*
 		  FROM (SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
 		      			R.RECRUIT_NO,

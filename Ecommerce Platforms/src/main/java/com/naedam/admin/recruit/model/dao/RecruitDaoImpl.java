@@ -36,6 +36,7 @@ public class RecruitDaoImpl implements RecruitDao {
 		page.put("search", search);
 		page.put("offset", offset);
 		page.put("limit", limit);
+		System.out.println("page>>>" + page);
 		return sqlSession.selectList("recruit.getRecruitList", page);
 	}
 	

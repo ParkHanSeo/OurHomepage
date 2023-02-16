@@ -28,12 +28,8 @@
                            <div class="inner">
                               <div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
                                  <div class="main-banner">
-                                    <h2 class="tit-slide">
-                                       ${head.title}
-                                    </h2>
-                                    <p class="description">
-                                       ${head.content}
-                                    </p>
+                                    <h2 class="tit-slide" style="white-space:pre-line;">${head.title}</h2>
+                                    <p class="description" style="white-space:pre-line;">${head.content}</p>
                                  </div>
                                  <div class="btn-area">
                                     <a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 

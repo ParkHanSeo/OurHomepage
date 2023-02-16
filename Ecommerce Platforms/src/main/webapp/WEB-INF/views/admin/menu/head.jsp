@@ -66,7 +66,7 @@
 												</script>
 											</div>
 				                        </td>
-				                        <td>${head.title}</td>
+				                        <td style="white-space:pre-line;">${head.title}</td>
 				                        <td>
 				                          <c:if test="${head.status == 'y'}">
 				                        	<button type="button" class="btn btn-success btn-xs">보임</button>
@@ -115,7 +115,7 @@
 			            	<tbody>
 					            <tr>
 					                <td class="menu">헤더명</td>
-					                <td align="left"><input type="text" name="title" class="form-control input-sm"></td>
+					                <td align="left"><textarea name="title" rows="3" cols="80" style="width:600px; writing-mode: horizontal-tb;"></textarea></td>
 					            </tr>
 					            <tr>
 					                <td class="menu">상태</td>
@@ -129,7 +129,7 @@
 					            <tr>
 					            	<td class="menu">내용</td>
 					                <td colspan="2" style="text-align:left">
-					                	<textarea name="content" rows="10" cols="80" style="width:600px"></textarea>
+					                	<textarea name="content" rows="10" cols="80" style="width:600px; writing-mode: horizontal-tb;"></textarea>
 					                </td>
 					            </tr>
 								<tr>
@@ -177,7 +177,7 @@
 					            <tr>
 					                <td class="menu">헤더명</td>
 					                <td align="left">
-					                <input type="text" name="title" class="form-control input-sm"></td>
+					                <textarea name="title" rows="3" cols="80" style="width:600px; writing-mode: horizontal-tb;"></textarea></td>
 					            </tr>
 					            <tr>
 					                <td class="menu">상태</td>
@@ -191,7 +191,7 @@
 					            <tr>
 					            	<td class="menu">내용</td>
 					                <td colspan="2" style="text-align:left">
-					                	<textarea name="content" rows="10" cols="80" style="width:600px"></textarea>
+					                	<textarea name="content" rows="10" cols="80" style="width:600px; writing-mode: horizontal-tb;"></textarea>
 					                </td>
 					            </tr>
 								<tr>
