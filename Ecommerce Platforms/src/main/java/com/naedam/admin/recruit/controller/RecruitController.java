@@ -48,6 +48,7 @@ public class RecruitController {
 			@RequestParam(value= "searchKeyword",required = false) String searchKeyword) throws Exception {
 		System.out.println("recruitList start =======");
 		System.out.println("recruitList cPage ==== " + cPage);
+		System.out.println("recruitList searchKeyword ==== " + searchKeyword);
 		//조회 전 마감일자 지난 list들 채용마감으로 변경
 		int update = recruitService.updateContentsStatus();
 		
@@ -70,6 +71,7 @@ public class RecruitController {
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("pageCount", totalRecruitListCount);
+		model.addAttribute("searchKeyword", searchKeyword);
 		
 		System.out.println("resultMap.get(\"list\")" + resultMap.get("list"));
 

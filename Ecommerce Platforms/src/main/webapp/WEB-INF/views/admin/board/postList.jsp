@@ -185,7 +185,7 @@
 		                    	<input type="hidden" name="cPage">
 		                        <div class="has-feedback">
 			                        <span>
-			                      	  <input type="text" name="searchKeyword" id="searchKeyword" class="form-control input-sm" placeholder="검색" value="${search.searchKeyword}"/>
+			                      	  <input type="text" name="searchKeyword" id="searchKeyword" class="form-control input-sm" placeholder="검색" value="${comm.searchKeyword}"/>
 			                      	  <button class="form-control-feedback" type="submit" id="searchBtn" style="pointer-events: all;">검색</button>
 			                        </span>
 		                        </div>
