@@ -60,13 +60,11 @@ function paging(cPage){
 								+ 	'</p>'
 								+ '</div>'
 								+ '<div class="date_box center-left">';
-
 							//list 마감일 있을경우
 							if(data.recruit.list[i].recruitEnd != null ){
 								result += '<p class="common-text_reg-date" style="width:140px;">'
 									 	+	data.recruit.list[i].recruitEnd
 									 	+ '</p></div>'
-
 							} else {
 								//list 마감일 없을경우
 								result += '<p class="common-text_reg-date" style="width:140px;">-</p></div>'
@@ -75,7 +73,6 @@ function paging(cPage){
 							if(data.recruit.list[i].contentsStatus == 'Y'){
 								result += '<div class="date_box center-left">'
 										+ '<p class="common-text_reg-date" style="width:140px;">채용중</p></div></li>'
-
 							} else if(data.recruit.list[i].contentsStatus == 'R'){
 								//상시채용
 								result += '<div class="date_box center-left">'
@@ -91,10 +88,7 @@ function paging(cPage){
 					console.log("실패====" , res);
 				}
 	})
-
 }
-
-
 </script>
 </head>
   <body>

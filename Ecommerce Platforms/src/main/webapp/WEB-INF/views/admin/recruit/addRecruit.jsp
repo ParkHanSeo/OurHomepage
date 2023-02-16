@@ -64,6 +64,8 @@
 				recruitEnd = $("#endDay").val();
 			}
 			
+			console.log("contentsStatus >> ", contentsStatus);
+			console.log("recruitStart >> ", recruitStart);
 			
 			if(recruitStart == null || recruitStart == ''){
 				if(contentsStatus == null || contentsStatus ==''){
