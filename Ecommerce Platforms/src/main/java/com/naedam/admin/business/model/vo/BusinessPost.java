@@ -25,8 +25,7 @@ public class BusinessPost implements Serializable {
 	private String businessPostContents;
 	private String inDtm;
 	private String businessPostIcon;
-	private int businessOriginNo;		//계층형 쿼리를 위한 businessNo
-	private int businessAsc;			//순서변경
+	private String businessPostImg;
 	private Member businessMember;		//회원데이터
 
 }

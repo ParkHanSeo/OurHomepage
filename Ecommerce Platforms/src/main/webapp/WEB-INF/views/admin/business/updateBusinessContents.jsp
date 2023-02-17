@@ -20,7 +20,7 @@
 <script>
 	
 	function fncUpdateBusinessPost(){
-		var businessContentsTitle = $("input[id='businessContentsTitle2']").val();
+		var businessContentsTitle = $("[id=businessContentsTitle2]").val();
 		var businessContentsContent = $('[id=businessContentsContent2]').val();
 
 		if(businessContentsTitle == null || businessContentsTitle == ''){
@@ -63,7 +63,7 @@
 				} ,
 				success : function(JSONData, status){
 					console.log(JSONData)
-					$("input[id='businessContentsTitle2']").val(JSONData.businessContentsTitle);
+					$("[id=businessContentsTitle2]").val(JSONData.businessContentsTitle);
 					$('[id=businessContentsContent2]').text(JSONData.businessContentsContent);
 					$(".businessContentsNo").val(JSONData.businessContentsNo);
 					
@@ -135,7 +135,9 @@
 				            </tr>
 							<tr>
 				                <td class="menu">제목</td>
-				                <td align="left"><input type="text" name="businessContentsTitle" id="businessContentsTitle2" class="form-control input-sm"></td>
+				                <td align="left">
+				                	<textarea name="businessContentsTitle" id="businessContentsTitle2" rows="3" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                </td>
 				            </tr>				            
 				            <tr>
 				            	<td class="menu">내용</td>

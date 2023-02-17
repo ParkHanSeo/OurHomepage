@@ -45,7 +45,9 @@
 				            </tr>
 							<tr>
 				                <td class="menu">제목</td>
-				                <td align="left"><input type="text" name="businessContentsTitle" id="businessContentsTitle" class="form-control input-sm"></td>
+				                <td align="left">
+					                <textarea name="businessContentsTitle" id="businessContentsTitle" rows="3" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                </td>
 				            </tr>				            
 				            <tr>
 				            	<td class="menu">내용</td>

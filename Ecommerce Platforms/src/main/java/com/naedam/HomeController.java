@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.naedam.admin.board.model.service.BoardService;
-import com.naedam.admin.member.model.service.MemberService;
+import com.naedam.admin.business.model.service.BusinessService;
 import com.naedam.admin.menu.model.service.MenuService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -25,12 +25,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HomeController {
 	@Autowired
-	private MemberService memberService;
-	@Autowired
 	private BoardService boardService;
 	@Autowired	
 	private MenuService menuService;
-	
+	@Autowired
+	private BusinessService businessService;
 	/*
 	 * @RequestMapping(value = "/", method = RequestMethod.GET) public String
 	 * gohomepage(Locale locale, Model model) {
@@ -76,8 +75,10 @@ public class HomeController {
 	public String goDashBoard2(Locale locale, Model model) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("businessNo", 10);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList());
+		model.addAttribute("businessPost", businessService.getBusinessPostList(map));
 		return "user/userDashBoard";
 	}	
 

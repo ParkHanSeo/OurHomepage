@@ -87,7 +87,7 @@
                      <div class="section-title-area">
                         <h2 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">주요 사업</h2>
                         <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                           내담씨앤씨는 친환경, 4차 산업혁명, DT(Digital Transformation), AI, Cloud, DT(Digital Twin) 등의 경쟁력이 필요한 시점을 맞이하여, 
+                           내담씨앤씨는 친환경, 4차 산업혁명, Digital Transformation, AI, Cloud, Digital Twin 등의 경쟁력이 필요한 시점을 맞이하여, 
                            고객의 성공적인 비즈니스를 위해 최적의 시스템을 제공합니다.
                         </p>
                      </div>
@@ -138,7 +138,7 @@
                               </svg>
                            </div> 
                            <div class="main_aos_naedam_txt">
-                              <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">If you with NaedamC&C</h3>
+                              <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">If you with 내담씨앤씨</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                  Digital Twin, Vison AI, SI
                                  <br />SCM(Supply Chain Management, 공급망 관리), 
@@ -197,7 +197,7 @@
                                  </g>
                               </g>
                            </svg>                            
-                           </div> 
+                           </div>
                            <div class="main_aos_consulting_txt">
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">컨설팅</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
@@ -231,7 +231,7 @@
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                  정보시스템통합</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                 내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 인프라 등 
+                                 내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 농협, 인프라 등 
                                  <br/>다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를 기반으로
                                  <br/>컨설팅, Application 개발/운영 서비스까지 고객사에서 필요로하는 IT영역의 Total Service를 제공하고 있습니다.
                               </p>
@@ -310,82 +310,29 @@
                            </a>
                         </div>
                      </div>
-                     <div class="service-list-wrap">
+					 <div class="service-list-wrap">
                         <ul class="service-list">
-                           <li class="factory-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                              <a href="/user/introduction/digitalTwin">
-                                 <h3 class="tit-label">Digital Twin</h3>
-                                  <h4 class="tit">산업 데이터 모니터링</h4> 
-                                 <p class="description">
-                                    설계에서 제조 및 건설, 운영 및 유지 관리<br /> 가상의 트윈 사용자의 문제를 미리 예방한다.
-                                 </p>
-                                 <p class="btn-arrow">
-                                    <span class="blind">자세히 보기</span>
-                                 </p>
-                              </a>
-                           </li>
-                           <li class="eliss-one aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                              <a href="/user/introduction/visionAi">
-                                 <h3 class="tit-label">Vision AI</h3>
-                                 <h4 class="tit">객체 인식 및 분석</h4>
-                                 <p class="description">
-                                    인공지능 서비스 제공<br /> 이미지 분류 및 사고예방
-                                 </p>
-                                 <p class="btn-arrow">
-                                    <span class="blind">자세히 보기</span>
-                                 </p>
-                              </a>
-                           </li>
-                           <li class="nd-one-ad aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                              <a href="/user/introduction/innoPlm">
-                                 <h3 class="tit-label">PLM</h3>
-                                 <h4 class="tit">Rule & Process 기반 시스템 구축</h4>
-                                 <p class="description">
-                                    제품 전체 여정을 관리하기 위한<br /> 전략적 프로세스의 소프트웨어
-                                 </p>
-                                 <p class="btn-arrow">
-                                    <span class="blind">자세히 보기</span>
-                                 </p>
-                              </a>
-                           </li>
-                           <li class="one-order aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                              <a href="/user/introduction/innoAms">
-                                 <h3 class="tit-label">AMS</h3>
-                                 <h4 class="tit">설비자산의 최적 관리를 통한 가치창출</h4>
-                                 <p class="description">
-                                    자산관리로 관리영역 확장<br /> 수익 창출의 설비
-                                 </p>
-                                 <p class="btn-arrow">
-                                    <span class="blind">자세히 보기</span>
-                                 </p>
-                              </a>
-                           </li>
-                           <li class="smart-culture-space aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                              <a href="/user/introduction/cloudMsp">
-                                 <h3 class="tit-label">MSP</h3>
-                                 <h4 class="tit">Cloud MSP 시스템 구축</h4>
-                                 <p class="description">
-                                    클라우드 인프라 이용<br /> 시스템 구축과 서비스 제공
-                                 </p>
-                                 <p class="btn-arrow">
-                                    <span class="blind">자세히 보기</span>
-                                 </p>
-                              </a>
-                           </li>
-                           <li class="mplace aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                              <a href="/user/introduction/scm">
-                                 <h3 class="tit-label">SCM</h3>
-                                 <h4 class="tit">인공지능, 머신러닝 SCM</h4>
-                                 <p class="description">
-                                    친환경 공급망<br /> 공급망의 투명성
-                                 </p>
-                                 <p class="btn-arrow">
-                                    <span class="blind">자세히 보기</span>
-                                 </p>
-                              </a>
-                           </li>
+                        	<c:forEach var="businessPost" items="${businessPost}" varStatus="status" >
+	                           <li class="service_img_${businessPost.businessPostNo} aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+	                              <a href="/user/introduction/introduction?businessPostNo=${businessPost.businessPostNo}">
+	                                 <h3 class="tit-label">${businessPost.businessPostTitle}</h3>
+	                                   <h4 class="tit" style="white-space:pre-line;">${businessPost.businessPostContents}</h4>
+	                                 <p class="description">
+	                                    ${businessPost.businessPostText1}
+	                                 </p>
+	                                 <p class="btn-arrow">
+	                                    <span class="blind">자세히 보기</span>
+	                                 </p>
+	                              </a>
+	                           </li>
+	                           <style>
+									.service-wrap .service-list .service_img_${businessPost.businessPostNo}::before {
+									    background-image: url(${pageContext.request.contextPath}/resources/user/images/main/${businessPost.businessPostImg});
+									}
+							   </style>
+	                        </c:forEach>
                         </ul>
-                     </div>
+                     </div>                                         
                   </div>
                </div>
             </div>
@@ -442,7 +389,7 @@
                <div class="inner_container card-ui">
                   <div class="section-title-area">
                      <div>
-                        <h2 class="tit">Infomation</h2>
+                        <h2 class="tit">회사소식</h2>
                      </div>
                      <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                         <a href="/user/notice/noticeList/5001" class="common-btn">

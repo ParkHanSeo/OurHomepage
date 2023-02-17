@@ -944,6 +944,7 @@ h4 {
   float: left;
   position: relative;
   width: 320px;
+  height: 840px;
   margin: 52px 100px 0 0;
   transition: 0.4s ease;
 }
@@ -967,8 +968,8 @@ h4 {
 }
 .service-wrap .service-list .tit-label {
   position: absolute;
-  width: 240px;
-  top: 250px;
+  width: 415px;
+  top: 416px;
   left: 370px;
   text-align: left;
   transform-origin: top right;
@@ -984,28 +985,38 @@ h4 {
 }
 
 .service-wrap .service-list .factory-one::before {
-  /* background-image: url(../images/main/img-main-thumbnail-06-pc.png); */
   background-image: url(../images/main/img1.jpg);
 }
 .service-wrap .service-list .eliss-one::before {
-  /* background-image: url(../images/main/img-main-thumbnail-07-pc.png); */
   background-image: url(../images/main/img2.jpg);
 }
 .service-wrap .service-list .nd-one-ad::before {
-  /* background-image: url(../images/main/img-main-thumbnail-08-pc.png); */
-  background-image: url(../images/main/img3.jpg);
+  background-image: url(../images/main/business_plm_img.jpg);
 }
 .service-wrap .service-list .one-order::before {
-  /* background-image: url(../images/main/img-main-thumbnail-09-pc.png); */
-  background-image: url(../images/main/img4.jpg);
+  background-image: url(../images/main/business_ams_img.jpg);
 }
 .service-wrap .service-list .smart-culture-space::before {
-  /* background-image: url(../images/main/img-main-thumbnail-10-pc.png); */
   background-image: url(../images/main/img5.jpg);
 }
 .service-wrap .service-list .mplace::before {
-  /* background-image: url(../images/main/img-main-thumbnail-11-pc.png); */
   background-image: url(../images/main/img6.jpg);
+}
+/**/
+.service-wrap .service-list .service_mes::before {
+  background-image: url(../images/main/business_mes_img.jpg);
+}
+.service-wrap .service-list .service_sd::before {
+  background-image: url(../images/main/business_sd_img.jpg);
+}
+.service-wrap .service-list .service_meet::before {
+  background-image: url(../images/main/business_meet_img.jpg);
+}
+.service-wrap .service-list .service_feed::before {
+  background-image: url(../images/main/business_feed_img.jpg);
+}
+.service-wrap .service-list .service_erp::before {
+  background-image: url(../images/main/business_erp_img.jpg);
 }
 
 /* core & service bg response */
@@ -1357,7 +1368,7 @@ h4 {
 }
 .common-layout_3 > .main_notice_items {
   margin-left: 0;
-  background-color: aliceblue;
+  background-color: #daeeff;
   border-radius: 5%;
   height: 140px;
   margin-right: 2%;

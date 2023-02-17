@@ -48,12 +48,18 @@ public class BusinessServiceImpl implements BusinessService {
 			businessPost.setBusinessMember(member);
 			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
 			MultipartFile iconName = (MultipartFile) map.get("icon");
+			MultipartFile imgName = (MultipartFile) map.get("img");
 			
 			if("insert".equals(map.get("mode"))) {
-				businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
 				if(iconName.isEmpty() == false){
+					businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
 					File file = new File(map.get("filePath")+iconName.getOriginalFilename());
 					iconName.transferTo(file);	
+				}
+				if(imgName.isEmpty() == false){
+					businessPost.setBusinessPostImg(imgName.getOriginalFilename());
+					File file = new File(map.get("filePath2")+imgName.getOriginalFilename());
+					imgName.transferTo(file);	
 				}
 				businessDao.addBusinessPost(businessPost);
 			}else if("update".equals(map.get("mode"))) {
@@ -64,6 +70,14 @@ public class BusinessServiceImpl implements BusinessService {
 				}else if(iconName.isEmpty() == true) {
 					BusinessPost bp = businessDao.getBusinessPost(businessPost.getBusinessPostNo());
 					businessPost.setBusinessPostIcon(bp.getBusinessPostIcon());
+				}
+				if(imgName.isEmpty() == false) {
+					File file = new File(map.get("filePath2")+imgName.getOriginalFilename());
+					businessPost.setBusinessPostImg(imgName.getOriginalFilename());
+					imgName.transferTo(file);
+				}else if(imgName.isEmpty() == true) {
+					BusinessPost bp = businessDao.getBusinessPost(businessPost.getBusinessPostNo());
+					businessPost.setBusinessPostImg(bp.getBusinessPostImg());
 				}
 				businessDao.updateBusinessPost(businessPost);
 			}

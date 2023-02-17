@@ -285,7 +285,7 @@
 	</div>
 	
 <jsp:include page="/WEB-INF/views/admin/business/addBusinessPost.jsp"/>
-<jsp:include page="/WEB-INF/views/admin/business/updaterBusinessPost.jsp"/>
+<jsp:include page="/WEB-INF/views/admin/business/updateBusinessPost.jsp"/>
 <jsp:include page="/WEB-INF/views/admin/board/addComment.jsp"/>
 <jsp:include page="/WEB-INF/views/admin/board/boardCopy.jsp"/>
 <jsp:include page="/WEB-INF/views/admin/board/boardChange.jsp"/>

@@ -60,17 +60,21 @@ public class BusinessController {
 	@PostMapping("businessPostProcess")
 	public String businessPostProcess(@ModelAttribute("business") Business business
 									  ,@ModelAttribute("businessPost") BusinessPost businessPost  
-									  ,@RequestParam(value="icon", required = false) MultipartFile icon 
+									  ,@RequestParam(value="icon", required = false) MultipartFile icon
+									  ,@RequestParam(value="img", required = false) MultipartFile img
 									  ,@RequestParam("secNo") String secNo 
 									  ,@RequestParam("mode") String mode
 								      ,HttpServletRequest request) throws Exception{
-		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/icon/");	
+		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/icon/");
+		String filePath2 = request.getServletContext().getRealPath("resources/user/images/main/");
 		Map<String, Object> businessPostMap	 = new HashMap<>();
 		businessPostMap.put("business", business);
 		businessPostMap.put("businessPost", businessPost);
 		businessPostMap.put("mode", mode);
 		businessPostMap.put("icon", icon);
+		businessPostMap.put("img", img);
 		businessPostMap.put("filePath", filePath);
+		businessPostMap.put("filePath2", filePath2);
 		businessPostMap.put("secNo", secNo);
 		businessService.businessPostProcess(businessPostMap);
 		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo();

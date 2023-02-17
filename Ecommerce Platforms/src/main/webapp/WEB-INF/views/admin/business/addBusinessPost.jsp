@@ -11,6 +11,7 @@
 		var businessPostText1 = $('[id=businessPostText1]').val();
 		var businessPostText2 = $('[id=businessPostText2]').val();
 		var icon = $('[id=icon]').val();
+		var img = $('[id=img]').val();
 
 		if(businessPostTitle == null || businessPostTitle == ''){
 			alert("사업제목을 입력하셔야 합니다.");
@@ -34,6 +35,10 @@
 		}
 		if(icon == null || icon == ''){
 			alert("아이콘을 첨부하셔야 합니다.");
+			return;
+		}
+		if(img == null || img == ''){
+			alert("이미지을 첨부하셔야 합니다.");
 			return;
 		}
 
@@ -76,25 +81,31 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostContents" id="businessPostContents" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostContents" id="businessPostContents" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 							<tr>
 				            	<td class="menu">상세페이지 내용1</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText1" id="businessPostText1" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostText1" id="businessPostText1" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용2</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText2" id="businessPostText2" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostText2" id="businessPostText2" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
-				            </tr>				            
+				            </tr>			            
 		            	    <tr>
 				            	<td class="menu">아이콘파일</td>
 				            	<td>
 				            		<input type="file" name="icon" id="icon" class="form-control input-sm">
+				            	</td>
+				            </tr>
+				            <tr>
+				            	<td class="menu">이미지파일</td>
+				            	<td>
+				            		<input type="file" name="img" id="img" class="form-control input-sm">
 				            	</td>
 				            </tr>				            				            
 			            </tbody>

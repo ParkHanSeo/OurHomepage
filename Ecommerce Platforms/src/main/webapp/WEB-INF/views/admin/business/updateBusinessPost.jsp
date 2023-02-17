@@ -118,15 +118,17 @@
 						if(JSONData.businessPostIcon != null && JSONData.businessPostIcon != ''){
 							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
 										+ '<button type="button" onclick="window.open('+icon+')" class="btn btn-success btn-xs">보기</button>'
-										+ '<button type="button" onclick="fncDeleteThombnail()" name="deleteThombnail" value="'+JSONData.businessPostNo+'" class="btn btn-danger btn-xs">삭제</button>'
 										+ '</span>';
-										
-										
-										//<input type="hidden" name="businessPostNo" id="getPostNo" >
 						$("td[name='iconTd']").append(display);
-						}else{
+						}
+					}
+					if(JSONData.businessPostImg != null){
+						var img = "'${pageContext.request.contextPath}/resources/user/images/main/"+JSONData.businessPostImg+"'"
+						if(JSONData.businessPostImg != null && JSONData.businessPostImg != ''){
 							var	display = '<span id="display_thumbnail" name="thumbnailSpan">'
-								+ '</span>';	
+										+ '<button type="button" onclick="window.open('+img+')" class="btn btn-success btn-xs">보기</button>'
+										+ '</span>';
+						$("td[name='imgTd']").append(display);
 						}
 					}
 					
@@ -190,19 +192,19 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostContents" id="businessPostContents2" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostContents" id="businessPostContents2" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용1</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText1" id="businessPostText1_1" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostText1" id="businessPostText1_1" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용2</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText2" id="businessPostText2_2" rows="10" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostText2" id="businessPostText2_2" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 		            	    <tr>
@@ -210,7 +212,13 @@
 				            	<td align="left" name="iconTd">
 				            		<input type="file" name="icon" id="icon" class="form-control input-sm">
 				            	</td>
-				            </tr>				            				            
+				            </tr>
+				            <tr>
+				            	<td class="menu">이미지파일</td>
+				            	<td align="left" name="imgTd">
+				            		<input type="file" name="img" id="img" class="form-control input-sm">
+				            	</td>
+				            </tr>			            				            
 			            </tbody>
 		            </table>
             		<c:if test="${board2.option.optionComment eq 'y'}">
