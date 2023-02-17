@@ -292,7 +292,7 @@
  		var headAsc = $("input:radio[name='order_code']:checked").val();
  		var headIndex = $("input:radio[name='order_code']:checked").parent().parent().index()+1;
  		var headUpAsc = $("tr").eq(headIndex-1).children().find("input:radio").val();
- 		var headNo = $("input:radio[name='order_code']:checked").parent().parent().find("input[name='headNo']").val();
+ 		var headNo = $("input:radio[name='order_code']:checked").parent().parent().find("input[name='partnerNo']").val();
  		
  		if(headIndex == 0){
  			alert("1개의 항목을 선택하여야 합니다.")
@@ -309,10 +309,6 @@
  			alert("더이상 상위로의 위치 변경은 불가능합니다.");
  			return;
  		}else{
- 			console.log("headAsc", headAsc);
- 			console.log("headUpAsc", headUpAsc);
- 			console.log("headNo", headNo);
- 			console.log("upHeadNo", upHeadNo);
  	  		$.ajax({
  			 	 url : "/admin/menu/json/updateHeadUpAsc?${_csrf.parameterName}=${_csrf.token}",
  	 		  	 type : "POST",
@@ -336,7 +332,14 @@
  		var headAsc = $("input:radio[name='order_code']:checked").val();
  		var headIndex = $("input:radio[name='order_code']:checked").parent().parent().index()+1;
  		var headDownAsc = $("tr").eq(headIndex+1).children().find("input:radio").val();
- 		var headNo = $("input:radio[name='order_code']:checked").parent().parent().find("input[name='headNo']").val();
+ 		var headNo = $("input:radio[name='order_code']:checked").parent().parent().find("input[name='partnerNo']").val();
+ 		
+		console.log("lastIndex", lastIndex);
+		console.log("headAsc", headAsc);
+		console.log("headIndex", headIndex);
+		console.log("headDownAsc", headDownAsc);
+		console.log("headNo", headNo);
+ 		
  		
  		if(headIndex == 0){
  			alert("1개의 항목을 선택하여야 합니다.")
