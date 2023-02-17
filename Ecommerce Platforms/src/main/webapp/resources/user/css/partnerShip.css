@@ -4,7 +4,7 @@
   backdrop-filter: blur(5px);
 }
 .businessfooter {
-  background-image: url("../images/footer_image2.jpg");
+  background-image: url("../images/business_footer.jpg");
   background-size: cover;
 }
 .left {
@@ -1817,12 +1817,12 @@
   content: "";
   position: relative;
   height: 100%;
-  background-color: rgba(177, 80, 197, 0.4);
+  background-color: rgba(94, 90, 257, 0.4);
   padding: 8%;
 }
 .welfare_benefit_area .welfare_benefit_list > li .welfare_benefit_box2 {
-  background-image: url("'../../../images/businessList_cloud.jpg");
-  background-size: cover;
+  background-image: url("'../../../images/businesslist_website1.jpg");
+  background-size: cover; 
   width: 100%;
   height: 58%;
 }
