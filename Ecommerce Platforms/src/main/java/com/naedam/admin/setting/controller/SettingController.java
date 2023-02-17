@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.vo.Award;
+import com.naedam.admin.board.model.vo.Page;
 import com.naedam.admin.common.Comm;
 import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.history.model.vo.History;
@@ -108,16 +109,29 @@ public class SettingController {
 	@RequestMapping(value="listPartner")
 	public String listPartner(Model model, HttpServletRequest request ,
 							  @RequestParam(defaultValue = "1") int cPage,
-							  @ModelAttribute("comm") Comm comm) throws Exception{
+							  @RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws Exception{
 		//게시글 리스트 수 limit 10으로
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
 		
+		System.out.println("searchKeyword>>>>" + searchKeyword);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("comm", comm);
+		map.put("searchKeyword", searchKeyword);
 		map.put("limit", limit);
 		map.put("offset", offset);
-		model.addAttribute("list", settingService.adminPartnerList(map));
+
+		Map<String, Object> resultMap = settingService.adminPartnerList(map);
+		model.addAttribute("list", resultMap.get("list"));
+		model.addAttribute("totalCount", resultMap.get("totalCount"));
+
+		// 페이징 처리
+		String url = request.getRequestURI();
+		String pagebar = Mir9Utils.getPagebar(cPage, limit, (int)resultMap.get("totalCount"), url);
+		
+		model.addAttribute("pagebar", pagebar);
+		model.addAttribute("searchKeyword", searchKeyword);
+		
 		return "admin/setting/partnerList";
 	}
 }

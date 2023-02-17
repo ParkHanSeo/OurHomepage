@@ -10,7 +10,7 @@ public class Comm  implements Serializable{
 	///Field
 	private int currentPage;
 	private String searchCondition;
-	private String searchKeyword;
+	public String searchKeyword;
 	private String searchType;
 	private int searchSort;
 	private int pageSize;

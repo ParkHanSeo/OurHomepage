@@ -6,6 +6,43 @@
 	<jsp:param value="상품 관리" name="title" />
 </jsp:include>
 
+<style>
+#searchBox {
+    width: 210px;
+    height: 30px;
+    border: 1px solid #3c8dbc;
+    background: fffff;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#searchKeyword {
+    font-size: 12px;
+    width: 150px;
+    padding: 5px 10px;
+    border: 0px;
+    outline: none;
+    float: left;
+}
+
+#searchBtn {
+    width: 50px;
+    height: 100%;
+    border: 0px;
+    background: #3c8dbc;
+    outline: none;
+    float: right;
+    color: #ffffff;
+}
+</style>
+<script>
+const paging = (cPage) => {
+	$("input[name='cPage']").val(cPage)
+	$("form[name='searchForm']").attr("method" , "POST").attr("action" , "/admin/setting/listPartner?${_csrf.parameterName}=${_csrf.token}").submit();
+} 
+
+</script>
 <div class="content-wrapper" style="min-height: 868px;">
 	<section class="content-header">
 	    <h1>
@@ -19,9 +56,16 @@
 	        <div class="col-xs-12">
 	            <div class="box">
 	                <div class="box-body">
+	                	<label style="margin-top:5px;">총 ${totalCount} 건</label>
 	                    <table class="table table-bordered table-hover">
-		                    <form name="form_list" method="post" action="?tpf=admin/menu/process"></form>
-				            <input type="hidden" name="mode" id="mode">
+		                    <form name="searchForm" method="post" action="/admin/setting/listPartner?${_csrf.parameterName}=${_csrf.token}">
+					            <input type="hidden" name="mode" id="mode">
+					            <input type="hidden" name="cPage">
+					            <div id="searchBox">
+				                      	  <input type="text" name="searchKeyword" id="searchKeyword" placeholder="제목으로 검색" value="${searchKeyword}">
+				                      	  <button type="submit" id="searchBtn">검색</button>
+			                     </div>
+			                </form>
 		                    <thead>
 		                    	<tr>
 		                        	<td style="width:30px;">
@@ -76,6 +120,9 @@
                     	<br>
                     	<button type="button" onclick="deleteChoicePartner(${partner.partnerNo});" class="btn btn-danger btn-sm"><i class="fa fa-minus-square" aria-hidden="true"></i> 선택삭제</button>
                     	<button type="button" onclick="onclickInsert();" class="btn btn-primary btn-sm"><i class="fa fa-plus-square"></i> 파트너 등록</button>
+                    	<div style="text-align: right;">
+							${pagebar}
+						</div>
 	                </div><!-- /.box-body -->
 	            </div><!-- /.box -->
 	        </div><!-- /.col-xs-12 -->
@@ -165,7 +212,6 @@
 </div><!-- /.content-wrapper -->
 
 <script>
-     
      function setLocale(locale) {
          $('button[id^=locale_]').attr('class', 'btn btn-default');
          $('#locale_'+locale).attr('class', 'btn btn-primary');

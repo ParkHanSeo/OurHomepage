@@ -117,8 +117,8 @@ public class SettingServiceImpl implements SettingService {
 	public Map<String, Object> adminPartnerList(Map<String, Object> map) throws Exception{
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("list", settingDao.adminPartnerList(map));
-		System.out.println("확인합시다 === "+((List)resultMap.get("list")).size());
-		resultMap.put("totalCount", ((List)resultMap.get("list")).size());
+		resultMap.put("totalCount", settingDao.adminPartnerTotalCount(map));
+		System.out.println("resultMap====" + resultMap);
 		return resultMap;
 	}
 
