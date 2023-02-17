@@ -85,10 +85,10 @@ const paging = (cPage) => {
 			                        </td>
 			                        <td>파트너명</td>
 			                        <td style="width:150px;">등록일자</td>
-			                        <td style="width:60px;">
+			                        <!-- <td style="width:60px;">
 			                        	<i onclick="fncDown();" class="fa fa-fw fa-arrow-circle-down cp" style="cursor:pointer"></i>
 			                        	<i onclick="fncUp();" class="fa fa-fw fa-arrow-circle-up cp" style="cursor:pointer"></i>
-			                        </td>
+			                        </td> -->
                         			<td style="width:60px;">명령</td>
                     			</tr>
                     		</thead>
@@ -107,9 +107,9 @@ const paging = (cPage) => {
 				                        </td>
 				                        <td>${partner.partnerName}</td>
 				                        <td>${partner.in_dtm}</td>
-				                        <td>
+				                        <%-- <td>
 				                        	<input type="radio" name="order_code" value="${partnerAsc}">
-				                        </td>
+				                        </td> --%>
 				                        <td>
 				                        	<button type="button" onclick="onclickUpdate(${partner.partnerNo});" class="btn btn-primary btn-xs">수정하기</button>
 				                        </td>
