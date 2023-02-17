@@ -1,6 +1,7 @@
 package com.naedam.admin.setting.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.history.model.vo.History;
@@ -19,6 +20,8 @@ public interface SettingDao {
 	List<AdminMenu> selectAdminMenuList();
 	
 	List<Partner> selectPartner() throws Exception;
+	
+	List<Partner> adminPartnerList(Map<String, Object> map) throws Exception;
 	
 	Partner getPartner(int partnerNo) throws Exception;
 	

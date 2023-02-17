@@ -22,6 +22,8 @@ public interface SettingService {
 
 	List<Partner> selectPartner() throws Exception;
 	
+	Map<String, Object> adminPartnerList(Map<String, Object> map) throws Exception;
+	
 	Partner getPartner(int partnerNo) throws Exception;
 	
 	AdminSetting selectAdminSetting();

@@ -20,6 +20,7 @@ import com.naedam.admin.setting.model.vo.AdminSetting;
 import com.naedam.admin.setting.model.vo.Partner;
 
 import lombok.extern.slf4j.Slf4j;
+import oracle.jdbc.proxy.annotation.OnError;
 
 @Slf4j
 @Service
@@ -110,6 +111,15 @@ public class SettingServiceImpl implements SettingService {
 	@Override
 	public List<Partner> selectPartner() throws Exception{
 		return settingDao.selectPartner();
+	}
+	
+	@Override
+	public Map<String, Object> adminPartnerList(Map<String, Object> map) throws Exception{
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("list", settingDao.adminPartnerList(map));
+		System.out.println("확인합시다 === "+((List)resultMap.get("list")).size());
+		resultMap.put("totalCount", ((List)resultMap.get("list")).size());
+		return resultMap;
 	}
 
 	@Override
