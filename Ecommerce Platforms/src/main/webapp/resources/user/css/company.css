@@ -50,7 +50,7 @@
 .core_value_img {
   background-image: url("../images/core_value.png");
   width: 80%;
-  height: 80%;
+  height: 50%;
   margin: 0 auto;
   background-size: contain;
   background-position: center;

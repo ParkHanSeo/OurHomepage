@@ -25,7 +25,7 @@
 			<div id="contents" class="contents_top">
 				<div class="sub_title_area">
 					<div class="inner_container">
-						<h2 class="sub_title">인사제도</h2>
+						<h2 class="sub_title">인사정보</h2>
 					</div>
 				</div>
 				<!-- // .sub_title_area -->
@@ -34,7 +34,7 @@
 					<div class="inner_container">
 						<div class="top_txt_outer">
 							<div class="top_txt_area txt_notice">
-								<p class="top_txt2">내담씨앤씨의 인사제도를 소개합니다.</p>
+								<p class="top_txt2">내담씨앤씨의 인사정보 안내</p>
 								<p class="top_txt3">
 									 내담씨앤씨는 대기업에서 실행하는 인재교육과 현장에서의 교육을 통해 인재를 육성하고 <br>
 									 다양한 복리후생 등을 지원 함으로서 조직에 대한 신뢰와 일에 대한 자부심을 기반으로<br>
@@ -44,53 +44,11 @@
 						</div>
 					</div>
 				</div>
-				<!-- // .top_visual_area -->
-
 				<div class="layout_section_outer recruit2">
-					<!-- <div class="inner_container">
-						<div class="layout_head">
-							<p class="top_txt1hr">채용 프로세스</p>
-						</div>
-						<div class="layout_body process-area">
-							<div class="process-flow size-01 type01">
-								<ol class="flow_list">
-									<li class="color1"><span class="flow_num color1">01</span>
-										<i class="icon hr_ic hr_li_1"></i>
-										<p class="flow_txt">
-											<em>01</em><br class="hide_768"> 양식 다운로드/작성
-										</p>
-									</li>
-									<li class="color2"><span class="flow_num color2">02</span>
-										<i class="icon hr_ic hr_li_2"></i>
-										<p class="flow_txt">
-											<em>02</em><br class="hide_768"> Email 접수
-										</p>
-									</li>
-									<li class="color3"><span class="flow_num color3">03</span>
-										<i class="icon hr_ic hr_li_3"></i>
-										<p class="flow_txt">
-											<em>03</em><br class="hide_768"> 1차 서류전형
-										</p></li>
-									<li class="color4"><span class="flow_num color4">04</span>
-										<i class="icon hr_ic hr_li_4"></i>
-										<p class="flow_txt">
-											<em>04</em><br class="hide_768"> 2차 면접전형
-										</p></li>
-									<li class="color5"><span class="flow_num color5">05</span>
-										<i class="icon hr_ic hr_li_5"></i>
-										<p class="flow_txt">
-											<em>05</em><br class="hide_768"> 입사확정
-										</p></li>
-								</ol>
-							</div>
-						</div>
-					</div> -->
-
 					<div class="inner_container">
 						<div class="layout_head">
 							<p class="top_txt1hr">인사제도</p>
 						</div>
-
 						<div class="layout_body process-area">
 							<div class="process-flow size-02 type01">
 								<ul class="box-layout_3 is-vertical">

@@ -26,8 +26,7 @@
                     <div class="division_container">
                         <div class="visual_txt_area division_txt_area com_intro">
                             <p class="txt3">
-                            	혁신 그리고 신뢰와 열정으로
-                            	<br />함께 미래를 만들어갑니다.
+                            	혁신 그리고 신뢰와 열정으로 함께 미래를 만들어갑니다.
                             </p>
                         </div>
                     </div>
@@ -123,11 +122,11 @@
                                 <div class="div_division_left">
 	                                <p class="division_name">SI 사업부</p>
 	                                <p class="division_info">
-	                                    - SCM,CRM 컨설팅/개발<br>
-	                                    - System Modeling<br>
-	                                    - 외부 System 1/F<br>
-	                                    - Solution Business<br>
 	                                    - Si (System Integration)<br>
+	                                    - IT total Service<br>
+	                                    - Solution Business<br>
+	                                    - 시스템 통합 및 유지보수<br>
+	                                    - 기존 시스템의 고도화<br>
 	                                </p>
 	                            </div>
                             </li>                            
