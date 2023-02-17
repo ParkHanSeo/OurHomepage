@@ -109,5 +109,11 @@ public class SettingDaoImpl implements SettingDao {
 		return session.selectOne("setting.selectAllHistoryList");
 	}
 
+	@Override
+	public int adminPartnerTotalCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return session.selectOne("setting.adminPartnerTotalCount", map);
+	}
+
 
 }

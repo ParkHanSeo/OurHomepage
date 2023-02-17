@@ -39,4 +39,6 @@ public interface SettingDao {
 
 	public int selectAllHistoryList();
 
+	public int adminPartnerTotalCount(Map<String, Object> map);
+
 }
