@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.vo.Award;
+import com.naedam.admin.common.Comm;
 import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.setting.model.service.SettingService;
@@ -100,9 +101,19 @@ public class SettingController {
 		return "redirect:/admin/setting/listPartner";
 	}
 
-	@GetMapping("listPartner")
-	public String listPartner(Model model) throws Exception{
-		model.addAttribute("list", settingService.selectPartner());
+	@RequestMapping(value="listPartner")
+	public String listPartner(Model model, HttpServletRequest request ,
+							  @RequestParam(defaultValue = "1") int cPage,
+							  @ModelAttribute("comm") Comm comm) throws Exception{
+		//게시글 리스트 수 limit 10으로
+		int limit = 10;
+		int offset = (cPage - 1) * limit;
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("comm", comm);
+		map.put("limit", limit);
+		map.put("offset", offset);
+		model.addAttribute("list", settingService.adminPartnerList(map));
 		return "admin/setting/partnerList";
 	}
 }

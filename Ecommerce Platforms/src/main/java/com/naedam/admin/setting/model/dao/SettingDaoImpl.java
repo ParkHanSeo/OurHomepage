@@ -54,6 +54,12 @@ public class SettingDaoImpl implements SettingDao {
 		// TODO Auto-generated method stub
 		return session.selectList("setting.selectPartnerList");
 	}
+	
+	@Override
+	public List<Partner> adminPartnerList(Map<String, Object> map) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList("setting.adminPartnerList", map);
+	}	
 
 	@Override
 	public AdminSetting selectAdminSetting() {

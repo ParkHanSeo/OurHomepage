@@ -55,6 +55,23 @@
   		from partner
   	</select>
   	
+  	<select id="adminPartnerList" resultMap="partnerSelectMap" parameterType="hashmap">
+	  	SELECT p.*	
+	  	FROM(SELECT
+	  		@rownum:=@rownum+1 as rownum,
+	  		tb1.partner_no,
+	  		tb1.partner_name,
+	  		tb1.partner_image,
+	  		date_format(tb1.in_dtm, '%Y-%m-%d') in_dtm
+	  		FROM partner tb1, (select @rownum:=0) row_reset
+	  		WHERE 1=1
+	  		<if test="comm.searchType != null">
+	  			AND tb1.partner_name like concat ('%',#{comm.searchKeyword},'%')
+	  		</if>
+	  		) p
+	  	LIMIT #{limit} OFFSET #{offset}
+  	</select>  	
+  	
   	<select id="getPartner" parameterType="int" resultMap="partnerSelectMap">
   		SELECT	
   		*

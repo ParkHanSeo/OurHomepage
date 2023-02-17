@@ -5,7 +5,17 @@
 <jsp:include page="/WEB-INF/views/admin/common/header.jsp">
 	<jsp:param value="상품 관리" name="title" />
 </jsp:include>
-
+<style>
+#searchBtn {
+	width: 50px;
+	height: 100%;
+	border: 0px;
+	background: #3c8dbc;
+	outline: none;
+	float: right;
+	color: #ffffff;
+}
+</style>
 <div class="content-wrapper" style="min-height: 868px;">
 	<section class="content-header">
 	    <h1>
@@ -19,8 +29,27 @@
 	        <div class="col-xs-12">
 	            <div class="box">
 	                <div class="box-body">
+	                	<form name="searchForm" method="post" action="/admin/board/postList?${_csrf.parameterName}=${_csrf.token}">
+		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
+		                    	<input type="hidden" name="boardNo" value="${boardNo}">
+		                    	<input type="hidden" name="cPage">
+		                        <div class="has-feedback">
+			                        <span>
+			                      	  <input type="text" name="searchKeyword" id="searchKeyword" class="form-control input-sm" placeholder="검색" value="${comm.searchKeyword}"/>
+			                      	  <button class="form-control-feedback" type="submit" id="searchBtn" style="pointer-events: all;">검색</button>
+			                        </span>
+		                        </div>
+		                    </div>
+		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
+		                        <div class="has-feedback">
+			                        <select name="searchType" class="form-control input-sm" style="float:left; width:130px;">
+			      						<option value="1">제목</option>      
+			      						<option value="2">작성자</option>                        
+			      					</select>
+		                        </div>
+		                    </div>
+	                    </form>
 	                    <table class="table table-bordered table-hover">
-		                    <form name="form_list" method="post" action="?tpf=admin/menu/process"></form>
 				            <input type="hidden" name="mode" id="mode">
 		                    <thead>
 		                    	<tr>
