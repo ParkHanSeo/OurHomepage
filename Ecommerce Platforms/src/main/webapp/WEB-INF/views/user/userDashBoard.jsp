@@ -62,6 +62,11 @@
                      </div>
                   </div>
                </div>
+			 <div class="scroll-guide-area">
+				<div class="scroll-guide">
+					<span class="blind">Scroll Down</span>
+				</div>
+			</div>
             </div>
             <div class="nft-wrap section">
                <div class="inner_container">

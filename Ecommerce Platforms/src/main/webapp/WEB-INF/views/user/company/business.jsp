@@ -27,7 +27,7 @@
                		<div class="division_container"> 
                         <div class="visual_txt_area com_intro">
                             <p class="txt3">
-                            	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 <br>
+                            	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 
 								디지털 트렌스포메이션의 성장 파트너 입니다.                            	
                             </p>
                         </div>
@@ -37,7 +37,7 @@
                 	<div class="num-container" id="num-container">
 				        <div class="num-item" id="num-item">
 				            <h4 class="in-title">설립연도</h4>
-				            <span class="nums" data-count="2008">0</span><span id="num-unit">년</span><br>
+				            <span class=yearNums data-count="2008">0</span><span id="num-unit">년</span><br>
 				        </div>
 				        <div class="num-item">
 				            <h4 class="in-title">대표이사</h4>
@@ -59,7 +59,7 @@
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="businessList_top_txt1">
-                            	내담씨앤씨는 고객사의 고객 만족 및 내부 경쟁력 향상을 통하여 <br /> 
+                            	내담씨앤씨는 고객사의 고객 만족 및 내부 경쟁력 향상을 통하여
                             	기업의 성장을 이끄는 서비스를 제공 하고자 노력합니다.
                             </p>
                             <p class="businessList_top_txt2">

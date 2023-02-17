@@ -31,7 +31,7 @@
                 <div class="layout_section_outer location_area type03">
                     <div class="inner_container">
                         <p class="common_txt-40">
-                            내담씨앤씨는 판교 본사, 서울 지사를 두고 있습니다.
+                            내담씨앤씨는 판교 본사와 서울 지사를 두고 있습니다.
                         </p>
 
                         <ul class="common-layout_2 is-vertical location_list introduction_vertical">

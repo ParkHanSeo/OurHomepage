@@ -30,7 +30,7 @@
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1 partnerShip_top_txt1">
-                                내담씨앤씨의 파트너십의 관계에 있어서 <br>
+                                내담씨앤씨의 파트너십의 관계에 있어서
                                 성장 및 역량 강화를 지원합니다.
                             </p>
                         </div>

@@ -76,6 +76,7 @@ function out(num){
 					                                            <p class="sub_txt">Excellence</p>
 					                                            <p class="sub_txt2 overP1" id="p1">최고와 더불어 최선을 추구하는 인재</p>
 					                                            <i class="icon culture-icon-01"></i>
+					                                              <span class="icon card_ui-more employee_icon_white"></span>
 					                                        </div>
 				                                        </a>
 			                                        </div>
@@ -88,6 +89,7 @@ function out(num){
 					                                            <p class="sub_txt">Innovation</p>
 					                                            <p class="sub_txt2 overP2" id="p2">끊임없이 혁신을 추구하는 인재끊임없이 혁신을 추구하는 인재</p>
 					                                            <i class="icon culture-icon-02"></i>
+					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 				                                    </div>
@@ -100,6 +102,7 @@ function out(num){
 					                                            <p class="sub_txt">Customer Fixation</p>
 					                                            <p class="sub_txt2 overP3" id="p3">고객의 기대와 요구에 앞서 고민하고 실천하는 인재</p>
 					                                            <i class="icon culture-icon-03"></i>
+					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
@@ -112,6 +115,7 @@ function out(num){
 					                                            <p class="sub_txt">Teamwork</p>
 					                                            <p class="sub_txt2 overP4" id="p4">협력을 통해 더 큰 성과를 창출하는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
+					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
@@ -124,6 +128,7 @@ function out(num){
 					                                            <p class="sub_txt">Community</p>
 					                                            <p class="sub_txt2 overP5" id="p5">기업의 역할과 책임을 이해하고 실천하는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
+					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>
@@ -136,6 +141,7 @@ function out(num){
 					                                            <p class="sub_txt">Flexible</p>
 					                                            <p class="sub_txt2 overP6" id="p6">유머와 재능을 살려 즐겁게 일하는 일터를 만드는 인재</p>
 					                                            <i class="icon culture-icon-04"></i>
+					                                            <span class="icon card_ui-more employee_icon_white"></span>
 				                                            </div>
 				                                        </a>
 			                                        </div>

@@ -390,7 +390,7 @@ h4 {
   z-index: 5;
   width: 56px;
   height: 56px;
-  background: url(../images/common/icon-56-px-scroll-down@2x.png) no-repeat 0 0;
+  background: url(../images/common/icon-57-px-scroll-down@2x.png) no-repeat 0 0;
   background-size: 100% 100%;
   opacity: 0.9;
   animation: scrollDown 1.2s ease infinite alternate;
@@ -691,7 +691,7 @@ h4 {
   width: 660px;
   height: 504px;
   border-radius: 3%;
-  background-image: url(../images/together2.jpg);
+  background-image: url(../images/Corporate.jpg);
   background-size: cover;
   position: fixed;
 }
@@ -713,7 +713,7 @@ h4 {
   width: 660px;
   height: 504px;
   border-radius: 3%;
-  background-image: url(../images/consulting.jpg);
+  background-image: url(../images/make.jpg);
   background-size: cover;
 }
 .core-wrap .core-list .big-data .bg-text {
@@ -730,7 +730,7 @@ h4 {
   width: 660px;
   height: 504px;
   border-radius: 3%;
-  background-image: url(../images/SI.jpg);
+  background-image: url(../images/integration.jpg);
   background-size: cover;
   position: fixed;
 }
@@ -751,7 +751,7 @@ h4 {
   width: 660px;
   height: 504px;
   border-radius: 3%;
-  background-image: url(../images/solution.jpg);
+  background-image: url(../images/bulb2.jpg);
   background-size: cover;
   position: absolute;
   left: -107px;
