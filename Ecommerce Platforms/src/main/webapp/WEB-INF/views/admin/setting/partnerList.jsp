@@ -174,7 +174,8 @@
 					            </tr>				            
 					            <tr>
 					            	<td class="menu">이미지파일</td>
-					            	<td class="partnerImageTb" align="left" >
+					            	<td align="left" >
+					            		<div class="partnerImageTb"></div>
 					            		<input type="file" name="file" id="file" style="display:inline;">
 					            	</td>
 					            </tr>
@@ -201,6 +202,7 @@
      
      function register() {
          if(form_register.title.value == '') { alert('파트너명이 입력되지 않았습니다.'); form_register.title.focus(); return false;}
+ 	     if(form_register.file.value == '') { alert('이미지는 필수 사항입니다.'); form_register.content.focus(); return false;}
          alert("파트너가 등록 되었습니다.");
          $("form[name='form_register']").submit();
      }
@@ -229,9 +231,11 @@
                  $('[name=partnerNo]').val(code);
                  $('[name=partnerName]').val(json_data.partnerName);
 				 if(json_data.partnerImage != null){
+					 $("#display_partnerImage").remove();
+					 $(".partnerImageTb").html('');
 					 var partnerImage = "'${pageContext.request.contextPath}/resources/user/images/partner/"+json_data.partnerImage+"'"
 					 if(json_data.partnerImage != null && json_data.partnerImage != ''){
-						 var display = '<span id="display_partnerImage" name="headImageSpan">'
+						 var display = json_data.partnerImage + '&nbsp;&nbsp;&nbsp;<span id="display_partnerImage" name="headImageSpan">'
 										+ '<button type="button" onclick="window.open('+partnerImage+')" class="btn btn-success btn-xs">보기</button>'
 										+ '<button type="button" onclick="fncDeleteImage()" name="deleteImage" value="'+json_data.partnerNo+'" class="btn btn-danger btn-xs">삭제</button>'
 										+ '</span>';
@@ -247,6 +251,13 @@
                  // $('#content').val(errorThrown);
              }
          });
+     }
+     
+     function fncDeleteImage(){
+    	 if(confirm('정말 삭제하시겠습니까?')){
+    			$("#display_partnerImage").parent().remove();
+    			$("#imageStatus").remove();
+    		}
      }
      
      function onclickInsert() {
@@ -327,6 +338,10 @@
  			alert("더이상 상위로의 위치 변경은 불가능합니다.");
  			return;
  		}else{
+ 			console.log("headAsc", headAsc);
+ 			console.log("headUpAsc", headUpAsc);
+ 			console.log("headNo", headNo);
+ 			console.log("upHeadNo", upHeadNo);
  	  		$.ajax({
  			 	 url : "/admin/menu/json/updateHeadUpAsc?${_csrf.parameterName}=${_csrf.token}",
  	 		  	 type : "POST",

@@ -3,7 +3,7 @@
 <mapper namespace="award">
 
 	<select id="selectDetailByNo" parameterType="int" resultType="com.naedam.admin.award.model.vo.Award">
-	select * from award	where award_no = #{value} order by award_date desc;
+	select * from award	where award_no = #{awardNo} order by award_date desc;
 	</select>
 
 	<select id="selectAwardList" resultType="award">

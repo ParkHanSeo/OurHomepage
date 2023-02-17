@@ -33,7 +33,8 @@ public class AwardController {
 	 */
 	@PostMapping("/getAward")
 	@ResponseBody
-	public Award getAward(int awardNo) {
+	public Award getAward(@RequestParam("awardNo") int awardNo) {
+		System.out.println("awardNo >>>>>" + awardNo);
 		Award award = awardService.selectDetailByNo(awardNo);
 		return award;
 	}
@@ -58,7 +59,7 @@ public class AwardController {
 		
 		Map<String, Object> resultMap = awardService.awardProcess(map);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
-		return "/admin/setting/award";
+		return "redirect:/admin/setting/award";
 	}
 	
 	
