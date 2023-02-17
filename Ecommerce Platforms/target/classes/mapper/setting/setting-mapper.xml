@@ -9,17 +9,21 @@
 		<result property="partnerName"				column="PARTNER_NAME"			jdbcType="VARCHAR"></result>
 		<result property="in_dtm"					column="IN_DTM"					jdbcType="VARCHAR"></result>
 		<result property="partnerImage"				column="PARTNER_IMAGE"			jdbcType="VARCHAR"></result>
+		<result property="partnerAsc"				column="PARTNER_ASC"			/>
 	</resultMap>	
 	
 	<insert id="addPartner" parameterType="partner">
 		INSERT INTO partner
 		(PARTNER_NAME, 
 		 IN_DTM, 
-		 PARTNER_IMAGE)
+		 PARTNER_IMAGE,
+		 PARTNER_ASC)
 		VALUES
 		(#{partnerName}, 
 		 sysdate(), 
-		 #{partnerImage})	
+		 #{partnerImage},
+		 (SELECT IFNULL(MAX(PARTNER_ASC) + 1, 1) FROM partner p)
+		 )	
 	</insert>
 	
 	<select id="selectHistoryList" resultType="history">

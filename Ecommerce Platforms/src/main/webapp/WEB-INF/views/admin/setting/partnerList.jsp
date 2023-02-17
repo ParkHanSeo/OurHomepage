@@ -108,7 +108,7 @@ const paging = (cPage) => {
 				                        <td>${partner.partnerName}</td>
 				                        <td>${partner.in_dtm}</td>
 				                        <td>
-				                        	<input type="radio" name="order_code" value="">
+				                        	<input type="radio" name="order_code" value="${partnerAsc}">
 				                        </td>
 				                        <td>
 				                        	<button type="button" onclick="onclickUpdate(${partner.partnerNo});" class="btn btn-primary btn-xs">수정하기</button>
@@ -358,7 +358,7 @@ const paging = (cPage) => {
  			return;
  		}else{
  	  		$.ajax({
- 			 	 url : "/admin/menu/json/updateHeadUpAsc?${_csrf.parameterName}=${_csrf.token}",
+ 			 	 url : "/admin/setting/updatePartnerUpAsc?${_csrf.parameterName}=${_csrf.token}",
  	 		  	 type : "POST",
  		  	 	 data : { 
  		  	 		headAsc,

@@ -134,4 +134,7 @@ public class SettingController {
 		
 		return "admin/setting/partnerList";
 	}
+	
+	
+	
 }
