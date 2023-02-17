@@ -60,7 +60,7 @@
 					}if(Data[1].status == 'N'){
 						document.getElementById("boardManage").style.display = 'none';
 					}if(Data[2].status == 'N'){
-						document.getElementById("memberManage").style.display = 'none';
+						document.getElementById("businessManage").style.display = 'none';
 					}if(Data[3].status == 'N'){
 						document.getElementById("employmentManage").style.display = 'none';
 					}
@@ -211,11 +211,6 @@
 									<i class="fa fa-circle-o"></i> 헤더 관리
 								</a>
 							</li>
-							<li>
-								<a href="${pageContext.request.contextPath}/admin/menu/bottomList">
-									<i class="fa fa-circle-o"></i> 하단 관리
-								</a>
-							</li>
 						</ul>
 					</li>
 					<li class="treeview" id="boardManage">
@@ -231,6 +226,19 @@
 							</li>
 						</ul>
 					</li>
+					<li class="treeview" id="businessManage">
+						<a href="#" name="business"> 
+							<i class="fa fa-list-alt"></i> <span>사업 관리</span> 
+							<i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu" id="businessMenu" >
+							<li>
+								<a href="/admin/business/getBusinessList">
+									<i class="fa fa-circle-o"></i> 리스트
+								</a>
+							</li>
+						</ul>
+					</li>					
 					<!-- 230201_미사용_임시로 닫음 -->
 					<%-- <li class="treeview" id="memberManage">
 						<a href="#"> 

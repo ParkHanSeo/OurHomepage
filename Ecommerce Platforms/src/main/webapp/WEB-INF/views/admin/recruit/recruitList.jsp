@@ -65,10 +65,10 @@
 			})
 		}
 		
-		/* const paging = (cPage) => {
+		const paging = (cPage) => {
 			$("input[name='cPage']").val(cPage)
-			$("form[name='searchForm']").attr("method" , "POST").attr("action" , "/admin/board/recruitList").submit();
-		} */
+			$("form[name='searchForm']").attr("method" , "POST").attr("action" , "/admin/recruitList?${_csrf.parameterName}=${_csrf.token}").submit();
+		} 
 	</script>
 	
 <style>
@@ -124,8 +124,9 @@
 		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
 		                    	<%-- <input type="hidden" name="boardNo" value="${boardNo}"> --%>
 		                    	<input type="hidden" name="cPage">
+		                    	<!-- <input type="hidden" name="searchKeyword"> -->
 		                        <div id="searchBox">
-			                      	  <input type="text" name="searchKeyword" id="searchKeyword" placeholder="제목으로 검색">
+			                      	  <input type="text" name="searchKeyword" id="searchKeyword" placeholder="제목으로 검색" value="${searchKeyword}">
 			                      	  <button type="submit" id="searchBtn" >검색</button>
 		                        </div>
 		                    </div>

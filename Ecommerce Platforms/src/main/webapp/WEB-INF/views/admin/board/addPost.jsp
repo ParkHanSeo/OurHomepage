@@ -86,6 +86,14 @@
 				return;
 			}
 			
+			console.log("postFile >>", postFile);
+			
+			if($("input[id='postName']").val() == null || $("input[id='postName']").val() ==''){
+				postFile = 0;
+				$("input[id='postName']").remove();
+				
+			}
+			
 			for(var i = 0; i < postFile; i++){
 				postName[i] = $("input[id='postName']")[i].value;
 				//alert(postName[i])

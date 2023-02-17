@@ -858,7 +858,7 @@ h4 {
   stroke-dashoffset: 1200;
 }
 .core-wrap .cloud #cloudPath3 {
-  stroke-dasharray: 2000;
+  stroke-dasharray: 2200;
   stroke-dashoffset: 1800;
 }
 .core-wrap .cloud #cloudPath4 {
@@ -866,7 +866,7 @@ h4 {
   stroke-dashoffset: 1300;
 }
 .core-wrap .cloud #cloudPath5 {
-  stroke-dasharray: 2000;
+  stroke-dasharray: 2200;
   stroke-dashoffset: 1800;
 }
 .core-wrap .cloud #cloudPath6 {
@@ -1881,7 +1881,6 @@ h4 {
     height: 399%;
   }
   .nft-wrap {
-    background-position-x: -150px;
   }
   .main_aos_naedam_txt {
     width: 85%;

@@ -52,13 +52,13 @@
 									<c:forEach var="award" items="${awardList }">
 										<tr>
 											<td><input type="checkbox" name="list[]" value="${award.awardNo }" /></td>
-											<td>${award.awardNo }</td>
+											<td>${award.ROWNUM }</td>
 											<td><fmt:formatDate value="${award.awardDate }" pattern="yyyy"/></td>
 											<td><fmt:formatDate value="${award.awardDate }" pattern="MM"/></td>
 											<td><fmt:formatDate value="${award.awardDate }" pattern="dd"/></td>
 											<td style="text-align: left;">${award.host }</td>
 											<td style="text-align: left;">${award.content }</td>
-											<td><button type="button" onclick="onclickUpdate(${award.awardNo });" class="btn btn-primary btn-xs">상세보기</button></td>
+											<td><button type="button" onclick="onclickUpdate(${award.awardNo});" class="btn btn-primary btn-xs">상세보기</button></td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -146,7 +146,8 @@
 							</tr>
 							<tr>
 								<td class="menu">파일 <span class="text-light-blue"><i class="fa fa-check"></i></span></td>
-								<td align="left" class="awardFileTd">
+								<td align="left">
+									<div class="awardFileTd" id="cImg"></div>
 									<input type="file" name="awardImage" class="form-control input-sm" style="width: 70%; display: inline;" accept="image/*"> 
 								</td>
 							</tr>
@@ -206,10 +207,20 @@
 	    if(form_register.year.value == '') { alert('년도가 선택되지 않았습니다.'); form_register.year.focus(); return false;}
 	    if(form_register.month.value == '') { alert('월이 선택되지 않았습니다.'); form_register.month.focus(); return false;}
 	    if(form_register.date.value == '') { alert('일이 선택되지 않았습니다.'); form_register.date.focus(); return false;}
-	    if(form_register.content.value == '') { alert('내용이 선택되지 않았습니다.'); form_register.content.focus(); return false;}
-	    if(form_register.awardImage.value == '') { alert('이미지는 필수 사항입니다.'); form_register.content.focus(); return false;}
-	    form_register.target = 'iframe_process';
-	    form_register.submit();
+	    if(form_register.content.value == '') { alert('내용이 입력되지 않았습니다.'); form_register.content.focus(); return false;}
+	    if($('form[name="form_register"] #mode').val() != 'update'){
+	    	if(form_register.awardImage.value == '') { alert('이미지는 필수 사항입니다.'); form_register.content.focus(); return false;}
+	    }
+
+	    if(!confirm("연혁을 등록하시겠습니까?")){
+			alert("취소 되었습니다.");
+			return;
+		}else{
+			form_register.target = 'iframe_process';
+		    form_register.submit();
+		    setTimeout("location.reload()", 500);
+			$('#modalContent').modal('hide');
+		}
 	}
 	
 	function setData(code) {
@@ -225,7 +236,6 @@
 			},
 			success(data){
 	            console.log(data);
-	            $("#display_awardImage").remove();
 	            var date = new Date(data.awardDate);
 	            $('form[name="form_register"] #mode').val('update');
 	            $('[name=awardNo]').val(data.awardNo);
@@ -235,10 +245,13 @@
 	            $('[name=content]').val(data.content);
 	            $('[name=host]').val(data.host);
 	            if(data.imgUrl != null){
+	            	$("#display_awardImage").remove();
+	            	$(".awardFileTd").html('');
+	            	console.log("data.imgUrl >>" + data.imgUrl);
 					 var image = "'${pageContext.request.contextPath}/resources/user/images/company/award/"+data.imgUrl+"'"
 					 if(data.imgUrl != null && data.imgUrl != ''){
 						 console.log("1")
-						 var display = '<span id="display_awardImage" name="awardImageSpan">'
+						 var display = data.imgUrl + '&nbsp;&nbsp;&nbsp;<span id="display_awardImage" name="awardImageSpan">'
 										+ '<button type="button" onclick="window.open('+image+')" class="btn btn-success btn-xs">보기</button>'
 										+ '</span>';
 					 $(".awardFileTd").append(display);
@@ -260,6 +273,7 @@
 	}
 	
 	function onclickUpdate(code) {
+		console.log("code>>>>>>" + code);
 	    $('#modalContent').modal({backdrop:'static', show:true});
 	    setData(code);
 	}

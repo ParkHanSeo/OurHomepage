@@ -147,6 +147,18 @@
 	</script>
 	
 	<script src="${pageContext.request.contextPath}/resources/admin/ckeditor/ckeditor.js"></script>
+	
+<style>
+#searchBtn {
+	width: 50px;
+	height: 100%;
+	border: 0px;
+	background: #3c8dbc;
+	outline: none;
+	float: right;
+	color: #ffffff;
+}
+</style>
 
 <div class="content-wrapper">
 	<section class="content-header">
@@ -173,8 +185,8 @@
 		                    	<input type="hidden" name="cPage">
 		                        <div class="has-feedback">
 			                        <span>
-			                      	  <input type="text" name="searchKeyword" id="searchKeyword" class="form-control input-sm" placeholder="검색" value="${search.searchKeyword}"/>
-			                      	  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+			                      	  <input type="text" name="searchKeyword" id="searchKeyword" class="form-control input-sm" placeholder="검색" value="${comm.searchKeyword}"/>
+			                      	  <button class="form-control-feedback" type="submit" id="searchBtn" style="pointer-events: all;">검색</button>
 			                        </span>
 		                        </div>
 		                    </div>

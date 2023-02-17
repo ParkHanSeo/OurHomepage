@@ -66,7 +66,6 @@
 			
  			// business 상세보기 시작
 			$("button[name='updateBusiness']").on("click", function(){
-				
 				var businessNo = $(this).find('input').val();
 				$.ajax({
 					url : "/admin/business/json/getBusiness/"+businessNo,
@@ -77,35 +76,8 @@
 						"Content-Type" : "application/json"	 						
 					} ,
 					success : function(JSONData, status){
-						$("#businessTitle2").val(JSONData.BUSINESS_TITLE);
-						$("#businessType2").val(JSONData.BUSINESS_TYPE);
-						if(JSONData.OPTION_NOTICE == "y"){
-							$("#optionNotice2").prop("checked", true)
-						}
-						if(JSONData.OPTION_COMMENT == "y"){
-							$("#optionComment2").prop("checked", true)
-						}
-						if(JSONData.OPTION_SECRET == "y"){
-							$("#optionSecret2").prop("checked", true)
-						}
-						if(JSONData.OPTION_ANSWER == "y"){
-							$("#optionAnswer2").prop("checked", true)
-						}
-						if(JSONData.OPTION_CAPTCHA == "y"){
-							$("#optionCaptcha2").prop("checked", true)
-						}
-						if(JSONData.OPTION_MASS == "y"){
-							$("#optionMass2").prop("checked", true)
-						}
-						if(JSONData.OPTION_ORDER == "y"){
-							$("#optionOrder2").prop("checked", true)
-						}
-						if(JSONData.OPTION_ADDINFO == "y"){
-							$("#optionAddinfo2").prop("checked", true)
-						}
-						if(JSONData.OPTION_POPUP == "y"){
-							$("#optionPopup2").prop("checked", true)
-						}
+						console.log(JSONData)
+						$("#businessTitle2").val(JSONData.businessTitle);
 					}
 				});			
 			}); 	 

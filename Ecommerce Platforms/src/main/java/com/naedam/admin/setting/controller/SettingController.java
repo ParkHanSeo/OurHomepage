@@ -44,14 +44,14 @@ public class SettingController {
 	@GetMapping("/history")
 	public String history(Model model, @RequestParam(defaultValue = "1") int cPage,
 			HttpServletRequest request) {
-		System.out.println("redirect: 처리됐나????");
-		System.out.println("history cPage>>>>>>" + cPage);
 		// 게시글 조회 한도
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
 		
 		List<History> historyList = settingService.selectHistoryList(limit, offset);
 		model.addAttribute("historyList", historyList);
+		
+		System.out.println("historyList>>>>>" + historyList);
 		
 		//게시글 총 갯수
 		int totalRecruitListCount = settingService.selectAllHistoryList();
@@ -62,6 +62,8 @@ public class SettingController {
 		
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("pageCount", totalRecruitListCount);
+		
+		System.out.println("history model >>>>>" + model);
 		
 		return "/admin/setting/history";
 	}

@@ -1,6 +1,7 @@
 package com.naedam.admin.business.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.business.model.service.BusinessService;
+import com.naedam.admin.business.model.service.BusinessServiceImpl;
 import com.naedam.admin.business.model.vo.Business;
+import com.naedam.admin.business.model.vo.BusinessContents;
 import com.naedam.admin.business.model.vo.BusinessPost;
 import com.naedam.admin.common.Comm;
 
@@ -42,34 +45,55 @@ public class BusinessController {
 	@PostMapping("businessProcess")
 	public String businessProcess(@ModelAttribute("business") Business business, 
 								  @ModelAttribute("boardOption") BoardOption boardOption,
-								  @RequestParam("mode") String mode) throws Exception{
+								  @RequestParam("mode") String mode
+								 ,@RequestParam(value="icon", required = false) MultipartFile icon,
+								  HttpServletRequest request) throws Exception{
 		Map<String, Object> businessMap = new HashMap<String, Object>();
 		businessMap.put("mode", mode);
 		businessMap.put("business", business);
 		businessMap.put("boardOption", boardOption);
+		businessMap.put("icon", icon);
 		businessService.businessProcess(businessMap);
 		return "redirect:/admin/business/getBusinessList";
 	}
 	
 	@PostMapping("businessPostProcess")
 	public String businessPostProcess(@ModelAttribute("business") Business business
-									  ,@ModelAttribute("businessPost") BusinessPost businessPost
-									  ,@RequestParam(value="businessPostName", required = false) MultipartFile[] businessPostName  
-									  ,@RequestParam(value="ThombnailName", required = false) MultipartFile ThombnailName 
+									  ,@ModelAttribute("businessPost") BusinessPost businessPost  
+									  ,@RequestParam(value="icon", required = false) MultipartFile icon 
 									  ,@RequestParam("secNo") String secNo 
 									  ,@RequestParam("mode") String mode
 								      ,HttpServletRequest request) throws Exception{
-		String filePath = request.getServletContext().getRealPath("resources/imgs/imageBoard/board");	
+		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/icon/");	
 		Map<String, Object> businessPostMap	 = new HashMap<>();
 		businessPostMap.put("business", business);
 		businessPostMap.put("businessPost", businessPost);
 		businessPostMap.put("mode", mode);
-		businessPostMap.put("businessPostName", businessPostName);
-		businessPostMap.put("ThombnailName", ThombnailName);
+		businessPostMap.put("icon", icon);
 		businessPostMap.put("filePath", filePath);
 		businessPostMap.put("secNo", secNo);
 		businessService.businessPostProcess(businessPostMap);
 		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo();
+	}
+	
+	@PostMapping("businessContentsProcess")
+	public String businessContentsProcess(@ModelAttribute("businessContents") BusinessContents businessContents
+										 ,@ModelAttribute("businessPost") BusinessPost businessPost
+										 ,@RequestParam(value="file", required = false) MultipartFile file
+										 ,@RequestParam("secNo") String secNo 
+										 ,@RequestParam("mode") String mode
+									     ,HttpServletRequest request) throws Exception{
+		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/");
+		System.out.println("확인222 === "+businessContents);
+		Map<String, Object> businessContentsMap	 = new HashMap<>();
+		businessContentsMap.put("businessContents", businessContents);
+		businessContentsMap.put("businessPost", businessPost);
+		businessContentsMap.put("file", file);
+		businessContentsMap.put("secNo", secNo);
+		businessContentsMap.put("mode", mode);
+		businessContentsMap.put("filePath", filePath);
+		businessService.businessContentsProcess(businessContentsMap);
+		return "redirect:/admin/business/getBusinessContentsList?businessPostNo="+businessPost.getBusinessPostNo();
 	}
 	
 	/**
@@ -96,21 +120,35 @@ public class BusinessController {
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
 		
-		Map<String, Object> businessMap = businessService.getBusiness(businessNo);
-		model.addAttribute("business", businessMap);
+		Business business = businessService.getBusiness(businessNo);
+		model.addAttribute("business", business);
 		
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("businessNo", businessNo);
-		Map<String, Object> resultMap = businessService.getBusinessPostList(map);
-		model.addAttribute("list", resultMap.get("list"));
-		System.out.println("log === "+resultMap.get("list"));
+		List<BusinessPost> businessPost = businessService.getBusinessPostList(map);
+		model.addAttribute("list", businessPost);
 		// pagebar
 		String url = request.getRequestURI();
 		//String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, url);
 		
 		return "admin/business/businessPostList";
+	}
+	
+	@RequestMapping(value="getBusinessContentsList")
+	public String getBusinessContentsList(@ModelAttribute("comm") Comm comm, Model model, HttpServletRequest request,
+										  @RequestParam("businessPostNo") int businessPostNo) throws Exception{
+		BusinessPost businessPost = businessService.getBusinessPost(businessPostNo);
+		model.addAttribute("businessPost", businessPost);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("comm", comm);
+		map.put("businessPostNo", businessPostNo);
+		List<BusinessContents> businessContents = businessService.getBusinessContentsList(map);
+		model.addAttribute("businessContents",businessContents);
+		model.addAttribute("businessPostNo", businessPostNo);
+		return "admin/business/businessContentsList";
 	}
 	
 	

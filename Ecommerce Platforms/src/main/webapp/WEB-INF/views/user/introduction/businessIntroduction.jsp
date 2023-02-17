@@ -40,250 +40,45 @@
                         <div class="inner_container">
                             <div class="common-swiper_tab swiper-container-initialized swiper-container-horizontal">
                                 <ul class="swiper-wrapper service_swiper_wrapper">
-                                    <li class="swiper-slide swiper-slide-active service_swiper_slide"><a href="#self">SOLUTION</a></li>
-                                    <li class="swiper-slide swiper-slide-next service_swiper_slide"><a href="#self">CONSULTING</a></li>
-                                    <li class="swiper-slide service_swiper_slide"><a href="#self">S I</a></li>
+                                	<c:forEach var="business" items="${businessList}" varStatus="status" >
+                                		<li class="swiper-slide service_swiper_slide"><a href="#self">${business.businessTitle}</a></li>
+                                	</c:forEach>
                                 </ul>
                             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                         </div>
                     </div><!-- // .common-swiper_area -->
                 </div><!-- // .layout_section_outer -->
-
-                <div class="layout_section_outer sub-main type08 service_top_layout" data-js="anchor-target">
-                    <div class="inner_container">
-                        <div class="layout_head">
-                            <p class="top_txt1">
-                                SOLUTION
-                            </p>
-                        </div>
-
-                        <div class="layout_body">
-                            <div class="icon_item_box">
-                                <ul class="common-layout_3 is-vertical introduction_vertical">
-                                    <li class="items">
-                                        <a href="/user/introduction/digitalTwin" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_1"></i>
-	                                            <p class="icon_item_title">
-	                                                Digital Twin
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                제조 현장 최적 운영을 위한 <br>
-	                                                AI 팩토리 Total 서비스
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="items">
-                                        <a href="/user/introduction/visionAi" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_2"></i>
-	                                            <p class="icon_item_title">
-	                                                Vision AI
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                AI 기반의 얼굴인식 영상처리/분석 플랫폼 솔루션
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="items">
-                                        <a href="/user/introduction/cloudMsp" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_3"></i>
-	                                            <p class="icon_item_title">
-	                                                Cloud MSP
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                클라우드 기반의 인프라 관리 서비스
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>                         
-                                    <li class="items">
-                                        <a href="/user/introduction/scm" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_4"></i>
-	                                            <p class="icon_item_title">
-	                                                SCM
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                공급망 관리에 대한 기본적인 정의의 소프트웨어
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>   
-                                    <li class="items">
-                                        <a href="/user/introduction/innoPlm" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_5"></i>
-	                                            <p class="icon_item_title">
-	                                               Inno PLM
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                제품의 전체 여정을 관리하기 위한 전략적 프로세스의 소프트웨어
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>   
-                                    <li class="items">
-                                        <a href="/user/introduction/innoAms" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_6"></i>
-	                                            <p class="icon_item_title">
-	                                                Inno AMS
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                스마트 물류센터 구축의 모든 것
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>
-                                    <li class="items">
-                                        <a href="/user/introduction/mes" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_7"></i>
-	                                            <p class="icon_item_title">
-	                                                MES
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                제조업체의 공장 관리를 위한 개념이자 구현 도구
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>   
-                                    <li class="items">
-                                        <a href="/user/introduction/solutionDevelopment" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_8"></i>
-	                                            <p class="icon_item_title">
-	                                                Solution Development
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                고객의 니즈와 의견을 반영한 효율적인 솔루션
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>
-                                    <li class="items">
-                                        <a href="/user/introduction/meatProcessing" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_9"></i>
-	                                            <p class="icon_item_title">
-	                                                육가공 관리 시스템
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                고객의 니즈와 의견을 반영한 효율적인 솔루션
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>
-                                    <li class="items">
-                                        <a href="/user/introduction/mixFeed" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_10"></i>
-	                                            <p class="icon_item_title">
-	                                                배합사료 관리 시스템
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                고객의 니즈와 의견을 반영한 효율적인 솔루션
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>
-                                    <li class="items">
-                                        <a href="/user/introduction/erpManagement" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_11"></i>
-	                                            <p class="icon_item_title">
-	                                                생산관리 ERP
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                고객의 니즈와 의견을 반영한 효율적인 솔루션
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>                              
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- // .layout_section_outer -->
-
-                <div class="layout_section_outer sub-main type08" data-js="anchor-target">
-                    <div class="inner_container">
-                        <div class="layout_head">
-                            <p class="top_txt1">
-                                CONSULTING
-                            </p>
-                        </div>
-
-                        <div class="layout_body">
-                            <div class="icon_item_box">
-                                <ul class="common-layout_3 is-vertical introduction_vertical">
-                                    <li class="items">
-                                        <a href="/user/introduction/consulting" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_12"></i>
-	                                            <p class="icon_item_title">
-	                                                CONSULTING
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                                다년간 쌓인 KnowHow를 통한 <br>
-	                                               	고객만족 컨설팅
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- // .layout_section_outer -->
-
-                <div class="layout_section_outer sub-main type08 last_section" data-js="anchor-target">
-                    <div class="inner_container">
-                        <div class="layout_head">
-                            <p class="top_txt1">
-                                S I
-                            </p>
-                        </div>
-
-                        <div class="layout_body">
-                            <div class="icon_item_box">
-                                <ul class="common-layout_3 is-vertical introduction_vertical">
-                                    <li class="items">
-                                        <a href="/user/introduction/si" class="icon_item_inner">
-                                        	<div class="items_main_text">
-                                        		<i class="icon bi_ic bi_li_13"></i>
-	                                            <p class="icon_item_title">
-	                                                System Integration
-	                                            </p>
-	                                            <p class="icon_item_desc">
-	                                            	고객 맞춤형 시스템 및 솔루션 구축 서비스
-	                                            </p>
-	                                            <i class="icon bi_1"></i>
-	                                        </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- // .layout_section_outer -->
-
+				<c:forEach var="business" items="${businessList}" varStatus="status" >
+					<div class="layout_section_outer sub-main type08" data-js="anchor-target">
+	                    <div class="inner_container">
+	                        <div class="layout_head">
+	                            <p class="top_txt1">
+	                                ${business.businessTitle}
+	                            </p>
+	                        </div>
+	                        <div class="layout_body">
+	                            <div class="icon_item_box">
+	                                <ul class="common-layout_3 is-vertical introduction_vertical">
+	                                	<c:forEach var="businessPost" items="${businessPost}" varStatus="status">
+	                                		<c:if test="${business.businessTitle == businessPost.business.businessTitle}">
+			                                    <li class="items">
+			                                        <a href="/user/introduction/introduction?businessPostNo=${businessPost.businessPostNo}" class="icon_item_inner">
+			                                        	<div class="items_main_text">
+			                                        		<i class="icon bi_ic bi_li_12" style="background-image: url(/resources/user/images/icon/${businessPost.businessPostIcon});"></i>
+				                                            <p class="icon_item_title">${businessPost.businessPostTitle}</p>
+				                                            <p class="icon_item_desc" style="white-space:pre-line;">${businessPost.businessPostContents}</p>
+				                                            <i class="icon bi_1"></i>
+				                                        </div>
+			                                        </a>
+			                                    </li>
+			                                </c:if>
+	                                    </c:forEach>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div><!-- // .layout_section_outer -->				
+				</c:forEach>
             </div><!-- // #contents -->
         </section><!-- // #container -->
     </div><!-- // #wrap -->

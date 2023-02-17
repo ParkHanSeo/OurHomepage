@@ -1,5 +1,6 @@
 package com.naedam.admin.recruit.model.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,7 +32,12 @@ public class RecruitDaoImpl implements RecruitDao {
 		System.out.println("==========recruitList dao =================");
 		System.out.println("search>>>" + search);
 		/* RowBounds rowBounds = new RowBounds(offset, limit); */
-		return sqlSession.selectList("recruit.getRecruitList", search);
+		Map<String, Object> page = new HashMap<>();
+		page.put("search", search);
+		page.put("offset", offset);
+		page.put("limit", limit);
+		System.out.println("page>>>" + page);
+		return sqlSession.selectList("recruit.getRecruitList", page);
 	}
 	
 	@Override

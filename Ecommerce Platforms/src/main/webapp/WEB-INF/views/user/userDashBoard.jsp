@@ -28,12 +28,8 @@
                            <div class="inner">
                               <div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
                                  <div class="main-banner">
-                                    <h2 class="tit-slide">
-                                       ${head.title}
-                                    </h2>
-                                    <p class="description">
-                                       ${head.content}
-                                    </p>
+                                    <h2 class="tit-slide" style="white-space:pre-line;">${head.title}</h2>
+                                    <p class="description" style="white-space:pre-line;">${head.content}</p>
                                  </div>
                                  <div class="btn-area">
                                     <a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 
@@ -144,7 +140,8 @@
                            <div class="main_aos_naedam_txt">
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">If you with NaedamC&C</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                 SCM(Supply Chain Management, 공급망 관리), 
+                                 Digital Twin, Vison AI, SI
+                                 <br />SCM(Supply Chain Management, 공급망 관리), 
                                  <br />PLM(Product Lifecycle Management), CRM, MES, 
                                  <br />EIP(Enterprise Information Portal) 등 
                                  <br />다양한 IT분야에서의 구축 경험을 토대로 고객사를 위한 다양한 솔루션과 서비스를 제공합니다.

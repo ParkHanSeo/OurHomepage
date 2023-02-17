@@ -84,12 +84,12 @@ public class BoardController {
 	 */
 	@PostMapping("postProcess")
 	public String postProcess(@ModelAttribute("board") Board board, @ModelAttribute("post") Post post,
-							  @RequestPart(value="postName") MultipartFile[] postName,   
+							  @RequestPart(value="postName", required = false) MultipartFile[] postName,   
 							  @RequestParam("secNo") String secNo, 
 							  @RequestParam("mode") String mode,
 						      HttpServletRequest request) throws Exception {
 		String filePath = request.getSession().getServletContext().getRealPath("resources/user/downloadFile/");
-		System.out.println("공지사항 프로세스 데이터 확인 === "+postName.length);
+		
 		Map<String, Object> postMap	 = new HashMap<>();
 		postMap.put("board", board);
 		postMap.put("post", post);	
@@ -146,7 +146,7 @@ public class BoardController {
 						   @RequestParam(defaultValue = "1") int cPage,
 						   @ModelAttribute("comm") Comm comm) throws Exception {
 		//게시글 리스트 수 limit 10으로
-		int limit = 5;
+		int limit = 10;
 		int offset = (cPage - 1) * limit;
 		
 		//게시글 리스트 옵션과 권한의 조건에 따라 태그를 생성해야 함
@@ -161,9 +161,10 @@ public class BoardController {
 		map.put("offset", offset);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
-
+		System.out.println("확인합시다 === "+comm);
 		// pagebar
 		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		model.addAttribute("comm",comm);
 		model.addAttribute("pagebar", pagebar);		
 		model.addAttribute("list", resultMap.get("list")); 
 		model.addAttribute("boardNo", boardNo);

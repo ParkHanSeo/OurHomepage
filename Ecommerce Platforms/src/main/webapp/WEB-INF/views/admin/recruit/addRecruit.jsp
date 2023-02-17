@@ -64,6 +64,8 @@
 				recruitEnd = $("#endDay").val();
 			}
 			
+			console.log("contentsStatus >> ", contentsStatus);
+			console.log("recruitStart >> ", recruitStart);
 			
 			if(recruitStart == null || recruitStart == ''){
 				if(contentsStatus == null || contentsStatus ==''){
@@ -181,6 +183,10 @@
 			}
 		})
 	})
+	
+	function removeFile(){
+		$('#fileName').val("");		
+	}
 	</script>
 	<div class="modal fade" id="modalContent" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
@@ -272,9 +278,8 @@
 									<td class="menu">파일</td>
 									<td align="left">
 										<input type="file" name="fileName" id="fileName" class="form-control input-sm" style="width: 80%; display: inline;"> 
-										<span id="display_file" style="display: none;">
-											<button type="button" onclick="winOpen('?tpf=common/image_view&amp;file_name=product/'+$('#code').val()+'_1');" class="btn btn-success btn-xs">보기</button>
-											<button type="button" onclick="confirmIframeDelete('?tpf=common/image_delete&amp;file_name=product/'+$('#code').val()+'_1&amp;table=product&amp;code='+$('#code').val());" class="btn btn-danger btn-xs">삭제</button>
+										<span id="display_file" >
+											<button type="button" onclick="removeFile();" class="btn btn-danger btn-xs">삭제</button>
 										</span>
 									</td>
 								</tr>

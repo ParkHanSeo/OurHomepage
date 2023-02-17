@@ -69,6 +69,7 @@ public class RecruitController {
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("pageCount", totalRecruitListCount);
+		model.addAttribute("searchKeyword", searchKeyword);
 		
 		System.out.println("resultMap.get(\"list\")" + resultMap.get("list"));
 
