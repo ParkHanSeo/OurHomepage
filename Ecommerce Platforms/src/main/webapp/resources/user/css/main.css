@@ -1839,6 +1839,7 @@ h4 {
   }
   .service-wrap .service-list li {
     width: 220px;
+    height: 700px;
     margin: 58px 60px 0 0;
   }
   .service-wrap .service-list li::before {
@@ -2166,6 +2167,7 @@ h4 {
   }
   .service-wrap .service-list li {
     width: 100%;
+    height: 600px;
     margin: 40px 0 0 0;
   }
   .service-wrap .service-list li > a {
