@@ -43,8 +43,10 @@ public class HomeController {
 	public String gohome(Locale locale, Model model) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("businessNo", 10);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList());
+		model.addAttribute("businessPost", businessService.getBusinessPostList(map));
 		return "user/userDashBoard";
 	}	
 
