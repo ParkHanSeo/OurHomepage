@@ -292,12 +292,13 @@
 								<a href="${pageContext.request.contextPath }/admin/setting/listPartner">
 									<i class="fa fa-circle-o"></i> 파트너 관리
 								</a>
-							</li>							
-							<li id="infoManage">
+							</li>
+							<!-- 보류 -->							
+							<%-- <li id="infoManage">
 								<a href="${pageContext.request.contextPath}/admin/setting/info">
 									<i class="fa fa-circle-o"></i> 기본 설정
 								</a>
-							</li>									
+							</li>	 --%>								
 						</ul>
 					</li>
 					<li>

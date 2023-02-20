@@ -178,7 +178,7 @@
 	        <div class="col-xs-12">
 	            <div class="box">
 	                <div class="box-body">
-	                    <label style="margin-top:5px;">총  건</label>
+	                    <label style="margin-top:5px;">총 ${count}건</label>
 	                    <form name="searchForm" method="post" action="/admin/board/postList?${_csrf.parameterName}=${_csrf.token}">
 		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
 		                    	<input type="hidden" class="businessNo" value="${business.businessNo}">

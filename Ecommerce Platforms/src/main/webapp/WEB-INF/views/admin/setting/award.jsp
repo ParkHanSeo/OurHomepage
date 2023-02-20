@@ -71,9 +71,9 @@
 						<button type="button" onclick="onclickInsert()" class="btn btn-primary btn-sm">
 							<i class="fa fa-plus-square"></i> 수상 등록
 						</button>
-						<button type="button" onclick="onclickCopyContent();" class="btn btn-warning btn-sm" style="margin-left: 20px;">
+						<!-- <button type="button" onclick="onclickCopyContent();" class="btn btn-warning btn-sm" style="margin-left: 20px;">
 							<i class="fa fa-copy"></i> 연혁 복사
-						</button>
+						</button> -->
 						<div style="text-align: right;">
 							<ul class="pagination" style="margin: 0;">
 								<li class="active"><a href="?tpf=admin/setting/award&locale=ko&page=1">1</a></li>

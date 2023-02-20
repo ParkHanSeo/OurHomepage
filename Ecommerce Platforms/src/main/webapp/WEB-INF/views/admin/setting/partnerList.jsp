@@ -199,8 +199,8 @@ const paging = (cPage) => {
 					            	</td>
 					            </tr>
 				            </tbody>
-				            <div style="color: red;"><b>&nbsp;&nbsp;* 이미지는 배경이 없는 .png 타입으로 등록 바랍니다.</b></div>
 			            </table>
+			            <div style="color: red;"><b>&nbsp;&nbsp;* 이미지는 배경이 없는 .png 타입으로 등록 바랍니다.</b></div>
 		            </div><!-- /.modal-body -->
 		            <div class="modal-footer">
 	            		<button type="button" onclick="register2();" class="btn btn-primary">저장하기</button>

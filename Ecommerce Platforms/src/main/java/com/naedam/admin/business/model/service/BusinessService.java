@@ -29,4 +29,6 @@ public interface BusinessService {
 	
 	public BusinessContents getBusinessContents(int businessPostNo) throws Exception;
 
+	public int TotalBusinessPost(int businessNo);
+
 }

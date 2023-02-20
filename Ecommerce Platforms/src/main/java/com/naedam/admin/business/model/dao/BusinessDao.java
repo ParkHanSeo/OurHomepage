@@ -55,5 +55,7 @@ public interface BusinessDao {
 
 	//BusinessContents Delete
 	public void deleteChoiceBusinessContents(List<Integer> businessConetentsNo) throws Exception;
+
+	public int TotalBusinessPost(int businessNo);
 	
 }
