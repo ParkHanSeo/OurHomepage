@@ -75,8 +75,8 @@
                   </h3>
                   <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                      내담씨앤씨는 축적된 경험 및 Knowhow와 이를 뒷받침 해주는 전문화된 Skill 및 Solution을 기반으로 
-                     <br />고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며 
-                     <br />나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
+                     고객사의 고객 만족 및 내부 경쟁력 향상을 이끌어 내어 한단계 업그레이드 시키는 것을 Mission으로 하고 있으며 
+                     나아가 글로벌 경쟁력을 갖춘 IT Total Service Provider 기업으로의 성장을 비전으로 하고 있습니다.
                   </p>
                   <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                      <a href="/user/company/businessList" class="common-btn is-white">
@@ -146,10 +146,10 @@
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">If you with 내담씨앤씨</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                  Digital Twin, Vison AI, SI
-                                 <br />SCM(Supply Chain Management, 공급망 관리), 
-                                 <br />PLM(Product Lifecycle Management), CRM, MES, 
-                                 <br />EIP(Enterprise Information Portal) 등 
-                                 <br />다양한 IT분야에서의 구축 경험을 토대로 고객사를 위한 다양한 솔루션과 서비스를 제공합니다.
+                                 SCM(Supply Chain Management, 공급망 관리), 
+                                 PLM(Product Lifecycle Management), CRM, MES, 
+                                 EIP(Enterprise Information Portal) 등 
+                                 다양한 IT분야에서의 구축 경험을 토대로 고객사를 위한 다양한 솔루션과 서비스를 제공합니다.
                               </p>
                            </div>                           
                         </li>
@@ -206,7 +206,7 @@
                            <div class="main_aos_consulting_txt">
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">컨설팅</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                 빅데이터 분석 역량과 솔루션 경쟁력을 더해<br /> 데이터 생태계를 강화하는데 앞장섭니다.
+                                 빅데이터 분석 역량과 솔루션 경쟁력을 더해 데이터 생태계를 강화하는데 앞장섭니다.
                               </p>
                            </div>                           
                         </li>
@@ -237,8 +237,8 @@
                                  정보시스템통합</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                  내담씨앤씨는 공공, 금융, 통신, 전자상거래, 제조, 농협, 인프라 등 
-                                 <br/>다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를 기반으로
-                                 <br/>컨설팅, Application 개발/운영 서비스까지 고객사에서 필요로하는 IT영역의 Total Service를 제공하고 있습니다.
+                                 다양한 산업영역의 전문적인 IT 서비스 수행을 통해 축적한 Know How를 기반으로
+                                 컨설팅, Application 개발/운영 서비스까지 고객사에서 필요로하는 IT영역의 Total Service를 제공하고 있습니다.
                               </p>
                               <p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                  <span class="blind">자세히 보기</span>
@@ -286,8 +286,8 @@
                            <div class="main_aos_solution_txt">
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">Solution</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                 회사 또는 영업활동에 필요한 요구사항과 소통을 통해 분석/설계하여<br /> 전산프로그램으로 구현합니다.
-                                 사용 프로그램과 차별화된 맞춤형 개발과 유지보수 지원 <br />
+                                 회사 또는 영업활동에 필요한 요구사항과 소통을 통해 분석/설계하여 전산프로그램으로 구현합니다.
+                                 사용 프로그램과 차별화된 맞춤형 개발과 유지보수 지원 
                                  레거시 시스템과 연계되는 응용 프로그램 개발의뢰도 가능합니다. 
                               </p>
                               <p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
@@ -305,7 +305,7 @@
                               Technology & Business
                            </h2>
                            <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                              내담씨앤씨가 가진 기술력으로<br /> 다양한 서비스를 제공합니다.
+                              내담씨앤씨가 가진 기술력으로  다양한 서비스를 제공합니다.
                            </p>
                         </div>
                         <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
