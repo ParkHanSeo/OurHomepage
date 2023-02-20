@@ -655,14 +655,14 @@ h4 {
 }
 .core-wrap .core-list .naedamcnc {
   position: absolute;
-  top: -133%;
+  top: -160%;
   right: -11%;
   width: 175%;
   height: 317%;
 }
 .core-wrap .core-list .solution {
   position: absolute;
-  top: -223%;
+  top: -235%;
   right: -253px;
   width: 162%;
   height: 600%;
@@ -670,7 +670,7 @@ h4 {
 
 .core-wrap .core-list .cunsulting {
   position: absolute;
-  top: -64%;
+  top: -77%;
   right: -355px;
   width: 169%;
   height: 302%;
@@ -678,8 +678,8 @@ h4 {
 
 .core-wrap .core-list .si {
   position: absolute;
-  top: -86%;
-  left: -60%;
+  top: -91%;
+  left: -52%;
   width: 166%;
   height: 397%;
 }
@@ -1335,7 +1335,7 @@ h4 {
   margin-right: -290px;
 }
 .main_aos_naedam_txt {
-  margin-left: 54%;
+  margin-left: 53%;
   margin-top: 21%;
   position: relative;
 }
