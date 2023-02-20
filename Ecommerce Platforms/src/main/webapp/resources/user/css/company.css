@@ -319,7 +319,7 @@
   background-color: #000;
 }
 .business_introduce_wrapper {
-  background-image: url(../images/company/division/company_business_1.jpg);
+  background-image: url(../images/company/division/businessList_banner.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -690,7 +690,7 @@
   padding-bottom: 100px;
 }
 .division_wrapper {
-  background-image: url(../images/company/division/2.jpg);
+  background-image: url(../images/company/division/divisionList_banner.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

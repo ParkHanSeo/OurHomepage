@@ -191,7 +191,7 @@
 	                    </form>
 	                    <br>
 	                    <button type="button" id="deleteChoiceBusiness" class="btn btn-danger btn-sm"><i class="fa fa-minus-square"></i> 선택삭제</button>
-	                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalRegister"><i class="fa fa-plus-square"></i> 게시판 생성</button>
+	                    <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalRegister"><i class="fa fa-plus-square"></i> 게시판 생성</button> -->
 	                </div><!-- /.box-body -->
 	            </div><!-- /.box -->
 	        </div><!-- /.col-xs-12 -->

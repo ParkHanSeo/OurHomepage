@@ -132,7 +132,9 @@ public class BusinessController {
 		map.put("comm", comm);
 		map.put("businessNo", businessNo);
 		List<BusinessPost> businessPost = businessService.getBusinessPostList(map);
+		int TotalBusinessPost = businessService.TotalBusinessPost(businessNo);
 		model.addAttribute("list", businessPost);
+		model.addAttribute("count", TotalBusinessPost);
 		// pagebar
 		String url = request.getRequestURI();
 		//String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, url);

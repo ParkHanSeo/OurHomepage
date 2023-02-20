@@ -156,4 +156,10 @@ public class BusinessServiceImpl implements BusinessService {
 		return businessDao.getBusinessContents(businessPostNo);
 	}
 
+	@Override
+	public int TotalBusinessPost(int businessNo) {
+		// TODO Auto-generated method stub
+		return businessDao.TotalBusinessPost(businessNo);
+	}
+
 }

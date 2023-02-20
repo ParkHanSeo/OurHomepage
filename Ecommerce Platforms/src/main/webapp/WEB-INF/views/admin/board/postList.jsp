@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:include page="/WEB-INF/views/admin/common/header.jsp">
-	<jsp:param value="1:1문의" name="title"/>
+	<jsp:param value="회사소식 관리" name="title"/>
 </jsp:include>
 	<jsp:useBean id="now" class="java.util.Date" />
 	<fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="nowDate"/> 
