@@ -1,76 +1,87 @@
-function checkVisible(element, check = 'above') {
-	const viewportHeight = $(window).height(); // Viewport Height
-	const scrolltop = $(window).scrollTop(); // Scroll Top
-	const y = $(element).offset().top;
-	const elementHeight = $(element).height();
+function checkVisible(element, check = "above") {
+  const ch = $(".num-item");
+  if (ch.length) {
+    const viewportHeight = $(window).height(); // Viewport Height
+    const scrolltop = $(window).scrollTop(); // Scroll Top
+    const y = $(element).offset().top;
+    const elementHeight = $(element).height();
 
-	// 반드시 요소가 화면에 보여야 할경우
-	if (check == "visible")
-		return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+    // 반드시 요소가 화면에 보여야 할경우
+    if (check == "visible")
+      return y < viewportHeight + scrolltop && y > scrolltop - elementHeight;
 
-	// 화면에 안보여도 요소가 위에만 있으면 (페이지를 로드할때 스크롤이 밑으로 내려가 요소를 지나쳐 버릴경우)
-	if (check == "above")
-		return ((y < (viewportHeight + scrolltop)));
+    // 화면에 안보여도 요소가 위에만 있으면 (페이지를 로드할때 스크롤이 밑으로 내려가 요소를 지나쳐 버릴경우)
+    if (check == "above") return y < viewportHeight + scrolltop;
+  }
 }
 let isVisible = false;
 
 //이벤트에 등록할 함수
-const func = function() {
-	if (!isVisible && checkVisible('#num-item')) {
-		increaseMathCount();
+const func = function () {
+  if (!isVisible && checkVisible("#num-item")) {
+    increaseMathCount();
 
-		isVisible = true;
-	}
+    isVisible = true;
+  }
 
-	// 만일 리소스가 로드가 되면 더이상 이벤트 스크립트가 있을 필요가 없으니 삭제
-	isVisible && window.removeEventListener('scroll', func);
-}
+  // 만일 리소스가 로드가 되면 더이상 이벤트 스크립트가 있을 필요가 없으니 삭제
+  isVisible && window.removeEventListener("scroll", func);
+};
 
 //스크롤 이벤트 등록
-window.addEventListener('scroll', func);
+window.addEventListener("scroll", func);
 
 function increaseMathCount() {
+  $(".nums").each(function () {
+    const $this = $(this),
+      countTo = $this.attr("data-count");
 
-	$('.nums').each(function() {
-		const $this = $(this),
-			countTo = $this.attr('data-count');
+    $({
+      countNum: $this.text(),
+    }).animate(
+      {
+        countNum: countTo,
+      },
+      {
+        duration: 2000,
+        easing: "linear",
+        step: function () {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete: function () {
+          $this.text(
+            this.countNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+          );
+          //3자리 마다 콤마 표시 적용
+        },
+      }
+    );
+  });
+  $(".yearNums").each(function () {
+    const $this = $(this),
+      countTo = $this.attr("data-count");
 
-		$({
-			countNum: $this.text()
-		}).animate({
-			countNum: countTo
-		}, {
-			duration: 2000,
-			easing: 'linear',
-			step: function() {
-				$this.text(Math.floor(this.countNum));
-			},
-			complete: function() {
-				$this.text(this.countNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-				//3자리 마다 콤마 표시 적용
-			}
-		});
-	});
-	$('.yearNums').each(function() {
-		const $this = $(this),
-			countTo = $this.attr('data-count');
-
-		$({
-			countNum: $this.text()
-		}).animate({
-			countNum: countTo
-		}, {
-			duration: 2000,
-			easing: 'linear',
-			step: function() {
-				$this.text(Math.floor(this.countNum));
-			},
-			complete: function() {
-				$this.text(this.countNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ''));
-				//3자리 마다 콤마 표시 적용
-			}
-		});
-	});
+    $({
+      countNum: $this.text(),
+    }).animate(
+      {
+        countNum: countTo,
+      },
+      {
+        duration: 2000,
+        easing: "linear",
+        step: function () {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete: function () {
+          $this.text(
+            this.countNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "")
+          );
+          //3자리 마다 콤마 표시 적용
+        },
+      }
+    );
+  });
 }
 function checkMobile() {
   var varUA = navigator.userAgent.toLowerCase(); //userAgent 媛� �산린

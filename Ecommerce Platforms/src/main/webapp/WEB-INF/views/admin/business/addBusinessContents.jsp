@@ -4,7 +4,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <script>
 	function fncAddPost(){
-		var businessContentsTitle = $("input[id='businessContentsTitle']").val();
+		var businessContentsTitle = $("[id=businessContentsTitle]").val();
 		var businessContentsContent = $('[id=businessContentsContent]').val();
 		var file = $('[id=file]').val();	
 
