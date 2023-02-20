@@ -138,6 +138,11 @@ public class BusinessDaoImpl implements BusinessDao {
 		sqlSession.delete("business.deleteChoiceBusinessContents", businessContentsNo);
 	}
 
+	@Override
+	public int TotalBusinessPost(int businessNo) {
+		return sqlSession.selectOne("business.TotalBusinessPost", businessNo);
+	}
+
 
 	
 }
