@@ -11,16 +11,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
-	<!-- jvectormap -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/jquery-jvectormap.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/AdminLTE.min.css">
-	<!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/_all-skins.min.css">
-	<link href="${pageContext.request.contextPath}/resources/css/admin.css" rel="stylesheet" type="text/css">
-	<link href="${pageContext.request.contextPath}/resources/css/jquery-ui.css" rel="stylesheet">
 	<!-- Google Font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 	
@@ -195,7 +185,7 @@
 				                        </td>
 				                        <td style="width:60px;">NO</td>
 				                        <td>제목</td>
-				                        <td style="width:250px;">연결주소</td>
+				                        <td style="width:250px; text-align:center;">고유번호</td>
 				                        <td style="width:100px;">type</td>
 				                        <td style="width:80px;">등록 글수</td>
 				                        <td style="width:220px;">명령</td>
@@ -218,7 +208,7 @@
 					                        </td>
 										  <td>${i}</td>
 										  <td align="left">${board.boardTitle}</td>
-										  <td align="left">http://localhost:8080/admin/board/postList?boardNo=${board.boardNo}]</td>
+										  <td align="left">${board.boardNo}</td>
 										  <td>
 											<c:if test="${board.boardType == 'list'}">
 										  		일반

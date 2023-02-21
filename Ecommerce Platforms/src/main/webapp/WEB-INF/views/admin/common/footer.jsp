@@ -5,6 +5,7 @@
 				<strong>NDC&C<a href="/admin">  All Rights Reserved. 2023  </a> Phone 031-712-8315 | Fax 031-789-3545</strong>
 			</footer>
 		</div>
+		<script src="${pageContext.request.contextPath }/resources/admin/js/script.js"></script>
 		<!-- jQuery 3 -->
 		<script src="${pageContext.request.contextPath}/resources/admin/js/jquery.min.js"></script>
 		<!-- Bootstrap 3.3.7 -->

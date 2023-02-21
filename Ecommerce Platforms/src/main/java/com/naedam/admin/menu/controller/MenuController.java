@@ -105,12 +105,12 @@ public class MenuController {
 	@RequestMapping(value="menu2")
 	public String listMenu2(@ModelAttribute("menu") Menu menu, Model model) throws Exception{
 		System.out.println("menu2 시작");
+		System.out.println("데이터 확인 === "+menu);
 		menu.setOrd(menu.getOrd()+1);
-		System.out.println("menu 체크 === "+menu);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("menu", menu);
 		Map<String, Object> resultMap = menuService.getMenuList2(map);
-		model.addAttribute("menu", menu);
+		model.addAttribute("menuData", menuService.getMenu(menu.getCode()));
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("list2", resultMap.get("list2"));			
 		return "admin/menu/menuList";
@@ -127,8 +127,10 @@ public class MenuController {
 	@RequestMapping(value="menuList")
 	public String menuList(Menu menu, Model model, HttpServletRequest request) throws Exception{
 		System.out.println("menuList 시작");
+		System.out.println("데이터 확인 === "+menu);
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> resultMap = menuService.getMenuList(map);
+		model.addAttribute("menuData", menuService.getMenu(menu.getCode()));
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("list2", resultMap.get("list2"));
 		return "admin/menu/menuList";

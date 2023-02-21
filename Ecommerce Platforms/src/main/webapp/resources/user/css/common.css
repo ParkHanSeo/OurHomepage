@@ -11,6 +11,7 @@
 	}
 
 BODY {overflow-y:scroll;}
+html {overflow-y:scroll;}
 .css-transitions-preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
