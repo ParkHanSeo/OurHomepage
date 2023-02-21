@@ -423,17 +423,16 @@
 }
 
 .top_visual_area.ceo_msg {
-  background: linear-gradient(293deg, #1592ce, #e8e8e8);
+  background: linear-gradient(222deg,#4f4f4f, #7c8389, transparent);
   background-size: cover;
 }
 .top_visual_area.ceo_msg .inner_container {
   height: 760px;
 }
 .top_visual_area.ceo_msg .ceo-img {
-  width: 48%;
-  height: 67%;
+  width: 36%;
   left: -4%;
-  top: 17%;
+  top: 11%;
   border-radius: 2%;
   position: absolute;
 }
@@ -749,7 +748,6 @@
     left: 3%;
     top: 42%;
     width: 375px;
-    height: 43%;
   }
   .ceo_msg-box {
     padding: 52px 0;
@@ -986,11 +984,10 @@
     background-size: cover;
   }
   .top_visual_area.ceo_msg .ceo-img {
-    width: 70%;
-    left: 16%;
+    width: 50%;
+    left: 25%;
     right: auto;
-    height: 60%;
-    top: 31%;
+    bottom: 0px;
   }
   .top_visual_area .ceo_msg-box {
     padding: 35px 0 0;
@@ -1225,8 +1222,6 @@
     width: 79%;
     left: 10%;
     right: auto;
-    height: 60%;
-    top: 31%;
     position: absolute;
   }
 }
