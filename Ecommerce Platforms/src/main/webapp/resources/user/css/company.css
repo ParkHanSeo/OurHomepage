@@ -423,7 +423,7 @@
 }
 
 .top_visual_area.ceo_msg {
-  background: linear-gradient(293deg, #1592ce, #707070);
+  background: linear-gradient(293deg, #1592ce, #e8e8e8);
   background-size: cover;
 }
 .top_visual_area.ceo_msg .inner_container {
