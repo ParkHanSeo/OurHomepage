@@ -146,7 +146,7 @@
 		}
 	</script>
 	
-	<script src="${pageContext.request.contextPath}/resources/admin/ckeditor/ckeditor.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/admin/ckeditor/ckeditor/ckeditor.js"></script>
 	
 <style>
 #searchBtn {

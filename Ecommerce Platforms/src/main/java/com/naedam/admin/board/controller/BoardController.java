@@ -199,7 +199,7 @@ public class BoardController {
 	public void imageUpload(HttpServletRequest request, HttpServletResponse response,
 							MultipartHttpServletRequest multiFile,
 							@RequestPart(value="upload", required = false) MultipartFile upload) throws Exception{
-		System.out.println("ckeditor 이미지 업로드 로그 확인 === "+upload);
+		System.out.println("ckeditor 이미지 업로드 로그 확인");
 		UUID uid = UUID.randomUUID();
 		OutputStream out = null;
 		PrintWriter printWriter = null;
@@ -213,7 +213,7 @@ public class BoardController {
 			String fileName = upload.getOriginalFilename(); 
 			byte[] bytes = upload.getBytes(); 
 			//이미지 경로 생성 
-			String path = request.getServletContext().getRealPath("resources/admin/imgs/imageBoard/ckeditorImg/");
+			String path = request.getServletContext().getRealPath("resources/imgs/imageBoard/ckeditorImg/");
 			// fileDir는 전역 변수라 그냥 이미지 경로 설정해주면 된다. 
 			String ckUploadPath = path + uid + "_" + fileName; 
 			File folder = new File(path); 
