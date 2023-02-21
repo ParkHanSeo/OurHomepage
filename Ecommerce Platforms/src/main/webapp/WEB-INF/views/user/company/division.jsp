@@ -44,7 +44,7 @@
                         <ul class="common-layout_2 is-vertical division_list">
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section1.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section1.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">전략기획팀</p>
@@ -59,7 +59,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section2.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section2.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Digital Twin 사업부</p>
@@ -74,7 +74,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section3.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section3.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">ICT 사업부</p>
@@ -89,7 +89,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section4.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section4.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Vision AI 사업부</p>
@@ -103,7 +103,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section5.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section5.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Cloud MSP 사업부</p>
@@ -117,7 +117,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section6.jpeg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section6.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">SI 사업부</p>

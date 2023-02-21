@@ -194,37 +194,37 @@
 }
 /* test */
 .qualify_1::before {
-  background-image: url(../images/employee/qualifiedEmployee_employee1.jpeg);
+  background-image: url(../images/employee/qualifiedEmployee_employee1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -45px;
 }
 .qualify_2::before {
-  background-image: url(../images/employee/qualifiedEmployee_employee2.jpeg);
+  background-image: url(../images/employee/qualifiedEmployee_employee2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -45px;
 }
 .qualify_3::before {
-  background-image: url(../images/employee/qualifiedEmployee_employee3.jpeg);
+  background-image: url(../images/employee/qualifiedEmployee_employee3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -45px;
 }
 .qualify_4::before {
-  background-image: url(../images/employee/qualifiedEmployee_employee4.jpeg);
+  background-image: url(../images/employee/qualifiedEmployee_employee4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -45px;
 }
 .qualify_5::before {
-  background-image: url(../images/employee/qualifiedEmployee_employee5.jpeg);
+  background-image: url(../images/employee/qualifiedEmployee_employee5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -45px;
 }
 .qualify_6::before {
-  background-image: url(../images/employee/qualifiedEmployee_employee6.jpeg);
+  background-image: url(../images/employee/qualifiedEmployee_employee6.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: -340px;
