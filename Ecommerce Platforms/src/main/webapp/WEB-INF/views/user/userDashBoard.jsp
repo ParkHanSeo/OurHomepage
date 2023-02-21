@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/main.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/main.js"></script>
   </head>
-  <body>
+  <body data-aos-easeing="easy" data-aos-duration="400" data-aos-delay="0">
     <div id="wrap">
    <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
       <section id="container">
