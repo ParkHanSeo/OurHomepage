@@ -55,7 +55,7 @@ window.onload=function(){
       <header id="header">
         <div class="inner">
           <h1 class="logo">
-            <a href="${pageContext.request.contextPath}/user/dashBoard">
+            <a href="${pageContext.request.contextPath}/">
               <img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/neadam_logo.png" alt="logo" class="basic_neadam" />
             </a>
           </h1>
