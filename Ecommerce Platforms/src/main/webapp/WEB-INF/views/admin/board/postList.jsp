@@ -222,12 +222,6 @@
 				                        <td>제목</td>
 				                        <td style="width:100px;">작성자</td>
 				                        <td style="width:140px;">등록일</td>
-				                        <c:if test="${board2.option.optionOrder eq 'y'}">
-					                        <td style="width:60px;">
-					                            <i onclick="fncDown();" name="up" class="fa fa-fw fa-arrow-circle-down cp" style="cursor:pointer;"></i>
-					                            <i onclick="fncUp();" class="fa fa-fw fa-arrow-circle-up cp" style="cursor:pointer;"></i>
-					                        </td>
-				                        </c:if>
 				                        <td style="width:80px;">명령</td>
 				                    </tr>
 			                    </thead>
@@ -263,12 +257,6 @@
 					                   			<td>
 						                        	${post.postDate}
 						                        </td>
-					                   			<c:if test="${board2.option.optionOrder eq 'y'}">
-						                   			<td>
-						                   				<input type="radio" name="order_code" value="${post.postAsc}" chack="">
-						                   				<input type="hidden" name="originNo" value="${post.postOriginNo}">
-						                   			</td>
-					                   			</c:if>
 					                   			<td>
 						                   			<button type="button" name="getPostBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs" value="${post.postNo}">상세보기
 						                   			<input type="hidden" class="post_member_no" value="${post.postMember.memberNo}"></button>
@@ -299,7 +287,6 @@
 	
 <jsp:include page="/WEB-INF/views/admin/board/addPost.jsp"/>
 <jsp:include page="/WEB-INF/views/admin/board/getPost.jsp"/>
-<jsp:include page="/WEB-INF/views/admin/board/addComment.jsp"/>
 <jsp:include page="/WEB-INF/views/admin/board/boardCopy.jsp"/>
 <jsp:include page="/WEB-INF/views/admin/board/boardChange.jsp"/>
 </div><!-- /.content-wrapper -->
