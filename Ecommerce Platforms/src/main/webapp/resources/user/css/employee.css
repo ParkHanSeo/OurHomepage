@@ -238,6 +238,7 @@
   height: 100%;
   background-size: cover;
   transition: 0.4s ease;
+  filter: contrast(0.6);
 }
 /* test rast */
 .employee_box {

@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/main.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/main.js"></script>
   </head>
-  <body>
+  <body data-aos-easeing="easy" data-aos-duration="400" data-aos-delay="0">
     <div id="wrap">
    <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
       <section id="container">
@@ -26,7 +26,7 @@
                            <div class="view" style="background-image: url(${pageContext.request.contextPath}/resources/user/images/main/${head.headImage});"></div>
                            <p class="blind">배경이미지 대체텍스트</p>
                            <div class="inner">
-                              <div class="visual_txt_area aos-init aos-animate" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
+                              <div class="visual_txt_area" data-aos="fade-up" data-aos-offset="0" data-aos-duration="400" data-aos-delay="300" data-aos-easing="linear">
                                  <div class="main-banner">
                                     <h2 class="tit-slide" style="white-space:pre-line;">${head.title}</h2>
                                     <p class="description" style="white-space:pre-line;">${head.content}</p>

@@ -30,7 +30,7 @@
 							<p>${recruitData.recruitTitle}</p>
 							<div>
 								<strong class="recruit_status">
-									<span class="closing">
+									<span class="closing">#contents .area_visual.visual_bg
 									<c:choose>
 										<c:when test="${recruitData.contentsStatus eq 'Y'}">채용중</c:when>
 										<c:when test="${recruitData.contentsStatus eq 'R'}">상시채용</c:when>
