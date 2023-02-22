@@ -663,7 +663,7 @@ h4 {
 }
 .core-wrap .core-list .solution {
   position: absolute;
-  top: -235%;
+  top: -105%;
   right: -253px;
   width: 162%;
   height: 600%;
@@ -855,16 +855,16 @@ h4 {
   stroke-dashoffset: 2200;
 }
 .core-wrap .cloud #cloudPath2 {
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1200;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2000;
 }
 .core-wrap .cloud #cloudPath3 {
   stroke-dasharray: 2200;
   stroke-dashoffset: 1800;
 }
 .core-wrap .cloud #cloudPath4 {
-  stroke-dasharray: 1500;
-  stroke-dashoffset: 1300;
+  stroke-dasharray: 3200;
+  stroke-dashoffset: 2800;
 }
 .core-wrap .cloud #cloudPath5 {
   stroke-dasharray: 2200;
@@ -875,12 +875,12 @@ h4 {
   stroke-dashoffset: 1200;
 }
 .core-wrap .cloud #cloudPath7 {
-  stroke-dasharray: 1100;
-  stroke-dashoffset: 1100;
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2000;
 }
 .core-wrap .cloud #cloudPath8 {
-  stroke-dasharray: 1600;
-  stroke-dashoffset: 1400;
+  stroke-dasharray: 3200;
+  stroke-dashoffset: 2800;
 }
 .core-wrap .cloud #cloudPath9 {
   stroke-dasharray: 2400;
@@ -1237,7 +1237,7 @@ h4 {
 }
 .culture-wrap .half-wrap .is-growth::before {
   background-image: url(../images/main/dashboard_recruit_section3.jpg);
-      background-position-x: right;
+  background-position-x: right;
 }
 
 .news-wrap .tit {
@@ -1925,7 +1925,7 @@ h4 {
   }
   .core-wrap .core-list .solution {
     position: absolute;
-    top: -246%;
+    top: -145%;
     right: -183px;
     width: 162%;
     height: 600%;
