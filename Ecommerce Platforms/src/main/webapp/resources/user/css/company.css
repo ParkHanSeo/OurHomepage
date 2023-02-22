@@ -310,7 +310,21 @@
   margin-top: 40px;
 }
 .business-wrapper {
-  height: 70%;
+    max-height: 1080px;
+/*     height: calc(100vh - 80px); */
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+}
+.business-wrapper video {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+     filter: contrast(0.6);
 }
 .visual-business_wrapper {
   overflow: hidden;
@@ -689,7 +703,7 @@
   padding-bottom: 100px;
 }
 .division_wrapper {
-  background-image: url(../images/company/division/divisionList_banner.jpeg);
+  background-image: url(../images/company/division/divisionList_banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
