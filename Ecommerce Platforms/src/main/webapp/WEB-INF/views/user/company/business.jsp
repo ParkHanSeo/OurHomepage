@@ -13,7 +13,7 @@
 <meta name="description" content="글로벌 경쟁력을 갖춘 성장 파트너 내담씨앤씨를 소개합니다.">
 <meta property="og:description" content="글로벌 경쟁력을 갖춘 성장 파트너 내담씨앤씨를 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 회사개요, 내담 회사개요, ndcnc 회사개요, 내담C&C 회사개요">
-<meta property="og:url" content="https://ndcc.co.kr/user/company/businessList">
+<meta property="og:url" content="http://ndcc.co.kr/user/company/businessList">
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/partnerShip.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/company.css">

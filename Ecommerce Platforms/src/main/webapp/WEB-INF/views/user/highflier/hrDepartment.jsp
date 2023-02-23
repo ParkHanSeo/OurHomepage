@@ -13,7 +13,7 @@
 <meta name="description" content="내담씨앤씨의 인사제도를 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 인사제도를 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담C&C 신입사원, 내담씨앤씨 인사제도, 내담씨앤씨 인사, 내담C&C 인사제도, 내담C&C 인사">
-<meta property="og:url" content="https://ndcc.co.kr/user/highflier/qualifiedEmployee">
+<meta property="og:url" content="http://ndcc.co.kr/user/highflier/hrDepartment">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/recruit.css">

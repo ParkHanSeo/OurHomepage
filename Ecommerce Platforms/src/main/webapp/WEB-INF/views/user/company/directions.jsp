@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨는 판교 본사, 서울 지사를 두고 있습니다.">
 <meta property="og:description" content="내담씨앤씨는 판교 본사, 서울 지사를 두고 있습니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 본사, 내담씨앤씨본사, 내담C&C 본사, 내담C&C본사, 내담 본사, 내담본사, 내담씨앤씨 지사, 내담씨앤씨지사, 내담C&C 지사, 내담C&C지사, 내담 지사, 내담지사">
-<meta property="og:url" content="https://ndcc.co.kr/user/company/directionsList">
+<meta property="og:url" content="http://ndcc.co.kr/user/company/directionsList">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/location.css">
