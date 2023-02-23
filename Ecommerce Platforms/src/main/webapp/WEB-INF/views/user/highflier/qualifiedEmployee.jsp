@@ -13,7 +13,7 @@
 <meta name="description" content="내담씨앤씨는 이러한 인재를 찾고 있습니다.">
 <meta property="og:description" content="내담씨앤씨는 이러한 인재를 찾고 있습니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담C&C 신입사원, 내담씨앤씨 인재상, 내담씨앤씨 인재, 내담C&C 인재상, 내담C&C 인재">
-<meta property="og:url" content="https://ndcc.co.kr/user/highflier/qualifiedEmployee">
+<meta property="og:url" content="http://ndcc.co.kr/user/highflier/qualifiedEmployee">
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/employee.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />

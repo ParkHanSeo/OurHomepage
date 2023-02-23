@@ -7,12 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport"content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
 <meta name="robots" content="index,nofollow">
-<meta name="title" content="사업소개 | 사업소개 | Consulting | 내담씨앤씨">
-<meta property="og:title" content="사업소개 | 사업소개 | Consulting | 내담씨앤씨">
-<meta name="description" content="내담씨앤씨의 Consulting을 소개합니다.">
-<meta property="og:description" content="내담씨앤씨의 ConsultingConsulting을 소개합니다.">
-<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 Consulting, 내담C&C Consulting, 내담 Consulting, 내담씨앤씨 컨설팅, 내담C&C 컨설팅, 내담 컨설팅">
-<meta property="og:url" content="https://ndcc.co.kr/user/introduction/consulting">
+<meta name="title" content="사업소개 | 사업소개 | 내담씨앤씨">
+<meta property="og:title" content="사업소개 | 사업소개 | 내담씨앤씨">
+<meta name="description" content="내담씨앤씨의 사업들을 소개합니다.">
+<meta property="og:description" content="내담씨앤씨의 사업들을 소개합니다.">
+<meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 사업소개, 내담C&C 사업소개, 내담 사업소개">
+<meta property="og:url" content="http://ndcc.co.kr/user/introduction/businessIntroduction">
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>

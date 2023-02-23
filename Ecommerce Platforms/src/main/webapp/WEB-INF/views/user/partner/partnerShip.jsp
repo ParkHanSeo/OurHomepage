@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨의 파트너쉽을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 파트너쉽을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 PartnerShip, 내담C&C PartnerShip, 내담 PartnerShip, 내담씨앤씨 파트너쉽, 내담C&C 파트너쉽, 내담 파트너쉽">
-<meta property="og:url" content="https://ndcc.co.kr/user/introduction/partnerShipList">
+<meta property="og:url" content="http://ndcc.co.kr/user/introduction/partnerShipList">
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/partnerShip.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />

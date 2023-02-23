@@ -13,7 +13,7 @@
 <meta name="description" content="내담씨앤씨의 사업부를 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 사업부를 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 사업부, 내담C&C 사업부, 내담 사업부, 내담씨앤씨 사업부소개, 내담C&C 사업부소개, 내담 사업부소개">
-<meta property="og:url" content="https://ndcc.co.kr/user/company/divisionList">
+<meta property="og:url" content="http://ndcc.co.kr/user/company/divisionList">
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/company.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />

@@ -12,7 +12,7 @@
 <meta name="description" content="내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
 <meta property="og:description" content="내담씨앤씨는 진취적이며 프로페셔널한 인재에게 언제나 열려 있습니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 신입사원, 내담채용, 내담 신입 채용, 내담공채, 내담씨앤씨 신입 채용, 내담C&C 채용, 내담씨앤씨 경력직 채용, 내담C&C 경력채용, it 경력직 공고, 내담 경력 채용">
-<meta property="og:url" content="https://ndcc.co.kr/user/recruit/userRecruitList">
+<meta property="og:url" content="http://ndcc.co.kr/user/recruit/userRecruitList">
 
 
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
