@@ -179,26 +179,6 @@
 	            <div class="box">
 	                <div class="box-body">
 	                    <label style="margin-top:5px;">총 ${count}건</label>
-	                    <form name="searchForm" method="post" action="/admin/board/postList?${_csrf.parameterName}=${_csrf.token}">
-		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
-		                    	<input type="hidden" class="businessNo" value="${business.businessNo}">
-		                    	<input type="hidden" name="cPage">
-		                        <div class="has-feedback">
-			                        <span>
-			                      	  <input type="text" name="searchKeyword" id="searchKeyword" class="form-control input-sm" placeholder="검색" value=""/>
-			                      	  <span class="glyphicon glyphicon-search form-control-feedback"></span>
-			                        </span>
-		                        </div>
-		                    </div>
-		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
-		                        <div class="has-feedback">
-			                        <select name="searchType" class="form-control input-sm" style="float:left; width:130px;">
-			      						<option value="1">제목</option>      
-			      						<option value="2">작성자</option>                        
-			      					</select>
-		                        </div>
-		                    </div>
-	                    </form>
 	                    <table class="table table-bordered table-hover">
 		                    <form name="form_list" method="post">
 			                    <thead>
@@ -220,7 +200,7 @@
 				                        </td>
 				                        <td style="width:60px;">NO</td>
 				                        <td>제목</td>
-				                        <td style="width:100px;">작성자</td>
+				                        <td style="width:300px;">URL</td>
 				                        <td style="width:140px;">등록일</td>
 				                        <td style="width:80px;">등록</td>
 				                        <td style="width:80px;">명령</td>
@@ -253,7 +233,9 @@
 				                   				</c:if>                     				     				
 				                   				${businessPost.businessPostTitle}
 				                   			</td>
-				                   			<td>${businessPost.businessMember.memberNo}</td>
+				                   			<td>
+				                   				<a href="/user/introduction/introduction?businessPostNo=${businessPost.businessPostNo}" target="_blank">/user/introduction/introduction?businessPostNo=${businessPost.businessPostNo}</a>
+				                   			</td>
 				                   			<td>${businessPost.inDtm}</td>
 				                   			<td>
 				                   				<button type="button" onclick="fncBusinessContents(${businessPost.businessPostNo})" class="btn btn-primary btn-xs" value="${businessPost.businessPostNo}">내용등록</button>

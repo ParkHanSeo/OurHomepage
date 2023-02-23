@@ -149,8 +149,7 @@
 				                        </td>
 				                        <td style="width:60px;">NO</td>
 				                        <td>제목</td>
-				                        <td style="width:250px;">연결주소</td>
-				                        <td style="width:220px;">명령</td>
+				                        <td style="width:150px;">명령</td>
 				                    </tr>
 			                    </thead>
 			                    <tbody>
@@ -170,11 +169,7 @@
 					                        </td>
 										  <td>${i}</td>
 										  <td align="left">${business.businessTitle}</td>
-										  <td align="left">http://localhost:8080/admin/board/postList</td>
 										  <td>
-					                        <button type="button" onclick="onclickView(${business.businessNo});" class="btn btn-success btn-xs">바로가기</button>
-					                        <button type="button" onclick="copyURL(${business.businessNo});" class="btn btn-warning btn-xs" value="${business.businessNo}">
-					                        	<input type="hidden" name="hiddenBusinessNo2" value="${business.businessNo}" />링크복사</button>
 					                        <button type="button" class="btn btn-primary btn-xs" name="updateBusiness" data-toggle="modal" data-target="#updateBusinessModal">
 					                        	<input type="hidden" name="hiddenBusinessNo" value="${business.businessNo}" />상세보기</button>							  
 										  </td>

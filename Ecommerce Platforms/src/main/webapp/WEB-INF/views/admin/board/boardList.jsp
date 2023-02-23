@@ -160,7 +160,7 @@
 				                        </td>
 				                        <td style="width:60px;">NO</td>
 				                        <td>제목</td>
-				                        <td style="width:250px; text-align:center;">고유번호</td>
+				                        <td style="width:250px; text-align:center;">URL</td>
 				                        <td style="width:80px;">등록 글수</td>
 				                        <td style="width:220px;">명령</td>
 				                    </tr>
@@ -170,19 +170,21 @@
 			                    	<c:forEach var="board" items="${list}" varStatus="status" >
 				                    	<c:set var="i" value="${ i+1 }" />
 										<tr>
-					                        <td>
-						                        <div>
-						                        	<input type="checkbox" class="boardNo" name="boardNo"  value="${board.boardNo}" />
-						                        	<script>
-														$(".boardNo").click(function() {
-															$("#allCheck").prop("checked", false);
-														});
-													</script>
-												</div>
-					                        </td>
+				                          <td>
+					                        <div>
+					                        	<input type="checkbox" class="boardNo" name="boardNo"  value="${board.boardNo}" />
+					                        	<script>
+													$(".boardNo").click(function() {
+														$("#allCheck").prop("checked", false);
+													});
+												</script>
+											</div>
+				                          </td>
 										  <td>${i}</td>
 										  <td align="left">${board.boardTitle}</td>
-										  <td align="left">${board.boardNo}</td>
+										  <td align="left">
+										  	<a href="/user/notice/noticeList/${board.boardNo}" target="_blank">/user/notice/noticeList/${board.boardNo}</a>
+										  </td>
 										  <td>${postCount[i-1]}</td>
 										  <td>
 					                        <button type="button" onclick="onclickView(${board.boardNo});" class="btn btn-success btn-xs">바로가기</button>
