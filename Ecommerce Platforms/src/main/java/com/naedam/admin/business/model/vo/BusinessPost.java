@@ -23,6 +23,8 @@ public class BusinessPost implements Serializable {
 	private String businessPostText1;
 	private String businessPostText2;
 	private String businessPostContents;
+	private String businessPostBottomTitle;
+	private String businessPostBottomContents;
 	private String inDtm;
 	private String businessPostIcon;
 	private String businessPostImg;

@@ -172,27 +172,6 @@
 	        <div class="col-xs-12">
 	            <div class="box">
 	                <div class="box-body">
-	                    <label style="margin-top:5px;">총  건</label>
-	                    <form name="searchForm" method="post" action="/admin/board/postList?${_csrf.parameterName}=${_csrf.token}">
-		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
-		                    	<input type="hidden" class="businessPostNo" value="${businessPost.businessPostNo}">
-		                    	<input type="hidden" name="cPage">
-		                        <div class="has-feedback">
-			                        <span>
-			                      	  <input type="text" name="searchKeyword" id="searchKeyword" class="form-control input-sm" placeholder="검색" value=""/>
-			                      	  <span class="glyphicon glyphicon-search form-control-feedback"></span>
-			                        </span>
-		                        </div>
-		                    </div>
-		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
-		                        <div class="has-feedback">
-			                        <select name="searchType" class="form-control input-sm" style="float:left; width:130px;">
-			      						<option value="1">제목</option>      
-			      						<option value="2">작성자</option>                        
-			      					</select>
-		                        </div>
-		                    </div>
-	                    </form>
 	                    <table class="table table-bordered table-hover">
 		                    <form name="form_list" method="post">
 			                    <thead>
@@ -214,6 +193,7 @@
 				                        </td>
 				                        <td style="width:60px;">NO</td>
 				                        <td>제목</td>
+				                        <td style="width:70px;">구분</td>
 				                        <td style="width:140px;">등록일</td>
 				                        <td style="width:80px;">명령</td>
 				                    </tr>
@@ -241,6 +221,12 @@
 					                        	</td>
 					                        	<td>${ i }</td>
 					                        	<td>${businessContents.businessContentsTitle}</td>
+					                        <c:if test="${businessContents.businessContentsType eq '1'}">
+					                        	<td>상단</td>
+					                        </c:if>
+					                        <c:if test="${businessContents.businessContentsType eq '2'}">
+					                        	<td>하단</td>
+					                        </c:if>					                        
 					                        	<td>${businessContents.inDtm}</td>
 					                        	<td>
 						                   			<button type="button" id="getBusinessContentsBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs getBusinessContents" value="${businessContents.businessContentsNo}">상세보기

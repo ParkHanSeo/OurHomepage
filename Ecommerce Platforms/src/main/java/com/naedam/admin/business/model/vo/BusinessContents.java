@@ -25,7 +25,8 @@ public class BusinessContents implements Serializable {
 	private int businessContentsNo;			
 	private BusinessPost businessPost;
 	private String businessContentsTitle; 	
-	private String businessContentsContent;	
+	private String businessContentsContent;
+	private String businessContentsType;
 	private String image;
 	private String inDtm;
 	

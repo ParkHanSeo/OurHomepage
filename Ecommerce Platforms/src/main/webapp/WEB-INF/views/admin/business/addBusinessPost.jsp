@@ -33,14 +33,14 @@
 			alert("상세페이지 내용1을 입력하셔야 합니다.");
 			return;
 		}
-		if(icon == null || icon == ''){
+		/* if(icon == null || icon == ''){
 			alert("아이콘을 첨부하셔야 합니다.");
 			return;
 		}
 		if(img == null || img == ''){
 			alert("이미지을 첨부하셔야 합니다.");
 			return;
-		}
+		} */
 
 		
 		alert("게시글이 등록 되었습니다.")
@@ -81,21 +81,31 @@
 				            <tr>
 				            	<td class="menu">내용</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostContents" id="businessPostContents" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostContents" id="businessPostContents" rows="5" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 							<tr>
 				            	<td class="menu">상세페이지 내용1</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText1" id="businessPostText1" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostText1" id="businessPostText1" rows="5" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
 				            <tr>
 				            	<td class="menu">상세페이지 내용2</td>
 				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostText2" id="businessPostText2" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                	<textarea name="businessPostText2" id="businessPostText2" rows="5" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
-				            </tr>			            
+				            </tr>
+							<tr>
+				                <td class="menu">하단제목</td>
+				                <td align="left"><input type="text" name="businessPostBottomTitle" id="businessPostBottomTitle" class="form-control input-sm"></td>
+				            </tr>				            
+				            <tr>
+				            	<td class="menu">하단내용</td>
+				                <td colspan="2" style="text-align:left">
+				                	<textarea name="businessPostBottomContents" id="businessPostBottomContents" rows="5" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
+				                </td>
+				            </tr>					            				            			            
 		            	    <tr>
 				            	<td class="menu">아이콘파일</td>
 				            	<td>

@@ -5,15 +5,17 @@
 <mapper namespace="business">
 
 	<resultMap id="BusinessPostMap" type="businessPost" >
-		<result property="businessPostNo"					column="BUSINESS_POST_NO"			jdbcType="NUMERIC"></result>
-		<result property="businessPostTitle"				column="BUSINESS_POST_TITLE"		jdbcType="VARCHAR"></result>
-		<result property="businessPostSubTitle"				column="BUSINESS_POST_SUB_TITLE"	jdbcType="VARCHAR"></result>
-		<result property="businessPostContents"				column="BUSINESS_POST_CONTENTS"		jdbcType="VARCHAR"></result>
-		<result property="businessPostText1"				column="BUSINESS_POST_TEXT_1"		jdbcType="VARCHAR"></result>
-		<result property="businessPostText2"				column="BUSINESS_POST_TEXT_2"		jdbcType="VARCHAR"></result>
-		<result property="inDtm"							column="IN_DTM"						jdbcType="VARCHAR"></result>
-		<result property="businessPostIcon"					column="BUSINESS_POST_ICON"			jdbcType="VARCHAR"></result>
-		<result property="businessPostImg"					column="BUSINESS_POST_IMG"			jdbcType="VARCHAR"></result>
+		<result property="businessPostNo"					column="BUSINESS_POST_NO"				jdbcType="NUMERIC"></result>
+		<result property="businessPostTitle"				column="BUSINESS_POST_TITLE"			jdbcType="VARCHAR"></result>
+		<result property="businessPostSubTitle"				column="BUSINESS_POST_SUB_TITLE"		jdbcType="VARCHAR"></result>
+		<result property="businessPostContents"				column="BUSINESS_POST_CONTENTS"			jdbcType="VARCHAR"></result>
+		<result property="businessPostText1"				column="BUSINESS_POST_TEXT_1"			jdbcType="VARCHAR"></result>
+		<result property="businessPostText2"				column="BUSINESS_POST_TEXT_2"			jdbcType="VARCHAR"></result>
+		<result property="businessPostBottomTitle"			column="BUSINESS_POST_BOTTOM_TITLE"		jdbcType="VARCHAR"></result>
+		<result property="businessPostBottomContents"		column="BUSINESS_POST_BOTTOM_CONTENTS"	jdbcType="VARCHAR"></result>
+		<result property="inDtm"							column="IN_DTM"							jdbcType="VARCHAR"></result>
+		<result property="businessPostIcon"					column="BUSINESS_POST_ICON"				jdbcType="VARCHAR"></result>
+		<result property="businessPostImg"					column="BUSINESS_POST_IMG"				jdbcType="VARCHAR"></result>
 			
 		<association property="business" javaType="business" >
 			<result property="businessNo"			column="BUSINESS_NO"				jdbcType="NUMERIC"></result>
@@ -29,6 +31,7 @@
 		<result property="businessContentsNo"		column="BUSINESS_CONTENTS_NO"		jdbcType="NUMERIC"></result>
 		<result property="businessContentsTitle"	column="BUSINESS_CONTENTS_TITLE"	jdbcType="VARCHAR"></result>
 		<result property="businessContentsContent"	column="BUSINESS_CONTENTS_CONTENT"	jdbcType="VARCHAR"></result>
+		<result property="businessContentsType"		column="BUSINESS_CONTENTS_TYPE"		jdbcType="VARCHAR"></result>
 		<result property="image"					column="IMAGE"						jdbcType="VARCHAR"></result>
 		<result property="inDtm"					column="IN_DTM"						jdbcType="VARCHAR"></result>
 			
@@ -39,6 +42,8 @@
 			<result property="businessPostContents"				column="BUSINESS_POST_CONTENTS"		jdbcType="VARCHAR"></result>
 			<result property="businessPostText1"				column="BUSINESS_POST_TEXT_1"		jdbcType="VARCHAR"></result>
 			<result property="businessPostText2"				column="BUSINESS_POST_TEXT_2"		jdbcType="VARCHAR"></result>
+			<result property="businessPostBottomTitle"			column="BUSINESS_POST_BOTTOM_TITLE"		jdbcType="VARCHAR"></result>
+			<result property="businessPostBottomContents"		column="BUSINESS_POST_BOTTOM_CONTENTS"	jdbcType="VARCHAR"></result>
 			<result property="inDtm"							column="IN_DTM"						jdbcType="VARCHAR"></result>
 			<result property="businessPostIcon"					column="BUSINESS_POST_ICON"			jdbcType="VARCHAR"></result>
 		</association>	
@@ -69,6 +74,8 @@
 		 BUSINESS_POST_CONTENTS,
 		 BUSINESS_POST_TEXT_1,
 		 BUSINESS_POST_TEXT_2,
+		 BUSINESS_POST_BOTTOM_TITLE,
+		 BUSINESS_POST_BOTTOM_CONTENTS,
 		 IN_DTM,
 		 BUSINESS_POST_ICON,
 		 BUSINESS_POST_IMG,
@@ -80,6 +87,8 @@
 	     #{businessPostContents},
 	     #{businessPostText1},
 	     #{businessPostText2},
+	     #{businessPostBottomTitle},
+	     #{businessPostBottomContents}
 	     <if test="inDtm == null or inDtm == ''">
 	   	  sysdate(),
 	     </if>
@@ -98,7 +107,8 @@
 	<insert id="addBusinessContents" parameterType="businessContents">
 		INSERT INTO business_contents
 		(
-		BUSINESS_POST_NO, 
+		BUSINESS_POST_NO,
+		BUSINESS_CONTENTS_TYPE, 
 		BUSINESS_CONTENTS_TITLE, 
 		BUSINESS_CONTENTS_CONTENT, 
 		IMAGE, 
@@ -106,7 +116,8 @@
 		)
 		VALUES
 		(
-		#{businessPost.businessPostNo}, 
+		#{businessPost.businessPostNo},
+		#{businessContentsType},
 		#{businessContentsTitle}, 
 		#{businessContentsContent}, 
 		#{image}, 
@@ -188,6 +199,8 @@
 			BUSINESS_POST_CONTENTS = #{businessPostContents},
 			BUSINESS_POST_TEXT_1 = #{businessPostText1},
 			BUSINESS_POST_TEXT_2 = #{businessPostText2},
+			BUSINESS_POST_BOTTOM_TITLE = #{businessPostBottomTitle},
+			BUSINESS_POST_BOTTOM_CONTENTS = #{businessPostBottomContents},
 			BUSINESS_POST_ICON = #{businessPostIcon},
 			BUSINESS_POST_IMG = #{businessPostImg}
 		</set>
@@ -196,7 +209,8 @@
 	
 	<update id="updateBusinessContents" parameterType="businessContents">
 		UPDATE business_contents
-		<set> 
+		<set>
+			BUSINESS_CONTENTS_TYPE = #{businessContentsType},
 			BUSINESS_CONTENTS_TITLE = #{businessContentsTitle}, 
 			BUSINESS_CONTENTS_CONTENT = #{businessContentsContent}, 
 			IMAGE = #{image}

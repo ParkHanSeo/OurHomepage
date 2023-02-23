@@ -150,8 +150,6 @@
 				                        <td style="width:60px;">NO</td>
 				                        <td>제목</td>
 				                        <td style="width:250px;">연결주소</td>
-				                        <td style="width:100px;">type</td>
-				                        <td style="width:80px;">등록 글수</td>
 				                        <td style="width:220px;">명령</td>
 				                    </tr>
 			                    </thead>
@@ -174,10 +172,6 @@
 										  <td align="left">${business.businessTitle}</td>
 										  <td align="left">http://localhost:8080/admin/board/postList</td>
 										  <td>
-											0
-										  </td>
-										  <td></td>
-										  <td>
 					                        <button type="button" onclick="onclickView(${business.businessNo});" class="btn btn-success btn-xs">바로가기</button>
 					                        <button type="button" onclick="copyURL(${business.businessNo});" class="btn btn-warning btn-xs" value="${business.businessNo}">
 					                        	<input type="hidden" name="hiddenBusinessNo2" value="${business.businessNo}" />링크복사</button>
@@ -191,7 +185,7 @@
 	                    </form>
 	                    <br>
 	                    <button type="button" id="deleteChoiceBusiness" class="btn btn-danger btn-sm"><i class="fa fa-minus-square"></i> 선택삭제</button>
-	                    <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalRegister"><i class="fa fa-plus-square"></i> 게시판 생성</button> -->
+	                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalRegister"><i class="fa fa-plus-square"></i> 게시판 생성</button>
 	                </div><!-- /.box-body -->
 	            </div><!-- /.box -->
 	        </div><!-- /.col-xs-12 -->

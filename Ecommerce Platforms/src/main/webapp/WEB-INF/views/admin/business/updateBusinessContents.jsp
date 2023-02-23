@@ -66,7 +66,7 @@
 					$("[id=businessContentsTitle2]").val(JSONData.businessContentsTitle);
 					$('[id=businessContentsContent2]').text(JSONData.businessContentsContent);
 					$(".businessContentsNo").val(JSONData.businessContentsNo);
-					
+					$('[id=businessContentsType2]').val(JSONData.businessContentsType).selected = true;
 					if(JSONData.image != null){
 						var image = "'${pageContext.request.contextPath}/resources/user/images/introduction/"+JSONData.image+"'"
 						if(JSONData.image != null && JSONData.image != ''){
@@ -133,6 +133,15 @@
 				                <td class="menu">작성자</td>
 				                <td align="left"><input type="text" name="name" id="name" class="form-control input-sm"></td>
 				            </tr>
+				            <tr>
+				                <td class="menu">분류<span class="text-light-blue"></span></td>
+				                <td colspan="3">
+				                	<select name="businessContentsType" id="businessContentsType2" class="form-control input-sm" style="width:120px;">
+				      					<option value="1">상단</option>      
+				      					<option value="2">하단</option>      
+				      				</select>
+				                </td>
+				            </tr>				            
 							<tr>
 				                <td class="menu">제목</td>
 				                <td align="left">

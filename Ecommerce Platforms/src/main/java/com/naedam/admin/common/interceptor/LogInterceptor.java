@@ -17,7 +17,7 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		log.debug("============ {} ===============", request.getRequestURI());
+		log.debug("============ {preHandle} ===============", request.getRequestURI());
 		
 		return super.preHandle(request, response, handler);
 	}
@@ -29,17 +29,15 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
 		
 		super.postHandle(request, response, handler, modelAndView);
 		log.debug("-------------------------------");
-		log.debug("modelAndView = {}", modelAndView);
+		log.debug("modelAndView = {postHandle}", modelAndView);
 		log.debug("-------------------------------");
 		
-		// 메뉴 관리 -> 태그 정보 넘기는 지점.
-		//modelAndView.addObject("test", "<strong>testtesttest</strong>");
 	}
 
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		log.debug("_____________ view ____________");
+		log.debug("_____________afterCompletion view ____________");
 		super.afterCompletion(request, response, handler, ex);
 		log.debug("=========== end ===============");
 	}
