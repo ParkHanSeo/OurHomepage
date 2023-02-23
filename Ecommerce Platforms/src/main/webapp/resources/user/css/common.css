@@ -1011,7 +1011,7 @@ img {
   padding: 64px 0;
 }
 .layout_section_outer.type12 {
-  padding: 160px 0 0;
+  padding: 40px 0 0 0;
 } /* 모바일 120px 0 0 */
 .layout_section_outer.type13 {
   padding: 0 0 160px;
@@ -1369,10 +1369,11 @@ img {
 }
 .card-ui .desc_box .ui_category {
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 26px;
   letter-spacing: -0.2px;
-  color: #2b91fe;
+  color: #000;
+  font-weight: bold;
 }
 .card-ui .desc_box .ui_title {
   margin-top: 12px;

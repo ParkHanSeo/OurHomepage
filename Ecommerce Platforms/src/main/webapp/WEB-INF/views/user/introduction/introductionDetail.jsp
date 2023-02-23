@@ -12,8 +12,8 @@
 <meta name="description" content="내담씨앤씨의 ${businessPost.businessPostTitle}을 소개합니다.">
 <meta property="og:description" content="내담씨앤씨의 ${businessPost.businessPostTitle}을 소개합니다.">
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 ${businessPost.businessPostTitle}, 내담C&C ${businessPost.businessPostTitle}, 내담 ${businessPost.businessPostTitle}">
-<meta property="og:url" content="https://ndcc.co.kr/user/introduction//introduction?businessPostNo=${businessPost.businessPostNo}">
-
+<meta property="og:url" content="http://ndcc.co.kr/user/introduction//introduction?businessPostNo=${businessPost.businessPostNo}">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/company.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
 </head>
 <body>
@@ -44,27 +44,62 @@
                         <div class="layout_body">
                             <ol class="difference_list">
                             	<c:forEach var="businessContents" items="${businessContentsList}" varStatus="status" >
-                            		<c:set var="i" value="${ i+1 }" />
-                            		<c:if test="${i%2 == 1}">
-	                            		<li>
+                            		<c:if test="${businessContents.businessContentsType eq '1'}">
+	                            		<c:set var="i" value="${ i+1 }" />
+	                            		<c:if test="${i%2 == 1}">
+		                            		<li>
+	                            		</c:if>
+	                            		<c:if test="${i%2 == 0}">
+	                            			<li class="is-right">
+	                            		</c:if>
+			                                    <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+			                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/${businessContents.image}" alt="">
+			                                    </div>
+			                                    <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
+			                                        <p class="difference_title" style="white-space:pre-line;">${businessContents.businessContentsTitle}</p>
+			                                        <p class="difference_desc" style="white-space:pre-line;">${businessContents.businessContentsContent}</p>
+			                                    </div>
+			                                </li>
                             		</c:if>
-                            		<c:if test="${i%2 == 0}">
-                            			<li class="is-right">
-                            		</c:if>
-		                                    <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-		                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/${businessContents.image}" alt="">
-		                                    </div>
-		                                    <div class="difference_box aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-		                                        <p class="difference_title" style="white-space:pre-line;">${businessContents.businessContentsTitle}</p>
-		                                        <p class="difference_desc" style="white-space:pre-line;">${businessContents.businessContentsContent}</p>
-		                                    </div>
-		                                </li>
                             	</c:forEach>
                             </ol>
                         </div>
                     </div>
                 </div><!-- // .biz_difference -->
             </div><!-- // #contents -->
+            <div class="layout_section_outer card-ui type12" data-js="anchor-target">
+           		<div class="inner_container">
+           		<div class="layout_head">
+                            <p class="businessList_top_txt1">
+                            	${businessPost.businessPostBottomTitle}
+                            </p>
+                            <p class="businessList_top_txt2">
+                                ${businessPost.businessPostBottomContents}
+                            </p>
+                        </div>
+					<div class="layout_body">
+	    				<ul class="common-layout_3">
+	       					<li class="items">
+	       						<c:forEach var="businessContents" items="${businessContentsList}" varStatus="status" >
+	       							<c:if test="${businessContents.businessContentsType eq '2'}">
+			            				<div class="image_box">
+											<a href="#" onclick="return false;">
+												<div class="img_cover">
+									 				<img src="${pageContext.request.contextPath}/resources/user/images/introduction/${businessContents.image}">
+												</div>
+											</a>
+										</div>
+				            			<div class="desc_box">
+					                		<p class="ui_category" onclick="return false;">${businessContents.businessContentsTitle }</p>
+					                		<p class="ui_title">${businessContents.businessContentsContent}</p>
+				            			</div>
+		            			</c:if>
+	            			</c:forEach>
+				        </li>
+				    </ul>
+				</div>
+                    </div>
+                </div>
         </section><!-- // #container -->
     </div><!-- // #wrap -->
   <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
