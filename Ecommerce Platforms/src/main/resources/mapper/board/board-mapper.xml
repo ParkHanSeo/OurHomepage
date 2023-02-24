@@ -189,6 +189,7 @@
 				board_no,
 				board_title
 		FROM	board
+		WHERE   locale = #{locale}
 		ORDER BY board_no ASC	
 	</select>
 	

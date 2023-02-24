@@ -184,8 +184,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public List<Board> getBoardTitle() throws Exception {
-		return boardDao.getBoardTitle();
+	public List<Board> getBoardTitle(String locale) throws Exception {
+		return boardDao.getBoardTitle(locale);
 	}
 
 	@Override

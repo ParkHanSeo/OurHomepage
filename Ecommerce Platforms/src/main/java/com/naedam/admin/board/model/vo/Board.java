@@ -27,6 +27,7 @@ public class Board implements Serializable {
 	private String boardContents;	//게시판 내용
 	private Member boardMemberNo;	//회원 데이터
 	private int count;
+	private String locale;
 	
 	
 	

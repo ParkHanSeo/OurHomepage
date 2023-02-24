@@ -67,7 +67,7 @@ public class BoardController {
 		boardMap.put("boardOption", boardOption);
 		boardMap.put("mode", mode);
 		boardService.boardProcess(boardMap);
-		return "redirect:/admin/board/listBoard";
+		return "redirect:/admin/board/listBoard?locale="+board.getLocale();
 	}
 	
 	/***
@@ -98,7 +98,7 @@ public class BoardController {
 		postMap.put("filePath", filePath);
 		postMap.put("secNo", secNo);
 		boardService.postProcess(postMap);
-		return "redirect:/admin/board/postList?boardNo="+board.getBoardNo();
+		return "redirect:/admin/board/postList?boardNo="+board.getBoardNo()+"&locale="+post.getLocale();
 	}
 	
 	/***
@@ -109,22 +109,25 @@ public class BoardController {
 	 * @throws Exception
 	 */
 	@GetMapping("listBoard")
-	public String listBoard(@ModelAttribute("comm") Comm comm, Model model) throws Exception {
+	public String listBoard(@ModelAttribute("comm") Comm comm, Model model,
+							@RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception {
 		
 		//게시글 수
 		//각 게시판마다 게시글 수가 필요하여 List로 게시글 수를 뽑아와 List에 add하는 방식
 		//List postCount = new ArrayList();
-		List<Board> board = boardService.getBoardTitle();
+		List<Board> board = boardService.getBoardTitle(locale);
 		//게시판 리스트
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("board", board);
+		map.put("locale", locale);
 		Map<String, Object> resultMap = boardService.getBoardList(map);
 		Page resultPage = new Page( comm.getCurrentPage(), ((Integer)resultMap.get("totalCount")).intValue(), pageUnit, pageSize);
 		model.addAttribute("list", resultMap.get("list"));
 		model.addAttribute("recruitList", resultMap.get("recruitList"));
 		model.addAttribute("resultPage", resultPage);
 		model.addAttribute("comm", comm);
+		model.addAttribute("locale", locale);
 		model.addAttribute("postCount", resultMap.get("postCount"));
 		
 		return "admin/board/boardList";
@@ -144,6 +147,7 @@ public class BoardController {
 	public String listPost(Model model, HttpServletRequest request ,
 						   @RequestParam("boardNo") int boardNo, 
 						   @RequestParam(defaultValue = "1") int cPage,
+						   @RequestParam(value = "locale", defaultValue = "ko") String locale,
 						   @ModelAttribute("comm") Comm comm) throws Exception {
 		//게시글 리스트 수 limit 10으로
 		int limit = 10;
@@ -159,6 +163,7 @@ public class BoardController {
 		map.put("boardNo", boardNo);
 		map.put("limit", limit);
 		map.put("offset", offset);
+		map.put("locale", locale);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 
@@ -169,6 +174,7 @@ public class BoardController {
 		model.addAttribute("list", resultMap.get("list")); 
 		model.addAttribute("boardNo", boardNo);
 		model.addAttribute("pageCount",totalPostListCount);
+		model.addAttribute("locale", locale);
 		return "admin/board/postList";
 	}
 	

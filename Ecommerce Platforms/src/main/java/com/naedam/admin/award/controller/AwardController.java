@@ -50,12 +50,14 @@ public class AwardController {
 	@PostMapping("award_process")
 	public String award_process(HttpServletRequest request, Award award, 
 								RedirectAttributes redirectAttr,
-								@RequestParam(value="awardImage", required = false) MultipartFile awardImage) throws Exception {
+								@RequestParam(value="awardImage", required = false) MultipartFile awardImage,
+								@RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put("award", award);
 		map.put("mode", request.getParameter("mode"));
 		map.put("request", request);
 		map.put("awardImage", awardImage);
+		map.put("locale", locale);
 		
 		Map<String, Object> resultMap = awardService.awardProcess(map);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
