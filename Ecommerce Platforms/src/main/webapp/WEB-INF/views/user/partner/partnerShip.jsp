@@ -30,7 +30,7 @@
                     <div class="inner_container">
                         <div class="layout_head">
                             <p class="top_txt1 partnerShip_top_txt1">
-                                내담씨앤씨의 파트너십의 관계에 있어서
+                                내담씨앤씨 파트너십의 관계에 있어서
                                 성장 및 역량 강화를 지원합니다.
                             </p>
                         </div>
@@ -83,7 +83,7 @@
                                             <p class="esg_program_txt">내담의 목표</p>
                                             <ul class="common-txt-list">
                                                 <li>
-                                                	고객과 내담씨앤씨와 함께 성장함으로써<br>
+                                                	고객과 함께 성장함으로써<br>
                                                 	IT 경쟁력을 확보하고 IT Solution의 낭비요소를 제거하는 것이<br>
                                                 	내담씨앤씨의 궁극적인 목표입니다.
                                                 </li>
