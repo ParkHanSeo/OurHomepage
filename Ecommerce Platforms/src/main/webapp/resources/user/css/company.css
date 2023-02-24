@@ -535,17 +535,20 @@
 .symbol_img .nd_symbol {
   width: 40%;
 }
+.layout_section_outer.intro .layout_body.ci_layout_body{
+	margin-top :0;
+}
 .naedam_main_img {
   text-align: center;
   /*   border: solid #c5c3c3; */
 }
 .naedam_main_img .nd_main {
   /*  width: 60%; */
-  padding: 70px;
+  padding: 0 70 70 70px;
 }
 .naedam_main_img .nd_reverse {
   width: 75%;
-  padding: 100px;
+  padding: 0px 100 100 100px;
 }
 .layout_symbol {
   padding: 0 0 0;

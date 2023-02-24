@@ -14,8 +14,8 @@
 <meta name="keywords" content="내담C&C, 내담씨앤씨, ndcnc, 내담, NDCNC, 내담씨앤씨 CI">
 <meta property="og:url" content="http://ndcc.co.kr/user/company/ciList">
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/company.css">
 <jsp:include page="/WEB-INF/views/user/common/script_css_js.jsp" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/company.css">
 </head>
 <body>
   <jsp:include page="/WEB-INF/views/user/common/header.jsp" />
@@ -31,14 +31,14 @@
 
                 <div class="layout_section_outer intro tech type01 layout_symbol" data-js="anchor-target">
                     <div class="inner_container">
-                        <div class="layout_body">
+                        <div class="layout_body ci_layout_body">
                             <div class="common-img_box naedam_main_img">
                                 <img src="${pageContext.request.contextPath}/resources/user/images/ci_contents.png" class="nd_main" alt="">
                             </div>
                         </div>
                             <div class="img-txt_box">
 	                            <div class="common-img_box naedam_main_img">
-	                                <img src="${pageContext.request.contextPath}/resources/user/images/ci_footer.png" class="nd_reverse" alt="">
+	                                <img src="${pageContext.request.contextPath}/resources/user/images/CI_footer.png" class="nd_reverse" alt="">
 	                            </div>
                             </div>
                     </div>
