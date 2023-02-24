@@ -45,8 +45,8 @@ public class BusinessController {
 	@PostMapping("businessProcess")
 	public String businessProcess(@ModelAttribute("business") Business business, 
 								  @ModelAttribute("boardOption") BoardOption boardOption,
-								  @RequestParam("mode") String mode
-								 ,@RequestParam(value="icon", required = false) MultipartFile icon,
+								  @RequestParam("mode") String mode,
+								  @RequestParam(value="icon", required = false) MultipartFile icon,
 								  HttpServletRequest request) throws Exception{
 		Map<String, Object> businessMap = new HashMap<String, Object>();
 		businessMap.put("mode", mode);
@@ -54,7 +54,7 @@ public class BusinessController {
 		businessMap.put("boardOption", boardOption);
 		businessMap.put("icon", icon);
 		businessService.businessProcess(businessMap);
-		return "redirect:/admin/business/getBusinessList";
+		return "redirect:/admin/business/getBusinessList?locale="+business.getLocale();
 	}
 	
 	@PostMapping("businessPostProcess")
@@ -77,7 +77,7 @@ public class BusinessController {
 		businessPostMap.put("filePath2", filePath2);
 		businessPostMap.put("secNo", secNo);
 		businessService.businessPostProcess(businessPostMap);
-		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo();
+		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo()+"&locale="+businessPost.getLocale();
 	}
 	
 	@PostMapping("businessContentsProcess")
@@ -119,7 +119,8 @@ public class BusinessController {
 	@RequestMapping( value="getBusinessPostList")
 	public String getBusinessPostList(@ModelAttribute("comm") Comm comm, Model model, HttpServletRequest request ,
 									  @RequestParam("businessNo") int businessNo, 
-									  @RequestParam(defaultValue = "1") int cPage) throws Exception{
+									  @RequestParam(defaultValue = "1") int cPage,
+									  @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
 		//게시글 리스트 수 limit 10으로
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
@@ -131,29 +132,34 @@ public class BusinessController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("businessNo", businessNo);
+		map.put("locale", locale);
 		List<BusinessPost> businessPost = businessService.getBusinessPostList(map);
 		int TotalBusinessPost = businessService.TotalBusinessPost(businessNo);
 		model.addAttribute("list", businessPost);
 		model.addAttribute("count", TotalBusinessPost);
+		model.addAttribute("businessNo", businessNo);
 		// pagebar
 		String url = request.getRequestURI();
 		//String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, url);
-		
+		model.addAttribute("locale", locale);
 		return "admin/business/businessPostList";
 	}
 	
 	@RequestMapping(value="getBusinessContentsList")
 	public String getBusinessContentsList(@ModelAttribute("comm") Comm comm, Model model, HttpServletRequest request,
-										  @RequestParam("businessPostNo") int businessPostNo) throws Exception{
+										  @RequestParam("businessPostNo") int businessPostNo,
+										  @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
 		BusinessPost businessPost = businessService.getBusinessPost(businessPostNo);
 		model.addAttribute("businessPost", businessPost);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("businessPostNo", businessPostNo);
+		map.put("locale", locale);
 		List<BusinessContents> businessContents = businessService.getBusinessContentsList(map);
 		model.addAttribute("businessContents",businessContents);
 		model.addAttribute("businessPostNo", businessPostNo);
+		model.addAttribute("locale", locale);
 		return "admin/business/businessContentsList";
 	}
 	
