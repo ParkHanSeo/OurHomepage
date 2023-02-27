@@ -42,6 +42,17 @@ public class RecruitDaoImpl implements RecruitDao {
 	}
 	
 	@Override
+	public List<recruitDTO> getRecruitList(String search, int offset, int limit) throws Exception {
+		
+		/* RowBounds rowBounds = new RowBounds(offset, limit); */
+		Map<String, Object> page = new HashMap<>();
+		page.put("search", search);
+		page.put("offset", offset);
+		page.put("limit", limit);
+		return sqlSession.selectList("recruit.getRecruitList", page);
+	}
+	
+	@Override
 	public Object getTotalCount(String search, String locale) {
 		Map<String, Object> option = new HashMap<>();
 		option.put("search", search);
