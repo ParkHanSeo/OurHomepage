@@ -141,6 +141,7 @@
 	                    <table class="table table-bordered table-hover">
 		                    <form name="form_list" method="post" action="?tpf=admin/board/manage_process">
 					            <input type="hidden" name="mode" id="mode">
+					            <input type="hidden" name="locale" value="${locale}"/>
 					            <thead>
 				                    <tr>
 				                        <td style="width:30px;">

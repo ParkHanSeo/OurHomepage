@@ -124,6 +124,7 @@
 		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
 		                    	<%-- <input type="hidden" name="boardNo" value="${boardNo}"> --%>
 		                    	<input type="hidden" name="cPage">
+		                    	<input type="hidden" name="locale" value="${locale }">
 		                    	<!-- <input type="hidden" name="searchKeyword"> -->
 		                        <div id="searchBox">
 			                      	  <input type="text" name="searchKeyword" id="searchKeyword" placeholder="제목으로 검색" value="${searchKeyword}">

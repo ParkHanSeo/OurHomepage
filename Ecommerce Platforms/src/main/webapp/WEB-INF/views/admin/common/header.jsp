@@ -70,7 +70,7 @@
 		
 		window.onload=function(){
 			$.ajax({
-				url : "/admin/board/json/listBoard",
+				url : "/admin/board/json/listBoard?locale=${locale}",
 				method : "GET" ,
 				dataType : "json" ,
 				headers : {
@@ -82,7 +82,7 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+">"
+									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+"&locale=${cookie.locale.value}>"
 									+ "<i class='fa fa-circle-o'></i> "+Data[i].boardTitle
 									+ "</a>"
 									+ "</li>"
@@ -92,7 +92,7 @@
 				}
 			});		
 			$.ajax({
-				url : "/admin/business/json/getBusinessList",
+				url : "/admin/business/json/getBusinessList?locale=${locale}",
 				method : "GET" ,
 				dataType : "json" ,
 				headers : {
@@ -104,7 +104,7 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+">"
+									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+"&locale=${cookie.locale.value}>"
 									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle
 									+ "</a>"
 									+ "</li>"
@@ -119,6 +119,24 @@
 	
 		function logoutSubmit(){
 			$(document.memberLogoutFrm).submit();
+		}
+		
+		function newPage(lang){	
+			var link =  document.location.href;
+			var newLink = link.split('?locale');
+			
+			var arr = link.split('?');
+			
+			if(arr[1] == 'locale=en' || arr[1] == 'locale=ko' || arr.length == 1){
+				location.href = newLink[0] +"?locale=" + lang;
+			} else {
+				newLink = link.split('&locale');
+				location.href = newLink[0] +"&locale=" + lang;
+			}
+			//쿠키
+			document.cookie = 'locale=' + lang;
+			alert("cookie===" , cookie.locale.value);
+			
 		}
 		
 	</script>
@@ -138,7 +156,7 @@
 	<div class="wrapper">
 		<!-- header -->
 		<header class="main-header">
-			<a href="${pageContext.request.contextPath}/admin/dashBoard" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<a href="${pageContext.request.contextPath}/admin/dashBoard?locale=${cookie.locale.value}" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<span class="logo-mini"><b>A</b></span> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg">
 					<b><img src="${pageContext.request.contextPath}/resources/admin/imgs/imageBoard/neadam_logo.png"></b>
@@ -151,6 +169,10 @@
 				</a>
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
+						<div class="btn-group pull-right" style="padding-right: 18px; padding-top: 10px">
+                        	<button type="button" id="locale_ko" onclick="newPage('ko')" class="btn btn-primary"><i class="fa fa-globe" aria-hidden="true"></i> 한국어</button>   
+                        	<button type="button" id="locale_en" onclick="newPage('en')" class="btn btn-default"><i class="fa fa-globe" aria-hidden="true"></i> ENG</button>                    
+                     	</div>
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
 								<img src="https://mir9.co.kr/resource/js/AdminLTE-2.4.2/dist/img/avatar5.png" class="user-image" alt="User Image" /> 
@@ -191,7 +213,7 @@
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="header">NaeDam Admin</li>
 					<li>
-						<a href="${pageContext.request.contextPath}/admin/dashBoard"> 
+						<a href="${pageContext.request.contextPath}/admin/dashBoard?locale=${cookie.locale.value}">
 							<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 						</a>
 					</li>
@@ -202,12 +224,12 @@
 						</a>
 						<ul class="treeview-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/menu/menu">
+								<a href="${pageContext.request.contextPath}/admin/menu/menu?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 메뉴 관리
 								</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/menu/headList">
+								<a href="${pageContext.request.contextPath}/admin/menu/headList?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 헤더 관리
 								</a>
 							</li>
@@ -220,7 +242,7 @@
 						</a>
 						<ul class="treeview-menu" id="boardMenu" >
 							<li>
-								<a href="/admin/board/listBoard">
+								<a href="/admin/board/listBoard?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 리스트
 								</a>
 							</li>
@@ -233,7 +255,7 @@
 						</a>
 						<ul class="treeview-menu" id="businessMenu" >
 							<li>
-								<a href="/admin/business/getBusinessList">
+								<a href="/admin/business/getBusinessList?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 리스트
 								</a>
 							</li>
@@ -266,7 +288,7 @@
 						</a>
 						<ul class="treeview-menu">
 							<li>
-								<a href="${pageContext.request.contextPath}/admin/recruitList">
+								<a href="${pageContext.request.contextPath}/admin/recruitList?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 채용
 								</a>
 							</li>
@@ -279,17 +301,17 @@
 						</a>
 						<ul class="treeview-menu">
 							<li id="historyManage">
-								<a href="${pageContext.request.contextPath }/admin/setting/history">
+								<a href="${pageContext.request.contextPath }/admin/setting/history?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 연혁 관리
 								</a>
 							</li>
 							<li id="awardManage">
-								<a href="${pageContext.request.contextPath }/admin/setting/award">
+								<a href="${pageContext.request.contextPath }/admin/setting/award?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 수상 관리
 								</a>
 							</li>
 							<li id="partnerManage">
-								<a href="${pageContext.request.contextPath }/admin/setting/listPartner">
+								<a href="${pageContext.request.contextPath }/admin/setting/listPartner?locale=${cookie.locale.value}">
 									<i class="fa fa-circle-o"></i> 파트너 관리
 								</a>
 							</li>

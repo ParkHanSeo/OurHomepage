@@ -35,6 +35,7 @@
 						<div class="box-tools pull-right" style="margin-bottom: 5px;"></div>
 						<form name="form_list" method="post" action="${pageContext.request.contextPath }/admin/award/award_process?${_csrf.parameterName}=${_csrf.token}">
 							<input type="hidden" name="mode" id="mode">
+							<input type="hidden" name="locale" id="locale" value="${locale}">
 							<table class="table table-bordered table-hover">
 								<thead>
 									<tr>
@@ -91,7 +92,7 @@
 				<form name="form_register" method="post" action="${pageContext.request.contextPath }/admin/award/award_process?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
 					<input type="hidden" name="mode" id="mode" value="insert"> 
 					<input type="hidden" name="awardNo" id="awardNo" value="0"> 
-					<input type="hidden" name="locale" id="locale" value="ko">
+					<input type="hidden" name="locale" id="locale" value="${locale}">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title" id="myModalLabelPortfolio">수상 관리</h4>
@@ -166,7 +167,7 @@
 		<div class="modal-dialog" style="width: 400px;">
 			<div class="modal-content">
 				<form name="awardCopyContent" method="post" action="${pageContext.request.contextPath }/admin/setting/award_process?${_csrf.parameterName}=${_csrf.token}">
-					<input type="hidden" name="mode" id="mode" value="copyContent"> <input type="hidden" name="locale" value="ko"> <input type="hidden" name="code" id="code">
+					<input type="hidden" name="mode" id="mode" value="copyContent"> <input type="hidden" name="locale" value="${locale}"> <input type="hidden" name="code" id="code">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 						<h4 class="modal-title" id="myModalLabelPortfolio">연혁 복사</h4>

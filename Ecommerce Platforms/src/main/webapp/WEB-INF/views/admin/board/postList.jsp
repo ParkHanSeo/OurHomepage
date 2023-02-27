@@ -182,6 +182,7 @@
 	                    <form name="searchForm" method="post" action="/admin/board/postList?${_csrf.parameterName}=${_csrf.token}">
 		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
 		                    	<input type="hidden" name="boardNo" value="${boardNo}">
+		                    	<input type="hidden" name="locale" value="${locale}"/>
 		                    	<input type="hidden" name="cPage">
 		                        <div class="has-feedback">
 			                        <span>

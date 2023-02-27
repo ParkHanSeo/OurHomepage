@@ -172,6 +172,7 @@
 	            <input type="hidden" name="businessPostAsc" id="getPostAsc" >
 	            <input type="hidden" name="businessPostOriginNo" id="getPostOriginNo" >
 	            <input type="hidden" name="mode" id="mode" value="update">
+	            <input type="hidden" name="locale" value="${locale}"/>
 	            <input type="hidden" name="secNo" value="<sec:authentication property='principal.memberNo'/>">            
 	            <div class="modal-header">
 	                <button type="button" name="x" class="close" data-dismiss="modal" aria-hidden="true">×</button>

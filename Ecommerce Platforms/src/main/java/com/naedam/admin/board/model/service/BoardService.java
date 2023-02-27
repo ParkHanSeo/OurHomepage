@@ -98,7 +98,7 @@ public interface BoardService {
 	public int postFileCount(Post post) throws Exception;
 	
 	//게시판 list (dashBoard)
-	public List<String> getBoardList();
+	public List<String> getBoardList(String locale);
 	
 	
 }

@@ -113,6 +113,7 @@ public class BusinessController {
 		map.put("comm", comm);
 		Map<String, Object> resultMap = businessService.getBusinessList(map);
 		model.addAttribute("business", resultMap.get("list"));
+		model.addAttribute("locale", comm.getLocale());
 		return "admin/business/businessList";
 	}
 	

@@ -263,8 +263,8 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<String> getBoardList() {
-		return sqlSession.selectList("board.getBoardList");
+	public List<String> getBoardList(String locale) {
+		return sqlSession.selectList("board.getBoardList", locale);
 	}
 
 	
