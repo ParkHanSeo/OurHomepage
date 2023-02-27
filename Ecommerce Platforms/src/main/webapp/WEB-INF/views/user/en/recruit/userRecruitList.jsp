@@ -36,7 +36,7 @@ function paging(cPage){
 	console.log("searchKeyword>>>>", searchKeyword);
 	
 	$.ajax({
-		url : "/user/recruit/userRecruitListPaging?${_csrf.parameterName}=${_csrf.token}",
+		url : "/user/recruit/userRecruitListPaging?${_csrf.parameterName}=${_csrf.token}&locale=${cookie.locale.value}",
 				type : "POST",
 				data : {
 					cPage,

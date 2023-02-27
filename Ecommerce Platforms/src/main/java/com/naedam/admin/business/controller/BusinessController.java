@@ -111,6 +111,7 @@ public class BusinessController {
 	public String getBusinessList(@ModelAttribute("comm") Comm comm, Model model) throws Exception{
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
+		map.put("locale", comm.getLocale());
 		Map<String, Object> resultMap = businessService.getBusinessList(map);
 		model.addAttribute("business", resultMap.get("list"));
 		model.addAttribute("locale", comm.getLocale());
