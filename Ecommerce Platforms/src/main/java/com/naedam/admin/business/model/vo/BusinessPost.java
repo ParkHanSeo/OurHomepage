@@ -29,5 +29,6 @@ public class BusinessPost implements Serializable {
 	private String businessPostIcon;
 	private String businessPostImg;
 	private Member businessMember;		//회원데이터
+	private String locale;
 
 }

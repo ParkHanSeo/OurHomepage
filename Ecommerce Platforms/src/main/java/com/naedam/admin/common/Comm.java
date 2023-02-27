@@ -22,6 +22,7 @@ public class Comm  implements Serializable{
 	private String year;
 	private String month;
 	private String rowNo;
+	private String locale;
 	
 	
 	public int getEndRowNum() {

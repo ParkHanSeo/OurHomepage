@@ -28,19 +28,20 @@ public class SettingDaoImpl implements SettingDao {
 	}
 	
 	@Override
-	public List<History> selectHistoryList(int limit, int offset) {
+	public List<History> selectHistoryList(int limit, int offset, String locale) {
 		// TODO Auto-generated method stub
-		Map<String, Integer> paging = new HashMap<>();
+		Map<String, Object> paging = new HashMap<>();
 		paging.put("limit", limit);
 		paging.put("offset", offset);
+		paging.put("locale", locale);
 		return session.selectList("setting.selectHistoryList", paging);
 	}
 	
 	@Override
-	public List<Award> selectAwardList() {
+	public List<Award> selectAwardList(String locale) {
 		// TODO Auto-generated method stub
 		System.out.println("log++++"+session.selectList("setting.selectAwardList"));
-		return session.selectList("setting.selectAwardList");
+		return session.selectList("setting.selectAwardList", locale);
 	}
 
 	@Override
@@ -104,9 +105,9 @@ public class SettingDaoImpl implements SettingDao {
 	}
 
 	@Override
-	public int selectAllHistoryList() {
+	public int selectAllHistoryList(String locale) {
 		// TODO Auto-generated method stub
-		return session.selectOne("setting.selectAllHistoryList");
+		return session.selectOne("setting.selectAllHistoryList", locale);
 	}
 
 	@Override

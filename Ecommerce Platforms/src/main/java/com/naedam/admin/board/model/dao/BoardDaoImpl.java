@@ -140,8 +140,8 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//header의 게시판 제목
 	@Override
-	public List<Board> getBoardTitle(String locale) {
-		return sqlSession.selectList("board.getBoardTitle",locale);
+	public List<Board> getBoardTitle(Map<String, Object> map) {
+		return sqlSession.selectList("board.getBoardTitle",map);
 	}
 	
 	//게시판의 데이터
