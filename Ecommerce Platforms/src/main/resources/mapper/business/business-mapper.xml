@@ -151,7 +151,7 @@
 	
 	<select id="getBusinessList" resultType="business" parameterType="map">
 		SELECT * FROM business
-		WHERE locale = #{locale}
+		WHERE locale = #{comm.locale}
 	</select>
 	
 	<select id="getBusinessPostList" resultMap="BusinessPostMap" parameterType="map">

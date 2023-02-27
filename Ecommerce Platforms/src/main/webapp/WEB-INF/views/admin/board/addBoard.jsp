@@ -34,6 +34,7 @@
         <div class="modal-content">
             <form name="addBoard" method="post">
 	            <input type="hidden" name="mode" id="mode" value="insert">
+	            <input type="hidden" name="locale" value="${locale}"/>
 	            <input type="hidden" name="board_code" id="board_code">
 	            <input type="hidden" name="cPage" id="cPage">
 	            <div class="modal-header">

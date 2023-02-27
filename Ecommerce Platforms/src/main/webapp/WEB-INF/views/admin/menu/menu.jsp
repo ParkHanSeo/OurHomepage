@@ -43,10 +43,10 @@
 	            <div class="box">
 	                <div class="box-body">
 		                <div class="col-xs-3" style="padding:0 5px 0 0;">
-		                	<iframe name="tree" id="iframe_tree" src="${pageContext.request.contextPath}/admin/menu/tree" width="100%" scrolling="auto" frameborder="1" height="769"></iframe>
+		                	<iframe name="tree" id="iframe_tree" src="${pageContext.request.contextPath}/admin/menu/tree?locale=${locale}" width="100%" scrolling="auto" frameborder="1" height="769"></iframe>
 		                </div>
 		                <div class="col-xs-9" style="padding:0 5px 0 0;">
-		                	<iframe name="list" id="iframe_list" src="${pageContext.request.contextPath}/admin/menu/menuList" width="100%" scrolling="auto" frameborder="1" height="769"></iframe>
+		                	<iframe name="list" id="iframe_list" src="${pageContext.request.contextPath}/admin/menu/menuList?locale=${locale}" width="100%" scrolling="auto" frameborder="1" height="769"></iframe>
 		                </div>
 	                </div><!-- /.box-body -->
 	            </div><!-- /.box -->
@@ -63,7 +63,7 @@
 		            <input type="hidden" name="part" value="menu">
 		            <input type="hidden" name="originNo" id="originCode">
 		            <input type="hidden" name="ord" id="ordCode">
-		            <input type="hidden" name="locale" value="ko">
+		            <input type="hidden" name="locale" value="${locale}">
 		            <div class="modal-header">
 		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 		                <h4 class="modal-title">메뉴 등록</h4>

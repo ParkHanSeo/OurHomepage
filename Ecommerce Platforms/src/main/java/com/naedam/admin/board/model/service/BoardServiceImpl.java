@@ -279,9 +279,9 @@ public class BoardServiceImpl implements BoardService {
 
 	//dashboard
 	@Override
-	public List<String> getBoardList() {
+	public List<String> getBoardList(String locale) {
 		
-		return boardDao.getBoardList();
+		return boardDao.getBoardList(locale);
 	}
 
 

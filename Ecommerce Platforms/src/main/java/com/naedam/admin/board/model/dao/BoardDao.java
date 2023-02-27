@@ -128,7 +128,7 @@ public interface BoardDao {
 	public int postFileCount(Post post) throws Exception;
 
 	//dashboard에서 사용할 boardList
-	public List<String> getBoardList();
+	public List<String> getBoardList(String locale);
 
 	
 	
