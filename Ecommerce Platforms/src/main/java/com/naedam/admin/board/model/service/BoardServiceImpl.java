@@ -158,8 +158,9 @@ public class BoardServiceImpl implements BoardService {
 		resultMap.put("list", boardDao.getPostList(map));
 		resultMap.put("totalCount", boardDao.getTotalCount2(map));
 		//채용
-		resultMap.put("recruitList", recruitDao.getRecruitList(null, 0, 5));
+		resultMap.put("recruitList", recruitDao.getRecruitList(null, 0, 5, (String)map.get("locale")));
 		System.out.println("resultMap.recruitList >>>" + resultMap.get("recruitList"));
+		System.out.println("resultMap.locale =====" + (String)map.get("locale"));
 		return resultMap;
 	}
 	
@@ -169,8 +170,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public List<Post> getMainPostList() throws Exception {
-		return boardDao.getMainPostList();
+	public List<Post> getMainPostList(Map<String, Object> map) throws Exception {
+		System.out.println("getMainPostList map ===" + map);
+		return boardDao.getMainPostList(map);
 	}
 	
 	@Override

@@ -47,7 +47,7 @@ public interface BoardService {
 	public List<Post> getUserPostList(Map<String, Object> map) throws Exception;
 	
 	//사용자 게시글 목록
-	public List<Post> getMainPostList() throws Exception;
+	public List<Post> getMainPostList(Map<String, Object> map) throws Exception;
 	
 	//사용자 게시글 카운트
 	public int getUserGetTotalCount(Map<String, Object> map) throws Exception;

@@ -151,7 +151,7 @@
 	
 	<select id="getBusinessList" resultType="business" parameterType="map">
 		SELECT * FROM business
-		WHERE locale = #{comm.locale}
+		WHERE locale = #{locale}
 	</select>
 	
 	<select id="getBusinessPostList" resultMap="BusinessPostMap" parameterType="map">
@@ -176,6 +176,7 @@
 		ON tb1.business_no = tb2.business_no
 		LEFT OUTER JOIN member tb3
 		ON tb1.member_no = tb3.member_no
+		WHERE tb1.locale = #{locale}
 		ORDER BY tb1.BUSINESS_NO ASC
 	</select>
 	

@@ -96,7 +96,8 @@ public class BoardRestController {
 	 * @throws Exception
 	 */
 	@GetMapping(value="json/getPostList/{boardNo}")
-	public Map<String, Object> getPostList(@PathVariable("boardNo") int boardNo) throws Exception{
+	public Map<String, Object> getPostList(@PathVariable("boardNo") int boardNo,
+			@RequestParam(value = "locale", defaultValue = "ko")String locale) throws Exception{
 		System.out.println("getPostList boardNo==== "+ boardNo);
 		//조회 전 마감일자 지난 list들 채용마감으로 변경
 		recruitService.updateContentsStatus();
@@ -112,6 +113,7 @@ public class BoardRestController {
 		map.put("comm", comm);
 		map.put("limit", limit);
 		map.put("offset", offset);
+		map.put("locale", locale);
 		Map<String, Object> resultMap = boardService.getPostList(map);
 		return resultMap;
 	}	
