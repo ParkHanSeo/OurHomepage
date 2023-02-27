@@ -57,7 +57,7 @@
 		  		  	 	 },
 		    		 	 success : function(result){
 		   					alert("해당 자료가 삭제 되었습니다.")
-		   					location.href = "/admin/business/getBusinessList";    		 		
+		   					location.href = "/admin/business/getBusinessList?locale=${cookie.locale.value}";    		 		
 		  		  	 	 }
 			  		});		
 				}
@@ -68,7 +68,7 @@
 			$("button[name='updateBusiness']").on("click", function(){
 				var businessNo = $(this).find('input').val();
 				$.ajax({
-					url : "/admin/business/json/getBusiness/"+businessNo,
+					url : "/admin/business/json/getBusiness/"+businessNo+,
 					method : "GET",
 					dataType : "JSON",
 					headers : {
@@ -126,9 +126,8 @@
 	        <div class="col-xs-12">
 	            <div class="box">
 	                <div class="box-body">
-	                    <label style="margin-top:5px;">총  건</label>
 	                    <table class="table table-bordered table-hover">
-		                    <form name="form_list" method="post" action="?tpf=admin/board/manage_process">
+		                    <form name="form_list" method="post" action="?tpf=admin/board/manage_process?locale=${cookie.locale.value}">
 					            <input type="hidden" name="mode" id="mode">
 					            <thead>
 				                    <tr>

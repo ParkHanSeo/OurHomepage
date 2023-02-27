@@ -82,7 +82,8 @@
 				  POST_DATE,
 				  POST_ORIGIN_NO,
 				  MEMBER_NO,
-				  MEMBER_NAME)
+				  MEMBER_NAME,
+				  LOCALE)
 		VALUES(0,
 			   #{postBoard.boardNo},
 			   #{postTitle : VARCHAR},
@@ -95,7 +96,8 @@
 			   </if>
 			   0,
 			   #{postMember.memberNo},
-			   #{postMemberName : VARCHAR})		
+			   #{postMemberName : VARCHAR},
+			   #{locale})		
 			   
 		<selectKey keyProperty="postNo" resultType="int" order="AFTER">
 			SELECT MAX(post_no) from post
@@ -272,6 +274,7 @@
 				WHERE	b.board_no = p.board_no
 				AND		m.member_no = p.member_no
 				AND		b.board_no = #{boardNo}
+				AND		p.locale like #{locale}
 				<if test="comm.searchType != null">
 					<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
 					AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
