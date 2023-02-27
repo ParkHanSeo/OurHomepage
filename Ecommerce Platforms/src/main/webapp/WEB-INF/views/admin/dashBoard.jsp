@@ -80,7 +80,7 @@
 		$("li[name='postData']").remove();
 		
 		$.ajax({
-			url : "/admin/board/json/getPostList/"+boardNo,
+			url : "/admin/board/json/getPostList/"+boardNo+"?locale=${cookie.locale.value}",
 			method : "GET",
 			dataType : "JSON",
 			headers : {
@@ -122,7 +122,7 @@
 		</c:forEach>
 	
 		$.ajax({
-			url : "/admin/board/json/getPostList/"+boardNo,
+			url : "/admin/board/json/getPostList/"+boardNo+"?locale=${cookie.locale.value}",
 			method : "GET",
 			dataType : "JSON",
 			headers : {

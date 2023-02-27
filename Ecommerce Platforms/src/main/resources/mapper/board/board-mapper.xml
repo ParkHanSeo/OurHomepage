@@ -154,6 +154,7 @@
 								WHERE	b.board_no = p.board_no
 								AND		m.member_no = p.member_no
 								AND		b.board_no = #{boardNo}
+								AND     p.locale like #{locale}
 								<if test="comm.searchType != null">
 									<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
 									AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
@@ -299,6 +300,7 @@
 		WHERE	b.board_no = p.board_no
 		AND		m.member_no = p.member_no
 		AND		b.board_no = #{boardNo}
+		AND		b.locale like #{locale}
 		<if test="comm.searchType != null">
 			<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
 			AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
@@ -325,7 +327,7 @@
 			where tbl1.ranking <![CDATA[<=]]> 3
 	</select> -->
 
-	<select id="getMainPostList" resultMap="PostSelectMap" >
+	<!-- <select id="getMainPostList" resultMap="PostSelectMap" >
 		select *
 		from
 			(select tb1.*,
@@ -338,6 +340,15 @@
 		on tbl1.board_no = tbl2.BOARD_NO 
 		where tbl1.rank <![CDATA[<=]]> 3
 		order by tbl1.rank asc
+	</select> -->
+	
+	<select id="getMainPostList" resultMap="PostSelectMap" >
+		SELECT PL.*
+		  FROM (SELECT @ROWNUM := @ROWNUM +1 AS ROWNUM,
+		      			P.*
+		 		   FROM post P,(SELECT @ROWNUM := 0) TMP
+				  WHERE LOCALE LIKE #{locale}) PL
+		where PL.rownum <![CDATA[<=]]> 4
 	</select>
 			
 	<select id="getMemberData" parameterType="int" resultMap="memberSelectMap">

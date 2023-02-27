@@ -115,8 +115,9 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//메인페이지 공지사항 최신 3개 목록
 	@Override
-	public List<Post> getMainPostList() throws Exception {
-		return sqlSession.selectList("board.getMainPostList");
+	public List<Post> getMainPostList(Map<String, Object> map) throws Exception {
+		System.out.println("getMainPostList dao ===" + sqlSession.selectList("board.getMainPostList", map));
+		return sqlSession.selectList("board.getMainPostList", map);
 	}		
 	
 	//게시글 이전 이후 데이터

@@ -42,7 +42,8 @@ public class userRecruitController {
 	
 	@RequestMapping(value="userRecruitList")
 	public ModelAndView recruitList(Model model, @RequestParam(value = "searchKeyword", required = false)String searchKeyword, 
-			@RequestParam(defaultValue = "1") int cPage, HttpServletRequest request) throws Exception {
+			@RequestParam(defaultValue = "1") int cPage, HttpServletRequest request,
+			@RequestParam(value = "locale", defaultValue = "ko") String locales) throws Exception {
 		
 		//조회 전 마감일자 지난 list들 채용마감으로 변경
 		recruitService.updateContentsStatus();
@@ -55,6 +56,7 @@ public class userRecruitController {
 		map.put("searchKeyword", searchKeyword);
 		map.put("limit", limit);
 		map.put("offset", offset);
+		map.put("locale", locales);
 		Map<String, Object> resultMap = userRecruitService.selectRecruitList(map);
 		System.out.println("resultMap>>>>>" + resultMap);
 		//조회된 총 갯수
@@ -70,7 +72,7 @@ public class userRecruitController {
 		mv.addObject("pagebar", pagebar);		
 		mv.addObject("list", resultMap.get("list")); 
 		mv.addObject("pageCount",totalPostListCount);		
-		mv.setViewName("user/recruit/userRecruitList");
+		mv.setViewName("user/"+locales+"/recruit/userRecruitList");
 		return mv;
 	}
 	
@@ -78,7 +80,8 @@ public class userRecruitController {
 	@RequestMapping(value = "userRecruitListPaging")
 	public Map<String, Object> userRecruitListPaging(HttpServletRequest request,
 			@RequestParam(value = "cPage", defaultValue = "1") int cPage,
-			@RequestParam("searchKeyword") String searchKeyword){
+			@RequestParam("searchKeyword") String searchKeyword,
+			@RequestParam(value = "locale", defaultValue = "ko") String locales){
 		
 		int limit = 6;
 		int offset = (cPage - 1) * limit;
@@ -87,7 +90,7 @@ public class userRecruitController {
 		map.put("search", searchKeyword);
 		map.put("limit", limit);
 		map.put("offset", offset);
-		
+		map.put("locale", locales);
 		System.out.println("userRecruitListPaging map >>>> " + map);
 		
 		Map<String, Object> resultList = userRecruitService.selectRecruitList(map);

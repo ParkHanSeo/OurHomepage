@@ -232,6 +232,7 @@
 			</if>
 			AND RECRUIT_DLE_STATUS = 'N'
 			AND CONTENTS_STATUS != 'N'
+			AND LOCALE LIKE #{locale}
 		</where>
 		ORDER BY RECRUIT_NO DESC
 		LIMIT #{limit} OFFSET #{offset}	
@@ -250,6 +251,7 @@
 			</if>
 			AND RECRUIT_DLE_STATUS = 'N'
 			AND CONTENTS_STATUS != 'N'
+			AND LOCALE LIKE #{locale}
 		</where>
 		ORDER BY RECRUIT_NO DESC)countTable
 	</select>
