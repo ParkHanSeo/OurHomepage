@@ -98,7 +98,7 @@ function paging(cPage){
             	<div>
 	                <div class="sub_title_area">
 	                    <div class="inner_container">
-	                        <h2 class="sub_title">채용안내</h2>
+	                        <h2 class="sub_title">Recruitment Information</h2>
 	                    </div>
 	                </div><!-- // .sub_title_area -->
 	
@@ -107,12 +107,11 @@ function paging(cPage){
 	                        <div class="top_txt_outer">
 	                            <div class="top_txt_area txt_notice">
 	                                <p class="top_txt2">
-	                                내담씨앤씨는 진취적이며</br> 
-	                                프로페셔널한 인재에게 언제나 열려 있습니다
+	                                Naedam C&C is always open to ambitious and professional talents.
 	                                </p>
 	                                <p class="top_txt3">
-	                                    내담씨앤씨에 입사 지원하실 분은 아래의 지원 양식을 다운로드 받아 채용 담당자 이메일로 접수하여 주시기 바랍니다.</br>
-										서류면접을 통과하신 분들에겐 개별적으로 연락 드리겠습니다.
+	                                   If you wish to apply for a job at Naedam C&C, please download the application form below and submit it to the email address of the recruitment manager.
+	                                   We will contact individuals who pass the document screening for further interviews.
 	                                </p>
 	                            </div>
 	                        </div>
@@ -122,7 +121,7 @@ function paging(cPage){
                 <div class="layout_section_outer recruit2">
 	                <div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1hr">채용 프로세스</p>
+							<p class="top_txt1hr">Recruiting Process</p>
 						</div>
 						<div class="layout_body process-area">
 							<div class="process-flow size-01 type01">
@@ -130,29 +129,29 @@ function paging(cPage){
 									<li class="color1"><span class="flow_num color1">01</span>
 										<i class="icon hr_ic hr_li_1"></i>
 										<p class="flow_txt">
-											<em>01</em><br class="hide_768"> 양식 다운로드/작성
+											<em>01</em><br class="hide_768"> Download and fill out the application form
 										</p>
 									</li>
 									<li class="color2"><span class="flow_num color2">02</span>
 										<i class="icon hr_ic hr_li_2"></i>
 										<p class="flow_txt">
-											<em>02</em><br class="hide_768"> Email 접수
+											<em>02</em><br class="hide_768"> Submit via email
 										</p>
 									</li>
 									<li class="color3"><span class="flow_num color3">03</span>
 										<i class="icon hr_ic hr_li_3"></i>
 										<p class="flow_txt">
-											<em>03</em><br class="hide_768"> 1차 서류전형
+											<em>03</em><br class="hide_768"> First round of document screening
 										</p></li>
 									<li class="color4"><span class="flow_num color4">04</span>
 										<i class="icon hr_ic hr_li_4"></i>
 										<p class="flow_txt">
-											<em>04</em><br class="hide_768"> 2차 면접전형
+											<em>04</em><br class="hide_768"> Second round of interviews
 										</p></li>
 									<li class="color5"><span class="flow_num color5">05</span>
 										<i class="icon hr_ic hr_li_5"></i>
 										<p class="flow_txt">
-											<em>05</em><br class="hide_768"> 입사확정
+											<em>05</em><br class="hide_768"> Job offer confirmation
 										</p></li>
 								</ol>
 							</div>
@@ -165,7 +164,7 @@ function paging(cPage){
 							<div class = "application_btn_area">
 	                				<a href="/resources/user/downloadFile/recruit/RECRUIT_NAEDAM.docx" download>
 	                				<button class="application_btn">
-	                				입사지원 양식 다운로드
+	                				Download for Entry Form
 	                				</button>
 	                				</a>
 	                			
@@ -188,22 +187,22 @@ function paging(cPage){
 									<li class="main_notice">
 										<div class="subj_box">
 											<p class="common-text_title">
-												<b>제목</b>
+												<b>Title</b>
 											</p>
 										</div>
 										<div class="date_box center-left">
 											<p class="common-text_reg-date">
-												<b>경력</b>
+												<b>Career</b>
 											</p>
 										</div>
 										<div class="date_box center-left">
 											<p class="common-text_reg-date">
-												<b>마감일자</b>
+												<b>Deadline</b>
 											</p>
 										</div>
 										<div class="date_box center-left">
 											<p class="common-text_reg-date">
-												<b>상태</b>
+												<b>State</b>
 											</p>
 										</div>
 									</li>
