@@ -170,12 +170,10 @@
 	</insert>
 	
 	<select id="getBusiness" parameterType="int" resultType="business">
-		SELECT  tb2.BUSINESS_TITLE,
+		SELECT 
 		tb1.*
-		FROM business tb2
-		LEFT OUTER JOIN business_post tb1
-		ON tb1.business_no = tb2.business_no
-		WHERE tb2.business_no = #{businessNo}
+		FROM business tb1 
+		WHERE tb1.business_no = #{businessNo}
 	</select>
 	
 	<select id="getBusinessPost" parameterType="int" resultType="businessPost">
