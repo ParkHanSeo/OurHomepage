@@ -38,7 +38,7 @@ function out(num){
             <div id="contents" class="contents_top employee_contents">
                 <div class="sub_title_area">
                     <div class="inner_container">
-                        <h2 class="sub_title">인재상</h2>
+                        <h2 class="sub_title">Corporate Talent</h2>
                     </div>
                 </div><!-- // .sub_title_area -->
 				<div class="top_visual_area recruit">
