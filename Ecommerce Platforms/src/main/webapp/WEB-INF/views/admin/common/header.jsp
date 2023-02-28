@@ -82,7 +82,7 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+"&locale=${cookie.locale.value}>"
+									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo
 									+ "<i class='fa fa-circle-o'></i> "+Data[i].boardTitle
 									+ "</a>"
 									+ "</li>"
@@ -104,7 +104,7 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+"&locale=${cookie.locale.value}>"
+									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo
 									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle
 									+ "</a>"
 									+ "</li>"
@@ -122,7 +122,7 @@
 		}
 		
 		function newPage(lang){	
-			var link =  document.location.href;
+			/* var link =  document.location.href;
 			var newLink = link.split('?locale');
 			
 			var arr = link.split('?');
@@ -132,7 +132,9 @@
 			} else {
 				newLink = link.split('&locale');
 				location.href = newLink[0] +"&locale=" + lang;
-			}
+			} */
+			
+			location.href = '/admin/dashBoard?locale=' + lang;
 			//쿠키
 			document.cookie = 'locale=' + lang;
 			alert("cookie===" , cookie.locale.value);
