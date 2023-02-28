@@ -64,6 +64,7 @@ public class BusinessController {
 									  ,@RequestParam(value="img", required = false) MultipartFile img
 									  ,@RequestParam("secNo") String secNo 
 									  ,@RequestParam("mode") String mode
+									  ,@RequestParam("businessNo") int businessNo
 								      ,HttpServletRequest request) throws Exception{
 		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/icon/");
 		String filePath2 = request.getServletContext().getRealPath("resources/user/images/main/");
@@ -76,6 +77,7 @@ public class BusinessController {
 		businessPostMap.put("filePath", filePath);
 		businessPostMap.put("filePath2", filePath2);
 		businessPostMap.put("secNo", secNo);
+		System.out.println("businessPostMap >>>>>" + businessPostMap);
 		businessService.businessPostProcess(businessPostMap);
 		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo()+"&locale="+businessPost.getLocale();
 	}
@@ -118,6 +120,7 @@ public class BusinessController {
 		return "admin/business/businessList";
 	}
 	
+
 	@RequestMapping( value="getBusinessPostList")
 	public String getBusinessPostList(@ModelAttribute("comm") Comm comm, Model model, HttpServletRequest request ,
 									  @RequestParam("businessNo") int businessNo, 
@@ -128,15 +131,18 @@ public class BusinessController {
 		int offset = (cPage - 1) * limit;
 		
 		Business business = businessService.getBusiness(businessNo);
-		model.addAttribute("business", business);
 		
+		System.out.println("business=======" + business);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("businessNo", businessNo);
 		map.put("locale", locale);
 		List<BusinessPost> businessPost = businessService.getBusinessPostList(map);
+		System.out.println("businessPost=====" + businessPost);
 		int TotalBusinessPost = businessService.TotalBusinessPost(businessNo);
+		
+		model.addAttribute("business", business);
 		model.addAttribute("list", businessPost);
 		model.addAttribute("count", TotalBusinessPost);
 		model.addAttribute("businessNo", businessNo);

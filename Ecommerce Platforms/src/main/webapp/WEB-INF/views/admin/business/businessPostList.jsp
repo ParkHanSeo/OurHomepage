@@ -41,7 +41,7 @@
 		  		  	 		  	},
 		    		 	 success : function(result){
 		   			  		alert("게시글이 삭제 되었습니다.")
-		   			  		location.href = "/admin/business/getBusinessPostList?businessNo="+businessNo;
+		   			  		location.href = "/admin/business/getBusinessPostList?businessNo="+businessNo+"?locale=${cookie.locale.value}";
 		  		  	 	 }
 			  		});		
 				}
@@ -181,6 +181,7 @@
 	                    <label style="margin-top:5px;">총 ${count}건</label>
 	                    <table class="table table-bordered table-hover">
 		                    <form name="form_list" method="post">
+		                    <input type="hidden" class="businessNo" value="${ businessNo}">
 			                    <thead>
 				                    <tr>
 				                        <td style="width:30px;">
