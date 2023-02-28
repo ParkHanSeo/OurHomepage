@@ -17,13 +17,13 @@ window.onload=function(){
 			for(var i = 0; i < menu.length; i++){
 				if(menu[i].status != 'n'){
 					display = "<li class>"
-							+ " <a href='"+menu[i].url+"'>"+menu[i].title+"</a>"
+							+ " <a href='"+menu[i].url+"?locale=${cookie.locale.value}'>"+menu[i].title+"</a>"
 							+ "  <section class='sub sub-menu"+(i+1)+"'>"
 							+ "   <div class='sub-wrap'>"
 							+ "   <ul class='sub-2depth'>"							
 							for(var j = 0; j < data.list2.length; j++){
 								if(data.list[i].code == data.list2[j].originNo && menu2[j].status != 'n'){
-									display	+= "<li><a href='"+menu2[j].url+"'>"+menu2[j].title+"</a></li>"
+									display	+= "<li><a href='"+menu2[j].url+"?locale=${cookie.locale.value}'>"+menu2[j].title+"</a></li>"
 											
 								}
 							}
