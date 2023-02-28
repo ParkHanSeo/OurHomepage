@@ -68,7 +68,7 @@
 			$("button[name='updateBusiness']").on("click", function(){
 				var businessNo = $(this).find('input').val();
 				$.ajax({
-					url : "/admin/business/json/getBusiness/"+businessNo+,
+					url : "/admin/business/json/getBusiness/"+businessNo,
 					method : "GET",
 					dataType : "JSON",
 					headers : {
