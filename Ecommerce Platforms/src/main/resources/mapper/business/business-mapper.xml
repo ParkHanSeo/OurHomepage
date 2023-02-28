@@ -70,7 +70,7 @@
 		</selectKey>
 	</insert>
 	
-	<insert id="addBusinessPost" parameterType="businessPost" useGeneratedKeys="true" keyProperty="businessPostNo" keyColumn="BUSINESS_POST_NO">
+	<!-- <insert id="addBusinessPost" parameterType="businessPost" useGeneratedKeys="true" keyProperty="businessPostNo" keyColumn="BUSINESS_POST_NO">
 		INSERT
 		INTO business_post
 		(BUSINESS_NO,
@@ -96,7 +96,7 @@
 	     #{businessPostBottomTitle},
 	     #{businessPostBottomContents}
 	     <if test="inDtm == null or inDtm == ''">
-	   	  sysdate(),
+	   	  SYSDATE(),
 	     </if>
 	     <if test="inDtm != null">
 		  #{inDtm : VARCHAR},
@@ -104,6 +104,42 @@
 	  	 #{businessPostIcon},
 	  	 #{businessPostImg},
 	  	 #{businessMember.memberNo}
+		 #{locale})
+		 <selectKey keyProperty="businessPostNo" resultType="int" order="AFTER">
+			SELECT MAX(business_post_no) from business_post
+		</selectKey>
+	</insert> -->
+	
+	<insert id="addBusinessPost" parameterType="businessPost" useGeneratedKeys="true" keyProperty="businessPostNo" keyColumn="BUSINESS_POST_NO">
+		INSERT
+		INTO business_post
+		(BUSINESS_NO,
+		 BUSINESS_POST_TITLE,
+		 BUSINESS_POST_SUB_TITLE,
+		 BUSINESS_POST_CONTENTS,
+		 BUSINESS_POST_TEXT_1,
+		 BUSINESS_POST_TEXT_2,
+		 IN_DTM,
+		 BUSINESS_POST_ICON,
+		 BUSINESS_POST_IMG,
+		 MEMBER_NO,
+		 LOCALE)
+		VALUES
+		(#{business.businessNo},
+	     #{businessPostTitle},
+	     #{businessPostSubTitle},
+	     #{businessPostContents},
+	     #{businessPostText1},
+	     #{businessPostText2},
+	     <if test="inDtm == null or inDtm == ''">
+	   	  sysdate(),
+	     </if>
+	     <if test="inDtm != null">
+		  #{inDtm : VARCHAR},
+	  	 </if>
+	  	 #{businessPostIcon},
+	  	 #{businessPostImg},
+	  	 #{businessMember.memberNo},
 		 #{locale})
 		 <selectKey keyProperty="businessPostNo" resultType="int" order="AFTER">
 			SELECT MAX(business_post_no) from business_post
@@ -134,19 +170,19 @@
 	</insert>
 	
 	<select id="getBusiness" parameterType="int" resultType="business">
-		SELECT 
-		tb1.*,
-		tb2.*
-		FROM business tb1, board_option tb2 
-		WHERE tb1.business_no = #{businessNo}
-		AND   tb1.business_no = tb2.board_no
+		SELECT  tb2.BUSINESS_TITLE,
+		tb1.*
+		FROM business tb2
+		LEFT OUTER JOIN business_post tb1
+		ON tb1.business_no = tb2.business_no
+		WHERE tb2.business_no = #{businessNo}
 	</select>
 	
 	<select id="getBusinessPost" parameterType="int" resultType="businessPost">
 		SELECT
 		*
-		FROM business_post
-		WHERE business_post_no = #{value}
+		FROM business
+		WHERE business_no = #{businessPostNo}
 	</select>
 	
 	<select id="getBusinessList" resultType="business" parameterType="map">
@@ -157,13 +193,11 @@
 	<select id="getBusinessPostList" resultMap="BusinessPostMap" parameterType="map">
 		SELECT 
 		tb1.*
-		FROM business_post tb1 
+		FROM business_post tb1
 		LEFT OUTER JOIN business tb2
 		ON tb1.business_no = tb2.business_no
-		LEFT OUTER JOIN member tb3
-		ON tb1.member_no = tb3.member_no
-		WHERE tb1.business_no = #{businessNo}
-		AND   tb1.locale = #{locale}
+		WHERE tb2.business_no = #{businessNo}
+		AND   tb2.locale = #{locale}
 		ORDER BY tb1.business_post_no ASC
 	</select>
 	
@@ -257,14 +291,12 @@
 	<select id="TotalBusinessPost" resultType="int">
 		SELECT COUNT(*)
 		  FROM (
-			SELECT tb1.*
-			  FROM business_post tb1 
-			  LEFT OUTER JOIN business tb2
-			    ON tb1.business_no = tb2.business_no
-			  LEFT OUTER JOIN member tb3
-			    ON tb1.member_no = tb3.member_no
-			 WHERE tb1.business_no = #{businessNo}
-			 ORDER BY tb1.business_post_no ASC ) countTable
+			SELECT 
+					tb1.*
+					FROM business_post tb1
+					LEFT OUTER JOIN business tb2
+					ON tb1.business_no = tb2.business_no
+					WHERE tb2.business_no = #{businessNo}) countTable
 	
 	</select>
 </mapper>
