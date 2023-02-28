@@ -110,7 +110,7 @@ public class userRecruitController {
 	
 	
 	@RequestMapping(value = "getRecruitDetail/{recruitNo}")
-	public ModelAndView recruitDetail(@PathVariable("recruitNo")int recruitNo) {
+	public ModelAndView recruitDetail(@PathVariable("recruitNo")int recruitNo,@RequestParam(value = "locale", defaultValue = "ko") String locales) {
 		
 		//채용글 1차
 		recruitDTO recruitData = recruitService.getRecruitData(recruitNo);
@@ -121,11 +121,15 @@ public class userRecruitController {
 		System.out.println("user recruitData>>>>>" + recruitData);
 		System.out.println("user contents>>>>>" + contents);
 		
+		Map<String, Object> map = new HashMap<>();
+		map.put("locale", locales);
+
+		
 		ModelAndView mv = new ModelAndView();
 		
 		mv.addObject("recruitData", recruitData);
 		mv.addObject("contents", contents);
-		mv.setViewName("user/recruit/userRecruitDetail");
+		mv.setViewName("user/"+locales+"/recruit/userRecruitDetail");
 		return mv;
 	}
 	
