@@ -70,7 +70,7 @@
 		
 		window.onload=function(){
 			$.ajax({
-				url : "/admin/board/json/listBoard?locale=${locale}",
+				url : "/admin/board/json/listBoard?locale=${cookie.locale.value}",
 				method : "GET" ,
 				dataType : "json" ,
 				headers : {
@@ -92,7 +92,7 @@
 				}
 			});		
 			$.ajax({
-				url : "/admin/business/json/getBusinessList?locale=${locale}",
+				url : "/admin/business/json/getBusinessList?locale=${cookie.locale.value}",
 				method : "GET" ,
 				dataType : "json" ,
 				headers : {
