@@ -49,11 +49,11 @@
 								onkeypress="if(event.keyCode==13){paging();}">
 								<input type="hidden" name="boardNo" value="${board2.boardNo}">
 								<input type="hidden" name="searchType" value="1"> <label
-									class="common-search_label" for="recruit_search_txt">검색</label>
+									class="common-search_label" for="recruit_search_txt">Search</label>
 								<input class="common-search_input" name="searchKeyword"
 									id="recruit_search_txt" type="text" placeholder="검색어를 입력해주세요."
 									title="검색어을 입력해주세요.">
-								<button type="button" class="common-search_btn" id="btnSearch">검색</button>
+								<button type="button" class="common-search_btn" id="btnSearch">Search</button>
 							</form>
 						</div>
 					</div>

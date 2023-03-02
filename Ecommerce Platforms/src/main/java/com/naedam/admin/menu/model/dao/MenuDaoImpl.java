@@ -47,7 +47,7 @@ public class MenuDaoImpl implements MenuDao {
 	//메뉴 리스트 출력
 	@Override
 	public List<Menu> getMenuList(Map<String, Object> map) throws Exception {
-		return sqlSession.selectList("menu.getMenuList");
+		return sqlSession.selectList("menu.getMenuList", map);
 	}
 	
 	//조건식 메뉴 리스트 출력
