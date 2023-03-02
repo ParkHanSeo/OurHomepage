@@ -82,8 +82,8 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo
-									+ "<i class='fa fa-circle-o'></i> "+Data[i].boardTitle
+									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+">"
+									+ "<i class='fa fa-circle-o'></i> "+Data[i].boardTitle+""
 									+ "</a>"
 									+ "</li>"
 							$('#boardMenu').append(display);
@@ -99,13 +99,14 @@
 					"Accept" : "application/json",
 					"Content-Type" : "application/json"
 				},
-				success : function(Data, status){
+				success : function(Data, status){	
 					var display = '';
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
+							console.log(Data[i].businessNo)
 							display = "<li>"
-									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo
-									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle
+									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+">"
+									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle+""
 									+ "</a>"
 									+ "</li>"
 							$('#businessMenu').append(display);
