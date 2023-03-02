@@ -250,7 +250,7 @@ function paging(cPage){
 											<li id="postList">
 												<div class="subj_box">
 													<p class="common-text_txt2 notice_empty_txt">
-														등록된 자료가 없습니다.
+														No data is registered.
 													</p>
 												</div>
 											</li>								

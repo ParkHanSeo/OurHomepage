@@ -224,7 +224,7 @@
 					</li>
 					<li class="treeview" id="menuManage">
 						<a href="#"> 
-							<i class="fa fa-file-text-o"></i> <span>메뉴 관리  ${cookie.locale.value}</span> 
+							<i class="fa fa-file-text-o"></i> <span>메뉴 관리</span> 
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">

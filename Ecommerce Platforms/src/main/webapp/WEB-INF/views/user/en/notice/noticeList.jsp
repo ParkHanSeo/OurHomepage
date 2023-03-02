@@ -61,7 +61,7 @@
 						style="display: none;">
 						<div class="search-result_inner">
 							<span class="result_keyword" id="recruit_result_txt"></span> <span
-								class="result_txt">검색 결과가 없습니다.</span>
+								class="result_txt">No search results found.</span>
 							<div class="result_msg">
 								<ul class="common-txt-list size_16">
 									<li>검색어가 올바르게 입력되었는지 확인해주세요.</li>
@@ -104,7 +104,7 @@
 							<c:if test="${empty list}">
 								<li id="postList">
 									<div class="subj_box">
-										<p class="common-text_txt2 notice_empty_txt">등록된 자료가 없습니다.
+										<p class="common-text_txt2 notice_empty_txt">No data is registered.
 										</p>
 									</div>
 								</li>

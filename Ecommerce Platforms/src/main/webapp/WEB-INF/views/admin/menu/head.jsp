@@ -163,6 +163,7 @@
 		            <input type="hidden" name="mode" value="update">
 		            <input type="hidden" name="part" value="head">
 		            <input type="hidden" name="headNo">
+		            <input type="locale" name="${locale}">
 		            <div class="modal-header">
 		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 		                <h4 class="modal-title">헤더 수정</h4>
