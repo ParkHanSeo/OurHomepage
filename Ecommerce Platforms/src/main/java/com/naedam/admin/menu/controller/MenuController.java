@@ -68,7 +68,7 @@ public class MenuController {
 		headMap.put("headImage", headImage);
 		headMap.put("filePath", filePath);
 		headMap.put("imageStatus", imageStatus);
-		
+		System.out.println("locale확인"+head.getLocale());
 		System.out.println("imageStatus >>>" + imageStatus);
 		System.out.println("headMap.headImage >>>" + headMap.get("headImage"));
 		

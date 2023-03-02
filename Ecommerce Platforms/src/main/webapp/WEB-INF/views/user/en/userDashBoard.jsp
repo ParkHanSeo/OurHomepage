@@ -241,9 +241,6 @@
                                  <br/>based on Know How accumulated through the performance of IT services in various industries
                                  <br/>such as public, financial, telecommunications, e-commerce, manufacturing, Nonghyup, and infrastructure.
                               </p>
-                              <p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                 <span class="blind">자세히 보기</span>
-                              </p>
                            </div>
                         </li>
                         <li class="cloud aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
@@ -290,7 +287,6 @@
                                  Through communication, we analyze and design the requirements necessary for the company or sales activities and implement them as a computer program.<br />
                                  It is also possible to request customized program development that is differentiated from the programs <br />
                                  you use and to request application development that is necessary for maintenance of legacy systems.
-                                 (소통을 통해 회사 또는 영업 활동에 필요한 요구사항을 분석, 설계하여 전산프로그램으로 구현합니다. 사용 프로그램과 차별화된 맞춤형 프로그램 개발 의뢰와 레거시 시스템의 유지보수에 필요한 응용 프로그램 개발 의뢰도 가능합니다.)
                               </p>
                               <p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                               </p>                           
@@ -328,7 +324,7 @@
 	                                    ${businessPost.businessPostText1}
 	                                 </p>
 	                                 <p class="btn-arrow">
-	                                    <span class="blind">자세히 보기</span>
+	                                    <span class="blind"></span>
 	                                 </p>
 	                              </a>
 	                           </li>
@@ -364,7 +360,7 @@
                              
                            </p>
                            <p class="btn-arrow is-black">
-                              <span class="blind">자세히 보기</span>
+                              <span class="blind"></span>
                            </p>
                         </a>
                      </div>
@@ -375,7 +371,7 @@
 								We look forward to your support <br/>to join Naedam C&C
                            </p>                           
                            <p class="btn-arrow is-black">
-                              <span class="blind">자세히 보기</span>
+                              <span class="blind"></span>
                            </p>
                         </a> 
                         <a href="/user/highflier/hrDepartment" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
@@ -384,7 +380,6 @@
                               Online & on-site training<br /> Support for various Employee Benefits
                            </p>
                            <p class="btn-arrow is-black">
-                              <span class="blind">자세히 보기</span>
                            </p>
                         </a>
                      </div>

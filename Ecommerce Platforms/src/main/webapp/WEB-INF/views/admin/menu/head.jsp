@@ -101,7 +101,7 @@
 	            <form name="form_register" method="post" action="/admin/menu/headProcess?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data">
 		            <input type="hidden" name="mode" value="insert">
 		            <input type="hidden" name="part" value="head">
-		            <input type="hidden" name="locale" value="ko">
+		            <input type="hidden" name="locale" value="${locale}">
 		            <div class="modal-header">
 		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 		                <h4 class="modal-title">헤더 등록</h4>
