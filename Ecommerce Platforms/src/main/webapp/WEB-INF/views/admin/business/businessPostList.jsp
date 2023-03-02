@@ -41,7 +41,7 @@
 		  		  	 		  	},
 		    		 	 success : function(result){
 		   			  		alert("게시글이 삭제 되었습니다.")
-		   			  		location.href = "/admin/business/getBusinessPostList?businessNo="+businessNo+"?locale=${cookie.locale.value}";
+		   			  		location.href = "/admin/business/getBusinessPostList?businessNo="+businessNo+"&locale=${cookie.locale.value}";
 		  		  	 	 }
 			  		});		
 				}

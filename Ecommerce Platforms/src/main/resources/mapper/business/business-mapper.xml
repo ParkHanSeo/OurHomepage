@@ -165,7 +165,7 @@
 		#{businessContentsContent}, 
 		#{image}, 
 		sysdate(),
-		locale
+		#{locale}
 		)	
 	</insert>
 	
@@ -176,11 +176,18 @@
 		WHERE tb1.business_no = #{businessNo}
 	</select>
 	
-	<select id="getBusinessPost" parameterType="int" resultType="businessPost">
+	<!-- <select id="getBusinessPost" parameterType="int" resultType="businessPost">
 		SELECT
 		*
 		FROM business
 		WHERE business_no = #{businessPostNo}
+	</select> -->
+	
+	<select id="getBusinessPost" parameterType="int" resultType="businessPost">
+		SELECT
+		*
+		FROM business_post
+		WHERE business_post_no = #{businessPostNo}
 	</select>
 	
 	<select id="getBusinessList" resultType="business" parameterType="map">

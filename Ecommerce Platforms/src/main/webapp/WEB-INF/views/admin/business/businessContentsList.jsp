@@ -230,7 +230,7 @@
 					                        	<td>${businessContents.inDtm}</td>
 					                        	<td>
 						                   			<button type="button" id="getBusinessContentsBotton" data-toggle="modal" data-target="#modalContent4" class="btn btn-primary btn-xs getBusinessContents" value="${businessContents.businessContentsNo}">상세보기
-						                   				<input type="hidden" value="${businessContents.businessContentsNo}">
+						                   				<input type="hidden" class="businessPostNo" value="${businessPostNo}">
 						                   			</button>
 					                   			</td>
 				                   			</tr>
