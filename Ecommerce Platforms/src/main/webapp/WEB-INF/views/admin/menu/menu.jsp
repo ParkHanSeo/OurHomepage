@@ -74,24 +74,6 @@
                 				<span style="float:left;"><h4><p class="text-light-blue"><i class="fa fa-fw fa-info-circle"></i> 메뉴 등록</p></h4></span>
                 				<span style="float:left; padding:5px 0 0 10px;"><button type="button" onclick="onclickManual();" class="btn btn-warning btn-xs"><i class="fa fa-fw fa-question-circle"></i> 프로그램 연동 방법</button></span>
                 			</div>
-                			<div class="col-xs-8" style="padding:0">
-                				<div class="btn-group pull-right">
-      								<button type="button" id="locale_ko" onclick="setLocale('ko')" class="btn btn-primary">
-      									<i class="fa fa-globe" aria-hidden="true"></i> 한국어</button>      
-      								<button type="button" id="locale_en" onclick="setLocale('en')" class="btn btn-default">
-      									<i class="fa fa-globe" aria-hidden="true"></i> ENG</button>      
-      								<button type="button" id="locale_zh" onclick="setLocale('zh')" class="btn btn-default">
-      									<i class="fa fa-globe" aria-hidden="true"></i> 中国</button>      
-      								<button type="button" id="locale_vn" onclick="setLocale('vn')" class="btn btn-default">
-      									<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>
-<%-- 									<select class="form-select" name="outer_mapping" aria-label="Default select example">
-									  <option value="0">게시판 맵핑</option>
-									  <c:forEach var="board" items="${board}">
-										  <option value="${board.boardNo}">${board.boardTitle}</option>
-									  </c:forEach>
-									</select>  --%>     									                
-      							</div>
-                			</div>
             			</div>
 						<table class="table table-bordered">
 				            <tbody>
@@ -160,24 +142,6 @@
 			                	<span style="float:left;"><h4><p class="text-light-blue"><i class="fa fa-fw fa-info-circle"></i> 메뉴 등록</p></h4></span>
 			                	<span style="float:left; padding:5px 0 0 10px;"><button type="button" onclick="onclickManual();" class="btn btn-warning btn-xs"><i class="fa fa-fw fa-question-circle"></i> 프로그램 연동 방법</button></span>
 			                </div>
-			                <div class="col-xs-8" style="padding:0">
-				                <div class="btn-group pull-right">
-				      				<button type="button" id="locale_ko" onclick="setLocale('ko')" class="btn btn-primary">
-				      					<i class="fa fa-globe" aria-hidden="true"></i> 한국어</button>      
-				      				<button type="button" id="locale_en" onclick="setLocale('en')" class="btn btn-default">
-				      					<i class="fa fa-globe" aria-hidden="true"></i> ENG</button>      
-				      				<button type="button" id="locale_zh" onclick="setLocale('zh')" class="btn btn-default">
-				      					<i class="fa fa-globe" aria-hidden="true"></i> 中国</button>      
-				      				<button type="button" id="locale_vn" onclick="setLocale('vn')" class="btn btn-default">
-				      					<i class="fa fa-globe" aria-hidden="true"></i> Tiếng việt</button>
-									<select class="form-select" name="outerMapping" aria-label="Default select example">
-									  <option selected>게시판 맵핑</option>
-									  <c:forEach var="board" items="${board}">
-										  <option value="${board.boardNo}">${board.boardTitle}</option>
-									  </c:forEach>
-									</select> 				      					                
-				      			</div>
-				            </div>
 			            </div>
 			            <table class="table table-bordered">
 				            <tbody>

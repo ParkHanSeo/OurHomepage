@@ -97,7 +97,7 @@ public class MenuServiceImpl implements MenuService {
 			List<Integer> headArr = (List<Integer>) map.get("menuArr");
 			menuDao.deleteChoiceHead(headArr);
 		}
-		return "redirect:/admin/menu/headList";
+		return "redirect:/admin/menu/headList?locale="+head.getLocale();
 	}
 	
 	//헤더관리 등록

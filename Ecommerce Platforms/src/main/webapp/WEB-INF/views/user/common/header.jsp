@@ -52,17 +52,11 @@ window.onload=function(){
 }
 
 function newPage(lang){	
-	var link =  document.location.href;
-	var newLink = link.split('?locale');
+	document.cookie = "locale=eng; max-age=0";
+	document.cookie = "locale=ko; max-age=0";
+
+	location.href = '/?locale=' + lang;
 	
-	var arr = link.split('?');
-	
-	if(arr[1] == 'locale=en' || arr[1] == 'locale=ko' || arr.length == 1){
-		location.href = newLink[0] +"?locale=" + lang;
-	} else {
-		newLink = link.split('&locale');
-		location.href = newLink[0] +"&locale=" + lang;
-	}
 	//쿠키
 	document.cookie = 'locale=' + lang;
 	
