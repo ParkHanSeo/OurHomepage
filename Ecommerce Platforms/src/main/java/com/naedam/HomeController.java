@@ -46,7 +46,7 @@ public class HomeController {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
 		System.out.println("locales값 +++++="+locales);
-		if(locales== "ko") {
+		if(locales.equals("ko")) {
 			map.put("businessNo", 10);
 		}else {
 			map.put("businessNo", 1005);
@@ -89,7 +89,7 @@ public class HomeController {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
 		System.out.println("locales값 +++++="+locales);
-		if(locales== "ko") {
+		if(locales.equals("ko")) {
 			map.put("businessNo", 10);
 		}else {
 			map.put("businessNo", 1005);

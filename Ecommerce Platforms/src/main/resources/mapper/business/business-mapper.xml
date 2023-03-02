@@ -202,7 +202,6 @@
 		LEFT OUTER JOIN business tb2
 		ON tb1.business_no = tb2.business_no
 		WHERE tb2.business_no = #{businessNo}
-		AND   tb2.locale = #{locale}
 		ORDER BY tb1.business_post_no ASC
 	</select>
 	
@@ -225,7 +224,6 @@
 		LEFT OUTER JOIN business_post tb2
 		ON tb1.BUSINESS_POST_NO = tb2.BUSINESS_POST_NO
 		WHERE tb1.BUSINESS_POST_NO = #{businessPostNo}
-		  AND tb1.locale = #{locale}	
 	</select>
 	
 	<select id="getBusinessContents" resultType="businessContents" parameterType="int">
