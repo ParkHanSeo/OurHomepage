@@ -132,8 +132,6 @@ public class BusinessController {
 		
 		Business business = businessService.getBusiness(businessNo);
 		
-		System.out.println("business=======" + business);
-		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("businessNo", businessNo);
@@ -149,7 +147,9 @@ public class BusinessController {
 		// pagebar
 		String url = request.getRequestURI();
 		//String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, url);
-		model.addAttribute("locale", locale);
+		//model.addAttribute("locale", locale);
+		model.addAttribute("locale", business.getLocale());
+		
 		return "admin/business/businessPostList";
 	}
 	

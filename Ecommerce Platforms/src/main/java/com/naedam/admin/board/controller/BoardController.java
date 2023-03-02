@@ -152,12 +152,10 @@ public class BoardController {
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
 		
-		System.out.println("locale====>"+ locale);
-		
 		//게시글 리스트 옵션과 권한의 조건에 따라 태그를 생성해야 함
 		Board board2 = boardService.getBoardAllData(boardNo);
 		model.addAttribute("board2", board2);
-		
+		System.out.println("board2 ===" + board2);
 		//게시글 리스트
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
@@ -175,7 +173,7 @@ public class BoardController {
 		model.addAttribute("list", resultMap.get("list")); 
 		model.addAttribute("boardNo", boardNo);
 		model.addAttribute("pageCount",totalPostListCount);
-		model.addAttribute("locale", locale);
+		model.addAttribute("locale", board2.getLocale());
 		return "admin/board/postList";
 	}
 	

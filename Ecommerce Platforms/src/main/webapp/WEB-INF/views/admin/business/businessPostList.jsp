@@ -182,6 +182,7 @@
 	                    <table class="table table-bordered table-hover">
 		                    <form name="form_list" method="post">
 		                    <input type="hidden" class="businessNo" value="${ businessNo}">
+		                    <input type="hidden" name="locale" id="locale" value="${ locale}">
 			                    <thead>
 				                    <tr>
 				                        <td style="width:30px;">

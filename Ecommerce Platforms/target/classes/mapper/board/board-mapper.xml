@@ -10,6 +10,7 @@
 		<result property="boardSubTitle"			column="BOARD_SUBTITLE"		jdbcType="VARCHAR"></result>
 		<result property="boardContents"			column="BOARD_CONTENTS"		jdbcType="VARCHAR"></result>
 		<result property="boardMemberNo.memberNo"	column="MEMBER_NO"			jdbcType="NUMERIC"></result>
+		<result property="locale"			column="LOCALE"		jdbcType="VARCHAR"></result>
 		
 		<association property="boardMemberNo" javaType="member" >
 			<result property="memberNo"				column="MEMBER_NO"				jdbcType="NUMERIC"></result>
@@ -120,6 +121,7 @@
 				board_title,
 				board_subtitle,
 				board_contents,
+				locale,
 				(SELECT COUNT(*)
 				 FROM post p
 				 WHERE p.board_no = board_no) count
@@ -242,6 +244,7 @@
 		tb1.board_title,
 		tb1.board_subtitle,
 		tb1.board_contents,
+		tb1.LOCALE,
 		tb2.OPTION_NO,
 		tb2.OPTION_NOTICE,
 		tb2.OPTION_COMMENT,
@@ -276,7 +279,6 @@
 				WHERE	b.board_no = p.board_no
 				AND		m.member_no = p.member_no
 				AND		b.board_no = #{boardNo}
-				AND		p.locale like #{locale}
 				<if test="comm.searchType != null">
 					<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
 					AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
