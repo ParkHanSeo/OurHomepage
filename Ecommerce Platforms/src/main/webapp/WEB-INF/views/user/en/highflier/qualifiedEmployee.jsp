@@ -204,5 +204,5 @@ function out(num){
         </section><!-- // #container -->
 	</div>
 </body>
-<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
 </html>

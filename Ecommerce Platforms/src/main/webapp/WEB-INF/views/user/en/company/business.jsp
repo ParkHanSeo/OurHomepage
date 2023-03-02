@@ -174,6 +174,6 @@
                	</div>
             </div><!-- // #contents -->
         </section><!-- // #container -->  
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
+  <jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />	
 </body>
 </html>
