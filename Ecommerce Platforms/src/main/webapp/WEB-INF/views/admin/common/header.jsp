@@ -122,6 +122,9 @@
 		}
 		
 		function newPage(lang){	
+			document.cookie = "locale=eng; max-age=0";
+			document.cookie = "locale=ko; max-age=0";
+			
 			/* var link =  document.location.href;
 			var newLink = link.split('?locale');
 			
@@ -136,8 +139,8 @@
 			
 			location.href = '/admin/dashBoard?locale=' + lang;
 			//쿠키
-			document.cookie = 'locale=' + lang;
-			alert("cookie===" , cookie.locale.value);
+			document.cookie = 'locale=' + lang +';' + 'path=/;'
+			alert( document.cookie );
 			
 		}
 		
@@ -221,7 +224,7 @@
 					</li>
 					<li class="treeview" id="menuManage">
 						<a href="#"> 
-							<i class="fa fa-file-text-o"></i> <span>메뉴 관리</span> 
+							<i class="fa fa-file-text-o"></i> <span>메뉴 관리  ${cookie.locale.value}</span> 
 							<i class="fa fa-angle-left pull-right"></i>
 						</a>
 						<ul class="treeview-menu">
