@@ -45,7 +45,12 @@ public class HomeController {
 			 @RequestParam(value = "locale", defaultValue = "ko") String locales) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("businessNo", 10);
+		System.out.println("locales값 +++++="+locales);
+		if(locales== "ko") {
+			map.put("businessNo", 10);
+		}else {
+			map.put("businessNo", 1005);
+		}
 		map.put("locale", locales);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList(map));
@@ -83,7 +88,12 @@ public class HomeController {
 			@RequestParam(value = "locale", defaultValue = "ko") String locales) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("businessNo", 10);
+		System.out.println("locales값 +++++="+locales);
+		if(locales== "ko") {
+			map.put("businessNo", 10);
+		}else {
+			map.put("businessNo", 1005);
+		}
 		map.put("locale", locales);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList(map));
