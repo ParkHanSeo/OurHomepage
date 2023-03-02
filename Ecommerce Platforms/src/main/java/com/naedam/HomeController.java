@@ -98,7 +98,7 @@ public class HomeController {
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList(map));
 		model.addAttribute("businessPost", businessService.getBusinessPostList(map));
-		return "user/userDashBoard";
+		return "user/"+locales+"/userDashBoard";
 	}	
 
 }
