@@ -56,6 +56,8 @@ public class BusinessRestController {
 	public Boolean BusinessContentsProcess(@RequestParam(value = "businessContentsArr[]") List<String> businessContentsArr,
 										   @RequestParam("mode") String mode) throws Exception{
 		Boolean result = false;
+		System.out.println("???????/??");
+		System.out.println("businessContentsArr=====" + businessContentsArr);
 		Map<String, Object> businessContentsMap = new HashMap<>();
 		businessContentsMap.put("mode", mode);
 		businessContentsMap.put("businessContentsArr", businessContentsArr);

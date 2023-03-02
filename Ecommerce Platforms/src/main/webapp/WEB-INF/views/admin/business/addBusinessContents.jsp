@@ -6,7 +6,7 @@
 	function fncAddPost(){
 		var businessContentsTitle = $("[id=businessContentsTitle]").val();
 		var businessContentsContent = $('[id=businessContentsContent]').val();
-		var file = $('[id=file]').val();	
+		var file = $('[id=file]').val();
 
 		if(businessContentsTitle == null || businessContentsTitle == ''){
 			alert("제목을 입력하셔야 합니다.");
@@ -77,6 +77,7 @@
 	            	<button type="button" onclick="fncAddPost()" class="btn btn-primary">확인</button>&nbsp;&nbsp;&nbsp;
 	            </div>
 	            <input type="hidden" value="${businessPostNo}" name="businessPostNo">
+	            <input type="hidden" value="${locale}" name="locale">
 	        </form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

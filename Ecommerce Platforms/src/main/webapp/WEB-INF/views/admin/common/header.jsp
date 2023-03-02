@@ -82,7 +82,7 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+">"
+									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+"&locale=${cookie.locale.value}>"
 									+ "<i class='fa fa-circle-o'></i> "+Data[i].boardTitle+""
 									+ "</a>"
 									+ "</li>"
@@ -105,7 +105,7 @@
 						for(var i = 0; i < Data.length; i++){
 							console.log(Data[i].businessNo)
 							display = "<li>"
-									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+">"
+									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+"&locale=${cookie.locale.value}>"
 									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle+""
 									+ "</a>"
 									+ "</li>"

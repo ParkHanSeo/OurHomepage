@@ -91,6 +91,7 @@ public class BusinessController {
 									     ,HttpServletRequest request) throws Exception{
 		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/");
 		System.out.println("확인222 === "+businessContents);
+		System.out.println("확인333 === "+businessPost);
 		Map<String, Object> businessContentsMap	 = new HashMap<>();
 		businessContentsMap.put("businessContents", businessContents);
 		businessContentsMap.put("businessPost", businessPost);
@@ -158,16 +159,17 @@ public class BusinessController {
 										  @RequestParam("businessPostNo") int businessPostNo,
 										  @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
 		BusinessPost businessPost = businessService.getBusinessPost(businessPostNo);
+		System.out.println("businessPostNo=====" + businessPostNo);
 		model.addAttribute("businessPost", businessPost);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("businessPostNo", businessPostNo);
-		map.put("locale", locale);
+		map.put("locale", businessPost.getLocale());
 		List<BusinessContents> businessContents = businessService.getBusinessContentsList(map);
 		model.addAttribute("businessContents",businessContents);
 		model.addAttribute("businessPostNo", businessPostNo);
-		model.addAttribute("locale", locale);
+		model.addAttribute("locale", businessPost.getLocale());
 		return "admin/business/businessContentsList";
 	}
 	
