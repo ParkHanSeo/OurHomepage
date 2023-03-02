@@ -58,7 +58,7 @@ function newPage(lang){
 	location.href = '/?locale=' + lang;
 	
 	//쿠키
-	document.cookie = 'locale=' + lang;
+	document.cookie = 'locale=' + lang +';' + 'path=/;'
 	
 }
 </script>
