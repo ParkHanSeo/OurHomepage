@@ -140,7 +140,6 @@
 			location.href = '/admin/dashBoard?locale=' + lang;
 			//쿠키
 			document.cookie = 'locale=' + lang +';' + 'path=/;'
-			alert( document.cookie );
 			
 		}
 		
