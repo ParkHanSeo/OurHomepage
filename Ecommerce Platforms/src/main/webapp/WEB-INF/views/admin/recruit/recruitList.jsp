@@ -33,7 +33,7 @@
 		  		  	 	 data : { postArr : postArr,
 		  		  	 		  	},
 		    		 	 success : function(result){
-		   			  		alert("게시글이 삭제 되었습니다." + $("#locale").val())
+		   			  		alert("게시글이 삭제 되었습니다.")
 		   			  		location.href = "/admin/recruitList?locale="+$("#locale").val();
 		  		  	 	 },
 		  		  	 	 error : function(result){
