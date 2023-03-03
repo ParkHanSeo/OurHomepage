@@ -33,8 +33,8 @@
 		  		  	 	 data : { postArr : postArr,
 		  		  	 		  	},
 		    		 	 success : function(result){
-		   			  		alert("게시글이 삭제 되었습니다.")
-		   			  		location.href = "/admin/recruitList";
+		   			  		alert("게시글이 삭제 되었습니다." + $("#locale").val())
+		   			  		location.href = "/admin/recruitList?locale="+$("#locale").val();
 		  		  	 	 },
 		  		  	 	 error : function(result){
 			   			  		alert("게시글 삭제 실패.")
@@ -124,7 +124,7 @@
 		                    <div class="box-tools pull-right" style="margin-bottom:5px;">
 		                    	<%-- <input type="hidden" name="boardNo" value="${boardNo}"> --%>
 		                    	<input type="hidden" name="cPage">
-		                    	<input type="hidden" name="locale" value="${locale }">
+		                    	<input type="hidden" name="locale" id="locale" value="${locale }">
 		                    	<!-- <input type="hidden" name="searchKeyword"> -->
 		                        <div id="searchBox">
 			                      	  <input type="text" name="searchKeyword" id="searchKeyword" placeholder="제목으로 검색" value="${searchKeyword}">
