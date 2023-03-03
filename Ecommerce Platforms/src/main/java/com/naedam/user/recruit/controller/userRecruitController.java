@@ -115,7 +115,9 @@ public class userRecruitController {
 		
 		//채용글 1차
 		recruitDTO recruitData = recruitService.getRecruitData(recruitNo);
-				
+		
+		String locale = recruitData.getLocale();
+		System.out.println("locale ====" + locale);
 		//채용글 2차 (리스트 여러개)
 		List<recruitContentsDTO> contents = recruitService.getContentsData(recruitNo);
 		
@@ -130,7 +132,7 @@ public class userRecruitController {
 		
 		mv.addObject("recruitData", recruitData);
 		mv.addObject("contents", contents);
-		mv.setViewName("user/"+locales+"/recruit/userRecruitDetail");
+		mv.setViewName("user/"+locale+"/recruit/userRecruitDetail");
 		return mv;
 	}
 	
