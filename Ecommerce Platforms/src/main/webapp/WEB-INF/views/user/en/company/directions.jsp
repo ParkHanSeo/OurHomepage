@@ -39,7 +39,7 @@
                                 <div class="location_text">
 	                                <h3 class="location_name">HQ</h3>
 	                                <p class="location_info">
-	                                    231 Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea, S-711 (H square, Sampyeong-dong) <br>
+	                                    S-711 (H square, Sampyeong-dong), 231 Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea <br>
 	                                    It takes 3 minutes by bus from Exit 1 - 4 of Pangyo Station on the Shinbundang Line. <br>
 	                                    TEL 031-712-8315 <br>
 	                                    FAX 031-789-3545
@@ -58,7 +58,7 @@
                                 <div class="location_text">
 	                                <h3 class="location_name">Branch Office</h3>
 	                                <p class="location_info">
-	                                    298 Beotkkot-ro, Geumcheon-gu, Seoul, 11F 1104 (50-3 Gasan-dong) <br>
+	                                    11F 1104 (50-3 Gasan-dong), 298 Beotkkot-ro, Geumcheon-gu, Seoul <br>
 	                                    Gasan Digital Complex Station on Line 7 connects to Exit 2 <br>
 	                                    TEL 02-2083-5590 <br>
 	                                    FAX 02-2083-5594
