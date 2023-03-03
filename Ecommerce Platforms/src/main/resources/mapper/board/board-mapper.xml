@@ -28,6 +28,7 @@
 		<result property="postOriginNo"				column="POST_ORIGIN_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMember.memberNo"		column="MEMBER_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMemberName"			column="MEMBER_NAME"			jdbcType="VARCHAR"></result>
+		<result property="locale"			column="LOCALE"			jdbcType="VARCHAR"></result>
 		<result column="ROWNUM" property="rownum"/>
 		
 		<association property="postBoard" javaType="Board" >

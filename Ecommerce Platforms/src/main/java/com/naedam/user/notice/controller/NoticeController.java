@@ -101,14 +101,14 @@ public class NoticeController {
 		ModelAndView mv = new ModelAndView();
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("postNo", postNo);
-		map.put("locale", locales);
 		Map<String, Object> resultMap = boardService.getNoticeDetail(map);
+		String locale = (String) resultMap.get("postLocale");
 		mv.addObject("post",resultMap.get("post"));
 		mv.addObject("board",resultMap.get("board"));
 		mv.addObject("boardFile", resultMap.get("boardFile"));
 		mv.addObject("postPrev",resultMap.get("postPrev"));
 		mv.addObject("postNext",resultMap.get("postNext"));
-		mv.setViewName("user/"+locales+"/notice/noticeDetail");
+		mv.setViewName("user/"+locale+"/notice/noticeDetail");
 		return mv;
 	}
 	

@@ -154,7 +154,7 @@
 					</c:if>
 				</div>
 					<div class="btn_area">
-						<a href="/user/recruit/userRecruitList">
+						<a href="/user/recruit/userRecruitList?locale=${cookie.locale.value}">
 							<span class="back_btn">List</span>
 						</a>
 					</div>

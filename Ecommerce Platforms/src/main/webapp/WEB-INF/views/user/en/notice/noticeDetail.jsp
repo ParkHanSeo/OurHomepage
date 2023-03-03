@@ -47,15 +47,15 @@
 								<c:if test="${empty postNext.postNo}">
 									<dl class="no_list">
 										<dt>
-											<span class="spr ico_next"></span>다음
+											<span class="spr ico_next"></span>next
 										</dt>
-										<dd>다음 글이 없습니다.</dd>
+										<dd>There is no next post.</dd>
 									</dl>
 								</c:if>
 								<c:if test="${!empty postNext.postNo}">
 									<dl>
 										<dt>
-											<span class="spr ico_next"></span>다음
+											<span class="spr ico_next"></span>next
 										</dt>
 										<dd>
 											<a href="/user/notice/getNoticeDetail/${postNext.postNo}">${postNext.postTitle}</a>
@@ -65,15 +65,15 @@
 								<c:if test="${empty postPrev.postNo}">
 									<dl class="no_list">
 										<dt>
-											<span class="spr ico_before"></span>이전
+											<span class="spr ico_before"></span>before
 										</dt>
-										<dd>이전 글이 없습니다.</dd>
+										<dd>There is no previous post</dd>
 									</dl>
 								</c:if>
 								<c:if test="${!empty postPrev.postNo}">
 									<dl>
 										<dt>
-											<span class="spr ico_before"></span>이전
+											<span class="spr ico_before"></span>before
 										</dt>
 										<dd>
 											<a href="/user/notice/getNoticeDetail/${postPrev.postNo}">${postPrev.postTitle}</a>
@@ -82,7 +82,7 @@
 								</c:if>
 							</div>
 							<div class="btn_area">
-								<a href="/user/notice/noticeList/${board.boardNo}" class="common-btn is-white2"><span>목록</span></a>
+								<a href="/user/notice/noticeList/${board.boardNo}" class="common-btn is-white2"><span>List</span></a>
 							</div>
 						</div>
                     </div>

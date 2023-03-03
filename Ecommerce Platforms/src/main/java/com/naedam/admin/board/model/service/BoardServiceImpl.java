@@ -272,6 +272,7 @@ public class BoardServiceImpl implements BoardService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		Post post =	boardDao.getPostData((Integer) map.get("postNo"));
 		resultMap.put("post", post);
+		resultMap.put("postLocale", post.getLocale());
 		resultMap.put("boardFile", boardDao.getPostFile(post.getPostNo()));
 		resultMap.put("board", boardDao.getBoardData(post.getPostBoard().getBoardNo()));
 		resultMap.put("postPrev", boardDao.getPrevPost(post));
