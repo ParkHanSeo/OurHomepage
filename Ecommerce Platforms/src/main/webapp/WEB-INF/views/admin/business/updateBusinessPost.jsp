@@ -208,16 +208,6 @@
 				                	<textarea name="businessPostText2" id="businessPostText2_2" rows="7" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
-							<tr>
-				                <td class="menu">하단제목</td>
-				                <td align="left"><input type="text" name="businessPostBottomTitle" id="businessPostBottomTitle2" class="form-control input-sm"></td>
-				            </tr>				            
-				            <tr>
-				            	<td class="menu">하단 내용</td>
-				                <td colspan="2" style="text-align:left">
-				                	<textarea name="businessPostBottomContents" id="businessPostBottomContents2" rows="5" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
-				                </td>
-				            </tr>					            
 		            	    <tr>
 				            	<td class="menu">아이콘파일</td>
 				            	<td align="left" name="iconTd">

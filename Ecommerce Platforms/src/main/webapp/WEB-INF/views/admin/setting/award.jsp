@@ -213,7 +213,7 @@
 	    	if(form_register.awardImage.value == '') { alert('이미지는 필수 사항입니다.'); form_register.content.focus(); return false;}
 	    }
 
-	    if(!confirm("연혁을 등록하시겠습니까?")){
+	    if(!confirm("수상 정보를 등록하시겠습니까?")){
 			alert("취소 되었습니다.");
 			return;
 		}else{

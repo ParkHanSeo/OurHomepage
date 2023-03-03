@@ -59,7 +59,7 @@ public class AwardServiceImpl implements AwardService {
 				award.setLocale((String)map.get("locale"));
 				awardImage.transferTo(file);
 				awardDao.insertAward(award);
-				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
+				resultMap.put("msg", "수상 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
 				if(awardImage.isEmpty() == false) {
 					File file = new File(filePath+awardImage.getOriginalFilename());
@@ -71,14 +71,14 @@ public class AwardServiceImpl implements AwardService {
 				}
 				
 				awardDao.updateAward(award);
-				resultMap.put("msg", "연혁 정보가 수정되었습니다.");
+				resultMap.put("msg", "수상 정보가 수정되었습니다.");
 			}
 		}else if("delete".equals(map.get("mode"))) {
 			List<String> historyNoList = Arrays.asList(request.getParameterValues("list[]"));
 			for(String no : historyNoList) {
 				awardDao.deleteAward(Integer.parseInt(no));
 			}
-			resultMap.put("msg", "연혁이 삭제되었습니다.");
+			resultMap.put("msg", "수상 정보가 삭제되었습니다.");
 		}
 		
 		return resultMap;
