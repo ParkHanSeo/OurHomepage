@@ -52,7 +52,7 @@ window.onload=function(){
 }
 
 function newPage(lang){	
-	document.cookie = "locale=eng; max-age=0";
+	document.cookie = "locale=en; max-age=0";
 	document.cookie = "locale=ko; max-age=0";
 
 	location.href = '/?locale=' + lang;

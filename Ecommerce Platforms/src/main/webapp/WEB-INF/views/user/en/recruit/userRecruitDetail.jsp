@@ -14,7 +14,7 @@
 	<div id="contents" style="padding-top: 47px;">
 		<div class="area_sub_title">
 		    <div class="mod_title mod_title_type">
-		    	<h3 class="title">채용공고</h3>
+		    	<h3 class="title">Job posting</h3>
 			</div>
 		</div>
 		<!-- area_visual -->
@@ -32,8 +32,8 @@
 								<strong class="recruit_status">
 									<span class="closing">
 									<c:choose>
-										<c:when test="${recruitData.contentsStatus eq 'Y'}">채용중</c:when>
-										<c:when test="${recruitData.contentsStatus eq 'R'}">상시채용</c:when>
+										<c:when test="${recruitData.contentsStatus eq 'Y'}">hiring</c:when>
+										<c:when test="${recruitData.contentsStatus eq 'R'}">Ongoing recruitment</c:when>
 									</c:choose>
 									</span>
 								</strong>
@@ -48,7 +48,7 @@
 			<div class="mod_tb tb_detail">
 				<div class="recruit_detail">
 					<dl class="tb_wrap">
-						<dt>직무정보</dt>
+						<dt>Job Information</dt>
 						<dd>
 							<table>
 								<colgroup>
@@ -57,29 +57,29 @@
 								</colgroup>
 								<tbody>
 									<tr>
-										<th scope="row">직무명</th>
+										<th scope="row">Job Title</th>
 										<td>
 											${recruitData.jobTitle}
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">근무형태</th>
+										<th scope="row">Employment Type</th>
 										<td scope="row" rowspan="1">${recruitData.recruitType}</td>
 									</tr>
 									<tr>
-										<th scope="row">경력</th>
+										<th scope="row">Work Experience</th>
 										<td>
 											${recruitData.career}
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">근무지</th>
+										<th scope="row">Work Location</th>
 										<td>
 											${recruitData.recruitPlace}
 										</td>
 									</tr>
 									<tr>
-										<th scope="row">채용마감일</th>
+										<th scope="row">Application deadline</th>
 										<c:choose>
 											<c:when test="${recruitData.recruitEnd != null}">
 												<td scope="row" rowspan="1">
@@ -88,14 +88,14 @@
 											</c:when>
 											<c:otherwise>
 												<td scope="row" rowspan="1">
-												상시채용
+												Ongoing recruitment
 												</td>
 											</c:otherwise>
 										</c:choose>
 										
 									</tr>
 									<tr>
-										<th scope="row">채용 담당자</th>
+										<th scope="row">Hiring Manager</th>
 										<td>
 											<p>${recruitData.recruitManager}</p>
 										</td>
@@ -105,13 +105,13 @@
 						</dd>
 					</dl>
 					<dl>
-						<dt style="font-weight: bold;">직무소개</dt>
+						<dt style="font-weight: bold;">Job Description</dt>
 						<dd>
 							<p>${recruitData.jobIntro}</p>
 						</dd>
 					</dl>
 					<dl>
-						<dt style="font-weight: bold;">지원자격</dt>
+						<dt style="font-weight: bold;">Qualifications</dt>
 						<dd>
 							<p>${recruitData.qualification}</p>
 						</dd>
@@ -130,7 +130,7 @@
 					<!--E: 추가내용들 반복 -->
 					<c:if test="${recruitData.orgFileName != null}">
 					<dl>
-						<dt style="font-weight: bold;">첨부파일</dt>
+						<dt style="font-weight: bold;">Upload File</dt>
 						<dd>
 							<a href="/user/recruit/fileDownload/${recruitData.recruitNo}">
 								${recruitData.orgFileName}
@@ -141,7 +141,7 @@
 				</div>
 					<div class="btn_area">
 						<a href="/user/recruit/userRecruitList">
-							<span class="back_btn">목록</span>
+							<span class="back_btn">List</span>
 						</a>
 					</div>
 			</div>
@@ -151,12 +151,6 @@
 	<!-- // 상세 wrap -->
 	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
 <script type="text/javascript">
-
-function recruit_Download(){
-	alert("다운로드버튼 클릭!!!!")
-}
-
-
 
 </script>
 
