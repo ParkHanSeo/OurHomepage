@@ -1942,7 +1942,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
     justify-content: flex-end;
   }
   #header .inner .header_util .btn_util_wrap a:not(.btn_search) {
-    display: none;
   }
   #wrap {
     min-width: 100%;
@@ -2300,6 +2299,9 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
 }
 
 @media all and (max-width: 950px) {
+	  #header .inner .gnb-wrap {
+    display: none;
+  }
   #footer .footer-menu {
     display: flex;
   }
@@ -2956,9 +2958,6 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   #footer .footer-policy .select_policy .companyGroup li.mo_show {
     display: block;
   }
-  #header .inner .gnb-wrap {
-    display: none;
-  }
   #footer .naedam_footer_img {
     float: left;
   }
@@ -3164,4 +3163,5 @@ body.scroll-up .common-swiper_area[data-js="js-sticky"] {
   .hide_1280 {
     display: none;
   }
+}
 }
