@@ -110,7 +110,8 @@ public class userRecruitController {
 	
 	
 	@RequestMapping(value = "getRecruitDetail/{recruitNo}")
-	public ModelAndView recruitDetail(@PathVariable("recruitNo")int recruitNo,@RequestParam(value = "locale", defaultValue = "ko") String locales) {
+	public ModelAndView recruitDetail(@PathVariable("recruitNo")int recruitNo,
+			@RequestParam(value = "locale", defaultValue = "ko") String locales) {
 		
 		//채용글 1차
 		recruitDTO recruitData = recruitService.getRecruitData(recruitNo);
