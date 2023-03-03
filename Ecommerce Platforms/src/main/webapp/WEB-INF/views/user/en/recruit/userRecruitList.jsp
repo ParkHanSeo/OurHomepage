@@ -174,7 +174,7 @@ function paging(cPage){
 									onkeypress="if(event.keyCode==13){paging();}">
 									<input type="hidden" name="cPage">
 									<input class="common-search_input" name="searchKeyword"
-										id="recruit_search_txt" type="text" placeholder="검색어을 입력해주세요."
+										id="recruit_search_txt" type="text" placeholder="Search.."
 										title="검색어을 입력해주세요.">
 									<!-- <button type="submit" class="common-search_btn recruit_search_imo" id="btnSearch"> -->
 									</button>
@@ -267,6 +267,6 @@ function paging(cPage){
             </div><!-- // #contents -->
         </section><!-- // #container -->
 </div>
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
+<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />	
   </body>
 </html>

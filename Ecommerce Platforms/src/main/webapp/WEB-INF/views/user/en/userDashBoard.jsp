@@ -79,7 +79,7 @@
                      <br />Furthermore, our vision is to grow into an IT Total Service Provider with global competitiveness.
                   </p>
                   <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                     <a href="/user/company/businessList" class="common-btn is-white">
+                     <a href="/user/company/businessList?locale=${cookie.locale.value}" class="common-btn is-white">
                         <span>About Us</span>
                         <i class="icon link-arrow2"></i>
                      </a>
@@ -307,7 +307,7 @@
                            </p>
                         </div>
                         <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                           <a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction" class="common-btn">
+                           <a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction?locale=${cookie.locale.value}" class="common-btn">
                               <span class="main_solution_services">View All
                               </span>
                            </a>
@@ -353,7 +353,7 @@
                   </div>
                   <div class="half-wrap aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                      <div class="is-left">
-                        <a href="/user/highflier/qualifiedEmployee" class="banner is-people aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+                        <a href="/user/highflier/qualifiedEmployee?locale=${cookie.locale.value}" class="banner is-people aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
                            <h3 class="tit">Image of qualified employee of Naedam C&C</h3>
                            <p class="description">
                            		We are waiting for you to create <br/> a new future with Naedam C&C.
@@ -365,7 +365,7 @@
                         </a>
                      </div>
                      <div class="is-right"> 
-                        <a href="/user/recruit/userRecruitList" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+                        <a href="/user/recruit/userRecruitList?locale=${cookie.locale.value}" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
                            <h3 class="tit">Careers</h3>
                            <p class="description">
 								We look forward to your support <br/>to join Naedam C&C
@@ -374,7 +374,7 @@
                               <span class="blind"></span>
                            </p>
                         </a> 
-                        <a href="/user/highflier/hrDepartment" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+                        <a href="/user/highflier/hrDepartment?locale=${cookie.locale.value}" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
                            <h3 class="tit">Personnel System</h3>
                            <p class="description">
                               Online & on-site training<br /> Support for various Employee Benefits
@@ -393,7 +393,7 @@
                         <h2 class="tit">Notices</h2>
                      </div>
                      <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                        <a href="/user/notice/noticeList/5001" class="common-btn">
+                        <a href="/user/notice/noticeList/5019" class="common-btn">
                            <span>View all</span>
                         </a>
                      </div>
@@ -402,7 +402,7 @@
                      <c:forEach var="post" items="${post}" varStatus="status" >
                         <li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init main_notice_items">
                            <div class="notice_box">
-                              <a href="/user/notice/getNoticeDetail/${post.postNo}" class="desc_box">
+                              <a href="/user/notice/getNoticeDetail/${post.postNo}?locale=${cookie.locale.value}" class="desc_box">
                                  <p class="ui_category">${post.postBoard.boardTitle}</p>
                                  <p class="ui_title">${post.postTitle}</p>
                               </a>
@@ -417,6 +417,6 @@
       </section>
       <!-- // #container -->
       </div>
-      <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />      
+      <jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />      
   </body>
 </html>

@@ -149,7 +149,7 @@
 		<!-- // 상세 body -->
 	</div>
 	<!-- // 상세 wrap -->
-	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
 <script type="text/javascript">
 
 </script>

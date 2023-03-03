@@ -140,7 +140,7 @@
 					</c:if>
 				</div>
 					<div class="btn_area">
-						<a href="/user/recruit/userRecruitList">
+						<a href="/user/recruit/userRecruitList?locale=${cookie.locale.value}">
 							<span class="back_btn">목록</span>
 						</a>
 					</div>
@@ -149,7 +149,14 @@
 		<!-- // 상세 body -->
 	</div>
 	<!-- // 상세 wrap -->
-	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+	<c:choose>
+		<c:when test="${cookie.locale.value eq 'en' }">
+			<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
+		</c:when>
+	<c:otherwise>
+		<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />      
+	</c:otherwise>
+</c:choose>
 <script type="text/javascript">
 
 function recruit_Download(){

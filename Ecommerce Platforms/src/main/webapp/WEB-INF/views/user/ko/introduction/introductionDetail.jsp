@@ -67,6 +67,13 @@
             </div><!-- // #contents -->
         </section><!-- // #container -->
     </div><!-- // #wrap -->
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
+  	<c:choose>
+		<c:when test="${cookie.locale.value eq 'en' }">
+			<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
+		</c:when>
+	<c:otherwise>
+		<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />      
+	</c:otherwise>
+</c:choose>	
 </body>
 </html>
