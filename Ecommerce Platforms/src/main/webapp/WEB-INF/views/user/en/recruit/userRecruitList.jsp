@@ -218,14 +218,24 @@ function paging(cPage){
 												</div>
 												<div class="date_box center-left">
 													<p class="common-text_reg-date">
-														${recruit.career}
+													<c:choose>
+														<c:when test="${recruit.career == '경력'}">
+														work Experience
+														</c:when>
+														<c:when test="${recruit.career == '신입'}">
+														newcomer
+														</c:when>
+														<c:when test="${recruit.career == '무관'}">
+														irrelevant
+														</c:when>
+													</c:choose>
 													</p>
 												</div>
 												<div class="date_box center-left">
 												<c:choose>
 													<c:when test="${recruit.recruitEnd != null}">
 														<p class="common-text_reg-date">
-															${recruit.recruitEnd} 마감
+															${recruit.recruitEnd} deadline
 														</p>
 													</c:when>
 													<c:otherwise>
@@ -238,8 +248,8 @@ function paging(cPage){
 												<div class="date_box center-left">
 													<p class="common-text_reg-date">
 														<c:choose>
-															<c:when test="${recruit.contentsStatus == 'Y'}">채용중</c:when>
-															<c:when test="${recruit.contentsStatus == 'R'}">상시채용</c:when>
+															<c:when test="${recruit.contentsStatus == 'Y'}">Hiring</c:when>
+															<c:when test="${recruit.contentsStatus == 'R'}">Ongoing recruitment</c:when>
 														</c:choose>
 													</p>
 												</div>

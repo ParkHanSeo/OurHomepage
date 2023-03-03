@@ -68,9 +68,23 @@
 									</tr>
 									<tr>
 										<th scope="row">Work Experience</th>
-										<td>
-											${recruitData.career}
-										</td>
+										<c:choose>
+											<c:when test="${recruitData.career == '경력'}">
+												<td>
+												work Experience
+												</td>
+											</c:when>
+											<c:when test="${recruitData.career == '신입'}">
+												<td>
+												Newcomer
+												</td>
+											</c:when>
+											<c:otherwise>
+												<td>
+												irrelevant
+												</td>
+											</c:otherwise>
+										</c:choose>
 									</tr>
 									<tr>
 										<th scope="row">Work Location</th>
