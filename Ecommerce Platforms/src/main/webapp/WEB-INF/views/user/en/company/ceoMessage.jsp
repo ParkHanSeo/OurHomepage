@@ -38,7 +38,7 @@
 						<p class="ceo_msg-txt1">
 							Welcome to the <br> NEDAM C&C <br class="show_768">homepage.
 						</p>
-						<p class="ceo_msg-txt2 line-01">
+						<p class="ceo_msg-txt2 en_line-01">
 							NEDAM C&C is composed of experts in their respective fields with rich experience. 
 							Based on specialized and innovative solutions supported by the latest technology, 
 							our mission is to upgrade our customers' satisfaction and internal competitiveness by leading them to the next level. 
@@ -59,8 +59,8 @@
 						<p class="ceo_msg-txt2 line-04">NEDAM responds sincerely to the desire for growth. We support individuals with various 
 						dreams and passions and strive to grow together as business partners.
 						Our goal is to become a companion that grows together with our customers through satisfactory services and solutions from a new perspective.</p>
-						<p class="ceo_msg-txt3">
-							내담씨앤씨 대표 <span>한 창 엽</span>
+						<p class="ceo_msg-txt3 en_line-01">
+							Naedam C&C CEO  <span>Han Chang Yeop</span>.
 						</p>
 					</div>
 				</div>
