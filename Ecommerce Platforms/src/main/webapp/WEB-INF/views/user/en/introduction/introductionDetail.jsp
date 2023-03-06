@@ -44,13 +44,14 @@
                         <div class="layout_body">
                             <ol class="difference_list">
                             	<c:forEach var="businessContents" items="${businessContentsList}" varStatus="status" >
-                            		<c:set var="i" value="${ i+1 }" />
-                            		<c:if test="${i%2 == 1}">
-	                            		<li>
-                            		</c:if>
-                            		<c:if test="${i%2 == 0}">
-                            			<li class="is-right">
-                            		</c:if>
+									<c:if test="${businessContents.businessContentsType eq '1'}">
+	                            		<c:set var="i" value="${ i+1 }" />
+		                            		<c:if test="${i%2 == 1}">
+			                            		<li>
+		                            		</c:if>
+	                            			<c:if test="${i%2 == 0}">
+	                            				<li class="is-right">
+	                            			</c:if>
 		                                    <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 		                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/${businessContents.image}" alt="">
 		                                    </div>
@@ -58,7 +59,8 @@
 		                                        <p class="difference_title" style="white-space:pre-line;">${businessContents.businessContentsTitle}</p>
 		                                        <p class="difference_desc" style="white-space:pre-line;">${businessContents.businessContentsContent}</p>
 		                                    </div>
-		                                </li>
+	                                		</li>
+	                                </c:if>
                             	</c:forEach>
                             </ol>
                         </div>

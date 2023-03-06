@@ -245,7 +245,7 @@
                         </li>
                         <li class="cloud aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                            <div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
-                           <svg class="solution" height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 3370.82 2384.24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <svg class="solution en_solution" height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 3370.82 2384.24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
                               <linearGradient x1="0%" y1="58.8120299%" x2="100%" y2="58.8120299%" id="cloudlinearGradient-1">
                                 <stop stop-color="#C597F3" offset="0.0655594406%"></stop>
                                 <stop stop-color="#D497F3" offset="100%"></stop>
@@ -281,7 +281,7 @@
                               </g>
                            </svg>                                     
                            </div> 
-                           <div class="main_aos_solution_txt">
+                           <div class="main_aos_solution_txt en_solution_txt">
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">Solution</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                  Through communication, we analyze and design the requirements necessary for the company or sales activities and implement them as a computer program.<br />
