@@ -400,7 +400,7 @@
                         <h2 class="tit">회사소식</h2>
                      </div>
                      <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                        <a href="/user/notice/noticeList/5001" class="common-btn">
+                        <a href="/user/notice/noticeList/5018" class="common-btn">
                            <span>전체보기</span>
                         </a>
                      </div>
