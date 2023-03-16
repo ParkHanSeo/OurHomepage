@@ -141,7 +141,8 @@
 		select COUNT(*)
 		  from (select
 				H.*
-				from history H)countTable 	
+				from history H
+				where locale like #{locale})countTable 	
 	</select>
 	
 </mapper>

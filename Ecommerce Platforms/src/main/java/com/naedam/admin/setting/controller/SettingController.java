@@ -60,7 +60,8 @@ public class SettingController {
 		int totalRecruitListCount = settingService.selectAllHistoryList(locale);
 		
 		//페이징 처리
-		String url = request.getRequestURI();
+		String url = request.getRequestURI() + "?locale=" + locale;
+		System.out.println("url>>>>"+ url);
 		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalRecruitListCount, url);
 		
 		model.addAttribute("pagebar", pagebar);
