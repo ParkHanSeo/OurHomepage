@@ -145,6 +145,7 @@
 		AND   origin_no = #{menu.code}
 		AND   code != 1
 		AND   ORD = #{menu.ord}
+		AND   locale = #{locale}
 		ORDER BY MENU_ASC ASC, CODE ASC
 	</select>	
 	
@@ -156,6 +157,7 @@
 		AND   origin_no = #{menu.originNo}
 		AND   code != 1
 		AND   ORD = 3
+		AND   locale = #{locale}
 		ORDER BY MENU_ASC ASC, CODE ASC
 	</select>
 	
