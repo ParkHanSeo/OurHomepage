@@ -49,12 +49,13 @@ public class HomeController {
 		if(locales.equals("ko")) {
 			map.put("businessNo", 10);
 		}else {
-			map.put("businessNo", 1005);
+			map.put("businessNo", 1008);
 		}
 		map.put("locale", locales);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList(map));
 		model.addAttribute("businessPost", businessService.getBusinessPostList(map));
+		System.out.println("포스트번호를 알려줘"+businessService.getBusinessPostList(map));
 		return "user/"+locales+"/userDashBoard";
 	}	
 
@@ -92,7 +93,7 @@ public class HomeController {
 		if(locales.equals("ko")) {
 			map.put("businessNo", 10);
 		}else {
-			map.put("businessNo", 1005);
+			map.put("businessNo", 1008);
 		}
 		map.put("locale", locales);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
