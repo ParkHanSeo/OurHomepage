@@ -99,10 +99,10 @@ function newPage(lang){
                     <div class="language_list">
                         <ul>
                             <li>
-                            	<a href="#" onclick="newPage('ko')" class="active lang_ko">KOR</a>
+                            	<a href="#" onclick="newPage('ko')" class="${cookie.locale.value eq 'ko' ? 'active' : '' } lang_ko">KOR</a>
                             </li>
                             <li>
-                            	<a href="#" onclick="newPage('en')" class="lang_en">ENG</a>
+                            	<a href="#" onclick="newPage('en')" class="${cookie.locale.value eq 'en' ? 'active' : '' } lang_en">ENG</a>
                             </li>
                         </ul>
                     </div>
