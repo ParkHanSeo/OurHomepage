@@ -68,9 +68,6 @@ public class MenuController {
 		headMap.put("headImage", headImage);
 		headMap.put("filePath", filePath);
 		headMap.put("imageStatus", imageStatus);
-		System.out.println("locale확인"+head.getLocale());
-		System.out.println("imageStatus >>>" + imageStatus);
-		System.out.println("headMap.headImage >>>" + headMap.get("headImage"));
 		
 		return menuService.headProcess(headMap);
 	}
@@ -88,7 +85,6 @@ public class MenuController {
 				@RequestParam(value="revision_code", defaultValue = "0") int revision_code,
 			    @RequestParam(value="ord", defaultValue = "0") int ord,
 			    @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
-		System.out.println("menu 시작");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("locale", locale);
 		Map<String, Object> resultMap = menuService.getMenuList(map);
@@ -111,8 +107,6 @@ public class MenuController {
 	public String listMenu2(@ModelAttribute("menu") Menu menu, Model model,
 			@RequestParam(value="ord", defaultValue = "0") int ord,
 		    @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
-		System.out.println("menu2 시작");
-		System.out.println("locale 확인 === "+locale);
 		menu.setOrd(menu.getOrd()+1);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("menu", menu);
@@ -137,8 +131,6 @@ public class MenuController {
 	public String menuList(Menu menu, Model model, HttpServletRequest request,
 			@RequestParam(value="ord", defaultValue = "0") int ord,
 			  @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
-		System.out.println("menuList 시작");
-		System.out.println("locale 확인 === "+locale);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("locale", locale);
 		Map<String, Object> resultMap = menuService.getMenuList(map);
@@ -159,7 +151,6 @@ public class MenuController {
 	@GetMapping("tree")
 	public String tree(Model model, MenuCategory menuCategory,
 			@RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
-		System.out.println("menuCategory/tree 시작");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("locale", locale);
 		Map<String, Object> resultMap = menuService.getMenuCategoryList(map);
@@ -180,7 +171,6 @@ public class MenuController {
 	@RequestMapping(value="headList")
 	public String headList(Head head, Model model,
 			   @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
-		System.out.println("head/headList 시작");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("locale", locale);
 		Map<String, Object> resultMap = menuService.getHeadList(map);
@@ -198,7 +188,6 @@ public class MenuController {
 	 */
 	@RequestMapping(value="bottomList")
 	public String bottomList(Model model, Bottom bottom) throws Exception{
-		System.out.println("bottom/bottomList 시작");
 		bottom = menuService.getBottom();
 		model.addAttribute("bottom", bottom);
 		return "admin/menu/bottom";

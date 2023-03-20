@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,25 +38,21 @@ public class MenuRestController {
 	
 	@PostMapping(value="json/getMenu")
 	public Menu getMenu(@RequestParam("code") int code) throws Exception{
-		System.out.println("/json/getMenu 시작");
 		return menuService.getMenu(code);	
 	}
 	
 	@PostMapping(value="json/getHead")
 	public Head getHead(@RequestParam("headNo") int headNo) throws Exception{
-		System.out.println("/json/getHead 시작");
 		return menuService.getHead(headNo);
 	}
 	
 	@PostMapping(value="json/getBottom")
 	public Bottom getBottom() throws Exception{
-		System.out.println("/json/getBottom 시작");
 		return menuService.getBottom();
 	}
 	
 	@PostMapping(value="json/getRevisionList")
 	public Map getRevisionList(@RequestParam("code") int code) throws Exception{
-		System.out.println("/json/getRevisionList 시작");
 		Menu menu = menuService.getMenu(code);
 		menu.setOriginNo(code);
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -69,7 +63,6 @@ public class MenuRestController {
 	
 	@PostMapping(value="json/deleteRevisionList")
 	public Map deleteRevisionList() throws Exception{
-		System.out.println("/json/deleteRevisionList 시작");
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> resultMap = menuService.deleteRevisionList(map);
 		return resultMap;
@@ -80,7 +73,6 @@ public class MenuRestController {
 							@RequestParam("menuUpAsc") int menuUpAsc,
 							@RequestParam("menuNo") int menuNo,
 							@RequestParam("upMenuNo") int upMenuNo) throws Exception{
-		System.out.println("updateUpAsc 시작");
 		Boolean result = false;
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> map2 = new HashMap<String, Object>();
@@ -99,7 +91,6 @@ public class MenuRestController {
 							@RequestParam("menuDownAsc") int menuDownAsc,
 							@RequestParam("menuNo") int menuNo,
 							@RequestParam("downMenuNo") int downMenuNo) throws Exception{
-		System.out.println("json/updateDownAsc 시작");
 		Boolean result = false;
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> map2 = new HashMap<String, Object>();
@@ -118,7 +109,6 @@ public class MenuRestController {
 							@RequestParam("headUpAsc") int headUpAsc,
 							@RequestParam("headNo") int headNo,
 							@RequestParam("upHeadNo") int upHeadNo) throws Exception{
-		System.out.println("updateHeadUpAsc 시작");
 		Boolean result = false;
 		Map<String, Object> map = new HashMap<String, Object>();
 		Map<String, Object> map2 = new HashMap<String, Object>();
@@ -137,7 +127,6 @@ public class MenuRestController {
 							@RequestParam("headDownAsc") int headDownAsc,
 							@RequestParam("headNo") int headNo,
 							@RequestParam("downHeadNo") int downHeadNo) throws Exception{
-		System.out.println("json/updateDownAsc 시작");
 		Boolean result = false;
 		if(headNo != 0) {
 		Map<String, Object> map = new HashMap<String, Object>();

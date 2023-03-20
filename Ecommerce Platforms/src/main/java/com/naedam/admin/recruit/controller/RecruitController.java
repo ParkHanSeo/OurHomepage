@@ -1,14 +1,9 @@
 package com.naedam.admin.recruit.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -18,10 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import com.naedam.admin.common.Mir9Utils;
@@ -47,7 +40,6 @@ public class RecruitController {
 	public String recruitList(Model model, @RequestParam(defaultValue = "1") int cPage, HttpServletRequest request,
 			@RequestParam(value= "searchKeyword",required = false) String searchKeyword,
 			@RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception {
-		System.out.println("recruitList start =======");
 		//조회 전 마감일자 지난 list들 채용마감으로 변경
 		int update = recruitService.updateContentsStatus();
 		
@@ -65,7 +57,6 @@ public class RecruitController {
 		String url = request.getRequestURI();
 		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalRecruitListCount, url);
 		
-		System.out.println("list======> " + resultMap.get("list"));
 		
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("list", resultMap.get("list"));
@@ -73,7 +64,6 @@ public class RecruitController {
 		model.addAttribute("searchKeyword", searchKeyword);
 		model.addAttribute("locale", locale);
 		
-		System.out.println("resultMap.get(\"list\")" + resultMap.get("list"));
 
 		return "admin/recruit/recruitList";
 
@@ -84,12 +74,6 @@ public class RecruitController {
 	public String deleteRecruit(@RequestParam(value = "postArr[]") List<Integer> postArr) {
 
 		int deleteResult = recruitService.deleteRecruit(postArr);
-
-		if (deleteResult == postArr.size()) {
-			System.out.println("게시글이 삭제 되었습니다.");
-		} else {
-			System.out.println("게시글이 삭제 되었습니다." + deleteResult);
-		}
 
 		return null;
 
@@ -117,20 +101,6 @@ public class RecruitController {
 			insertResult = recruitService.insertRecruitContents(subTitle, contents, curRecruitNo);
 		}					
 		log.info("insertResult >>> " + insertResult);
-
-		if(recruitRecult == 1) {
-			System.out.println("recruitRecult == 1");
-			if(subTitle != null) {
-				// 채용게시글 상세내용 등록 확인
-				if(insertResult == subTitle.size()) {
-					System.out.println("insertResult == subTitleSize");
-				} else {
-					System.out.println("insertResult 실패");
-				}
-			}
-		} else {
-			System.out.println("recruitRecult 실패");
-		}
 		
 		return null;
 	}
@@ -139,10 +109,6 @@ public class RecruitController {
 	@ResponseBody
 	public int insertFile(@RequestParam(value = "file", required = false) List<MultipartFile> fileList,
 			HttpServletRequest request) {
-
-		System.out.println("insertFile curRecruitNo>>>>>" + curRecruitNo);
-		System.out.println("insertFile fileList1>>>>>" + fileList);
-		System.out.println("fileList.size() >>>" + fileList.size());
 		
 		int fileResult = recruitService.insertFile(fileList, request, curRecruitNo);
 		
@@ -162,7 +128,6 @@ public class RecruitController {
 	@GetMapping("getRecruitData")
 	@ResponseBody
 	public Map<String, Object> getRecruitData(Model model,@RequestParam("postNo") int recruitNo) {
-		System.out.println("======= getRecruitData 실행 =========");
 		
 		//채용글 1차
 		recruitDTO recruitData = recruitService.getRecruitData(recruitNo);
@@ -194,30 +159,12 @@ public class RecruitController {
 		// 채용 게시글 업데이트
 		recruitResult = recruitService.updateRecruit(recruit);
 
-		System.out.println("curRecruitNo === " + curRecruitNo);
 
 		//업데이트를 위해 상세 내용 삭제
 		int deleteResult = recruitService.deleteRecruitContents(curRecruitNo);
-		System.out.println("삭제 상태 ====== " + deleteResult );
 		
 		// 채용 상세 내용 업데이트
-		System.out.println("subTitle >>>" + contents);
 		int insertResult = recruitService.insertRecruitContents(subTitle, contents, curRecruitNo);
-
-		//채용 게시글 등록 완료 확인
-		if(recruitResult == 1) {
-			System.out.println("recruitRecult == 1");
-			if(subTitle != null) {
-				// 채용게시글 상세내용 등록 확인
-				if(insertResult == subTitle.size()) {
-					System.out.println("insertResult == subTitleSize");
-				} else {
-					System.out.println("insertResult 실패");
-				}
-			}
-		} else {
-			System.out.println("recruitRecult 실패");
-		}
 
 		return null;
 

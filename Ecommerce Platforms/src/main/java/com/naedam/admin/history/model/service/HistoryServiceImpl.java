@@ -1,6 +1,5 @@
 package com.naedam.admin.history.model.service;
 
-import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.history.model.dao.HistoryDao;
 import com.naedam.admin.history.model.vo.History;
 
@@ -26,17 +24,13 @@ public class HistoryServiceImpl implements HistoryService {
 	@Override
 	public Map<String, Object> historyProcess(Map<String, Object> map) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("============historyProcess HistoryServiceImpl===============");
 		Map<String, Object> resultMap = new HashMap<>();
 		History history = (History) map.get("history");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		String filePath = request.getServletContext().getRealPath("resources/user/images/company/history/");
 		MultipartFile historyImage = (MultipartFile) map.get("historyImage");
 		
-		System.out.println("request.getParameter(\"history\") >>>>" + history);
-		
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
-			System.out.println("history_process Service if insert >>>>");
 			StringBuilder str = new StringBuilder();
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 			Date resultDate = new Date();
@@ -59,18 +53,6 @@ public class HistoryServiceImpl implements HistoryService {
 				historyDao.insertHistory(history);
 				resultMap.put("msg", "연혁 정보가 등록되었습니다.");
 			}else if("update".equals(map.get("mode"))) {
-				/*
-				 * if(historyImage.isEmpty() == false) { File file = new
-				 * File(filePath+historyImage.getOriginalFilename());
-				 * history.setImgUrl(historyImage.getOriginalFilename());
-				 * historyImage.transferTo(file); }else if(historyImage.isEmpty() == true) {
-				 * History historyData =
-				 * historyDao.selectOneHistoryByHisNo(history.getHistoryNo()); }
-				 */
-				/*
-				 * History historyData =
-				 * historyDao.selectOneHistoryByHisNo(history.getHistoryNo());
-				 */
 				historyDao.updateHistory(history);
 				resultMap.put("msg", "연혁 정보가 수정되었습니다.");
 			}
@@ -87,8 +69,6 @@ public class HistoryServiceImpl implements HistoryService {
 	
 	@Override
 	public History selectOneHistoryByHisNo(int historyNo) {
-		// TODO Auto-generated method stub
-		System.out.println("selectOneHistoryByHisNo Service >>>>");
 		return historyDao.selectOneHistoryByHisNo(historyNo);
 	}
 	
@@ -103,7 +83,6 @@ public class HistoryServiceImpl implements HistoryService {
 		/* 기재 월 조회 */
 		resultMap.put("months", historyDao.selectMonthList(map));
 		
-		System.out.println("selectHistoryList Service resultMap>>>>" + resultMap);
 		return resultMap;
 	}
 

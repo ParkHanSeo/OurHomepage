@@ -1,6 +1,5 @@
 package com.naedam.admin.recruit.model.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

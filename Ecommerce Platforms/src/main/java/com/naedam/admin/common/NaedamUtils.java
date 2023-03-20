@@ -30,7 +30,6 @@ public class NaedamUtils {
 		int pageEnd = pageStart + pagebarSize - 1;
 		
 		int pageNo = pageStart;
-		System.out.println("page 확인 === "+pageStart+" ||| "+pageEnd+" ||| "+pageNo+ " ||| "+totalPage);
 		/*
 		 *  ● disabled : 필요 없는 목록 비활성화 처리
 		 *  ● tabindex = "-1" : tab을 해도 건너 띄게끔 처리(disabled 처리 할 때 같이 처리) 
@@ -38,7 +37,7 @@ public class NaedamUtils {
 		 *  ● <span aria-hidden="true">&raquo;</span> : >> 꺽쇠
 		 */
 		
-		/*
+		/* script 참고
 		 <nav aria-label="Page navigation example">
 		  <ul class="pagination justify-content-center">
 		  
@@ -120,7 +119,7 @@ public class NaedamUtils {
 		 * ● disabled & tabindex="-1" 처리
 		 */
 		if(cPage >= totalPage) {
-			System.out.println(cPage+" > "+totalPage+"    ||| 접근");
+			log.info(cPage+" > "+totalPage+"    ||| 접근");
 			pagebar.append("</div>\n<a href=\"javascript:paging('next');\" class=\"next\"></a>\n"
 					+"		</div>\n");
 		}
@@ -128,7 +127,7 @@ public class NaedamUtils {
 		 * ● 자바 스크립트 함수 호출 : href=\"javascript:paging(" + (pageNo) + ") --> 다음 페이지로.
 		 */
 		else {
-			System.out.println(cPage+" > "+totalPage+"    ||| 접근2");
+			log.info(cPage+" > "+totalPage+"    ||| 접근2");
 			pagebar.append("<a href=\"javascript:paging(" + (cPage+1) + ");\" class=\"next\"></a>\n"
 					+"		</div>\n");
 		}

@@ -1,11 +1,6 @@
 package com.naedam.admin.history.controller;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -56,14 +51,12 @@ public class HistoryController {
 								  @RequestParam(value="historyImage", required = false) MultipartFile historyImage,
 								  @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception {
 		
-		System.out.println(">>>>>history_process");
 		Map<String, Object> map = new HashMap<>();
 		map.put("history", history);
 		map.put("mode", request.getParameter("mode"));
 		map.put("request", request);
 		map.put("locale", locale);
 		/* map.put("historyImage", historyImage); */
-		System.out.println("map>>>" + map);
 		Map<String, Object> resultMap = historyService.historyProcess(map);
 		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
 				

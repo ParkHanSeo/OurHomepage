@@ -18,7 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.business.model.service.BusinessService;
-import com.naedam.admin.business.model.service.BusinessServiceImpl;
 import com.naedam.admin.business.model.vo.Business;
 import com.naedam.admin.business.model.vo.BusinessContents;
 import com.naedam.admin.business.model.vo.BusinessPost;
@@ -77,7 +76,6 @@ public class BusinessController {
 		businessPostMap.put("filePath", filePath);
 		businessPostMap.put("filePath2", filePath2);
 		businessPostMap.put("secNo", secNo);
-		System.out.println("businessPostMap >>>>>" + businessPostMap);
 		businessService.businessPostProcess(businessPostMap);
 		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo()+"&locale="+businessPost.getLocale();
 	}
@@ -90,8 +88,6 @@ public class BusinessController {
 										 ,@RequestParam("mode") String mode
 									     ,HttpServletRequest request) throws Exception{
 		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/");
-		System.out.println("확인222 === "+businessContents);
-		System.out.println("확인333 === "+businessPost);
 		Map<String, Object> businessContentsMap	 = new HashMap<>();
 		businessContentsMap.put("businessContents", businessContents);
 		businessContentsMap.put("businessPost", businessPost);
@@ -138,7 +134,6 @@ public class BusinessController {
 		map.put("businessNo", businessNo);
 		map.put("locale", locale);
 		List<BusinessPost> businessPost = businessService.getBusinessPostList(map);
-		System.out.println("businessPost=====" + businessPost);
 		int TotalBusinessPost = businessService.TotalBusinessPost(businessNo);
 		
 		model.addAttribute("business", business);
@@ -159,7 +154,6 @@ public class BusinessController {
 										  @RequestParam("businessPostNo") int businessPostNo,
 										  @RequestParam(value = "locale", defaultValue = "ko") String locale) throws Exception{
 		BusinessPost businessPost = businessService.getBusinessPost(businessPostNo);
-		System.out.println("businessPostNo=====" + businessPostNo);
 		model.addAttribute("businessPost", businessPost);
 		
 		Map<String, Object> map = new HashMap<String, Object>();

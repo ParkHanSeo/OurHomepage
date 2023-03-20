@@ -58,7 +58,6 @@ public class userRecruitController {
 		map.put("offset", offset);
 		map.put("locale", locales);
 		Map<String, Object> resultMap = userRecruitService.selectRecruitList(map);
-		System.out.println("resultMap>>>>>" + resultMap);
 		//조회된 총 갯수
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		
@@ -66,8 +65,6 @@ public class userRecruitController {
 		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		
 		ModelAndView mv = new ModelAndView();
-		
-		System.out.println("pagebar>>>>>>" +pagebar);
 		
 		mv.addObject("pagebar", pagebar);		
 		mv.addObject("list", resultMap.get("list")); 
@@ -91,10 +88,8 @@ public class userRecruitController {
 		map.put("limit", limit);
 		map.put("offset", offset);
 		map.put("locale", locales);
-		System.out.println("userRecruitListPaging map >>>> " + map);
 		
 		Map<String, Object> resultList = userRecruitService.selectRecruitList(map);
-		System.out.println("userRecruitListPaging resultMap>>>>>" + resultList);
 		//조회된 총 갯수
 		int totalPostListCount = Integer.parseInt(resultList.get("totalCount").toString());
 		// pagebar
@@ -117,16 +112,11 @@ public class userRecruitController {
 		recruitDTO recruitData = recruitService.getRecruitData(recruitNo);
 		
 		String locale = recruitData.getLocale();
-		System.out.println("locale ====" + locale);
 		//채용글 2차 (리스트 여러개)
 		List<recruitContentsDTO> contents = recruitService.getContentsData(recruitNo);
 		
-		System.out.println("user recruitData>>>>>" + recruitData);
-		System.out.println("user contents>>>>>" + contents);
-		
 		Map<String, Object> map = new HashMap<>();
 		map.put("locale", locales);
-
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -143,7 +133,6 @@ public class userRecruitController {
 		
 		recruitDTO file = userRecruitService.getFileInfo(recruitNo);
 		
-//		String filePath = file.getFilePath();
 		String filePath = request.getServletContext().getRealPath(file.getFilePath());
 		
 		String fileName = file.getFileName();

@@ -1,21 +1,15 @@
 package com.naedam.admin.member.controller;
 
 import java.beans.PropertyEditor;
-import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.xmlbeans.impl.jam.annotation.LineDelimitedTagParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.security.core.Authentication;
@@ -35,24 +29,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.member.model.service.MemberService;
 import com.naedam.admin.member.model.vo.Address;
 import com.naedam.admin.member.model.vo.AddressBook;
 import com.naedam.admin.member.model.vo.Authorities;
 import com.naedam.admin.member.model.vo.Member;
-import com.naedam.admin.member.model.vo.MemberAccessHistory;
-import com.naedam.admin.member.model.vo.MemberEntity;
 import com.naedam.admin.member.model.vo.MemberGrade;
 import com.naedam.admin.member.model.vo.MemberMemo;
 import com.naedam.admin.member.model.vo.WithdrawalMemberEntity;
 
 import lombok.extern.slf4j.Slf4j;
-import net.sf.json.JSONObject;
 
 @Controller
 @RequestMapping("/admin/member")

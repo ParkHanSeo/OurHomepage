@@ -32,7 +32,6 @@ public class AwardDaoimpl implements AwardDao {
 
 	@Override
 	public List<Award> selectAwardList(Map<String, Object> map) {
-		System.out.println("check === "+session.selectList("award.selectAwardList"));
 		return session.selectList("award.selectAwardList", map);
 	}
 

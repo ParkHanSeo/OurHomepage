@@ -94,7 +94,6 @@ public class BusinessServiceImpl implements BusinessService {
 			MultipartFile imageName = (MultipartFile) map.get("file");
 			if("insert".equals(map.get("mode"))) {
 				if(imageName.isEmpty() == false){
-					System.out.println("확인합시다.");
 					File file = new File(map.get("filePath")+imageName.getOriginalFilename());
 					imageName.transferTo(file);
 					businessContents.setImage(imageName.getOriginalFilename());
@@ -109,7 +108,6 @@ public class BusinessServiceImpl implements BusinessService {
 					BusinessContents bp = businessDao.getBusinessContents(businessContents.getBusinessContentsNo());
 					businessContents.setImage(bp.getImage());
 				}
-				System.out.println("확인 === "+businessContents);
 				businessDao.updateBusinessContents(businessContents);
 			}
 		}

@@ -46,7 +46,6 @@ public class BusinessRestController {
 		businessPostMap.put("mode", mode);
 		businessPostMap.put("businessNo", businessNo);
 		businessPostMap.put("businessPostArr", businessPostArr);
-		System.out.println(mode);
 		businessService.businessPostProcess(businessPostMap);
 		result = true;
 		return result;
@@ -56,8 +55,6 @@ public class BusinessRestController {
 	public Boolean BusinessContentsProcess(@RequestParam(value = "businessContentsArr[]") List<String> businessContentsArr,
 										   @RequestParam("mode") String mode) throws Exception{
 		Boolean result = false;
-		System.out.println("???????/??");
-		System.out.println("businessContentsArr=====" + businessContentsArr);
 		Map<String, Object> businessContentsMap = new HashMap<>();
 		businessContentsMap.put("mode", mode);
 		businessContentsMap.put("businessContentsArr", businessContentsArr);
@@ -87,7 +84,6 @@ public class BusinessRestController {
 	
 	@GetMapping(value="json/getBusinessContents/{businessContentsNo}")
 	public BusinessContents getBusinessContents(@PathVariable("businessContentsNo") int businessContentsNo) throws Exception{
-		System.out.println("log === "+businessContentsNo);		
 		return businessService.getBusinessContents(businessContentsNo);
 	}
 }

@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.dao.AwardDao;
 import com.naedam.admin.award.model.vo.Award;
-import com.naedam.admin.menu.model.vo.Head;
 
 @Service
 public class AwardServiceImpl implements AwardService {
@@ -32,7 +30,6 @@ public class AwardServiceImpl implements AwardService {
 		Award award = (Award) map.get("award");
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
 		String filePath = request.getServletContext().getRealPath("resources/user/images/company/award/");
-		System.out.println("경로==="+filePath);
 		MultipartFile awardImage = (MultipartFile) map.get("awardImage");
 		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
 			StringBuilder str = new StringBuilder();

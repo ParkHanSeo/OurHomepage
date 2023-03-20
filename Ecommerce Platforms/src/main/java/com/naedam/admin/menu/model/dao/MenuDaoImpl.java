@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import com.naedam.admin.menu.model.vo.Bottom;
 import com.naedam.admin.menu.model.vo.Head;
 import com.naedam.admin.menu.model.vo.Menu;
-import com.naedam.admin.menu.model.vo.MenuCategory;
 
 
 @Repository

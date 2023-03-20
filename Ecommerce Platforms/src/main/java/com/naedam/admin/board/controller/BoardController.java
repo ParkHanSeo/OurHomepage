@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -155,7 +154,6 @@ public class BoardController {
 		//게시글 리스트 옵션과 권한의 조건에 따라 태그를 생성해야 함
 		Board board2 = boardService.getBoardAllData(boardNo);
 		model.addAttribute("board2", board2);
-		System.out.println("board2 ===" + board2);
 		//게시글 리스트
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
@@ -187,7 +185,6 @@ public class BoardController {
 	@PostMapping("deleteThombnail")
 	public String deleteThombnail(@ModelAttribute("post") Post post,
 								  @RequestParam("boardNo") int boardNo) throws Exception {
-		System.out.println("deleteThombnail 시작");
 		boardService.updateThombnail(post);
 		return "redirect:/admin/board/postList?boardNo="+boardNo;
 	}	
@@ -204,7 +201,7 @@ public class BoardController {
 	public void imageUpload(HttpServletRequest request, HttpServletResponse response,
 							MultipartHttpServletRequest multiFile,
 							@RequestPart(value="upload", required = false) MultipartFile upload) throws Exception{
-		System.out.println("ckeditor 이미지 업로드 로그 확인");
+		log.info("ckeditor 이미지 업로드 로그 확인");
 		UUID uid = UUID.randomUUID();
 		OutputStream out = null;
 		PrintWriter printWriter = null;

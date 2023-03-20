@@ -12,8 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.naedam.admin.common.Mir9Utils;
 import com.naedam.admin.member.model.dao.MemberDao;
@@ -21,9 +19,7 @@ import com.naedam.admin.member.model.vo.Address;
 import com.naedam.admin.member.model.vo.AddressBook;
 import com.naedam.admin.member.model.vo.Authorities;
 import com.naedam.admin.member.model.vo.Member;
-import com.naedam.admin.member.model.vo.MemberAccessHistory;
 import com.naedam.admin.member.model.vo.MemberAccessHistoryListExcelForm;
-import com.naedam.admin.member.model.vo.MemberEntity;
 import com.naedam.admin.member.model.vo.MemberGrade;
 import com.naedam.admin.member.model.vo.MemberListExcelForm;
 import com.naedam.admin.member.model.vo.MemberMemo;
@@ -329,7 +325,6 @@ public class MemberServiceImpl implements MemberService {
 			MemberGrade paramGrade = new MemberGrade();
 			Set<String> keySet = map.keySet();
 			for(String key : keySet) {
-				System.out.println(key + " : " + map.get(key));
 				paramGrade.setMemberGradeNo(Integer.parseInt(key));
 				paramGrade.setMemberGradeName(map.get(key));
 				int resultMemberGradeUpdate = memberDao.memberGradeUpdate(paramGrade);

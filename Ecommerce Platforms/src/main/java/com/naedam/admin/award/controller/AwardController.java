@@ -2,7 +2,6 @@ package com.naedam.admin.award.controller;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,7 +16,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.naedam.admin.award.model.service.AwardService;
 import com.naedam.admin.award.model.vo.Award;
-import com.naedam.admin.history.model.vo.History;
 
 @Controller
 @RequestMapping("/admin/award")
@@ -34,7 +32,7 @@ public class AwardController {
 	@PostMapping("/getAward")
 	@ResponseBody
 	public Award getAward(@RequestParam("awardNo") int awardNo) {
-		System.out.println("awardNo >>>>>" + awardNo);
+
 		Award award = awardService.selectDetailByNo(awardNo);
 		return award;
 	}

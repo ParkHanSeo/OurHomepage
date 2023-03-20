@@ -62,7 +62,6 @@ public class BusinessDaoImpl implements BusinessDao {
 	 */
 	@Override
 	public BusinessContents getBusinessContents(int businessContentsNo) throws Exception{
-		System.out.println("접근확인 ==== "+businessContentsNo);
 		return sqlSession.selectOne("business.getBusinessContents", businessContentsNo);
 	}
 	

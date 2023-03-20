@@ -74,7 +74,7 @@ public class CompanyController {
 	 */
 	@RequestMapping(value="historyList")
 	public ModelAndView historyList(Model model, HttpServletRequest request,
-			@RequestParam(value = "locale", defaultValue = "ko") String locales) throws Exception {		System.out.println("historyList 시작");
+			@RequestParam(value = "locale", defaultValue = "ko") String locales) throws Exception {		
 		ModelAndView mv = new ModelAndView();
 		Map<String, Object> map = new HashMap<>();
 		map.put("locale", locales);
@@ -89,18 +89,6 @@ public class CompanyController {
 		mv.addObject("award", awardMap.get("award"));
 		mv.addObject("awardYears", awardMap.get("awardYears"));
 		mv.addObject("awardMonths", awardMap.get("awardMonths"));
-		
-		
-		
-		System.out.println("history");
-		System.out.println(">>>> history: " + resultMap.get("history"));
-		System.out.println(">>>> years: " + resultMap.get("years"));
-		System.out.println(">>>> months: " + resultMap.get("months"));
-		
-		System.out.println("award");
-		System.out.println(">>>> award: " + awardMap.get("award"));
-		System.out.println(">>>> awardYears: " + awardMap.get("awardYears"));
-		System.out.println(">>>> awardMonths: " + awardMap.get("awardMonths"));
 		
 		mv.setViewName("user/"+locales+"/company/historyList");
 		

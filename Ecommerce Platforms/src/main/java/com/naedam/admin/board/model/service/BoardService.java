@@ -6,7 +6,6 @@ import java.util.Map;
 import com.naedam.admin.board.model.vo.Board;
 import com.naedam.admin.board.model.vo.BoardComment;
 import com.naedam.admin.board.model.vo.BoardFile;
-import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.board.model.vo.BoardTranslate;
 import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.member.model.vo.Member;

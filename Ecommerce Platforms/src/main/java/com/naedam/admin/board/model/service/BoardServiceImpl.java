@@ -6,16 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.poi.util.SystemOutLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.dao.BoardDao;
 import com.naedam.admin.board.model.vo.Board;
-import com.naedam.admin.board.model.vo.BoardAuthority;
+
 import com.naedam.admin.board.model.vo.BoardComment;
 import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.BoardOption;
@@ -159,8 +156,6 @@ public class BoardServiceImpl implements BoardService {
 		resultMap.put("totalCount", boardDao.getTotalCount2(map));
 		//채용
 		resultMap.put("recruitList", recruitDao.getRecruitList(null, 0, 5, (String)map.get("locale")));
-		System.out.println("resultMap.recruitList >>>" + resultMap.get("recruitList"));
-		System.out.println("resultMap.locale =====" + (String)map.get("locale"));
 		return resultMap;
 	}
 	
@@ -171,7 +166,6 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public List<Post> getMainPostList(Map<String, Object> map) throws Exception {
-		System.out.println("getMainPostList map ===" + map);
 		return boardDao.getMainPostList(map);
 	}
 	
