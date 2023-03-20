@@ -86,7 +86,7 @@ function newPage(lang){
 		<div class="header_util">
 			<div class="btn_util_wrap">
 			<!-- 언어 버튼 주석처리 -->
-                <!-- <span class="util_lang">
+                <span class="util_lang">
                     <a href="javascript:void(0)" class="btn_language">
                         <span class="blind">다국어 보기</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33">
@@ -106,7 +106,7 @@ function newPage(lang){
                             </li>
                         </ul>
                     </div>
-                </span> -->
+                </span>
             </div>
             <a href="javascript:;" class="btn_menu">
                 <span class="blind">전체메뉴 열기</span>
