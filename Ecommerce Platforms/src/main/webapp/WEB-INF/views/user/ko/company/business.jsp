@@ -27,7 +27,7 @@
                		<div class="division_container"> 
                         <div class="visual_txt_area com_intro">
                             <p class="txt3">
-                            	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 
+                            	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 <br>
 								디지털 트렌스포메이션의 성장 파트너 입니다.                            	
                             </p>
                         </div>
