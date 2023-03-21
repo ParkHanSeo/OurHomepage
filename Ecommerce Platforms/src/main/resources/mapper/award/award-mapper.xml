@@ -39,8 +39,13 @@
 	</insert>
 	
 	<update id="updateAward">
-		UPDATE award
-		SET award_date=#{awardDate}, content=#{content}, img_url=#{imgUrl}, host = #{host}
+		UPDATE award SET 
+			award_date=#{awardDate}, 
+			content=#{content},
+			<if test="imgUrl != null">
+			img_url=#{imgUrl},
+			</if> 
+			host = #{host}
 		WHERE award_no = #{awardNo}
 	</update>
 	
