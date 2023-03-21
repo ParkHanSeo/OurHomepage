@@ -195,9 +195,6 @@
 									</p>
 								</li>
 								<li class="user-footer">
-									<div class="pull-left">
-										<button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/admin/member/memberWithdrawal.do';">탈퇴</button>
-									</div>
 									<div class="pull-right">
 										<form:form id="memberLogoutFrm" name="memberLogoutFrm" method="POST" action="${pageContext.request.contextPath}/admin/member/memberLogout.do">
 											<a onclick="logoutSubmit()" class="btn btn-danger btn-flat" type="submit">Sign out</a>
