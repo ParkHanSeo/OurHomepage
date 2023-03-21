@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.naedam.admin.common.Mir9Utils;
+import com.naedam.admin.common.NaedamUtils;
 import com.naedam.admin.member.model.service.MemberService;
 import com.naedam.admin.member.model.vo.Address;
 import com.naedam.admin.member.model.vo.AddressBook;
@@ -210,7 +210,7 @@ public class MemberController {
 		model.addAttribute("memberGradeList", resultMap.get("memberGradeList"));
 		// pagebar
 		String url = request.getRequestURI();
-		String pagebar = Mir9Utils.getPagebar(cPage, limit, (int)resultMap.get("totalwithdrawalCount"), url);
+		String pagebar = NaedamUtils.getPagebar(cPage, limit, (int)resultMap.get("totalwithdrawalCount"), url);
 		model.addAttribute("pagebar", pagebar);
 		return "admin/member/withdrawalMemberList";
 	}

@@ -62,7 +62,7 @@ public class userRecruitController {
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		
 		// pagebar
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		String pagebar = NaedamUtils.getUserPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -93,7 +93,7 @@ public class userRecruitController {
 		//조회된 총 갯수
 		int totalPostListCount = Integer.parseInt(resultList.get("totalCount").toString());
 		// pagebar
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		String pagebar = NaedamUtils.getUserPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 				
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("recruit", resultList);

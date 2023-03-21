@@ -34,7 +34,7 @@ import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.board.model.vo.Page;
 import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.common.Comm;
-import com.naedam.admin.common.Mir9Utils;
+import com.naedam.admin.common.NaedamUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -165,7 +165,7 @@ public class BoardController {
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 
 		// pagebar
-		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		model.addAttribute("comm",comm);
 		model.addAttribute("pagebar", pagebar);		
 		model.addAttribute("list", resultMap.get("list")); 

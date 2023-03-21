@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import com.naedam.admin.common.Mir9Utils;
+import com.naedam.admin.common.NaedamUtils;
 import com.naedam.admin.recruit.model.service.RecruitService;
 import com.naedam.admin.recruit.model.vo.recruitContentsDTO;
 import com.naedam.admin.recruit.model.vo.recruitDTO;
@@ -55,7 +55,7 @@ public class RecruitController {
 
 		// 페이징 처리
 		String url = request.getRequestURI();
-		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalRecruitListCount, url);
+		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalRecruitListCount, url);
 		
 		
 		model.addAttribute("pagebar", pagebar);

@@ -142,7 +142,7 @@ public class BusinessController {
 		model.addAttribute("businessNo", businessNo);
 		// pagebar
 		String url = request.getRequestURI();
-		//String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, url);
+		//String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, url);
 		//model.addAttribute("locale", locale);
 		model.addAttribute("locale", business.getLocale());
 		

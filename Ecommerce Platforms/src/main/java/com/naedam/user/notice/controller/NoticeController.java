@@ -56,7 +56,7 @@ public class NoticeController {
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		
 		// pagebar
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		String pagebar = NaedamUtils.getUserPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		
 		mv.addObject("pagebar", pagebar);		
 		mv.addObject("list", postlist); 
@@ -89,7 +89,7 @@ public class NoticeController {
 		List<Post> postlist = boardService.getUserPostList(map);
 		int totalPostListCount = boardService.getUserGetTotalCount(map);
 		// pagebar
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		String pagebar = NaedamUtils.getUserPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		resultMap.put("list", postlist);
 		resultMap.put("pagebar", pagebar);
 		return resultMap;
