@@ -87,7 +87,6 @@ public class AwardServiceImpl implements AwardService {
 		awardDao.updateAward(award);
 		resultMap.put("msg", "수상 정보가 수정되었습니다.");
 		
-		awardDao.updateAward(award);
 		return resultMap;
 	}
 
