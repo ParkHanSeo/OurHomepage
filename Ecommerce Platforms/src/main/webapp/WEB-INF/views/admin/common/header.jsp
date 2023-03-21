@@ -118,7 +118,8 @@
 
 	
 		function logoutSubmit(){
-			$(document.memberLogoutFrm).submit();
+			location.href= "/admin"
+			/* $(document.memberLogoutFrm).submit(); */
 		}
 		
 		function newPage(lang){	
