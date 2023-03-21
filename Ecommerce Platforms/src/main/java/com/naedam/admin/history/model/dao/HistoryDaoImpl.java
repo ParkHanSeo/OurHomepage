@@ -14,28 +14,23 @@ public class HistoryDaoImpl implements HistoryDao {
 	@Autowired
 	private SqlSession session;
 
+
 	@Override
-	public History selectOneHistoryByHisNo(int historyNo) {
+	public void insertHistory(History history) {
 		// TODO Auto-generated method stub
-		return session.selectOne("history.selectOneHistoryByHisNo", historyNo);
+		session.insert("history.insertHistroy", history);
 	}
 
 	@Override
-	public int insertHistory(History history) {
+	public void updateHistory(History history) {
 		// TODO Auto-generated method stub
-		return session.insert("history.insertHistroy", history);
+		session.update("history.updateHistory", history);
 	}
 
 	@Override
-	public int updateHistory(History history) {
+	public void deleteHistory(int historyNo) {
 		// TODO Auto-generated method stub
-		return session.update("history.updateHistory", history);
-	}
-
-	@Override
-	public int deleteHistory(int historyNo) {
-		// TODO Auto-generated method stub
-		return session.delete("history.deleteHistory", historyNo);
+		session.delete("history.deleteHistory", historyNo);
 	}
 
 	@Override
@@ -56,5 +51,10 @@ public class HistoryDaoImpl implements HistoryDao {
 		return session.selectList("history.selectMonthList", map);
 	}
 	
+	@Override
+	public History selectOneHistoryByHisNo(int historyNo) {
+		// TODO Auto-generated method stub
+		return session.selectOne("history.selectOneHistoryByHisNo", historyNo);
+	}
 	
 }
