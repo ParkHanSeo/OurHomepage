@@ -206,9 +206,9 @@ public class BoardController {
 		OutputStream out = null;
 		PrintWriter printWriter = null;
 		if(upload.equals(null)) {
-			System.out.println("null값 체크");
+			log.info("null값 체크");
 		}else {
-			System.out.println("null값 체크2");
+			log.info("null값2 체크");
 		}
 		try{ 
 			//파일 이름 가져오기 
