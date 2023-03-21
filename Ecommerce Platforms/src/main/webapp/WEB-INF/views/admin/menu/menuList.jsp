@@ -199,7 +199,6 @@
                    html_tag += '   <td class="menu">명령</td>';
                    html_tag += '</tr>';
 
-                   console.log(json_data.list.length)
                    if (json_data.list != null) {
                        parent.$('#revisionTitle').html(json_data.title);
                        $.each(json_data.list, function(index, value) {
@@ -223,7 +222,6 @@
                    parent.$('#htmlTag').html(html_tag);
                },
                error:function(jqXHR, textStatus, errorThrown){
-                   console.log(textStatus);
                    // $('#content').val(errorThrown);
                }
            });
@@ -249,11 +247,9 @@
                    html_tag += '   <td class="menu">명령</td>';
                    html_tag += '</tr>';
 
-                   console.log(json_data.list.length)
                    if (json_data.list != null) {
                        parent.$('#revisionTitle').html(json_data.title);
                        $.each(json_data.list, function(index, value) {
-                       	console.log(value)
                            html_tag += '<tr>';
                            html_tag += '   <td>'+value['title']+'</td>';
                            html_tag += '   <td>'+value['menuDate']+'</td>';
@@ -274,7 +270,6 @@
                    parent.$('#htmlTag').html(html_tag);
                },
                error:function(jqXHR, textStatus, errorThrown){
-                   console.log(textStatus);
                    // $('#content').val(errorThrown);
                }
            });

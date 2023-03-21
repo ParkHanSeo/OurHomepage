@@ -348,8 +348,6 @@
            if(is_revision == false) setData($('[name=code]').val());
            else infoRevision(revision_code);
 
-           console.log(':'+is_revision);
-           console.log(':'+$('[name=code]').val()+':'+revision_code);
        }
        
        function register() {
@@ -463,10 +461,8 @@
                success:function(data, textStatus, jqXHR){
                    var json_data = data;
                    printData(json_data);
-                   console.log(json_data);
                },
                error:function(jqXHR, textStatus, errorThrown){
-                   console.log(textStatus);
                    // $('#content').val(errorThrown);
                }
            });
@@ -496,15 +492,12 @@
                },
                success:function(data, textStatus, jqXHR){
                    var json_data = data;
-                   console.log('--------------------------');
-                   console.log(json_data);
                    json_data.code = json_data.menu_code;
                    is_revision = true;
                    revision_code = code;
                    printData(json_data);
                },
                error:function(jqXHR, textStatus, errorThrown){
-                   console.log(textStatus);
                    // $('#content').val(errorThrown);
                }
            });

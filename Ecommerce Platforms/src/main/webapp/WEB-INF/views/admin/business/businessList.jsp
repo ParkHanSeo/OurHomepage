@@ -76,7 +76,6 @@
 						"Content-Type" : "application/json"	 						
 					} ,
 					success : function(JSONData, status){
-						console.log(JSONData)
 						$("#businessTitle2").val(JSONData.businessTitle);
 					}
 				});			

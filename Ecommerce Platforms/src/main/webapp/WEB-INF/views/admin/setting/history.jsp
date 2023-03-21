@@ -93,6 +93,7 @@
 					<input type="hidden" name="historyNo" id="historyNo" value="0"> 
 					<input type="hidden" name="imgUrl" />
 					<input type="hidden" name="locale" id="locale" value="${locale}">
+					<input type="hidden" name="fullDate" value="" />
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title" id="myModalLabelPortfolio">연혁 관리</h4>
@@ -141,12 +142,6 @@
 								<td class="menu">내용</td>
 								<td align="left"><textarea name="content" rows="4" style="width: 100%"></textarea></td>
 							</tr>
-							<!-- <tr>
-								<td class="menu">파일 <span class="text-light-blue"><i class="fa fa-check"></i></span></td>
-								<td align="left" class="historyFileTd">
-									<input type="file" name="historyImage" class="form-control input-sm" style="width: 70%; display: inline;"> 
-								</td>
-							</tr> -->
 						</table>
 					</div>
 					<div class="modal-footer">
@@ -206,6 +201,14 @@
 	    if(form_register.content.value == '') { alert('내용이 입력되지 않았습니다.'); form_register.content.focus(); return false;}
 	    form_register.target = 'iframe_process';
 	    
+	    var zero = num => num < 10 && num >= 0 ? "0" + num : num;
+	    var year =$("[name=year]").val();
+	    var month =$("[name=month]").val();
+	    var date =$("[name=date]").val();
+	    var fullDate ="";
+	    fullDate = zero(year)+zero(month)+zero(date);
+	    $("input[name=fullDate]").attr('value',fullDate);
+	    
 	    if(!confirm("연혁을 등록하시겠습니까?")){
 			alert("취소 되었습니다.");
 			return;
@@ -230,20 +233,17 @@
 	            historyNo : code
 			},
 			success(data){
-	            console.log(data);
 	            var date = new Date(data.historyDate);
-	            console.log(date.getMonth() + 1);
 	            $('form[name="form_register"] #mode').val('update');
 	            $('[name=historyNo]').val(data.historyNo);
 	            $('[name=year]').val(date.getFullYear());
 	            $('[name=month]').val(date.getMonth() + 1);
 	            $('[name=date]').val(date.getDate());
-	            $('[name=content]').val(data.content);
+	            $('[name=fullDate]').val();
 	            $('[name=content]').val(data.content);
 	            if(data.imgUrl != null){
 					 var image = "'${pageContext.request.contextPath}/resources/user/images/company/history/"+data.imgUrl+"'"
 					 if(data.imgUrl != null && data.imgUrl != ''){
-						 console.log("1")
 						 var display = '<span id="display_historyImage" name="historyImageSpan">'
 										+ '<button type="button" onclick="window.open('+image+')" class="btn btn-success btn-xs">보기</button>'
 										+ '</span>';
@@ -254,7 +254,6 @@
 					 }
 				 }
 			},
-			error: console.log
 		});
 	}
 	
@@ -266,6 +265,7 @@
 	}
 	
 	function onclickUpdate(code) {
+		
 	    $('#modalContent').modal({backdrop:'static', show:true});
 	    setData(code);
 	}
@@ -309,7 +309,6 @@
 	
 	// 파일 업로드
 	$("input[type=file]").change(function(e){
-		console.log($(e.target))
 	   // 이미지 업로드
 	   var file = e.target;
 	   //var imgPreview = document.getElementById("imgPreview");
@@ -332,7 +331,6 @@
 	     
 	     // 이미지 조회 및 다운로드
 	     var url = imgbb.data.thumb.url;
-	     console.log(url)
 	     $('[name=imgUrl]').val(url);
 	   });
 	});

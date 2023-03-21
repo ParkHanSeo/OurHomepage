@@ -314,7 +314,6 @@
 				 }
              },
              error:function(jqXHR, textStatus, errorThrown){
-                 console.log(textStatus);
                  // $('#content').val(errorThrown);
              }
          });

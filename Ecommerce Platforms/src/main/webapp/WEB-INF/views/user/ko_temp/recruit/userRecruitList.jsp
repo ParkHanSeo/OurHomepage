@@ -19,7 +19,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/user/css/recruit.css">
 <script type="text/javascript">
 function paging(cPage){
-	console.log("paging 클릭!" + cPage);
 	if(cPage == 'prev'){
 			alert("이전 페이지가 없습니다.");
 			return;
@@ -33,7 +32,6 @@ function paging(cPage){
 	var search = $("form[name='searchForm']").serialize();
 	var searchKeyword = $("input[name='searchKeyword']").val();
 	
-	console.log("searchKeyword>>>>", searchKeyword);
 	
 	$.ajax({
 		url : "/user/recruit/userRecruitListPaging?${_csrf.parameterName}=${_csrf.token}",
@@ -43,7 +41,6 @@ function paging(cPage){
 					searchKeyword
 				},
 				success : function(data){
-					console.log("paging 처리 결과 ", data)
 					let result = '';
 					for(var i =0; i < data.recruit.list.length; i++){
 						result = '<li id="postList">'
@@ -85,7 +82,6 @@ function paging(cPage){
 				},
 				error : function(res){
 					alert("실패");
-					console.log("실패====" , res);
 				}
 	})
 }

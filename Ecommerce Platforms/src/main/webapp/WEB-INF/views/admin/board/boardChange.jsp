@@ -5,7 +5,6 @@
 
 <script>
 	var postArr = new Array();
-	console.log(postArr)
 	
 	function fncBoardTitle(){
 		var postArr = new Array();

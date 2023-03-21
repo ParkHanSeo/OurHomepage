@@ -247,7 +247,6 @@ const paging = (cPage) => {
              },
              success:function(data, textStatus, jqXHR){
                  var json_data = data;
-                 console.log(json_data);
                  $('[name=mode]').val('update');
                  $('[name=partnerNo]').val(code);
                  $('[name=partnerName]').val(json_data.partnerName);
@@ -268,7 +267,6 @@ const paging = (cPage) => {
 				 }
              },
              error:function(jqXHR, textStatus, errorThrown){
-                 console.log(textStatus);
                  // $('#content').val(errorThrown);
              }
          });
@@ -384,11 +382,6 @@ const paging = (cPage) => {
  		var headDownAsc = $("tr").eq(headIndex+1).children().find("input:radio").val();
  		var headNo = $("input:radio[name='order_code']:checked").parent().parent().find("input[name='partnerNo']").val();
  		
-		console.log("lastIndex", lastIndex);
-		console.log("headAsc", headAsc);
-		console.log("headIndex", headIndex);
-		console.log("headDownAsc", headDownAsc);
-		console.log("headNo", headNo);
  		
  		
  		if(headIndex == 0){

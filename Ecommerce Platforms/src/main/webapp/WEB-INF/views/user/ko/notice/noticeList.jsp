@@ -159,7 +159,6 @@
 			success : function(JSONData, status){
 				var display = '';
 				for(var i = 0; i < JSONData.list.length; i++){
-					console.log("접근")
 					display = '<li id ="postList">'
 							+ 	'<div class="subj_box">'
 							+ 	   '<p class="common-text_txt2">'

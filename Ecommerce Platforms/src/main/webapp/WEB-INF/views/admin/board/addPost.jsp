@@ -25,7 +25,6 @@
 	        },
             init : {
             	FileUploaded: function(up, file, result) {
-                   console.log(file.name)
                    var fileName = '<input type="hidden" name="postName" id="postName" value="'+file.name+'" class="form-control input-sm" style="width:100%; display:inline; margin-bottom:10px;">'
                    $("#file_list").append(fileName);
                    up.start();
@@ -85,7 +84,6 @@
 			return;
 		}
 		
-		console.log("postFile >>", postFile);
 		
 		if($("input[id='postName']").val() == null || $("input[id='postName']").val() ==''){
 			postFile = 0;

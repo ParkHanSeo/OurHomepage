@@ -105,7 +105,6 @@
 					"Content-Type" : "application/json"	 						
 				} ,
 				success : function(JSONData, status){
-					console.log(JSONData)
 					$("input[id='businessPostNo2']").val(JSONData.businessPostNo);
 					$("input[id='businessPostTitle2']").val(JSONData.businessPostTitle);
 					$("input[id='businessPostSubTitle2']").val(JSONData.businessPostSubTitle);

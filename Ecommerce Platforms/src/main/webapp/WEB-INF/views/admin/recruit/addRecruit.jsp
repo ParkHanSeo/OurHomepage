@@ -47,8 +47,6 @@
 				contents.push($(this).val());
 			})
 
-			console.log("subTitle >>" + subTitle);
-			console.log("contents >>" + contents);
 			
 			let contentsStatus;
 			let recruitStart;
@@ -64,8 +62,6 @@
 				recruitEnd = $("#endDay").val();
 			}
 			
-			console.log("contentsStatus >> ", contentsStatus);
-			console.log("recruitStart >> ", recruitStart);
 			
 			if(recruitStart == null || recruitStart == ''){
 				if(contentsStatus == null || contentsStatus ==''){
@@ -106,12 +102,10 @@
 			}
 			
 			var fileinput = $("input[name='fileName']");
-			console.log("fileinput >>>" + fileinput);
 			
 			for(var i = 0; i < fileinput.length; i++){
 				if(fileinput[i].files.length > 0){
 					for(var j = 0; j < fileinput[i].files.length; j++){
-						console.log(" fileInput[i].files[j] :::"+ fileinput[i].files[j]);
 						// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
 						formData.append('file', $("input[name='fileName']")[i].files[j]); 
 					 } 
@@ -119,7 +113,6 @@
 			}
 		
 			formData.append("${_csrf.parameterName}", "${_csrf.token}");
-			console.log("formData:" + formData.get(0));
 			
 			if(!confirm("채용 게시글을 등록하시겠습니까?")){
 				alert("취소 되었습니다.");
@@ -131,7 +124,6 @@
 		  		  	 type : "POST",
 	  		  	 	 data : data,
 	    		 	 success : function(result){
-	    		 		console.log("result >> ", result);
 	    		 		$.ajax({
 	   	  			 	 url : "/admin/insertFile?",
 	   		  		  	 type : "POST",
@@ -140,7 +132,6 @@
 	   	  		  	     contentType: false,
 	   	  		  	     enctype: 'multipart/form-data',
 	   	    		 	 success : function(result){
-	   	    		 		console.log("result222 >> ", result);
 	   	    		 		let msg;
 	   	    		 		if(result == 1){
 	   	    		 			msg = "게시글 등록에 성공했습니다.";
@@ -163,7 +154,6 @@
 			
 			let chk = $(this).is(":checked");
 			
-			console.log("버튼누름",chk);
 			
 			if(chk){
 				/* $("input:checkbox[name='always']").prop('checked', true); */
@@ -173,11 +163,7 @@
 				$('#startDay').val('');
 				$('#endDay').val('');
 				
-				console.log("startDay vla ==" , $('#startDay').val());
-				console.log("endDay vla ==" , $('#endDay').val());
-				console.log("always vla ==" , $('#always').val());	
 			} else {
-				console.log("실패");
 				$("input:checkbox[name='always']").prop('checked', false); 
 				document.getElementById('startDay').disabled = false;
 				document.getElementById('endDay').disabled = false;
