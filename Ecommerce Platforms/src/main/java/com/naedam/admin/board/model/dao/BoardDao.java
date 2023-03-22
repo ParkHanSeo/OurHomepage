@@ -90,7 +90,7 @@ public interface BoardDao {
 	public Member getMemberData(int memberNo) throws Exception;
 	
 	//게시판 선택 삭제
-	public void deleteChoiceBoard(List<Integer> boardNo) throws Exception;
+	public void deleteChoiceBoard(int boardNo) throws Exception;
 	
 	//게시글 선택 삭제
 	public void deleteChoicePost(List<Integer> postNo) throws Exception;

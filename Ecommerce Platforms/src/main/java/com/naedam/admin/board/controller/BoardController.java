@@ -25,12 +25,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.naedam.admin.award.model.vo.Award;
 import com.naedam.admin.board.model.service.BoardService;
 import com.naedam.admin.board.model.vo.Board;
 import com.naedam.admin.board.model.vo.BoardOption;
+import com.naedam.admin.board.model.vo.BoardRequest;
 import com.naedam.admin.board.model.vo.Page;
 import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.common.Comm;
@@ -48,6 +52,13 @@ public class BoardController {
 	
 	int pageUnit = 5;
 	int pageSize = 5;
+	@PostMapping("/getBoard")
+	@ResponseBody
+	public Board getBoard(@RequestParam("boardNo") int boardNo) throws Exception {
+
+		Board board = boardService.getBoardData(boardNo);
+		return board;
+	}
 	/***
 	 * 게시판 DML 프로세스
 	 * @param board
@@ -58,14 +69,19 @@ public class BoardController {
 	 * @throws Exception
 	 */
 	@PostMapping("boardProcess")
-	public String boardProcess(@ModelAttribute("board") Board board, 
+	public String boardProcess(@ModelAttribute("board") Board board,
+								HttpServletRequest request,RedirectAttributes redirectAttr,
 							   @ModelAttribute("boardOption") BoardOption boardOption,
 							   @RequestParam("mode") String mode) throws Exception {
-		Map<String, Object> boardMap = new HashMap<>();
-		boardMap.put("board", board);
-		boardMap.put("boardOption", boardOption);
-		boardMap.put("mode", mode);
-		boardService.boardProcess(boardMap);
+		BoardRequest boardRequest = new BoardRequest();
+		boardRequest.setBoard(board);
+		boardRequest.setBoardOption(boardOption);
+		boardRequest.setMode(mode);
+		boardRequest.setRequest(request);
+		
+		Map<String, Object> resultMap = boardService.boardProcess(boardRequest);
+		redirectAttr.addFlashAttribute("msg", (String)resultMap.get("msg"));
+
 		return "redirect:/admin/board/listBoard?locale="+board.getLocale();
 	}
 	

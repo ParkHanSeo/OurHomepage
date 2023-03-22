@@ -18,7 +18,6 @@
 			alert("내용이 입력되지 않았습니다.");
 			return;
 		}
-		alert("게시판이 등록 되었습니다.")
 		$("form[name='addBoard']").attr("method", "POST").attr("action", "/admin/board/boardProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
 	
