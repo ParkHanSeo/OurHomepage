@@ -82,8 +82,8 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+"&locale=${cookie.locale.value}>"
-									+ "<i class='fa fa-circle-o'></i> "+Data[i].boardTitle+""
+									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+"&locale=${cookie.locale.value} id='head_list_child'>"
+									+ "<i class='fa fa-circle'></i> "+Data[i].boardTitle+""
 									+ "</a>"
 									+ "</li>"
 							$('#boardMenu').append(display);
@@ -104,8 +104,8 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+"&locale=${cookie.locale.value}>"
-									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle+""
+									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+"&locale=${cookie.locale.value} id='head_list_child'>"
+									+ "<i class='fa fa-circle'></i> "+Data[i].businessTitle+""
 									+ "</a>"
 									+ "</li>"
 							$('#businessMenu').append(display);

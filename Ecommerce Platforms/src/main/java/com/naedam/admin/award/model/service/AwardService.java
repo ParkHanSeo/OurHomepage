@@ -16,7 +16,7 @@ public interface AwardService {
 
 	Map<String, Object> updateAward(Award award, AwardRequest awardRequest, String filePath) throws ParseException, IllegalStateException, IOException;
 
-	Map<String, Object> deleteAward(List<String> historyNoList);
+	Map<String, Object> deleteAward(List<String> boardNoList);
 
 	public Map<String,Object> selectAwardList(Map<String, Object> map) throws Exception;
 

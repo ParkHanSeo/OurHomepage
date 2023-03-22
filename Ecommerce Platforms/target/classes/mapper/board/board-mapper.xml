@@ -396,9 +396,7 @@
 	<delete id="deleteChoiceBoard">
 		DELETE
 		FROM board
-		WHERE <foreach collection="list" item="boardNo" open="(" close=")" separator="or">
-				board_no = #{boardNo}
-			  </foreach>
+		WHERE  board_no = #{boardNo}
 	</delete>
 	
 	<delete id="deleteChoicePost">

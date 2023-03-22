@@ -181,7 +181,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//게시판 선택 산제
 	@Override
-	public void deleteChoiceBoard(List<Integer> boardNo) throws Exception {
+	public void deleteChoiceBoard(int boardNo) throws Exception {
 		sqlSession.delete("board.deleteChoiceBoard", boardNo);
 	}
 	

@@ -1,10 +1,15 @@
 package com.naedam.admin.board.model.service;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +20,7 @@ import com.naedam.admin.board.model.vo.Board;
 
 import com.naedam.admin.board.model.vo.BoardComment;
 import com.naedam.admin.board.model.vo.BoardFile;
-import com.naedam.admin.board.model.vo.BoardOption;
+import com.naedam.admin.board.model.vo.BoardRequest;
 import com.naedam.admin.board.model.vo.BoardTranslate;
 import com.naedam.admin.board.model.vo.Post;
 import com.naedam.admin.member.model.vo.Member;
@@ -30,24 +35,50 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private RecruitDao recruitDao;
 	
-	//게시판 프로세스
-	public void boardProcess(Map<String, Object> map) throws Exception {
-		//기본 게시판 등록 실행 시 권한과 옵션도 같이 insert
-			Board board = (Board) map.get("board");
-			BoardOption boardOption = (BoardOption) map.get("boardOption");
-		//게시판 등록, 권한 등록, 옵션 등록
-		if("insert".equals(map.get("mode"))) {
-			boardDao.addBoard(board);
+	public Map<String, Object> boardProcess(BoardRequest boardRequest) throws Exception{
+		
+		Map<String, Object> resultMap = new HashMap<>();
+		Board board = boardRequest.getBoard();
+		String mode = boardRequest.getMode();
+		HttpServletRequest request = boardRequest.getRequest();
+		
+		if("insert".equals(mode)) {
+			resultMap = addBoard(board);
 		//게시판 수정, 권한 수정, 옵션 수정
-		}else if("update".equals(map.get("mode"))) {
-			boardDao.updateBoard(board);
+		}else if("update".equals(mode)) {
+			resultMap = updateBoard(board);
 		//게시판 삭제
-		}else if("delete".equals(map.get("mode"))) {
-			List<Integer> boardArr = (List<Integer>) map.get("boardArr");
-			boardDao.deleteChoiceBoard(boardArr);
+		}else if("delete".equals(mode)) {
+		  List<String> boardNoList = Arrays.asList(request.getParameterValues("list[]"));
+		  resultMap = deleteChoiceBoard(boardNoList);
+			
 		}
+		
+		return resultMap;
 	}
 	
+
+	public Map<String, Object> addBoard(Board board) throws Exception {
+		Map<String, Object> resultMap = new HashMap<String, Object>();	
+		boardDao.addBoard(board);
+		resultMap.put("msg", "게시판이 등록되었습니다.");
+		return resultMap;
+	}
+	public Map<String, Object> updateBoard(Board board) throws Exception {
+		Map<String, Object> resultMap = new HashMap<String, Object>();	
+		boardDao.updateBoard(board);
+		resultMap.put("msg", "게시판이 수정되었습니다.");
+		return resultMap;
+	}
+	public Map<String, Object> deleteChoiceBoard(List<String> boardNoList) throws NumberFormatException, Exception{
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		for(String no : boardNoList) {
+			boardDao.deleteChoiceBoard(Integer.parseInt(no));
+		}
+		resultMap.put("msg", "게시판 정보가 삭제되었습니다.");
+		return resultMap;
+	}
+
 	//게시글 프로세스
 	public void postProcess(Map<String, Object> map) throws Exception{
 		Post post = (Post) map.get("post");
@@ -279,6 +310,22 @@ public class BoardServiceImpl implements BoardService {
 	public List<String> getBoardList(String locale) {
 		
 		return boardDao.getBoardList(locale);
+	}
+
+
+	@Override
+	public Map<String, Object> addBoard(Board board, BoardRequest boardRequest)
+			throws ParseException, IllegalStateException, IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Map<String, Object> updateBoard(Board board, BoardRequest boardRequest)
+			throws ParseException, IllegalStateException, IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
