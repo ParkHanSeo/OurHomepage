@@ -250,8 +250,8 @@
 			BUSINESS_POST_TEXT_2 = #{businessPostText2},
 			BUSINESS_POST_BOTTOM_TITLE = #{businessPostBottomTitle},
 			BUSINESS_POST_BOTTOM_CONTENTS = #{businessPostBottomContents},
-			BUSINESS_POST_ICON = #{businessPostIcon},
-			BUSINESS_POST_IMG = #{businessPostImg}
+			<if test="businessPostIcon != null">BUSINESS_POST_ICON = #{businessPostIcon},</if>
+			<if test="businessPostImg != null">BUSINESS_POST_IMG = #{businessPostImg}</if>
 		</set>
 		WHERE BUSINESS_POST_NO = #{businessPostNo}
 	</update>

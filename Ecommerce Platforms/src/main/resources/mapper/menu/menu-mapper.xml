@@ -269,7 +269,9 @@
 			TITLE = #{title : VARCHAR},
 			STATUS = #{status : VARCHAR},
 			CONTENT = #{content : VARCHAR},
+			<if test="headImage != ''">
 			HEAD_IMAGE = #{headImage : VARCHAR},
+			</if>
 			HEAD_URL = #{headUrl : VARCHAR}
 		</set>
 		WHERE HEAD_NO = #{headNo : NUMERIC}

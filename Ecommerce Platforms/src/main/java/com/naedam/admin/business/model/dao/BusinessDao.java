@@ -13,7 +13,7 @@ public interface BusinessDao {
 	public void addBusiness(Business business) throws Exception;
 	
 	//BusinessPost Insert
-	public void addBusinessPost(BusinessPost businessPost) throws Exception;
+	public int addBusinessPost(BusinessPost businessPost) throws Exception;
 	
 	//BusinessContents Insert
 	public void addBusinessContents(BusinessContents businessContents) throws Exception;
@@ -42,7 +42,7 @@ public interface BusinessDao {
 	public void updateBusiness(Business business) throws Exception;
 	
 	//Business Update
-	public void updateBusinessPost(BusinessPost businessPost) throws Exception;	
+	public int updateBusinessPost(BusinessPost businessPost) throws Exception;	
 
 	//BusinessContents Update
 	public void updateBusinessContents(BusinessContents businessContents) throws Exception;
