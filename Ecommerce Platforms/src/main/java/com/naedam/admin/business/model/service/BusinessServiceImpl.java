@@ -29,6 +29,7 @@ public class BusinessServiceImpl implements BusinessService {
 	
 	final static String businessFilePath = "resources/user/images/introduction/icon/";
 	final static String businessFilePath2 = "resources/user/images/main/";
+	final static String contentsFilePath = "resources/user/images/introduction/";
 	
 	public void businessProcess(BusinessRequest businessRequest) throws Exception{
 		Business business = businessRequest.getBusiness();
@@ -70,8 +71,8 @@ public class BusinessServiceImpl implements BusinessService {
 			List<Integer> businessPostArr = businessRequest.getBusinessPostArr().stream()
 						.map(s -> Integer.parseInt(s))
 						.collect(Collectors.toList());
-			businessDao.deleteChoiceBusinessPost(businessPostArr);
-			return true;
+			int result = businessDao.deleteChoiceBusinessPost(businessPostArr);
+			return result > 0 ? true : false;
 		}
 		
 		return false;
@@ -122,34 +123,57 @@ public class BusinessServiceImpl implements BusinessService {
 
 
 	public boolean businessContentsProcess(BusinessRequest businessRequest) throws Exception{
-		BusinessContents businessContents = (BusinessContents) map.get("businessContents");
-			businessContents.setBusinessPost((BusinessPost) map.get("businessPost"));
-			MultipartFile imageName = (MultipartFile) map.get("file");
-			if("insert".equals(map.get("mode"))) {
-				if(imageName.isEmpty() == false){
-					File file = new File(map.get("filePath")+imageName.getOriginalFilename());
-					imageName.transferTo(file);
-					businessContents.setImage(imageName.getOriginalFilename());
-				}
-				businessDao.addBusinessContents(businessContents);
-			}else if("update".equals(map.get("mode"))) {
-				if(imageName.isEmpty() == false) {
-					File file = new File(map.get("filePath")+imageName.getOriginalFilename());
-					businessContents.setImage(imageName.getOriginalFilename());
-					imageName.transferTo(file);
-				}else if(imageName.isEmpty() == true) {
-					BusinessContents bp = businessDao.getBusinessContents(businessContents.getBusinessContentsNo());
-					businessContents.setImage(bp.getImage());
-				}
-				businessDao.updateBusinessContents(businessContents);
-			}
-		
-		if("delete".equals(map.get("mode"))) {
-			List<Integer> businessContentsArr = (List<Integer>) map.get("businessContentsArr");
-			businessDao.deleteChoiceBusinessContents(businessContentsArr);
+		BusinessContents businessContents = businessRequest.getBusinessContents();
+		String mode = businessRequest.getMode();
+			
+		if ("insert".equals(mode)) {
+			return insertContents(businessContents, businessRequest);
 		}
+		if ("update".equals(mode)) {
+			return updateContents(businessContents, businessRequest);
+		}
+		if("delete".equals(mode)) {
+			List<Integer> businessContentsArr = businessRequest.getBusinessContentsArr().stream()
+									.map(s -> Integer.parseInt(s))
+									.collect(Collectors.toList());
+			int result = businessDao.deleteChoiceBusinessContents(businessContentsArr);
+			return result > 0 ? true : false;
+		}
+		
+		return false;
 	}
 	
+	private boolean updateContents(BusinessContents businessContents, BusinessRequest businessRequest) throws Exception {
+		businessContents.setBusinessPost(businessRequest.getBusinessPost());
+		MultipartFile imageName = businessRequest.getFile();
+		String filePath = businessRequest.getRequest().getServletContext().getRealPath(contentsFilePath);
+		
+		if (!imageName.isEmpty()) {
+			File file = new File(filePath + imageName.getOriginalFilename());
+			businessContents.setImage(imageName.getOriginalFilename());
+			imageName.transferTo(file);
+		} 
+		
+		int result = businessDao.updateBusinessContents(businessContents);
+		
+		return result > 0 ? true : false;
+	}
+
+	private boolean insertContents(BusinessContents businessContents, BusinessRequest businessRequest) throws Exception {
+		businessContents.setBusinessPost(businessRequest.getBusinessPost());
+		
+		MultipartFile imageName = businessRequest.getFile();
+		String filePath = businessRequest.getRequest().getServletContext().getRealPath(contentsFilePath);
+		
+		if (imageName.isEmpty() == false) {
+			File file = new File(filePath + imageName.getOriginalFilename());
+			imageName.transferTo(file);
+			businessContents.setImage(imageName.getOriginalFilename());
+		}
+		int result = businessDao.addBusinessContents(businessContents);
+		return result > 0 ? true : false;
+	}
+
 	@Override
 	public Business getBusiness(int businessNo) throws Exception {
 		return businessDao.getBusiness(businessNo);
@@ -189,7 +213,6 @@ public class BusinessServiceImpl implements BusinessService {
 
 	@Override
 	public int TotalBusinessPost(int businessNo) {
-		// TODO Auto-generated method stub
 		return businessDao.TotalBusinessPost(businessNo);
 	}
 

@@ -32,9 +32,6 @@ public class BusinessRestController {
 		BusinessRequest businessRequest = new BusinessRequest();
 		businessRequest.setMode(mode);
 		businessRequest.setBusinessArr(businessArr);
-//		Map<String, Object> businessMap = new HashMap<>();
-//		businessMap.put("mode", mode);
-//		businessMap.put("businessArr", businessArr);
 		
 		businessService.businessProcess(businessRequest);
 		result = true;
@@ -44,13 +41,6 @@ public class BusinessRestController {
 	@PostMapping("json/businessPostProcess")
 	public Boolean BusinessPostProcess(@RequestParam(value = "businessPostArr[]") List<String> businessPostArr,
 									   @RequestParam("mode") String mode) throws Exception{
-//		BusinessPost businessPost = new BusinessPost();
-//		Boolean result = false;
-//		Map<String, Object> businessPostMap = new HashMap<>();
-//		businessPostMap.put("mode", mode);
-//		businessPostMap.put("businessNo", businessNo);
-//		businessPostMap.put("businessPostArr", businessPostArr);
-		
 		BusinessRequest businessRequest = new BusinessRequest();
 		businessRequest.setMode(mode);
 		businessRequest.setBusinessPostArr(businessPostArr);
@@ -62,12 +52,12 @@ public class BusinessRestController {
 	@PostMapping("json/businessContentsProcess")
 	public Boolean BusinessContentsProcess(@RequestParam(value = "businessContentsArr[]") List<String> businessContentsArr,
 										   @RequestParam("mode") String mode) throws Exception{
-		Boolean result = false;
-		Map<String, Object> businessContentsMap = new HashMap<>();
-		businessContentsMap.put("mode", mode);
-		businessContentsMap.put("businessContentsArr", businessContentsArr);
-		businessService.businessContentsProcess(businessContentsMap);
-		result = true;
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusinessContentsArr(businessContentsArr);
+		
+		Boolean result = businessService.businessContentsProcess(businessRequest);
+		
 		return result;
 	}
 	

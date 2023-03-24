@@ -37,8 +37,8 @@ public class BusinessDaoImpl implements BusinessDao {
 	}
 	
 	@Override
-	public void addBusinessContents(BusinessContents businessContents) throws Exception {
-		sqlSession.insert("business.addBusinessContents", businessContents);
+	public int addBusinessContents(BusinessContents businessContents) throws Exception {
+		return sqlSession.insert("business.addBusinessContents", businessContents);
 	}
 	
 	/**
@@ -112,8 +112,8 @@ public class BusinessDaoImpl implements BusinessDao {
 	}
 	
 	@Override
-	public void updateBusinessContents(BusinessContents businessContents) throws Exception{
-		sqlSession.update("business.updateBusinessContents", businessContents);
+	public int updateBusinessContents(BusinessContents businessContents) throws Exception{
+		return sqlSession.update("business.updateBusinessContents", businessContents);
 	}
 	
 	/**
@@ -128,13 +128,13 @@ public class BusinessDaoImpl implements BusinessDao {
 	 * business delete
 	 */
 	@Override
-	public void deleteChoiceBusinessPost(List<Integer> businessPostNo) throws Exception {
-		sqlSession.delete("business.deleteChoiceBusinessPost", businessPostNo);
+	public int deleteChoiceBusinessPost(List<Integer> businessPostNo) throws Exception {
+		return sqlSession.delete("business.deleteChoiceBusinessPost", businessPostNo);
 	}
 	
 	@Override
-	public void deleteChoiceBusinessContents(List<Integer> businessContentsNo) throws Exception{
-		sqlSession.delete("business.deleteChoiceBusinessContents", businessContentsNo);
+	public int deleteChoiceBusinessContents(List<Integer> businessContentsNo) throws Exception{
+		return sqlSession.delete("business.deleteChoiceBusinessContents", businessContentsNo);
 	}
 
 	@Override
