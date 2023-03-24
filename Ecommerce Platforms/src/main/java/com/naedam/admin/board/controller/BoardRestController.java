@@ -228,6 +228,7 @@ public class BoardRestController {
 		postMap.put("boardNo", boardNo);
 		postMap.put("post", post);
 		boardService.postProcess(postMap);
+		
 		result = true;
 		return result;
 	}	

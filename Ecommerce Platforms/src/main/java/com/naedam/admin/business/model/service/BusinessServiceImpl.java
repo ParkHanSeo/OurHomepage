@@ -50,13 +50,7 @@ public class BusinessServiceImpl implements BusinessService {
 	}
 	
 	public boolean businessPostProcess(BusinessRequest businessRequest) throws Exception{
-		
 		BusinessPost businessPost = businessRequest.getBusinessPost();
-		businessPost.setBusiness(businessRequest.getBusiness());
-		
-		//작성자 등록
-		Member member = boardDao.getMemberData(Integer.parseInt(businessRequest.getSecNo().toString()));
-		businessPost.setBusinessMember(member);
 		
 		String mode = businessRequest.getMode();
 
@@ -79,6 +73,7 @@ public class BusinessServiceImpl implements BusinessService {
 	}
 	
 	private boolean updateBusiness(BusinessPost businessPost, BusinessRequest businessRequest) throws Exception {
+		businessPost.setBusiness(businessRequest.getBusiness());
 		MultipartFile iconName = businessRequest.getIcon();
 		MultipartFile imgName = businessRequest.getFile();
 		String filePath = businessRequest.getRequest().getServletContext().getRealPath(businessFilePath);
@@ -101,10 +96,15 @@ public class BusinessServiceImpl implements BusinessService {
 	}
 
 	private boolean insertBusiness(BusinessPost businessPost, BusinessRequest businessRequest) throws Exception {
+		businessPost.setBusiness(businessRequest.getBusiness());
 		MultipartFile iconName = businessRequest.getIcon();
 		MultipartFile imgName = businessRequest.getFile();
 		String filePath = businessRequest.getRequest().getServletContext().getRealPath(businessFilePath);
 		String filePath2 = businessRequest.getRequest().getServletContext().getRealPath(businessFilePath2);
+		
+		//작성자 등록
+		Member member = boardDao.getMemberData(Integer.parseInt(businessRequest.getSecNo().toString()));
+		businessPost.setBusinessMember(member);
 		
 		if(!iconName.isEmpty()){
 			businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
