@@ -27,5 +27,6 @@ public class BusinessRequest {
 	private String secNo;
 	private List<String> businessPostArr;
 	private BusinessContents businessContents;
+	private List<String> businessContentsArr;
 
 }

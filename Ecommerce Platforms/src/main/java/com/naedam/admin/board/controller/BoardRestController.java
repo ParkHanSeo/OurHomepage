@@ -197,16 +197,16 @@ public class BoardRestController {
 	 * @return
 	 * @throws Exception
 	 */
-	@PostMapping("json/boardProcess")
-	public Boolean boardProcess(@RequestParam(value = "boardArr[]") List<String> boardArr,  @RequestParam("mode") String mode) throws Exception{
-		Boolean result = false;
-		Map<String, Object> boardMap = new HashMap<>();
-		boardMap.put("boardArr", boardArr);
-		boardMap.put("mode", mode);
-		boardService.boardProcess(boardMap);
-		result = true;
-		return result;
-	}	
+//	@PostMapping("json/boardProcess")
+//	public Boolean boardProcess(@RequestParam(value = "boardArr[]") List<String> boardArr,  @RequestParam("mode") String mode) throws Exception{
+//		Boolean result = false;
+//		Map<String, Object> boardMap = new HashMap<>();
+//		boardMap.put("boardArr", boardArr);
+//		boardMap.put("mode", mode);
+//		boardService.boardProcess(boardMap);
+//		result = true;
+//		return result;
+//	}	
 	
 	/***
 	 * 비동기처리의 C,U,D를 위한 게시글 프로세스

@@ -16,7 +16,7 @@ public interface BusinessDao {
 	public int addBusinessPost(BusinessPost businessPost) throws Exception;
 	
 	//BusinessContents Insert
-	public void addBusinessContents(BusinessContents businessContents) throws Exception;
+	public int addBusinessContents(BusinessContents businessContents) throws Exception;
 	
 	//Business SelectOne
 	public Business getBusiness(int businessNo) throws Exception;
@@ -45,16 +45,16 @@ public interface BusinessDao {
 	public int updateBusinessPost(BusinessPost businessPost) throws Exception;	
 
 	//BusinessContents Update
-	public void updateBusinessContents(BusinessContents businessContents) throws Exception;
+	public int updateBusinessContents(BusinessContents businessContents) throws Exception;
 	
 	//Business Delete
 	public void deleteChoiceBusiness(List<Integer> businessNo) throws Exception;
 	
 	//Business Delete
-	public void deleteChoiceBusinessPost(List<Integer> businessPostNo) throws Exception;
+	public int deleteChoiceBusinessPost(List<Integer> businessPostNo) throws Exception;
 
 	//BusinessContents Delete
-	public void deleteChoiceBusinessContents(List<Integer> businessConetentsNo) throws Exception;
+	public int deleteChoiceBusinessContents(List<Integer> businessConetentsNo) throws Exception;
 
 	public int TotalBusinessPost(int businessNo);
 	
