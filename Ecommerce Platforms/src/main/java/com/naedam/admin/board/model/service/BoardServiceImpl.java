@@ -23,6 +23,7 @@ import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.BoardRequest;
 import com.naedam.admin.board.model.vo.BoardTranslate;
 import com.naedam.admin.board.model.vo.Post;
+import com.naedam.admin.board.model.vo.PostRequest;
 import com.naedam.admin.member.model.vo.Member;
 import com.naedam.admin.recruit.model.dao.RecruitDao;
 
@@ -43,10 +44,10 @@ public class BoardServiceImpl implements BoardService {
 		HttpServletRequest request = boardRequest.getRequest();
 		
 		if("insert".equals(mode)) {
-			resultMap = addBoard(board);
+			resultMap = addBoard(board, boardRequest);
 		//게시판 수정, 권한 수정, 옵션 수정
 		}else if("update".equals(mode)) {
-			resultMap = updateBoard(board);
+			resultMap = updateBoard(board, boardRequest);
 		//게시판 삭제
 		}else if("delete".equals(mode)) {
 		  List<String> boardNoList = Arrays.asList(request.getParameterValues("list[]"));
@@ -58,13 +59,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 
-	public Map<String, Object> addBoard(Board board) throws Exception {
+	public Map<String, Object> addBoard(Board board, BoardRequest boardRequest) throws Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();	
 		boardDao.addBoard(board);
 		resultMap.put("msg", "게시판이 등록되었습니다.");
 		return resultMap;
 	}
-	public Map<String, Object> updateBoard(Board board) throws Exception {
+	public Map<String, Object> updateBoard(Board board, BoardRequest boardRequest) throws Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();	
 		boardDao.updateBoard(board);
 		resultMap.put("msg", "게시판이 수정되었습니다.");
@@ -80,73 +81,121 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	//게시글 프로세스
-	public void postProcess(Map<String, Object> map) throws Exception{
-		Post post = (Post) map.get("post");
-		post.setPostBoard((Board) map.get("board"));
-		BoardFile boardFile = new BoardFile();
-		//게시글 등록, 수정, 답변등록 같은 데이터를 사용하는 것이 많아 조건으로 묶었습니다.
-		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode")) || "answer".equals(map.get("mode"))) {
-			
-			//게시글 등록시 현재 시큐리티에 접속해있는 아이디(primary key)가 필요합니다.
-			Member member = boardDao.getMemberData(Integer.parseInt(map.get("secNo").toString()));
-			post.setPostMember(member);
-			post.setPostMemberName(member.getLastName()+member.getFirstName());
-			
-			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
-			MultipartFile[] postName = (MultipartFile[]) map.get("postName");
-			
-			//게시글 등록
-			if("insert".equals(map.get("mode"))) {
-				boardDao.addPost(post);
-				for(int i = 0; i < postName.length; i++) {
-					File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
-					boardFile.setFilePost(post);
-					boardFile.setFileName(postName[i].getOriginalFilename());
-					postName[i].transferTo(file2);
-					boardDao.addFile(boardFile);				
-				}				
+	public Map<String, Object> postProcess(PostRequest postRequest) throws Exception{
+		Map<String, Object> resultMap = new HashMap<>();
+		Post post = postRequest.getPost();
+		post.setPostBoard(postRequest.getBoard());
+
+		String mode = postRequest.getMode();
+		String filePath = postRequest.getFilePath();
+		
+		//게시글 등록
+		if("insert".equals(mode)) {
+			resultMap = addPost(postRequest, filePath);
 			//게시글 수정
-			}else if("update".equals(map.get("mode"))) {
-				if(postName.length > 0) {
-					for(int i = 0; i < postName.length; i++) {
-						File file2 = new File(map.get("filePath")+postName[i].getOriginalFilename());
-						boardFile.setFilePost(post);
-						boardFile.setFileName(postName[i].getOriginalFilename());
-						postName[i].transferTo(file2);
-						boardDao.addFile(boardFile);				
-					}
-				}
-					boardDao.updatePost(post);
-			//게시글 답변 등록
-			}else if("answer".equals(map.get("mode"))) {
-				//기존에 있던 게시글의 데이터를 가지고 와서 답변의 계층형 쿼리작업을 위해 데이터를 넣어 답변을 등록합니다.
-				Post post2 = boardDao.getPostData(post.getPostNo());
-				boardDao.addAnswerPost(post);
 			}
+		if("update".equals(mode)) {
+			resultMap = updatePost(post,postRequest, filePath);
+		} 
 		//게시글 선택삭제
-		}else if("delete".equals(map.get("mode"))) {
-			List<Integer> postArr = (List<Integer>) map.get("postArr");
-			boardDao.deleteChoicePost(postArr);
-		//게시글 복사
-		//카피VO를 만들어 그대로 복사해 insert하는 로직
-		}else if("copy".equals(map.get("mode"))) {
-			List<String> postArr = (List<String>) map.get("postArr");
-			for(String i : postArr) {
-				Post postCopy = boardDao.getPostData(Integer.parseInt(i));
-				postCopy.getPostBoard().setBoardNo((int)map.get("boardNo"));
-				boardDao.addPost(postCopy);
-			}
+		if("delete".equals(mode)) {
+			List<String> postArr = postRequest.getPostArr();
+			resultMap = deleteChoicePost(postArr);
+			//게시글 복사
+		} 
+		if("copy".equals(mode)) {
+			List<String> postArr = postRequest.getPostArr();
+		for(String i : postArr) {
+			Post postCopy = boardDao.getPostData(Integer.parseInt(i));
+			postCopy.getPostBoard().setBoardNo(postRequest.getBoardNo());
+			resultMap = addPost(postRequest, filePath);
+		}
 		//게시글 이전
 		//기존의 있던 데이터를 복사하여 insert 함, 기존에 있던 데이터는 delete
-		}else if("change".equals(map.get("mode"))) {
-			List<Integer> postArr = (List<Integer>) map.get("postArr");
-			for(Integer i : postArr) {
-				Post postCopy = boardDao.getPostData(i);
-				postCopy.getPostBoard().setBoardNo((int)map.get("boardNo"));
-				boardDao.addPost(postCopy);
+	
+		}  
+		if("change".equals(mode)) {
+			List<String> postArr = postRequest.getPostArr();
+			for(String i : postArr) {
+				Post postCopy = boardDao.getPostData(Integer.parseInt(i));
+				postCopy.getPostBoard().setBoardNo(postRequest.getBoardNo());
+				resultMap = addPost(postRequest, filePath);
 			}
-			boardDao.deleteChoicePost(postArr);
+			resultMap = deleteChoicePost(postArr);
 		}
+
+		return resultMap;
+	}
+	
+	public Map<String, Object> addPost(PostRequest postRequest, String filePath)
+			throws ParseException, IllegalStateException, IOException, Exception {
+		
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		BoardFile boardFile = new BoardFile();
+		String secNo = postRequest.getSecNo();
+		Post post = postRequest.getPost();
+		
+		Member member = boardDao.getMemberData(Integer.parseInt(secNo.toString()));
+		post.setPostMember(member);
+		post.setPostMemberName(member.getLastName()+member.getFirstName());
+		
+		MultipartFile[] postImage = postRequest.getPostImage();
+		//post.setPostBoard(postRequest.getBoard());
+		post.setLocale(postRequest.getLocale());
+		boardDao.addPost(post);
+		
+		for(int i = 0; i < postImage.length; i++) {
+			File file = new File(filePath+postImage[i].getOriginalFilename());
+			boardFile.setFilePost(post);
+			boardFile.setFileName(postImage[i].getOriginalFilename());
+			post.setImgUrl(postImage[i].getOriginalFilename());
+			postImage[i].transferTo(file);
+			boardDao.addFile(boardFile);				
+		}				
+		
+		resultMap.put("msg", "게시판이 등록되었습니다.");
+		return resultMap;
+	}
+
+
+	public Map<String, Object> updatePost(Post post, PostRequest postRequest, String filePath)
+			throws ParseException, IllegalStateException, IOException, Exception {
+		
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		BoardFile boardFile = new BoardFile();
+		post.setPostBoard(postRequest.getBoard());
+		MultipartFile[] postImage = postRequest.getPostImage();
+		post.setLocale(postRequest.getLocale());
+		//게시글 등록시 현재 시큐리티에 접속해있는 아이디(primary key)가 필요합니다.
+		String secNo = postRequest.getSecNo();
+		Member member = boardDao.getMemberData(Integer.parseInt(secNo.toString()));
+		post.setPostMember(member);
+		post.setPostMemberName(member.getLastName()+member.getFirstName());
+
+		for(int i = 0; i < postImage.length; i++) {
+			File file = new File(filePath+postImage[i].getOriginalFilename());
+			boardFile.setFilePost(post);
+			boardFile.setFileName(postImage[i].getOriginalFilename());
+			postImage[i].transferTo(file);
+			post.setImgUrl(postImage[i].getOriginalFilename());
+			postImage[i].transferTo(file);
+			boardDao.addFile(boardFile);				
+		}
+		
+		boardDao.updatePost(post);
+		resultMap.put("msg", "게시판이 수정되었습니다.");
+		return resultMap;
+	}
+
+
+	public Map<String, Object> deleteChoicePost(List<String> postArr) throws NumberFormatException, Exception {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		
+		for(String no : postArr) {
+			boardDao.deleteChoicePost(Integer.parseInt(no));
+		}
+		resultMap.put("msg", "게시판 정보가 삭제되었습니다.");
+		return resultMap;
 	}
 	
 	@Override
@@ -312,21 +361,6 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.getBoardList(locale);
 	}
 
-
-	@Override
-	public Map<String, Object> addBoard(Board board, BoardRequest boardRequest)
-			throws ParseException, IllegalStateException, IOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Map<String, Object> updateBoard(Board board, BoardRequest boardRequest)
-			throws ParseException, IllegalStateException, IOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 

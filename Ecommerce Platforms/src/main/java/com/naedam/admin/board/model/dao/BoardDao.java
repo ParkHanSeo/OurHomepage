@@ -93,7 +93,7 @@ public interface BoardDao {
 	public void deleteChoiceBoard(int boardNo) throws Exception;
 	
 	//게시글 선택 삭제
-	public void deleteChoicePost(List<Integer> postNo) throws Exception;
+	public void deleteChoicePost(int postNo) throws Exception;
 	
 	//파일 삭제
 	public void deleteFile(int fileNo) throws Exception;

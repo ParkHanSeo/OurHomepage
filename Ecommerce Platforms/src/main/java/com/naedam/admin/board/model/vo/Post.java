@@ -26,6 +26,7 @@ public class Post implements Serializable {
 	private Member postMember;		//회원데이터
 	private String postMemberName;
 	private int rownum;
+	private String imgUrl;	
 	private String locale;
 	
 }

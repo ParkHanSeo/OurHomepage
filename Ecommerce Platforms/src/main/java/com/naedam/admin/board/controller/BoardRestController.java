@@ -13,19 +13,23 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.naedam.admin.board.model.service.BoardService;
 import com.naedam.admin.board.model.vo.Board;
 import com.naedam.admin.board.model.vo.BoardComment;
 import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.Post;
+import com.naedam.admin.board.model.vo.PostRequest;
 import com.naedam.admin.common.Comm;
 import com.naedam.admin.member.model.vo.Member;
 import com.naedam.admin.recruit.model.service.RecruitService;
@@ -196,7 +200,6 @@ public class BoardRestController {
 	 * @param mode
 	 * @return
 	 * @throws Exception
-	 */
 	@PostMapping("json/boardProcess")
 	public Boolean boardProcess(@RequestParam(value = "boardArr[]") List<String> boardArr,  @RequestParam("mode") String mode) throws Exception{
 		Boolean result = false;
@@ -204,9 +207,10 @@ public class BoardRestController {
 		boardMap.put("boardArr", boardArr);
 		boardMap.put("mode", mode);
 		boardService.boardProcess(boardMap);
-		result = true;
+		result = true; 
 		return result;
 	}	
+	*/
 	
 	/***
 	 * 비동기처리의 C,U,D를 위한 게시글 프로세스
@@ -219,15 +223,27 @@ public class BoardRestController {
 	@PostMapping("json/postProcess")
 	public Boolean postProcess(@RequestParam(value = "postArr[]") List<String> postArr,
 							   @RequestParam(value = "boardNo", required = false, defaultValue= "0") int boardNo,
-							   @RequestParam("mode") String mode) throws Exception{
+							   @RequestParam("mode") String mode,
+							   @RequestParam(value="secNo", required = false) String secNo) throws Exception{
 		Post post = new Post();
 		Boolean result = false;
+		
 		Map<String, Object> postMap = new HashMap<>();
 		postMap.put("postArr", postArr);
 		postMap.put("mode", mode);
 		postMap.put("boardNo", boardNo);
 		postMap.put("post", post);
-		boardService.postProcess(postMap);
+		
+		PostRequest postRequest = new PostRequest();
+		postRequest.setPostArr(postArr);
+		postRequest.setMode(mode);
+		postRequest.setBoardNo(boardNo);
+		postRequest.setPost(post);
+		postRequest.setSecNo(secNo);
+		boardService.postProcess(postRequest);
+		
+		
+		
 		result = true;
 		return result;
 	}	
