@@ -32,8 +32,8 @@ public class BusinessDaoImpl implements BusinessDao {
 	
 
 	@Override
-	public void addBusinessPost(BusinessPost businessPost) throws Exception {
-		sqlSession.insert("business.addBusinessPost", businessPost);
+	public int addBusinessPost(BusinessPost businessPost) throws Exception {
+		return sqlSession.insert("business.addBusinessPost", businessPost);
 	}
 	
 	@Override
@@ -107,8 +107,8 @@ public class BusinessDaoImpl implements BusinessDao {
 	 * businessPost update
 	 */
 	@Override
-	public void updateBusinessPost(BusinessPost businessPost) throws Exception {
-		sqlSession.update("business.updateBusinessPost", businessPost);
+	public int updateBusinessPost(BusinessPost businessPost) throws Exception {
+		return sqlSession.update("business.updateBusinessPost", businessPost);
 	}
 	
 	@Override

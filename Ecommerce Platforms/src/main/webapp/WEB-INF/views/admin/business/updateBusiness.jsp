@@ -22,7 +22,7 @@
 					            <tr>
 					                <td class="menu">제목</td>
 					                <td align="left" colspan="3">
-					                	<input type="text" name="businessTitle2" id="businessTitle2" class="form-control input-sm">			                
+					                	<input type="text" name="businessTitle" id="businessTitle2" class="form-control input-sm">			                
 					                </td>
 					            </tr>
 				            </table>

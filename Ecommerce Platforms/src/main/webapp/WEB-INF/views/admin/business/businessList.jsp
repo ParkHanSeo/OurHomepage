@@ -77,22 +77,24 @@
 					} ,
 					success : function(JSONData, status){
 						$("#businessTitle2").val(JSONData.businessTitle);
+						$("#businessNo2").val(JSONData.businessNo);
 					}
 				});			
 			}); 	 
 		});
 		
 		function fncUpdateBusiness(){
-			
+
 			var businessTitle = $("input[id='businessTitle2']").val();
-			var businessCategory = $("input[id='businessCategory2']").val();
+			console.log(businessTitle);
+			/* var businessCategory = $("input[id='businessCategory2']").val(); */
 			if(businessTitle == null || businessTitle == ''){
 				alert("제목이 입력되지 않았습니다.");
 				return;
-			}else if(businessCategory == null || businessCategory == ''){
+			}/* else if(businessCategory == null || businessCategory == ''){
 				alert("카테고리가 입력되지 않았습니다.");
 				return;
-			}
+			} */
 			
 			alert("게시판이 수정 되었습니다.")
 			$("form[name='updateBusinessForm']").attr("method", "POST").attr("action", "/admin/business/businessProcess?${_csrf.parameterName}=${_csrf.token}").submit();

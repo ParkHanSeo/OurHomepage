@@ -28,26 +28,34 @@ public class BusinessRestController {
 	public Boolean BusinessProcess(@RequestParam(value = "businessArr[]") List<String> businessArr, 
 		   @RequestParam("mode") String mode) throws Exception{
 		Boolean result = false;
-		Map<String, Object> businessMap = new HashMap<>();
-		businessMap.put("mode", mode);
-		businessMap.put("businessArr", businessArr);
-		businessService.businessProcess(businessMap);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusinessArr(businessArr);
+//		Map<String, Object> businessMap = new HashMap<>();
+//		businessMap.put("mode", mode);
+//		businessMap.put("businessArr", businessArr);
+		
+		businessService.businessProcess(businessRequest);
 		result = true;
 		return result;
 	}
 	
 	@PostMapping("json/businessPostProcess")
 	public Boolean BusinessPostProcess(@RequestParam(value = "businessPostArr[]") List<String> businessPostArr,
-									   @RequestParam(value = "businessNo", required = false, defaultValue= "0") int businessNo,
 									   @RequestParam("mode") String mode) throws Exception{
-		BusinessPost businessPost = new BusinessPost();
-		Boolean result = false;
-		Map<String, Object> businessPostMap = new HashMap<>();
-		businessPostMap.put("mode", mode);
-		businessPostMap.put("businessNo", businessNo);
-		businessPostMap.put("businessPostArr", businessPostArr);
-		businessService.businessPostProcess(businessPostMap);
-		result = true;
+//		BusinessPost businessPost = new BusinessPost();
+//		Boolean result = false;
+//		Map<String, Object> businessPostMap = new HashMap<>();
+//		businessPostMap.put("mode", mode);
+//		businessPostMap.put("businessNo", businessNo);
+//		businessPostMap.put("businessPostArr", businessPostArr);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusinessPostArr(businessPostArr);
+		Boolean result = businessService.businessPostProcess(businessRequest);
+		
 		return result;
 	}
 	

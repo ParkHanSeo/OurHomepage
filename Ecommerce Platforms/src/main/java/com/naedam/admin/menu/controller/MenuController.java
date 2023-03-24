@@ -46,13 +46,15 @@ public class MenuController {
 							  @ModelAttribute("bottom") Bottom bottom,
 							  @RequestParam("mode") String mode, 
 							  @RequestParam("part") String part) throws Exception{
-		Map<String, Object> menuMap = new HashMap<>();
-		menuMap.put("menu", menu);
-		menuMap.put("head", head);
-		menuMap.put("bottom", bottom);
-		menuMap.put("mode", mode);
-		menuMap.put("part", part);
-		return menuService.menuProcess(menuMap);
+		
+		MenuRequest menuRequest = new MenuRequest();
+		menuRequest.setMenu(menu);
+		menuRequest.setHead(head);
+		menuRequest.setBottm(bottom);
+		menuRequest.setMode(mode);
+		menuRequest.setPart(part);
+		
+		return menuService.menuProcess(menuRequest);
 	}
 	
 	@PostMapping("headProcess")
@@ -62,14 +64,16 @@ public class MenuController {
 							  @RequestParam(value="imageStatus", required = false) String imageStatus,
 							  HttpServletRequest request) throws Exception{
 		String filePath = request.getServletContext().getRealPath("resources/user/images/main/");
-		Map<String, Object> headMap = new HashMap<>();
-		headMap.put("head", head);
-		headMap.put("mode", mode);
-		headMap.put("headImage", headImage);
-		headMap.put("filePath", filePath);
-		headMap.put("imageStatus", imageStatus);
 		
-		return menuService.headProcess(headMap);
+		MenuRequest menuRequest = new MenuRequest();
+		
+		menuRequest.setHead(head);
+		menuRequest.setMode(mode);
+		menuRequest.setHeadImage(headImage);
+		menuRequest.setFilePath(filePath);
+		menuRequest.setImageStatus(imageStatus);
+		
+		return menuService.headProcess(menuRequest);
 	}
 	
 	/**

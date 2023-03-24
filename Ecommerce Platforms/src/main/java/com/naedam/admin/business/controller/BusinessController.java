@@ -47,12 +47,22 @@ public class BusinessController {
 								  @RequestParam("mode") String mode,
 								  @RequestParam(value="icon", required = false) MultipartFile icon,
 								  HttpServletRequest request) throws Exception{
-		Map<String, Object> businessMap = new HashMap<String, Object>();
-		businessMap.put("mode", mode);
-		businessMap.put("business", business);
-		businessMap.put("boardOption", boardOption);
-		businessMap.put("icon", icon);
-		businessService.businessProcess(businessMap);
+		
+		System.out.println("Business >>>" + business);
+		System.out.println("boardOption >>>" + boardOption);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusiness(business);
+		businessRequest.setBoardOption(boardOption);
+		businessRequest.setIcon(icon);
+		
+//		Map<String, Object> businessMap = new HashMap<String, Object>();
+//		businessMap.put("mode", mode);
+//		businessMap.put("business", business);
+//		businessMap.put("boardOption", boardOption);
+//		businessMap.put("icon", icon);
+		businessService.businessProcess(businessRequest);
 		return "redirect:/admin/business/getBusinessList?locale="+business.getLocale();
 	}
 	
@@ -65,18 +75,27 @@ public class BusinessController {
 									  ,@RequestParam("mode") String mode
 									  ,@RequestParam("businessNo") int businessNo
 								      ,HttpServletRequest request) throws Exception{
-		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/icon/");
-		String filePath2 = request.getServletContext().getRealPath("resources/user/images/main/");
-		Map<String, Object> businessPostMap	 = new HashMap<>();
-		businessPostMap.put("business", business);
-		businessPostMap.put("businessPost", businessPost);
-		businessPostMap.put("mode", mode);
-		businessPostMap.put("icon", icon);
-		businessPostMap.put("img", img);
-		businessPostMap.put("filePath", filePath);
-		businessPostMap.put("filePath2", filePath2);
-		businessPostMap.put("secNo", secNo);
-		businessService.businessPostProcess(businessPostMap);
+		
+//		Map<String, Object> businessPostMap	 = new HashMap<>();
+//		businessPostMap.put("business", business);
+//		businessPostMap.put("businessPost", businessPost);
+//		businessPostMap.put("mode", mode);
+//		businessPostMap.put("icon", icon);
+//		businessPostMap.put("img", img);
+////		businessPostMap.put("filePath", filePath);
+////		businessPostMap.put("filePath2", filePath2);
+//		businessPostMap.put("secNo", secNo);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setBusiness(business);
+		businessRequest.setBusinessPost(businessPost);
+		businessRequest.setMode(mode);
+		businessRequest.setIcon(icon);
+		businessRequest.setFile(img);
+		businessRequest.setRequest(request);
+		businessRequest.setSecNo(secNo);
+		
+		businessService.businessPostProcess(businessRequest);
 		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo()+"&locale="+businessPost.getLocale();
 	}
 	
@@ -95,7 +114,16 @@ public class BusinessController {
 		businessContentsMap.put("secNo", secNo);
 		businessContentsMap.put("mode", mode);
 		businessContentsMap.put("filePath", filePath);
-		businessService.businessContentsProcess(businessContentsMap);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setBusinessContents(businessContents);
+		businessRequest.setBusinessPost(businessPost);
+		businessRequest.setFile(file);
+		businessRequest.setSecNo(secNo);
+		businessRequest.setMode(mode);
+		businessRequest.setRequest(request);
+		
+		businessService.businessContentsProcess(businessRequest);
 		return "redirect:/admin/business/getBusinessContentsList?businessPostNo="+businessPost.getBusinessPostNo();
 	}
 	

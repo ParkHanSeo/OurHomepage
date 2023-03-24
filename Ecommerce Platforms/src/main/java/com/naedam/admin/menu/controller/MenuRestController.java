@@ -27,11 +27,18 @@ public class MenuRestController {
 							   @RequestParam("mode") String mode,
 							   @RequestParam("part") String part) throws Exception{
 		Boolean result = false;
-		Map<String, Object> menuMap = new HashMap<>();
-		menuMap.put("menuArr", menuArr);
-		menuMap.put("mode", mode);
-		menuMap.put("part", part);
-		menuService.menuProcess(menuMap);
+		
+		MenuRequest menuRequest = new MenuRequest();
+		menuRequest.setMenuArr(menuArr);
+		menuRequest.setMode(mode);
+		menuRequest.setPart(part);
+		menuService.menuProcess(menuRequest);
+		
+//		Map<String, Object> menuMap = new HashMap<>();
+//		menuMap.put("menuArr", menuArr);
+//		menuMap.put("mode", mode);
+//		menuMap.put("part", part);
+//		menuService.menuProcess(menuMap);
 		result = true;
 		return result;
 	}
