@@ -33,14 +33,14 @@
 			alert("상세페이지 내용1을 입력하셔야 합니다.");
 			return;
 		}
-		/* if(icon == null || icon == ''){
+		if(icon == null || icon == ''){
 			alert("아이콘을 첨부하셔야 합니다.");
 			return;
 		}
 		if(img == null || img == ''){
 			alert("이미지을 첨부하셔야 합니다.");
 			return;
-		} */
+		} 
 
 		
 		alert("게시글이 등록 되었습니다.")

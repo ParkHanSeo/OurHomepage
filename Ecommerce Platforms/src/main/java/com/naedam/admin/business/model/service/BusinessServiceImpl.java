@@ -4,13 +4,14 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.dao.BoardDao;
-import com.naedam.admin.board.model.vo.BoardFile;
+import com.naedam.admin.business.controller.BusinessRequest;
 import com.naedam.admin.business.model.dao.BusinessDao;
 import com.naedam.admin.business.model.vo.Business;
 import com.naedam.admin.business.model.vo.BusinessContents;
@@ -26,97 +27,153 @@ public class BusinessServiceImpl implements BusinessService {
 	@Autowired
 	private BoardDao boardDao;
 	
-
-	public void businessProcess(Map<String, Object> map) throws Exception{
-		Business business = (Business) map.get("business");
-		if("insert".equals(map.get("mode"))) {
+	final static String businessFilePath = "resources/user/images/introduction/icon/";
+	final static String businessFilePath2 = "resources/user/images/main/";
+	final static String contentsFilePath = "resources/user/images/introduction/";
+	
+	public void businessProcess(BusinessRequest businessRequest) throws Exception{
+		Business business = businessRequest.getBusiness();
+		String mode = businessRequest.getMode();
+		
+		if("insert".equals(mode)) {
 			businessDao.addBusiness(business);
-		}else if("update".equals(map.get("mode"))) {
+		}
+		if("update".equals(mode)) {
 			businessDao.updateBusiness(business);
-		}else if("delete".equals(map.get("mode"))) {
-			List<Integer> businessArr = (List<Integer>) map.get("businessArr");
+		}
+		if("delete".equals(mode)) {
+			List<Integer> businessArr = businessRequest.getBusinessArr().stream()
+										.map(s -> Integer.parseInt(s))
+										.collect(Collectors.toList());
 			businessDao.deleteChoiceBusiness(businessArr);
 		}
 	}
 	
-	public void businessPostProcess(Map<String, Object> map) throws Exception{
-		BusinessPost businessPost = (BusinessPost) map.get("businessPost");
-		BoardFile boardFile = new BoardFile();
-		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
-			businessPost.setBusiness((Business) map.get("business"));
-			Member member = boardDao.getMemberData(Integer.parseInt(map.get("secNo").toString()));
-			businessPost.setBusinessMember(member);
-			//파일 업로드 한개 이상 업로드가 가능하여 배열로 가져와서 업로드 로직 실행
-			MultipartFile iconName = (MultipartFile) map.get("icon");
-			MultipartFile imgName = (MultipartFile) map.get("img");
+	public boolean businessPostProcess(BusinessRequest businessRequest) throws Exception{
+		BusinessPost businessPost = businessRequest.getBusinessPost();
+		
+		String mode = businessRequest.getMode();
+
+		if("insert".equals(mode)) {
+			return insertBusiness(businessPost, businessRequest);
+		}
+		if("update".equals(mode)) {
+			return updateBusiness(businessPost, businessRequest);
+		}
+		
+		if("delete".equals(mode)) {
+			List<Integer> businessPostArr = businessRequest.getBusinessPostArr().stream()
+						.map(s -> Integer.parseInt(s))
+						.collect(Collectors.toList());
+			int result = businessDao.deleteChoiceBusinessPost(businessPostArr);
+			return result > 0 ? true : false;
+		}
+		
+		return false;
+	}
+	
+	private boolean updateBusiness(BusinessPost businessPost, BusinessRequest businessRequest) throws Exception {
+		businessPost.setBusiness(businessRequest.getBusiness());
+		MultipartFile iconName = businessRequest.getIcon();
+		MultipartFile imgName = businessRequest.getFile();
+		String filePath = businessRequest.getRequest().getServletContext().getRealPath(businessFilePath);
+		String filePath2 = businessRequest.getRequest().getServletContext().getRealPath(businessFilePath2);
+		
+		//iconName not null
+		if(!iconName.isEmpty()) {
+			File file = new File(filePath + iconName.getOriginalFilename());
+			businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
+			iconName.transferTo(file);
+		}
+		//imgName not null
+		if(!imgName.isEmpty()) {
+			File file = new File(filePath2 + imgName.getOriginalFilename());
+			businessPost.setBusinessPostImg(imgName.getOriginalFilename());
+			imgName.transferTo(file);
+		}
+		int result = businessDao.updateBusinessPost(businessPost);
+		return result > 0 ? true : false;
+	}
+
+	private boolean insertBusiness(BusinessPost businessPost, BusinessRequest businessRequest) throws Exception {
+		businessPost.setBusiness(businessRequest.getBusiness());
+		MultipartFile iconName = businessRequest.getIcon();
+		MultipartFile imgName = businessRequest.getFile();
+		String filePath = businessRequest.getRequest().getServletContext().getRealPath(businessFilePath);
+		String filePath2 = businessRequest.getRequest().getServletContext().getRealPath(businessFilePath2);
+		
+		//작성자 등록
+		Member member = boardDao.getMemberData(Integer.parseInt(businessRequest.getSecNo().toString()));
+		businessPost.setBusinessMember(member);
+		
+		if(!iconName.isEmpty()){
+			businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
+			File file = new File(filePath + iconName.getOriginalFilename());
+			iconName.transferTo(file);	
+		}
+		if(!imgName.isEmpty()){
+			businessPost.setBusinessPostImg(imgName.getOriginalFilename());
+			File file = new File(filePath2 + imgName.getOriginalFilename());
+			imgName.transferTo(file);	
+		}
+		int result = businessDao.addBusinessPost(businessPost);
+	
+		return result > 0 ? true : false;
+	}
+
+
+	public boolean businessContentsProcess(BusinessRequest businessRequest) throws Exception{
+		BusinessContents businessContents = businessRequest.getBusinessContents();
+		String mode = businessRequest.getMode();
 			
-			if("insert".equals(map.get("mode"))) {
-				if(iconName.isEmpty() == false){
-					businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
-					File file = new File(map.get("filePath")+iconName.getOriginalFilename());
-					iconName.transferTo(file);	
-				}
-				if(imgName.isEmpty() == false){
-					businessPost.setBusinessPostImg(imgName.getOriginalFilename());
-					File file = new File(map.get("filePath2")+imgName.getOriginalFilename());
-					imgName.transferTo(file);	
-				}
-				businessDao.addBusinessPost(businessPost);
-			}else if("update".equals(map.get("mode"))) {
-				if(iconName.isEmpty() == false) {
-					File file = new File(map.get("filePath")+iconName.getOriginalFilename());
-					businessPost.setBusinessPostIcon(iconName.getOriginalFilename());
-					iconName.transferTo(file);
-				}else if(iconName.isEmpty() == true) {
-					BusinessPost bp = businessDao.getBusinessPost(businessPost.getBusinessPostNo());
-					businessPost.setBusinessPostIcon(bp.getBusinessPostIcon());
-				}
-				if(imgName.isEmpty() == false) {
-					File file = new File(map.get("filePath2")+imgName.getOriginalFilename());
-					businessPost.setBusinessPostImg(imgName.getOriginalFilename());
-					imgName.transferTo(file);
-				}else if(imgName.isEmpty() == true) {
-					BusinessPost bp = businessDao.getBusinessPost(businessPost.getBusinessPostNo());
-					businessPost.setBusinessPostImg(bp.getBusinessPostImg());
-				}
-				businessDao.updateBusinessPost(businessPost);
-			}
-		}else if("delete".equals(map.get("mode"))) {
-			List<Integer> businessPostArr = (List<Integer>) map.get("businessPostArr");
-			businessDao.deleteChoiceBusinessPost(businessPostArr);
+		if ("insert".equals(mode)) {
+			return insertContents(businessContents, businessRequest);
 		}
+		if ("update".equals(mode)) {
+			return updateContents(businessContents, businessRequest);
+		}
+		if("delete".equals(mode)) {
+			List<Integer> businessContentsArr = businessRequest.getBusinessContentsArr().stream()
+									.map(s -> Integer.parseInt(s))
+									.collect(Collectors.toList());
+			int result = businessDao.deleteChoiceBusinessContents(businessContentsArr);
+			return result > 0 ? true : false;
+		}
+		
+		return false;
 	}
 	
-	public void businessContentsProcess(Map<String, Object> map) throws Exception{
-		BusinessContents businessContents = (BusinessContents) map.get("businessContents");
-		if("insert".equals(map.get("mode")) || "update".equals(map.get("mode"))) {
-			businessContents.setBusinessPost((BusinessPost) map.get("businessPost"));
-			MultipartFile imageName = (MultipartFile) map.get("file");
-			if("insert".equals(map.get("mode"))) {
-				if(imageName.isEmpty() == false){
-					File file = new File(map.get("filePath")+imageName.getOriginalFilename());
-					imageName.transferTo(file);
-					businessContents.setImage(imageName.getOriginalFilename());
-				}
-				businessDao.addBusinessContents(businessContents);
-			}else if("update".equals(map.get("mode"))) {
-				if(imageName.isEmpty() == false) {
-					File file = new File(map.get("filePath")+imageName.getOriginalFilename());
-					businessContents.setImage(imageName.getOriginalFilename());
-					imageName.transferTo(file);
-				}else if(imageName.isEmpty() == true) {
-					BusinessContents bp = businessDao.getBusinessContents(businessContents.getBusinessContentsNo());
-					businessContents.setImage(bp.getImage());
-				}
-				businessDao.updateBusinessContents(businessContents);
-			}
-		}
-		else if("delete".equals(map.get("mode"))) {
-			List<Integer> businessContentsArr = (List<Integer>) map.get("businessContentsArr");
-			businessDao.deleteChoiceBusinessContents(businessContentsArr);
-		}
+	private boolean updateContents(BusinessContents businessContents, BusinessRequest businessRequest) throws Exception {
+		businessContents.setBusinessPost(businessRequest.getBusinessPost());
+		MultipartFile imageName = businessRequest.getFile();
+		String filePath = businessRequest.getRequest().getServletContext().getRealPath(contentsFilePath);
+		
+		if (!imageName.isEmpty()) {
+			File file = new File(filePath + imageName.getOriginalFilename());
+			businessContents.setImage(imageName.getOriginalFilename());
+			imageName.transferTo(file);
+		} 
+		
+		int result = businessDao.updateBusinessContents(businessContents);
+		
+		return result > 0 ? true : false;
 	}
-	
+
+	private boolean insertContents(BusinessContents businessContents, BusinessRequest businessRequest) throws Exception {
+		businessContents.setBusinessPost(businessRequest.getBusinessPost());
+		
+		MultipartFile imageName = businessRequest.getFile();
+		String filePath = businessRequest.getRequest().getServletContext().getRealPath(contentsFilePath);
+		
+		if (imageName.isEmpty() == false) {
+			File file = new File(filePath + imageName.getOriginalFilename());
+			imageName.transferTo(file);
+			businessContents.setImage(imageName.getOriginalFilename());
+		}
+		int result = businessDao.addBusinessContents(businessContents);
+		return result > 0 ? true : false;
+	}
+
 	@Override
 	public Business getBusiness(int businessNo) throws Exception {
 		return businessDao.getBusiness(businessNo);
@@ -156,7 +213,6 @@ public class BusinessServiceImpl implements BusinessService {
 
 	@Override
 	public int TotalBusinessPost(int businessNo) {
-		// TODO Auto-generated method stub
 		return businessDao.TotalBusinessPost(businessNo);
 	}
 

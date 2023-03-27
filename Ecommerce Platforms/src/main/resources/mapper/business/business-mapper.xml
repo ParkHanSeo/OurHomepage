@@ -70,46 +70,6 @@
 		</selectKey>
 	</insert>
 	
-	<!-- <insert id="addBusinessPost" parameterType="businessPost" useGeneratedKeys="true" keyProperty="businessPostNo" keyColumn="BUSINESS_POST_NO">
-		INSERT
-		INTO business_post
-		(BUSINESS_NO,
-		 BUSINESS_POST_TITLE,
-		 BUSINESS_POST_SUB_TITLE,
-		 BUSINESS_POST_CONTENTS,
-		 BUSINESS_POST_TEXT_1,
-		 BUSINESS_POST_TEXT_2,
-		 BUSINESS_POST_BOTTOM_TITLE,
-		 BUSINESS_POST_BOTTOM_CONTENTS,
-		 IN_DTM,
-		 BUSINESS_POST_ICON,
-		 BUSINESS_POST_IMG,
-		 MEMBER_NO,
-		 LOCALE)
-		VALUES
-		(#{business.businessNo},
-	     #{businessPostTitle},
-	     #{businessPostSubTitle},
-	     #{businessPostContents},
-	     #{businessPostText1},
-	     #{businessPostText2},
-	     #{businessPostBottomTitle},
-	     #{businessPostBottomContents}
-	     <if test="inDtm == null or inDtm == ''">
-	   	  SYSDATE(),
-	     </if>
-	     <if test="inDtm != null">
-		  #{inDtm : VARCHAR},
-	  	 </if>
-	  	 #{businessPostIcon},
-	  	 #{businessPostImg},
-	  	 #{businessMember.memberNo}
-		 #{locale})
-		 <selectKey keyProperty="businessPostNo" resultType="int" order="AFTER">
-			SELECT MAX(business_post_no) from business_post
-		</selectKey>
-	</insert> -->
-	
 	<insert id="addBusinessPost" parameterType="businessPost" useGeneratedKeys="true" keyProperty="businessPostNo" keyColumn="BUSINESS_POST_NO">
 		INSERT
 		INTO business_post
@@ -175,13 +135,6 @@
 		FROM business tb1 
 		WHERE tb1.business_no = #{businessNo}
 	</select>
-	
-	<!-- <select id="getBusinessPost" parameterType="int" resultType="businessPost">
-		SELECT
-		*
-		FROM business
-		WHERE business_no = #{businessPostNo}
-	</select> -->
 	
 	<select id="getBusinessPost" parameterType="int" resultType="businessPost">
 		SELECT
@@ -249,9 +202,9 @@
 			BUSINESS_POST_TEXT_1 = #{businessPostText1},
 			BUSINESS_POST_TEXT_2 = #{businessPostText2},
 			BUSINESS_POST_BOTTOM_TITLE = #{businessPostBottomTitle},
-			BUSINESS_POST_BOTTOM_CONTENTS = #{businessPostBottomContents},
-			BUSINESS_POST_ICON = #{businessPostIcon},
-			BUSINESS_POST_IMG = #{businessPostImg}
+			<if test="businessPostIcon != null">BUSINESS_POST_ICON = #{businessPostIcon},</if>
+			<if test="businessPostImg != null">BUSINESS_POST_IMG = #{businessPostImg},</if>
+			BUSINESS_POST_BOTTOM_CONTENTS = #{businessPostBottomContents}
 		</set>
 		WHERE BUSINESS_POST_NO = #{businessPostNo}
 	</update>
@@ -262,7 +215,7 @@
 			BUSINESS_CONTENTS_TYPE = #{businessContentsType},
 			BUSINESS_CONTENTS_TITLE = #{businessContentsTitle}, 
 			BUSINESS_CONTENTS_CONTENT = #{businessContentsContent}, 
-			IMAGE = #{image}
+			<if test="image != null">IMAGE = #{image}</if>
 		</set>
 		WHERE BUSINESS_CONTENTS_NO = #{businessContentsNo}
 	</update>
@@ -280,7 +233,7 @@
 		FROM business_post
 		WHERE <foreach collection="list" item="businessPostNo" open="(" close=")" separator="or">
 				business_post_no = #{businessPostNo}
-			  </foreach>	
+			  </foreach>
 	</delete>
 	
 	<delete id="deleteChoiceBusinessContents">
