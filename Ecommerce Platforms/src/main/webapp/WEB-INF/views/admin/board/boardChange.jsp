@@ -38,6 +38,9 @@
 	
 	function funPostChange(){
 		var postArr = new Array();
+		var postFile = $("input[id='postName']").length;
+		var secNo = $("input[name='secNo']").val();
+		var locale = $("input[name='locale']").val();
 		var mode = "change";
 		var boardNo = $("select[name='boardNoChange']").val();
 		$("input[class='postNo']:checked").each(function(){
@@ -47,9 +50,12 @@
 			 	 url : "/admin/board/json/postProcess?${_csrf.parameterName}=${_csrf.token}",
   		  	 	 type : "POST",
 		  	 	 data : { 
-		  	 		 postArr : postArr, 
-		  	 		 boardNo,
-		  	 		 mode
+	 		  	 	 postArr : postArr, 
+	 		  	 	 boardNo,
+	 		  	 	 secNo : secNo,
+	 		  	 	 locale:locale,
+	 		  	 	 postFile:postFile,
+	 		  	 	 mode
 		  	 	 },
 		 		 success : function(result){   	 		
 		 	  		alert("게시물 이전이 완료되었습니다.")

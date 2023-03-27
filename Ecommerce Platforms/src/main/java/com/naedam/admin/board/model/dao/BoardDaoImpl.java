@@ -265,6 +265,11 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlSession.selectList("board.getBoardList", locale);
 	}
 
+	@Override
+	public String getfileName(int postNo) {
+		return sqlSession.selectOne("board.getfileName",postNo);
+	}
+
 
 	
 }

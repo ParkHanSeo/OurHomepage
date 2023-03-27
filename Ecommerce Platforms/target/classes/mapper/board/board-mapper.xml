@@ -115,7 +115,11 @@
 		VALUES(#{filePost.postNo},
 			   #{fileName : VARCHAR})
 	</insert>
-	
+	<select id ="getfileName"  resultType="String" parameterType="int">
+		select file_name
+		from board_file
+		where post_no = #{postNo}
+	</select>
 	<select id="getBoardList" resultType="hashmap" resultMap="BoardSelectMap" >
 		 SELECT
 				board_no,

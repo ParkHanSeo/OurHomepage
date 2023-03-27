@@ -130,6 +130,7 @@ public interface BoardDao {
 	//dashboard에서 사용할 boardList
 	public List<String> getBoardList(String locale);
 
+	public String getfileName(int postNo);
 	
 	
 }

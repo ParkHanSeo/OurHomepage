@@ -221,8 +221,10 @@ public class BoardRestController {
 	 * @throws Exception
 	 */
 	@PostMapping("json/postProcess")
-	public Boolean postProcess(@RequestParam(value = "postArr[]") List<String> postArr,
-							   @RequestParam(value = "boardNo", required = false, defaultValue= "0") int boardNo,
+	public Boolean postProcess(@ModelAttribute("board") Board board,
+								@RequestParam(value = "postArr[]") List<String> postArr,
+								@RequestParam(value = "locale", defaultValue = "ko") String locale,
+							    @RequestParam(value = "boardNo", required = false, defaultValue= "0") int boardNo,
 							   @RequestParam("mode") String mode,
 							   @RequestParam(value="secNo", required = false) String secNo) throws Exception{
 		Post post = new Post();
@@ -235,11 +237,13 @@ public class BoardRestController {
 		postMap.put("post", post);
 		
 		PostRequest postRequest = new PostRequest();
+		postRequest.setBoard(board);
 		postRequest.setPostArr(postArr);
 		postRequest.setMode(mode);
 		postRequest.setBoardNo(boardNo);
 		postRequest.setPost(post);
 		postRequest.setSecNo(secNo);
+		postRequest.setLocale(locale);
 		boardService.postProcess(postRequest);
 		
 		

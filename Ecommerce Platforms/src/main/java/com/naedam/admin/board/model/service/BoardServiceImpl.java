@@ -106,9 +106,9 @@ public class BoardServiceImpl implements BoardService {
 		if("copy".equals(mode)) {
 			List<String> postArr = postRequest.getPostArr();
 		for(String i : postArr) {
-			Post postCopy = boardDao.getPostData(Integer.parseInt(i));
-			postCopy.getPostBoard().setBoardNo(postRequest.getBoardNo());
-			resultMap = addPost(postRequest, filePath);
+			post = boardDao.getPostData(Integer.parseInt(i));
+			post.getPostBoard().setBoardNo(postRequest.getBoardNo());
+			resultMap = copyPost(post, postRequest, filePath);
 		}
 		//게시글 이전
 		//기존의 있던 데이터를 복사하여 insert 함, 기존에 있던 데이터는 delete
@@ -117,9 +117,9 @@ public class BoardServiceImpl implements BoardService {
 		if("change".equals(mode)) {
 			List<String> postArr = postRequest.getPostArr();
 			for(String i : postArr) {
-				Post postCopy = boardDao.getPostData(Integer.parseInt(i));
-				postCopy.getPostBoard().setBoardNo(postRequest.getBoardNo());
-				resultMap = addPost(postRequest, filePath);
+				post = boardDao.getPostData(Integer.parseInt(i));
+				post.getPostBoard().setBoardNo(postRequest.getBoardNo());
+				resultMap = copyPost(post, postRequest, filePath);
 			}
 			resultMap = deleteChoicePost(postArr);
 		}
@@ -187,7 +187,28 @@ public class BoardServiceImpl implements BoardService {
 		return resultMap;
 	}
 
+	public Map<String, Object> copyPost(Post post, PostRequest postRequest, String filePath)
+			throws ParseException, IllegalStateException, IOException, Exception {
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		String secNo = postRequest.getSecNo();
+		Member member = boardDao.getMemberData(Integer.parseInt(secNo.toString()));
+		BoardFile boardFile = new BoardFile();
+		boardFile.setFileNo(post.getPostNo());
+		boardFile.setFilePost(post);
+		boardFile.setFileName(boardDao.getfileName(post.getPostNo()));
 
+		post.setPostMember(member);
+		post.setPostMemberName(member.getLastName()+member.getFirstName());
+		post.setLocale(postRequest.getLocale());
+		boardDao.addPost(post);
+
+		boardDao.addFile(boardFile);
+		
+		resultMap.put("msg", "게시판이 등록되었습니다.");
+		return resultMap;
+	}
+
+	
 	public Map<String, Object> deleteChoicePost(List<String> postArr) throws NumberFormatException, Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		
