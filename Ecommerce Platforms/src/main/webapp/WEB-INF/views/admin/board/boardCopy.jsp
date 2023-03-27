@@ -5,6 +5,7 @@
 
 <script>
 	function fncBoardTitle2(){
+		var locale = $("input[name='locale']").val();
 		var postArr = new Array();
 		$("input[class='postNo']:checked").each(function(){
 			postArr.push($(this).val());
@@ -16,7 +17,7 @@
 		
 		$('#modalContent2').modal('show');
 		$.ajax({
-			url : "/admin/board/json/listBoard",
+			url : "/admin/board/json/listBoard?locale="+locale,
 			method : "GET" ,
 			dataType : "json" ,
 			headers : {

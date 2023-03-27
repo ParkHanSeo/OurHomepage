@@ -17,7 +17,7 @@
 		}
 		$('#modalContent3').modal('show');		
 		$.ajax({
-			url : "/admin/board/json/listBoard",
+			url : "/admin/board/json/listBoard?locale="+locale,
 			method : "GET" ,
 			dataType : "json" ,
 			headers : {
@@ -71,6 +71,7 @@
             <form name="form_copy_data" method="post" action="?tpf=admin/board/process">
 	            <input type="hidden" name="mode" id="mode">
 	            <input type="hidden" name="code" id="code">
+                <input type="hidden" name="locale" value="${locale}"/>
 	            <div class="modal-header">
 	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 	                <h4 class="modal-title" id="myModalLabelPortfolio">게시물 관리</h4>
