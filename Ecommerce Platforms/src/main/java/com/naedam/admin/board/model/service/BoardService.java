@@ -11,21 +11,17 @@ import com.naedam.admin.board.model.vo.BoardFile;
 import com.naedam.admin.board.model.vo.BoardRequest;
 import com.naedam.admin.board.model.vo.BoardTranslate;
 import com.naedam.admin.board.model.vo.Post;
+import com.naedam.admin.board.model.vo.PostRequest;
 import com.naedam.admin.member.model.vo.Member;
 
 public interface BoardService {
 	
 	//게시판 프로세서
 	Map<String, Object> boardProcess(BoardRequest boardRequest) throws Exception;
-	Map<String, Object> addBoard(Board board, BoardRequest boardRequest) throws ParseException, IllegalStateException, IOException;
-
-	Map<String, Object> updateBoard(Board board, BoardRequest boardRequest) throws ParseException, IllegalStateException, IOException;
-
-	Map<String, Object> deleteChoiceBoard(List<String> boardNoList) throws NumberFormatException, Exception;
 	//게시글 프로세서
-	public void postProcess(Map<String, Object> map) throws Exception;
-	
+	Map<String, Object>postProcess(PostRequest postRequest) throws Exception;
 	//게시판 등록의 번역
+	
 	public int addTranslate(BoardTranslate boardTranslate) throws Exception;
 	
 	//게시글 파일 등록

@@ -187,7 +187,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	//게시글 선택 삭제
 	@Override
-	public void deleteChoicePost(List<Integer> postNo) throws Exception {
+	public void deleteChoicePost(int postNo) throws Exception {
 		sqlSession.delete("board.deleteChoicePost", postNo);
 	}
 	
@@ -263,6 +263,11 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public List<String> getBoardList(String locale) {
 		return sqlSession.selectList("board.getBoardList", locale);
+	}
+
+	@Override
+	public String getfileName(int postNo) {
+		return sqlSession.selectOne("board.getfileName",postNo);
 	}
 
 

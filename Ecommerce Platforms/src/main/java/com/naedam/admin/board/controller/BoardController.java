@@ -37,6 +37,7 @@ import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.board.model.vo.BoardRequest;
 import com.naedam.admin.board.model.vo.Page;
 import com.naedam.admin.board.model.vo.Post;
+import com.naedam.admin.board.model.vo.PostRequest;
 import com.naedam.admin.common.Comm;
 import com.naedam.admin.common.NaedamUtils;
 
@@ -102,17 +103,19 @@ public class BoardController {
 							  @RequestPart(value="postName", required = false) MultipartFile[] postName,   
 							  @RequestParam("secNo") String secNo, 
 							  @RequestParam("mode") String mode,
+							  @RequestParam(value = "locale", defaultValue = "ko") String locale,
 						      HttpServletRequest request) throws Exception {
 		String filePath = request.getSession().getServletContext().getRealPath("resources/user/downloadFile/");
+		PostRequest postRequest = new PostRequest();
+		postRequest.setPost(post);
+		postRequest.setBoard(board);
+		postRequest.setMode(mode);
+		postRequest.setPostImage(postName);
+		postRequest.setFilePath(filePath);
+		postRequest.setSecNo(secNo);
+		postRequest.setLocale(locale);
 		
-		Map<String, Object> postMap	 = new HashMap<>();
-		postMap.put("board", board);
-		postMap.put("post", post);	
-		postMap.put("mode", mode);
-		postMap.put("postName", postName);
-		postMap.put("filePath", filePath);
-		postMap.put("secNo", secNo);
-		boardService.postProcess(postMap);
+		boardService.postProcess(postRequest);
 		return "redirect:/admin/board/postList?boardNo="+board.getBoardNo()+"&locale="+post.getLocale();
 	}
 	

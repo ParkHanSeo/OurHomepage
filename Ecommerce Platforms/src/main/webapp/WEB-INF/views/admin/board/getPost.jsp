@@ -203,6 +203,7 @@
 					$("input[id='commentPostNo']").val(JSONData.postNo);
 					$("input[name='postAsc']").val(JSONData.postAsc);
 					$("input[name='postOriginNo']").val(JSONData.postOriginNo);
+					$("input[name='locale']").val(JSONData.locale);
 					CKEDITOR.instances.editor1.setData(JSONData.postContents)
 					$("#getPostTitle").val(JSONData.postTitle);
 					$("#getThombnailName").val(JSONData.postThombnail);
@@ -264,6 +265,7 @@
         <div class="modal-content">
             <form name="getPostForm" method="post" enctype="multipart/form-data">
 	            <input type="hidden" name="postNo" id="getPostNo" >
+	            <input type="hidden" name="locale" id="locale"  value="${locale }">
 	            <input type="hidden" name="postAsc" id="getPostAsc" >
 	            <input type="hidden" name="postOriginNo" id="getPostOriginNo" >
 	            <input type="hidden" name="mode" id="mode" value="update">

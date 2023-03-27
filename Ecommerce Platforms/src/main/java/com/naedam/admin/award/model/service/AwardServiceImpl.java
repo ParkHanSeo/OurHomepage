@@ -91,7 +91,7 @@ public class AwardServiceImpl implements AwardService {
 	}
 
 	@Override
-	public Map<String, Object> deleteAward(List<String> historyNoList) {
+	public Map<String, Object> deleteAward(List<String> historyNoList)throws NumberFormatException, Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		for(String no : historyNoList) {
 			awardDao.deleteAward(Integer.parseInt(no));

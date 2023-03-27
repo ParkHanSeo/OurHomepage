@@ -115,7 +115,11 @@
 		VALUES(#{filePost.postNo},
 			   #{fileName : VARCHAR})
 	</insert>
-	
+	<select id ="getfileName"  resultType="String" parameterType="int">
+		select file_name
+		from board_file
+		where post_no = #{postNo}
+	</select>
 	<select id="getBoardList" resultType="hashmap" resultMap="BoardSelectMap" >
 		 SELECT
 				board_no,
@@ -402,9 +406,7 @@
 	<delete id="deleteChoicePost">
 		DELETE
 		FROM post
-		WHERE <foreach collection="list" item="postNo" open="(" close=")" separator="or">
-				post_no = #{postNo}
-			  </foreach> 
+		WHERE post_no = #{postNo}
 	</delete>
 	
 	<delete id="deleteFile" parameterType="int">
