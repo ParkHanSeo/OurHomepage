@@ -84,17 +84,18 @@ public class BoardServiceImpl implements BoardService {
 	public Map<String, Object> postProcess(PostRequest postRequest) throws Exception{
 		Map<String, Object> resultMap = new HashMap<>();
 		Post post = postRequest.getPost();
-		post.setPostBoard(postRequest.getBoard());
 
 		String mode = postRequest.getMode();
 		String filePath = postRequest.getFilePath();
 		
 		//게시글 등록
 		if("insert".equals(mode)) {
+			post.setPostBoard(postRequest.getBoard());
 			resultMap = addPost(postRequest, filePath);
 			//게시글 수정
 			}
 		if("update".equals(mode)) {
+			post.setPostBoard(postRequest.getBoard());
 			resultMap = updatePost(post,postRequest, filePath);
 		} 
 		//게시글 선택삭제
@@ -107,7 +108,6 @@ public class BoardServiceImpl implements BoardService {
 			List<String> postArr = postRequest.getPostArr();
 		for(String i : postArr) {
 			post = boardDao.getPostData(Integer.parseInt(i));
-			post.getPostBoard().setBoardNo(postRequest.getBoardNo());
 			resultMap = copyPost(post, postRequest, filePath);
 		}
 		//게시글 이전
@@ -118,7 +118,7 @@ public class BoardServiceImpl implements BoardService {
 			List<String> postArr = postRequest.getPostArr();
 			for(String i : postArr) {
 				post = boardDao.getPostData(Integer.parseInt(i));
-				post.getPostBoard().setBoardNo(postRequest.getBoardNo());
+				post.setPostBoard(postRequest.getBoard());
 				resultMap = copyPost(post, postRequest, filePath);
 			}
 			resultMap = deleteChoicePost(postArr);
@@ -189,20 +189,19 @@ public class BoardServiceImpl implements BoardService {
 
 	public Map<String, Object> copyPost(Post post, PostRequest postRequest, String filePath)
 			throws ParseException, IllegalStateException, IOException, Exception {
+		
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		String secNo = postRequest.getSecNo();
-		Member member = boardDao.getMemberData(Integer.parseInt(secNo.toString()));
-		BoardFile boardFile = new BoardFile();
-		boardFile.setFileNo(post.getPostNo());
-		boardFile.setFilePost(post);
-		boardFile.setFileName(boardDao.getfileName(post.getPostNo()));
+		post.getPostBoard().setBoardNo(postRequest.getBoardNo());
 
-		post.setPostMember(member);
-		post.setPostMemberName(member.getLastName()+member.getFirstName());
-		post.setLocale(postRequest.getLocale());
 		boardDao.addPost(post);
-
+		
+		BoardFile boardFile = new BoardFile();
+		boardFile.setFilePost(post);
+		boardFile.setFileNo(post.getPostOriginNo());
+		boardFile.setFileName(boardDao.getfileName(post.getPostOriginNo()));
+		if(boardFile.getFileName() != null) {
 		boardDao.addFile(boardFile);
+		}
 		
 		resultMap.put("msg", "게시판이 등록되었습니다.");
 		return resultMap;

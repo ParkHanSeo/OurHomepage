@@ -37,6 +37,7 @@
 			<result property="boardSubTitle"			column="BOARD_SUBTITLE"		jdbcType="VARCHAR"></result>
 			<result property="boardContents"			column="BOARD_CONTENTS"		jdbcType="VARCHAR"></result>
 			<result property="boardMemberNo.memberNo"	column="MEMBER_NO"			jdbcType="NUMERIC"></result>		
+			<result property="locale"			column="LOCALE"			jdbcType="VARCHAR"></result>
 		</association>
 		
 	</resultMap>		
