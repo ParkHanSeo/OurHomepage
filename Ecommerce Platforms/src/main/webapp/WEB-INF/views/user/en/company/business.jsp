@@ -40,7 +40,7 @@
 				        </div>
 				        <div class="num-item">
 				            <h4 class="in-title">CEO</h4>
-				            <span class="nums" >한창엽</span><span id="num-unit"></span><br>
+				            <span class="nums" >Chang Yeop Han</span><span id="num-unit"></span><br>
 				        </div>
 				        <div class="num-item">
 				            <h4 class="in-title">Sales</h4>
