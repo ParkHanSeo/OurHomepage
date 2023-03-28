@@ -44,7 +44,6 @@ public class BusinessRestController {
 		BusinessRequest businessRequest = new BusinessRequest();
 		businessRequest.setMode(mode);
 		businessRequest.setBusinessPostArr(businessPostArr);
-		System.out.println("businessRequest======" + businessRequest);
 		Boolean result = businessService.businessPostProcess(businessRequest);
 		
 		return result;
