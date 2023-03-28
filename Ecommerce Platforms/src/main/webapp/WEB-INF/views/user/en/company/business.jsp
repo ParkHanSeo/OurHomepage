@@ -121,7 +121,7 @@
                             </p>
                             <p class="businessList_top_txt2">
                                 We practice the best core values of constantly changing and challenging 
-                                through the best teamwork based on trust, respect, passion, honesty, and challenge.
+                                through the best teamwork based on <b>trust, respect, passion, honesty, and challenge.</b>
                             </p>
                         </div> 
                   	</div>                	
