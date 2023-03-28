@@ -118,7 +118,6 @@ public class BoardServiceImpl implements BoardService {
 			List<String> postArr = postRequest.getPostArr();
 			for(String i : postArr) {
 				post = boardDao.getPostData(Integer.parseInt(i));
-				post.setPostBoard(postRequest.getBoard());
 				resultMap = copyPost(post, postRequest, filePath);
 			}
 			resultMap = deleteChoicePost(postArr);
