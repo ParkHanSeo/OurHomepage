@@ -36,7 +36,7 @@
 	            <input type="hidden" name="locale" value="${locale}"/>
 	            <input type="hidden" name="board_code" id="board_code">
 	            <input type="hidden" name="cPage" id="cPage">
-	            <div class="modal-header">
+	            <div class="modal-header"> 
 	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 	                <h4 class="modal-title" id="myModalLabel">게시판 생성</h4>
 	            </div>
