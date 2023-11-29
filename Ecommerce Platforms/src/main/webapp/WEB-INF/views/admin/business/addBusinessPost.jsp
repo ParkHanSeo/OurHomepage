@@ -33,14 +33,14 @@
 			alert("상세페이지 내용1을 입력하셔야 합니다.");
 			return;
 		}
-		/* if(icon == null || icon == ''){
+		if(icon == null || icon == ''){
 			alert("아이콘을 첨부하셔야 합니다.");
 			return;
 		}
 		if(img == null || img == ''){
 			alert("이미지을 첨부하셔야 합니다.");
 			return;
-		} */
+		} 
 
 		
 		alert("게시글이 등록 되었습니다.")
@@ -97,16 +97,16 @@
 				                	<textarea name="businessPostText2" id="businessPostText2" rows="5" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
 				            </tr>
-							<tr>
-				                <td class="menu">하단제목</td>
+							<!-- <tr>
+				                <td class="menu">메인페이지 하단제목</td>
 				                <td align="left"><input type="text" name="businessPostBottomTitle" id="businessPostBottomTitle" class="form-control input-sm"></td>
 				            </tr>				            
 				            <tr>
-				            	<td class="menu">하단내용</td>
+				            	<td class="menu">메인페이지 하단내용</td>
 				                <td colspan="2" style="text-align:left">
 				                	<textarea name="businessPostBottomContents" id="businessPostBottomContents" rows="5" cols="80" style="width:650px; writing-mode: horizontal-tb;"></textarea>
 				                </td>
-				            </tr>					            				            			            
+				            </tr> -->					            				            			            
 		            	    <tr>
 				            	<td class="menu">아이콘파일</td>
 				            	<td>
@@ -125,7 +125,7 @@
 	            <div class="modal-footer">
 	            	<button type="button" onclick="fncAddPost()" class="btn btn-primary">확인</button>&nbsp;&nbsp;&nbsp;
 	            </div>
-	            <input type="hidden" value="${business.businessNo}" name="businessNo">
+	            <input type="hidden" value="${businessNo}" name="businessNo">
 	        </form>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

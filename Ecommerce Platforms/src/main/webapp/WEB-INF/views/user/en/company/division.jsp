@@ -44,7 +44,7 @@
                         <ul class="common-layout_2 is-vertical division_list">
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_strategic.jpg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section1.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Planning Team</p>
@@ -59,7 +59,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_digtal twin.jpg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section2.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Digital Twin Dept.</p>
@@ -74,7 +74,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_hi-tech.jpg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section3.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">ICT Dept.</p>
@@ -89,7 +89,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_vision ai.jpg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section4.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Vision AI Dept.</p>
@@ -103,7 +103,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_cloud.jpg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section5.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">Cloud MSP Dept.</p>
@@ -117,7 +117,7 @@
                             </li>
                             <li class="items item_left">
                                 <p class="division_img img_left">
-                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/ex_si.jpg" alt="">
+                                	<img src="${pageContext.request.contextPath}/resources/user/images/company/division/divisionList_section6.jpg" alt="">
                                 </p>
                                 <div class="div_division_left">
 	                                <p class="division_name">SI Dept.</p>
@@ -135,6 +135,6 @@
                  </div>
             </div><!-- // #contents -->
         </section><!-- // #container -->
-	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
 </body>
 </html>

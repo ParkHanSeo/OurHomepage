@@ -25,7 +25,7 @@
 			<div id="contents" class="contents_top">
 				<div class="sub_title_area">
 					<div class="inner_container">
-						<h2 class="sub_title">인사정보</h2>
+						<h2 class="sub_title">Human Resource Management</h2>
 					</div>
 				</div>
 				<!-- // .sub_title_area -->
@@ -34,11 +34,11 @@
 					<div class="inner_container">
 						<div class="top_txt_outer">
 							<div class="top_txt_area txt_notice">
-								<p class="top_txt2">내담씨앤씨의 인사정보 안내</p>
+								<p class="top_txt2">Introduction to Naedam C&C's Personnel Management System</p>
 								<p class="top_txt3">
-									 내담씨앤씨는 대기업에서 실행하는 인재교육과 현장에서의 교육을 통해 인재를 육성하고 <br>
-									 다양한 복리후생 등을 지원 함으로서 조직에 대한 신뢰와 일에 대한 자부심을 기반으로<br>
-									 회사와 사원이 발맞추어 성장하는 것을 목표로 삼고있습니다.
+									 Naedam C&C aims to foster talents through talent education in large corporations and on-site training, 
+									 and supports various welfare benefits to establish trust in the organization and pride in work, 
+									 with the goal of growing together with the company and employees.
 								</p>
 							</div>
 						</div>
@@ -47,24 +47,24 @@
 				<div class="layout_section_outer recruit2">
 					<div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1hr">인사제도</p>
+							<p class="top_txt1hr">Personnel Management System</p>
 						</div>
 						<div class="layout_body process-area">
 							<div class="process-flow size-02 type01">
 								<ul class="box-layout_3 is-vertical">
 									<li class="items common-cont_box">
 										<p class="cont_title">
-											<em>01</em> 연봉제
+											<em>01</em> Annual Salary system(Salary system based on performance)
 										</p>
-										<p class="cont_desc">능력과 성과에 따라 보수를 결정하는 연봉제 실시</p>
+										<p class="cont_desc">A annual salary system has been implemented that determines compensation based on abilities and performance.</p>
 									</li>
 									<li class="items common-cont_box">
 										<p class="cont_title">
-											<em>02</em> 성과보상제도
+											<em>02</em> Performance reward system
 										</p>
 										<p class="cont_desc">
-										개인업무 성과와 업무 수행 역량에 따른 성과제 <br>
-										 <small>(12월 하반기 실시 및 지급)</small>
+										A performance-based reward system has been established based on individual job performance and work competency
+										 <small>(conducted and paid in the second half of December)</small>
 										 </p>
 									</li>
 								</ul>
@@ -73,24 +73,24 @@
 					</div>
 					<div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1hr">교육제도</p>
+							<p class="top_txt1hr">Education System</p>
 						</div>
 						<div class="layout_body process-area">
 							<div class="process-flow size-02 type01">
 								<ul class="box-layout_3 is-vertical">
 									<li class="items common-cont_box">
 										<p class="cont_title">
-											<em>01</em> 교육 훈련비 지원
+											<em>01</em> Support for Education and Training Expenses
 										</p>
-										<p class="cont_desc">IT 관련 자격증 및 현장 업무에 필요한 각종 교육 훈련비 제공</p>
+										<p class="cont_desc"> Providing various education and training expenses necessary for IT-related certifications and on-site work.</p>
 									</li>
 									<li class="items common-cont_box">
 										<p class="cont_title">
-											<em>02</em> 신입사원 교육
+											<em>02</em> New Employee Training
 										</p>
 										<p class="cont_desc">
-											Workshop등의 교육과정을 통해 신입사원들이 조직과 기술에 대해 이해하고 <br />
-											내담씨앤씨인으로 성장하기 위한 발판을 마련
+											Providing education courses such as workshops to help new employees understand the organization and technology, 
+											and to create a foundation for their growth as Naedam C&C employees.
 										</p>
 									</li>
 								</ul>
@@ -99,44 +99,45 @@
 					</div>
 					<div class="inner_container">
 						<div class="layout_head">
-							<p class="top_txt1hr">복리후생</p>
+							<p class="top_txt1hr">Employee Benefits System</p>
 							<div class="layout_body process-area">
 								<div class="process-flow size-02 type01">
 									<ul class="box-layout_3 is-vertical">
 										<li class="items common-cont_box">
 											<p class="cont_title">
-												<em>01</em> 휴무휴가
+												<em>01</em> vacation
 											</p>
-											<p class="cont_desc">주5일 근무, 정규휴가, 연차(re-fresh 휴가), 경조사</p>
+											<p class="cont_desc">5-day work week, regular vacation, annual leave (re-fresh vacation), Congratulations and Condolences</p>
 										</li>
 										<li class="items common-cont_box">
 											<p class="cont_title">
-												<em>02</em> 보상 제도
+												<em>02</em> Compensation system
 											</p>
 											<p class="cont_desc">
-												자녀 학자금 지원, 장기근속 포상, <br>
-												우수사원 표창/포상, 퇴직금(퇴직연금제), 인센티브, <br>
-												장기근속 우대 보상,각종경조금, 경조휴가제
+												Support for children's education expenses, 
+												long-term service rewards, commendations and rewards for outstanding employees, 
+												retirement pay (pension system), incentives, long-term service benefits, various congratulatory payments, 
+												Congratulations and Condolences vacation system.
 											</p>
 										</li>
 										<li class="items common-cont_box">
 											<p class="cont_title">
-												<em>03</em> 편의 지원
+												<em>03</em> Convenience support
 											</p>
-											<p class="cont_desc">석식제공, 야간교통비 지급</p>
+											<p class="cont_desc">Providing dinner, payment for night transportation expenses.</p>
 										</li>
 										<li class="items common-cont_box">
 											<p class="cont_title">
-												<em>04</em> 교육 / 연수
+												<em>04</em> Education/training
 											</p>
 											<p class="cont_desc">
-												- 자격증취득지원(정보처리기사)
+												- Support for certification acquisition (Information Processing Engineer)
 											</p>
 											<p class="cont_desc"> 
-												- 사내교육 <br>	신입사원교육(ND OJT), 재직자교육(ND S-OJT) 
+												- internal education <br>	new employee education (ND OJT), employee education (ND S-OJT)
 											</p>
 											<p class="cont_desc"> 
-												- 직무향상교육 협약처 <br>사이버연수원 삼성SDS 직무/공통 교육, KOSTA(한국SW기술진흥협회) 직무교육
+												- cooperative education agreement <br>Cyber Training Institute Samsung SDS job/common education, KOSTA (Korea Software Technology Association) job training.
 											</p>
 										</li>
 									</ul>
@@ -151,6 +152,6 @@
 		</section>
 		<!-- // #container -->
 	</div>
-	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
 </body>
 </html>

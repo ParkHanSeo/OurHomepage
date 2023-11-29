@@ -18,7 +18,6 @@
 			alert("내용이 입력되지 않았습니다.");
 			return;
 		}
-		alert("게시판이 등록 되었습니다.")
 		$("form[name='addBoard']").attr("method", "POST").attr("action", "/admin/board/boardProcess?${_csrf.parameterName}=${_csrf.token}").submit();
 	}
 	
@@ -37,7 +36,7 @@
 	            <input type="hidden" name="locale" value="${locale}"/>
 	            <input type="hidden" name="board_code" id="board_code">
 	            <input type="hidden" name="cPage" id="cPage">
-	            <div class="modal-header">
+	            <div class="modal-header"> 
 	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 	                <h4 class="modal-title" id="myModalLabel">게시판 생성</h4>
 	            </div>

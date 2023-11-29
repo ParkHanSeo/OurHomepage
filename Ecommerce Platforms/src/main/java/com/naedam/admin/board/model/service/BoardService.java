@@ -1,25 +1,27 @@
 package com.naedam.admin.board.model.service;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
 import com.naedam.admin.board.model.vo.Board;
 import com.naedam.admin.board.model.vo.BoardComment;
 import com.naedam.admin.board.model.vo.BoardFile;
-import com.naedam.admin.board.model.vo.BoardOption;
+import com.naedam.admin.board.model.vo.BoardRequest;
 import com.naedam.admin.board.model.vo.BoardTranslate;
 import com.naedam.admin.board.model.vo.Post;
+import com.naedam.admin.board.model.vo.PostRequest;
 import com.naedam.admin.member.model.vo.Member;
 
 public interface BoardService {
 	
 	//게시판 프로세서
-	public void boardProcess(Map<String, Object> map) throws Exception;
-	
+	Map<String, Object> boardProcess(BoardRequest boardRequest) throws Exception;
 	//게시글 프로세서
-	public void postProcess(Map<String, Object> map) throws Exception;
-	
+	Map<String, Object>postProcess(PostRequest postRequest) throws Exception;
 	//게시판 등록의 번역
+	
 	public int addTranslate(BoardTranslate boardTranslate) throws Exception;
 	
 	//게시글 파일 등록

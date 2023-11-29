@@ -18,7 +18,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.business.model.service.BusinessService;
-import com.naedam.admin.business.model.service.BusinessServiceImpl;
 import com.naedam.admin.business.model.vo.Business;
 import com.naedam.admin.business.model.vo.BusinessContents;
 import com.naedam.admin.business.model.vo.BusinessPost;
@@ -48,12 +47,14 @@ public class BusinessController {
 								  @RequestParam("mode") String mode,
 								  @RequestParam(value="icon", required = false) MultipartFile icon,
 								  HttpServletRequest request) throws Exception{
-		Map<String, Object> businessMap = new HashMap<String, Object>();
-		businessMap.put("mode", mode);
-		businessMap.put("business", business);
-		businessMap.put("boardOption", boardOption);
-		businessMap.put("icon", icon);
-		businessService.businessProcess(businessMap);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusiness(business);
+		businessRequest.setBoardOption(boardOption);
+		businessRequest.setIcon(icon);
+
+		businessService.businessProcess(businessRequest);
 		return "redirect:/admin/business/getBusinessList?locale="+business.getLocale();
 	}
 	
@@ -64,19 +65,19 @@ public class BusinessController {
 									  ,@RequestParam(value="img", required = false) MultipartFile img
 									  ,@RequestParam("secNo") String secNo 
 									  ,@RequestParam("mode") String mode
+									  ,@RequestParam("businessNo") int businessNo
 								      ,HttpServletRequest request) throws Exception{
-		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/icon/");
-		String filePath2 = request.getServletContext().getRealPath("resources/user/images/main/");
-		Map<String, Object> businessPostMap	 = new HashMap<>();
-		businessPostMap.put("business", business);
-		businessPostMap.put("businessPost", businessPost);
-		businessPostMap.put("mode", mode);
-		businessPostMap.put("icon", icon);
-		businessPostMap.put("img", img);
-		businessPostMap.put("filePath", filePath);
-		businessPostMap.put("filePath2", filePath2);
-		businessPostMap.put("secNo", secNo);
-		businessService.businessPostProcess(businessPostMap);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setBusiness(business);
+		businessRequest.setBusinessPost(businessPost);
+		businessRequest.setMode(mode);
+		businessRequest.setIcon(icon);
+		businessRequest.setFile(img);
+		businessRequest.setRequest(request);
+		businessRequest.setSecNo(secNo);
+		
+		businessService.businessPostProcess(businessRequest);
 		return "redirect:/admin/business/getBusinessPostList?businessNo="+business.getBusinessNo()+"&locale="+businessPost.getLocale();
 	}
 	
@@ -87,16 +88,16 @@ public class BusinessController {
 										 ,@RequestParam("secNo") String secNo 
 										 ,@RequestParam("mode") String mode
 									     ,HttpServletRequest request) throws Exception{
-		String filePath = request.getServletContext().getRealPath("resources/user/images/introduction/");
-		System.out.println("확인222 === "+businessContents);
-		Map<String, Object> businessContentsMap	 = new HashMap<>();
-		businessContentsMap.put("businessContents", businessContents);
-		businessContentsMap.put("businessPost", businessPost);
-		businessContentsMap.put("file", file);
-		businessContentsMap.put("secNo", secNo);
-		businessContentsMap.put("mode", mode);
-		businessContentsMap.put("filePath", filePath);
-		businessService.businessContentsProcess(businessContentsMap);
+
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setBusinessContents(businessContents);
+		businessRequest.setBusinessPost(businessPost);
+		businessRequest.setFile(file);
+		businessRequest.setSecNo(secNo);
+		businessRequest.setMode(mode);
+		businessRequest.setRequest(request);
+		
+		businessService.businessContentsProcess(businessRequest);
 		return "redirect:/admin/business/getBusinessContentsList?businessPostNo="+businessPost.getBusinessPostNo();
 	}
 	
@@ -118,6 +119,7 @@ public class BusinessController {
 		return "admin/business/businessList";
 	}
 	
+
 	@RequestMapping( value="getBusinessPostList")
 	public String getBusinessPostList(@ModelAttribute("comm") Comm comm, Model model, HttpServletRequest request ,
 									  @RequestParam("businessNo") int businessNo, 
@@ -128,8 +130,6 @@ public class BusinessController {
 		int offset = (cPage - 1) * limit;
 		
 		Business business = businessService.getBusiness(businessNo);
-		model.addAttribute("business", business);
-		
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
@@ -137,13 +137,16 @@ public class BusinessController {
 		map.put("locale", locale);
 		List<BusinessPost> businessPost = businessService.getBusinessPostList(map);
 		int TotalBusinessPost = businessService.TotalBusinessPost(businessNo);
+		
+		model.addAttribute("business", business);
 		model.addAttribute("list", businessPost);
 		model.addAttribute("count", TotalBusinessPost);
 		model.addAttribute("businessNo", businessNo);
 		// pagebar
 		String url = request.getRequestURI();
-		//String pagebar = Mir9Utils.getPagebar(cPage, limit, totalPostListCount, url);
-		model.addAttribute("locale", locale);
+		
+		model.addAttribute("locale", business.getLocale());
+		
 		return "admin/business/businessPostList";
 	}
 	
@@ -157,11 +160,11 @@ public class BusinessController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("comm", comm);
 		map.put("businessPostNo", businessPostNo);
-		map.put("locale", locale);
+		map.put("locale", businessPost.getLocale());
 		List<BusinessContents> businessContents = businessService.getBusinessContentsList(map);
 		model.addAttribute("businessContents",businessContents);
 		model.addAttribute("businessPostNo", businessPostNo);
-		model.addAttribute("locale", locale);
+		model.addAttribute("locale", businessPost.getLocale());
 		return "admin/business/businessContentsList";
 	}
 	

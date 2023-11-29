@@ -10,6 +10,7 @@
 		<result property="boardSubTitle"			column="BOARD_SUBTITLE"		jdbcType="VARCHAR"></result>
 		<result property="boardContents"			column="BOARD_CONTENTS"		jdbcType="VARCHAR"></result>
 		<result property="boardMemberNo.memberNo"	column="MEMBER_NO"			jdbcType="NUMERIC"></result>
+		<result property="locale"			column="LOCALE"		jdbcType="VARCHAR"></result>
 		
 		<association property="boardMemberNo" javaType="member" >
 			<result property="memberNo"				column="MEMBER_NO"				jdbcType="NUMERIC"></result>
@@ -27,6 +28,7 @@
 		<result property="postOriginNo"				column="POST_ORIGIN_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMember.memberNo"		column="MEMBER_NO"				jdbcType="NUMERIC"></result>
 		<result property="postMemberName"			column="MEMBER_NAME"			jdbcType="VARCHAR"></result>
+		<result property="locale"			column="LOCALE"			jdbcType="VARCHAR"></result>
 		<result column="ROWNUM" property="rownum"/>
 		
 		<association property="postBoard" javaType="Board" >
@@ -35,6 +37,7 @@
 			<result property="boardSubTitle"			column="BOARD_SUBTITLE"		jdbcType="VARCHAR"></result>
 			<result property="boardContents"			column="BOARD_CONTENTS"		jdbcType="VARCHAR"></result>
 			<result property="boardMemberNo.memberNo"	column="MEMBER_NO"			jdbcType="NUMERIC"></result>		
+			<result property="locale"			column="LOCALE"			jdbcType="VARCHAR"></result>
 		</association>
 		
 	</resultMap>		
@@ -63,11 +66,13 @@
 		INTO board(BOARD_TITLE, 
 				   BOARD_SUBTITLE, 
 				   BOARD_CONTENTS,
-				   MEMBER_NO)
+				   MEMBER_NO,
+				   Locale)
 		VALUES(#{boardTitle : VARCHAR},
 			   #{boardSubTitle : VARCHAR},
 			   #{boardContents : VARCHAR},
-			   #{boardMemberNo.memberNo})		
+			   #{boardMemberNo.memberNo},
+			   #{locale})		
 		<selectKey keyProperty="boardNo" resultType="int" order="AFTER">
 			SELECT MAX(board_no) from board
 		</selectKey>
@@ -111,13 +116,18 @@
 		VALUES(#{filePost.postNo},
 			   #{fileName : VARCHAR})
 	</insert>
-	
+	<select id ="getfileName"  resultType="String" parameterType="int">
+		select file_name
+		from board_file
+		where post_no = #{postNo}
+	</select>
 	<select id="getBoardList" resultType="hashmap" resultMap="BoardSelectMap" >
 		 SELECT
 				board_no,
 				board_title,
 				board_subtitle,
 				board_contents,
+				locale,
 				(SELECT COUNT(*)
 				 FROM post p
 				 WHERE p.board_no = board_no) count
@@ -240,6 +250,7 @@
 		tb1.board_title,
 		tb1.board_subtitle,
 		tb1.board_contents,
+		tb1.LOCALE,
 		tb2.OPTION_NO,
 		tb2.OPTION_NOTICE,
 		tb2.OPTION_COMMENT,
@@ -274,7 +285,6 @@
 				WHERE	b.board_no = p.board_no
 				AND		m.member_no = p.member_no
 				AND		b.board_no = #{boardNo}
-				AND		p.locale like #{locale}
 				<if test="comm.searchType != null">
 					<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
 					AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
@@ -303,7 +313,7 @@
 		WHERE	b.board_no = p.board_no
 		AND		m.member_no = p.member_no
 		AND		b.board_no = #{boardNo}
-		AND		b.locale like #{locale}
+<!-- 		AND		p.locale like #{locale} -->
 		<if test="comm.searchType != null">
 			<if test="comm.searchType == 1 and comm.searchKeyword !='' ">
 			AND		p.post_title like concat ('%',#{comm.searchKeyword},'%')
@@ -391,17 +401,13 @@
 	<delete id="deleteChoiceBoard">
 		DELETE
 		FROM board
-		WHERE <foreach collection="list" item="boardNo" open="(" close=")" separator="or">
-				board_no = #{boardNo}
-			  </foreach>
+		WHERE  board_no = #{boardNo}
 	</delete>
 	
 	<delete id="deleteChoicePost">
 		DELETE
 		FROM post
-		WHERE <foreach collection="list" item="postNo" open="(" close=")" separator="or">
-				post_no = #{postNo}
-			  </foreach> 
+		WHERE post_no = #{postNo}
 	</delete>
 	
 	<delete id="deleteFile" parameterType="int">

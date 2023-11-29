@@ -51,7 +51,6 @@
                                     <li class="is-right">
                                         <div class="esg_program_img">
                                         	<img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_2.jpg" class="img_partnership">
-                                        	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-02-pc@2x.png" alt=""> --%>
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">For the benefit of the enterprise</p>
@@ -98,6 +97,6 @@
 
             </div><!-- // #contents -->
         </section><!-- // #container -->  
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+  <jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
   </body>
 </html>

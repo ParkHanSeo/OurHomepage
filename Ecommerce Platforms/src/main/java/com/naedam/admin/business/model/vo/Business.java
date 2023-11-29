@@ -3,7 +3,6 @@ package com.naedam.admin.business.model.vo;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.naedam.admin.board.model.vo.BoardOption;
 import com.naedam.admin.member.model.vo.Member;
 
 import lombok.AllArgsConstructor;
@@ -17,9 +16,6 @@ import lombok.ToString;
 @ToString
 public class Business implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private int businessNo;			//business 테이블 primary 키

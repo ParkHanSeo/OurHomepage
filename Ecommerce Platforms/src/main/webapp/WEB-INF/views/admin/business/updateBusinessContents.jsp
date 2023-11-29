@@ -62,7 +62,6 @@
 					"Content-Type" : "application/json"	 						
 				} ,
 				success : function(JSONData, status){
-					console.log(JSONData)
 					$("[id=businessContentsTitle2]").val(JSONData.businessContentsTitle);
 					$('[id=businessContentsContent2]').text(JSONData.businessContentsContent);
 					$(".businessContentsNo").val(JSONData.businessContentsNo);

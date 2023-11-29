@@ -38,13 +38,10 @@ public class UserSettingController {
 		
 		Map<String, Object> map = new HashMap<>();
 		
-		System.out.println("historyList 시작");
 		Map<String, Object> resultMap = historyService.selectHistoryList(map);
-		System.out.println(resultMap.get("history"));
 		model.addAttribute("history", resultMap.get("history"));
 		
 		Map<String, Object> awardMap = awardService.selectAwardList(map);
-		System.out.println(awardMap.get("award"));
 		model.addAttribute("award", awardMap.get("award"));
 
 		return "user/"+locale+"/company/historyList";

@@ -39,7 +39,7 @@
                                 <div class="location_text">
 	                                <h3 class="location_name">HQ</h3>
 	                                <p class="location_info">
-	                                    231 Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea, S-711 (H square, Sampyeong-dong) <br>
+	                                    S-711 (H square, Sampyeong-dong), 231 Pangyoyeok-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Republic of Korea <br>
 	                                    It takes 3 minutes by bus from Exit 1 - 4 of Pangyo Station on the Shinbundang Line. <br>
 	                                    TEL 031-712-8315 <br>
 	                                    FAX 031-789-3545
@@ -50,7 +50,7 @@
                                 </p>
                             </li>
                             <li class="items">
-								<iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3169.5178989113956!2d127.108642!3d37.401232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7f434577899%3A0xae71bdfacd6566b1!2z64K064u07JSo7JWk7JSo!5e0!3m2!1sko!2skr!4v1676277572347!5m2!1sko!2skr" 
+								<iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.096899710103!2d127.10246527827482!3d37.400509682735084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca7f434577899%3A0xae71bdfacd6566b1!2z64K064u07JSo7JWk7JSo!5e0!3m2!1sen!2skr!4v1677556845340!5m2!1sen!2skr"
 										style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 								</iframe>
                             </li>
@@ -58,7 +58,7 @@
                                 <div class="location_text">
 	                                <h3 class="location_name">Branch Office</h3>
 	                                <p class="location_info">
-	                                    298 Beotkkot-ro, Geumcheon-gu, Seoul, 11F 1104 (50-3 Gasan-dong) <br>
+	                                    11F 1104 (50-3 Gasan-dong), 298 Beotkkot-ro, Geumcheon-gu, Seoul <br>
 	                                    Gasan Digital Complex Station on Line 7 connects to Exit 2 <br>
 	                                    TEL 02-2083-5590 <br>
 	                                    FAX 02-2083-5594
@@ -69,7 +69,7 @@
                                 </p>
                             </li>
                             <li class="items">
-								<iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3166.127224953282!2d126.883779!3d37.481324!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f210b865e0d%3A0xadfac5f743c8151a!2z64yA66Wt7Y-s7Iqk7Yq47YOA7JuMNuywqA!5e0!3m2!1sko!2skr!4v1676277774896!5m2!1sko!2skr" 
+								<iframe class="location_btn" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6332.244958258243!2d126.8748212697754!3d37.481436000000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e1de5f177c5%3A0x75391baa9e0bc1b!2zKOyjvCnrgrTri7TslKjslaTslKgg7ISc7Jq47KeA7IKs!5e0!3m2!1sen!2skr!4v1677556939195!5m2!1sen!2skr" 
 										style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 								</iframe>
                             </li>
@@ -80,6 +80,6 @@
             </div><!-- // #contents -->
       </section><!-- // #container -->
 	</div>
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+  <jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
 </body>
 </html>

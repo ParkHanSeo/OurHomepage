@@ -470,6 +470,9 @@
 .ceo_msg-box .ceo_msg-txt2.line-01 {
   margin-top: 48px;
 }
+.ceo_msg-box .ceo_msg-txt2.en_line-01 {
+  margin-top: 10px;
+}
 .ceo_msg-box .ceo_msg-txt2.line-02 {
   width: calc(100% / 2 + 110px);
 }

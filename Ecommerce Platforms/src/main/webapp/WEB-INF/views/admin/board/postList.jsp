@@ -12,11 +12,11 @@
 		$(function(){
 			//post 선택삭제 시작
 			$("#deleteChoicePost").on("click", function(){
-				
+				var secNo = $("input[name='secNo']").val();
 				var postArr = new Array();
 				var mode = "delete";
 				var boardNo = $("input[name='boardNo']").val();
-							
+				var locale = $("input[name='locale']").val();
 				$("input[class='postNo']:checked").each(function(){
 					postArr.push($(this).val());
 				});
@@ -31,8 +31,12 @@
 			  		$.ajax({
 		  			 	 url : "/admin/board/json/postProcess?${_csrf.parameterName}=${_csrf.token}",
 			  		  	 type : "POST",
-		  		  	 	 data : { postArr : postArr,
-		  		  	 		 	  mode
+		  		  	 	 data : { 
+	  		  	 		 	postArr : postArr,
+		  		  	 		boardNo :boardNo,
+		  		  	 		secNo :secNo,
+  		  	 		 	  	mode,
+  		  	 		 	locale:locale,
 		  		  	 		  	},
 		    		 	 success : function(result){
 		   			  		alert("게시글이 삭제 되었습니다.")

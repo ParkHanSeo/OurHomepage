@@ -115,14 +115,14 @@
 																		<c:forEach var="awardcontent" items="${award}">
 																			<c:if
 																				test="${(awardmonth.month == awardcontent.month)&&(awardmonth.year == awardcontent.year)}">
-																				<dd>
+																				<dd style="height: 400px">
 																					<span class=thumnail>
 																						<c:if test="${!empty awardcontent.imgUrl}">
 																							<img class="img-thumbnail regist_thumbnail"  src="${pageContext.request.contextPath}/resources/user/images/company/award/${awardcontent.imgUrl}">
 																						</c:if>
 																					</span>
 																					<span class="title">
-																						<c:out value="'${awardcontent.host} 주최'" />
+																						<c:out value="'hosted by the${awardcontent.host} '" />
 																						<br>
 																						<c:out value="${awardcontent.content}" />
 																					</span>																				</dd>
@@ -148,7 +148,7 @@
 	</div>
 
 	<!-- footer -->
-	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
 	<!-- footer -->
 	<script>
 	

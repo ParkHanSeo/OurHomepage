@@ -121,9 +121,7 @@
 	</section>
 	<!-- // #container -->
 	</div>
-
-
-	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
 </body>
 <script type="text/javascript">
  	function paging(cPage){
@@ -154,7 +152,6 @@
 			success : function(JSONData, status){
 				var display = '';
 				for(var i = 0; i < JSONData.list.length; i++){
-					console.log("접근")
 					display = '<li id ="postList">'
 							+ 	'<div class="subj_box">'
 							+ 	   '<p class="common-text_txt2">'

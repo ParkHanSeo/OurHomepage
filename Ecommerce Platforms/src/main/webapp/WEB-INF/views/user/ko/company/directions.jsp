@@ -58,7 +58,7 @@
                                 <div class="location_text">
 	                                <h3 class="location_name">서울 지사</h3>
 	                                <p class="location_info">
-	                                    서울시 금천구 벛꽃로 298 대륭포스트타워6차 1104호 (가산동 50-3) <br>
+	                                    서울시 금천구 벚꽃로 298 대륭포스트타워6차 1104호 (가산동 50-3) <br>
 	                                    7호선 가산디지털단지역 2번 출구 연결 <br>
 	                                    TEL 02-2083-5590 <br>
 	                                    FAX 02-2083-5594

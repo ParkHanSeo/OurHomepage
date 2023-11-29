@@ -52,19 +52,13 @@ window.onload=function(){
 }
 
 function newPage(lang){	
-	var link =  document.location.href;
-	var newLink = link.split('?locale');
+	document.cookie = "locale=en; max-age=0";
+	document.cookie = "locale=ko; max-age=0";
+
+	location.href = '/?locale=' + lang;
 	
-	var arr = link.split('?');
-	
-	if(arr[1] == 'locale=en' || arr[1] == 'locale=ko' || arr.length == 1){
-		location.href = newLink[0] +"?locale=" + lang;
-	} else {
-		newLink = link.split('&locale');
-		location.href = newLink[0] +"&locale=" + lang;
-	}
 	//쿠키
-	document.cookie = 'locale=' + lang;
+	document.cookie = 'locale=' + lang +';' + 'path=/;'
 	
 }
 </script>
@@ -91,6 +85,7 @@ function newPage(lang){
         </div>
 		<div class="header_util">
 			<div class="btn_util_wrap">
+			<!-- 언어 버튼 주석처리 -->
                 <span class="util_lang">
                     <a href="javascript:void(0)" class="btn_language">
                         <span class="blind">다국어 보기</span>
@@ -104,10 +99,10 @@ function newPage(lang){
                     <div class="language_list">
                         <ul>
                             <li>
-                            	<a href="#" onclick="newPage('ko')" class="active lang_ko">KOR</a>
+                            	<a href="#" onclick="newPage('ko')" class="${cookie.locale.value eq 'ko' ? 'active' : '' } lang_ko">KOR</a>
                             </li>
                             <li>
-                            	<a href="#" onclick="newPage('en')" class="lang_en">ENG</a>
+                            	<a href="#" onclick="newPage('en')" class="${cookie.locale.value eq 'en' ? 'active' : '' } lang_en">ENG</a>
                             </li>
                         </ul>
                     </div>

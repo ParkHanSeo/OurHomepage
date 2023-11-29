@@ -39,8 +39,8 @@
                                 <ul class="esg_program_list">
                                     <li>
                                         <div class="esg_program_img">
-                                        	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-01-pc@2x.png" alt=""> --%>
-                                        	<img src="${pageContext.request.contextPath}/resources/user/images/delete/partner1_2.jpg" class="img_partnership">
+                                        	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_1.jpg" alt=""> --%>
+                                        	<img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_1.jpg" class="img_partnership">
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담씨앤씨</p>
@@ -52,8 +52,8 @@
                                     </li>
                                     <li class="is-right">
                                         <div class="esg_program_img">
-                                        	<img src="${pageContext.request.contextPath}/resources/user/images/delete/partner1.jpg" class="img_partnership">
-                                        	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-02-pc@2x.png" alt=""> --%>
+                                        	<img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_2.jpg" class="img_partnership">
+                                        	<%-- <img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_2.jpg" alt=""> --%>
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">기업의 이익 위하여</p>
@@ -65,8 +65,8 @@
                                     </li>
                                     <li>
                                         <div class="esg_program_img">
-                                            <img src="${pageContext.request.contextPath}/resources/user/images/delete/patner_promise.jpg" class="img_partnership">
-                                            <%-- <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-03-pc@2x.png" alt=""> --%>
+                                            <img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_3.jpg" class="img_partnership">
+                                            <%-- <img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_3.jpg" alt=""> --%>
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담 파트너에 대한 우리의 약속</p>
@@ -80,7 +80,7 @@
                                     <li class="is-right">
                                         <div class="esg_program_img">
                                             <%-- <img src="${pageContext.request.contextPath}/resources/user/images/delete/img-thumbnail-04-pc@2x.png" alt=""> --%>
-                                        	<img src="${pageContext.request.contextPath}/resources/user/images/delete/partner_goal.jpg" class="img_partnership">
+                                        	<img src="${pageContext.request.contextPath}/resources/user/images/partner/partnership/partnerShipList_4.jpg" class="img_partnership">
                                         </div>
                                         <div class="esg_program_desc">
                                             <p class="esg_program_txt">내담의 목표</p>

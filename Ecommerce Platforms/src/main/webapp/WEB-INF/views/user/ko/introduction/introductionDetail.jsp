@@ -44,13 +44,14 @@
                         <div class="layout_body">
                             <ol class="difference_list">
                             	<c:forEach var="businessContents" items="${businessContentsList}" varStatus="status" >
-                            		<c:set var="i" value="${ i+1 }" />
-                            		<c:if test="${i%2 == 1}">
-	                            		<li>
-                            		</c:if>
-                            		<c:if test="${i%2 == 0}">
-                            			<li class="is-right">
-                            		</c:if>
+									<c:if test="${businessContents.businessContentsType eq '1'}">
+	                            		<c:set var="i" value="${ i+1 }" />
+		                            		<c:if test="${i%2 == 1}">
+			                            		<li>
+		                            		</c:if>
+	                            			<c:if test="${i%2 == 0}">
+	                            				<li class="is-right">
+	                            			</c:if>
 		                                    <div class="difference_img aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
 		                                        <img src="${pageContext.request.contextPath}/resources/user/images/introduction/${businessContents.image}" alt="">
 		                                    </div>
@@ -58,15 +59,57 @@
 		                                        <p class="difference_title" style="white-space:pre-line;">${businessContents.businessContentsTitle}</p>
 		                                        <p class="difference_desc" style="white-space:pre-line;">${businessContents.businessContentsContent}</p>
 		                                    </div>
-		                                </li>
+	                                		</li>
+	                                </c:if>
                             	</c:forEach>
                             </ol>
                         </div>
                     </div>
                 </div><!-- // .biz_difference -->
             </div><!-- // #contents -->
+            <div class="layout_section_outer card-ui type12"
+				data-js="anchor-target">
+				<div class="inner_container">
+					<div class="layout_head">
+						<p class="businessList_top_txt1">
+							${businessPost.businessPostBottomTitle}</p>
+						<p class="businessList_top_txt2">
+							${businessPost.businessPostBottomContents}</p>
+					</div>
+					<div class="layout_body">
+						<ul class="common-layout_3">
+							<c:forEach var="businessContents" items="${businessContentsList}"
+								varStatus="status">
+								<c:if test="${businessContents.businessContentsType eq '2'}">
+									<li class="items">
+										<div class="image_box">
+											<a href="#" onclick="return false;">
+												<div class="img_cover">
+													<img
+														src="${pageContext.request.contextPath}/resources/user/images/introduction/${businessContents.image}">
+												</div>
+											</a>
+										</div>
+										<div class="desc_box">
+											<p class="ui_category" onclick="return false;">${businessContents.businessContentsTitle }</p>
+											<p class="ui_title">${businessContents.businessContentsContent}</p>
+										</div>
+									</li>
+								</c:if>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>
+			</div>
         </section><!-- // #container -->
     </div><!-- // #wrap -->
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
+  	<c:choose>
+		<c:when test="${cookie.locale.value eq 'en' }">
+			<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
+		</c:when>
+	<c:otherwise>
+		<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />      
+	</c:otherwise>
+</c:choose>	
 </body>
 </html>

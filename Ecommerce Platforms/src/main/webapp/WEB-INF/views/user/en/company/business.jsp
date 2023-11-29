@@ -40,7 +40,7 @@
 				        </div>
 				        <div class="num-item">
 				            <h4 class="in-title">CEO</h4>
-				            <span class="nums" >한창엽</span><span id="num-unit"></span><br>
+				            <span class="nums" >Chang Yeop Han</span><span id="num-unit"></span><br>
 				        </div>
 				        <div class="num-item">
 				            <h4 class="in-title">Sales</h4>
@@ -121,7 +121,7 @@
                             </p>
                             <p class="businessList_top_txt2">
                                 We practice the best core values of constantly changing and challenging 
-                                through the best teamwork based on trust, respect, passion, honesty, and challenge.
+                                through the best teamwork based on <b>trust, respect, passion, honesty, and challenge.</b>
                             </p>
                         </div> 
                   	</div>                	
@@ -174,6 +174,6 @@
                	</div>
             </div><!-- // #contents -->
         </section><!-- // #container -->  
-  <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />	
+  <jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />	
 </body>
 </html>

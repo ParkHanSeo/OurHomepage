@@ -119,7 +119,6 @@ public class SettingServiceImpl implements SettingService {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("list", settingDao.adminPartnerList(map));
 		resultMap.put("totalCount", settingDao.adminPartnerTotalCount(map));
-		System.out.println("resultMap====" + resultMap);
 		return resultMap;
 	}
 

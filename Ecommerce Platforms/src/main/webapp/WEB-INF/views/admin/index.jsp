@@ -110,7 +110,6 @@
 	$("input:checkbox[id='remember-me']").prop("checked", true);
 
 	function loginSubmit() {		
-		console.log("loginSubmit 도착했나요?");
 		if (form.id.value == '') {
 			alert('아이디가 입력되지 않았습니다.');
 			form.id.focus();
@@ -125,7 +124,6 @@
 	}
 	
 	function enrollSubmit() {
-		console.log("enrollSubmti() 실행");
 		location.href=`${pageContext.request.contextPath}/user/user/userEnroll.do`;
 	}
 	

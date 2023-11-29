@@ -49,9 +49,9 @@
 								onkeypress="if(event.keyCode==13){paging();}">
 								<input type="hidden" name="boardNo" value="${board2.boardNo}">
 								<input type="hidden" name="searchType" value="1"> <label
-									class="common-search_label" for="recruit_search_txt">검색</label>
+									class="common-search_label" for="recruit_search_txt">Search</label>
 								<input class="common-search_input" name="searchKeyword"
-									id="recruit_search_txt" type="text" placeholder="검색어를 입력해주세요."
+									id="recruit_search_txt" type="text" placeholder="Search ...."
 									title="검색어을 입력해주세요.">
 								<button type="button" class="common-search_btn" id="btnSearch">검색</button>
 							</form>
@@ -80,10 +80,10 @@
 						<ul class="common-text_list">
 							<li class="main_notice">
 								<div class="subj_box">
-									<p class="common-text_title">제목</p>
+									<p class="common-text_title">Title</p>
 								</div>
 								<div class="date_box center-left">
-									<p class="common-text_reg-date">작성일자</p>
+									<p class="common-text_reg-date">Date</p>
 								</div>
 							</li>
 							<c:if test="${!empty list}">
@@ -121,9 +121,14 @@
 	</section>
 	<!-- // #container -->
 	</div>
-
-
-	<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />
+<c:choose>
+	<c:when test="${cookie.locale.value eq 'en' }">
+		<jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />
+	</c:when>
+	<c:otherwise>
+		<jsp:include page="/WEB-INF/views/user/common/footer.jsp" />      
+	</c:otherwise>
+</c:choose>
 </body>
 <script type="text/javascript">
  	function paging(cPage){
@@ -154,7 +159,6 @@
 			success : function(JSONData, status){
 				var display = '';
 				for(var i = 0; i < JSONData.list.length; i++){
-					console.log("접근")
 					display = '<li id ="postList">'
 							+ 	'<div class="subj_box">'
 							+ 	   '<p class="common-text_txt2">'

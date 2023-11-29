@@ -33,7 +33,7 @@
                                  </div>
                                  <div class="btn-area">
                                     <a href="${pageContext.request.contextPath}${head.headUrl}" class="common-btn is-white2"> 
-                                       <span>솔루션 보기</span> 
+                                       <span>View all</span> 
                                        <i class="icon link-arrow"></i>
                                     </a>
                                  </div>                                 
@@ -79,7 +79,7 @@
                      <br />Furthermore, our vision is to grow into an IT Total Service Provider with global competitiveness.
                   </p>
                   <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                     <a href="/user/company/businessList" class="common-btn is-white">
+                     <a href="/user/company/businessList?locale=${cookie.locale.value}" class="common-btn is-white">
                         <span>About Us</span>
                         <i class="icon link-arrow2"></i>
                      </a>
@@ -241,14 +241,11 @@
                                  <br/>based on Know How accumulated through the performance of IT services in various industries
                                  <br/>such as public, financial, telecommunications, e-commerce, manufacturing, Nonghyup, and infrastructure.
                               </p>
-                              <p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                                 <span class="blind">자세히 보기</span>
-                              </p>
                            </div>
                         </li>
                         <li class="cloud aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                            <div class="bg-text aos-init" data-aos="svg-stroke" data-aos-offset="0">
-                           <svg class="solution" height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 3370.82 2384.24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <svg class="solution en_solution" height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 3370.82 2384.24" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
                               <linearGradient x1="0%" y1="58.8120299%" x2="100%" y2="58.8120299%" id="cloudlinearGradient-1">
                                 <stop stop-color="#C597F3" offset="0.0655594406%"></stop>
                                 <stop stop-color="#D497F3" offset="100%"></stop>
@@ -284,13 +281,12 @@
                               </g>
                            </svg>                                     
                            </div> 
-                           <div class="main_aos_solution_txt">
+                           <div class="main_aos_solution_txt en_solution_txt">
                               <h3 class="tit aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">Solution</h3>
                               <p class="description aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                                  Through communication, we analyze and design the requirements necessary for the company or sales activities and implement them as a computer program.<br />
                                  It is also possible to request customized program development that is differentiated from the programs <br />
                                  you use and to request application development that is necessary for maintenance of legacy systems.
-                                 (소통을 통해 회사 또는 영업 활동에 필요한 요구사항을 분석, 설계하여 전산프로그램으로 구현합니다. 사용 프로그램과 차별화된 맞춤형 프로그램 개발 의뢰와 레거시 시스템의 유지보수에 필요한 응용 프로그램 개발 의뢰도 가능합니다.)
                               </p>
                               <p class="btn-arrow aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                               </p>                           
@@ -311,7 +307,7 @@
                            </p>
                         </div>
                         <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                           <a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction" class="common-btn">
+                           <a href="${pageContext.request.contextPath}/user/introduction/businessIntroduction?locale=${cookie.locale.value}" class="common-btn">
                               <span class="main_solution_services">View All
                               </span>
                            </a>
@@ -328,7 +324,7 @@
 	                                    ${businessPost.businessPostText1}
 	                                 </p>
 	                                 <p class="btn-arrow">
-	                                    <span class="blind">자세히 보기</span>
+	                                    <span class="blind"></span>
 	                                 </p>
 	                              </a>
 	                           </li>
@@ -357,34 +353,33 @@
                   </div>
                   <div class="half-wrap aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
                      <div class="is-left">
-                        <a href="/user/highflier/qualifiedEmployee" class="banner is-people aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+                        <a href="/user/highflier/qualifiedEmployee?locale=${cookie.locale.value}" class="banner is-people aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
                            <h3 class="tit">Image of qualified employee of Naedam C&C</h3>
                            <p class="description">
                            		We are waiting for you to create <br/> a new future with Naedam C&C.
                              
                            </p>
                            <p class="btn-arrow is-black">
-                              <span class="blind">자세히 보기</span>
+                              <span class="blind"></span>
                            </p>
                         </a>
                      </div>
                      <div class="is-right"> 
-                        <a href="/user/recruit/userRecruitList" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+                        <a href="/user/recruit/userRecruitList?locale=${cookie.locale.value}" class="banner is-recruit aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
                            <h3 class="tit">Careers</h3>
                            <p class="description">
 								We look forward to your support <br/>to join Naedam C&C
                            </p>                           
                            <p class="btn-arrow is-black">
-                              <span class="blind">자세히 보기</span>
+                              <span class="blind"></span>
                            </p>
                         </a> 
-                        <a href="/user/highflier/hrDepartment" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
+                        <a href="/user/highflier/hrDepartment?locale=${cookie.locale.value}" class="banner is-growth aos-init" data-aos-offset="0" data-aos-duration="250" data-aos-delay="100" data-aos-easing="linear" data-aos="fade-up">
                            <h3 class="tit">Personnel System</h3>
                            <p class="description">
                               Online & on-site training<br /> Support for various Employee Benefits
                            </p>
                            <p class="btn-arrow is-black">
-                              <span class="blind">자세히 보기</span>
                            </p>
                         </a>
                      </div>
@@ -398,7 +393,7 @@
                         <h2 class="tit">Notices</h2>
                      </div>
                      <div class="btn-area aos-init" data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear">
-                        <a href="/user/notice/noticeList/5001" class="common-btn">
+                        <a href="/user/notice/noticeList/5019" class="common-btn">
                            <span>View all</span>
                         </a>
                      </div>
@@ -407,7 +402,7 @@
                      <c:forEach var="post" items="${post}" varStatus="status" >
                         <li data-aos="fade-up" data-aos-offset="0" data-aos-duration="250" data-aos-easing="linear" class="items aos-init main_notice_items">
                            <div class="notice_box">
-                              <a href="/user/notice/getNoticeDetail/${post.postNo}" class="desc_box">
+                              <a href="/user/notice/getNoticeDetail/${post.postNo}?locale=${cookie.locale.value}" class="desc_box">
                                  <p class="ui_category">${post.postBoard.boardTitle}</p>
                                  <p class="ui_title">${post.postTitle}</p>
                               </a>
@@ -422,6 +417,6 @@
       </section>
       <!-- // #container -->
       </div>
-      <jsp:include page="/WEB-INF/views/user/common/footer.jsp" />      
+      <jsp:include page="/WEB-INF/views/user/common/en_footer.jsp" />      
   </body>
 </html>

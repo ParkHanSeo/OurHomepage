@@ -15,11 +15,11 @@ public interface HistoryDao {
 
 	public List<History> selectMonthList(Map<String,Object> map);
 	
-	int insertHistory(History history);
+	void insertHistory(History history);
 
-	int updateHistory(History history);
+	void updateHistory(History history);
 
-	int deleteHistory(int historyNo);
+	void deleteHistory(int historyNo);
 
 
 }

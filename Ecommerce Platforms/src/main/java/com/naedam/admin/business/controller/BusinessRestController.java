@@ -28,39 +28,36 @@ public class BusinessRestController {
 	public Boolean BusinessProcess(@RequestParam(value = "businessArr[]") List<String> businessArr, 
 		   @RequestParam("mode") String mode) throws Exception{
 		Boolean result = false;
-		Map<String, Object> businessMap = new HashMap<>();
-		businessMap.put("mode", mode);
-		businessMap.put("businessArr", businessArr);
-		businessService.businessProcess(businessMap);
+		
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusinessArr(businessArr);
+		
+		businessService.businessProcess(businessRequest);
 		result = true;
 		return result;
 	}
 	
 	@PostMapping("json/businessPostProcess")
 	public Boolean BusinessPostProcess(@RequestParam(value = "businessPostArr[]") List<String> businessPostArr,
-									   @RequestParam(value = "businessNo", required = false, defaultValue= "0") int businessNo,
 									   @RequestParam("mode") String mode) throws Exception{
-		BusinessPost businessPost = new BusinessPost();
-		Boolean result = false;
-		Map<String, Object> businessPostMap = new HashMap<>();
-		businessPostMap.put("mode", mode);
-		businessPostMap.put("businessNo", businessNo);
-		businessPostMap.put("businessPostArr", businessPostArr);
-		System.out.println(mode);
-		businessService.businessPostProcess(businessPostMap);
-		result = true;
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusinessPostArr(businessPostArr);
+		Boolean result = businessService.businessPostProcess(businessRequest);
+		
 		return result;
 	}
 	
 	@PostMapping("json/businessContentsProcess")
 	public Boolean BusinessContentsProcess(@RequestParam(value = "businessContentsArr[]") List<String> businessContentsArr,
 										   @RequestParam("mode") String mode) throws Exception{
-		Boolean result = false;
-		Map<String, Object> businessContentsMap = new HashMap<>();
-		businessContentsMap.put("mode", mode);
-		businessContentsMap.put("businessContentsArr", businessContentsArr);
-		businessService.businessContentsProcess(businessContentsMap);
-		result = true;
+		BusinessRequest businessRequest = new BusinessRequest();
+		businessRequest.setMode(mode);
+		businessRequest.setBusinessContentsArr(businessContentsArr);
+		
+		Boolean result = businessService.businessContentsProcess(businessRequest);
+		
 		return result;
 	}
 	
@@ -70,8 +67,9 @@ public class BusinessRestController {
 	}
 	
 	@GetMapping("json/getBusinessList")
-	public List<Business> getBusinessList() throws Exception{
+	public List<Business> getBusinessList(@RequestParam(value = "locale", defaultValue = "ko")String locale) throws Exception{
 		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("locale", locale);
 		Map<String, Object> resultMap = businessService.getBusinessList(map);
 		List<Business> businessList = (List<Business>) resultMap.get("list");
 		return businessList;
@@ -84,7 +82,6 @@ public class BusinessRestController {
 	
 	@GetMapping(value="json/getBusinessContents/{businessContentsNo}")
 	public BusinessContents getBusinessContents(@PathVariable("businessContentsNo") int businessContentsNo) throws Exception{
-		System.out.println("log === "+businessContentsNo);		
 		return businessService.getBusinessContents(businessContentsNo);
 	}
 }

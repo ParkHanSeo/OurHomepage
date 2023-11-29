@@ -56,7 +56,7 @@ public class NoticeController {
 		int totalPostListCount = Integer.parseInt(resultMap.get("totalCount").toString());
 		
 		// pagebar
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		String pagebar = NaedamUtils.getUserPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		
 		mv.addObject("pagebar", pagebar);		
 		mv.addObject("list", postlist); 
@@ -89,7 +89,7 @@ public class NoticeController {
 		List<Post> postlist = boardService.getUserPostList(map);
 		int totalPostListCount = boardService.getUserGetTotalCount(map);
 		// pagebar
-		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
+		String pagebar = NaedamUtils.getUserPagebar(cPage, limit, totalPostListCount, request.getRequestURI());
 		resultMap.put("list", postlist);
 		resultMap.put("pagebar", pagebar);
 		return resultMap;
@@ -101,14 +101,14 @@ public class NoticeController {
 		ModelAndView mv = new ModelAndView();
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("postNo", postNo);
-		map.put("locale", locales);
 		Map<String, Object> resultMap = boardService.getNoticeDetail(map);
+		String locale = (String) resultMap.get("postLocale");
 		mv.addObject("post",resultMap.get("post"));
 		mv.addObject("board",resultMap.get("board"));
 		mv.addObject("boardFile", resultMap.get("boardFile"));
 		mv.addObject("postPrev",resultMap.get("postPrev"));
 		mv.addObject("postNext",resultMap.get("postNext"));
-		mv.setViewName("user/"+locales+"/notice/noticeDetail");
+		mv.setViewName("user/"+locale+"/notice/noticeDetail");
 		return mv;
 	}
 	

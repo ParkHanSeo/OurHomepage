@@ -31,21 +31,18 @@ public class HomeController {
 	private MenuService menuService;
 	@Autowired
 	private BusinessService businessService;
-	/*
-	 * @RequestMapping(value = "/", method = RequestMethod.GET) public String
-	 * gohomepage(Locale locale, Model model) {
-	 * log.debug("HomeController ---- forward ----> index.jsp");
-	 * 
-	 * // welcompage System.out.println("===================Index끝===============");
-	 * return "/user/userDashBoard"; }
-	 */
+
 	@Cacheable
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String gohome(Locale locale, Model model,
 			 @RequestParam(value = "locale", defaultValue = "ko") String locales) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("businessNo", 10);
+		if(locales.equals("ko")) {
+			map.put("businessNo", 10);
+		}else {
+			map.put("businessNo", 1008);
+		}
 		map.put("locale", locales);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList(map));
@@ -57,8 +54,6 @@ public class HomeController {
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String goIndex(Locale locale, Model model) {
 		log.debug("HomeController ---- forward ----> index.jsp");
-		
-		System.out.println("===================Index끝===============");
 		return "/admin/index";
 	}
 	
@@ -83,12 +78,16 @@ public class HomeController {
 			@RequestParam(value = "locale", defaultValue = "ko") String locales) throws Exception {
 		log.debug("userHomeController ---- forward ----> dashBoard");
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("businessNo", 10);
+		if(locales.equals("ko")) {
+			map.put("businessNo", 10);
+		}else {
+			map.put("businessNo", 1008);
+		}
 		map.put("locale", locales);
 		model.addAttribute("head", menuService.getUserHeadList(map).get("list"));
 		model.addAttribute("post", boardService.getMainPostList(map));
 		model.addAttribute("businessPost", businessService.getBusinessPostList(map));
-		return "user/userDashBoard";
+		return "user/"+locales+"/userDashBoard";
 	}	
 
 }

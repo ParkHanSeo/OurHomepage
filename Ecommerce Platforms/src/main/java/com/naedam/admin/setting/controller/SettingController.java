@@ -18,9 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.naedam.admin.award.model.vo.Award;
-import com.naedam.admin.board.model.vo.Page;
-import com.naedam.admin.common.Comm;
-import com.naedam.admin.common.Mir9Utils;
+import com.naedam.admin.common.NaedamUtils;
 import com.naedam.admin.history.model.vo.History;
 import com.naedam.admin.setting.model.service.SettingService;
 import com.naedam.admin.setting.model.vo.AdminMenu;
@@ -54,20 +52,18 @@ public class SettingController {
 		List<History> historyList = settingService.selectHistoryList(limit, offset, locale);
 		model.addAttribute("historyList", historyList);
 		
-		System.out.println("historyList>>>>>" + historyList);
 		
 		//게시글 총 갯수
 		int totalRecruitListCount = settingService.selectAllHistoryList(locale);
 		
 		//페이징 처리
-		String url = request.getRequestURI();
-		String pagebar = Mir9Utils.getPagebar(cPage, limit, totalRecruitListCount, url);
+		String url = request.getRequestURI() + "?locale=" + locale;
+		String pagebar = NaedamUtils.getPagebar(cPage, limit, totalRecruitListCount, url);
 		
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("pageCount", totalRecruitListCount);
 		model.addAttribute("locale", locale);
 		
-		System.out.println("history model >>>>>" + model);
 		
 		return "/admin/setting/history";
 	}
@@ -120,8 +116,6 @@ public class SettingController {
 		int limit = 10;
 		int offset = (cPage - 1) * limit;
 		
-		System.out.println("searchKeyword>>>>" + searchKeyword);
-		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("searchKeyword", searchKeyword);
 		map.put("limit", limit);
@@ -134,7 +128,7 @@ public class SettingController {
 
 		// 페이징 처리
 		String url = request.getRequestURI();
-		String pagebar = Mir9Utils.getPagebar(cPage, limit, (int)resultMap.get("totalCount"), url);
+		String pagebar = NaedamUtils.getPagebar(cPage, limit, (int)resultMap.get("totalCount"), url);
 		
 		model.addAttribute("pagebar", pagebar);
 		model.addAttribute("searchKeyword", searchKeyword);

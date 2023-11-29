@@ -27,7 +27,7 @@
                		<div class="division_container"> 
                         <div class="visual_txt_area com_intro">
                             <p class="txt3">
-                            	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 
+                            	글로벌 경쟁력을 갖춘 IT Total Service Provider로의 성장 하는 <br>
 								디지털 트렌스포메이션의 성장 파트너 입니다.                            	
                             </p>
                         </div>
@@ -121,7 +121,7 @@
                             </p>
                             <p class="businessList_top_txt2">
                                 고객 중심의 서비스와 지속적인 파트너쉽으로 고객이 새로운 가치를 경험 할 수 있도록 합니다.
-								신뢰, 존중, 열정, 정직, 도전을 바탕으로 최상의 팀워크를 통해, 끊임없이 변화하고 도전하며
+								<b>신뢰, 존중, 열정, 정직, 도전</b>을 바탕으로 최상의 팀워크를 통해, 끊임없이 변화하고 도전하며
 								최고의 고객가치를 창조하는 핵심가치를 실천 합니다.
                             </p>
                         </div> 

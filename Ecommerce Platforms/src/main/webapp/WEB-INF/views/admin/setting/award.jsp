@@ -93,6 +93,7 @@
 					<input type="hidden" name="mode" id="mode" value="insert"> 
 					<input type="hidden" name="awardNo" id="awardNo" value="0"> 
 					<input type="hidden" name="locale" id="locale" value="${locale}">
+					<input type="hidden" name="fullDate" value="" />
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title" id="myModalLabelPortfolio">수상 관리</h4>
@@ -212,8 +213,15 @@
 	    if($('form[name="form_register"] #mode').val() != 'update'){
 	    	if(form_register.awardImage.value == '') { alert('이미지는 필수 사항입니다.'); form_register.content.focus(); return false;}
 	    }
+	    var zero = num => num < 10 && num >= 0 ? "0" + num : num;
+	    var year =$("[name=year]").val();
+	    var month =$("[name=month]").val();
+	    var date =$("[name=date]").val();
+	    var fullDate ="";
+	    fullDate = zero(year)+zero(month)+zero(date);
+	    $("input[name=fullDate]").attr('value',fullDate);
 
-	    if(!confirm("연혁을 등록하시겠습니까?")){
+	    if(!confirm("수상 정보를 등록하시겠습니까?")){
 			alert("취소 되었습니다.");
 			return;
 		}else{
@@ -236,22 +244,20 @@
 				awardNo : code
 			},
 			success(data){
-	            console.log(data);
 	            var date = new Date(data.awardDate);
 	            $('form[name="form_register"] #mode').val('update');
 	            $('[name=awardNo]').val(data.awardNo);
 	            $('[name=year]').val(date.getFullYear());
 	            $('[name=month]').val(date.getMonth() + 1);
 	            $('[name=date]').val(date.getDate());
+	            $('[name=fullDate]').val();
 	            $('[name=content]').val(data.content);
 	            $('[name=host]').val(data.host);
 	            if(data.imgUrl != null){
 	            	$("#display_awardImage").remove();
 	            	$(".awardFileTd").html('');
-	            	console.log("data.imgUrl >>" + data.imgUrl);
 					 var image = "'${pageContext.request.contextPath}/resources/user/images/company/award/"+data.imgUrl+"'"
 					 if(data.imgUrl != null && data.imgUrl != ''){
-						 console.log("1")
 						 var display = data.imgUrl + '&nbsp;&nbsp;&nbsp;<span id="display_awardImage" name="awardImageSpan">'
 										+ '<button type="button" onclick="window.open('+image+')" class="btn btn-success btn-xs">보기</button>'
 										+ '</span>';
@@ -262,7 +268,6 @@
 					 }
 				 }
 			},
-			error: console.log
 		});
 	}
 	
@@ -274,7 +279,6 @@
 	}
 	
 	function onclickUpdate(code) {
-		console.log("code>>>>>>" + code);
 	    $('#modalContent').modal({backdrop:'static', show:true});
 	    setData(code);
 	}
@@ -318,7 +322,6 @@
 	
 	// 파일 업로드
 	$("input[type=file]").change(function(e){
-		console.log($(e.target))
 	   // 이미지 업로드
 	   var file = e.target;
 	   //var imgPreview = document.getElementById("imgPreview");
@@ -341,7 +344,6 @@
 	     
 	     // 이미지 조회 및 다운로드
 	     var url = imgbb.data.thumb.url;
-	     console.log(url)
 	     $('[name=imgUrl]').val(url);
 	   });
 	});

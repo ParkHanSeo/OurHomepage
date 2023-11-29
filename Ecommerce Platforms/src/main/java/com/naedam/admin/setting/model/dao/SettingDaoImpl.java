@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -39,8 +38,6 @@ public class SettingDaoImpl implements SettingDao {
 	
 	@Override
 	public List<Award> selectAwardList(String locale) {
-		// TODO Auto-generated method stub
-		System.out.println("log++++"+session.selectList("setting.selectAwardList"));
 		return session.selectList("setting.selectAwardList", locale);
 	}
 

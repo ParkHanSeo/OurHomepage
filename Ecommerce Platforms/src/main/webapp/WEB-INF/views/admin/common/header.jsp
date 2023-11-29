@@ -70,7 +70,7 @@
 		
 		window.onload=function(){
 			$.ajax({
-				url : "/admin/board/json/listBoard?locale=${locale}",
+				url : "/admin/board/json/listBoard?locale=${cookie.locale.value}",
 				method : "GET" ,
 				dataType : "json" ,
 				headers : {
@@ -82,8 +82,8 @@
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+"&locale=${cookie.locale.value}>"
-									+ "<i class='fa fa-circle-o'></i> "+Data[i].boardTitle
+									+ "<a href=/admin/board/postList?boardNo="+Data[i].boardNo+"&locale=${cookie.locale.value} id='head_list_child'>"
+									+ "<i class='fa fa-circle'></i> "+Data[i].boardTitle+""
 									+ "</a>"
 									+ "</li>"
 							$('#boardMenu').append(display);
@@ -92,20 +92,20 @@
 				}
 			});		
 			$.ajax({
-				url : "/admin/business/json/getBusinessList?locale=${locale}",
+				url : "/admin/business/json/getBusinessList?locale=${cookie.locale.value}",
 				method : "GET" ,
 				dataType : "json" ,
 				headers : {
 					"Accept" : "application/json",
 					"Content-Type" : "application/json"
 				},
-				success : function(Data, status){
+				success : function(Data, status){	
 					var display = '';
 					if(Data.length > 0){
 						for(var i = 0; i < Data.length; i++){
 							display = "<li>"
-									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+"&locale=${cookie.locale.value}>"
-									+ "<i class='fa fa-circle-o'></i> "+Data[i].businessTitle
+									+ "<a href=/admin/business/getBusinessPostList?businessNo="+Data[i].businessNo+"&locale=${cookie.locale.value} id='head_list_child'>"
+									+ "<i class='fa fa-circle'></i> "+Data[i].businessTitle+""
 									+ "</a>"
 									+ "</li>"
 							$('#businessMenu').append(display);
@@ -118,11 +118,15 @@
 
 	
 		function logoutSubmit(){
-			$(document.memberLogoutFrm).submit();
+			location.href= "/admin"
+			/* $(document.memberLogoutFrm).submit(); */
 		}
 		
 		function newPage(lang){	
-			var link =  document.location.href;
+			document.cookie = "locale=en; max-age=0";
+			document.cookie = "locale=ko; max-age=0";
+			
+			/* var link =  document.location.href;
 			var newLink = link.split('?locale');
 			
 			var arr = link.split('?');
@@ -132,10 +136,11 @@
 			} else {
 				newLink = link.split('&locale');
 				location.href = newLink[0] +"&locale=" + lang;
-			}
+			} */
+			
+			location.href = '/admin/dashBoard?locale=' + lang;
 			//쿠키
-			document.cookie = 'locale=' + lang;
-			alert("cookie===" , cookie.locale.value);
+			document.cookie = 'locale=' + lang +';' + 'path=/;'
 			
 		}
 		
@@ -191,9 +196,6 @@
 									</p>
 								</li>
 								<li class="user-footer">
-									<div class="pull-left">
-										<button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='${pageContext.request.contextPath}/admin/member/memberWithdrawal.do';">탈퇴</button>
-									</div>
 									<div class="pull-right">
 										<form:form id="memberLogoutFrm" name="memberLogoutFrm" method="POST" action="${pageContext.request.contextPath}/admin/member/memberLogout.do">
 											<a onclick="logoutSubmit()" class="btn btn-danger btn-flat" type="submit">Sign out</a>
